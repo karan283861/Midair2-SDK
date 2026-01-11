@@ -6,30 +6,30 @@
 * https://github.com/Encryqed/Dumper-7
 */
 
-// Package: MainMenu3
+// Package: MainMenu
 
 #include "Basic.hpp"
 
-#include "MainMenu3_classes.hpp"
-#include "MainMenu3_parameters.hpp"
+#include "MainMenu_classes.hpp"
+#include "MainMenu_parameters.hpp"
 
 
 namespace SDK
 {
 
-// Function MainMenu3.MainMenu3_C.ExecuteUbergraph_MainMenu3
+// Function MainMenu.MainMenu_C.ExecuteUbergraph_MainMenu
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void AMainMenu3_C::ExecuteUbergraph_MainMenu3(int32 EntryPoint)
+void AMainMenu_C::ExecuteUbergraph_MainMenu(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MainMenu3_C", "ExecuteUbergraph_MainMenu3");
+		Func = Class->GetFunction("MainMenu_C", "ExecuteUbergraph_MainMenu");
 
-	Params::MainMenu3_C_ExecuteUbergraph_MainMenu3 Parms{};
+	Params::MainMenu_C_ExecuteUbergraph_MainMenu Parms{};
 
 	Parms.EntryPoint = EntryPoint;
 
@@ -37,57 +37,57 @@ void AMainMenu3_C::ExecuteUbergraph_MainMenu3(int32 EntryPoint)
 }
 
 
-// Function MainMenu3.MainMenu3_C.GoToPressStart
+// Function MainMenu.MainMenu_C.GoToPressStart
 // (BlueprintCallable, BlueprintEvent)
 
-void AMainMenu3_C::GoToPressStart()
+void AMainMenu_C::GoToPressStart()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MainMenu3_C", "GoToPressStart");
+		Func = Class->GetFunction("MainMenu_C", "GoToPressStart");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function MainMenu3.MainMenu3_C.Load Next Level
+// Function MainMenu.MainMenu_C.Load Next Level
 // (BlueprintCallable, BlueprintEvent)
 
-void AMainMenu3_C::Load_Next_Level()
+void AMainMenu_C::Load_Next_Level()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MainMenu3_C", "Load Next Level");
+		Func = Class->GetFunction("MainMenu_C", "Load Next Level");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function MainMenu3.MainMenu3_C.ReceiveBeginPlay
+// Function MainMenu.MainMenu_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
 
-void AMainMenu3_C::ReceiveBeginPlay()
+void AMainMenu_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MainMenu3_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("MainMenu_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function MainMenu3.MainMenu3_C.HorribleLoadoutsSaveHack
+// Function MainMenu.MainMenu_C.HorribleLoadoutsSaveHack
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void AMainMenu3_C::HorribleLoadoutsSaveHack()
+void AMainMenu_C::HorribleLoadoutsSaveHack()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MainMenu3_C", "HorribleLoadoutsSaveHack");
+		Func = Class->GetFunction("MainMenu_C", "HorribleLoadoutsSaveHack");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

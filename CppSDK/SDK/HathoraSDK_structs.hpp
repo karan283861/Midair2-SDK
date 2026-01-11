@@ -97,19 +97,14 @@ public:
 };
 DUMPER7_ASSERTS_FHathoraConnectionInfo;
 
-// ScriptStruct HathoraSDK.HathoraServerEnvironment
-// 0x0038 (0x0038 - 0x0000)
-struct FHathoraServerEnvironment final
+// ScriptStruct HathoraSDK.HathoraSDKSecurity
+// 0x0010 (0x0010 - 0x0000)
+struct FHathoraSDKSecurity final
 {
 public:
-	class FString                                 AppId;                                             // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 AppSecret;                                         // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ProcessId;                                         // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EHathoraCloudRegion                           Region;                                            // 0x0030(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         RoomsPerProcess;                                   // 0x0034(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 AuthToken;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FHathoraServerEnvironment;
+DUMPER7_ASSERTS_FHathoraSDKSecurity;
 
 // ScriptStruct HathoraSDK.HathoraLobbyInfo
 // 0x0060 (0x0060 - 0x0000)
@@ -369,14 +364,19 @@ public:
 };
 DUMPER7_ASSERTS_FHathoraUpdateRoomConfigResult;
 
-// ScriptStruct HathoraSDK.HathoraSDKSecurity
-// 0x0010 (0x0010 - 0x0000)
-struct FHathoraSDKSecurity final
+// ScriptStruct HathoraSDK.HathoraServerEnvironment
+// 0x0038 (0x0038 - 0x0000)
+struct FHathoraServerEnvironment final
 {
 public:
-	class FString                                 AuthToken;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 AppId;                                             // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 AppSecret;                                         // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ProcessId;                                         // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EHathoraCloudRegion                           Region;                                            // 0x0030(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         RoomsPerProcess;                                   // 0x0034(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FHathoraSDKSecurity;
+DUMPER7_ASSERTS_FHathoraServerEnvironment;
 
 }
 

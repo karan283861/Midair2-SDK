@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Radial_Wheel_Slot_Struct_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Radial_Wheel_Slot_Struct_structs.hpp"
 #include "Radial_Wheel_Item_Struct_structs.hpp"
 #include "SlateCore_structs.hpp"
 

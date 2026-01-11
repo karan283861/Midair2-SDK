@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "MagicLeapImageTracker_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_classes.hpp"
+#include "MagicLeapImageTracker_structs.hpp"
 
 
 namespace SDK

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Midair2_structs.hpp"
 #include "SlateCore_structs.hpp"
+#include "Midair2_structs.hpp"
 
 
 namespace SDK::Params

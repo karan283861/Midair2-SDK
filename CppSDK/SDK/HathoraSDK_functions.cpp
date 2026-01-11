@@ -52,10 +52,10 @@ class UHathoraAuthV1LoginAnonymous* UHathoraAuthV1LoginAnonymous::LoginAnonymous
 // Parameters:
 // class UHathoraSDKAuthV1*                HathoraSDKAuthV1_0                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    IDToken                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    IdToken                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UHathoraAuthV1LoginGoogle*        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UHathoraAuthV1LoginGoogle* UHathoraAuthV1LoginGoogle::LoginGoogle(class UHathoraSDKAuthV1* HathoraSDKAuthV1_0, class UObject* WorldContextObject, const class FString& IDToken)
+class UHathoraAuthV1LoginGoogle* UHathoraAuthV1LoginGoogle::LoginGoogle(class UHathoraSDKAuthV1* HathoraSDKAuthV1_0, class UObject* WorldContextObject, const class FString& IdToken)
 {
 	static class UFunction* Func = nullptr;
 
@@ -66,7 +66,7 @@ class UHathoraAuthV1LoginGoogle* UHathoraAuthV1LoginGoogle::LoginGoogle(class UH
 
 	Parms.HathoraSDKAuthV1_0 = HathoraSDKAuthV1_0;
 	Parms.WorldContextObject = WorldContextObject;
-	Parms.IDToken = std::move(IDToken);
+	Parms.IdToken = std::move(IdToken);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

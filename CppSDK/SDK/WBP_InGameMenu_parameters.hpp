@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "UMG_structs.hpp"
+#include "Midair2_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "InputCore_structs.hpp"
-#include "Midair2_structs.hpp"
+#include "UMG_structs.hpp"
 #include "CommonGame_structs.hpp"
 
 
@@ -237,12 +237,12 @@ public:
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0958(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_959[0x3];                                      // 0x0959(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x095C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class FString>                         K2Node_MakeArray_Array;                            // 0x0960(0x0010)(ReferenceParm)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_18;           // 0x0970(0x0010)(ZeroConstructor, NoDestructor)
-	TArray<class FString>                         K2Node_Select_Default;                             // 0x0980(0x0010)(ReferenceParm)
-	int32                                         K2Node_CustomEvent_Selection;                      // 0x0990(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_994[0x4];                                      // 0x0994(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 K2Node_CustomEvent_DisplayString;                  // 0x0998(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_18;           // 0x0960(0x0010)(ZeroConstructor, NoDestructor)
+	TArray<class FString>                         K2Node_MakeArray_Array;                            // 0x0970(0x0010)(ReferenceParm)
+	int32                                         K2Node_CustomEvent_Selection;                      // 0x0980(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_984[0x4];                                      // 0x0984(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 K2Node_CustomEvent_DisplayString;                  // 0x0988(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	TArray<class FString>                         K2Node_Select_Default;                             // 0x0998(0x0010)(ReferenceParm)
 	TArray<class FString>                         K2Node_MakeArray_Array_1;                          // 0x09A8(0x0010)(ReferenceParm)
 	TArray<class FString>                         K2Node_Select_Default_1;                           // 0x09B8(0x0010)(ReferenceParm)
 	TArray<class FString>                         CallFunc_GetMapsForGameMode_Maps;                  // 0x09C8(0x0010)(ReferenceParm)
@@ -350,7 +350,7 @@ public:
 	class UWBP_ESC_Options_BTN_C*                 ClickedBTN;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         OptionIndex;                                       // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 steamID;                                           // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 SteamId;                                           // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_InGameMenu_C_AdminToVoteSelected;
 
@@ -843,7 +843,7 @@ public:
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(class UWBP_ESC_Options_BTN_C* OptionsBTN, int32 OptionIndex, const class FString& steamID)> K2Node_CreateDelegate_OutputDelegate; // 0x0014(0x0010)(ZeroConstructor, NoDestructor)
+	TDelegate<void(class UWBP_ESC_Options_BTN_C* OptionsBTN, int32 OptionIndex, const class FString& SteamId)> K2Node_CreateDelegate_OutputDelegate; // 0x0014(0x0010)(ZeroConstructor, NoDestructor)
 	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UPanelSlot*                             CallFunc_AddChild_ReturnValue;                     // 0x0028(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class APlayerController*                      CallFunc_GetOwningPlayer_ReturnValue;              // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

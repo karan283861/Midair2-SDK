@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Midair2_structs.hpp"
 #include "Engine_classes.hpp"
+#include "Midair2_structs.hpp"
 
 
 namespace SDK

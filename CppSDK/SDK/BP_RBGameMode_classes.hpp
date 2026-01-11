@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_RBGameMode.BP_RBGameMode_C
-// 0x0008 (0x0D28 - 0x0D20)
+// 0x0008 (0x0D40 - 0x0D38)
 class ABP_RBGameMode_C final : public ARBGameMode
 {
 public:
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0D20(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0D38(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

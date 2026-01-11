@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "AudioMixer_structs.hpp"
 #include "SlateCore_structs.hpp"
+#include "AudioMixer_structs.hpp"
 
 
 namespace SDK
@@ -722,17 +722,6 @@ public:
 };
 DUMPER7_ASSERTS_FSourceEffectMidSideSpreaderSettings;
 
-// ScriptStruct Synthesis.SynthSlateStyle
-// 0x0008 (0x0010 - 0x0008)
-struct FSynthSlateStyle final : public FSlateWidgetStyle
-{
-public:
-	ESynthSlateSizeType                           SizeType;                                          // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESynthSlateColorStyle                         ColorStyle;                                        // 0x0009(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSynthSlateStyle;
-
 // ScriptStruct Synthesis.SourceEffectPannerSettings
 // 0x0008 (0x0008 - 0x0000)
 struct FSourceEffectPannerSettings final
@@ -985,6 +974,17 @@ public:
 	uint8                                         Pad_231[0x7];                                      // 0x0231(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FSynthKnobStyle;
+
+// ScriptStruct Synthesis.SynthSlateStyle
+// 0x0008 (0x0010 - 0x0008)
+struct FSynthSlateStyle final : public FSlateWidgetStyle
+{
+public:
+	ESynthSlateSizeType                           SizeType;                                          // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESynthSlateColorStyle                         ColorStyle;                                        // 0x0009(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSynthSlateStyle;
 
 }
 

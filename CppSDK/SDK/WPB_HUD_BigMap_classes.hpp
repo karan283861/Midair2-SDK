@@ -42,7 +42,7 @@ public:
 	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
 	void Construct();
 	void UpdatePlayerIcon();
-	void AddPOI(class AActor* Actor, const struct FSlateColor& TintColor, bool IsStatic, bool OverrideSensor);
+	void AddPOI(class AActor* Actor, const struct FSlateColor& TintColor, bool isStatic, bool OverrideSensor);
 	void InitMap();
 
 public:

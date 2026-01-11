@@ -17,6 +17,125 @@
 namespace SDK
 {
 
+// Function LootLockerSDK.LootLockerConfig.DisableFileLogging
+// (Final, Native, Static, Public, BlueprintCallable)
+
+void ULootLockerConfig::DisableFileLogging()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerConfig", "DisableFileLogging");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LootLockerSDK.LootLockerConfig.EnableFileLogging
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    Filename                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULootLockerConfig::EnableFileLogging(const class FString& Filename)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerConfig", "EnableFileLogging");
+
+	Params::LootLockerConfig_EnableFileLogging Parms{};
+
+	Parms.Filename = std::move(Filename);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LootLockerSDK.LootLockerConfig.GetLogFilePath
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerConfig::GetLogFilePath()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerConfig", "GetLogFilePath");
+
+	Params::LootLockerConfig_GetLogFilePath Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerConfig.GetRuntimeLogLevel
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// ELootLockerLogLevel                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+ELootLockerLogLevel ULootLockerConfig::GetRuntimeLogLevel()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerConfig", "GetRuntimeLogLevel");
+
+	Params::LootLockerConfig_GetRuntimeLogLevel Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerConfig.IsFileLoggingEnabled
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ULootLockerConfig::IsFileLoggingEnabled()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerConfig", "IsFileLoggingEnabled");
+
+	Params::LootLockerConfig_IsFileLoggingEnabled Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function LootLockerSDK.LootLockerConfig.IsSemverString
 // (Final, Native, Static, Public)
 // Parameters:
@@ -33,6 +152,84 @@ bool ULootLockerConfig::IsSemverString(const class FString& str)
 	Params::LootLockerConfig_IsSemverString Parms{};
 
 	Parms.str = std::move(str);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerConfig.SetRuntimeLogLevel
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// ELootLockerLogLevel                     NewLevel                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULootLockerConfig::SetRuntimeLogLevel(ELootLockerLogLevel NewLevel)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerConfig", "SetRuntimeLogLevel");
+
+	Params::LootLockerConfig_SetRuntimeLogLevel Parms{};
+
+	Parms.NewLevel = NewLevel;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LootLockerSDK.LootLockerConfig.ShouldLog
+// (Final, Native, Static, Public)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ULootLockerConfig::ShouldLog()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerConfig", "ShouldLog");
+
+	Params::LootLockerConfig_ShouldLog Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerGoogleSubsystemHelper.GetAuthCode
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   LocalUserNumber                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerGoogleSubsystemHelper::GetAuthCode(int32 LocalUserNumber)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerGoogleSubsystemHelper", "GetAuthCode");
+
+	Params::LootLockerGoogleSubsystemHelper_GetAuthCode Parms{};
+
+	Parms.LocalUserNumber = LocalUserNumber;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -206,9 +403,9 @@ void ULootLockerGoogleSubsystemHelper::ReadOfferInformation(int32 LocalUserNumbe
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // int32                                   LocalUserNumber                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const TDelegate<void(bool success, int32 LocalUserNumber, const class FString& ErrorMsg, const class FString& IDToken)>Callback                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, NativeAccessSpecifierPublic)
+// const TDelegate<void(bool success, int32 LocalUserNumber, const class FString& ErrorMsg, const class FString& IdToken)>Callback                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, NativeAccessSpecifierPublic)
 
-void ULootLockerGoogleSubsystemHelper::SignInWithGoogle(int32 LocalUserNumber, const TDelegate<void(bool success, int32 LocalUserNumber, const class FString& ErrorMsg, const class FString& IDToken)> Callback)
+void ULootLockerGoogleSubsystemHelper::SignInWithGoogle(int32 LocalUserNumber, const TDelegate<void(bool success, int32 LocalUserNumber, const class FString& ErrorMsg, const class FString& IdToken)> Callback)
 {
 	static class UFunction* Func = nullptr;
 
@@ -233,9 +430,9 @@ void ULootLockerGoogleSubsystemHelper::SignInWithGoogle(int32 LocalUserNumber, c
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // int32                                   LocalUserNumber                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const TDelegate<void(bool success, int32 LocalUserNumber, const class FString& ErrorMsg)>Callback                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, NativeAccessSpecifierPublic)
+// const TDelegate<void(bool success, int32 LocalUserNumber, const class FString& ErrorMsg, const class FString& AuthCode)>Callback                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, NativeAccessSpecifierPublic)
 
-void ULootLockerGoogleSubsystemHelper::SignInWithGooglePlay(int32 LocalUserNumber, const TDelegate<void(bool success, int32 LocalUserNumber, const class FString& ErrorMsg)> Callback)
+void ULootLockerGoogleSubsystemHelper::SignInWithGooglePlay(int32 LocalUserNumber, const TDelegate<void(bool success, int32 LocalUserNumber, const class FString& ErrorMsg, const class FString& AuthCode)> Callback)
 {
 	static class UFunction* Func = nullptr;
 
@@ -310,13 +507,47 @@ void ULootLockerGoogleSubsystemHelper::SignOutWithGooglePlay(int32 LocalUserNumb
 }
 
 
+// Function LootLockerSDK.LootLockerManager.AcceptIncomingFriendRequest
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    PlayerUlid                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerFriendActionResponse& Response)>&OnResponseCompletedBP                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::AcceptIncomingFriendRequest(const class FString& ForPlayerWithUlid, const class FString& PlayerUlid, const TDelegate<void(const struct FLootLockerFriendActionResponse& Response)>& OnResponseCompletedBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "AcceptIncomingFriendRequest");
+
+	Params::LootLockerManager_AcceptIncomingFriendRequest Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.PlayerUlid = std::move(PlayerUlid);
+	Parms.OnResponseCompletedBP = OnResponseCompletedBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function LootLockerSDK.LootLockerManager.ActivateRentalAsset
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   AssetInstanceId                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerActivateRentalAssetResponse& Response)>&OnActivateRentalAssetCompleted                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::ActivateRentalAsset(int32 AssetInstanceId, const TDelegate<void(const struct FLootLockerActivateRentalAssetResponse& Response)>& OnActivateRentalAssetCompleted)
+class FString ULootLockerManager::ActivateRentalAsset(const class FString& ForPlayerWithUlid, int32 AssetInstanceId, const TDelegate<void(const struct FLootLockerActivateRentalAssetResponse& Response)>& OnActivateRentalAssetCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -325,6 +556,7 @@ void ULootLockerManager::ActivateRentalAsset(int32 AssetInstanceId, const TDeleg
 
 	Params::LootLockerManager_ActivateRentalAsset Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.AssetInstanceId = AssetInstanceId;
 	Parms.OnActivateRentalAssetCompleted = OnActivateRentalAssetCompleted;
 
@@ -334,16 +566,20 @@ void ULootLockerManager::ActivateRentalAsset(int32 AssetInstanceId, const TDeleg
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.AddAssetToFavourites
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   AssetId                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerGetFavouriteAssetIndicesResponse& FavouriteAssetIndicesResponse)>&OnAddAssetToFavouritesRequestCompleted                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::AddAssetToFavourites(int32 AssetId, const TDelegate<void(const struct FLootLockerGetFavouriteAssetIndicesResponse& FavouriteAssetIndicesResponse)>& OnAddAssetToFavouritesRequestCompleted)
+class FString ULootLockerManager::AddAssetToFavourites(const class FString& ForPlayerWithUlid, int32 AssetId, const TDelegate<void(const struct FLootLockerGetFavouriteAssetIndicesResponse& FavouriteAssetIndicesResponse)>& OnAddAssetToFavouritesRequestCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -352,6 +588,7 @@ void ULootLockerManager::AddAssetToFavourites(int32 AssetId, const TDelegate<voi
 
 	Params::LootLockerManager_AddAssetToFavourites Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.AssetId = AssetId;
 	Parms.OnAddAssetToFavouritesRequestCompleted = OnAddAssetToFavouritesRequestCompleted;
 
@@ -361,17 +598,21 @@ void ULootLockerManager::AddAssetToFavourites(int32 AssetId, const TDelegate<voi
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.AddAssetToHeroLoadout
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             HeroID                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             AssetInstanceId                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)>&OnCompleteBP                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::AddAssetToHeroLoadout(const int32 HeroID, const int32 AssetInstanceId, const TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)>& OnCompleteBP)
+class FString ULootLockerManager::AddAssetToHeroLoadout(const class FString& ForPlayerWithUlid, const int32 HeroID, const int32 AssetInstanceId, const TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)>& OnCompleteBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -380,6 +621,7 @@ void ULootLockerManager::AddAssetToHeroLoadout(const int32 HeroID, const int32 A
 
 	Params::LootLockerManager_AddAssetToHeroLoadout Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.HeroID = HeroID;
 	Parms.AssetInstanceId = AssetInstanceId;
 	Parms.OnCompleteBP = OnCompleteBP;
@@ -390,18 +632,22 @@ void ULootLockerManager::AddAssetToHeroLoadout(const int32 HeroID, const int32 A
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.AddFileToAssetCandidate
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   AssetCandidateId                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    FilePath                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // ELootLockerAssetFilePurpose             FilePurpose                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const TDelegate<void(const struct FLootLockerResponse& Response)>&OnAddFileToAssetCandidateCompleted                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerAssetCandidateResponse& Response)>&OnAddFileToAssetCandidateCompleted                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::AddFileToAssetCandidate(int32 AssetCandidateId, const class FString& FilePath, ELootLockerAssetFilePurpose FilePurpose, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnAddFileToAssetCandidateCompleted)
+class FString ULootLockerManager::AddFileToAssetCandidate(const class FString& ForPlayerWithUlid, int32 AssetCandidateId, const class FString& FilePath, ELootLockerAssetFilePurpose FilePurpose, const TDelegate<void(const struct FLootLockerAssetCandidateResponse& Response)>& OnAddFileToAssetCandidateCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -410,6 +656,7 @@ void ULootLockerManager::AddFileToAssetCandidate(int32 AssetCandidateId, const c
 
 	Params::LootLockerManager_AddFileToAssetCandidate Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.AssetCandidateId = AssetCandidateId;
 	Parms.FilePath = std::move(FilePath);
 	Parms.FilePurpose = FilePurpose;
@@ -421,17 +668,21 @@ void ULootLockerManager::AddFileToAssetCandidate(int32 AssetCandidateId, const c
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.AddGlobalAssetToHeroLoadout
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             HeroID                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             AssetId                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)>&OnCompleteBP                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::AddGlobalAssetToHeroLoadout(const int32 HeroID, const int32 AssetId, const TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)>& OnCompleteBP)
+class FString ULootLockerManager::AddGlobalAssetToHeroLoadout(const class FString& ForPlayerWithUlid, const int32 HeroID, const int32 AssetId, const TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)>& OnCompleteBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -440,6 +691,7 @@ void ULootLockerManager::AddGlobalAssetToHeroLoadout(const int32 HeroID, const i
 
 	Params::LootLockerManager_AddGlobalAssetToHeroLoadout Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.HeroID = HeroID;
 	Parms.AssetId = AssetId;
 	Parms.OnCompleteBP = OnCompleteBP;
@@ -450,18 +702,22 @@ void ULootLockerManager::AddGlobalAssetToHeroLoadout(const int32 HeroID, const i
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.AddGlobalAssetVariationToHeroLoadout
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             HeroID                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             AssetId                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             AssetVariationID                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)>&OnCompleteBP                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::AddGlobalAssetVariationToHeroLoadout(const int32 HeroID, const int32 AssetId, const int32 AssetVariationID, const TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)>& OnCompleteBP)
+class FString ULootLockerManager::AddGlobalAssetVariationToHeroLoadout(const class FString& ForPlayerWithUlid, const int32 HeroID, const int32 AssetId, const int32 AssetVariationID, const TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)>& OnCompleteBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -470,6 +726,7 @@ void ULootLockerManager::AddGlobalAssetVariationToHeroLoadout(const int32 HeroID
 
 	Params::LootLockerManager_AddGlobalAssetVariationToHeroLoadout Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.HeroID = HeroID;
 	Parms.AssetId = AssetId;
 	Parms.AssetVariationID = AssetVariationID;
@@ -481,16 +738,20 @@ void ULootLockerManager::AddGlobalAssetVariationToHeroLoadout(const int32 HeroID
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.AddItemsToPersistentStorage
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FLootLockerPersistentStorageItems&Items                                                  (Parm, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerPersistentStorageItemsResponse& Response)>&OnPersistentStorageItemsAddRequestCompleted            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::AddItemsToPersistentStorage(const struct FLootLockerPersistentStorageItems& Items, const TDelegate<void(const struct FLootLockerPersistentStorageItemsResponse& Response)>& OnPersistentStorageItemsAddRequestCompleted)
+class FString ULootLockerManager::AddItemsToPersistentStorage(const class FString& ForPlayerWithUlid, const struct FLootLockerPersistentStorageItems& Items, const TDelegate<void(const struct FLootLockerPersistentStorageItemsResponse& Response)>& OnPersistentStorageItemsAddRequestCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -499,6 +760,7 @@ void ULootLockerManager::AddItemsToPersistentStorage(const struct FLootLockerPer
 
 	Params::LootLockerManager_AddItemsToPersistentStorage Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.Items = std::move(Items);
 	Parms.OnPersistentStorageItemsAddRequestCompleted = OnPersistentStorageItemsAddRequestCompleted;
 
@@ -508,16 +770,20 @@ void ULootLockerManager::AddItemsToPersistentStorage(const struct FLootLockerPer
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.AddItemToPersistentStorage
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FLootLockerPersistentStorageItem&Item                                                   (Parm, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerPersistentStorageItemResponse& Response)>&OnPersistentStorageItemAddRequestCompleted             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::AddItemToPersistentStorage(const struct FLootLockerPersistentStorageItem& Item, const TDelegate<void(const struct FLootLockerPersistentStorageItemResponse& Response)>& OnPersistentStorageItemAddRequestCompleted)
+class FString ULootLockerManager::AddItemToPersistentStorage(const class FString& ForPlayerWithUlid, const struct FLootLockerPersistentStorageItem& Item, const TDelegate<void(const struct FLootLockerPersistentStorageItemResponse& Response)>& OnPersistentStorageItemAddRequestCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -526,6 +792,7 @@ void ULootLockerManager::AddItemToPersistentStorage(const struct FLootLockerPers
 
 	Params::LootLockerManager_AddItemToPersistentStorage Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.Item = std::move(Item);
 	Parms.OnPersistentStorageItemAddRequestCompleted = OnPersistentStorageItemAddRequestCompleted;
 
@@ -535,18 +802,22 @@ void ULootLockerManager::AddItemToPersistentStorage(const struct FLootLockerPers
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.AddPointsToCharacterProgression
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32&                            CharacterId                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    ProgressionKey                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32&                            Amount                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerCharacterProgressionWithRewardsResponse& Response)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::AddPointsToCharacterProgression(const int32& CharacterId, const class FString& ProgressionKey, const int32& Amount, const TDelegate<void(const struct FLootLockerCharacterProgressionWithRewardsResponse& Response)>& OnCompletedRequest)
+class FString ULootLockerManager::AddPointsToCharacterProgression(const class FString& ForPlayerWithUlid, const int32& CharacterId, const class FString& ProgressionKey, const int32& Amount, const TDelegate<void(const struct FLootLockerCharacterProgressionWithRewardsResponse& Response)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -555,6 +826,7 @@ void ULootLockerManager::AddPointsToCharacterProgression(const int32& CharacterI
 
 	Params::LootLockerManager_AddPointsToCharacterProgression Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.CharacterId = CharacterId;
 	Parms.ProgressionKey = std::move(ProgressionKey);
 	Parms.Amount = Amount;
@@ -566,18 +838,22 @@ void ULootLockerManager::AddPointsToCharacterProgression(const int32& CharacterI
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.AddPointsToInstanceProgression
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             AssetInstanceId                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    ProgressionKey                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             Amount                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerInstanceProgressionWithRewardsResponse& Response)>&OnCompletedRequestBP                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::AddPointsToInstanceProgression(const int32 AssetInstanceId, const class FString& ProgressionKey, const int32 Amount, const TDelegate<void(const struct FLootLockerInstanceProgressionWithRewardsResponse& Response)>& OnCompletedRequestBP)
+class FString ULootLockerManager::AddPointsToInstanceProgression(const class FString& ForPlayerWithUlid, const int32 AssetInstanceId, const class FString& ProgressionKey, const int32 Amount, const TDelegate<void(const struct FLootLockerInstanceProgressionWithRewardsResponse& Response)>& OnCompletedRequestBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -586,6 +862,7 @@ void ULootLockerManager::AddPointsToInstanceProgression(const int32 AssetInstanc
 
 	Params::LootLockerManager_AddPointsToInstanceProgression Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.AssetInstanceId = AssetInstanceId;
 	Parms.ProgressionKey = std::move(ProgressionKey);
 	Parms.Amount = Amount;
@@ -597,17 +874,21 @@ void ULootLockerManager::AddPointsToInstanceProgression(const int32 AssetInstanc
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.AddPointsToPlayerProgression
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    ProgressionKey                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32&                            Amount                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerPlayerProgressionWithRewardsResponse& Response)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::AddPointsToPlayerProgression(const class FString& ProgressionKey, const int32& Amount, const TDelegate<void(const struct FLootLockerPlayerProgressionWithRewardsResponse& Response)>& OnCompletedRequest)
+class FString ULootLockerManager::AddPointsToPlayerProgression(const class FString& ForPlayerWithUlid, const class FString& ProgressionKey, const int32& Amount, const TDelegate<void(const struct FLootLockerPlayerProgressionWithRewardsResponse& Response)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -616,6 +897,7 @@ void ULootLockerManager::AddPointsToPlayerProgression(const class FString& Progr
 
 	Params::LootLockerManager_AddPointsToPlayerProgression Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.ProgressionKey = std::move(ProgressionKey);
 	Parms.Amount = Amount;
 	Parms.OnCompletedRequest = OnCompletedRequest;
@@ -626,19 +908,23 @@ void ULootLockerManager::AddPointsToPlayerProgression(const class FString& Progr
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.BeginSteamPurchaseRedemption
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// const class FString&                    steamID                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SteamId                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    Currency                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    Language                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    CatalogItemId                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerBeginSteamPurchaseRedemptionResponse& Response)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::BeginSteamPurchaseRedemption(const class FString& steamID, const class FString& Currency, const class FString& Language, const class FString& CatalogItemId, const TDelegate<void(const struct FLootLockerBeginSteamPurchaseRedemptionResponse& Response)>& OnCompletedRequest)
+class FString ULootLockerManager::BeginSteamPurchaseRedemption(const class FString& ForPlayerWithUlid, const class FString& SteamId, const class FString& Currency, const class FString& Language, const class FString& CatalogItemId, const TDelegate<void(const struct FLootLockerBeginSteamPurchaseRedemptionResponse& Response)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -647,7 +933,8 @@ void ULootLockerManager::BeginSteamPurchaseRedemption(const class FString& steam
 
 	Params::LootLockerManager_BeginSteamPurchaseRedemption Parms{};
 
-	Parms.steamID = std::move(steamID);
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.SteamId = std::move(SteamId);
 	Parms.Currency = std::move(Currency);
 	Parms.Language = std::move(Language);
 	Parms.CatalogItemId = std::move(CatalogItemId);
@@ -659,20 +946,24 @@ void ULootLockerManager::BeginSteamPurchaseRedemption(const class FString& steam
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.BeginSteamPurchaseRedemptionForClass
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             ClassId                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    steamID                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SteamId                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    Currency                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    Language                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    CatalogItemId                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerBeginSteamPurchaseRedemptionResponse& Response)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::BeginSteamPurchaseRedemptionForClass(const int32 ClassId, const class FString& steamID, const class FString& Currency, const class FString& Language, const class FString& CatalogItemId, const TDelegate<void(const struct FLootLockerBeginSteamPurchaseRedemptionResponse& Response)>& OnCompletedRequest)
+class FString ULootLockerManager::BeginSteamPurchaseRedemptionForClass(const class FString& ForPlayerWithUlid, const int32 ClassId, const class FString& SteamId, const class FString& Currency, const class FString& Language, const class FString& CatalogItemId, const TDelegate<void(const struct FLootLockerBeginSteamPurchaseRedemptionResponse& Response)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -681,8 +972,9 @@ void ULootLockerManager::BeginSteamPurchaseRedemptionForClass(const int32 ClassI
 
 	Params::LootLockerManager_BeginSteamPurchaseRedemptionForClass Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.ClassId = ClassId;
-	Parms.steamID = std::move(steamID);
+	Parms.SteamId = std::move(SteamId);
 	Parms.Currency = std::move(Currency);
 	Parms.Language = std::move(Language);
 	Parms.CatalogItemId = std::move(CatalogItemId);
@@ -694,6 +986,72 @@ void ULootLockerManager::BeginSteamPurchaseRedemptionForClass(const int32 ClassI
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.BlockPlayer
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    PlayerUlid                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerFriendActionResponse& Response)>&OnResponseCompletedBP                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::BlockPlayer(const class FString& ForPlayerWithUlid, const class FString& PlayerUlid, const TDelegate<void(const struct FLootLockerFriendActionResponse& Response)>& OnResponseCompletedBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "BlockPlayer");
+
+	Params::LootLockerManager_BlockPlayer Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.PlayerUlid = std::move(PlayerUlid);
+	Parms.OnResponseCompletedBP = OnResponseCompletedBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.CancelOutgoingFriendRequest
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    PlayerUlid                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerFriendActionResponse& Response)>&OnResponseCompletedBP                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::CancelOutgoingFriendRequest(const class FString& ForPlayerWithUlid, const class FString& PlayerUlid, const TDelegate<void(const struct FLootLockerFriendActionResponse& Response)>& OnResponseCompletedBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "CancelOutgoingFriendRequest");
+
+	Params::LootLockerManager_CancelOutgoingFriendRequest Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.PlayerUlid = std::move(PlayerUlid);
+	Parms.OnResponseCompletedBP = OnResponseCompletedBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -725,9 +1083,11 @@ void ULootLockerManager::CancelRemoteSessionProcess(const class FString& Process
 // Function LootLockerSDK.LootLockerManager.CheckPlayerAssetActivationNotification
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerPlayerAssetNotificationResponse& Value)>&OnCheckPlayerAssetDeactivationNotificationRequestCompleted(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::CheckPlayerAssetActivationNotification(const TDelegate<void(const struct FLootLockerPlayerAssetNotificationResponse& Value)>& OnCheckPlayerAssetDeactivationNotificationRequestCompleted)
+class FString ULootLockerManager::CheckPlayerAssetActivationNotification(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerPlayerAssetNotificationResponse& Value)>& OnCheckPlayerAssetDeactivationNotificationRequestCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -736,7 +1096,79 @@ void ULootLockerManager::CheckPlayerAssetActivationNotification(const TDelegate<
 
 	Params::LootLockerManager_CheckPlayerAssetActivationNotification Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnCheckPlayerAssetDeactivationNotificationRequestCompleted = OnCheckPlayerAssetDeactivationNotificationRequestCompleted;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.ClearAllPlayerCaches
+// (Final, Native, Static, Public, BlueprintCallable)
+
+void ULootLockerManager::ClearAllPlayerCaches()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "ClearAllPlayerCaches");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.ClearAllPlayerCachesExceptForPlayer
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    PlayerUlid                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULootLockerManager::ClearAllPlayerCachesExceptForPlayer(const class FString& PlayerUlid)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "ClearAllPlayerCachesExceptForPlayer");
+
+	Params::LootLockerManager_ClearAllPlayerCachesExceptForPlayer Parms{};
+
+	Parms.PlayerUlid = std::move(PlayerUlid);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.ClearCacheForPlayer
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    PlayerUlid                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULootLockerManager::ClearCacheForPlayer(const class FString& PlayerUlid)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "ClearCacheForPlayer");
+
+	Params::LootLockerManager_ClearCacheForPlayer Parms{};
+
+	Parms.PlayerUlid = std::move(PlayerUlid);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -750,10 +1182,12 @@ void ULootLockerManager::CheckPlayerAssetActivationNotification(const TDelegate<
 // Function LootLockerSDK.LootLockerManager.CollectItem
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FLootLockerCollectItemPayload&Item                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerCollectablesResponse& Response)>&OnCollectItemCompleted                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::CollectItem(const struct FLootLockerCollectItemPayload& Item, const TDelegate<void(const struct FLootLockerCollectablesResponse& Response)>& OnCollectItemCompleted)
+class FString ULootLockerManager::CollectItem(const class FString& ForPlayerWithUlid, const struct FLootLockerCollectItemPayload& Item, const TDelegate<void(const struct FLootLockerCollectablesResponse& Response)>& OnCollectItemCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -762,6 +1196,7 @@ void ULootLockerManager::CollectItem(const struct FLootLockerCollectItemPayload&
 
 	Params::LootLockerManager_CollectItem Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.Item = std::move(Item);
 	Parms.OnCollectItemCompleted = OnCollectItemCompleted;
 
@@ -771,16 +1206,20 @@ void ULootLockerManager::CollectItem(const struct FLootLockerCollectItemPayload&
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.ComputeAndLockDropTable
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   TableId                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerComputeAndLockDropTableResponse& Response)>&OnCompletedRequestBP                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::ComputeAndLockDropTable(int32 TableId, const TDelegate<void(const struct FLootLockerComputeAndLockDropTableResponse& Response)>& OnCompletedRequestBP)
+class FString ULootLockerManager::ComputeAndLockDropTable(const class FString& ForPlayerWithUlid, int32 TableId, const TDelegate<void(const struct FLootLockerComputeAndLockDropTableResponse& Response)>& OnCompletedRequestBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -789,6 +1228,7 @@ void ULootLockerManager::ComputeAndLockDropTable(int32 TableId, const TDelegate<
 
 	Params::LootLockerManager_ComputeAndLockDropTable Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.TableId = TableId;
 	Parms.OnCompletedRequestBP = OnCompletedRequestBP;
 
@@ -798,16 +1238,20 @@ void ULootLockerManager::ComputeAndLockDropTable(int32 TableId, const TDelegate<
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.ConnectAppleAccountByRestSignIn
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    AuthorizationCode                                      (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)>&OnCompleteBP                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::ConnectAppleAccountByRestSignIn(const class FString& AuthorizationCode, const TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)>& OnCompleteBP)
+class FString ULootLockerManager::ConnectAppleAccountByRestSignIn(const class FString& ForPlayerWithUlid, const class FString& AuthorizationCode, const TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)>& OnCompleteBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -816,6 +1260,7 @@ void ULootLockerManager::ConnectAppleAccountByRestSignIn(const class FString& Au
 
 	Params::LootLockerManager_ConnectAppleAccountByRestSignIn Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.AuthorizationCode = std::move(AuthorizationCode);
 	Parms.OnCompleteBP = OnCompleteBP;
 
@@ -825,25 +1270,30 @@ void ULootLockerManager::ConnectAppleAccountByRestSignIn(const class FString& Au
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
-// Function LootLockerSDK.LootLockerManager.ConnectGoogleAccount
+// Function LootLockerSDK.LootLockerManager.ConnectDiscordAccount
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// const class FString&                    IDToken                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Token                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)>&OnCompleteBP                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::ConnectGoogleAccount(const class FString& IDToken, const TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)>& OnCompleteBP)
+class FString ULootLockerManager::ConnectDiscordAccount(const class FString& ForPlayerWithUlid, const class FString& Token, const TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)>& OnCompleteBP)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("LootLockerManager", "ConnectGoogleAccount");
+		Func = StaticClass()->GetFunction("LootLockerManager", "ConnectDiscordAccount");
 
-	Params::LootLockerManager_ConnectGoogleAccount Parms{};
+	Params::LootLockerManager_ConnectDiscordAccount Parms{};
 
-	Parms.IDToken = std::move(IDToken);
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.Token = std::move(Token);
 	Parms.OnCompleteBP = OnCompleteBP;
 
 	auto Flgs = Func->FunctionFlags;
@@ -852,17 +1302,85 @@ void ULootLockerManager::ConnectGoogleAccount(const class FString& IDToken, cons
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.ConnectEpicAccount
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Token                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)>&OnCompleteBP                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::ConnectEpicAccount(const class FString& ForPlayerWithUlid, const class FString& Token, const TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)>& OnCompleteBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "ConnectEpicAccount");
+
+	Params::LootLockerManager_ConnectEpicAccount Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.Token = std::move(Token);
+	Parms.OnCompleteBP = OnCompleteBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.ConnectGoogleAccount
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    IdToken                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)>&OnCompleteBP                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::ConnectGoogleAccount(const class FString& ForPlayerWithUlid, const class FString& IdToken, const TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)>& OnCompleteBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "ConnectGoogleAccount");
+
+	Params::LootLockerManager_ConnectGoogleAccount Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.IdToken = std::move(IdToken);
+	Parms.OnCompleteBP = OnCompleteBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.ConnectGoogleAccountWithPlatform
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// const class FString&                    IDToken                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    IdToken                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EGoogleAccountProviderPlatform          Platform                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)>&OnCompleteBP                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::ConnectGoogleAccountWithPlatform(const class FString& IDToken, EGoogleAccountProviderPlatform Platform, const TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)>& OnCompleteBP)
+class FString ULootLockerManager::ConnectGoogleAccountWithPlatform(const class FString& ForPlayerWithUlid, const class FString& IdToken, EGoogleAccountProviderPlatform Platform, const TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)>& OnCompleteBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -871,7 +1389,8 @@ void ULootLockerManager::ConnectGoogleAccountWithPlatform(const class FString& I
 
 	Params::LootLockerManager_ConnectGoogleAccountWithPlatform Parms{};
 
-	Parms.IDToken = std::move(IDToken);
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.IdToken = std::move(IdToken);
 	Parms.Platform = Platform;
 	Parms.OnCompleteBP = OnCompleteBP;
 
@@ -881,6 +1400,108 @@ void ULootLockerManager::ConnectGoogleAccountWithPlatform(const class FString& I
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.ConnectPlaystationAccount
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Environment                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Code                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)>&OnCompleteBP                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::ConnectPlaystationAccount(const class FString& ForPlayerWithUlid, const class FString& Environment, const class FString& Code, const TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)>& OnCompleteBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "ConnectPlaystationAccount");
+
+	Params::LootLockerManager_ConnectPlaystationAccount Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.Environment = std::move(Environment);
+	Parms.Code = std::move(Code);
+	Parms.OnCompleteBP = OnCompleteBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.ConnectRemoteSessionAccount
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Code                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Nonce                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)>&OnCompleteBP                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::ConnectRemoteSessionAccount(const class FString& ForPlayerWithUlid, const class FString& Code, const class FString& Nonce, const TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)>& OnCompleteBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "ConnectRemoteSessionAccount");
+
+	Params::LootLockerManager_ConnectRemoteSessionAccount Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.Code = std::move(Code);
+	Parms.Nonce = std::move(Nonce);
+	Parms.OnCompleteBP = OnCompleteBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.ConnectTwitchAccount
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    AuthorizationCode                                      (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)>&OnCompleteBP                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::ConnectTwitchAccount(const class FString& ForPlayerWithUlid, const class FString& AuthorizationCode, const TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)>& OnCompleteBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "ConnectTwitchAccount");
+
+	Params::LootLockerManager_ConnectTwitchAccount Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.AuthorizationCode = std::move(AuthorizationCode);
+	Parms.OnCompleteBP = OnCompleteBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -912,14 +1533,44 @@ TArray<struct FLootLockerInlinedCatalogEntry> ULootLockerManager::ConvertCatalog
 }
 
 
+// Function LootLockerSDK.LootLockerManager.ConvertCatalogV2ToInlineItems
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FLootLockerListCatalogPricesV2Response&Catalog                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<struct FLootLockerInlinedCatalogEntry>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<struct FLootLockerInlinedCatalogEntry> ULootLockerManager::ConvertCatalogV2ToInlineItems(const struct FLootLockerListCatalogPricesV2Response& Catalog)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "ConvertCatalogV2ToInlineItems");
+
+	Params::LootLockerManager_ConvertCatalogV2ToInlineItems Parms{};
+
+	Parms.Catalog = std::move(Catalog);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function LootLockerSDK.LootLockerManager.CreateAKeyValuePairForAssetInstance
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   AssetInstanceId                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FLootLockerAssetInstanceStorageItem&Item                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerAssetInstanceStorageItemsResponse& Response)>&OnCreateAKeyValuePairForAssetInstanceCompleted         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::CreateAKeyValuePairForAssetInstance(int32 AssetInstanceId, const struct FLootLockerAssetInstanceStorageItem& Item, const TDelegate<void(const struct FLootLockerAssetInstanceStorageItemsResponse& Response)>& OnCreateAKeyValuePairForAssetInstanceCompleted)
+class FString ULootLockerManager::CreateAKeyValuePairForAssetInstance(const class FString& ForPlayerWithUlid, int32 AssetInstanceId, const struct FLootLockerAssetInstanceStorageItem& Item, const TDelegate<void(const struct FLootLockerAssetInstanceStorageItemsResponse& Response)>& OnCreateAKeyValuePairForAssetInstanceCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -928,6 +1579,7 @@ void ULootLockerManager::CreateAKeyValuePairForAssetInstance(int32 AssetInstance
 
 	Params::LootLockerManager_CreateAKeyValuePairForAssetInstance Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.AssetInstanceId = AssetInstanceId;
 	Parms.Item = std::move(Item);
 	Parms.OnCreateAKeyValuePairForAssetInstanceCompleted = OnCreateAKeyValuePairForAssetInstanceCompleted;
@@ -938,16 +1590,20 @@ void ULootLockerManager::CreateAKeyValuePairForAssetInstance(int32 AssetInstance
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.CreateAssetCandidate
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FLootLockerCreateAssetCandidateData&AssetCandidateData                                     (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerCreateAssetCandidateResponse& Response)>&OnCreateAssetCandidateCompleted                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::CreateAssetCandidate(const struct FLootLockerCreateAssetCandidateData& AssetCandidateData, const TDelegate<void(const struct FLootLockerCreateAssetCandidateResponse& Response)>& OnCreateAssetCandidateCompleted)
+class FString ULootLockerManager::CreateAssetCandidate(const class FString& ForPlayerWithUlid, const struct FLootLockerCreateAssetCandidateData& AssetCandidateData, const TDelegate<void(const struct FLootLockerCreateAssetCandidateResponse& Response)>& OnCreateAssetCandidateCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -956,6 +1612,7 @@ void ULootLockerManager::CreateAssetCandidate(const struct FLootLockerCreateAsse
 
 	Params::LootLockerManager_CreateAssetCandidate Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.AssetCandidateData = std::move(AssetCandidateData);
 	Parms.OnCreateAssetCandidateCompleted = OnCreateAssetCandidateCompleted;
 
@@ -965,18 +1622,54 @@ void ULootLockerManager::CreateAssetCandidate(const struct FLootLockerCreateAsse
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.CreateAssetCandidateAndMarkComplete
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FLootLockerCreateAssetCandidateData&AssetCandidateData                                     (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerCreateAssetCandidateResponse& Response)>&OnCreateAssetCandidateCompleted                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::CreateAssetCandidateAndMarkComplete(const class FString& ForPlayerWithUlid, const struct FLootLockerCreateAssetCandidateData& AssetCandidateData, const TDelegate<void(const struct FLootLockerCreateAssetCandidateResponse& Response)>& OnCreateAssetCandidateCompleted)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "CreateAssetCandidateAndMarkComplete");
+
+	Params::LootLockerManager_CreateAssetCandidateAndMarkComplete Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.AssetCandidateData = std::move(AssetCandidateData);
+	Parms.OnCreateAssetCandidateCompleted = OnCreateAssetCandidateCompleted;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.CreateCharacter
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    IsDefault                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    CharacterName                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    CharacterTypeId                                        (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   CharacterTypeId                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>&OnCompletedRequestBP                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::CreateCharacter(bool IsDefault, const class FString& CharacterName, const class FString& CharacterTypeId, const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>& OnCompletedRequestBP)
+class FString ULootLockerManager::CreateCharacter(const class FString& ForPlayerWithUlid, bool IsDefault, const class FString& CharacterName, int32 CharacterTypeId, const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>& OnCompletedRequestBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -985,9 +1678,10 @@ void ULootLockerManager::CreateCharacter(bool IsDefault, const class FString& Ch
 
 	Params::LootLockerManager_CreateCharacter Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.IsDefault = IsDefault;
 	Parms.CharacterName = std::move(CharacterName);
-	Parms.CharacterTypeId = std::move(CharacterTypeId);
+	Parms.CharacterTypeId = CharacterTypeId;
 	Parms.OnCompletedRequestBP = OnCompletedRequestBP;
 
 	auto Flgs = Func->FunctionFlags;
@@ -996,16 +1690,20 @@ void ULootLockerManager::CreateCharacter(bool IsDefault, const class FString& Ch
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.CreateHero
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FLootLockerCreateHeroRequest&Request                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)>&OnCompleteBP                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::CreateHero(const struct FLootLockerCreateHeroRequest& Request, const TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)>& OnCompleteBP)
+class FString ULootLockerManager::CreateHero(const class FString& ForPlayerWithUlid, const struct FLootLockerCreateHeroRequest& Request, const TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)>& OnCompleteBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1014,6 +1712,7 @@ void ULootLockerManager::CreateHero(const struct FLootLockerCreateHeroRequest& R
 
 	Params::LootLockerManager_CreateHero Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.Request = std::move(Request);
 	Parms.OnCompleteBP = OnCompleteBP;
 
@@ -1023,16 +1722,20 @@ void ULootLockerManager::CreateHero(const struct FLootLockerCreateHeroRequest& R
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.CreateHeroWithVariation
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FLootLockerCreateHeroWithVariationRequest&Request                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)>&OnCompleteBP                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::CreateHeroWithVariation(const struct FLootLockerCreateHeroWithVariationRequest& Request, const TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)>& OnCompleteBP)
+class FString ULootLockerManager::CreateHeroWithVariation(const class FString& ForPlayerWithUlid, const struct FLootLockerCreateHeroWithVariationRequest& Request, const TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)>& OnCompleteBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1041,6 +1744,7 @@ void ULootLockerManager::CreateHeroWithVariation(const struct FLootLockerCreateH
 
 	Params::LootLockerManager_CreateHeroWithVariation Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.Request = std::move(Request);
 	Parms.OnCompleteBP = OnCompleteBP;
 
@@ -1050,18 +1754,22 @@ void ULootLockerManager::CreateHeroWithVariation(const struct FLootLockerCreateH
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.CreditBalanceToWallet
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    WalletID                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    CurrencyID                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    Amount                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerCreditWalletResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::CreditBalanceToWallet(const class FString& WalletID, const class FString& CurrencyID, const class FString& Amount, const TDelegate<void(const struct FLootLockerCreditWalletResponse& Response)>& OnComplete)
+class FString ULootLockerManager::CreditBalanceToWallet(const class FString& ForPlayerWithUlid, const class FString& WalletID, const class FString& CurrencyID, const class FString& Amount, const TDelegate<void(const struct FLootLockerCreditWalletResponse& Response)>& OnComplete)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1070,6 +1778,7 @@ void ULootLockerManager::CreditBalanceToWallet(const class FString& WalletID, co
 
 	Params::LootLockerManager_CreditBalanceToWallet Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.WalletID = std::move(WalletID);
 	Parms.CurrencyID = std::move(CurrencyID);
 	Parms.Amount = std::move(Amount);
@@ -1081,18 +1790,22 @@ void ULootLockerManager::CreditBalanceToWallet(const class FString& WalletID, co
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.DebitBalanceToWallet
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    WalletID                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    CurrencyID                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    Amount                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerDebitWalletResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::DebitBalanceToWallet(const class FString& WalletID, const class FString& CurrencyID, const class FString& Amount, const TDelegate<void(const struct FLootLockerDebitWalletResponse& Response)>& OnComplete)
+class FString ULootLockerManager::DebitBalanceToWallet(const class FString& ForPlayerWithUlid, const class FString& WalletID, const class FString& CurrencyID, const class FString& Amount, const TDelegate<void(const struct FLootLockerDebitWalletResponse& Response)>& OnComplete)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1101,6 +1814,7 @@ void ULootLockerManager::DebitBalanceToWallet(const class FString& WalletID, con
 
 	Params::LootLockerManager_DebitBalanceToWallet Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.WalletID = std::move(WalletID);
 	Parms.CurrencyID = std::move(CurrencyID);
 	Parms.Amount = std::move(Amount);
@@ -1112,17 +1826,53 @@ void ULootLockerManager::DebitBalanceToWallet(const class FString& WalletID, con
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.DeclineIncomingFriendRequest
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    PlayerUlid                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerFriendActionResponse& Response)>&OnResponseCompletedBP                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::DeclineIncomingFriendRequest(const class FString& ForPlayerWithUlid, const class FString& PlayerUlid, const TDelegate<void(const struct FLootLockerFriendActionResponse& Response)>& OnResponseCompletedBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "DeclineIncomingFriendRequest");
+
+	Params::LootLockerManager_DeclineIncomingFriendRequest Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.PlayerUlid = std::move(PlayerUlid);
+	Parms.OnResponseCompletedBP = OnResponseCompletedBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.DeleteAKeyValuePairByIdForAssetInstance
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   AssetInstanceId                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   StorageItemId                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerAssetInstanceStorageItemsResponse& Response)>&OnDeleteAKeyValuePairByIdForAssetInstanceCompleted     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::DeleteAKeyValuePairByIdForAssetInstance(int32 AssetInstanceId, int32 StorageItemId, const TDelegate<void(const struct FLootLockerAssetInstanceStorageItemsResponse& Response)>& OnDeleteAKeyValuePairByIdForAssetInstanceCompleted)
+class FString ULootLockerManager::DeleteAKeyValuePairByIdForAssetInstance(const class FString& ForPlayerWithUlid, int32 AssetInstanceId, int32 StorageItemId, const TDelegate<void(const struct FLootLockerAssetInstanceStorageItemsResponse& Response)>& OnDeleteAKeyValuePairByIdForAssetInstanceCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1131,6 +1881,7 @@ void ULootLockerManager::DeleteAKeyValuePairByIdForAssetInstance(int32 AssetInst
 
 	Params::LootLockerManager_DeleteAKeyValuePairByIdForAssetInstance Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.AssetInstanceId = AssetInstanceId;
 	Parms.StorageItemId = StorageItemId;
 	Parms.OnDeleteAKeyValuePairByIdForAssetInstanceCompleted = OnDeleteAKeyValuePairByIdForAssetInstanceCompleted;
@@ -1141,16 +1892,20 @@ void ULootLockerManager::DeleteAKeyValuePairByIdForAssetInstance(int32 AssetInst
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.DeleteAssetCandidate
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   AssetCandidateId                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Response)>&OnDeleteAssetCandidateCompleted                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::DeleteAssetCandidate(int32 AssetCandidateId, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnDeleteAssetCandidateCompleted)
+class FString ULootLockerManager::DeleteAssetCandidate(const class FString& ForPlayerWithUlid, int32 AssetCandidateId, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnDeleteAssetCandidateCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1159,6 +1914,7 @@ void ULootLockerManager::DeleteAssetCandidate(int32 AssetCandidateId, const TDel
 
 	Params::LootLockerManager_DeleteAssetCandidate Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.AssetCandidateId = AssetCandidateId;
 	Parms.OnDeleteAssetCandidateCompleted = OnDeleteAssetCandidateCompleted;
 
@@ -1168,16 +1924,20 @@ void ULootLockerManager::DeleteAssetCandidate(int32 AssetCandidateId, const TDel
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.DeleteAssetInstanceFromPlayerInventory
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   AssetInstanceId                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerDeleteAssetInstanceResponse& Response)>&OnCompleted                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::DeleteAssetInstanceFromPlayerInventory(int32 AssetInstanceId, const TDelegate<void(const struct FLootLockerDeleteAssetInstanceResponse& Response)>& OnCompleted)
+class FString ULootLockerManager::DeleteAssetInstanceFromPlayerInventory(const class FString& ForPlayerWithUlid, int32 AssetInstanceId, const TDelegate<void(const struct FLootLockerDeleteAssetInstanceResponse& Response)>& OnCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1186,6 +1946,7 @@ void ULootLockerManager::DeleteAssetInstanceFromPlayerInventory(int32 AssetInsta
 
 	Params::LootLockerManager_DeleteAssetInstanceFromPlayerInventory Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.AssetInstanceId = AssetInstanceId;
 	Parms.OnCompleted = OnCompleted;
 
@@ -1195,17 +1956,53 @@ void ULootLockerManager::DeleteAssetInstanceFromPlayerInventory(int32 AssetInsta
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.DeleteCharacter
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   CharacterId                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerResponse& Var)>&OnCompletedRequestBP                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::DeleteCharacter(const class FString& ForPlayerWithUlid, int32 CharacterId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequestBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "DeleteCharacter");
+
+	Params::LootLockerManager_DeleteCharacter Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.CharacterId = CharacterId;
+	Parms.OnCompletedRequestBP = OnCompletedRequestBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.DeleteCharacterProgression
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32&                            CharacterId                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    ProgressionKey                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Response)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::DeleteCharacterProgression(const int32& CharacterId, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnCompletedRequest)
+class FString ULootLockerManager::DeleteCharacterProgression(const class FString& ForPlayerWithUlid, const int32& CharacterId, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1214,6 +2011,7 @@ void ULootLockerManager::DeleteCharacterProgression(const int32& CharacterId, co
 
 	Params::LootLockerManager_DeleteCharacterProgression Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.CharacterId = CharacterId;
 	Parms.ProgressionKey = std::move(ProgressionKey);
 	Parms.OnCompletedRequest = OnCompletedRequest;
@@ -1224,17 +2022,21 @@ void ULootLockerManager::DeleteCharacterProgression(const int32& CharacterId, co
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.DeleteFileFromAssetCandidate
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   AssetCandidateId                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   FileId                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Response)>&OnDeleteFileFromAssetCandidateCompleted                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::DeleteFileFromAssetCandidate(int32 AssetCandidateId, int32 FileId, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnDeleteFileFromAssetCandidateCompleted)
+class FString ULootLockerManager::DeleteFileFromAssetCandidate(const class FString& ForPlayerWithUlid, int32 AssetCandidateId, int32 FileId, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnDeleteFileFromAssetCandidateCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1243,6 +2045,7 @@ void ULootLockerManager::DeleteFileFromAssetCandidate(int32 AssetCandidateId, in
 
 	Params::LootLockerManager_DeleteFileFromAssetCandidate Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.AssetCandidateId = AssetCandidateId;
 	Parms.FileId = FileId;
 	Parms.OnDeleteFileFromAssetCandidateCompleted = OnDeleteFileFromAssetCandidateCompleted;
@@ -1253,16 +2056,52 @@ void ULootLockerManager::DeleteFileFromAssetCandidate(int32 AssetCandidateId, in
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.DeleteFriend
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    PlayerUlid                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerFriendActionResponse& Response)>&OnResponseCompletedBP                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::DeleteFriend(const class FString& ForPlayerWithUlid, const class FString& PlayerUlid, const TDelegate<void(const struct FLootLockerFriendActionResponse& Response)>& OnResponseCompletedBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "DeleteFriend");
+
+	Params::LootLockerManager_DeleteFriend Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.PlayerUlid = std::move(PlayerUlid);
+	Parms.OnResponseCompletedBP = OnResponseCompletedBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.DeleteHero
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             HeroID                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Response)>&OnCompleteBP                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::DeleteHero(const int32 HeroID, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnCompleteBP)
+class FString ULootLockerManager::DeleteHero(const class FString& ForPlayerWithUlid, const int32 HeroID, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnCompleteBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1271,6 +2110,7 @@ void ULootLockerManager::DeleteHero(const int32 HeroID, const TDelegate<void(con
 
 	Params::LootLockerManager_DeleteHero Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.HeroID = HeroID;
 	Parms.OnCompleteBP = OnCompleteBP;
 
@@ -1280,17 +2120,21 @@ void ULootLockerManager::DeleteHero(const int32 HeroID, const TDelegate<void(con
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.DeleteInstanceProgression
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             AssetInstanceId                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    ProgressionKey                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Response)>&OnCompletedRequestBP                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::DeleteInstanceProgression(const int32 AssetInstanceId, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnCompletedRequestBP)
+class FString ULootLockerManager::DeleteInstanceProgression(const class FString& ForPlayerWithUlid, const int32 AssetInstanceId, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnCompletedRequestBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1299,6 +2143,7 @@ void ULootLockerManager::DeleteInstanceProgression(const int32 AssetInstanceId, 
 
 	Params::LootLockerManager_DeleteInstanceProgression Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.AssetInstanceId = AssetInstanceId;
 	Parms.ProgressionKey = std::move(ProgressionKey);
 	Parms.OnCompletedRequestBP = OnCompletedRequestBP;
@@ -1309,16 +2154,20 @@ void ULootLockerManager::DeleteInstanceProgression(const int32 AssetInstanceId, 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.DeleteItemFromPersistentStorage
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerPersistentStorageItemsResponse& Response)>&OnPersistentStorageItemDeleteRequestCompleted          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::DeleteItemFromPersistentStorage(const class FString& Key, const TDelegate<void(const struct FLootLockerPersistentStorageItemsResponse& Response)>& OnPersistentStorageItemDeleteRequestCompleted)
+class FString ULootLockerManager::DeleteItemFromPersistentStorage(const class FString& ForPlayerWithUlid, const class FString& Key, const TDelegate<void(const struct FLootLockerPersistentStorageItemsResponse& Response)>& OnPersistentStorageItemDeleteRequestCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1327,6 +2176,7 @@ void ULootLockerManager::DeleteItemFromPersistentStorage(const class FString& Ke
 
 	Params::LootLockerManager_DeleteItemFromPersistentStorage Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.Key = std::move(Key);
 	Parms.OnPersistentStorageItemDeleteRequestCompleted = OnPersistentStorageItemDeleteRequestCompleted;
 
@@ -1336,15 +2186,19 @@ void ULootLockerManager::DeleteItemFromPersistentStorage(const class FString& Ke
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.DeletePlayer
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Var)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::DeletePlayer(const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest)
+class FString ULootLockerManager::DeletePlayer(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1353,6 +2207,7 @@ void ULootLockerManager::DeletePlayer(const TDelegate<void(const struct FLootLoc
 
 	Params::LootLockerManager_DeletePlayer Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnCompletedRequest = OnCompletedRequest;
 
 	auto Flgs = Func->FunctionFlags;
@@ -1361,16 +2216,20 @@ void ULootLockerManager::DeletePlayer(const TDelegate<void(const struct FLootLoc
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.DeletePlayerFile
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             FileId                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::DeletePlayerFile(const int32 FileId, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnComplete)
+class FString ULootLockerManager::DeletePlayerFile(const class FString& ForPlayerWithUlid, const int32 FileId, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnComplete)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1379,6 +2238,7 @@ void ULootLockerManager::DeletePlayerFile(const int32 FileId, const TDelegate<vo
 
 	Params::LootLockerManager_DeletePlayerFile Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.FileId = FileId;
 	Parms.OnComplete = OnComplete;
 
@@ -1388,16 +2248,20 @@ void ULootLockerManager::DeletePlayerFile(const int32 FileId, const TDelegate<vo
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.DeletePlayerProgression
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    ProgressionKey                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Response)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::DeletePlayerProgression(const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnCompletedRequest)
+class FString ULootLockerManager::DeletePlayerProgression(const class FString& ForPlayerWithUlid, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1406,6 +2270,7 @@ void ULootLockerManager::DeletePlayerProgression(const class FString& Progressio
 
 	Params::LootLockerManager_DeletePlayerProgression Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.ProgressionKey = std::move(ProgressionKey);
 	Parms.OnCompletedRequest = OnCompletedRequest;
 
@@ -1415,16 +2280,20 @@ void ULootLockerManager::DeletePlayerProgression(const class FString& Progressio
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.DisconnectAccount
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const ELootLockerAccountProvider        AccountToDisconnect                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Var)>&OnCompleteBP                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::DisconnectAccount(const ELootLockerAccountProvider AccountToDisconnect, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompleteBP)
+class FString ULootLockerManager::DisconnectAccount(const class FString& ForPlayerWithUlid, const ELootLockerAccountProvider AccountToDisconnect, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompleteBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1433,6 +2302,7 @@ void ULootLockerManager::DisconnectAccount(const ELootLockerAccountProvider Acco
 
 	Params::LootLockerManager_DisconnectAccount Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.AccountToDisconnect = AccountToDisconnect;
 	Parms.OnCompleteBP = OnCompleteBP;
 
@@ -1442,15 +2312,19 @@ void ULootLockerManager::DisconnectAccount(const ELootLockerAccountProvider Acco
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.EndSession
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Var)>&OnEndSessionRequestCompleted                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::EndSession(const TDelegate<void(const struct FLootLockerResponse& Var)>& OnEndSessionRequestCompleted)
+class FString ULootLockerManager::EndSession(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnEndSessionRequestCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1459,6 +2333,7 @@ void ULootLockerManager::EndSession(const TDelegate<void(const struct FLootLocke
 
 	Params::LootLockerManager_EndSession Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnEndSessionRequestCompleted = OnEndSessionRequestCompleted;
 
 	auto Flgs = Func->FunctionFlags;
@@ -1467,18 +2342,22 @@ void ULootLockerManager::EndSession(const TDelegate<void(const struct FLootLocke
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.EquipAssetToCharacterById
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   CharacterId                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   AssetId                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   AssetVariationID                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Var)>&OnEquipAssetToCharacterByIdRequestCompleted            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::EquipAssetToCharacterById(int32 CharacterId, int32 AssetId, int32 AssetVariationID, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnEquipAssetToCharacterByIdRequestCompleted)
+class FString ULootLockerManager::EquipAssetToCharacterById(const class FString& ForPlayerWithUlid, int32 CharacterId, int32 AssetId, int32 AssetVariationID, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnEquipAssetToCharacterByIdRequestCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1487,6 +2366,7 @@ void ULootLockerManager::EquipAssetToCharacterById(int32 CharacterId, int32 Asse
 
 	Params::LootLockerManager_EquipAssetToCharacterById Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.CharacterId = CharacterId;
 	Parms.AssetId = AssetId;
 	Parms.AssetVariationID = AssetVariationID;
@@ -1498,17 +2378,21 @@ void ULootLockerManager::EquipAssetToCharacterById(int32 CharacterId, int32 Asse
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.EquipAssetToCharacterByIdAndInstance
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   CharacterId                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   InstanceId                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Var)>&OnEquipAssetToCharacterByIdRequestCompleted            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::EquipAssetToCharacterByIdAndInstance(int32 CharacterId, int32 InstanceId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnEquipAssetToCharacterByIdRequestCompleted)
+class FString ULootLockerManager::EquipAssetToCharacterByIdAndInstance(const class FString& ForPlayerWithUlid, int32 CharacterId, int32 InstanceId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnEquipAssetToCharacterByIdRequestCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1517,6 +2401,7 @@ void ULootLockerManager::EquipAssetToCharacterByIdAndInstance(int32 CharacterId,
 
 	Params::LootLockerManager_EquipAssetToCharacterByIdAndInstance Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.CharacterId = CharacterId;
 	Parms.InstanceId = InstanceId;
 	Parms.OnEquipAssetToCharacterByIdRequestCompleted = OnEquipAssetToCharacterByIdRequestCompleted;
@@ -1527,16 +2412,20 @@ void ULootLockerManager::EquipAssetToCharacterByIdAndInstance(int32 CharacterId,
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.EquipAssetToDefaultCharacter
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   InstanceId                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Var)>&OnEquipAssetToDefaultCharacterRequestCompleted         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::EquipAssetToDefaultCharacter(int32 InstanceId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnEquipAssetToDefaultCharacterRequestCompleted)
+class FString ULootLockerManager::EquipAssetToDefaultCharacter(const class FString& ForPlayerWithUlid, int32 InstanceId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnEquipAssetToDefaultCharacterRequestCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1545,6 +2434,7 @@ void ULootLockerManager::EquipAssetToDefaultCharacter(int32 InstanceId, const TD
 
 	Params::LootLockerManager_EquipAssetToDefaultCharacter Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.InstanceId = InstanceId;
 	Parms.OnEquipAssetToDefaultCharacterRequestCompleted = OnEquipAssetToDefaultCharacterRequestCompleted;
 
@@ -1554,16 +2444,20 @@ void ULootLockerManager::EquipAssetToDefaultCharacter(int32 InstanceId, const TD
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.FinalizeSteamPurchaseRedemption
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    EntitlementId                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Var)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::FinalizeSteamPurchaseRedemption(const class FString& EntitlementId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest)
+class FString ULootLockerManager::FinalizeSteamPurchaseRedemption(const class FString& ForPlayerWithUlid, const class FString& EntitlementId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1572,6 +2466,7 @@ void ULootLockerManager::FinalizeSteamPurchaseRedemption(const class FString& En
 
 	Params::LootLockerManager_FinalizeSteamPurchaseRedemption Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.EntitlementId = std::move(EntitlementId);
 	Parms.OnCompletedRequest = OnCompletedRequest;
 
@@ -1581,17 +2476,21 @@ void ULootLockerManager::FinalizeSteamPurchaseRedemption(const class FString& En
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.FinishMission
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   MissionId                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FLootLockerFinishMissionData&MissionData                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerFinishMissionResponse& Response)>&OnFinishMissionCompleted                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::FinishMission(int32 MissionId, const struct FLootLockerFinishMissionData& MissionData, const TDelegate<void(const struct FLootLockerFinishMissionResponse& Response)>& OnFinishMissionCompleted)
+class FString ULootLockerManager::FinishMission(const class FString& ForPlayerWithUlid, int32 MissionId, const struct FLootLockerFinishMissionData& MissionData, const TDelegate<void(const struct FLootLockerFinishMissionResponse& Response)>& OnFinishMissionCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1600,6 +2499,7 @@ void ULootLockerManager::FinishMission(int32 MissionId, const struct FLootLocker
 
 	Params::LootLockerManager_FinishMission Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.MissionId = MissionId;
 	Parms.MissionData = std::move(MissionData);
 	Parms.OnFinishMissionCompleted = OnFinishMissionCompleted;
@@ -1610,17 +2510,78 @@ void ULootLockerManager::FinishMission(int32 MissionId, const struct FLootLocker
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.FollowPlayer
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    PlayerPublicUid                                        (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerFollowActionResponse& Response)>&OnResponseCompletedBP                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::FollowPlayer(const class FString& ForPlayerWithUlid, const class FString& PlayerPublicUid, const TDelegate<void(const struct FLootLockerFollowActionResponse& Response)>& OnResponseCompletedBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "FollowPlayer");
+
+	Params::LootLockerManager_FollowPlayer Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.PlayerPublicUid = std::move(PlayerPublicUid);
+	Parms.OnResponseCompletedBP = OnResponseCompletedBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.GetActivePlayerUlids
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class FString> ULootLockerManager::GetActivePlayerUlids()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "GetActivePlayerUlids");
+
+	Params::LootLockerManager_GetActivePlayerUlids Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetAKeyValuePairByIdForAssetInstance
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   AssetInstanceId                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   StorageItemId                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerAssetInstanceStorageItemResponse& Response)>&OnGetAKeyValuePairByIdForAssetInstanceCompleted        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetAKeyValuePairByIdForAssetInstance(int32 AssetInstanceId, int32 StorageItemId, const TDelegate<void(const struct FLootLockerAssetInstanceStorageItemResponse& Response)>& OnGetAKeyValuePairByIdForAssetInstanceCompleted)
+class FString ULootLockerManager::GetAKeyValuePairByIdForAssetInstance(const class FString& ForPlayerWithUlid, int32 AssetInstanceId, int32 StorageItemId, const TDelegate<void(const struct FLootLockerAssetInstanceStorageItemResponse& Response)>& OnGetAKeyValuePairByIdForAssetInstanceCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1629,6 +2590,7 @@ void ULootLockerManager::GetAKeyValuePairByIdForAssetInstance(int32 AssetInstanc
 
 	Params::LootLockerManager_GetAKeyValuePairByIdForAssetInstance Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.AssetInstanceId = AssetInstanceId;
 	Parms.StorageItemId = StorageItemId;
 	Parms.OnGetAKeyValuePairByIdForAssetInstanceCompleted = OnGetAKeyValuePairByIdForAssetInstanceCompleted;
@@ -1639,15 +2601,19 @@ void ULootLockerManager::GetAKeyValuePairByIdForAssetInstance(int32 AssetInstanc
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetAllAssetCandidates
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerAssetCandidatesResponse& Response)>&OnGetAllAssetCandidatesCompleted                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetAllAssetCandidates(const TDelegate<void(const struct FLootLockerAssetCandidatesResponse& Response)>& OnGetAllAssetCandidatesCompleted)
+class FString ULootLockerManager::GetAllAssetCandidates(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerAssetCandidatesResponse& Response)>& OnGetAllAssetCandidatesCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1656,6 +2622,7 @@ void ULootLockerManager::GetAllAssetCandidates(const TDelegate<void(const struct
 
 	Params::LootLockerManager_GetAllAssetCandidates Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnGetAllAssetCandidatesCompleted = OnGetAllAssetCandidatesCompleted;
 
 	auto Flgs = Func->FunctionFlags;
@@ -1664,15 +2631,19 @@ void ULootLockerManager::GetAllAssetCandidates(const TDelegate<void(const struct
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetAllCollectables
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerCollectablesResponse& Response)>&OnGetAllCollectablesCompleted                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetAllCollectables(const TDelegate<void(const struct FLootLockerCollectablesResponse& Response)>& OnGetAllCollectablesCompleted)
+class FString ULootLockerManager::GetAllCollectables(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerCollectablesResponse& Response)>& OnGetAllCollectablesCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1681,6 +2652,7 @@ void ULootLockerManager::GetAllCollectables(const TDelegate<void(const struct FL
 
 	Params::LootLockerManager_GetAllCollectables Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnGetAllCollectablesCompleted = OnGetAllCollectablesCompleted;
 
 	auto Flgs = Func->FunctionFlags;
@@ -1689,16 +2661,20 @@ void ULootLockerManager::GetAllCollectables(const TDelegate<void(const struct FL
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetAllKeyValuePairsForAssetInstance
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   AssetInstanceId                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerAssetInstanceStorageItemsResponse& Response)>&OnGetAllKeyValuePairsForAssetInstanceCompleted         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetAllKeyValuePairsForAssetInstance(int32 AssetInstanceId, const TDelegate<void(const struct FLootLockerAssetInstanceStorageItemsResponse& Response)>& OnGetAllKeyValuePairsForAssetInstanceCompleted)
+class FString ULootLockerManager::GetAllKeyValuePairsForAssetInstance(const class FString& ForPlayerWithUlid, int32 AssetInstanceId, const TDelegate<void(const struct FLootLockerAssetInstanceStorageItemsResponse& Response)>& OnGetAllKeyValuePairsForAssetInstanceCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1707,6 +2683,7 @@ void ULootLockerManager::GetAllKeyValuePairsForAssetInstance(int32 AssetInstance
 
 	Params::LootLockerManager_GetAllKeyValuePairsForAssetInstance Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.AssetInstanceId = AssetInstanceId;
 	Parms.OnGetAllKeyValuePairsForAssetInstanceCompleted = OnGetAllKeyValuePairsForAssetInstanceCompleted;
 
@@ -1716,18 +2693,22 @@ void ULootLockerManager::GetAllKeyValuePairsForAssetInstance(int32 AssetInstance
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetAllMemberRanks
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    MemberId                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             Count                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const int32                             after                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             After                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerGetAllMemberRanksResponse& Response)>&OnCompletedRequestBP                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetAllMemberRanks(const class FString& MemberId, const int32 Count, const int32 after, const TDelegate<void(const struct FLootLockerGetAllMemberRanksResponse& Response)>& OnCompletedRequestBP)
+class FString ULootLockerManager::GetAllMemberRanks(const class FString& ForPlayerWithUlid, const class FString& MemberId, const int32 Count, const int32 After, const TDelegate<void(const struct FLootLockerGetAllMemberRanksResponse& Response)>& OnCompletedRequestBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1736,9 +2717,10 @@ void ULootLockerManager::GetAllMemberRanks(const class FString& MemberId, const 
 
 	Params::LootLockerManager_GetAllMemberRanks Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.MemberId = std::move(MemberId);
 	Parms.Count = Count;
-	Parms.after = after;
+	Parms.After = After;
 	Parms.OnCompletedRequestBP = OnCompletedRequestBP;
 
 	auto Flgs = Func->FunctionFlags;
@@ -1747,15 +2729,19 @@ void ULootLockerManager::GetAllMemberRanks(const class FString& MemberId, const 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetAllMissions
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerMissionsResponse& Response)>&OnGetAllMissionsCompleted                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetAllMissions(const TDelegate<void(const struct FLootLockerMissionsResponse& Response)>& OnGetAllMissionsCompleted)
+class FString ULootLockerManager::GetAllMissions(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerMissionsResponse& Response)>& OnGetAllMissionsCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1764,6 +2750,7 @@ void ULootLockerManager::GetAllMissions(const TDelegate<void(const struct FLootL
 
 	Params::LootLockerManager_GetAllMissions Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnGetAllMissionsCompleted = OnGetAllMissionsCompleted;
 
 	auto Flgs = Func->FunctionFlags;
@@ -1772,15 +2759,19 @@ void ULootLockerManager::GetAllMissions(const TDelegate<void(const struct FLootL
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetAssetBones
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerGetAssetBonesResponse& AssetBonesResponse)>&OnGetAssetBonesRequestCompleted                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetAssetBones(const TDelegate<void(const struct FLootLockerGetAssetBonesResponse& AssetBonesResponse)>& OnGetAssetBonesRequestCompleted)
+class FString ULootLockerManager::GetAssetBones(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerGetAssetBonesResponse& AssetBonesResponse)>& OnGetAssetBonesRequestCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1789,6 +2780,7 @@ void ULootLockerManager::GetAssetBones(const TDelegate<void(const struct FLootLo
 
 	Params::LootLockerManager_GetAssetBones Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnGetAssetBonesRequestCompleted = OnGetAssetBonesRequestCompleted;
 
 	auto Flgs = Func->FunctionFlags;
@@ -1797,16 +2789,20 @@ void ULootLockerManager::GetAssetBones(const TDelegate<void(const struct FLootLo
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetAssetCandidate
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   AssetCandidateId                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerAssetCandidateResponse& Response)>&OnGetAssetCandidateCompleted                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetAssetCandidate(int32 AssetCandidateId, const TDelegate<void(const struct FLootLockerAssetCandidateResponse& Response)>& OnGetAssetCandidateCompleted)
+class FString ULootLockerManager::GetAssetCandidate(const class FString& ForPlayerWithUlid, int32 AssetCandidateId, const TDelegate<void(const struct FLootLockerAssetCandidateResponse& Response)>& OnGetAssetCandidateCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1815,6 +2811,7 @@ void ULootLockerManager::GetAssetCandidate(int32 AssetCandidateId, const TDelega
 
 	Params::LootLockerManager_GetAssetCandidate Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.AssetCandidateId = AssetCandidateId;
 	Parms.OnGetAssetCandidateCompleted = OnGetAssetCandidateCompleted;
 
@@ -1824,20 +2821,24 @@ void ULootLockerManager::GetAssetCandidate(int32 AssetCandidateId, const TDelega
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetAssets
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerGetAssetsResponse& AssetsResponse)>&OnGetAssetsRequestCompleted                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // int32                                   StartFromIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ItemsCount                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // ELootLockerAssetFilter                  AssetFilter                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Context                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    IncludeUGC                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetAssets(const TDelegate<void(const struct FLootLockerGetAssetsResponse& AssetsResponse)>& OnGetAssetsRequestCompleted, int32 StartFromIndex, int32 ItemsCount, ELootLockerAssetFilter AssetFilter, int32 Context, bool IncludeUGC)
+class FString ULootLockerManager::GetAssets(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerGetAssetsResponse& AssetsResponse)>& OnGetAssetsRequestCompleted, int32 StartFromIndex, int32 ItemsCount, ELootLockerAssetFilter AssetFilter, int32 Context, bool IncludeUGC)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1846,6 +2847,7 @@ void ULootLockerManager::GetAssets(const TDelegate<void(const struct FLootLocker
 
 	Params::LootLockerManager_GetAssets Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnGetAssetsRequestCompleted = OnGetAssetsRequestCompleted;
 	Parms.StartFromIndex = StartFromIndex;
 	Parms.ItemsCount = ItemsCount;
@@ -1859,16 +2861,20 @@ void ULootLockerManager::GetAssets(const TDelegate<void(const struct FLootLocker
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetAssetsByIds
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TArray<int32>&                    AssetIds                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerGetAssetsResponse& AssetsResponse)>&OnGetAssetsByIdsRequestCompleted                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetAssetsByIds(const TArray<int32>& AssetIds, const TDelegate<void(const struct FLootLockerGetAssetsResponse& AssetsResponse)>& OnGetAssetsByIdsRequestCompleted)
+class FString ULootLockerManager::GetAssetsByIds(const class FString& ForPlayerWithUlid, const TArray<int32>& AssetIds, const TDelegate<void(const struct FLootLockerGetAssetsResponse& AssetsResponse)>& OnGetAssetsByIdsRequestCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1877,6 +2883,7 @@ void ULootLockerManager::GetAssetsByIds(const TArray<int32>& AssetIds, const TDe
 
 	Params::LootLockerManager_GetAssetsByIds Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.AssetIds = std::move(AssetIds);
 	Parms.OnGetAssetsByIdsRequestCompleted = OnGetAssetsByIdsRequestCompleted;
 
@@ -1886,17 +2893,21 @@ void ULootLockerManager::GetAssetsByIds(const TArray<int32>& AssetIds, const TDe
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetByListOfMembers
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TArray<class FString>&            members                                                (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // const class FString&                    LeaderboardKey                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerGetByListOfMembersResponse& Response)>&OnCompletedRequestBP                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetByListOfMembers(const TArray<class FString>& members, const class FString& LeaderboardKey, const TDelegate<void(const struct FLootLockerGetByListOfMembersResponse& Response)>& OnCompletedRequestBP)
+class FString ULootLockerManager::GetByListOfMembers(const class FString& ForPlayerWithUlid, const TArray<class FString>& members, const class FString& LeaderboardKey, const TDelegate<void(const struct FLootLockerGetByListOfMembersResponse& Response)>& OnCompletedRequestBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1905,6 +2916,7 @@ void ULootLockerManager::GetByListOfMembers(const TArray<class FString>& members
 
 	Params::LootLockerManager_GetByListOfMembers Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.members = std::move(members);
 	Parms.LeaderboardKey = std::move(LeaderboardKey);
 	Parms.OnCompletedRequestBP = OnCompletedRequestBP;
@@ -1915,15 +2927,44 @@ void ULootLockerManager::GetByListOfMembers(const TArray<class FString>& members
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.GetCachedPlayerUlids
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class FString> ULootLockerManager::GetCachedPlayerUlids()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "GetCachedPlayerUlids");
+
+	Params::LootLockerManager_GetCachedPlayerUlids Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetCharacterLoadout
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>&OnGetCharacterLoadoutRequestCompleted                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetCharacterLoadout(const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>& OnGetCharacterLoadoutRequestCompleted)
+class FString ULootLockerManager::GetCharacterLoadout(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>& OnGetCharacterLoadoutRequestCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1932,6 +2973,7 @@ void ULootLockerManager::GetCharacterLoadout(const TDelegate<void(const struct F
 
 	Params::LootLockerManager_GetCharacterLoadout Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnGetCharacterLoadoutRequestCompleted = OnGetCharacterLoadoutRequestCompleted;
 
 	auto Flgs = Func->FunctionFlags;
@@ -1940,17 +2982,21 @@ void ULootLockerManager::GetCharacterLoadout(const TDelegate<void(const struct F
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetCharacterProgression
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32&                            CharacterId                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    ProgressionKey                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerCharacterProgressionResponse& Response)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetCharacterProgression(const int32& CharacterId, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerCharacterProgressionResponse& Response)>& OnCompletedRequest)
+class FString ULootLockerManager::GetCharacterProgression(const class FString& ForPlayerWithUlid, const int32& CharacterId, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerCharacterProgressionResponse& Response)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1959,6 +3005,7 @@ void ULootLockerManager::GetCharacterProgression(const int32& CharacterId, const
 
 	Params::LootLockerManager_GetCharacterProgression Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.CharacterId = CharacterId;
 	Parms.ProgressionKey = std::move(ProgressionKey);
 	Parms.OnCompletedRequest = OnCompletedRequest;
@@ -1969,18 +3016,22 @@ void ULootLockerManager::GetCharacterProgression(const int32& CharacterId, const
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetCharacterProgressions
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32&                            CharacterId                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             Count                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    after                                                  (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    After                                                  (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerPaginatedCharacterProgressionResponse& Response)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetCharacterProgressions(const int32& CharacterId, const int32 Count, const class FString& after, const TDelegate<void(const struct FLootLockerPaginatedCharacterProgressionResponse& Response)>& OnCompletedRequest)
+class FString ULootLockerManager::GetCharacterProgressions(const class FString& ForPlayerWithUlid, const int32& CharacterId, const int32 Count, const class FString& After, const TDelegate<void(const struct FLootLockerPaginatedCharacterProgressionResponse& Response)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1989,9 +3040,10 @@ void ULootLockerManager::GetCharacterProgressions(const int32& CharacterId, cons
 
 	Params::LootLockerManager_GetCharacterProgressions Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.CharacterId = CharacterId;
 	Parms.Count = Count;
-	Parms.after = std::move(after);
+	Parms.After = std::move(After);
 	Parms.OnCompletedRequest = OnCompletedRequest;
 
 	auto Flgs = Func->FunctionFlags;
@@ -2000,15 +3052,19 @@ void ULootLockerManager::GetCharacterProgressions(const int32& CharacterId, cons
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetContexts
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerGetContextResponse& ContextsResponse)>&OnGetContextsRequestCompleted                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetContexts(const TDelegate<void(const struct FLootLockerGetContextResponse& ContextsResponse)>& OnGetContextsRequestCompleted)
+class FString ULootLockerManager::GetContexts(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerGetContextResponse& ContextsResponse)>& OnGetContextsRequestCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2017,6 +3073,7 @@ void ULootLockerManager::GetContexts(const TDelegate<void(const struct FLootLock
 
 	Params::LootLockerManager_GetContexts Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnGetContextsRequestCompleted = OnGetContextsRequestCompleted;
 
 	auto Flgs = Func->FunctionFlags;
@@ -2025,15 +3082,19 @@ void ULootLockerManager::GetContexts(const TDelegate<void(const struct FLootLock
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetCurrencyBalance
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerBalanceResponse& Value)>&OnGetCurrencyBalance                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetCurrencyBalance(const TDelegate<void(const struct FLootLockerBalanceResponse& Value)>& OnGetCurrencyBalance)
+class FString ULootLockerManager::GetCurrencyBalance(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerBalanceResponse& Value)>& OnGetCurrencyBalance)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2042,6 +3103,7 @@ void ULootLockerManager::GetCurrencyBalance(const TDelegate<void(const struct FL
 
 	Params::LootLockerManager_GetCurrencyBalance Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnGetCurrencyBalance = OnGetCurrencyBalance;
 
 	auto Flgs = Func->FunctionFlags;
@@ -2050,16 +3112,20 @@ void ULootLockerManager::GetCurrencyBalance(const TDelegate<void(const struct FL
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetCurrencyDenominationsByCode
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    CurrencyCode                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerListDenominationsResponse& Response)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetCurrencyDenominationsByCode(const class FString& CurrencyCode, const TDelegate<void(const struct FLootLockerListDenominationsResponse& Response)>& OnCompletedRequest)
+class FString ULootLockerManager::GetCurrencyDenominationsByCode(const class FString& ForPlayerWithUlid, const class FString& CurrencyCode, const TDelegate<void(const struct FLootLockerListDenominationsResponse& Response)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2068,6 +3134,7 @@ void ULootLockerManager::GetCurrencyDenominationsByCode(const class FString& Cur
 
 	Params::LootLockerManager_GetCurrencyDenominationsByCode Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.CurrencyCode = std::move(CurrencyCode);
 	Parms.OnCompletedRequest = OnCompletedRequest;
 
@@ -2077,15 +3144,51 @@ void ULootLockerManager::GetCurrencyDenominationsByCode(const class FString& Cur
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.GetCurrencyDetails
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    CurrencyCode                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerGetCurrencyDetailsResponse& Response)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::GetCurrencyDetails(const class FString& ForPlayerWithUlid, const class FString& CurrencyCode, const TDelegate<void(const struct FLootLockerGetCurrencyDetailsResponse& Response)>& OnCompletedRequest)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "GetCurrencyDetails");
+
+	Params::LootLockerManager_GetCurrencyDetails Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.CurrencyCode = std::move(CurrencyCode);
+	Parms.OnCompletedRequest = OnCompletedRequest;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetCurrentLoadoutToDefaultCharacter
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>&OnGetCurrentLoadoutToDefaultCharacterRequestCompleted  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetCurrentLoadoutToDefaultCharacter(const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>& OnGetCurrentLoadoutToDefaultCharacterRequestCompleted)
+class FString ULootLockerManager::GetCurrentLoadoutToDefaultCharacter(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>& OnGetCurrentLoadoutToDefaultCharacterRequestCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2094,6 +3197,7 @@ void ULootLockerManager::GetCurrentLoadoutToDefaultCharacter(const TDelegate<voi
 
 	Params::LootLockerManager_GetCurrentLoadoutToDefaultCharacter Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnGetCurrentLoadoutToDefaultCharacterRequestCompleted = OnGetCurrentLoadoutToDefaultCharacterRequestCompleted;
 
 	auto Flgs = Func->FunctionFlags;
@@ -2102,15 +3206,74 @@ void ULootLockerManager::GetCurrentLoadoutToDefaultCharacter(const TDelegate<voi
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.GetCurrentPlayerInfo
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerGetCurrentPlayerInfoResponse& Value)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::GetCurrentPlayerInfo(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerGetCurrentPlayerInfoResponse& Value)>& OnCompletedRequest)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "GetCurrentPlayerInfo");
+
+	Params::LootLockerManager_GetCurrentPlayerInfo Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.OnCompletedRequest = OnCompletedRequest;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.GetDefaultPlayerUlid
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::GetDefaultPlayerUlid()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "GetDefaultPlayerUlid");
+
+	Params::LootLockerManager_GetDefaultPlayerUlid Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetDLCsMigration
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerDlcResponse& Value)>&OnGotDlcMigration                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetDLCsMigration(const TDelegate<void(const struct FLootLockerDlcResponse& Value)>& OnGotDlcMigration)
+class FString ULootLockerManager::GetDLCsMigration(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerDlcResponse& Value)>& OnGotDlcMigration)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2119,6 +3282,7 @@ void ULootLockerManager::GetDLCsMigration(const TDelegate<void(const struct FLoo
 
 	Params::LootLockerManager_GetDLCsMigration Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnGotDlcMigration = OnGotDlcMigration;
 
 	auto Flgs = Func->FunctionFlags;
@@ -2127,15 +3291,19 @@ void ULootLockerManager::GetDLCsMigration(const TDelegate<void(const struct FLoo
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetEntirePersistentStorage
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerPersistentStorageItemsResponse& Response)>&OnPersistentStorageItemsRequestCompleted               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetEntirePersistentStorage(const TDelegate<void(const struct FLootLockerPersistentStorageItemsResponse& Response)>& OnPersistentStorageItemsRequestCompleted)
+class FString ULootLockerManager::GetEntirePersistentStorage(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerPersistentStorageItemsResponse& Response)>& OnPersistentStorageItemsRequestCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2144,6 +3312,7 @@ void ULootLockerManager::GetEntirePersistentStorage(const TDelegate<void(const s
 
 	Params::LootLockerManager_GetEntirePersistentStorage Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnPersistentStorageItemsRequestCompleted = OnPersistentStorageItemsRequestCompleted;
 
 	auto Flgs = Func->FunctionFlags;
@@ -2152,16 +3321,20 @@ void ULootLockerManager::GetEntirePersistentStorage(const TDelegate<void(const s
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetEntitlement
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    EntitlementId                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerSingleEntitlementResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetEntitlement(const class FString& EntitlementId, const TDelegate<void(const struct FLootLockerSingleEntitlementResponse& Response)>& OnComplete)
+class FString ULootLockerManager::GetEntitlement(const class FString& ForPlayerWithUlid, const class FString& EntitlementId, const TDelegate<void(const struct FLootLockerSingleEntitlementResponse& Response)>& OnComplete)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2170,6 +3343,7 @@ void ULootLockerManager::GetEntitlement(const class FString& EntitlementId, cons
 
 	Params::LootLockerManager_GetEntitlement Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.EntitlementId = std::move(EntitlementId);
 	Parms.OnComplete = OnComplete;
 
@@ -2179,16 +3353,20 @@ void ULootLockerManager::GetEntitlement(const class FString& EntitlementId, cons
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetEquipableContextsByCharacterId
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   OtherCharacterId                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerGetContextResponse& ContextsResponse)>&OnGetEquipableContextsByCharacterIdRequestCompleted    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetEquipableContextsByCharacterId(int32 OtherCharacterId, const TDelegate<void(const struct FLootLockerGetContextResponse& ContextsResponse)>& OnGetEquipableContextsByCharacterIdRequestCompleted)
+class FString ULootLockerManager::GetEquipableContextsByCharacterId(const class FString& ForPlayerWithUlid, int32 OtherCharacterId, const TDelegate<void(const struct FLootLockerGetContextResponse& ContextsResponse)>& OnGetEquipableContextsByCharacterIdRequestCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2197,6 +3375,7 @@ void ULootLockerManager::GetEquipableContextsByCharacterId(int32 OtherCharacterI
 
 	Params::LootLockerManager_GetEquipableContextsByCharacterId Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OtherCharacterId = OtherCharacterId;
 	Parms.OnGetEquipableContextsByCharacterIdRequestCompleted = OnGetEquipableContextsByCharacterIdRequestCompleted;
 
@@ -2206,15 +3385,19 @@ void ULootLockerManager::GetEquipableContextsByCharacterId(int32 OtherCharacterI
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetEquipableContextsToDefaultCharacter
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerGetContextResponse& ContextsResponse)>&OnGetEquipableContextsToDefaultCharacterRequestCompleted(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetEquipableContextsToDefaultCharacter(const TDelegate<void(const struct FLootLockerGetContextResponse& ContextsResponse)>& OnGetEquipableContextsToDefaultCharacterRequestCompleted)
+class FString ULootLockerManager::GetEquipableContextsToDefaultCharacter(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerGetContextResponse& ContextsResponse)>& OnGetEquipableContextsToDefaultCharacterRequestCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2223,6 +3406,7 @@ void ULootLockerManager::GetEquipableContextsToDefaultCharacter(const TDelegate<
 
 	Params::LootLockerManager_GetEquipableContextsToDefaultCharacter Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnGetEquipableContextsToDefaultCharacterRequestCompleted = OnGetEquipableContextsToDefaultCharacterRequestCompleted;
 
 	auto Flgs = Func->FunctionFlags;
@@ -2231,15 +3415,19 @@ void ULootLockerManager::GetEquipableContextsToDefaultCharacter(const TDelegate<
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetFavouriteAssetIndices
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerGetFavouriteAssetIndicesResponse& FavouriteAssetIndicesResponse)>&OnGetFavouriteAssetIndicesRequestCompleted             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetFavouriteAssetIndices(const TDelegate<void(const struct FLootLockerGetFavouriteAssetIndicesResponse& FavouriteAssetIndicesResponse)>& OnGetFavouriteAssetIndicesRequestCompleted)
+class FString ULootLockerManager::GetFavouriteAssetIndices(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerGetFavouriteAssetIndicesResponse& FavouriteAssetIndicesResponse)>& OnGetFavouriteAssetIndicesRequestCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2248,6 +3436,7 @@ void ULootLockerManager::GetFavouriteAssetIndices(const TDelegate<void(const str
 
 	Params::LootLockerManager_GetFavouriteAssetIndices Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnGetFavouriteAssetIndicesRequestCompleted = OnGetFavouriteAssetIndicesRequestCompleted;
 
 	auto Flgs = Func->FunctionFlags;
@@ -2256,15 +3445,83 @@ void ULootLockerManager::GetFavouriteAssetIndices(const TDelegate<void(const str
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.GetFriend
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    FriendUlid                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerGetFriendResponse& Response)>&OnResponseCompletedBP                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::GetFriend(const class FString& ForPlayerWithUlid, const class FString& FriendUlid, const TDelegate<void(const struct FLootLockerGetFriendResponse& Response)>& OnResponseCompletedBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "GetFriend");
+
+	Params::LootLockerManager_GetFriend Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.FriendUlid = std::move(FriendUlid);
+	Parms.OnResponseCompletedBP = OnResponseCompletedBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.GetFullInventory
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (ConstParm, Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   StartIndex                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerInventoryResponse& Value)>&OnGetInventoryRequestCompleted                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::GetFullInventory(const class FString& ForPlayerWithUlid, int32 StartIndex, const TDelegate<void(const struct FLootLockerInventoryResponse& Value)>& OnGetInventoryRequestCompleted)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "GetFullInventory");
+
+	Params::LootLockerManager_GetFullInventory Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.StartIndex = StartIndex;
+	Parms.OnGetInventoryRequestCompleted = OnGetInventoryRequestCompleted;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetGameHeroes
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerGameHeroListResponse& Response)>&OnCompleteBP                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetGameHeroes(const TDelegate<void(const struct FLootLockerGameHeroListResponse& Response)>& OnCompleteBP)
+class FString ULootLockerManager::GetGameHeroes(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerGameHeroListResponse& Response)>& OnCompleteBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2273,6 +3530,7 @@ void ULootLockerManager::GetGameHeroes(const TDelegate<void(const struct FLootLo
 
 	Params::LootLockerManager_GetGameHeroes Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnCompleteBP = OnCompleteBP;
 
 	auto Flgs = Func->FunctionFlags;
@@ -2281,16 +3539,48 @@ void ULootLockerManager::GetGameHeroes(const TDelegate<void(const struct FLootLo
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.GetGameInfo
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const TDelegate<void(const struct FLootLockerGameInfoResponse& Response)>&OnCompletedRequestBP                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::GetGameInfo(const TDelegate<void(const struct FLootLockerGameInfoResponse& Response)>& OnCompletedRequestBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "GetGameInfo");
+
+	Params::LootLockerManager_GetGameInfo Parms{};
+
+	Parms.OnCompletedRequestBP = OnCompletedRequestBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetHero
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             HeroID                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)>&OnCompleteBP                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetHero(const int32 HeroID, const TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)>& OnCompleteBP)
+class FString ULootLockerManager::GetHero(const class FString& ForPlayerWithUlid, const int32 HeroID, const TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)>& OnCompleteBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2299,6 +3589,7 @@ void ULootLockerManager::GetHero(const int32 HeroID, const TDelegate<void(const 
 
 	Params::LootLockerManager_GetHero Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.HeroID = HeroID;
 	Parms.OnCompleteBP = OnCompleteBP;
 
@@ -2308,16 +3599,20 @@ void ULootLockerManager::GetHero(const int32 HeroID, const TDelegate<void(const 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetHeroInventory
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             HeroID                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerInventoryResponse& Value)>&OnCompleteBP                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetHeroInventory(const int32 HeroID, const TDelegate<void(const struct FLootLockerInventoryResponse& Value)>& OnCompleteBP)
+class FString ULootLockerManager::GetHeroInventory(const class FString& ForPlayerWithUlid, const int32 HeroID, const TDelegate<void(const struct FLootLockerInventoryResponse& Value)>& OnCompleteBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2326,6 +3621,7 @@ void ULootLockerManager::GetHeroInventory(const int32 HeroID, const TDelegate<vo
 
 	Params::LootLockerManager_GetHeroInventory Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.HeroID = HeroID;
 	Parms.OnCompleteBP = OnCompleteBP;
 
@@ -2335,16 +3631,20 @@ void ULootLockerManager::GetHeroInventory(const int32 HeroID, const TDelegate<vo
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetHeroLoadout
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             HeroID                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)>&OnCompleteBP                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetHeroLoadout(const int32 HeroID, const TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)>& OnCompleteBP)
+class FString ULootLockerManager::GetHeroLoadout(const class FString& ForPlayerWithUlid, const int32 HeroID, const TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)>& OnCompleteBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2353,6 +3653,7 @@ void ULootLockerManager::GetHeroLoadout(const int32 HeroID, const TDelegate<void
 
 	Params::LootLockerManager_GetHeroLoadout Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.HeroID = HeroID;
 	Parms.OnCompleteBP = OnCompleteBP;
 
@@ -2362,17 +3663,21 @@ void ULootLockerManager::GetHeroLoadout(const int32 HeroID, const TDelegate<void
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetInstanceProgression
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             AssetInstanceId                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    ProgressionKey                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerInstanceProgressionResponse& Response)>&OnCompletedRequestBP                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetInstanceProgression(const int32 AssetInstanceId, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerInstanceProgressionResponse& Response)>& OnCompletedRequestBP)
+class FString ULootLockerManager::GetInstanceProgression(const class FString& ForPlayerWithUlid, const int32 AssetInstanceId, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerInstanceProgressionResponse& Response)>& OnCompletedRequestBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2381,6 +3686,7 @@ void ULootLockerManager::GetInstanceProgression(const int32 AssetInstanceId, con
 
 	Params::LootLockerManager_GetInstanceProgression Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.AssetInstanceId = AssetInstanceId;
 	Parms.ProgressionKey = std::move(ProgressionKey);
 	Parms.OnCompletedRequestBP = OnCompletedRequestBP;
@@ -2391,18 +3697,22 @@ void ULootLockerManager::GetInstanceProgression(const int32 AssetInstanceId, con
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetInstanceProgressions
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             AssetInstanceId                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             Count                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    after                                                  (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    After                                                  (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerPaginatedInstanceProgressionResponse& Response)>&OnCompletedRequestBP                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetInstanceProgressions(const int32 AssetInstanceId, const int32 Count, const class FString& after, const TDelegate<void(const struct FLootLockerPaginatedInstanceProgressionResponse& Response)>& OnCompletedRequestBP)
+class FString ULootLockerManager::GetInstanceProgressions(const class FString& ForPlayerWithUlid, const int32 AssetInstanceId, const int32 Count, const class FString& After, const TDelegate<void(const struct FLootLockerPaginatedInstanceProgressionResponse& Response)>& OnCompletedRequestBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2411,9 +3721,10 @@ void ULootLockerManager::GetInstanceProgressions(const int32 AssetInstanceId, co
 
 	Params::LootLockerManager_GetInstanceProgressions Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.AssetInstanceId = AssetInstanceId;
 	Parms.Count = Count;
-	Parms.after = std::move(after);
+	Parms.After = std::move(After);
 	Parms.OnCompletedRequestBP = OnCompletedRequestBP;
 
 	auto Flgs = Func->FunctionFlags;
@@ -2422,15 +3733,19 @@ void ULootLockerManager::GetInstanceProgressions(const int32 AssetInstanceId, co
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetInventory
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerInventoryResponse& Value)>&OnGetInventoryRequestCompleted                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetInventory(const TDelegate<void(const struct FLootLockerInventoryResponse& Value)>& OnGetInventoryRequestCompleted)
+class FString ULootLockerManager::GetInventory(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerInventoryResponse& Value)>& OnGetInventoryRequestCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2439,6 +3754,7 @@ void ULootLockerManager::GetInventory(const TDelegate<void(const struct FLootLoc
 
 	Params::LootLockerManager_GetInventory Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnGetInventoryRequestCompleted = OnGetInventoryRequestCompleted;
 
 	auto Flgs = Func->FunctionFlags;
@@ -2447,16 +3763,20 @@ void ULootLockerManager::GetInventory(const TDelegate<void(const struct FLootLoc
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetItemFromPersistentStorage
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerPersistentStorageItemResponse& Response)>&OnPersistentStorageItemRequestCompleted                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetItemFromPersistentStorage(const class FString& Key, const TDelegate<void(const struct FLootLockerPersistentStorageItemResponse& Response)>& OnPersistentStorageItemRequestCompleted)
+class FString ULootLockerManager::GetItemFromPersistentStorage(const class FString& ForPlayerWithUlid, const class FString& Key, const TDelegate<void(const struct FLootLockerPersistentStorageItemResponse& Response)>& OnPersistentStorageItemRequestCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2465,6 +3785,7 @@ void ULootLockerManager::GetItemFromPersistentStorage(const class FString& Key, 
 
 	Params::LootLockerManager_GetItemFromPersistentStorage Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.Key = std::move(Key);
 	Parms.OnPersistentStorageItemRequestCompleted = OnPersistentStorageItemRequestCompleted;
 
@@ -2474,15 +3795,18 @@ void ULootLockerManager::GetItemFromPersistentStorage(const class FString& Key, 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetLastActivePlatform
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString ULootLockerManager::GetLastActivePlatform()
+class FString ULootLockerManager::GetLastActivePlatform(const class FString& ForPlayerWithUlid)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2490,6 +3814,8 @@ class FString ULootLockerManager::GetLastActivePlatform()
 		Func = StaticClass()->GetFunction("LootLockerManager", "GetLastActivePlatform");
 
 	Params::LootLockerManager_GetLastActivePlatform Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2505,12 +3831,14 @@ class FString ULootLockerManager::GetLastActivePlatform()
 // Function LootLockerSDK.LootLockerManager.GetLeaderboardArchive
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    after                                                  (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    After                                                  (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerLeaderboardArchiveDetailsResponse& Response)>&OnCompletedRequestBP                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetLeaderboardArchive(const class FString& Key, int32 Count, const class FString& after, const TDelegate<void(const struct FLootLockerLeaderboardArchiveDetailsResponse& Response)>& OnCompletedRequestBP)
+class FString ULootLockerManager::GetLeaderboardArchive(const class FString& ForPlayerWithUlid, const class FString& Key, int32 Count, const class FString& After, const TDelegate<void(const struct FLootLockerLeaderboardArchiveDetailsResponse& Response)>& OnCompletedRequestBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2519,9 +3847,10 @@ void ULootLockerManager::GetLeaderboardArchive(const class FString& Key, int32 C
 
 	Params::LootLockerManager_GetLeaderboardArchive Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.Key = std::move(Key);
 	Parms.Count = Count;
-	Parms.after = std::move(after);
+	Parms.After = std::move(After);
 	Parms.OnCompletedRequestBP = OnCompletedRequestBP;
 
 	auto Flgs = Func->FunctionFlags;
@@ -2530,16 +3859,20 @@ void ULootLockerManager::GetLeaderboardArchive(const class FString& Key, int32 C
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetLeaderboardDetails
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    LeaderboardKey                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerLeaderboardDetailsResponse& Response)>&OnCompletedRequestBP                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetLeaderboardDetails(const class FString& LeaderboardKey, const TDelegate<void(const struct FLootLockerLeaderboardDetailsResponse& Response)>& OnCompletedRequestBP)
+class FString ULootLockerManager::GetLeaderboardDetails(const class FString& ForPlayerWithUlid, const class FString& LeaderboardKey, const TDelegate<void(const struct FLootLockerLeaderboardDetailsResponse& Response)>& OnCompletedRequestBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2548,6 +3881,7 @@ void ULootLockerManager::GetLeaderboardDetails(const class FString& LeaderboardK
 
 	Params::LootLockerManager_GetLeaderboardDetails Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.LeaderboardKey = std::move(LeaderboardKey);
 	Parms.OnCompletedRequestBP = OnCompletedRequestBP;
 
@@ -2557,15 +3891,19 @@ void ULootLockerManager::GetLeaderboardDetails(const class FString& LeaderboardK
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetMaps
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerGetMapsResponse& Response)>&OnGetMapsCompleted                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetMaps(const TDelegate<void(const struct FLootLockerGetMapsResponse& Response)>& OnGetMapsCompleted)
+class FString ULootLockerManager::GetMaps(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerGetMapsResponse& Response)>& OnGetMapsCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2574,6 +3912,7 @@ void ULootLockerManager::GetMaps(const TDelegate<void(const struct FLootLockerGe
 
 	Params::LootLockerManager_GetMaps Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnGetMapsCompleted = OnGetMapsCompleted;
 
 	auto Flgs = Func->FunctionFlags;
@@ -2582,17 +3921,21 @@ void ULootLockerManager::GetMaps(const TDelegate<void(const struct FLootLockerGe
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetMemberRank
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    LeaderboardKey                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    MemberId                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerGetMemberRankResponse& Response)>&OnCompletedRequestBP                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetMemberRank(const class FString& LeaderboardKey, const class FString& MemberId, const TDelegate<void(const struct FLootLockerGetMemberRankResponse& Response)>& OnCompletedRequestBP)
+class FString ULootLockerManager::GetMemberRank(const class FString& ForPlayerWithUlid, const class FString& LeaderboardKey, const class FString& MemberId, const TDelegate<void(const struct FLootLockerGetMemberRankResponse& Response)>& OnCompletedRequestBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2601,6 +3944,7 @@ void ULootLockerManager::GetMemberRank(const class FString& LeaderboardKey, cons
 
 	Params::LootLockerManager_GetMemberRank Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.LeaderboardKey = std::move(LeaderboardKey);
 	Parms.MemberId = std::move(MemberId);
 	Parms.OnCompletedRequestBP = OnCompletedRequestBP;
@@ -2611,15 +3955,19 @@ void ULootLockerManager::GetMemberRank(const class FString& LeaderboardKey, cons
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetMessages
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerMessagesResponse& Response)>&OnGetMessagesCompleted                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetMessages(const TDelegate<void(const struct FLootLockerMessagesResponse& Response)>& OnGetMessagesCompleted)
+class FString ULootLockerManager::GetMessages(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerMessagesResponse& Response)>& OnGetMessagesCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2628,6 +3976,7 @@ void ULootLockerManager::GetMessages(const TDelegate<void(const struct FLootLock
 
 	Params::LootLockerManager_GetMessages Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnGetMessagesCompleted = OnGetMessagesCompleted;
 
 	auto Flgs = Func->FunctionFlags;
@@ -2636,16 +3985,58 @@ void ULootLockerManager::GetMessages(const TDelegate<void(const struct FLootLock
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.GetMetadata
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const ELootLockerMetadataSources        Source                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SourceID                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              IgnoreFiles                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerGetMetadataResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::GetMetadata(const class FString& ForPlayerWithUlid, const ELootLockerMetadataSources Source, const class FString& SourceID, const class FString& Key, const bool IgnoreFiles, const TDelegate<void(const struct FLootLockerGetMetadataResponse& Response)>& OnComplete)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "GetMetadata");
+
+	Params::LootLockerManager_GetMetadata Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.Source = Source;
+	Parms.SourceID = std::move(SourceID);
+	Parms.Key = std::move(Key);
+	Parms.IgnoreFiles = IgnoreFiles;
+	Parms.OnComplete = OnComplete;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetMission
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   MissionId                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerMissionResponse& Response)>&OnGetMissionCompleted                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetMission(int32 MissionId, const TDelegate<void(const struct FLootLockerMissionResponse& Response)>& OnGetMissionCompleted)
+class FString ULootLockerManager::GetMission(const class FString& ForPlayerWithUlid, int32 MissionId, const TDelegate<void(const struct FLootLockerMissionResponse& Response)>& OnGetMissionCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2654,6 +4045,7 @@ void ULootLockerManager::GetMission(int32 MissionId, const TDelegate<void(const 
 
 	Params::LootLockerManager_GetMission Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.MissionId = MissionId;
 	Parms.OnGetMissionCompleted = OnGetMissionCompleted;
 
@@ -2663,28 +4055,33 @@ void ULootLockerManager::GetMission(int32 MissionId, const TDelegate<void(const 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
-// Function LootLockerSDK.LootLockerManager.GetMultiplePlayersXp
+// Function LootLockerSDK.LootLockerManager.GetMultisourceMetadata
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// const class FString&                    Platform                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const TArray<class FString>&            PlayerIDs                                              (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// const TDelegate<void(const struct FLootLockerMultiplePlayerXpResponse& Value)>&OnGetOtherPlayerInfoRequestCompleted                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<struct FLootLockerMetadataSourceAndKeys>&SourcesAndKeysToGet                                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const bool                              IgnoreFiles                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerGetMultisourceMetadataResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetMultiplePlayersXp(const class FString& Platform, const TArray<class FString>& PlayerIDs, const TDelegate<void(const struct FLootLockerMultiplePlayerXpResponse& Value)>& OnGetOtherPlayerInfoRequestCompleted)
+class FString ULootLockerManager::GetMultisourceMetadata(const class FString& ForPlayerWithUlid, const TArray<struct FLootLockerMetadataSourceAndKeys>& SourcesAndKeysToGet, const bool IgnoreFiles, const TDelegate<void(const struct FLootLockerGetMultisourceMetadataResponse& Response)>& OnComplete)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("LootLockerManager", "GetMultiplePlayersXp");
+		Func = StaticClass()->GetFunction("LootLockerManager", "GetMultisourceMetadata");
 
-	Params::LootLockerManager_GetMultiplePlayersXp Parms{};
+	Params::LootLockerManager_GetMultisourceMetadata Parms{};
 
-	Parms.Platform = std::move(Platform);
-	Parms.PlayerIDs = std::move(PlayerIDs);
-	Parms.OnGetOtherPlayerInfoRequestCompleted = OnGetOtherPlayerInfoRequestCompleted;
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.SourcesAndKeysToGet = std::move(SourcesAndKeysToGet);
+	Parms.IgnoreFiles = IgnoreFiles;
+	Parms.OnComplete = OnComplete;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2692,28 +4089,33 @@ void ULootLockerManager::GetMultiplePlayersXp(const class FString& Platform, con
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
-// Function LootLockerSDK.LootLockerManager.GetOrderDetails
+// Function LootLockerSDK.LootLockerManager.GetOtherPlayersCharacterLoadouts
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// int32                                   OrderId                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const bool                              NoProducts                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const TDelegate<void(const struct FLootLockerOrderDetailsResponse& Response)>&OnCompleteBP                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    OtherPlayerId                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    OtherPlayerPlatform                                    (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetOrderDetails(int32 OrderId, const bool NoProducts, const TDelegate<void(const struct FLootLockerOrderDetailsResponse& Response)>& OnCompleteBP)
+class FString ULootLockerManager::GetOtherPlayersCharacterLoadouts(const class FString& ForPlayerWithUlid, const class FString& OtherPlayerId, const class FString& OtherPlayerPlatform, const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("LootLockerManager", "GetOrderDetails");
+		Func = StaticClass()->GetFunction("LootLockerManager", "GetOtherPlayersCharacterLoadouts");
 
-	Params::LootLockerManager_GetOrderDetails Parms{};
+	Params::LootLockerManager_GetOtherPlayersCharacterLoadouts Parms{};
 
-	Parms.OrderId = OrderId;
-	Parms.NoProducts = NoProducts;
-	Parms.OnCompleteBP = OnCompleteBP;
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.OtherPlayerId = std::move(OtherPlayerId);
+	Parms.OtherPlayerPlatform = std::move(OtherPlayerPlatform);
+	Parms.OnCompletedRequest = OnCompletedRequest;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2721,17 +4123,53 @@ void ULootLockerManager::GetOrderDetails(int32 OrderId, const bool NoProducts, c
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.GetOtherPlayersCharacterLoadoutsByUid
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    OtherPlayerUid                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::GetOtherPlayersCharacterLoadoutsByUid(const class FString& ForPlayerWithUlid, const class FString& OtherPlayerUid, const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>& OnCompletedRequest)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "GetOtherPlayersCharacterLoadoutsByUid");
+
+	Params::LootLockerManager_GetOtherPlayersCharacterLoadoutsByUid Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.OtherPlayerUid = std::move(OtherPlayerUid);
+	Parms.OnCompletedRequest = OnCompletedRequest;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetOtherPlayersCurrentLoadoutToDefaultCharacter
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    OtherPlayerId                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>&OnGetOtherPlayersCurrentLoadoutToDefaultCharacterRequestCompleted(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // const class FString&                    OtherPlayerPlatform                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetOtherPlayersCurrentLoadoutToDefaultCharacter(const class FString& OtherPlayerId, const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>& OnGetOtherPlayersCurrentLoadoutToDefaultCharacterRequestCompleted, const class FString& OtherPlayerPlatform)
+class FString ULootLockerManager::GetOtherPlayersCurrentLoadoutToDefaultCharacter(const class FString& ForPlayerWithUlid, const class FString& OtherPlayerId, const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>& OnGetOtherPlayersCurrentLoadoutToDefaultCharacterRequestCompleted, const class FString& OtherPlayerPlatform)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2740,6 +4178,7 @@ void ULootLockerManager::GetOtherPlayersCurrentLoadoutToDefaultCharacter(const c
 
 	Params::LootLockerManager_GetOtherPlayersCurrentLoadoutToDefaultCharacter Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OtherPlayerId = std::move(OtherPlayerId);
 	Parms.OnGetOtherPlayersCurrentLoadoutToDefaultCharacterRequestCompleted = OnGetOtherPlayersCurrentLoadoutToDefaultCharacterRequestCompleted;
 	Parms.OtherPlayerPlatform = std::move(OtherPlayerPlatform);
@@ -2750,16 +4189,20 @@ void ULootLockerManager::GetOtherPlayersCurrentLoadoutToDefaultCharacter(const c
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetOtherPlayersDefaultHeroBySteamID64
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             SteamID64                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)>&OnCompleteBP                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetOtherPlayersDefaultHeroBySteamID64(const int32 SteamID64, const TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)>& OnCompleteBP)
+class FString ULootLockerManager::GetOtherPlayersDefaultHeroBySteamID64(const class FString& ForPlayerWithUlid, const int32 SteamID64, const TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)>& OnCompleteBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2768,6 +4211,7 @@ void ULootLockerManager::GetOtherPlayersDefaultHeroBySteamID64(const int32 Steam
 
 	Params::LootLockerManager_GetOtherPlayersDefaultHeroBySteamID64 Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.SteamID64 = SteamID64;
 	Parms.OnCompleteBP = OnCompleteBP;
 
@@ -2777,16 +4221,20 @@ void ULootLockerManager::GetOtherPlayersDefaultHeroBySteamID64(const int32 Steam
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetOtherPlayersHeroLoadout
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             HeroID                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)>&OnCompleteBP                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetOtherPlayersHeroLoadout(const int32 HeroID, const TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)>& OnCompleteBP)
+class FString ULootLockerManager::GetOtherPlayersHeroLoadout(const class FString& ForPlayerWithUlid, const int32 HeroID, const TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)>& OnCompleteBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2795,6 +4243,7 @@ void ULootLockerManager::GetOtherPlayersHeroLoadout(const int32 HeroID, const TD
 
 	Params::LootLockerManager_GetOtherPlayersHeroLoadout Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.HeroID = HeroID;
 	Parms.OnCompleteBP = OnCompleteBP;
 
@@ -2804,28 +4253,33 @@ void ULootLockerManager::GetOtherPlayersHeroLoadout(const int32 HeroID, const TD
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
-// Function LootLockerSDK.LootLockerManager.GetOtherPlayersXpAndLevel
+// Function LootLockerSDK.LootLockerManager.GetOtherPlayersProgression
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// const class FString&                    OtherPlayerId                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const TDelegate<void(const struct FLootLockerOtherPlayersXpAndLevelResponse& Value)>&OnGetOtherPlayersXpAndLevelRequestCompleted            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// const class FString&                    OtherPlayerPlatform                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    PlayerUlid                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ProgressionKey                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerPlayerProgressionResponse& Response)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetOtherPlayersXpAndLevel(const class FString& OtherPlayerId, const TDelegate<void(const struct FLootLockerOtherPlayersXpAndLevelResponse& Value)>& OnGetOtherPlayersXpAndLevelRequestCompleted, const class FString& OtherPlayerPlatform)
+class FString ULootLockerManager::GetOtherPlayersProgression(const class FString& ForPlayerWithUlid, const class FString& PlayerUlid, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerPlayerProgressionResponse& Response)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("LootLockerManager", "GetOtherPlayersXpAndLevel");
+		Func = StaticClass()->GetFunction("LootLockerManager", "GetOtherPlayersProgression");
 
-	Params::LootLockerManager_GetOtherPlayersXpAndLevel Parms{};
+	Params::LootLockerManager_GetOtherPlayersProgression Parms{};
 
-	Parms.OtherPlayerId = std::move(OtherPlayerId);
-	Parms.OnGetOtherPlayersXpAndLevelRequestCompleted = OnGetOtherPlayersXpAndLevelRequestCompleted;
-	Parms.OtherPlayerPlatform = std::move(OtherPlayerPlatform);
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.PlayerUlid = std::move(PlayerUlid);
+	Parms.ProgressionKey = std::move(ProgressionKey);
+	Parms.OnCompletedRequest = OnCompletedRequest;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2833,24 +4287,35 @@ void ULootLockerManager::GetOtherPlayersXpAndLevel(const class FString& OtherPla
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
-// Function LootLockerSDK.LootLockerManager.GetPlayerInfo
+// Function LootLockerSDK.LootLockerManager.GetOtherPlayersProgressions
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// const TDelegate<void(const struct FLootLockerPlayerInfoResponse& Value)>&OnGetPlayerInfoRequestComplete                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    PlayerUlid                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             Count                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    After                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerPaginatedPlayerProgressionResponse& Response)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetPlayerInfo(const TDelegate<void(const struct FLootLockerPlayerInfoResponse& Value)>& OnGetPlayerInfoRequestComplete)
+class FString ULootLockerManager::GetOtherPlayersProgressions(const class FString& ForPlayerWithUlid, const class FString& PlayerUlid, const int32 Count, const class FString& After, const TDelegate<void(const struct FLootLockerPaginatedPlayerProgressionResponse& Response)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("LootLockerManager", "GetPlayerInfo");
+		Func = StaticClass()->GetFunction("LootLockerManager", "GetOtherPlayersProgressions");
 
-	Params::LootLockerManager_GetPlayerInfo Parms{};
+	Params::LootLockerManager_GetOtherPlayersProgressions Parms{};
 
-	Parms.OnGetPlayerInfoRequestComplete = OnGetPlayerInfoRequestComplete;
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.PlayerUlid = std::move(PlayerUlid);
+	Parms.Count = Count;
+	Parms.After = std::move(After);
+	Parms.OnCompletedRequest = OnCompletedRequest;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2858,15 +4323,19 @@ void ULootLockerManager::GetPlayerInfo(const TDelegate<void(const struct FLootLo
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetPlayerName
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerNameResponse& Value)>&OnGetPlayerName                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetPlayerName(const TDelegate<void(const struct FLootLockerNameResponse& Value)>& OnGetPlayerName)
+class FString ULootLockerManager::GetPlayerName(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerNameResponse& Value)>& OnGetPlayerName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2875,6 +4344,7 @@ void ULootLockerManager::GetPlayerName(const TDelegate<void(const struct FLootLo
 
 	Params::LootLockerManager_GetPlayerName Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnGetPlayerName = OnGetPlayerName;
 
 	auto Flgs = Func->FunctionFlags;
@@ -2883,16 +4353,20 @@ void ULootLockerManager::GetPlayerName(const TDelegate<void(const struct FLootLo
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetPlayerPersistentStorage
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    PlayerId                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerPersistentStorageItemsResponse& Response)>&OnGetPlayerPersistentStorageRequestCompleted           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetPlayerPersistentStorage(const class FString& PlayerId, const TDelegate<void(const struct FLootLockerPersistentStorageItemsResponse& Response)>& OnGetPlayerPersistentStorageRequestCompleted)
+class FString ULootLockerManager::GetPlayerPersistentStorage(const class FString& ForPlayerWithUlid, const class FString& PlayerId, const TDelegate<void(const struct FLootLockerPersistentStorageItemsResponse& Response)>& OnGetPlayerPersistentStorageRequestCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2901,6 +4375,7 @@ void ULootLockerManager::GetPlayerPersistentStorage(const class FString& PlayerI
 
 	Params::LootLockerManager_GetPlayerPersistentStorage Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.PlayerId = std::move(PlayerId);
 	Parms.OnGetPlayerPersistentStorageRequestCompleted = OnGetPlayerPersistentStorageRequestCompleted;
 
@@ -2910,16 +4385,20 @@ void ULootLockerManager::GetPlayerPersistentStorage(const class FString& PlayerI
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetPlayerProgression
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    ProgressionKey                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerPlayerProgressionResponse& Response)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetPlayerProgression(const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerPlayerProgressionResponse& Response)>& OnCompletedRequest)
+class FString ULootLockerManager::GetPlayerProgression(const class FString& ForPlayerWithUlid, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerPlayerProgressionResponse& Response)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2928,6 +4407,7 @@ void ULootLockerManager::GetPlayerProgression(const class FString& ProgressionKe
 
 	Params::LootLockerManager_GetPlayerProgression Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.ProgressionKey = std::move(ProgressionKey);
 	Parms.OnCompletedRequest = OnCompletedRequest;
 
@@ -2937,17 +4417,21 @@ void ULootLockerManager::GetPlayerProgression(const class FString& ProgressionKe
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetPlayerProgressions
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             Count                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    after                                                  (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    After                                                  (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerPaginatedPlayerProgressionResponse& Response)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetPlayerProgressions(const int32 Count, const class FString& after, const TDelegate<void(const struct FLootLockerPaginatedPlayerProgressionResponse& Response)>& OnCompletedRequest)
+class FString ULootLockerManager::GetPlayerProgressions(const class FString& ForPlayerWithUlid, const int32 Count, const class FString& After, const TDelegate<void(const struct FLootLockerPaginatedPlayerProgressionResponse& Response)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2956,8 +4440,9 @@ void ULootLockerManager::GetPlayerProgressions(const int32 Count, const class FS
 
 	Params::LootLockerManager_GetPlayerProgressions Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.Count = Count;
-	Parms.after = std::move(after);
+	Parms.After = std::move(After);
 	Parms.OnCompletedRequest = OnCompletedRequest;
 
 	auto Flgs = Func->FunctionFlags;
@@ -2966,16 +4451,20 @@ void ULootLockerManager::GetPlayerProgressions(const int32 Count, const class FS
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetProgression
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    ProgressionKey                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerProgressionResponse& Response)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetProgression(const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerProgressionResponse& Response)>& OnCompletedRequest)
+class FString ULootLockerManager::GetProgression(const class FString& ForPlayerWithUlid, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerProgressionResponse& Response)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2984,6 +4473,7 @@ void ULootLockerManager::GetProgression(const class FString& ProgressionKey, con
 
 	Params::LootLockerManager_GetProgression Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.ProgressionKey = std::move(ProgressionKey);
 	Parms.OnCompletedRequest = OnCompletedRequest;
 
@@ -2993,17 +4483,21 @@ void ULootLockerManager::GetProgression(const class FString& ProgressionKey, con
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetProgressions
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             Count                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    after                                                  (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    After                                                  (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerPaginatedProgressionsResponse& Response)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetProgressions(const int32 Count, const class FString& after, const TDelegate<void(const struct FLootLockerPaginatedProgressionsResponse& Response)>& OnCompletedRequest)
+class FString ULootLockerManager::GetProgressions(const class FString& ForPlayerWithUlid, const int32 Count, const class FString& After, const TDelegate<void(const struct FLootLockerPaginatedProgressionsResponse& Response)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3012,8 +4506,9 @@ void ULootLockerManager::GetProgressions(const int32 Count, const class FString&
 
 	Params::LootLockerManager_GetProgressions Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.Count = Count;
-	Parms.after = std::move(after);
+	Parms.After = std::move(After);
 	Parms.OnCompletedRequest = OnCompletedRequest;
 
 	auto Flgs = Func->FunctionFlags;
@@ -3022,18 +4517,22 @@ void ULootLockerManager::GetProgressions(const int32 Count, const class FString&
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetProgressionTiers
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    ProgressionKey                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             Count                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const int32                             after                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             After                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerPaginatedProgressionTiersResponse& Response)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetProgressionTiers(const class FString& ProgressionKey, const int32 Count, const int32 after, const TDelegate<void(const struct FLootLockerPaginatedProgressionTiersResponse& Response)>& OnCompletedRequest)
+class FString ULootLockerManager::GetProgressionTiers(const class FString& ForPlayerWithUlid, const class FString& ProgressionKey, const int32 Count, const int32 After, const TDelegate<void(const struct FLootLockerPaginatedProgressionTiersResponse& Response)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3042,9 +4541,10 @@ void ULootLockerManager::GetProgressionTiers(const class FString& ProgressionKey
 
 	Params::LootLockerManager_GetProgressionTiers Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.ProgressionKey = std::move(ProgressionKey);
 	Parms.Count = Count;
-	Parms.after = after;
+	Parms.After = After;
 	Parms.OnCompletedRequest = OnCompletedRequest;
 
 	auto Flgs = Func->FunctionFlags;
@@ -3053,18 +4553,50 @@ void ULootLockerManager::GetProgressionTiers(const class FString& ProgressionKey
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.GetSavedStateOrDefaultOrEmptyForPlayer
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    PlayerUlid                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FLootLockerPlayerData            ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FLootLockerPlayerData ULootLockerManager::GetSavedStateOrDefaultOrEmptyForPlayer(const class FString& PlayerUlid)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "GetSavedStateOrDefaultOrEmptyForPlayer");
+
+	Params::LootLockerManager_GetSavedStateOrDefaultOrEmptyForPlayer Parms{};
+
+	Parms.PlayerUlid = std::move(PlayerUlid);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetScoreList
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    LeaderboardKey                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   after                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   After                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerGetScoreListResponse& Response)>&OnCompletedRequestBP                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetScoreList(const class FString& LeaderboardKey, int32 Count, int32 after, const TDelegate<void(const struct FLootLockerGetScoreListResponse& Response)>& OnCompletedRequestBP)
+class FString ULootLockerManager::GetScoreList(const class FString& ForPlayerWithUlid, const class FString& LeaderboardKey, int32 Count, int32 After, const TDelegate<void(const struct FLootLockerGetScoreListResponse& Response)>& OnCompletedRequestBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3073,9 +4605,10 @@ void ULootLockerManager::GetScoreList(const class FString& LeaderboardKey, int32
 
 	Params::LootLockerManager_GetScoreList Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.LeaderboardKey = std::move(LeaderboardKey);
 	Parms.Count = Count;
-	Parms.after = after;
+	Parms.After = After;
 	Parms.OnCompletedRequestBP = OnCompletedRequestBP;
 
 	auto Flgs = Func->FunctionFlags;
@@ -3084,17 +4617,21 @@ void ULootLockerManager::GetScoreList(const class FString& LeaderboardKey, int32
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetScoreListInitial
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    LeaderboardKey                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerGetScoreListResponse& Response)>&OnCompletedRequestBP                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetScoreListInitial(const class FString& LeaderboardKey, int32 Count, const TDelegate<void(const struct FLootLockerGetScoreListResponse& Response)>& OnCompletedRequestBP)
+class FString ULootLockerManager::GetScoreListInitial(const class FString& ForPlayerWithUlid, const class FString& LeaderboardKey, int32 Count, const TDelegate<void(const struct FLootLockerGetScoreListResponse& Response)>& OnCompletedRequestBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3103,6 +4640,7 @@ void ULootLockerManager::GetScoreListInitial(const class FString& LeaderboardKey
 
 	Params::LootLockerManager_GetScoreListInitial Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.LeaderboardKey = std::move(LeaderboardKey);
 	Parms.Count = Count;
 	Parms.OnCompletedRequestBP = OnCompletedRequestBP;
@@ -3113,15 +4651,19 @@ void ULootLockerManager::GetScoreListInitial(const class FString& LeaderboardKey
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetServerTime
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerTimeResponse& Response)>&OnCompletedRequestBP                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetServerTime(const TDelegate<void(const struct FLootLockerTimeResponse& Response)>& OnCompletedRequestBP)
+class FString ULootLockerManager::GetServerTime(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerTimeResponse& Response)>& OnCompletedRequestBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3130,6 +4672,7 @@ void ULootLockerManager::GetServerTime(const TDelegate<void(const struct FLootLo
 
 	Params::LootLockerManager_GetServerTime Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnCompletedRequestBP = OnCompletedRequestBP;
 
 	auto Flgs = Func->FunctionFlags;
@@ -3138,16 +4681,20 @@ void ULootLockerManager::GetServerTime(const TDelegate<void(const struct FLootLo
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetSingleFile
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             FileId                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerPlayerFileResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetSingleFile(const int32 FileId, const TDelegate<void(const struct FLootLockerPlayerFileResponse& Response)>& OnComplete)
+class FString ULootLockerManager::GetSingleFile(const class FString& ForPlayerWithUlid, const int32 FileId, const TDelegate<void(const struct FLootLockerPlayerFileResponse& Response)>& OnComplete)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3156,6 +4703,7 @@ void ULootLockerManager::GetSingleFile(const int32 FileId, const TDelegate<void(
 
 	Params::LootLockerManager_GetSingleFile Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.FileId = FileId;
 	Parms.OnComplete = OnComplete;
 
@@ -3165,42 +4713,21 @@ void ULootLockerManager::GetSingleFile(const int32 FileId, const TDelegate<void(
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
 
-
-// Function LootLockerSDK.LootLockerManager.GetTriggeredEvents
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const TDelegate<void(const struct FLootLockerTriggersResponse& Value)>&OnGetTriggeredEventsCompleted                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void ULootLockerManager::GetTriggeredEvents(const TDelegate<void(const struct FLootLockerTriggersResponse& Value)>& OnGetTriggeredEventsCompleted)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("LootLockerManager", "GetTriggeredEvents");
-
-	Params::LootLockerManager_GetTriggeredEvents Parms{};
-
-	Parms.OnGetTriggeredEventsCompleted = OnGetTriggeredEventsCompleted;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetUniversalAssets
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// int32                                   after                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   After                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ItemsCount                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerUniversalAssetsResponse& UniversalAssetsResponse)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetUniversalAssets(int32 after, int32 ItemsCount, const TDelegate<void(const struct FLootLockerUniversalAssetsResponse& UniversalAssetsResponse)>& OnCompletedRequest)
+class FString ULootLockerManager::GetUniversalAssets(const class FString& ForPlayerWithUlid, int32 After, int32 ItemsCount, const TDelegate<void(const struct FLootLockerUniversalAssetsResponse& UniversalAssetsResponse)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3209,7 +4736,8 @@ void ULootLockerManager::GetUniversalAssets(int32 after, int32 ItemsCount, const
 
 	Params::LootLockerManager_GetUniversalAssets Parms{};
 
-	Parms.after = after;
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.After = After;
 	Parms.ItemsCount = ItemsCount;
 	Parms.OnCompletedRequest = OnCompletedRequest;
 
@@ -3219,17 +4747,21 @@ void ULootLockerManager::GetUniversalAssets(int32 after, int32 ItemsCount, const
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetWalletByHolderID
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    HolderULID                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const ELootLockerWalletHolderTypes&     HolderType                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerGetWalletResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetWalletByHolderID(const class FString& HolderULID, const ELootLockerWalletHolderTypes& HolderType, const TDelegate<void(const struct FLootLockerGetWalletResponse& Response)>& OnComplete)
+class FString ULootLockerManager::GetWalletByHolderID(const class FString& ForPlayerWithUlid, const class FString& HolderULID, const ELootLockerWalletHolderTypes& HolderType, const TDelegate<void(const struct FLootLockerGetWalletResponse& Response)>& OnComplete)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3238,6 +4770,7 @@ void ULootLockerManager::GetWalletByHolderID(const class FString& HolderULID, co
 
 	Params::LootLockerManager_GetWalletByHolderID Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.HolderULID = std::move(HolderULID);
 	Parms.HolderType = HolderType;
 	Parms.OnComplete = OnComplete;
@@ -3248,16 +4781,20 @@ void ULootLockerManager::GetWalletByHolderID(const class FString& HolderULID, co
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GetWalletByWalletID
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    WalletID                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerGetWalletResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GetWalletByWalletID(const class FString& WalletID, const TDelegate<void(const struct FLootLockerGetWalletResponse& Response)>& OnComplete)
+class FString ULootLockerManager::GetWalletByWalletID(const class FString& ForPlayerWithUlid, const class FString& WalletID, const TDelegate<void(const struct FLootLockerGetWalletResponse& Response)>& OnComplete)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3266,6 +4803,7 @@ void ULootLockerManager::GetWalletByWalletID(const class FString& WalletID, cons
 
 	Params::LootLockerManager_GetWalletByWalletID Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.WalletID = std::move(WalletID);
 	Parms.OnComplete = OnComplete;
 
@@ -3275,16 +4813,20 @@ void ULootLockerManager::GetWalletByWalletID(const class FString& WalletID, cons
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GrantAssetToPlayerInventory
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             AssetId                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerGrantAssetResponse& Response)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GrantAssetToPlayerInventory(const int32 AssetId, const TDelegate<void(const struct FLootLockerGrantAssetResponse& Response)>& OnCompletedRequest)
+class FString ULootLockerManager::GrantAssetToPlayerInventory(const class FString& ForPlayerWithUlid, const int32 AssetId, const TDelegate<void(const struct FLootLockerGrantAssetResponse& Response)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3293,6 +4835,7 @@ void ULootLockerManager::GrantAssetToPlayerInventory(const int32 AssetId, const 
 
 	Params::LootLockerManager_GrantAssetToPlayerInventory Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.AssetId = AssetId;
 	Parms.OnCompletedRequest = OnCompletedRequest;
 
@@ -3302,18 +4845,22 @@ void ULootLockerManager::GrantAssetToPlayerInventory(const int32 AssetId, const 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.GrantAssetWithVariationToPlayerInventory
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             AssetId                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             AssetVariationID                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             AssetRentalOptionID                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerGrantAssetResponse& Response)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GrantAssetWithVariationToPlayerInventory(const int32 AssetId, const int32 AssetVariationID, const int32 AssetRentalOptionID, const TDelegate<void(const struct FLootLockerGrantAssetResponse& Response)>& OnCompletedRequest)
+class FString ULootLockerManager::GrantAssetWithVariationToPlayerInventory(const class FString& ForPlayerWithUlid, const int32 AssetId, const int32 AssetVariationID, const int32 AssetRentalOptionID, const TDelegate<void(const struct FLootLockerGrantAssetResponse& Response)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3322,6 +4869,7 @@ void ULootLockerManager::GrantAssetWithVariationToPlayerInventory(const int32 As
 
 	Params::LootLockerManager_GrantAssetWithVariationToPlayerInventory Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.AssetId = AssetId;
 	Parms.AssetVariationID = AssetVariationID;
 	Parms.AssetRentalOptionID = AssetRentalOptionID;
@@ -3333,6 +4881,8 @@ void ULootLockerManager::GrantAssetWithVariationToPlayerInventory(const int32 As
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -3341,8 +4891,10 @@ void ULootLockerManager::GrantAssetWithVariationToPlayerInventory(const int32 As
 // Parameters:
 // const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>&OnCompletedRequestBP                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // const class FString&                    PlayerIdentifier                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FLootLockerSessionOptionals&Optionals                                              (ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::GuestLogin(const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnCompletedRequestBP, const class FString& PlayerIdentifier)
+class FString ULootLockerManager::GuestLogin(const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnCompletedRequestBP, const class FString& PlayerIdentifier, const struct FLootLockerSessionOptionals& Optionals)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3353,6 +4905,7 @@ void ULootLockerManager::GuestLogin(const TDelegate<void(const struct FLootLocke
 
 	Parms.OnCompletedRequestBP = OnCompletedRequestBP;
 	Parms.PlayerIdentifier = std::move(PlayerIdentifier);
+	Parms.Optionals = std::move(Optionals);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3360,15 +4913,55 @@ void ULootLockerManager::GuestLogin(const TDelegate<void(const struct FLootLocke
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.IncrementScore
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    MemberId                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    LeaderboardKey                                         (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             Amount                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerSubmitScoreResponse& Response)>&OnCompletedRequestBP                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::IncrementScore(const class FString& MemberId, const class FString& LeaderboardKey, const int32 Amount, const TDelegate<void(const struct FLootLockerSubmitScoreResponse& Response)>& OnCompletedRequestBP, const class FString& ForPlayerWithUlid)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "IncrementScore");
+
+	Params::LootLockerManager_IncrementScore Parms{};
+
+	Parms.MemberId = std::move(MemberId);
+	Parms.LeaderboardKey = std::move(LeaderboardKey);
+	Parms.Amount = Amount;
+	Parms.OnCompletedRequestBP = OnCompletedRequestBP;
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.InitiateDLCMigration
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Response)>&OnInitiateDlcMigration                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::InitiateDLCMigration(const TDelegate<void(const struct FLootLockerResponse& Response)>& OnInitiateDlcMigration)
+class FString ULootLockerManager::InitiateDLCMigration(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnInitiateDlcMigration)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3377,6 +4970,7 @@ void ULootLockerManager::InitiateDLCMigration(const TDelegate<void(const struct 
 
 	Params::LootLockerManager_InitiateDLCMigration Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnInitiateDlcMigration = OnInitiateDlcMigration;
 
 	auto Flgs = Func->FunctionFlags;
@@ -3385,16 +4979,20 @@ void ULootLockerManager::InitiateDLCMigration(const TDelegate<void(const struct 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.InspectLootBox
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   AssetInstanceId                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerLootBoxContentResponse& Response)>&OnInspectLootBoxCompleted                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::InspectLootBox(int32 AssetInstanceId, const TDelegate<void(const struct FLootLockerLootBoxContentResponse& Response)>& OnInspectLootBoxCompleted)
+class FString ULootLockerManager::InspectLootBox(const class FString& ForPlayerWithUlid, int32 AssetInstanceId, const TDelegate<void(const struct FLootLockerLootBoxContentResponse& Response)>& OnInspectLootBoxCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3403,6 +5001,7 @@ void ULootLockerManager::InspectLootBox(int32 AssetInstanceId, const TDelegate<v
 
 	Params::LootLockerManager_InspectLootBox Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.AssetInstanceId = AssetInstanceId;
 	Parms.OnInspectLootBoxCompleted = OnInspectLootBoxCompleted;
 
@@ -3412,16 +5011,122 @@ void ULootLockerManager::InspectLootBox(int32 AssetInstanceId, const TDelegate<v
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.InvokeTriggersByKey
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            KeysToInvoke                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerInvokeTriggersByKeyResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::InvokeTriggersByKey(const class FString& ForPlayerWithUlid, const TArray<class FString>& KeysToInvoke, const TDelegate<void(const struct FLootLockerInvokeTriggersByKeyResponse& Response)>& OnComplete)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "InvokeTriggersByKey");
+
+	Params::LootLockerManager_InvokeTriggersByKey Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.KeysToInvoke = std::move(KeysToInvoke);
+	Parms.OnComplete = OnComplete;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.ListAssets
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FLootLockerListSimpleAssetsRequest&Request                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// int32                                   PerPage                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Page                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ELootLockerOrderAssetListBy             OrderBy                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ELootLockerOrderAssetListDirection      OrderDirection                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerListSimpleAssetsResponse& Response)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::ListAssets(const class FString& ForPlayerWithUlid, const struct FLootLockerListSimpleAssetsRequest& Request, int32 PerPage, int32 Page, ELootLockerOrderAssetListBy OrderBy, ELootLockerOrderAssetListDirection OrderDirection, const TDelegate<void(const struct FLootLockerListSimpleAssetsResponse& Response)>& OnCompletedRequest)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "ListAssets");
+
+	Params::LootLockerManager_ListAssets Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.Request = std::move(Request);
+	Parms.PerPage = PerPage;
+	Parms.Page = Page;
+	Parms.OrderBy = OrderBy;
+	Parms.OrderDirection = OrderDirection;
+	Parms.OnCompletedRequest = OnCompletedRequest;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.ListAssetsWithDefaultParameters
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerListSimpleAssetsResponse& Response)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::ListAssetsWithDefaultParameters(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerListSimpleAssetsResponse& Response)>& OnCompletedRequest)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "ListAssetsWithDefaultParameters");
+
+	Params::LootLockerManager_ListAssetsWithDefaultParameters Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.OnCompletedRequest = OnCompletedRequest;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.ListBalancesInWallet
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    WalletID                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerListBalancesForWalletResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::ListBalancesInWallet(const class FString& WalletID, const TDelegate<void(const struct FLootLockerListBalancesForWalletResponse& Response)>& OnComplete)
+class FString ULootLockerManager::ListBalancesInWallet(const class FString& ForPlayerWithUlid, const class FString& WalletID, const TDelegate<void(const struct FLootLockerListBalancesForWalletResponse& Response)>& OnComplete)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3430,6 +5135,7 @@ void ULootLockerManager::ListBalancesInWallet(const class FString& WalletID, con
 
 	Params::LootLockerManager_ListBalancesInWallet Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.WalletID = std::move(WalletID);
 	Parms.OnComplete = OnComplete;
 
@@ -3439,18 +5145,90 @@ void ULootLockerManager::ListBalancesInWallet(const class FString& WalletID, con
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.ListBlockedPlayers
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Page                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   PerPage                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerListBlockedPlayersResponse& Response)>&OnResponseCompletedBP                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::ListBlockedPlayers(const class FString& ForPlayerWithUlid, int32 Page, int32 PerPage, const TDelegate<void(const struct FLootLockerListBlockedPlayersResponse& Response)>& OnResponseCompletedBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "ListBlockedPlayers");
+
+	Params::LootLockerManager_ListBlockedPlayers Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.Page = Page;
+	Parms.PerPage = PerPage;
+	Parms.OnResponseCompletedBP = OnResponseCompletedBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.ListBroadcasts
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const TArray<class FString>&            languages                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// int32                                   Limit                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerListBroadcastsResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::ListBroadcasts(const TArray<class FString>& languages, int32 Limit, const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerListBroadcastsResponse& Response)>& OnComplete)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "ListBroadcasts");
+
+	Params::LootLockerManager_ListBroadcasts Parms{};
+
+	Parms.languages = std::move(languages);
+	Parms.Limit = Limit;
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.OnComplete = OnComplete;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.ListCatalogItems
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    CatalogKey                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    after                                                  (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    After                                                  (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerListCatalogPricesResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::ListCatalogItems(const class FString& CatalogKey, int32 Count, const class FString& after, const TDelegate<void(const struct FLootLockerListCatalogPricesResponse& Response)>& OnComplete)
+class FString ULootLockerManager::ListCatalogItems(const class FString& ForPlayerWithUlid, const class FString& CatalogKey, int32 Count, const class FString& After, const TDelegate<void(const struct FLootLockerListCatalogPricesResponse& Response)>& OnComplete)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3459,9 +5237,10 @@ void ULootLockerManager::ListCatalogItems(const class FString& CatalogKey, int32
 
 	Params::LootLockerManager_ListCatalogItems Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.CatalogKey = std::move(CatalogKey);
 	Parms.Count = Count;
-	Parms.after = std::move(after);
+	Parms.After = std::move(After);
 	Parms.OnComplete = OnComplete;
 
 	auto Flgs = Func->FunctionFlags;
@@ -3470,15 +5249,55 @@ void ULootLockerManager::ListCatalogItems(const class FString& CatalogKey, int32
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.ListCatalogItemsV2
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    CatalogKey                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   PerPage                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Page                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerListCatalogPricesV2Response& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::ListCatalogItemsV2(const class FString& ForPlayerWithUlid, const class FString& CatalogKey, int32 PerPage, int32 Page, const TDelegate<void(const struct FLootLockerListCatalogPricesV2Response& Response)>& OnComplete)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "ListCatalogItemsV2");
+
+	Params::LootLockerManager_ListCatalogItemsV2 Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.CatalogKey = std::move(CatalogKey);
+	Parms.PerPage = PerPage;
+	Parms.Page = Page;
+	Parms.OnComplete = OnComplete;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.ListCatalogs
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerListCatalogsResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::ListCatalogs(const TDelegate<void(const struct FLootLockerListCatalogsResponse& Response)>& OnComplete)
+class FString ULootLockerManager::ListCatalogs(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerListCatalogsResponse& Response)>& OnComplete)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3487,6 +5306,7 @@ void ULootLockerManager::ListCatalogs(const TDelegate<void(const struct FLootLoc
 
 	Params::LootLockerManager_ListCatalogs Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnComplete = OnComplete;
 
 	auto Flgs = Func->FunctionFlags;
@@ -3495,15 +5315,19 @@ void ULootLockerManager::ListCatalogs(const TDelegate<void(const struct FLootLoc
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.ListCharacterTypes
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerListCharacterTypesResponse& Var)>&OnCompletedRequestBP                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::ListCharacterTypes(const TDelegate<void(const struct FLootLockerListCharacterTypesResponse& Var)>& OnCompletedRequestBP)
+class FString ULootLockerManager::ListCharacterTypes(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerListCharacterTypesResponse& Var)>& OnCompletedRequestBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3512,6 +5336,7 @@ void ULootLockerManager::ListCharacterTypes(const TDelegate<void(const struct FL
 
 	Params::LootLockerManager_ListCharacterTypes Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnCompletedRequestBP = OnCompletedRequestBP;
 
 	auto Flgs = Func->FunctionFlags;
@@ -3520,15 +5345,19 @@ void ULootLockerManager::ListCharacterTypes(const TDelegate<void(const struct FL
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.ListConnectedAccounts
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerListConnectedAccountsResponse& Response)>&OnCompleteBP                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::ListConnectedAccounts(const TDelegate<void(const struct FLootLockerListConnectedAccountsResponse& Response)>& OnCompleteBP)
+class FString ULootLockerManager::ListConnectedAccounts(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerListConnectedAccountsResponse& Response)>& OnCompleteBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3537,6 +5366,7 @@ void ULootLockerManager::ListConnectedAccounts(const TDelegate<void(const struct
 
 	Params::LootLockerManager_ListConnectedAccounts Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnCompleteBP = OnCompleteBP;
 
 	auto Flgs = Func->FunctionFlags;
@@ -3545,15 +5375,19 @@ void ULootLockerManager::ListConnectedAccounts(const TDelegate<void(const struct
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.ListCurrencies
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerListCurrenciesResponse& Response)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::ListCurrencies(const TDelegate<void(const struct FLootLockerListCurrenciesResponse& Response)>& OnCompletedRequest)
+class FString ULootLockerManager::ListCurrencies(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerListCurrenciesResponse& Response)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3562,6 +5396,7 @@ void ULootLockerManager::ListCurrencies(const TDelegate<void(const struct FLootL
 
 	Params::LootLockerManager_ListCurrencies Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnCompletedRequest = OnCompletedRequest;
 
 	auto Flgs = Func->FunctionFlags;
@@ -3570,17 +5405,21 @@ void ULootLockerManager::ListCurrencies(const TDelegate<void(const struct FLootL
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.ListEntitlements
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    after                                                  (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    After                                                  (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerEntitlementHistoryResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::ListEntitlements(int32 Count, const class FString& after, const TDelegate<void(const struct FLootLockerEntitlementHistoryResponse& Response)>& OnComplete)
+class FString ULootLockerManager::ListEntitlements(const class FString& ForPlayerWithUlid, int32 Count, const class FString& After, const TDelegate<void(const struct FLootLockerEntitlementHistoryResponse& Response)>& OnComplete)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3589,8 +5428,9 @@ void ULootLockerManager::ListEntitlements(int32 Count, const class FString& afte
 
 	Params::LootLockerManager_ListEntitlements Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.Count = Count;
-	Parms.after = std::move(after);
+	Parms.After = std::move(After);
 	Parms.OnComplete = OnComplete;
 
 	auto Flgs = Func->FunctionFlags;
@@ -3599,15 +5439,19 @@ void ULootLockerManager::ListEntitlements(int32 Count, const class FString& afte
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.ListFiles
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerFileListResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::ListFiles(const TDelegate<void(const struct FLootLockerFileListResponse& Response)>& OnComplete)
+class FString ULootLockerManager::ListFiles(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerFileListResponse& Response)>& OnComplete)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3616,6 +5460,7 @@ void ULootLockerManager::ListFiles(const TDelegate<void(const struct FLootLocker
 
 	Params::LootLockerManager_ListFiles Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnComplete = OnComplete;
 
 	auto Flgs = Func->FunctionFlags;
@@ -3624,15 +5469,193 @@ void ULootLockerManager::ListFiles(const TDelegate<void(const struct FLootLocker
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.ListFollowers
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Cursor                                                 (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerListFollowersResponse& Response)>&OnResponseCompletedBP                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::ListFollowers(const class FString& ForPlayerWithUlid, const class FString& Cursor, int32 Count, const TDelegate<void(const struct FLootLockerListFollowersResponse& Response)>& OnResponseCompletedBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "ListFollowers");
+
+	Params::LootLockerManager_ListFollowers Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.Cursor = std::move(Cursor);
+	Parms.Count = Count;
+	Parms.OnResponseCompletedBP = OnResponseCompletedBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.ListFollowersForPlayer
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    PlayerPublicUid                                        (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Cursor                                                 (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerListFollowersResponse& Response)>&OnResponseCompletedBP                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::ListFollowersForPlayer(const class FString& ForPlayerWithUlid, const class FString& PlayerPublicUid, const class FString& Cursor, int32 Count, const TDelegate<void(const struct FLootLockerListFollowersResponse& Response)>& OnResponseCompletedBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "ListFollowersForPlayer");
+
+	Params::LootLockerManager_ListFollowersForPlayer Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.PlayerPublicUid = std::move(PlayerPublicUid);
+	Parms.Cursor = std::move(Cursor);
+	Parms.Count = Count;
+	Parms.OnResponseCompletedBP = OnResponseCompletedBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.ListFollowing
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Cursor                                                 (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerListFollowersResponse& Response)>&OnResponseCompletedBP                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::ListFollowing(const class FString& ForPlayerWithUlid, const class FString& Cursor, int32 Count, const TDelegate<void(const struct FLootLockerListFollowersResponse& Response)>& OnResponseCompletedBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "ListFollowing");
+
+	Params::LootLockerManager_ListFollowing Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.Cursor = std::move(Cursor);
+	Parms.Count = Count;
+	Parms.OnResponseCompletedBP = OnResponseCompletedBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.ListFollowingForPlayer
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    PlayerPublicUid                                        (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Cursor                                                 (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerListFollowersResponse& Response)>&OnResponseCompletedBP                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::ListFollowingForPlayer(const class FString& ForPlayerWithUlid, const class FString& PlayerPublicUid, const class FString& Cursor, int32 Count, const TDelegate<void(const struct FLootLockerListFollowersResponse& Response)>& OnResponseCompletedBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "ListFollowingForPlayer");
+
+	Params::LootLockerManager_ListFollowingForPlayer Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.PlayerPublicUid = std::move(PlayerPublicUid);
+	Parms.Cursor = std::move(Cursor);
+	Parms.Count = Count;
+	Parms.OnResponseCompletedBP = OnResponseCompletedBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.ListFriends
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Page                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   PerPage                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerListFriendsResponse& Response)>&OnResponseCompletedBP                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::ListFriends(const class FString& ForPlayerWithUlid, int32 Page, int32 PerPage, const TDelegate<void(const struct FLootLockerListFriendsResponse& Response)>& OnResponseCompletedBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "ListFriends");
+
+	Params::LootLockerManager_ListFriends Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.Page = Page;
+	Parms.PerPage = PerPage;
+	Parms.OnResponseCompletedBP = OnResponseCompletedBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.ListGameFeedbackCategories
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerFeedbackCategoryResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::ListGameFeedbackCategories(const TDelegate<void(const struct FLootLockerFeedbackCategoryResponse& Response)>& OnComplete)
+class FString ULootLockerManager::ListGameFeedbackCategories(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerFeedbackCategoryResponse& Response)>& OnComplete)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3641,6 +5664,7 @@ void ULootLockerManager::ListGameFeedbackCategories(const TDelegate<void(const s
 
 	Params::LootLockerManager_ListGameFeedbackCategories Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnComplete = OnComplete;
 
 	auto Flgs = Func->FunctionFlags;
@@ -3649,16 +5673,54 @@ void ULootLockerManager::ListGameFeedbackCategories(const TDelegate<void(const s
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.ListIncomingFriendRequests
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Page                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   PerPage                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerListIncomingFriendRequestsResponse& Response)>&OnResponseCompletedBP                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::ListIncomingFriendRequests(const class FString& ForPlayerWithUlid, int32 Page, int32 PerPage, const TDelegate<void(const struct FLootLockerListIncomingFriendRequestsResponse& Response)>& OnResponseCompletedBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "ListIncomingFriendRequests");
+
+	Params::LootLockerManager_ListIncomingFriendRequests Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.Page = Page;
+	Parms.PerPage = PerPage;
+	Parms.OnResponseCompletedBP = OnResponseCompletedBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.ListLeaderboardArchive
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    LeaderboardKey                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerLeaderboardArchiveResponse& Response)>&OnCompletedRequestBP                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::ListLeaderboardArchive(const class FString& LeaderboardKey, const TDelegate<void(const struct FLootLockerLeaderboardArchiveResponse& Response)>& OnCompletedRequestBP)
+class FString ULootLockerManager::ListLeaderboardArchive(const class FString& ForPlayerWithUlid, const class FString& LeaderboardKey, const TDelegate<void(const struct FLootLockerLeaderboardArchiveResponse& Response)>& OnCompletedRequestBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3667,6 +5729,7 @@ void ULootLockerManager::ListLeaderboardArchive(const class FString& Leaderboard
 
 	Params::LootLockerManager_ListLeaderboardArchive Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.LeaderboardKey = std::move(LeaderboardKey);
 	Parms.OnCompletedRequestBP = OnCompletedRequestBP;
 
@@ -3676,16 +5739,252 @@ void ULootLockerManager::ListLeaderboardArchive(const class FString& Leaderboard
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.ListLeaderboards
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   After                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerListLeaderboardsResponse& Response)>&OnCompletedRequestBP                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::ListLeaderboards(const class FString& ForPlayerWithUlid, int32 Count, int32 After, const TDelegate<void(const struct FLootLockerListLeaderboardsResponse& Response)>& OnCompletedRequestBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "ListLeaderboards");
+
+	Params::LootLockerManager_ListLeaderboards Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.Count = Count;
+	Parms.After = After;
+	Parms.OnCompletedRequestBP = OnCompletedRequestBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.ListMetadata
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const ELootLockerMetadataSources        Source                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SourceID                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             Page                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             PerPage                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              IgnoreFiles                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerListMetadataResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::ListMetadata(const class FString& ForPlayerWithUlid, const ELootLockerMetadataSources Source, const class FString& SourceID, const int32 Page, const int32 PerPage, const bool IgnoreFiles, const TDelegate<void(const struct FLootLockerListMetadataResponse& Response)>& OnComplete)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "ListMetadata");
+
+	Params::LootLockerManager_ListMetadata Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.Source = Source;
+	Parms.SourceID = std::move(SourceID);
+	Parms.Page = Page;
+	Parms.PerPage = PerPage;
+	Parms.IgnoreFiles = IgnoreFiles;
+	Parms.OnComplete = OnComplete;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.ListMetadataWithTags
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const ELootLockerMetadataSources        Source                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SourceID                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            Tags                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// const int32                             Page                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             PerPage                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              IgnoreFiles                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerListMetadataResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::ListMetadataWithTags(const class FString& ForPlayerWithUlid, const ELootLockerMetadataSources Source, const class FString& SourceID, const TArray<class FString>& Tags, const int32 Page, const int32 PerPage, const bool IgnoreFiles, const TDelegate<void(const struct FLootLockerListMetadataResponse& Response)>& OnComplete)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "ListMetadataWithTags");
+
+	Params::LootLockerManager_ListMetadataWithTags Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.Source = Source;
+	Parms.SourceID = std::move(SourceID);
+	Parms.Tags = std::move(Tags);
+	Parms.Page = Page;
+	Parms.PerPage = PerPage;
+	Parms.IgnoreFiles = IgnoreFiles;
+	Parms.OnComplete = OnComplete;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.ListNotifications
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ShowRead                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    OfType                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    WithSource                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ELootLockerCustomNotificationFiltering  CustomNotificationsFilter                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   PerPage                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Page                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerListNotificationsResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::ListNotifications(const class FString& ForPlayerWithUlid, bool ShowRead, const class FString& OfType, const class FString& WithSource, ELootLockerCustomNotificationFiltering CustomNotificationsFilter, int32 PerPage, int32 Page, const TDelegate<void(const struct FLootLockerListNotificationsResponse& Response)>& OnComplete)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "ListNotifications");
+
+	Params::LootLockerManager_ListNotifications Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.ShowRead = ShowRead;
+	Parms.OfType = std::move(OfType);
+	Parms.WithSource = std::move(WithSource);
+	Parms.CustomNotificationsFilter = CustomNotificationsFilter;
+	Parms.PerPage = PerPage;
+	Parms.Page = Page;
+	Parms.OnComplete = OnComplete;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.ListNotificationsWithDefaultParameters
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerListNotificationsResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::ListNotificationsWithDefaultParameters(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerListNotificationsResponse& Response)>& OnComplete)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "ListNotificationsWithDefaultParameters");
+
+	Params::LootLockerManager_ListNotificationsWithDefaultParameters Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.OnComplete = OnComplete;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.ListNotificationsWithPriority
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ELootLockerNotificationPriority         WithPriority                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ShowRead                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    OfType                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    WithSource                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ELootLockerCustomNotificationFiltering  CustomNotificationsFilter                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   PerPage                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Page                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerListNotificationsResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::ListNotificationsWithPriority(const class FString& ForPlayerWithUlid, ELootLockerNotificationPriority WithPriority, bool ShowRead, const class FString& OfType, const class FString& WithSource, ELootLockerCustomNotificationFiltering CustomNotificationsFilter, int32 PerPage, int32 Page, const TDelegate<void(const struct FLootLockerListNotificationsResponse& Response)>& OnComplete)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "ListNotificationsWithPriority");
+
+	Params::LootLockerManager_ListNotificationsWithPriority Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.WithPriority = WithPriority;
+	Parms.ShowRead = ShowRead;
+	Parms.OfType = std::move(OfType);
+	Parms.WithSource = std::move(WithSource);
+	Parms.CustomNotificationsFilter = CustomNotificationsFilter;
+	Parms.PerPage = PerPage;
+	Parms.Page = Page;
+	Parms.OnComplete = OnComplete;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.ListOtherPlayersHeroesBySteamID64
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int64                             SteamID64                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerHeroListResponse& Response)>&OnCompleteBP                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::ListOtherPlayersHeroesBySteamID64(const int64 SteamID64, const TDelegate<void(const struct FLootLockerHeroListResponse& Response)>& OnCompleteBP)
+class FString ULootLockerManager::ListOtherPlayersHeroesBySteamID64(const class FString& ForPlayerWithUlid, const int64 SteamID64, const TDelegate<void(const struct FLootLockerHeroListResponse& Response)>& OnCompleteBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3694,6 +5993,7 @@ void ULootLockerManager::ListOtherPlayersHeroesBySteamID64(const int64 SteamID64
 
 	Params::LootLockerManager_ListOtherPlayersHeroesBySteamID64 Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.SteamID64 = SteamID64;
 	Parms.OnCompleteBP = OnCompleteBP;
 
@@ -3703,16 +6003,20 @@ void ULootLockerManager::ListOtherPlayersHeroesBySteamID64(const int64 SteamID64
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.ListOtherPlayersPublicFiles
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             PlayerId                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerFileListResponse& Response)>&OnCompleteBP                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::ListOtherPlayersPublicFiles(const int32 PlayerId, const TDelegate<void(const struct FLootLockerFileListResponse& Response)>& OnCompleteBP)
+class FString ULootLockerManager::ListOtherPlayersPublicFiles(const class FString& ForPlayerWithUlid, const int32 PlayerId, const TDelegate<void(const struct FLootLockerFileListResponse& Response)>& OnCompleteBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3721,6 +6025,7 @@ void ULootLockerManager::ListOtherPlayersPublicFiles(const int32 PlayerId, const
 
 	Params::LootLockerManager_ListOtherPlayersPublicFiles Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.PlayerId = PlayerId;
 	Parms.OnCompleteBP = OnCompleteBP;
 
@@ -3730,15 +6035,53 @@ void ULootLockerManager::ListOtherPlayersPublicFiles(const int32 PlayerId, const
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.ListOutgoingFriendRequests
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Page                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   PerPage                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerListOutgoingFriendRequestsResponse& Response)>&OnResponseCompletedBP                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::ListOutgoingFriendRequests(const class FString& ForPlayerWithUlid, int32 Page, int32 PerPage, const TDelegate<void(const struct FLootLockerListOutgoingFriendRequestsResponse& Response)>& OnResponseCompletedBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "ListOutgoingFriendRequests");
+
+	Params::LootLockerManager_ListOutgoingFriendRequests Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.Page = Page;
+	Parms.PerPage = PerPage;
+	Parms.OnResponseCompletedBP = OnResponseCompletedBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.ListPlayerCharacters
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerListPlayerCharactersResponse& Var)>&OnCompletedRequestBP                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::ListPlayerCharacters(const TDelegate<void(const struct FLootLockerListPlayerCharactersResponse& Var)>& OnCompletedRequestBP)
+class FString ULootLockerManager::ListPlayerCharacters(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerListPlayerCharactersResponse& Var)>& OnCompletedRequestBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3747,6 +6090,7 @@ void ULootLockerManager::ListPlayerCharacters(const TDelegate<void(const struct 
 
 	Params::LootLockerManager_ListPlayerCharacters Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnCompletedRequestBP = OnCompletedRequestBP;
 
 	auto Flgs = Func->FunctionFlags;
@@ -3755,15 +6099,19 @@ void ULootLockerManager::ListPlayerCharacters(const TDelegate<void(const struct 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.ListPlayerFeedbackCategories
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerFeedbackCategoryResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::ListPlayerFeedbackCategories(const TDelegate<void(const struct FLootLockerFeedbackCategoryResponse& Response)>& OnComplete)
+class FString ULootLockerManager::ListPlayerFeedbackCategories(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerFeedbackCategoryResponse& Response)>& OnComplete)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3772,6 +6120,7 @@ void ULootLockerManager::ListPlayerFeedbackCategories(const TDelegate<void(const
 
 	Params::LootLockerManager_ListPlayerFeedbackCategories Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnComplete = OnComplete;
 
 	auto Flgs = Func->FunctionFlags;
@@ -3780,15 +6129,19 @@ void ULootLockerManager::ListPlayerFeedbackCategories(const TDelegate<void(const
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.ListPlayerHeroes
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerHeroListResponse& Response)>&OnCompleteBP                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::ListPlayerHeroes(const TDelegate<void(const struct FLootLockerHeroListResponse& Response)>& OnCompleteBP)
+class FString ULootLockerManager::ListPlayerHeroes(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerHeroListResponse& Response)>& OnCompleteBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3797,6 +6150,7 @@ void ULootLockerManager::ListPlayerHeroes(const TDelegate<void(const struct FLoo
 
 	Params::LootLockerManager_ListPlayerHeroes Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnCompleteBP = OnCompleteBP;
 
 	auto Flgs = Func->FunctionFlags;
@@ -3805,15 +6159,55 @@ void ULootLockerManager::ListPlayerHeroes(const TDelegate<void(const struct FLoo
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.ListPlayerInfo
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            PlayerIdsToLookUp                                      (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<int32>&                    PlayerLegacyIdsToLookUp                                (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            PlayerPublicUidsToLookUp                               (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerListPlayerInfoResponse& Value)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::ListPlayerInfo(const class FString& ForPlayerWithUlid, const TArray<class FString>& PlayerIdsToLookUp, const TArray<int32>& PlayerLegacyIdsToLookUp, const TArray<class FString>& PlayerPublicUidsToLookUp, const TDelegate<void(const struct FLootLockerListPlayerInfoResponse& Value)>& OnCompletedRequest)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "ListPlayerInfo");
+
+	Params::LootLockerManager_ListPlayerInfo Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.PlayerIdsToLookUp = std::move(PlayerIdsToLookUp);
+	Parms.PlayerLegacyIdsToLookUp = std::move(PlayerLegacyIdsToLookUp);
+	Parms.PlayerPublicUidsToLookUp = std::move(PlayerPublicUidsToLookUp);
+	Parms.OnCompletedRequest = OnCompletedRequest;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.ListUGCFeedbackCategories
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerFeedbackCategoryResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::ListUGCFeedbackCategories(const TDelegate<void(const struct FLootLockerFeedbackCategoryResponse& Response)>& OnComplete)
+class FString ULootLockerManager::ListUGCFeedbackCategories(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerFeedbackCategoryResponse& Response)>& OnComplete)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3822,6 +6216,7 @@ void ULootLockerManager::ListUGCFeedbackCategories(const TDelegate<void(const st
 
 	Params::LootLockerManager_ListUGCFeedbackCategories Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnComplete = OnComplete;
 
 	auto Flgs = Func->FunctionFlags;
@@ -3830,16 +6225,20 @@ void ULootLockerManager::ListUGCFeedbackCategories(const TDelegate<void(const st
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.LookupMultiplePlayerNames1stPlatformIDs
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FLootLockerMultiplePlayerNamesAndPlatformsRequest&Request                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerMultiplePlayersPlatformIdsResponse& Value)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::LookupMultiplePlayerNames1stPlatformIDs(const struct FLootLockerMultiplePlayerNamesAndPlatformsRequest& Request, const TDelegate<void(const struct FLootLockerMultiplePlayersPlatformIdsResponse& Value)>& OnCompletedRequest)
+class FString ULootLockerManager::LookupMultiplePlayerNames1stPlatformIDs(const class FString& ForPlayerWithUlid, const struct FLootLockerMultiplePlayerNamesAndPlatformsRequest& Request, const TDelegate<void(const struct FLootLockerMultiplePlayersPlatformIdsResponse& Value)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3848,6 +6247,7 @@ void ULootLockerManager::LookupMultiplePlayerNames1stPlatformIDs(const struct FL
 
 	Params::LootLockerManager_LookupMultiplePlayerNames1stPlatformIDs Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.Request = std::move(Request);
 	Parms.OnCompletedRequest = OnCompletedRequest;
 
@@ -3857,16 +6257,20 @@ void ULootLockerManager::LookupMultiplePlayerNames1stPlatformIDs(const struct FL
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.LookupMultiplePlayerNamesUsingIDs
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FLootLockerMultiplePlayerNamesRequest&Request                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerMultiplePlayersNamesResponse& Value)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::LookupMultiplePlayerNamesUsingIDs(const struct FLootLockerMultiplePlayerNamesRequest& Request, const TDelegate<void(const struct FLootLockerMultiplePlayersNamesResponse& Value)>& OnCompletedRequest)
+class FString ULootLockerManager::LookupMultiplePlayerNamesUsingIDs(const class FString& ForPlayerWithUlid, const struct FLootLockerMultiplePlayerNamesRequest& Request, const TDelegate<void(const struct FLootLockerMultiplePlayersNamesResponse& Value)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3875,6 +6279,7 @@ void ULootLockerManager::LookupMultiplePlayerNamesUsingIDs(const struct FLootLoc
 
 	Params::LootLockerManager_LookupMultiplePlayerNamesUsingIDs Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.Request = std::move(Request);
 	Parms.OnCompletedRequest = OnCompletedRequest;
 
@@ -3884,17 +6289,53 @@ void ULootLockerManager::LookupMultiplePlayerNamesUsingIDs(const struct FLootLoc
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.LookupMultiplePlayersDataUsingIDs
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FLootLockerLookupMultiplePlayersDataRequest&Request                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerMultiplePlayersNamesResponse& Value)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::LookupMultiplePlayersDataUsingIDs(const class FString& ForPlayerWithUlid, const struct FLootLockerLookupMultiplePlayersDataRequest& Request, const TDelegate<void(const struct FLootLockerMultiplePlayersNamesResponse& Value)>& OnCompletedRequest)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "LookupMultiplePlayersDataUsingIDs");
+
+	Params::LootLockerManager_LookupMultiplePlayersDataUsingIDs Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.Request = std::move(Request);
+	Parms.OnCompletedRequest = OnCompletedRequest;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.LootLockerPurchaseCatalogItems
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    WalletID                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TArray<struct FLootLockerCatalogItemAndQuantityPair>&ItemsToPurchase                                        (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Var)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::LootLockerPurchaseCatalogItems(const class FString& WalletID, const TArray<struct FLootLockerCatalogItemAndQuantityPair>& ItemsToPurchase, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest)
+class FString ULootLockerManager::LootLockerPurchaseCatalogItems(const class FString& ForPlayerWithUlid, const class FString& WalletID, const TArray<struct FLootLockerCatalogItemAndQuantityPair>& ItemsToPurchase, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3903,6 +6344,7 @@ void ULootLockerManager::LootLockerPurchaseCatalogItems(const class FString& Wal
 
 	Params::LootLockerManager_LootLockerPurchaseCatalogItems Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.WalletID = std::move(WalletID);
 	Parms.ItemsToPurchase = std::move(ItemsToPurchase);
 	Parms.OnCompletedRequest = OnCompletedRequest;
@@ -3913,17 +6355,21 @@ void ULootLockerManager::LootLockerPurchaseCatalogItems(const class FString& Wal
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.LootLockerPurchaseSingleCatalogItem
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    WalletID                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    CatalogItemListingId                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Var)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::LootLockerPurchaseSingleCatalogItem(const class FString& WalletID, const class FString& CatalogItemListingId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest)
+class FString ULootLockerManager::LootLockerPurchaseSingleCatalogItem(const class FString& ForPlayerWithUlid, const class FString& WalletID, const class FString& CatalogItemListingId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3932,6 +6378,7 @@ void ULootLockerManager::LootLockerPurchaseSingleCatalogItem(const class FString
 
 	Params::LootLockerManager_LootLockerPurchaseSingleCatalogItem Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.WalletID = std::move(WalletID);
 	Parms.CatalogItemListingId = std::move(CatalogItemListingId);
 	Parms.OnCompletedRequest = OnCompletedRequest;
@@ -3942,16 +6389,335 @@ void ULootLockerManager::LootLockerPurchaseSingleCatalogItem(const class FString
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.MakeMetadataActionBase64
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// ELootLockerMetadataActions              action                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FLootLockerMetadataBase64Value&Value                                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            Tags                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            Access                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// struct FLootLockerSetMetadataAction     ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FLootLockerSetMetadataAction ULootLockerManager::MakeMetadataActionBase64(ELootLockerMetadataActions action, const class FString& Key, const struct FLootLockerMetadataBase64Value& Value, const TArray<class FString>& Tags, const TArray<class FString>& Access)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "MakeMetadataActionBase64");
+
+	Params::LootLockerManager_MakeMetadataActionBase64 Parms{};
+
+	Parms.action = action;
+	Parms.Key = std::move(Key);
+	Parms.Value = std::move(Value);
+	Parms.Tags = std::move(Tags);
+	Parms.Access = std::move(Access);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.MakeMetadataActionBool
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// ELootLockerMetadataActions              action                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              Value                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            Tags                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            Access                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// struct FLootLockerSetMetadataAction     ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FLootLockerSetMetadataAction ULootLockerManager::MakeMetadataActionBool(ELootLockerMetadataActions action, const class FString& Key, const bool Value, const TArray<class FString>& Tags, const TArray<class FString>& Access)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "MakeMetadataActionBool");
+
+	Params::LootLockerManager_MakeMetadataActionBool Parms{};
+
+	Parms.action = action;
+	Parms.Key = std::move(Key);
+	Parms.Value = Value;
+	Parms.Tags = std::move(Tags);
+	Parms.Access = std::move(Access);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.MakeMetadataActionFloat
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// ELootLockerMetadataActions              action                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float&                            Value                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            Tags                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            Access                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// struct FLootLockerSetMetadataAction     ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FLootLockerSetMetadataAction ULootLockerManager::MakeMetadataActionFloat(ELootLockerMetadataActions action, const class FString& Key, const float& Value, const TArray<class FString>& Tags, const TArray<class FString>& Access)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "MakeMetadataActionFloat");
+
+	Params::LootLockerManager_MakeMetadataActionFloat Parms{};
+
+	Parms.action = action;
+	Parms.Key = std::move(Key);
+	Parms.Value = Value;
+	Parms.Tags = std::move(Tags);
+	Parms.Access = std::move(Access);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.MakeMetadataActionInteger
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// ELootLockerMetadataActions              action                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             Value                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            Tags                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            Access                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// struct FLootLockerSetMetadataAction     ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FLootLockerSetMetadataAction ULootLockerManager::MakeMetadataActionInteger(ELootLockerMetadataActions action, const class FString& Key, const int32 Value, const TArray<class FString>& Tags, const TArray<class FString>& Access)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "MakeMetadataActionInteger");
+
+	Params::LootLockerManager_MakeMetadataActionInteger Parms{};
+
+	Parms.action = action;
+	Parms.Key = std::move(Key);
+	Parms.Value = Value;
+	Parms.Tags = std::move(Tags);
+	Parms.Access = std::move(Access);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.MakeMetadataActionJson
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// ELootLockerMetadataActions              action                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Value                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            Tags                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            Access                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// bool*                                   Succeeded                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FLootLockerSetMetadataAction*    ConstructedEntry                                       (Parm, OutParm, NativeAccessSpecifierPublic)
+
+void ULootLockerManager::MakeMetadataActionJson(ELootLockerMetadataActions action, const class FString& Key, const class FString& Value, const TArray<class FString>& Tags, const TArray<class FString>& Access, bool* Succeeded, struct FLootLockerSetMetadataAction* ConstructedEntry)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "MakeMetadataActionJson");
+
+	Params::LootLockerManager_MakeMetadataActionJson Parms{};
+
+	Parms.action = action;
+	Parms.Key = std::move(Key);
+	Parms.Value = std::move(Value);
+	Parms.Tags = std::move(Tags);
+	Parms.Access = std::move(Access);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (Succeeded != nullptr)
+		*Succeeded = Parms.Succeeded;
+
+	if (ConstructedEntry != nullptr)
+		*ConstructedEntry = std::move(Parms.ConstructedEntry);
+}
+
+
+// Function LootLockerSDK.LootLockerManager.MakeMetadataActionString
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// ELootLockerMetadataActions              action                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Value                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            Tags                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            Access                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// struct FLootLockerSetMetadataAction     ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FLootLockerSetMetadataAction ULootLockerManager::MakeMetadataActionString(ELootLockerMetadataActions action, const class FString& Key, const class FString& Value, const TArray<class FString>& Tags, const TArray<class FString>& Access)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "MakeMetadataActionString");
+
+	Params::LootLockerManager_MakeMetadataActionString Parms{};
+
+	Parms.action = action;
+	Parms.Key = std::move(Key);
+	Parms.Value = std::move(Value);
+	Parms.Tags = std::move(Tags);
+	Parms.Access = std::move(Access);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.MarkAllNotificationsAsRead
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerReadNotificationsResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::MarkAllNotificationsAsRead(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerReadNotificationsResponse& Response)>& OnComplete)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "MarkAllNotificationsAsRead");
+
+	Params::LootLockerManager_MarkAllNotificationsAsRead Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.OnComplete = OnComplete;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.MarkNotificationsAsRead
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<struct FLootLockerNotification>&Notifications                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerReadNotificationsResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::MarkNotificationsAsRead(const class FString& ForPlayerWithUlid, const TArray<struct FLootLockerNotification>& Notifications, const TDelegate<void(const struct FLootLockerReadNotificationsResponse& Response)>& OnComplete)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "MarkNotificationsAsRead");
+
+	Params::LootLockerManager_MarkNotificationsAsRead Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.Notifications = std::move(Notifications);
+	Parms.OnComplete = OnComplete;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.MarkNotificationsAsReadByIds
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            NotificationIDs                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerReadNotificationsResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::MarkNotificationsAsReadByIds(const class FString& ForPlayerWithUlid, const TArray<class FString>& NotificationIDs, const TDelegate<void(const struct FLootLockerReadNotificationsResponse& Response)>& OnComplete)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "MarkNotificationsAsReadByIds");
+
+	Params::LootLockerManager_MarkNotificationsAsReadByIds Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.NotificationIDs = std::move(NotificationIDs);
+	Parms.OnComplete = OnComplete;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.OpenLootBox
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   AssetInstanceId                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerOpenLootBoxResponse& Response)>&OnOpenLootBoxCompleted                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::OpenLootBox(int32 AssetInstanceId, const TDelegate<void(const struct FLootLockerOpenLootBoxResponse& Response)>& OnOpenLootBoxCompleted)
+class FString ULootLockerManager::OpenLootBox(const class FString& ForPlayerWithUlid, int32 AssetInstanceId, const TDelegate<void(const struct FLootLockerOpenLootBoxResponse& Response)>& OnOpenLootBoxCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3960,6 +6726,7 @@ void ULootLockerManager::OpenLootBox(int32 AssetInstanceId, const TDelegate<void
 
 	Params::LootLockerManager_OpenLootBox Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.AssetInstanceId = AssetInstanceId;
 	Parms.OnOpenLootBoxCompleted = OnOpenLootBoxCompleted;
 
@@ -3969,17 +6736,86 @@ void ULootLockerManager::OpenLootBox(int32 AssetInstanceId, const TDelegate<void
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.ParseLootLockerMetadataEntry
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FLootLockerMetadataEntry&  Entry                                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// ELootLockerMetadataParserOutputTypes*   MetadataTypeSwitch                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          StringValue                                            (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  IntegerValue                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float*                                  FloatValue                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          NumberString                                           (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   BoolValue                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          JsonStringValue                                        (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FLootLockerMetadataBase64Value*  Base64Value                                            (Parm, OutParm, NativeAccessSpecifierPublic)
+// class FString*                          ErrorMessage                                           (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FLootLockerMetadataEntry*        OutEntry                                               (Parm, OutParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+
+void ULootLockerManager::ParseLootLockerMetadataEntry(const struct FLootLockerMetadataEntry& Entry, ELootLockerMetadataParserOutputTypes* MetadataTypeSwitch, class FString* StringValue, int32* IntegerValue, float* FloatValue, class FString* NumberString, bool* BoolValue, class FString* JsonStringValue, struct FLootLockerMetadataBase64Value* Base64Value, class FString* ErrorMessage, struct FLootLockerMetadataEntry* OutEntry)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "ParseLootLockerMetadataEntry");
+
+	Params::LootLockerManager_ParseLootLockerMetadataEntry Parms{};
+
+	Parms.Entry = std::move(Entry);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (MetadataTypeSwitch != nullptr)
+		*MetadataTypeSwitch = Parms.MetadataTypeSwitch;
+
+	if (StringValue != nullptr)
+		*StringValue = std::move(Parms.StringValue);
+
+	if (IntegerValue != nullptr)
+		*IntegerValue = Parms.IntegerValue;
+
+	if (FloatValue != nullptr)
+		*FloatValue = Parms.FloatValue;
+
+	if (NumberString != nullptr)
+		*NumberString = std::move(Parms.NumberString);
+
+	if (BoolValue != nullptr)
+		*BoolValue = Parms.BoolValue;
+
+	if (JsonStringValue != nullptr)
+		*JsonStringValue = std::move(Parms.JsonStringValue);
+
+	if (Base64Value != nullptr)
+		*Base64Value = std::move(Parms.Base64Value);
+
+	if (ErrorMessage != nullptr)
+		*ErrorMessage = std::move(Parms.ErrorMessage);
+
+	if (OutEntry != nullptr)
+		*OutEntry = std::move(Parms.OutEntry);
 }
 
 
 // Function LootLockerSDK.LootLockerManager.PickDropsFromDropTable
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// const TArray<int32>&                    picks                                                  (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<int32>&                    Picks                                                  (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // int32                                   TableId                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerPickDropsFromDropTableResponse& Response)>&OnCompletedRequestBP                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::PickDropsFromDropTable(const TArray<int32>& picks, int32 TableId, const TDelegate<void(const struct FLootLockerPickDropsFromDropTableResponse& Response)>& OnCompletedRequestBP)
+class FString ULootLockerManager::PickDropsFromDropTable(const class FString& ForPlayerWithUlid, const TArray<int32>& Picks, int32 TableId, const TDelegate<void(const struct FLootLockerPickDropsFromDropTableResponse& Response)>& OnCompletedRequestBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3988,7 +6824,8 @@ void ULootLockerManager::PickDropsFromDropTable(const TArray<int32>& picks, int3
 
 	Params::LootLockerManager_PickDropsFromDropTable Parms{};
 
-	Parms.picks = std::move(picks);
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.Picks = std::move(Picks);
 	Parms.TableId = TableId;
 	Parms.OnCompletedRequestBP = OnCompletedRequestBP;
 
@@ -3998,26 +6835,33 @@ void ULootLockerManager::PickDropsFromDropTable(const TArray<int32>& picks, int3
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
-// Function LootLockerSDK.LootLockerManager.PollingOrderStatus
+// Function LootLockerSDK.LootLockerManager.QueryScore
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// int32                                   PurchaseId                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const TDelegate<void(const struct FLootLockerPurchaseStatusResponse& Response)>&OnPollingStatusCompleted                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const class FString&                    LeaderboardKey                                         (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             score                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerSubmitScoreResponse& Response)>&OnCompletedRequestBP                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::PollingOrderStatus(int32 PurchaseId, const TDelegate<void(const struct FLootLockerPurchaseStatusResponse& Response)>& OnPollingStatusCompleted)
+class FString ULootLockerManager::QueryScore(const class FString& LeaderboardKey, const int32 score, const TDelegate<void(const struct FLootLockerSubmitScoreResponse& Response)>& OnCompletedRequestBP, const class FString& ForPlayerWithUlid)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("LootLockerManager", "PollingOrderStatus");
+		Func = StaticClass()->GetFunction("LootLockerManager", "QueryScore");
 
-	Params::LootLockerManager_PollingOrderStatus Parms{};
+	Params::LootLockerManager_QueryScore Parms{};
 
-	Parms.PurchaseId = PurchaseId;
-	Parms.OnPollingStatusCompleted = OnPollingStatusCompleted;
+	Parms.LeaderboardKey = std::move(LeaderboardKey);
+	Parms.score = score;
+	Parms.OnCompletedRequestBP = OnCompletedRequestBP;
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4025,97 +6869,20 @@ void ULootLockerManager::PollingOrderStatus(int32 PurchaseId, const TDelegate<vo
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
 
-
-// Function LootLockerSDK.LootLockerManager.PurchaseAssets
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const TArray<struct FLootLockerAssetPurchaseData>&PurchaseData                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// const TDelegate<void(const struct FLootLockerPurchaseResponse& Response)>&OnPurchaseAssetsCompleted                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void ULootLockerManager::PurchaseAssets(const TArray<struct FLootLockerAssetPurchaseData>& PurchaseData, const TDelegate<void(const struct FLootLockerPurchaseResponse& Response)>& OnPurchaseAssetsCompleted)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("LootLockerManager", "PurchaseAssets");
-
-	Params::LootLockerManager_PurchaseAssets Parms{};
-
-	Parms.PurchaseData = std::move(PurchaseData);
-	Parms.OnPurchaseAssetsCompleted = OnPurchaseAssetsCompleted;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LootLockerSDK.LootLockerManager.PurchaseAssetsAndroid
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const TArray<struct FLootLockerAndroidAssetPurchaseData>&PurchaseData                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// const TDelegate<void(const struct FLootLockerPurchaseResponse& Response)>&OnPurchaseAssetsAndroidCompleted                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void ULootLockerManager::PurchaseAssetsAndroid(const TArray<struct FLootLockerAndroidAssetPurchaseData>& PurchaseData, const TDelegate<void(const struct FLootLockerPurchaseResponse& Response)>& OnPurchaseAssetsAndroidCompleted)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("LootLockerManager", "PurchaseAssetsAndroid");
-
-	Params::LootLockerManager_PurchaseAssetsAndroid Parms{};
-
-	Parms.PurchaseData = std::move(PurchaseData);
-	Parms.OnPurchaseAssetsAndroidCompleted = OnPurchaseAssetsAndroidCompleted;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LootLockerSDK.LootLockerManager.PurchaseAssetsIOS
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const TArray<struct FLootLockerVerifyPurchaseIosData>&PurchaseData                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// const TDelegate<void(const struct FLootLockerPurchaseResponse& Response)>&OnPurchaseAssetsIOSCompleted                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void ULootLockerManager::PurchaseAssetsIOS(const TArray<struct FLootLockerVerifyPurchaseIosData>& PurchaseData, const TDelegate<void(const struct FLootLockerPurchaseResponse& Response)>& OnPurchaseAssetsIOSCompleted)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("LootLockerManager", "PurchaseAssetsIOS");
-
-	Params::LootLockerManager_PurchaseAssetsIOS Parms{};
-
-	Parms.PurchaseData = std::move(PurchaseData);
-	Parms.OnPurchaseAssetsIOSCompleted = OnPurchaseAssetsIOSCompleted;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.QuerySteamPurchaseRedemptionStatus
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    EntitlementId                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerQuerySteamPurchaseRedemptionStatusResponse& Response)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::QuerySteamPurchaseRedemptionStatus(const class FString& EntitlementId, const TDelegate<void(const struct FLootLockerQuerySteamPurchaseRedemptionStatusResponse& Response)>& OnCompletedRequest)
+class FString ULootLockerManager::QuerySteamPurchaseRedemptionStatus(const class FString& ForPlayerWithUlid, const class FString& EntitlementId, const TDelegate<void(const struct FLootLockerQuerySteamPurchaseRedemptionStatusResponse& Response)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4124,6 +6891,7 @@ void ULootLockerManager::QuerySteamPurchaseRedemptionStatus(const class FString&
 
 	Params::LootLockerManager_QuerySteamPurchaseRedemptionStatus Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.EntitlementId = std::move(EntitlementId);
 	Parms.OnCompletedRequest = OnCompletedRequest;
 
@@ -4133,18 +6901,22 @@ void ULootLockerManager::QuerySteamPurchaseRedemptionStatus(const class FString&
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.RedeemAppleAppStorePurchaseForClass
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             ClassId                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    TransactionId                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    Sandboxed                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Var)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::RedeemAppleAppStorePurchaseForClass(const int32 ClassId, const class FString& TransactionId, bool Sandboxed, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest)
+class FString ULootLockerManager::RedeemAppleAppStorePurchaseForClass(const class FString& ForPlayerWithUlid, const int32 ClassId, const class FString& TransactionId, bool Sandboxed, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4153,6 +6925,7 @@ void ULootLockerManager::RedeemAppleAppStorePurchaseForClass(const int32 ClassId
 
 	Params::LootLockerManager_RedeemAppleAppStorePurchaseForClass Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.ClassId = ClassId;
 	Parms.TransactionId = std::move(TransactionId);
 	Parms.Sandboxed = Sandboxed;
@@ -4164,17 +6937,21 @@ void ULootLockerManager::RedeemAppleAppStorePurchaseForClass(const int32 ClassId
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.RedeemAppleAppStorePurchaseForPlayer
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    TransactionId                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    Sandboxed                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Var)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::RedeemAppleAppStorePurchaseForPlayer(const class FString& TransactionId, bool Sandboxed, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest)
+class FString ULootLockerManager::RedeemAppleAppStorePurchaseForPlayer(const class FString& ForPlayerWithUlid, const class FString& TransactionId, bool Sandboxed, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4183,6 +6960,7 @@ void ULootLockerManager::RedeemAppleAppStorePurchaseForPlayer(const class FStrin
 
 	Params::LootLockerManager_RedeemAppleAppStorePurchaseForPlayer Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.TransactionId = std::move(TransactionId);
 	Parms.Sandboxed = Sandboxed;
 	Parms.OnCompletedRequest = OnCompletedRequest;
@@ -4193,18 +6971,100 @@ void ULootLockerManager::RedeemAppleAppStorePurchaseForPlayer(const class FStrin
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.RedeemEpicStorePurchase
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    AccountId                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    BearerToken                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            EntitlementIds                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FString&                    SandboxId                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerResponse& Var)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::RedeemEpicStorePurchase(const class FString& ForPlayerWithUlid, const class FString& AccountId, const class FString& BearerToken, const TArray<class FString>& EntitlementIds, const class FString& SandboxId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "RedeemEpicStorePurchase");
+
+	Params::LootLockerManager_RedeemEpicStorePurchase Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.AccountId = std::move(AccountId);
+	Parms.BearerToken = std::move(BearerToken);
+	Parms.EntitlementIds = std::move(EntitlementIds);
+	Parms.SandboxId = std::move(SandboxId);
+	Parms.OnCompletedRequest = OnCompletedRequest;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.RedeemEpicStorePurchaseForCharacter
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    CharacterId                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    AccountId                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    BearerToken                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            EntitlementIds                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FString&                    SandboxId                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerResponse& Var)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::RedeemEpicStorePurchaseForCharacter(const class FString& ForPlayerWithUlid, const class FString& CharacterId, const class FString& AccountId, const class FString& BearerToken, const TArray<class FString>& EntitlementIds, const class FString& SandboxId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "RedeemEpicStorePurchaseForCharacter");
+
+	Params::LootLockerManager_RedeemEpicStorePurchaseForCharacter Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.CharacterId = std::move(CharacterId);
+	Parms.AccountId = std::move(AccountId);
+	Parms.BearerToken = std::move(BearerToken);
+	Parms.EntitlementIds = std::move(EntitlementIds);
+	Parms.SandboxId = std::move(SandboxId);
+	Parms.OnCompletedRequest = OnCompletedRequest;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.RedeemGooglePlayStorePurchaseForClass
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             ClassId                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    ProductId                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    PurchaseToken                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Var)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::RedeemGooglePlayStorePurchaseForClass(const int32 ClassId, const class FString& ProductId, const class FString& PurchaseToken, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest)
+class FString ULootLockerManager::RedeemGooglePlayStorePurchaseForClass(const class FString& ForPlayerWithUlid, const int32 ClassId, const class FString& ProductId, const class FString& PurchaseToken, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4213,6 +7073,7 @@ void ULootLockerManager::RedeemGooglePlayStorePurchaseForClass(const int32 Class
 
 	Params::LootLockerManager_RedeemGooglePlayStorePurchaseForClass Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.ClassId = ClassId;
 	Parms.ProductId = std::move(ProductId);
 	Parms.PurchaseToken = std::move(PurchaseToken);
@@ -4224,17 +7085,21 @@ void ULootLockerManager::RedeemGooglePlayStorePurchaseForClass(const int32 Class
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.RedeemGooglePlayStorePurchaseForPlayer
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    ProductId                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    PurchaseToken                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Var)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::RedeemGooglePlayStorePurchaseForPlayer(const class FString& ProductId, const class FString& PurchaseToken, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest)
+class FString ULootLockerManager::RedeemGooglePlayStorePurchaseForPlayer(const class FString& ForPlayerWithUlid, const class FString& ProductId, const class FString& PurchaseToken, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4243,6 +7108,7 @@ void ULootLockerManager::RedeemGooglePlayStorePurchaseForPlayer(const class FStr
 
 	Params::LootLockerManager_RedeemGooglePlayStorePurchaseForPlayer Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.ProductId = std::move(ProductId);
 	Parms.PurchaseToken = std::move(PurchaseToken);
 	Parms.OnCompletedRequest = OnCompletedRequest;
@@ -4253,16 +7119,21 @@ void ULootLockerManager::RedeemGooglePlayStorePurchaseForPlayer(const class FStr
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.RefreshAppleGameCenterSession
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    RefreshToken                                           (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerAppleGameCenterSessionResponse& Response)>&OnRefreshAppleGameCenterSessionCompleted               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FLootLockerSessionOptionals&Optionals                                              (ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::RefreshAppleGameCenterSession(const class FString& RefreshToken, const TDelegate<void(const struct FLootLockerAppleGameCenterSessionResponse& Response)>& OnRefreshAppleGameCenterSessionCompleted)
+class FString ULootLockerManager::RefreshAppleGameCenterSession(const class FString& ForPlayerWithUlid, const class FString& RefreshToken, const TDelegate<void(const struct FLootLockerAppleGameCenterSessionResponse& Response)>& OnRefreshAppleGameCenterSessionCompleted, const struct FLootLockerSessionOptionals& Optionals)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4271,8 +7142,10 @@ void ULootLockerManager::RefreshAppleGameCenterSession(const class FString& Refr
 
 	Params::LootLockerManager_RefreshAppleGameCenterSession Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.RefreshToken = std::move(RefreshToken);
 	Parms.OnRefreshAppleGameCenterSessionCompleted = OnRefreshAppleGameCenterSessionCompleted;
+	Parms.Optionals = std::move(Optionals);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4280,16 +7153,21 @@ void ULootLockerManager::RefreshAppleGameCenterSession(const class FString& Refr
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.RefreshAppleSession
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    RefreshToken                                           (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerAppleSessionResponse& Var)>&OnRefreshAppleSessionCompleted                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FLootLockerSessionOptionals&Optionals                                              (ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::RefreshAppleSession(const class FString& RefreshToken, const TDelegate<void(const struct FLootLockerAppleSessionResponse& Var)>& OnRefreshAppleSessionCompleted)
+class FString ULootLockerManager::RefreshAppleSession(const class FString& ForPlayerWithUlid, const class FString& RefreshToken, const TDelegate<void(const struct FLootLockerAppleSessionResponse& Var)>& OnRefreshAppleSessionCompleted, const struct FLootLockerSessionOptionals& Optionals)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4298,8 +7176,10 @@ void ULootLockerManager::RefreshAppleSession(const class FString& RefreshToken, 
 
 	Params::LootLockerManager_RefreshAppleSession Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.RefreshToken = std::move(RefreshToken);
 	Parms.OnRefreshAppleSessionCompleted = OnRefreshAppleSessionCompleted;
+	Parms.Optionals = std::move(Optionals);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4307,16 +7187,55 @@ void ULootLockerManager::RefreshAppleSession(const class FString& RefreshToken, 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.RefreshDiscordSession
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    RefreshToken                                           (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerDiscordSessionResponse& Var)>&OnRefreshDiscordSessionCompleted                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FLootLockerSessionOptionals&Optionals                                              (ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::RefreshDiscordSession(const class FString& ForPlayerWithUlid, const class FString& RefreshToken, const TDelegate<void(const struct FLootLockerDiscordSessionResponse& Var)>& OnRefreshDiscordSessionCompleted, const struct FLootLockerSessionOptionals& Optionals)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "RefreshDiscordSession");
+
+	Params::LootLockerManager_RefreshDiscordSession Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.RefreshToken = std::move(RefreshToken);
+	Parms.OnRefreshDiscordSessionCompleted = OnRefreshDiscordSessionCompleted;
+	Parms.Optionals = std::move(Optionals);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.RefreshEpicSession
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    RefreshToken                                           (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerEpicSessionResponse& Var)>&OnRefreshEpicSessionCompleted                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FLootLockerSessionOptionals&Optionals                                              (ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::RefreshEpicSession(const class FString& RefreshToken, const TDelegate<void(const struct FLootLockerEpicSessionResponse& Var)>& OnRefreshEpicSessionCompleted)
+class FString ULootLockerManager::RefreshEpicSession(const class FString& ForPlayerWithUlid, const class FString& RefreshToken, const TDelegate<void(const struct FLootLockerEpicSessionResponse& Var)>& OnRefreshEpicSessionCompleted, const struct FLootLockerSessionOptionals& Optionals)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4325,8 +7244,10 @@ void ULootLockerManager::RefreshEpicSession(const class FString& RefreshToken, c
 
 	Params::LootLockerManager_RefreshEpicSession Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.RefreshToken = std::move(RefreshToken);
 	Parms.OnRefreshEpicSessionCompleted = OnRefreshEpicSessionCompleted;
+	Parms.Optionals = std::move(Optionals);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4334,16 +7255,55 @@ void ULootLockerManager::RefreshEpicSession(const class FString& RefreshToken, c
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.RefreshGooglePlayGamesSession
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    RefreshToken                                           (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerGooglePlayGamesSessionResponse& Var)>&OnRefreshGooglePlayGamesSessionCompleted               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FLootLockerSessionOptionals&Optionals                                              (ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::RefreshGooglePlayGamesSession(const class FString& ForPlayerWithUlid, const class FString& RefreshToken, const TDelegate<void(const struct FLootLockerGooglePlayGamesSessionResponse& Var)>& OnRefreshGooglePlayGamesSessionCompleted, const struct FLootLockerSessionOptionals& Optionals)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "RefreshGooglePlayGamesSession");
+
+	Params::LootLockerManager_RefreshGooglePlayGamesSession Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.RefreshToken = std::move(RefreshToken);
+	Parms.OnRefreshGooglePlayGamesSessionCompleted = OnRefreshGooglePlayGamesSessionCompleted;
+	Parms.Optionals = std::move(Optionals);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.RefreshGoogleSession
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    RefreshToken                                           (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerGoogleSessionResponse& Var)>&OnRefreshGoogleSessionCompleted                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FLootLockerSessionOptionals&Optionals                                              (ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::RefreshGoogleSession(const class FString& RefreshToken, const TDelegate<void(const struct FLootLockerGoogleSessionResponse& Var)>& OnRefreshGoogleSessionCompleted)
+class FString ULootLockerManager::RefreshGoogleSession(const class FString& ForPlayerWithUlid, const class FString& RefreshToken, const TDelegate<void(const struct FLootLockerGoogleSessionResponse& Var)>& OnRefreshGoogleSessionCompleted, const struct FLootLockerSessionOptionals& Optionals)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4352,8 +7312,10 @@ void ULootLockerManager::RefreshGoogleSession(const class FString& RefreshToken,
 
 	Params::LootLockerManager_RefreshGoogleSession Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.RefreshToken = std::move(RefreshToken);
 	Parms.OnRefreshGoogleSessionCompleted = OnRefreshGoogleSessionCompleted;
+	Parms.Optionals = std::move(Optionals);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4361,16 +7323,21 @@ void ULootLockerManager::RefreshGoogleSession(const class FString& RefreshToken,
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.RefreshMetaSession
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    RefreshToken                                           (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerMetaSessionResponse& Var)>&OnRefreshMetaSessionCompleted                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FLootLockerSessionOptionals&Optionals                                              (ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::RefreshMetaSession(const class FString& RefreshToken, const TDelegate<void(const struct FLootLockerMetaSessionResponse& Var)>& OnRefreshMetaSessionCompleted)
+class FString ULootLockerManager::RefreshMetaSession(const class FString& ForPlayerWithUlid, const class FString& RefreshToken, const TDelegate<void(const struct FLootLockerMetaSessionResponse& Var)>& OnRefreshMetaSessionCompleted, const struct FLootLockerSessionOptionals& Optionals)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4379,8 +7346,10 @@ void ULootLockerManager::RefreshMetaSession(const class FString& RefreshToken, c
 
 	Params::LootLockerManager_RefreshMetaSession Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.RefreshToken = std::move(RefreshToken);
 	Parms.OnRefreshMetaSessionCompleted = OnRefreshMetaSessionCompleted;
+	Parms.Optionals = std::move(Optionals);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4388,16 +7357,20 @@ void ULootLockerManager::RefreshMetaSession(const class FString& RefreshToken, c
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.RefreshRemoteSession
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    RefreshToken                                           (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerRefreshRemoteSessionResponse& Response)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::RefreshRemoteSession(const class FString& RefreshToken, const TDelegate<void(const struct FLootLockerRefreshRemoteSessionResponse& Response)>& OnCompletedRequest)
+class FString ULootLockerManager::RefreshRemoteSession(const class FString& ForPlayerWithUlid, const class FString& RefreshToken, const TDelegate<void(const struct FLootLockerRefreshRemoteSessionResponse& Response)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4406,6 +7379,7 @@ void ULootLockerManager::RefreshRemoteSession(const class FString& RefreshToken,
 
 	Params::LootLockerManager_RefreshRemoteSession Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.RefreshToken = std::move(RefreshToken);
 	Parms.OnCompletedRequest = OnCompletedRequest;
 
@@ -4415,16 +7389,20 @@ void ULootLockerManager::RefreshRemoteSession(const class FString& RefreshToken,
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.RemoveAssetFromFavourites
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   AssetId                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerGetFavouriteAssetIndicesResponse& FavouriteAssetIndicesResponse)>&OnRemoveAssetFromFavouritesRequestCompleted            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::RemoveAssetFromFavourites(int32 AssetId, const TDelegate<void(const struct FLootLockerGetFavouriteAssetIndicesResponse& FavouriteAssetIndicesResponse)>& OnRemoveAssetFromFavouritesRequestCompleted)
+class FString ULootLockerManager::RemoveAssetFromFavourites(const class FString& ForPlayerWithUlid, int32 AssetId, const TDelegate<void(const struct FLootLockerGetFavouriteAssetIndicesResponse& FavouriteAssetIndicesResponse)>& OnRemoveAssetFromFavouritesRequestCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4433,6 +7411,7 @@ void ULootLockerManager::RemoveAssetFromFavourites(int32 AssetId, const TDelegat
 
 	Params::LootLockerManager_RemoveAssetFromFavourites Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.AssetId = AssetId;
 	Parms.OnRemoveAssetFromFavouritesRequestCompleted = OnRemoveAssetFromFavouritesRequestCompleted;
 
@@ -4442,17 +7421,21 @@ void ULootLockerManager::RemoveAssetFromFavourites(int32 AssetId, const TDelegat
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.RemoveAssetToHeroLoadout
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             HeroID                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             AssetInstanceId                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)>&OnCompleteBP                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::RemoveAssetToHeroLoadout(const int32 HeroID, const int32 AssetInstanceId, const TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)>& OnCompleteBP)
+class FString ULootLockerManager::RemoveAssetToHeroLoadout(const class FString& ForPlayerWithUlid, const int32 HeroID, const int32 AssetInstanceId, const TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)>& OnCompleteBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4461,6 +7444,7 @@ void ULootLockerManager::RemoveAssetToHeroLoadout(const int32 HeroID, const int3
 
 	Params::LootLockerManager_RemoveAssetToHeroLoadout Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.HeroID = HeroID;
 	Parms.AssetInstanceId = AssetInstanceId;
 	Parms.OnCompleteBP = OnCompleteBP;
@@ -4471,17 +7455,21 @@ void ULootLockerManager::RemoveAssetToHeroLoadout(const int32 HeroID, const int3
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.ResetCharacterProgression
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32&                            CharacterId                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    ProgressionKey                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerCharacterProgressionWithRewardsResponse& Response)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::ResetCharacterProgression(const int32& CharacterId, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerCharacterProgressionWithRewardsResponse& Response)>& OnCompletedRequest)
+class FString ULootLockerManager::ResetCharacterProgression(const class FString& ForPlayerWithUlid, const int32& CharacterId, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerCharacterProgressionWithRewardsResponse& Response)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4490,6 +7478,7 @@ void ULootLockerManager::ResetCharacterProgression(const int32& CharacterId, con
 
 	Params::LootLockerManager_ResetCharacterProgression Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.CharacterId = CharacterId;
 	Parms.ProgressionKey = std::move(ProgressionKey);
 	Parms.OnCompletedRequest = OnCompletedRequest;
@@ -4500,17 +7489,21 @@ void ULootLockerManager::ResetCharacterProgression(const int32& CharacterId, con
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.ResetInstanceProgression
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             AssetInstanceId                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    ProgressionKey                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerInstanceProgressionWithRewardsResponse& Response)>&OnCompletedRequestBP                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::ResetInstanceProgression(const int32 AssetInstanceId, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerInstanceProgressionWithRewardsResponse& Response)>& OnCompletedRequestBP)
+class FString ULootLockerManager::ResetInstanceProgression(const class FString& ForPlayerWithUlid, const int32 AssetInstanceId, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerInstanceProgressionWithRewardsResponse& Response)>& OnCompletedRequestBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4519,6 +7512,7 @@ void ULootLockerManager::ResetInstanceProgression(const int32 AssetInstanceId, c
 
 	Params::LootLockerManager_ResetInstanceProgression Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.AssetInstanceId = AssetInstanceId;
 	Parms.ProgressionKey = std::move(ProgressionKey);
 	Parms.OnCompletedRequestBP = OnCompletedRequestBP;
@@ -4529,16 +7523,20 @@ void ULootLockerManager::ResetInstanceProgression(const int32 AssetInstanceId, c
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.ResetPlayerProgression
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    ProgressionKey                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerPlayerProgressionWithRewardsResponse& Response)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::ResetPlayerProgression(const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerPlayerProgressionWithRewardsResponse& Response)>& OnCompletedRequest)
+class FString ULootLockerManager::ResetPlayerProgression(const class FString& ForPlayerWithUlid, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerPlayerProgressionWithRewardsResponse& Response)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4547,6 +7545,7 @@ void ULootLockerManager::ResetPlayerProgression(const class FString& Progression
 
 	Params::LootLockerManager_ResetPlayerProgression Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.ProgressionKey = std::move(ProgressionKey);
 	Parms.OnCompletedRequest = OnCompletedRequest;
 
@@ -4556,17 +7555,53 @@ void ULootLockerManager::ResetPlayerProgression(const class FString& Progression
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.SendFriendRequest
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    PlayerUlid                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerFriendActionResponse& Response)>&OnResponseCompletedBP                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::SendFriendRequest(const class FString& ForPlayerWithUlid, const class FString& PlayerUlid, const TDelegate<void(const struct FLootLockerFriendActionResponse& Response)>& OnResponseCompletedBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "SendFriendRequest");
+
+	Params::LootLockerManager_SendFriendRequest Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.PlayerUlid = std::move(PlayerUlid);
+	Parms.OnResponseCompletedBP = OnResponseCompletedBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.SendGameFeedback
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    Description                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    CategoryID                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::SendGameFeedback(const class FString& Description, const class FString& CategoryID, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnComplete)
+class FString ULootLockerManager::SendGameFeedback(const class FString& ForPlayerWithUlid, const class FString& Description, const class FString& CategoryID, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnComplete)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4575,6 +7610,7 @@ void ULootLockerManager::SendGameFeedback(const class FString& Description, cons
 
 	Params::LootLockerManager_SendGameFeedback Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.Description = std::move(Description);
 	Parms.CategoryID = std::move(CategoryID);
 	Parms.OnComplete = OnComplete;
@@ -4585,18 +7621,22 @@ void ULootLockerManager::SendGameFeedback(const class FString& Description, cons
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.SendPlayerFeedback
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    ulid                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    Description                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    CategoryID                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::SendPlayerFeedback(const class FString& ulid, const class FString& Description, const class FString& CategoryID, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnComplete)
+class FString ULootLockerManager::SendPlayerFeedback(const class FString& ForPlayerWithUlid, const class FString& ulid, const class FString& Description, const class FString& CategoryID, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnComplete)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4605,6 +7645,7 @@ void ULootLockerManager::SendPlayerFeedback(const class FString& ulid, const cla
 
 	Params::LootLockerManager_SendPlayerFeedback Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.ulid = std::move(ulid);
 	Parms.Description = std::move(Description);
 	Parms.CategoryID = std::move(CategoryID);
@@ -4616,18 +7657,22 @@ void ULootLockerManager::SendPlayerFeedback(const class FString& ulid, const cla
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.SendUGCFeedback
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    ulid                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    Description                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    CategoryID                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::SendUGCFeedback(const class FString& ulid, const class FString& Description, const class FString& CategoryID, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnComplete)
+class FString ULootLockerManager::SendUGCFeedback(const class FString& ForPlayerWithUlid, const class FString& ulid, const class FString& Description, const class FString& CategoryID, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnComplete)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4636,6 +7681,7 @@ void ULootLockerManager::SendUGCFeedback(const class FString& ulid, const class 
 
 	Params::LootLockerManager_SendUGCFeedback Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.ulid = std::move(ulid);
 	Parms.Description = std::move(Description);
 	Parms.CategoryID = std::move(CategoryID);
@@ -4647,16 +7693,128 @@ void ULootLockerManager::SendUGCFeedback(const class FString& ulid, const class 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.SetAllPlayersToInactive
+// (Final, Native, Static, Public, BlueprintCallable)
+
+void ULootLockerManager::SetAllPlayersToInactive()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "SetAllPlayersToInactive");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.SetAllPlayersToInactiveExceptForPlayer
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    PlayerUlid                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULootLockerManager::SetAllPlayersToInactiveExceptForPlayer(const class FString& PlayerUlid)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "SetAllPlayersToInactiveExceptForPlayer");
+
+	Params::LootLockerManager_SetAllPlayersToInactiveExceptForPlayer Parms{};
+
+	Parms.PlayerUlid = std::move(PlayerUlid);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.SetDefaultPlayer
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    PlayerUlid                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ULootLockerManager::SetDefaultPlayer(const class FString& PlayerUlid)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "SetDefaultPlayer");
+
+	Params::LootLockerManager_SetDefaultPlayer Parms{};
+
+	Parms.PlayerUlid = std::move(PlayerUlid);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.SetMetadata
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const ELootLockerMetadataSources        Source                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SourceID                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<struct FLootLockerSetMetadataAction>&MetadataToActionsToPerform                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerSetMetadataResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::SetMetadata(const class FString& ForPlayerWithUlid, const ELootLockerMetadataSources Source, const class FString& SourceID, const TArray<struct FLootLockerSetMetadataAction>& MetadataToActionsToPerform, const TDelegate<void(const struct FLootLockerSetMetadataResponse& Response)>& OnComplete)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "SetMetadata");
+
+	Params::LootLockerManager_SetMetadata Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.Source = Source;
+	Parms.SourceID = std::move(SourceID);
+	Parms.MetadataToActionsToPerform = std::move(MetadataToActionsToPerform);
+	Parms.OnComplete = OnComplete;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.SetPlayerName
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerNameResponse& Value)>&OnSetPlayerName                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::SetPlayerName(const class FString& Name_0, const TDelegate<void(const struct FLootLockerNameResponse& Value)>& OnSetPlayerName)
+class FString ULootLockerManager::SetPlayerName(const class FString& ForPlayerWithUlid, const class FString& Name_0, const TDelegate<void(const struct FLootLockerNameResponse& Value)>& OnSetPlayerName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4665,8 +7823,36 @@ void ULootLockerManager::SetPlayerName(const class FString& Name_0, const TDeleg
 
 	Params::LootLockerManager_SetPlayerName Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.Name_0 = std::move(Name_0);
 	Parms.OnSetPlayerName = OnSetPlayerName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.SetPlayerUlidToInactive
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    PlayerUlid                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULootLockerManager::SetPlayerUlidToInactive(const class FString& PlayerUlid)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "SetPlayerUlidToInactive");
+
+	Params::LootLockerManager_SetPlayerUlidToInactive Parms{};
+
+	Parms.PlayerUlid = std::move(PlayerUlid);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4680,9 +7866,11 @@ void ULootLockerManager::SetPlayerName(const class FString& Name_0, const TDeleg
 // Function LootLockerSDK.LootLockerManager.SetProfilePrivate
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Response)>&OnProfileSetPrivate                                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::SetProfilePrivate(const TDelegate<void(const struct FLootLockerResponse& Response)>& OnProfileSetPrivate)
+class FString ULootLockerManager::SetProfilePrivate(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnProfileSetPrivate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4691,6 +7879,7 @@ void ULootLockerManager::SetProfilePrivate(const TDelegate<void(const struct FLo
 
 	Params::LootLockerManager_SetProfilePrivate Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnProfileSetPrivate = OnProfileSetPrivate;
 
 	auto Flgs = Func->FunctionFlags;
@@ -4699,15 +7888,19 @@ void ULootLockerManager::SetProfilePrivate(const TDelegate<void(const struct FLo
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.SetProfilePublic
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Response)>&OnProfileSetPublic                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::SetProfilePublic(const TDelegate<void(const struct FLootLockerResponse& Response)>& OnProfileSetPublic)
+class FString ULootLockerManager::SetProfilePublic(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnProfileSetPublic)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4716,6 +7909,7 @@ void ULootLockerManager::SetProfilePublic(const TDelegate<void(const struct FLoo
 
 	Params::LootLockerManager_SetProfilePublic Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.OnProfileSetPublic = OnProfileSetPublic;
 
 	auto Flgs = Func->FunctionFlags;
@@ -4724,6 +7918,8 @@ void ULootLockerManager::SetProfilePublic(const TDelegate<void(const struct FLoo
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -4732,8 +7928,10 @@ void ULootLockerManager::SetProfilePublic(const TDelegate<void(const struct FLoo
 // Parameters:
 // const class FString&                    AmazonLunaGuid                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>&OnStartedSessionRequestCompleted                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FLootLockerSessionOptionals&Optionals                                              (ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::StartAmazonLunaSession(const class FString& AmazonLunaGuid, const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnStartedSessionRequestCompleted)
+class FString ULootLockerManager::StartAmazonLunaSession(const class FString& AmazonLunaGuid, const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnStartedSessionRequestCompleted, const struct FLootLockerSessionOptionals& Optionals)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4744,6 +7942,7 @@ void ULootLockerManager::StartAmazonLunaSession(const class FString& AmazonLunaG
 
 	Parms.AmazonLunaGuid = std::move(AmazonLunaGuid);
 	Parms.OnStartedSessionRequestCompleted = OnStartedSessionRequestCompleted;
+	Parms.Optionals = std::move(Optionals);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4751,6 +7950,8 @@ void ULootLockerManager::StartAmazonLunaSession(const class FString& AmazonLunaG
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -4759,8 +7960,10 @@ void ULootLockerManager::StartAmazonLunaSession(const class FString& AmazonLunaG
 // Parameters:
 // const class FString&                    DeviceID                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>&OnStartedSessionRequestCompleted                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FLootLockerSessionOptionals&Optionals                                              (ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::StartAndroidSession(const class FString& DeviceID, const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnStartedSessionRequestCompleted)
+class FString ULootLockerManager::StartAndroidSession(const class FString& DeviceID, const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnStartedSessionRequestCompleted, const struct FLootLockerSessionOptionals& Optionals)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4771,6 +7974,7 @@ void ULootLockerManager::StartAndroidSession(const class FString& DeviceID, cons
 
 	Parms.DeviceID = std::move(DeviceID);
 	Parms.OnStartedSessionRequestCompleted = OnStartedSessionRequestCompleted;
+	Parms.Optionals = std::move(Optionals);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4778,6 +7982,8 @@ void ULootLockerManager::StartAndroidSession(const class FString& DeviceID, cons
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -4788,11 +7994,13 @@ void ULootLockerManager::StartAndroidSession(const class FString& DeviceID, cons
 // const class FString&                    PlayerId                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    PublicKeyUrl                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    signature                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    salt                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Salt                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    Timestamp                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerAppleGameCenterSessionResponse& Response)>&OnStartedAppleGameCenterSessionCompleted               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FLootLockerSessionOptionals&Optionals                                              (ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::StartAppleGameCenterSession(const class FString& BundleId, const class FString& PlayerId, const class FString& PublicKeyUrl, const class FString& signature, const class FString& salt, const class FString& Timestamp, const TDelegate<void(const struct FLootLockerAppleGameCenterSessionResponse& Response)>& OnStartedAppleGameCenterSessionCompleted)
+class FString ULootLockerManager::StartAppleGameCenterSession(const class FString& BundleId, const class FString& PlayerId, const class FString& PublicKeyUrl, const class FString& signature, const class FString& Salt, const class FString& Timestamp, const TDelegate<void(const struct FLootLockerAppleGameCenterSessionResponse& Response)>& OnStartedAppleGameCenterSessionCompleted, const struct FLootLockerSessionOptionals& Optionals)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4805,9 +8013,10 @@ void ULootLockerManager::StartAppleGameCenterSession(const class FString& Bundle
 	Parms.PlayerId = std::move(PlayerId);
 	Parms.PublicKeyUrl = std::move(PublicKeyUrl);
 	Parms.signature = std::move(signature);
-	Parms.salt = std::move(salt);
+	Parms.Salt = std::move(Salt);
 	Parms.Timestamp = std::move(Timestamp);
 	Parms.OnStartedAppleGameCenterSessionCompleted = OnStartedAppleGameCenterSessionCompleted;
+	Parms.Optionals = std::move(Optionals);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4815,6 +8024,8 @@ void ULootLockerManager::StartAppleGameCenterSession(const class FString& Bundle
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -4823,8 +8034,10 @@ void ULootLockerManager::StartAppleGameCenterSession(const class FString& Bundle
 // Parameters:
 // const class FString&                    AuthorizationCode                                      (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerAppleSessionResponse& Var)>&OnStartedAppleSessionCompleted                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FLootLockerSessionOptionals&Optionals                                              (ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::StartAppleSession(const class FString& AuthorizationCode, const TDelegate<void(const struct FLootLockerAppleSessionResponse& Var)>& OnStartedAppleSessionCompleted)
+class FString ULootLockerManager::StartAppleSession(const class FString& AuthorizationCode, const TDelegate<void(const struct FLootLockerAppleSessionResponse& Var)>& OnStartedAppleSessionCompleted, const struct FLootLockerSessionOptionals& Optionals)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4835,6 +8048,7 @@ void ULootLockerManager::StartAppleSession(const class FString& AuthorizationCod
 
 	Parms.AuthorizationCode = std::move(AuthorizationCode);
 	Parms.OnStartedAppleSessionCompleted = OnStartedAppleSessionCompleted;
+	Parms.Optionals = std::move(Optionals);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4842,16 +8056,52 @@ void ULootLockerManager::StartAppleSession(const class FString& AuthorizationCod
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.StartDiscordSession
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    AccessToken                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerDiscordSessionResponse& Var)>&OnStartedDiscordSessionRequestCompleted                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FLootLockerSessionOptionals&Optionals                                              (ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::StartDiscordSession(const class FString& AccessToken, const TDelegate<void(const struct FLootLockerDiscordSessionResponse& Var)>& OnStartedDiscordSessionRequestCompleted, const struct FLootLockerSessionOptionals& Optionals)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "StartDiscordSession");
+
+	Params::LootLockerManager_StartDiscordSession Parms{};
+
+	Parms.AccessToken = std::move(AccessToken);
+	Parms.OnStartedDiscordSessionRequestCompleted = OnStartedDiscordSessionRequestCompleted;
+	Parms.Optionals = std::move(Optionals);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.StartEpicSession
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// const class FString&                    IDToken                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    IdToken                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerEpicSessionResponse& Var)>&OnStartedEpicSessionRequestCompleted                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FLootLockerSessionOptionals&Optionals                                              (ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::StartEpicSession(const class FString& IDToken, const TDelegate<void(const struct FLootLockerEpicSessionResponse& Var)>& OnStartedEpicSessionRequestCompleted)
+class FString ULootLockerManager::StartEpicSession(const class FString& IdToken, const TDelegate<void(const struct FLootLockerEpicSessionResponse& Var)>& OnStartedEpicSessionRequestCompleted, const struct FLootLockerSessionOptionals& Optionals)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4860,8 +8110,9 @@ void ULootLockerManager::StartEpicSession(const class FString& IDToken, const TD
 
 	Params::LootLockerManager_StartEpicSession Parms{};
 
-	Parms.IDToken = std::move(IDToken);
+	Parms.IdToken = std::move(IdToken);
 	Parms.OnStartedEpicSessionRequestCompleted = OnStartedEpicSessionRequestCompleted;
+	Parms.Optionals = std::move(Optionals);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4869,16 +8120,52 @@ void ULootLockerManager::StartEpicSession(const class FString& IDToken, const TD
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.StartGooglePlayGamesSession
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    AuthCode                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerGooglePlayGamesSessionResponse& Var)>&OnStartedGooglePlayGamesSessionRequestCompleted        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FLootLockerSessionOptionals&Optionals                                              (ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::StartGooglePlayGamesSession(const class FString& AuthCode, const TDelegate<void(const struct FLootLockerGooglePlayGamesSessionResponse& Var)>& OnStartedGooglePlayGamesSessionRequestCompleted, const struct FLootLockerSessionOptionals& Optionals)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "StartGooglePlayGamesSession");
+
+	Params::LootLockerManager_StartGooglePlayGamesSession Parms{};
+
+	Parms.AuthCode = std::move(AuthCode);
+	Parms.OnStartedGooglePlayGamesSessionRequestCompleted = OnStartedGooglePlayGamesSessionRequestCompleted;
+	Parms.Optionals = std::move(Optionals);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.StartGoogleSession
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// const class FString&                    IDToken                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    IdToken                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerGoogleSessionResponse& Var)>&OnStartedGoogleSessionRequestCompleted                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FLootLockerSessionOptionals&Optionals                                              (ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::StartGoogleSession(const class FString& IDToken, const TDelegate<void(const struct FLootLockerGoogleSessionResponse& Var)>& OnStartedGoogleSessionRequestCompleted)
+class FString ULootLockerManager::StartGoogleSession(const class FString& IdToken, const TDelegate<void(const struct FLootLockerGoogleSessionResponse& Var)>& OnStartedGoogleSessionRequestCompleted, const struct FLootLockerSessionOptionals& Optionals)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4887,8 +8174,9 @@ void ULootLockerManager::StartGoogleSession(const class FString& IDToken, const 
 
 	Params::LootLockerManager_StartGoogleSession Parms{};
 
-	Parms.IDToken = std::move(IDToken);
+	Parms.IdToken = std::move(IdToken);
 	Parms.OnStartedGoogleSessionRequestCompleted = OnStartedGoogleSessionRequestCompleted;
+	Parms.Optionals = std::move(Optionals);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4896,17 +8184,21 @@ void ULootLockerManager::StartGoogleSession(const class FString& IDToken, const 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.StartGoogleSessionForPlatform
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// const class FString&                    IDToken                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    IdToken                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // ELootLockerGoogleClientPlatform         Platform                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerGoogleSessionResponse& Var)>&OnStartedGoogleSessionRequestCompleted                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FLootLockerSessionOptionals&Optionals                                              (ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::StartGoogleSessionForPlatform(const class FString& IDToken, ELootLockerGoogleClientPlatform Platform, const TDelegate<void(const struct FLootLockerGoogleSessionResponse& Var)>& OnStartedGoogleSessionRequestCompleted)
+class FString ULootLockerManager::StartGoogleSessionForPlatform(const class FString& IdToken, ELootLockerGoogleClientPlatform Platform, const TDelegate<void(const struct FLootLockerGoogleSessionResponse& Var)>& OnStartedGoogleSessionRequestCompleted, const struct FLootLockerSessionOptionals& Optionals)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4915,9 +8207,10 @@ void ULootLockerManager::StartGoogleSessionForPlatform(const class FString& IDTo
 
 	Params::LootLockerManager_StartGoogleSessionForPlatform Parms{};
 
-	Parms.IDToken = std::move(IDToken);
+	Parms.IdToken = std::move(IdToken);
 	Parms.Platform = Platform;
 	Parms.OnStartedGoogleSessionRequestCompleted = OnStartedGoogleSessionRequestCompleted;
+	Parms.Optionals = std::move(Optionals);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4925,6 +8218,8 @@ void ULootLockerManager::StartGoogleSessionForPlatform(const class FString& IDTo
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -4934,8 +8229,10 @@ void ULootLockerManager::StartGoogleSessionForPlatform(const class FString& IDTo
 // const class FString&                    UserId                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    Nonce                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerMetaSessionResponse& Var)>&OnMetaSessionRequestCompleted                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FLootLockerSessionOptionals&Optionals                                              (ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::StartMetaSession(const class FString& UserId, const class FString& Nonce, const TDelegate<void(const struct FLootLockerMetaSessionResponse& Var)>& OnMetaSessionRequestCompleted)
+class FString ULootLockerManager::StartMetaSession(const class FString& UserId, const class FString& Nonce, const TDelegate<void(const struct FLootLockerMetaSessionResponse& Var)>& OnMetaSessionRequestCompleted, const struct FLootLockerSessionOptionals& Optionals)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4947,6 +8244,7 @@ void ULootLockerManager::StartMetaSession(const class FString& UserId, const cla
 	Parms.UserId = std::move(UserId);
 	Parms.Nonce = std::move(Nonce);
 	Parms.OnMetaSessionRequestCompleted = OnMetaSessionRequestCompleted;
+	Parms.Optionals = std::move(Optionals);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4954,16 +8252,20 @@ void ULootLockerManager::StartMetaSession(const class FString& UserId, const cla
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.StartMission
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   MissionId                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerStartMissionResponse& Response)>&OnStartMissionCompleted                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::StartMission(int32 MissionId, const TDelegate<void(const struct FLootLockerStartMissionResponse& Response)>& OnStartMissionCompleted)
+class FString ULootLockerManager::StartMission(const class FString& ForPlayerWithUlid, int32 MissionId, const TDelegate<void(const struct FLootLockerStartMissionResponse& Response)>& OnStartMissionCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4972,6 +8274,7 @@ void ULootLockerManager::StartMission(int32 MissionId, const TDelegate<void(cons
 
 	Params::LootLockerManager_StartMission Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.MissionId = MissionId;
 	Parms.OnStartMissionCompleted = OnStartMissionCompleted;
 
@@ -4981,6 +8284,8 @@ void ULootLockerManager::StartMission(int32 MissionId, const TDelegate<void(cons
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -4989,8 +8294,10 @@ void ULootLockerManager::StartMission(int32 MissionId, const TDelegate<void(cons
 // Parameters:
 // const class FString&                    NSAIdToken                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>&OnStartedNintendoSwitchSessionRequestCompleted         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FLootLockerSessionOptionals&Optionals                                              (ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::StartNintendoSwitchSession(const class FString& NSAIdToken, const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnStartedNintendoSwitchSessionRequestCompleted)
+class FString ULootLockerManager::StartNintendoSwitchSession(const class FString& NSAIdToken, const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnStartedNintendoSwitchSessionRequestCompleted, const struct FLootLockerSessionOptionals& Optionals)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5001,6 +8308,7 @@ void ULootLockerManager::StartNintendoSwitchSession(const class FString& NSAIdTo
 
 	Parms.NSAIdToken = std::move(NSAIdToken);
 	Parms.OnStartedNintendoSwitchSessionRequestCompleted = OnStartedNintendoSwitchSessionRequestCompleted;
+	Parms.Optionals = std::move(Optionals);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5008,6 +8316,8 @@ void ULootLockerManager::StartNintendoSwitchSession(const class FString& NSAIdTo
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -5016,8 +8326,10 @@ void ULootLockerManager::StartNintendoSwitchSession(const class FString& NSAIdTo
 // Parameters:
 // const class FString&                    PsnOnlineId                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>&OnStartedSessionRequestCompleted                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FLootLockerSessionOptionals&Optionals                                              (ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::StartPlaystationNetworkSession(const class FString& PsnOnlineId, const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnStartedSessionRequestCompleted)
+class FString ULootLockerManager::StartPlaystationNetworkSession(const class FString& PsnOnlineId, const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnStartedSessionRequestCompleted, const struct FLootLockerSessionOptionals& Optionals)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5028,6 +8340,7 @@ void ULootLockerManager::StartPlaystationNetworkSession(const class FString& Psn
 
 	Parms.PsnOnlineId = std::move(PsnOnlineId);
 	Parms.OnStartedSessionRequestCompleted = OnStartedSessionRequestCompleted;
+	Parms.Optionals = std::move(Optionals);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5035,6 +8348,8 @@ void ULootLockerManager::StartPlaystationNetworkSession(const class FString& Psn
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -5074,23 +8389,43 @@ class FString ULootLockerManager::StartRemoteSession(const TDelegate<void(const 
 }
 
 
-// Function LootLockerSDK.LootLockerManager.StartSteamSession
+// Function LootLockerSDK.LootLockerManager.StartSessionManual
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// const class FString&                    SteamID64                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>&OnStartedSessionRequestCompleted                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const class FString&                    SessionToken                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    PlayerUlid                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FLootLockerPlatformRepresentation&CurrentPlatform                                        (Parm, NativeAccessSpecifierPublic)
+// const class FString&                    RefreshToken                                           (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    PlayerIdentifier                                       (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    PlayerPublicUid                                        (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    PlayerName                                             (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    WhiteLabelEmail                                        (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    WhiteLabelToken                                        (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    LastSignIn                                             (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    PlayerCreatedAt                                        (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FLootLockerSessionOptionals&SessionOptionals                                       (ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::StartSteamSession(const class FString& SteamID64, const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnStartedSessionRequestCompleted)
+void ULootLockerManager::StartSessionManual(const class FString& SessionToken, const class FString& PlayerUlid, const struct FLootLockerPlatformRepresentation& CurrentPlatform, const class FString& RefreshToken, const class FString& PlayerIdentifier, const class FString& PlayerPublicUid, const class FString& PlayerName, const class FString& WhiteLabelEmail, const class FString& WhiteLabelToken, const class FString& LastSignIn, const class FString& PlayerCreatedAt, const struct FLootLockerSessionOptionals& SessionOptionals)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("LootLockerManager", "StartSteamSession");
+		Func = StaticClass()->GetFunction("LootLockerManager", "StartSessionManual");
 
-	Params::LootLockerManager_StartSteamSession Parms{};
+	Params::LootLockerManager_StartSessionManual Parms{};
 
-	Parms.SteamID64 = std::move(SteamID64);
-	Parms.OnStartedSessionRequestCompleted = OnStartedSessionRequestCompleted;
+	Parms.SessionToken = std::move(SessionToken);
+	Parms.PlayerUlid = std::move(PlayerUlid);
+	Parms.CurrentPlatform = std::move(CurrentPlatform);
+	Parms.RefreshToken = std::move(RefreshToken);
+	Parms.PlayerIdentifier = std::move(PlayerIdentifier);
+	Parms.PlayerPublicUid = std::move(PlayerPublicUid);
+	Parms.PlayerName = std::move(PlayerName);
+	Parms.WhiteLabelEmail = std::move(WhiteLabelEmail);
+	Parms.WhiteLabelToken = std::move(WhiteLabelToken);
+	Parms.LastSignIn = std::move(LastSignIn);
+	Parms.PlayerCreatedAt = std::move(PlayerCreatedAt);
+	Parms.SessionOptionals = std::move(SessionOptionals);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5101,13 +8436,49 @@ void ULootLockerManager::StartSteamSession(const class FString& SteamID64, const
 }
 
 
+// Function LootLockerSDK.LootLockerManager.StartSteamSessionUsingTicket
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    SteamSessionTicket                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SteamAppId                                             (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FLootLockerSessionOptionals&Optionals                                              (ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::StartSteamSessionUsingTicket(const class FString& SteamSessionTicket, const class FString& SteamAppId, const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnCompletedRequest, const struct FLootLockerSessionOptionals& Optionals)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "StartSteamSessionUsingTicket");
+
+	Params::LootLockerManager_StartSteamSessionUsingTicket Parms{};
+
+	Parms.SteamSessionTicket = std::move(SteamSessionTicket);
+	Parms.SteamAppId = std::move(SteamAppId);
+	Parms.OnCompletedRequest = OnCompletedRequest;
+	Parms.Optionals = std::move(Optionals);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function LootLockerSDK.LootLockerManager.StartXboxSession
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // const class FString&                    XboxUserToken                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>&OnStartedXboxSessionCompleted                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FLootLockerSessionOptionals&Optionals                                              (ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::StartXboxSession(const class FString& XboxUserToken, const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnStartedXboxSessionCompleted)
+class FString ULootLockerManager::StartXboxSession(const class FString& XboxUserToken, const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnStartedXboxSessionCompleted, const struct FLootLockerSessionOptionals& Optionals)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5118,6 +8489,7 @@ void ULootLockerManager::StartXboxSession(const class FString& XboxUserToken, co
 
 	Parms.XboxUserToken = std::move(XboxUserToken);
 	Parms.OnStartedXboxSessionCompleted = OnStartedXboxSessionCompleted;
+	Parms.Optionals = std::move(Optionals);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5125,19 +8497,23 @@ void ULootLockerManager::StartXboxSession(const class FString& XboxUserToken, co
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.SubmitScore
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    MemberId                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    LeaderboardKey                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   score                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    MetaData                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerSubmitScoreResponse& Response)>&OnCompletedRequestBP                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::SubmitScore(const class FString& MemberId, const class FString& LeaderboardKey, int32 score, const class FString& MetaData, const TDelegate<void(const struct FLootLockerSubmitScoreResponse& Response)>& OnCompletedRequestBP)
+class FString ULootLockerManager::SubmitScore(const class FString& ForPlayerWithUlid, const class FString& MemberId, const class FString& LeaderboardKey, int32 score, const class FString& MetaData, const TDelegate<void(const struct FLootLockerSubmitScoreResponse& Response)>& OnCompletedRequestBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5146,6 +8522,7 @@ void ULootLockerManager::SubmitScore(const class FString& MemberId, const class 
 
 	Params::LootLockerManager_SubmitScore Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.MemberId = std::move(MemberId);
 	Parms.LeaderboardKey = std::move(LeaderboardKey);
 	Parms.score = score;
@@ -5158,45 +8535,22 @@ void ULootLockerManager::SubmitScore(const class FString& MemberId, const class 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
 
-
-// Function LootLockerSDK.LootLockerManager.SubmitXP
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// int32                                   Points                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const TDelegate<void(const struct FLootLockerSubmitXpResponse& Value)>&OnSubmitXPRequestCompleted                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void ULootLockerManager::SubmitXP(int32 Points, const TDelegate<void(const struct FLootLockerSubmitXpResponse& Value)>& OnSubmitXPRequestCompleted)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("LootLockerManager", "SubmitXP");
-
-	Params::LootLockerManager_SubmitXP Parms{};
-
-	Parms.Points = Points;
-	Parms.OnSubmitXPRequestCompleted = OnSubmitXPRequestCompleted;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.SubtractPointsFromCharacterProgression
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32&                            CharacterId                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    ProgressionKey                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32&                            Amount                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerCharacterProgressionWithRewardsResponse& Response)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::SubtractPointsFromCharacterProgression(const int32& CharacterId, const class FString& ProgressionKey, const int32& Amount, const TDelegate<void(const struct FLootLockerCharacterProgressionWithRewardsResponse& Response)>& OnCompletedRequest)
+class FString ULootLockerManager::SubtractPointsFromCharacterProgression(const class FString& ForPlayerWithUlid, const int32& CharacterId, const class FString& ProgressionKey, const int32& Amount, const TDelegate<void(const struct FLootLockerCharacterProgressionWithRewardsResponse& Response)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5205,6 +8559,7 @@ void ULootLockerManager::SubtractPointsFromCharacterProgression(const int32& Cha
 
 	Params::LootLockerManager_SubtractPointsFromCharacterProgression Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.CharacterId = CharacterId;
 	Parms.ProgressionKey = std::move(ProgressionKey);
 	Parms.Amount = Amount;
@@ -5216,18 +8571,22 @@ void ULootLockerManager::SubtractPointsFromCharacterProgression(const int32& Cha
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.SubtractPointsFromInstanceProgression
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             AssetInstanceId                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    ProgressionKey                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             Amount                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerInstanceProgressionWithRewardsResponse& Response)>&OnCompletedRequestBP                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::SubtractPointsFromInstanceProgression(const int32 AssetInstanceId, const class FString& ProgressionKey, const int32 Amount, const TDelegate<void(const struct FLootLockerInstanceProgressionWithRewardsResponse& Response)>& OnCompletedRequestBP)
+class FString ULootLockerManager::SubtractPointsFromInstanceProgression(const class FString& ForPlayerWithUlid, const int32 AssetInstanceId, const class FString& ProgressionKey, const int32 Amount, const TDelegate<void(const struct FLootLockerInstanceProgressionWithRewardsResponse& Response)>& OnCompletedRequestBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5236,6 +8595,7 @@ void ULootLockerManager::SubtractPointsFromInstanceProgression(const int32 Asset
 
 	Params::LootLockerManager_SubtractPointsFromInstanceProgression Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.AssetInstanceId = AssetInstanceId;
 	Parms.ProgressionKey = std::move(ProgressionKey);
 	Parms.Amount = Amount;
@@ -5247,17 +8607,21 @@ void ULootLockerManager::SubtractPointsFromInstanceProgression(const int32 Asset
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.SubtractPointsFromPlayerProgression
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    ProgressionKey                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32&                            Amount                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerPlayerProgressionWithRewardsResponse& Response)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::SubtractPointsFromPlayerProgression(const class FString& ProgressionKey, const int32& Amount, const TDelegate<void(const struct FLootLockerPlayerProgressionWithRewardsResponse& Response)>& OnCompletedRequest)
+class FString ULootLockerManager::SubtractPointsFromPlayerProgression(const class FString& ForPlayerWithUlid, const class FString& ProgressionKey, const int32& Amount, const TDelegate<void(const struct FLootLockerPlayerProgressionWithRewardsResponse& Response)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5266,6 +8630,7 @@ void ULootLockerManager::SubtractPointsFromPlayerProgression(const class FString
 
 	Params::LootLockerManager_SubtractPointsFromPlayerProgression Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.ProgressionKey = std::move(ProgressionKey);
 	Parms.Amount = Amount;
 	Parms.OnCompletedRequest = OnCompletedRequest;
@@ -5276,26 +8641,33 @@ void ULootLockerManager::SubtractPointsFromPlayerProgression(const class FString
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
-// Function LootLockerSDK.LootLockerManager.TriggerEvent
+// Function LootLockerSDK.LootLockerManager.TransferIdentityProvidersBetweenAccounts
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// const struct FLootLockerTriggerEvent&   Event                                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// const TDelegate<void(const struct FLootLockerTriggerEventResponse& Value)>&OnTriggerEventCompleted                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const class FString&                    FromPlayerWithUlid                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ToPlayerWithUlid                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<ELootLockerAccountProvider>&ProvidersToTransfer                                    (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerListConnectedAccountsResponse& Response)>&OnCompleteBP                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::TriggerEvent(const struct FLootLockerTriggerEvent& Event, const TDelegate<void(const struct FLootLockerTriggerEventResponse& Value)>& OnTriggerEventCompleted)
+class FString ULootLockerManager::TransferIdentityProvidersBetweenAccounts(const class FString& FromPlayerWithUlid, const class FString& ToPlayerWithUlid, const TArray<ELootLockerAccountProvider>& ProvidersToTransfer, const TDelegate<void(const struct FLootLockerListConnectedAccountsResponse& Response)>& OnCompleteBP)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("LootLockerManager", "TriggerEvent");
+		Func = StaticClass()->GetFunction("LootLockerManager", "TransferIdentityProvidersBetweenAccounts");
 
-	Params::LootLockerManager_TriggerEvent Parms{};
+	Params::LootLockerManager_TransferIdentityProvidersBetweenAccounts Parms{};
 
-	Parms.Event = std::move(Event);
-	Parms.OnTriggerEventCompleted = OnTriggerEventCompleted;
+	Parms.FromPlayerWithUlid = std::move(FromPlayerWithUlid);
+	Parms.ToPlayerWithUlid = std::move(ToPlayerWithUlid);
+	Parms.ProvidersToTransfer = std::move(ProvidersToTransfer);
+	Parms.OnCompleteBP = OnCompleteBP;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5303,17 +8675,343 @@ void ULootLockerManager::TriggerEvent(const struct FLootLockerTriggerEvent& Even
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.TryGetContentBodyAsBool
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const struct FLootLockerNotificationContent&Content                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// bool*                                   OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ULootLockerManager::TryGetContentBodyAsBool(const struct FLootLockerNotificationContent& Content, bool* OutValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "TryGetContentBodyAsBool");
+
+	Params::LootLockerManager_TryGetContentBodyAsBool Parms{};
+
+	Parms.Content = std::move(Content);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutValue != nullptr)
+		*OutValue = Parms.OutValue;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.TryGetContentBodyAsBoolArray
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const struct FLootLockerNotificationContent&Content                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<bool>*                           OutValue                                               (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ULootLockerManager::TryGetContentBodyAsBoolArray(const struct FLootLockerNotificationContent& Content, TArray<bool>* OutValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "TryGetContentBodyAsBoolArray");
+
+	Params::LootLockerManager_TryGetContentBodyAsBoolArray Parms{};
+
+	Parms.Content = std::move(Content);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutValue != nullptr)
+		*OutValue = std::move(Parms.OutValue);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.TryGetContentBodyAsFloat
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const struct FLootLockerNotificationContent&Content                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// float*                                  OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ULootLockerManager::TryGetContentBodyAsFloat(const struct FLootLockerNotificationContent& Content, float* OutValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "TryGetContentBodyAsFloat");
+
+	Params::LootLockerManager_TryGetContentBodyAsFloat Parms{};
+
+	Parms.Content = std::move(Content);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutValue != nullptr)
+		*OutValue = Parms.OutValue;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.TryGetContentBodyAsFloatArray
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const struct FLootLockerNotificationContent&Content                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<float>*                          OutValue                                               (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ULootLockerManager::TryGetContentBodyAsFloatArray(const struct FLootLockerNotificationContent& Content, TArray<float>* OutValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "TryGetContentBodyAsFloatArray");
+
+	Params::LootLockerManager_TryGetContentBodyAsFloatArray Parms{};
+
+	Parms.Content = std::move(Content);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutValue != nullptr)
+		*OutValue = std::move(Parms.OutValue);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.TryGetContentBodyAsInteger
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const struct FLootLockerNotificationContent&Content                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// int32*                                  OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ULootLockerManager::TryGetContentBodyAsInteger(const struct FLootLockerNotificationContent& Content, int32* OutValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "TryGetContentBodyAsInteger");
+
+	Params::LootLockerManager_TryGetContentBodyAsInteger Parms{};
+
+	Parms.Content = std::move(Content);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutValue != nullptr)
+		*OutValue = Parms.OutValue;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.TryGetContentBodyAsIntegerArray
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const struct FLootLockerNotificationContent&Content                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<int32>*                          OutValue                                               (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ULootLockerManager::TryGetContentBodyAsIntegerArray(const struct FLootLockerNotificationContent& Content, TArray<int32>* OutValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "TryGetContentBodyAsIntegerArray");
+
+	Params::LootLockerManager_TryGetContentBodyAsIntegerArray Parms{};
+
+	Parms.Content = std::move(Content);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutValue != nullptr)
+		*OutValue = std::move(Parms.OutValue);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.TryGetContentBodyAsRewardNotification
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const struct FLootLockerNotificationContent&Content                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FLootLockerNotificationContentRewardBody*OutValue                                               (Parm, OutParm, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ULootLockerManager::TryGetContentBodyAsRewardNotification(const struct FLootLockerNotificationContent& Content, struct FLootLockerNotificationContentRewardBody* OutValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "TryGetContentBodyAsRewardNotification");
+
+	Params::LootLockerManager_TryGetContentBodyAsRewardNotification Parms{};
+
+	Parms.Content = std::move(Content);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutValue != nullptr)
+		*OutValue = std::move(Parms.OutValue);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.TryGetContentBodyAsString
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const struct FLootLockerNotificationContent&Content                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// class FString*                          OutValue                                               (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ULootLockerManager::TryGetContentBodyAsString(const struct FLootLockerNotificationContent& Content, class FString* OutValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "TryGetContentBodyAsString");
+
+	Params::LootLockerManager_TryGetContentBodyAsString Parms{};
+
+	Parms.Content = std::move(Content);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutValue != nullptr)
+		*OutValue = std::move(Parms.OutValue);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.TryGetNotificationsByIdentifyingValue
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FLootLockerListNotificationsResponse&NotificationsResponse                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FString&                    IdentifyingValue                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<struct FLootLockerNotification>* Notifications                                          (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ULootLockerManager::TryGetNotificationsByIdentifyingValue(const struct FLootLockerListNotificationsResponse& NotificationsResponse, const class FString& IdentifyingValue, TArray<struct FLootLockerNotification>* Notifications)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "TryGetNotificationsByIdentifyingValue");
+
+	Params::LootLockerManager_TryGetNotificationsByIdentifyingValue Parms{};
+
+	Parms.NotificationsResponse = std::move(NotificationsResponse);
+	Parms.IdentifyingValue = std::move(IdentifyingValue);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (Notifications != nullptr)
+		*Notifications = std::move(Parms.Notifications);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.UnblockPlayer
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    PlayerUlid                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerFriendActionResponse& Response)>&OnResponseCompletedBP                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::UnblockPlayer(const class FString& ForPlayerWithUlid, const class FString& PlayerUlid, const TDelegate<void(const struct FLootLockerFriendActionResponse& Response)>& OnResponseCompletedBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "UnblockPlayer");
+
+	Params::LootLockerManager_UnblockPlayer Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.PlayerUlid = std::move(PlayerUlid);
+	Parms.OnResponseCompletedBP = OnResponseCompletedBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.UnEquipAssetToCharacterById
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   CharacterId                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   InstanceId                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Var)>&OnUnEquipAssetToCharacterByIdRequestCompleted          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::UnEquipAssetToCharacterById(int32 CharacterId, int32 InstanceId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnUnEquipAssetToCharacterByIdRequestCompleted)
+class FString ULootLockerManager::UnEquipAssetToCharacterById(const class FString& ForPlayerWithUlid, int32 CharacterId, int32 InstanceId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnUnEquipAssetToCharacterByIdRequestCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5322,6 +9020,7 @@ void ULootLockerManager::UnEquipAssetToCharacterById(int32 CharacterId, int32 In
 
 	Params::LootLockerManager_UnEquipAssetToCharacterById Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.CharacterId = CharacterId;
 	Parms.InstanceId = InstanceId;
 	Parms.OnUnEquipAssetToCharacterByIdRequestCompleted = OnUnEquipAssetToCharacterByIdRequestCompleted;
@@ -5332,16 +9031,20 @@ void ULootLockerManager::UnEquipAssetToCharacterById(int32 CharacterId, int32 In
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.UnEquipAssetToDefaultCharacter
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   InstanceId                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Var)>&OnUnEquipAssetToDefaultCharacterRequestCompleted       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::UnEquipAssetToDefaultCharacter(int32 InstanceId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnUnEquipAssetToDefaultCharacterRequestCompleted)
+class FString ULootLockerManager::UnEquipAssetToDefaultCharacter(const class FString& ForPlayerWithUlid, int32 InstanceId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnUnEquipAssetToDefaultCharacterRequestCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5350,6 +9053,7 @@ void ULootLockerManager::UnEquipAssetToDefaultCharacter(int32 InstanceId, const 
 
 	Params::LootLockerManager_UnEquipAssetToDefaultCharacter Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.InstanceId = InstanceId;
 	Parms.OnUnEquipAssetToDefaultCharacterRequestCompleted = OnUnEquipAssetToDefaultCharacterRequestCompleted;
 
@@ -5359,18 +9063,54 @@ void ULootLockerManager::UnEquipAssetToDefaultCharacter(int32 InstanceId, const 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.UnfollowPlayer
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    PlayerPublicUid                                        (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerFollowActionResponse& Response)>&OnResponseCompletedBP                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::UnfollowPlayer(const class FString& ForPlayerWithUlid, const class FString& PlayerPublicUid, const TDelegate<void(const struct FLootLockerFollowActionResponse& Response)>& OnResponseCompletedBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "UnfollowPlayer");
+
+	Params::LootLockerManager_UnfollowPlayer Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.PlayerPublicUid = std::move(PlayerPublicUid);
+	Parms.OnResponseCompletedBP = OnResponseCompletedBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.UpdateAKeyValuePairByIdForAssetInstance
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   AssetInstanceId                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   StorageItemId                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FLootLockerAssetInstanceStorageItem&Item                                                   (ConstParm, Parm, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerAssetInstanceStorageItemResponse& Response)>&OnUpdateAKeyValuePairByIdForAssetInstanceCompleted     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::UpdateAKeyValuePairByIdForAssetInstance(int32 AssetInstanceId, int32 StorageItemId, const struct FLootLockerAssetInstanceStorageItem& Item, const TDelegate<void(const struct FLootLockerAssetInstanceStorageItemResponse& Response)>& OnUpdateAKeyValuePairByIdForAssetInstanceCompleted)
+class FString ULootLockerManager::UpdateAKeyValuePairByIdForAssetInstance(const class FString& ForPlayerWithUlid, int32 AssetInstanceId, int32 StorageItemId, const struct FLootLockerAssetInstanceStorageItem& Item, const TDelegate<void(const struct FLootLockerAssetInstanceStorageItemResponse& Response)>& OnUpdateAKeyValuePairByIdForAssetInstanceCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5379,6 +9119,7 @@ void ULootLockerManager::UpdateAKeyValuePairByIdForAssetInstance(int32 AssetInst
 
 	Params::LootLockerManager_UpdateAKeyValuePairByIdForAssetInstance Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.AssetInstanceId = AssetInstanceId;
 	Parms.StorageItemId = StorageItemId;
 	Parms.Item = std::move(Item);
@@ -5390,17 +9131,21 @@ void ULootLockerManager::UpdateAKeyValuePairByIdForAssetInstance(int32 AssetInst
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.UpdateAssetCandidate
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   AssetCandidateId                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FLootLockerUpdateAssetCandidateData&AssetCandidateData                                     (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerAssetCandidateResponse& Response)>&OnUpdateAssetCandidateCompleted                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::UpdateAssetCandidate(int32 AssetCandidateId, const struct FLootLockerUpdateAssetCandidateData& AssetCandidateData, const TDelegate<void(const struct FLootLockerAssetCandidateResponse& Response)>& OnUpdateAssetCandidateCompleted)
+class FString ULootLockerManager::UpdateAssetCandidate(const class FString& ForPlayerWithUlid, int32 AssetCandidateId, const struct FLootLockerUpdateAssetCandidateData& AssetCandidateData, const TDelegate<void(const struct FLootLockerAssetCandidateResponse& Response)>& OnUpdateAssetCandidateCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5409,6 +9154,7 @@ void ULootLockerManager::UpdateAssetCandidate(int32 AssetCandidateId, const stru
 
 	Params::LootLockerManager_UpdateAssetCandidate Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.AssetCandidateId = AssetCandidateId;
 	Parms.AssetCandidateData = std::move(AssetCandidateData);
 	Parms.OnUpdateAssetCandidateCompleted = OnUpdateAssetCandidateCompleted;
@@ -5419,18 +9165,22 @@ void ULootLockerManager::UpdateAssetCandidate(int32 AssetCandidateId, const stru
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.UpdateCharacter
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   CharacterId                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    IsDefault                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::UpdateCharacter(int32 CharacterId, bool IsDefault, const class FString& Name_0, const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>& OnCompletedRequest)
+class FString ULootLockerManager::UpdateCharacter(const class FString& ForPlayerWithUlid, int32 CharacterId, bool IsDefault, const class FString& Name_0, const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>& OnCompletedRequest)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5439,6 +9189,7 @@ void ULootLockerManager::UpdateCharacter(int32 CharacterId, bool IsDefault, cons
 
 	Params::LootLockerManager_UpdateCharacter Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.CharacterId = CharacterId;
 	Parms.IsDefault = IsDefault;
 	Parms.Name_0 = std::move(Name_0);
@@ -5450,17 +9201,21 @@ void ULootLockerManager::UpdateCharacter(int32 CharacterId, bool IsDefault, cons
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.UpdateFile
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             FileId                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FLootLockerFileUpdateRequest&Request                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerPlayerFileResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::UpdateFile(const int32 FileId, const struct FLootLockerFileUpdateRequest& Request, const TDelegate<void(const struct FLootLockerPlayerFileResponse& Response)>& OnComplete)
+class FString ULootLockerManager::UpdateFile(const class FString& ForPlayerWithUlid, const int32 FileId, const struct FLootLockerFileUpdateRequest& Request, const TDelegate<void(const struct FLootLockerPlayerFileResponse& Response)>& OnComplete)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5469,6 +9224,7 @@ void ULootLockerManager::UpdateFile(const int32 FileId, const struct FLootLocker
 
 	Params::LootLockerManager_UpdateFile Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.FileId = FileId;
 	Parms.Request = std::move(Request);
 	Parms.OnComplete = OnComplete;
@@ -5479,17 +9235,21 @@ void ULootLockerManager::UpdateFile(const int32 FileId, const struct FLootLocker
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.UpdateHero
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             HeroID                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FLootLockerUpdateHeroRequest&Request                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)>&OnCompleteBP                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::UpdateHero(const int32 HeroID, const struct FLootLockerUpdateHeroRequest& Request, const TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)>& OnCompleteBP)
+class FString ULootLockerManager::UpdateHero(const class FString& ForPlayerWithUlid, const int32 HeroID, const struct FLootLockerUpdateHeroRequest& Request, const TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)>& OnCompleteBP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5498,6 +9258,7 @@ void ULootLockerManager::UpdateHero(const int32 HeroID, const struct FLootLocker
 
 	Params::LootLockerManager_UpdateHero Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.HeroID = HeroID;
 	Parms.Request = std::move(Request);
 	Parms.OnCompleteBP = OnCompleteBP;
@@ -5508,17 +9269,21 @@ void ULootLockerManager::UpdateHero(const int32 HeroID, const struct FLootLocker
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.UpdateOneOrMoreKeyValuePairForAssetInstance
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   AssetInstanceId                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FLootLockerAssetInstanceStorageItems&Items                                                  (Parm, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerAssetInstanceStorageItemsResponse& Response)>&OnUpdateOneOrMoreKeyValuePairForAssetInstanceCompleted (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::UpdateOneOrMoreKeyValuePairForAssetInstance(int32 AssetInstanceId, const struct FLootLockerAssetInstanceStorageItems& Items, const TDelegate<void(const struct FLootLockerAssetInstanceStorageItemsResponse& Response)>& OnUpdateOneOrMoreKeyValuePairForAssetInstanceCompleted)
+class FString ULootLockerManager::UpdateOneOrMoreKeyValuePairForAssetInstance(const class FString& ForPlayerWithUlid, int32 AssetInstanceId, const struct FLootLockerAssetInstanceStorageItems& Items, const TDelegate<void(const struct FLootLockerAssetInstanceStorageItemsResponse& Response)>& OnUpdateOneOrMoreKeyValuePairForAssetInstanceCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5527,6 +9292,7 @@ void ULootLockerManager::UpdateOneOrMoreKeyValuePairForAssetInstance(int32 Asset
 
 	Params::LootLockerManager_UpdateOneOrMoreKeyValuePairForAssetInstance Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.AssetInstanceId = AssetInstanceId;
 	Parms.Items = std::move(Items);
 	Parms.OnUpdateOneOrMoreKeyValuePairForAssetInstanceCompleted = OnUpdateOneOrMoreKeyValuePairForAssetInstanceCompleted;
@@ -5537,16 +9303,20 @@ void ULootLockerManager::UpdateOneOrMoreKeyValuePairForAssetInstance(int32 Asset
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.UploadFile
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FLootLockerFileUploadRequest&Request                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerPlayerFileResponse& Response)>&OnComplete                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::UploadFile(const struct FLootLockerFileUploadRequest& Request, const TDelegate<void(const struct FLootLockerPlayerFileResponse& Response)>& OnComplete)
+class FString ULootLockerManager::UploadFile(const class FString& ForPlayerWithUlid, const struct FLootLockerFileUploadRequest& Request, const TDelegate<void(const struct FLootLockerPlayerFileResponse& Response)>& OnComplete)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5555,6 +9325,7 @@ void ULootLockerManager::UploadFile(const struct FLootLockerFileUploadRequest& R
 
 	Params::LootLockerManager_UploadFile Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.Request = std::move(Request);
 	Parms.OnComplete = OnComplete;
 
@@ -5564,17 +9335,21 @@ void ULootLockerManager::UploadFile(const struct FLootLockerFileUploadRequest& R
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
 // Function LootLockerSDK.LootLockerManager.VerifyPlayer
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    PlatformToken                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Var)>&OnVerifyPlayerRequestCompleted                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// const class FString&                    Platform                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Platform                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::VerifyPlayer(const class FString& PlatformToken, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnVerifyPlayerRequestCompleted, const class FString& Platform)
+class FString ULootLockerManager::VerifyPlayer(const class FString& ForPlayerWithUlid, const class FString& PlatformToken, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnVerifyPlayerRequestCompleted, const class FString& Platform)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5583,6 +9358,7 @@ void ULootLockerManager::VerifyPlayer(const class FString& PlatformToken, const 
 
 	Params::LootLockerManager_VerifyPlayer Parms{};
 
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
 	Parms.PlatformToken = std::move(PlatformToken);
 	Parms.OnVerifyPlayerRequestCompleted = OnVerifyPlayerRequestCompleted;
 	Parms.Platform = std::move(Platform);
@@ -5593,30 +9369,35 @@ void ULootLockerManager::VerifyPlayer(const class FString& PlatformToken, const 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
-// Function LootLockerSDK.LootLockerManager.VerifyPlayerAndStartSteamSession
+// Function LootLockerSDK.LootLockerManager.VerifyPlayerAndStartPlaystationNetworkSession
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// const class FString&                    SteamID64                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    PlatformToken                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const int32                             SteamAppId                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    AuthCode                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    AccountId                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// int32                                   PsnIssuerId                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FLootLockerSessionOptionals&Optionals                                              (ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::VerifyPlayerAndStartSteamSession(const class FString& SteamID64, const class FString& PlatformToken, const int32 SteamAppId, const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnCompletedRequest)
+class FString ULootLockerManager::VerifyPlayerAndStartPlaystationNetworkSession(const class FString& AuthCode, const class FString& AccountId, const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnCompletedRequest, int32 PsnIssuerId, const struct FLootLockerSessionOptionals& Optionals)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("LootLockerManager", "VerifyPlayerAndStartSteamSession");
+		Func = StaticClass()->GetFunction("LootLockerManager", "VerifyPlayerAndStartPlaystationNetworkSession");
 
-	Params::LootLockerManager_VerifyPlayerAndStartSteamSession Parms{};
+	Params::LootLockerManager_VerifyPlayerAndStartPlaystationNetworkSession Parms{};
 
-	Parms.SteamID64 = std::move(SteamID64);
-	Parms.PlatformToken = std::move(PlatformToken);
-	Parms.SteamAppId = SteamAppId;
+	Parms.AuthCode = std::move(AuthCode);
+	Parms.AccountId = std::move(AccountId);
 	Parms.OnCompletedRequest = OnCompletedRequest;
+	Parms.PsnIssuerId = PsnIssuerId;
+	Parms.Optionals = std::move(Optionals);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5624,6 +9405,42 @@ void ULootLockerManager::VerifyPlayerAndStartSteamSession(const class FString& S
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerManager.VerifyPlayerAndStartPlaystationNetworkV3Session
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    AuthCode                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>&OnCompletedRequest                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// int32                                   EnvIssuerId                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FLootLockerSessionOptionals&Optionals                                              (ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::VerifyPlayerAndStartPlaystationNetworkV3Session(const class FString& AuthCode, const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnCompletedRequest, int32 EnvIssuerId, const struct FLootLockerSessionOptionals& Optionals)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "VerifyPlayerAndStartPlaystationNetworkV3Session");
+
+	Params::LootLockerManager_VerifyPlayerAndStartPlaystationNetworkV3Session Parms{};
+
+	Parms.AuthCode = std::move(AuthCode);
+	Parms.OnCompletedRequest = OnCompletedRequest;
+	Parms.EnvIssuerId = EnvIssuerId;
+	Parms.Optionals = std::move(Optionals);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -5633,8 +9450,9 @@ void ULootLockerManager::VerifyPlayerAndStartSteamSession(const class FString& S
 // const class FString&                    email                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    Password                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerLoginResponse& AuthVar)>&OnWhiteLabelAccountCreationRequestCompleted            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::WhiteLabelCreateAccount(const class FString& email, const class FString& Password, const TDelegate<void(const struct FLootLockerLoginResponse& AuthVar)>& OnWhiteLabelAccountCreationRequestCompleted)
+class FString ULootLockerManager::WhiteLabelCreateAccount(const class FString& email, const class FString& Password, const TDelegate<void(const struct FLootLockerLoginResponse& AuthVar)>& OnWhiteLabelAccountCreationRequestCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5653,6 +9471,8 @@ void ULootLockerManager::WhiteLabelCreateAccount(const class FString& email, con
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -5662,9 +9482,10 @@ void ULootLockerManager::WhiteLabelCreateAccount(const class FString& email, con
 // const class FString&                    email                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    Password                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerLoginResponse& AuthVar)>&OnWhiteLabelLoginRequestCompleted                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// const bool                              remember                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              Remember                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::WhiteLabelLogin(const class FString& email, const class FString& Password, const TDelegate<void(const struct FLootLockerLoginResponse& AuthVar)>& OnWhiteLabelLoginRequestCompleted, const bool remember)
+class FString ULootLockerManager::WhiteLabelLogin(const class FString& email, const class FString& Password, const TDelegate<void(const struct FLootLockerLoginResponse& AuthVar)>& OnWhiteLabelLoginRequestCompleted, const bool Remember)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5676,7 +9497,7 @@ void ULootLockerManager::WhiteLabelLogin(const class FString& email, const class
 	Parms.email = std::move(email);
 	Parms.Password = std::move(Password);
 	Parms.OnWhiteLabelLoginRequestCompleted = OnWhiteLabelLoginRequestCompleted;
-	Parms.remember = remember;
+	Parms.Remember = Remember;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5684,6 +9505,8 @@ void ULootLockerManager::WhiteLabelLogin(const class FString& email, const class
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -5693,9 +9516,11 @@ void ULootLockerManager::WhiteLabelLogin(const class FString& email, const class
 // const class FString&                    email                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    Password                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerWhiteLabelLoginAndSessionResponse& Var)>&OnWhiteLabelLoginAndStartSessionRequestCompleted       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// const bool                              remember                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              Remember                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FLootLockerSessionOptionals&Optionals                                              (ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::WhiteLabelLoginAndStartSession(const class FString& email, const class FString& Password, const TDelegate<void(const struct FLootLockerWhiteLabelLoginAndSessionResponse& Var)>& OnWhiteLabelLoginAndStartSessionRequestCompleted, const bool remember)
+class FString ULootLockerManager::WhiteLabelLoginAndStartSession(const class FString& email, const class FString& Password, const TDelegate<void(const struct FLootLockerWhiteLabelLoginAndSessionResponse& Var)>& OnWhiteLabelLoginAndStartSessionRequestCompleted, const bool Remember, const struct FLootLockerSessionOptionals& Optionals)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5707,7 +9532,8 @@ void ULootLockerManager::WhiteLabelLoginAndStartSession(const class FString& ema
 	Parms.email = std::move(email);
 	Parms.Password = std::move(Password);
 	Parms.OnWhiteLabelLoginAndStartSessionRequestCompleted = OnWhiteLabelLoginAndStartSessionRequestCompleted;
-	Parms.remember = remember;
+	Parms.Remember = Remember;
+	Parms.Optionals = std::move(Optionals);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5715,6 +9541,8 @@ void ULootLockerManager::WhiteLabelLoginAndStartSession(const class FString& ema
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -5723,8 +9551,9 @@ void ULootLockerManager::WhiteLabelLoginAndStartSession(const class FString& ema
 // Parameters:
 // const int32&                            UserId                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Var)>&OnRequestWhiteLabelUserVerificationRequestCompleted    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::WhiteLabelRequestUserVerification(const int32& UserId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnRequestWhiteLabelUserVerificationRequestCompleted)
+class FString ULootLockerManager::WhiteLabelRequestUserVerification(const int32& UserId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnRequestWhiteLabelUserVerificationRequestCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5742,6 +9571,8 @@ void ULootLockerManager::WhiteLabelRequestUserVerification(const int32& UserId, 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -5750,8 +9581,9 @@ void ULootLockerManager::WhiteLabelRequestUserVerification(const int32& UserId, 
 // Parameters:
 // const class FString&                    email                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Var)>&OnRequestWhiteLabelUserVerificationRequestCompleted    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::WhiteLabelRequestUserVerificationByEmail(const class FString& email, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnRequestWhiteLabelUserVerificationRequestCompleted)
+class FString ULootLockerManager::WhiteLabelRequestUserVerificationByEmail(const class FString& email, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnRequestWhiteLabelUserVerificationRequestCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5769,6 +9601,8 @@ void ULootLockerManager::WhiteLabelRequestUserVerificationByEmail(const class FS
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -5777,8 +9611,9 @@ void ULootLockerManager::WhiteLabelRequestUserVerificationByEmail(const class FS
 // Parameters:
 // const class FString&                    email                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(const struct FLootLockerResponse& Var)>&OnResetWhiteLabelPasswordRequestCompleted              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::WhiteLabelResetPassword(const class FString& email, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnResetWhiteLabelPasswordRequestCompleted)
+class FString ULootLockerManager::WhiteLabelResetPassword(const class FString& email, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnResetWhiteLabelPasswordRequestCompleted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5796,6 +9631,8 @@ void ULootLockerManager::WhiteLabelResetPassword(const class FString& email, con
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -5803,8 +9640,10 @@ void ULootLockerManager::WhiteLabelResetPassword(const class FString& email, con
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>&OnStartWhiteLabelSessionRequestCompleted               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FLootLockerSessionOptionals&Optionals                                              (ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULootLockerManager::WhiteLabelStartSession(const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnStartWhiteLabelSessionRequestCompleted)
+class FString ULootLockerManager::WhiteLabelStartSession(const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnStartWhiteLabelSessionRequestCompleted, const struct FLootLockerSessionOptionals& Optionals)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5814,54 +9653,7 @@ void ULootLockerManager::WhiteLabelStartSession(const TDelegate<void(const struc
 	Params::LootLockerManager_WhiteLabelStartSession Parms{};
 
 	Parms.OnStartWhiteLabelSessionRequestCompleted = OnStartWhiteLabelSessionRequestCompleted;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LootLockerSDK.LootLockerManager.WhiteLabelVerifySession
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const TDelegate<void(const struct FLootLockerWhiteLabelVerifySessionResponse& Response)>&OnVerifyWhiteLabelSessionRequestCompleted              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void ULootLockerManager::WhiteLabelVerifySession(const TDelegate<void(const struct FLootLockerWhiteLabelVerifySessionResponse& Response)>& OnVerifyWhiteLabelSessionRequestCompleted)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("LootLockerManager", "WhiteLabelVerifySession");
-
-	Params::LootLockerManager_WhiteLabelVerifySession Parms{};
-
-	Parms.OnVerifyWhiteLabelSessionRequestCompleted = OnVerifyWhiteLabelSessionRequestCompleted;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LootLockerSDK.LootLockerCurrentPlatform.GetPlatformRepresentation
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// const struct FLootLockerPlatformRepresentationReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-const struct FLootLockerPlatformRepresentation ULootLockerCurrentPlatform::GetPlatformRepresentation()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("LootLockerCurrentPlatform", "GetPlatformRepresentation");
-
-	Params::LootLockerCurrentPlatform_GetPlatformRepresentation Parms{};
+	Parms.Optionals = std::move(Optionals);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5874,20 +9666,675 @@ const struct FLootLockerPlatformRepresentation ULootLockerCurrentPlatform::GetPl
 }
 
 
-// Function LootLockerSDK.LootLockerCurrentPlatform.GetPlatformRepresentationForPlatform
+// Function LootLockerSDK.LootLockerManager.WhiteLabelVerifySession
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FLootLockerWhiteLabelVerifySessionResponse& Response)>&OnVerifyWhiteLabelSessionRequestCompleted              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerManager::WhiteLabelVerifySession(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerWhiteLabelVerifySessionResponse& Response)>& OnVerifyWhiteLabelSessionRequestCompleted)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerManager", "WhiteLabelVerifySession");
+
+	Params::LootLockerManager_WhiteLabelVerifySession Parms{};
+
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.OnVerifyWhiteLabelSessionRequestCompleted = OnVerifyWhiteLabelSessionRequestCompleted;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetNotificationsSourceLootLockerConsoleString
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerStaticNotificationStringBlueprintCallables::GetNotificationsSourceLootLockerConsoleString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerStaticNotificationStringBlueprintCallables", "GetNotificationsSourceLootLockerConsoleString");
+
+	Params::LootLockerStaticNotificationStringBlueprintCallables_GetNotificationsSourceLootLockerConsoleString Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetNotificationsSourceLootLockerServerAPIString
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerStaticNotificationStringBlueprintCallables::GetNotificationsSourceLootLockerServerAPIString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerStaticNotificationStringBlueprintCallables", "GetNotificationsSourceLootLockerServerAPIString");
+
+	Params::LootLockerStaticNotificationStringBlueprintCallables_GetNotificationsSourceLootLockerServerAPIString Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetNotificationsSourcePurchasingAppleAppStoreString
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerStaticNotificationStringBlueprintCallables::GetNotificationsSourcePurchasingAppleAppStoreString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerStaticNotificationStringBlueprintCallables", "GetNotificationsSourcePurchasingAppleAppStoreString");
+
+	Params::LootLockerStaticNotificationStringBlueprintCallables_GetNotificationsSourcePurchasingAppleAppStoreString Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetNotificationsSourcePurchasingGooglePlayStoreString
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerStaticNotificationStringBlueprintCallables::GetNotificationsSourcePurchasingGooglePlayStoreString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerStaticNotificationStringBlueprintCallables", "GetNotificationsSourcePurchasingGooglePlayStoreString");
+
+	Params::LootLockerStaticNotificationStringBlueprintCallables_GetNotificationsSourcePurchasingGooglePlayStoreString Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetNotificationsSourcePurchasingLootLockerString
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerStaticNotificationStringBlueprintCallables::GetNotificationsSourcePurchasingLootLockerString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerStaticNotificationStringBlueprintCallables", "GetNotificationsSourcePurchasingLootLockerString");
+
+	Params::LootLockerStaticNotificationStringBlueprintCallables_GetNotificationsSourcePurchasingLootLockerString Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetNotificationsSourcePurchasingSteamStoreString
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerStaticNotificationStringBlueprintCallables::GetNotificationsSourcePurchasingSteamStoreString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerStaticNotificationStringBlueprintCallables", "GetNotificationsSourcePurchasingSteamStoreString");
+
+	Params::LootLockerStaticNotificationStringBlueprintCallables_GetNotificationsSourcePurchasingSteamStoreString Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetNotificationsSourceTriggersString
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerStaticNotificationStringBlueprintCallables::GetNotificationsSourceTriggersString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerStaticNotificationStringBlueprintCallables", "GetNotificationsSourceTriggersString");
+
+	Params::LootLockerStaticNotificationStringBlueprintCallables_GetNotificationsSourceTriggersString Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetNotificationsSourceTwitchDropString
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerStaticNotificationStringBlueprintCallables::GetNotificationsSourceTwitchDropString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerStaticNotificationStringBlueprintCallables", "GetNotificationsSourceTwitchDropString");
+
+	Params::LootLockerStaticNotificationStringBlueprintCallables_GetNotificationsSourceTwitchDropString Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardPurchasingAppleAppStoreContextKeyCatalogIdString
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerStaticNotificationStringBlueprintCallables::GetStandardPurchasingAppleAppStoreContextKeyCatalogIdString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerStaticNotificationStringBlueprintCallables", "GetStandardPurchasingAppleAppStoreContextKeyCatalogIdString");
+
+	Params::LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingAppleAppStoreContextKeyCatalogIdString Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardPurchasingAppleAppStoreContextKeyCatalogItemIdString
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerStaticNotificationStringBlueprintCallables::GetStandardPurchasingAppleAppStoreContextKeyCatalogItemIdString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerStaticNotificationStringBlueprintCallables", "GetStandardPurchasingAppleAppStoreContextKeyCatalogItemIdString");
+
+	Params::LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingAppleAppStoreContextKeyCatalogItemIdString Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardPurchasingAppleAppStoreContextKeyTransactionIdString
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerStaticNotificationStringBlueprintCallables::GetStandardPurchasingAppleAppStoreContextKeyTransactionIdString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerStaticNotificationStringBlueprintCallables", "GetStandardPurchasingAppleAppStoreContextKeyTransactionIdString");
+
+	Params::LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingAppleAppStoreContextKeyTransactionIdString Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardPurchasingGooglePlayStoreContextKeyCatalogIdString
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerStaticNotificationStringBlueprintCallables::GetStandardPurchasingGooglePlayStoreContextKeyCatalogIdString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerStaticNotificationStringBlueprintCallables", "GetStandardPurchasingGooglePlayStoreContextKeyCatalogIdString");
+
+	Params::LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingGooglePlayStoreContextKeyCatalogIdString Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardPurchasingGooglePlayStoreContextKeyCatalogItemIdString
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerStaticNotificationStringBlueprintCallables::GetStandardPurchasingGooglePlayStoreContextKeyCatalogItemIdString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerStaticNotificationStringBlueprintCallables", "GetStandardPurchasingGooglePlayStoreContextKeyCatalogItemIdString");
+
+	Params::LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingGooglePlayStoreContextKeyCatalogItemIdString Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardPurchasingGooglePlayStoreContextKeyProductIdString
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerStaticNotificationStringBlueprintCallables::GetStandardPurchasingGooglePlayStoreContextKeyProductIdString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerStaticNotificationStringBlueprintCallables", "GetStandardPurchasingGooglePlayStoreContextKeyProductIdString");
+
+	Params::LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingGooglePlayStoreContextKeyProductIdString Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardPurchasingLootLockerContextKeyCatalogIdString
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerStaticNotificationStringBlueprintCallables::GetStandardPurchasingLootLockerContextKeyCatalogIdString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerStaticNotificationStringBlueprintCallables", "GetStandardPurchasingLootLockerContextKeyCatalogIdString");
+
+	Params::LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingLootLockerContextKeyCatalogIdString Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardPurchasingLootLockerContextKeyCatalogItemIdString
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerStaticNotificationStringBlueprintCallables::GetStandardPurchasingLootLockerContextKeyCatalogItemIdString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerStaticNotificationStringBlueprintCallables", "GetStandardPurchasingLootLockerContextKeyCatalogItemIdString");
+
+	Params::LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingLootLockerContextKeyCatalogItemIdString Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardPurchasingSteamStoreContextKeyCatalogIdString
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerStaticNotificationStringBlueprintCallables::GetStandardPurchasingSteamStoreContextKeyCatalogIdString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerStaticNotificationStringBlueprintCallables", "GetStandardPurchasingSteamStoreContextKeyCatalogIdString");
+
+	Params::LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingSteamStoreContextKeyCatalogIdString Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardPurchasingSteamStoreContextKeyCatalogItemIdString
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerStaticNotificationStringBlueprintCallables::GetStandardPurchasingSteamStoreContextKeyCatalogItemIdString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerStaticNotificationStringBlueprintCallables", "GetStandardPurchasingSteamStoreContextKeyCatalogItemIdString");
+
+	Params::LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingSteamStoreContextKeyCatalogItemIdString Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardPurchasingSteamStoreContextKeyCharacterIdString
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerStaticNotificationStringBlueprintCallables::GetStandardPurchasingSteamStoreContextKeyCharacterIdString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerStaticNotificationStringBlueprintCallables", "GetStandardPurchasingSteamStoreContextKeyCharacterIdString");
+
+	Params::LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingSteamStoreContextKeyCharacterIdString Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardPurchasingSteamStoreContextKeyEntitlementIdString
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerStaticNotificationStringBlueprintCallables::GetStandardPurchasingSteamStoreContextKeyEntitlementIdString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerStaticNotificationStringBlueprintCallables", "GetStandardPurchasingSteamStoreContextKeyEntitlementIdString");
+
+	Params::LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingSteamStoreContextKeyEntitlementIdString Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardTriggersContextKeyIdString
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerStaticNotificationStringBlueprintCallables::GetStandardTriggersContextKeyIdString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerStaticNotificationStringBlueprintCallables", "GetStandardTriggersContextKeyIdString");
+
+	Params::LootLockerStaticNotificationStringBlueprintCallables_GetStandardTriggersContextKeyIdString Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardTriggersContextKeyKeyString
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerStaticNotificationStringBlueprintCallables::GetStandardTriggersContextKeyKeyString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerStaticNotificationStringBlueprintCallables", "GetStandardTriggersContextKeyKeyString");
+
+	Params::LootLockerStaticNotificationStringBlueprintCallables_GetStandardTriggersContextKeyKeyString Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardTriggersContextKeyLimitString
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerStaticNotificationStringBlueprintCallables::GetStandardTriggersContextKeyLimitString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerStaticNotificationStringBlueprintCallables", "GetStandardTriggersContextKeyLimitString");
+
+	Params::LootLockerStaticNotificationStringBlueprintCallables_GetStandardTriggersContextKeyLimitString Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardTwitchDropContextKeyTwitchRewardIdString
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerStaticNotificationStringBlueprintCallables::GetStandardTwitchDropContextKeyTwitchRewardIdString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerStaticNotificationStringBlueprintCallables", "GetStandardTwitchDropContextKeyTwitchRewardIdString");
+
+	Params::LootLockerStaticNotificationStringBlueprintCallables_GetStandardTwitchDropContextKeyTwitchRewardIdString Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetTypePullRewardAcquiredString
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ULootLockerStaticNotificationStringBlueprintCallables::GetTypePullRewardAcquiredString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerStaticNotificationStringBlueprintCallables", "GetTypePullRewardAcquiredString");
+
+	Params::LootLockerStaticNotificationStringBlueprintCallables_GetTypePullRewardAcquiredString Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerPlatforms.GetPlatformRepresentationForPlatform
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // const ELootLockerPlatform               Platform                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FLootLockerPlatformRepresentationReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-const struct FLootLockerPlatformRepresentation ULootLockerCurrentPlatform::GetPlatformRepresentationForPlatform(const ELootLockerPlatform Platform)
+const struct FLootLockerPlatformRepresentation ULootLockerPlatforms::GetPlatformRepresentationForPlatform(const ELootLockerPlatform Platform)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("LootLockerCurrentPlatform", "GetPlatformRepresentationForPlatform");
+		Func = StaticClass()->GetFunction("LootLockerPlatforms", "GetPlatformRepresentationForPlatform");
 
-	Params::LootLockerCurrentPlatform_GetPlatformRepresentationForPlatform Parms{};
+	Params::LootLockerPlatforms_GetPlatformRepresentationForPlatform Parms{};
 
 	Parms.Platform = Platform;
 
@@ -5899,6 +10346,147 @@ const struct FLootLockerPlatformRepresentation ULootLockerCurrentPlatform::GetPl
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerAsyncStartRemoteSession.AsyncStartRemoteSession
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObjectfloat                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   PollingIntervalSeconds                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   TimeOutAfterMinutes                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class ULootLockerAsyncStartRemoteSession*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class ULootLockerAsyncStartRemoteSession* ULootLockerAsyncStartRemoteSession::AsyncStartRemoteSession(class UObject* WorldContextObjectfloat, float PollingIntervalSeconds, float TimeOutAfterMinutes)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerAsyncStartRemoteSession", "AsyncStartRemoteSession");
+
+	Params::LootLockerAsyncStartRemoteSession_AsyncStartRemoteSession Parms{};
+
+	Parms.WorldContextObjectfloat = WorldContextObjectfloat;
+	Parms.PollingIntervalSeconds = PollingIntervalSeconds;
+	Parms.TimeOutAfterMinutes = TimeOutAfterMinutes;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerAsyncStartRemoteSession.AsyncStartRemoteSessionForLinking
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ForPlayerWithUlid                                      (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   PollingIntervalSeconds                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   TimeOutAfterMinutes                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class ULootLockerAsyncStartRemoteSession*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class ULootLockerAsyncStartRemoteSession* ULootLockerAsyncStartRemoteSession::AsyncStartRemoteSessionForLinking(class UObject* WorldContextObject, const class FString& ForPlayerWithUlid, float PollingIntervalSeconds, float TimeOutAfterMinutes)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LootLockerAsyncStartRemoteSession", "AsyncStartRemoteSessionForLinking");
+
+	Params::LootLockerAsyncStartRemoteSession_AsyncStartRemoteSessionForLinking Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.ForPlayerWithUlid = std::move(ForPlayerWithUlid);
+	Parms.PollingIntervalSeconds = PollingIntervalSeconds;
+	Parms.TimeOutAfterMinutes = TimeOutAfterMinutes;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LootLockerSDK.LootLockerAsyncStartRemoteSession.HandleLeaseProcessCompleted
+// (RequiredAPI, Native, Protected, HasOutParams)
+// Parameters:
+// const struct FLootLockerStartRemoteSessionResponse&LeaseProcessCompletedResponse                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void ULootLockerAsyncStartRemoteSession::HandleLeaseProcessCompleted(const struct FLootLockerStartRemoteSessionResponse& LeaseProcessCompletedResponse)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LootLockerAsyncStartRemoteSession", "HandleLeaseProcessCompleted");
+
+	Params::LootLockerAsyncStartRemoteSession_HandleLeaseProcessCompleted Parms{};
+
+	Parms.LeaseProcessCompletedResponse = std::move(LeaseProcessCompletedResponse);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LootLockerSDK.LootLockerAsyncStartRemoteSession.HandleLeaseProcessStarted
+// (RequiredAPI, Native, Protected, HasOutParams)
+// Parameters:
+// const struct FLootLockerLeaseRemoteSessionResponse&LeaseProcessStartedResponse                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void ULootLockerAsyncStartRemoteSession::HandleLeaseProcessStarted(const struct FLootLockerLeaseRemoteSessionResponse& LeaseProcessStartedResponse)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LootLockerAsyncStartRemoteSession", "HandleLeaseProcessStarted");
+
+	Params::LootLockerAsyncStartRemoteSession_HandleLeaseProcessStarted Parms{};
+
+	Parms.LeaseProcessStartedResponse = std::move(LeaseProcessStartedResponse);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LootLockerSDK.LootLockerAsyncStartRemoteSession.HandleLeaseProcessUpdate
+// (RequiredAPI, Native, Protected, HasOutParams)
+// Parameters:
+// const struct FLootLockerRemoteSessionStatusPollingResponse&LeaseProcessUpdateResponse                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void ULootLockerAsyncStartRemoteSession::HandleLeaseProcessUpdate(const struct FLootLockerRemoteSessionStatusPollingResponse& LeaseProcessUpdateResponse)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LootLockerAsyncStartRemoteSession", "HandleLeaseProcessUpdate");
+
+	Params::LootLockerAsyncStartRemoteSession_HandleLeaseProcessUpdate Parms{};
+
+	Parms.LeaseProcessUpdateResponse = std::move(LeaseProcessUpdateResponse);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 }

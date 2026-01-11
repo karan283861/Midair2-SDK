@@ -9,9 +9,9 @@
 // FORWARD DECLARATIONS
 
 
-namespace WBP_EndOfMatch { class UWBP_EndOfMatch_C; }
-
 namespace GameplayAbilities { struct FServerAbilityRPCBatch; }
+
+namespace WBP_EndOfMatch { class UWBP_EndOfMatch_C; }
 
 namespace WBP_EndOfMatch_0 { class UWBP_EndOfMatch_C; }
 

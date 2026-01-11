@@ -92,10 +92,10 @@ void UWPB_HUD_BigMap_C::UpdatePlayerIcon()
 // Parameters:
 // class AActor*                           Actor                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const struct FSlateColor&               TintColor                                              (BlueprintVisible, BlueprintReadOnly, Parm)
-// bool                                    IsStatic                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    isStatic                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // bool                                    OverrideSensor                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UWPB_HUD_BigMap_C::AddPOI(class AActor* Actor, const struct FSlateColor& TintColor, bool IsStatic, bool OverrideSensor)
+void UWPB_HUD_BigMap_C::AddPOI(class AActor* Actor, const struct FSlateColor& TintColor, bool isStatic, bool OverrideSensor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -106,7 +106,7 @@ void UWPB_HUD_BigMap_C::AddPOI(class AActor* Actor, const struct FSlateColor& Ti
 
 	Parms.Actor = Actor;
 	Parms.TintColor = std::move(TintColor);
-	Parms.IsStatic = IsStatic;
+	Parms.isStatic = isStatic;
 	Parms.OverrideSensor = OverrideSensor;
 
 	UObject::ProcessEvent(Func, &Parms);

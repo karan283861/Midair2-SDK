@@ -55,7 +55,7 @@ public:
 	TMulticastInlineDelegate<void(const struct FHathoraLoginResult& Result)> OnComplete;             // 0x0048(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 
 public:
-	static class UHathoraAuthV1LoginGoogle* LoginGoogle(class UHathoraSDKAuthV1* HathoraSDKAuthV1_0, class UObject* WorldContextObject, const class FString& IDToken);
+	static class UHathoraAuthV1LoginGoogle* LoginGoogle(class UHathoraSDKAuthV1* HathoraSDKAuthV1_0, class UObject* WorldContextObject, const class FString& IdToken);
 
 public:
 	static class UClass* StaticClass()

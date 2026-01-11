@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "Midair2_classes.hpp"
 #include "Engine_structs.hpp"
 #include "LootLockerSDK_structs.hpp"
+#include "Midair2_classes.hpp"
 
 
 namespace SDK
@@ -55,13 +55,6 @@ public:
 	struct FLootLockerCurrencyDetails             CurrentPurchaseDetails;                            // 0x0418(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
-	void OnGetCurrencies(TArray<struct FLootLockerCurrencyDetails>& Response);
-	void CoinSplurgeFinished();
-	struct FEventReply OnMouseMove(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent);
-	void On_Finalize_Purchase(const struct FLootLockerResponse& Var);
-	void FinalizePurchase();
-	void OnQueryPurchaseResponse(const struct FLootLockerQuerySteamPurchaseRedemptionStatusResponse& Response);
-	void QueryPurchase();
 	void OnBeginSteamPurchase(const struct FLootLockerBeginSteamPurchaseRedemptionResponse& Response);
 	void MakePurchase(const struct FLootLockerCurrencyDetails& CurrencyDetails);
 	void Construct();
@@ -88,6 +81,13 @@ public:
 	void BP_OnDeactivated();
 	void PreConstruct(bool IsDesignTime);
 	void ExecuteUbergraph_WBP_Currency(int32 EntryPoint);
+	void QueryPurchase();
+	void OnQueryPurchaseResponse(const struct FLootLockerQuerySteamPurchaseRedemptionStatusResponse& Response);
+	void FinalizePurchase();
+	void On_Finalize_Purchase(const struct FLootLockerResponse& Var);
+	struct FEventReply OnMouseMove(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent);
+	void CoinSplurgeFinished();
+	void OnGetCurrencies(TArray<struct FLootLockerCurrencyDetails>& Response);
 
 public:
 	static class UClass* StaticClass()

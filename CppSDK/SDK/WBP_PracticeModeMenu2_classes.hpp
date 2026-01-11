@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Midair2_classes.hpp"
 #include "Engine_structs.hpp"
+#include "CommonUI_classes.hpp"
 #include "UMG_structs.hpp"
 
 
@@ -19,36 +19,36 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass WBP_PracticeModeMenu2.WBP_PracticeModeMenu2_C
-// 0x00E0 (0x0418 - 0x0338)
-class UWBP_PracticeModeMenu2_C final : public UMAEscapableWidget
+// 0x00E0 (0x0400 - 0x0320)
+class UWBP_PracticeModeMenu2_C final : public UCommonActivatableWidget
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0338(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UWidgetAnimation*                       EnterAnimation;                                    // 0x0340(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
-	class UButton*                                Button_Close;                                      // 0x0348(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UCanvasPanel*                           CanvasPanel_0;                                     // 0x0350(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UImage*                                 PanelBackground;                                   // 0x0358(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UWBP_PracticeModeMenuItem_C*            WBP_PracticeModeMenuItem_Bot;                      // 0x0360(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UWBP_PracticeModeMenuItem_C*            WBP_PracticeModeMenuItem_Drill;                    // 0x0368(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UWBP_PracticeModeMenuItem_C*            WBP_PracticeModeMenuItem_Help;                     // 0x0370(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UWBP_PracticeModeMenuItem_C*            WBP_PracticeModeMenuItem_Home;                     // 0x0378(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UWBP_PracticeModeMenuItem_C*            WBP_PracticeModeMenuItem_Location;                 // 0x0380(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UWBP_PracticeModeMenuItem_C*            WBP_PracticeModeMenuItem_Route;                    // 0x0388(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UWBP_PracticeModeMenuItem_C*            WBP_PracticeModeMenuItem_Setting;                  // 0x0390(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UWBP_TabBot_C*                          WBP_TabBot;                                        // 0x0398(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UWBP_TabBot_Details_C*                  WBP_TabBot_Details;                                // 0x03A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UWBP_TabDrill_C*                        WBP_TabDrill;                                      // 0x03A8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UWBP_TabDrill_Details_C*                WBP_TabDrill_Details;                              // 0x03B0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UWBP_TabHelp_C*                         WBP_TabHelp;                                       // 0x03B8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UWBP_TabHome_C*                         WBP_TabHome;                                       // 0x03C0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UWBP_TabLocation_C*                     WBP_TabLocation;                                   // 0x03C8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UWBP_TabLocation_Details_C*             WBP_TabLocation_Details;                           // 0x03D0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UWBP_TabRoute_C*                        WBP_TabRoute;                                      // 0x03D8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UWBP_TabRoute_Details_C*                WBP_TabRoute_Details;                              // 0x03E0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UWBP_TabSettings_C*                     WBP_TabSettings;                                   // 0x03E8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UWidgetSwitcher*                        WidgetSwitcher_55;                                 // 0x03F0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	TMulticastInlineDelegate<void(const class FString& TabName)> SetActiveTab;                       // 0x03F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	TArray<class FString>                         TabNames;                                          // 0x0408(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0320(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UWidgetAnimation*                       EnterAnimation;                                    // 0x0328(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
+	class UButton*                                Button_Close;                                      // 0x0330(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UCanvasPanel*                           CanvasPanel_0;                                     // 0x0338(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 PanelBackground;                                   // 0x0340(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWBP_PracticeModeMenuItem_C*            WBP_PracticeModeMenuItem_Bot;                      // 0x0348(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWBP_PracticeModeMenuItem_C*            WBP_PracticeModeMenuItem_Drill;                    // 0x0350(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWBP_PracticeModeMenuItem_C*            WBP_PracticeModeMenuItem_Help;                     // 0x0358(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWBP_PracticeModeMenuItem_C*            WBP_PracticeModeMenuItem_Home;                     // 0x0360(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWBP_PracticeModeMenuItem_C*            WBP_PracticeModeMenuItem_Location;                 // 0x0368(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWBP_PracticeModeMenuItem_C*            WBP_PracticeModeMenuItem_Route;                    // 0x0370(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWBP_PracticeModeMenuItem_C*            WBP_PracticeModeMenuItem_Setting;                  // 0x0378(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWBP_TabBot_C*                          WBP_TabBot;                                        // 0x0380(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWBP_TabBot_Details_C*                  WBP_TabBot_Details;                                // 0x0388(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWBP_TabDrill_C*                        WBP_TabDrill;                                      // 0x0390(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWBP_TabDrill_Details_C*                WBP_TabDrill_Details;                              // 0x0398(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWBP_TabHelp_C*                         WBP_TabHelp;                                       // 0x03A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWBP_TabHome_C*                         WBP_TabHome;                                       // 0x03A8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWBP_TabLocation_C*                     WBP_TabLocation;                                   // 0x03B0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWBP_TabLocation_Details_C*             WBP_TabLocation_Details;                           // 0x03B8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWBP_TabRoute_C*                        WBP_TabRoute;                                      // 0x03C0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWBP_TabRoute_Details_C*                WBP_TabRoute_Details;                              // 0x03C8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWBP_TabSettings_C*                     WBP_TabSettings;                                   // 0x03D0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWidgetSwitcher*                        WidgetSwitcher_55;                                 // 0x03D8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	TMulticastInlineDelegate<void(const class FString& TabName)> SetActiveTab;                       // 0x03E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TArray<class FString>                         TabNames;                                          // 0x03F0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void ExecuteUbergraph_WBP_PracticeModeMenu2(int32 EntryPoint);
@@ -58,24 +58,25 @@ public:
 	void BndEvt__WBP_PracticeModeMenu2_WBP_TabSettings_K2Node_ComponentBoundEvent_33_Load_PubStarter_Generic_Data__DelegateSignature();
 	void BndEvt__WBP_PracticeModeMenu2_WBP_TabSettings_K2Node_ComponentBoundEvent_32_Load_PubStarter_Data_From_File__DelegateSignature();
 	void BndEvt__WBP_PracticeModeMenu2_WBP_TabSettings_K2Node_ComponentBoundEvent_31_Save_PubStarter_Data_To_File__DelegateSignature();
+	void BndEvt__WBP_PracticeModeMenu2_WBP_PracticeModeMenuItem_1_K2Node_ComponentBoundEvent_1_Button_Clicked__DelegateSignature();
 	void BndEvt__WBP_PracticeModeMenu2_WBP_TabDrill_K2Node_ComponentBoundEvent_30_Go_Back__DelegateSignature();
 	void BndEvt__WBP_PracticeModeMenu2_WBP_TabDrill_K2Node_ComponentBoundEvent_29_Add_Drill__DelegateSignature();
 	void BndEvt__WBP_PracticeModeMenu2_WBP_TabDrill_K2Node_ComponentBoundEvent_28_Edit_Drill__DelegateSignature(const struct FMADrill& Drill);
 	void BndEvt__WBP_PracticeModeMenu2_WBP_TabDrill_Details_K2Node_ComponentBoundEvent_27_Drill_Updated__DelegateSignature();
 	void BndEvt__WBP_PracticeModeMenu2_WBP_TabDrill_Details_K2Node_ComponentBoundEvent_26_Go_Back__DelegateSignature();
 	void BndEvt__WBP_PracticeModeMenu2_WBP_TabSettings_K2Node_ComponentBoundEvent_25_Go_Back__DelegateSignature();
-	void Construct();
+	void BndEvt__WBP_PracticeModeMenu2_WBP_PracticeModeMenuItem_Location_K2Node_ComponentBoundEvent_2_Button_Clicked__DelegateSignature();
 	void BndEvt__WBP_PracticeModeMenu2_WBP_TabSettings_K2Node_ComponentBoundEvent_24_Save_Data_To_File__DelegateSignature();
 	void BndEvt__WBP_PracticeModeMenu2_WBP_TabSettings_K2Node_ComponentBoundEvent_23_Load_Data_From_File__DelegateSignature();
-	void BndEvt__WBP_PracticeModeMenu2_WBP_PracticeModeMenuItem_K2Node_ComponentBoundEvent_0_Button_Clicked__DelegateSignature();
+	void BndEvt__WBP_PracticeModeMenu2_WBP_PracticeModeMenuItem_Bot_K2Node_ComponentBoundEvent_3_Button_Clicked__DelegateSignature();
 	void BndEvt__WBP_PracticeModeMenu2_WBP_TabBot_Details_K2Node_ComponentBoundEvent_22_Bot_Updated__DelegateSignature();
 	void BndEvt__WBP_PracticeModeMenu2_WBP_TabBot_Details_K2Node_ComponentBoundEvent_21_Go_Back__DelegateSignature();
 	void BndEvt__WBP_PracticeModeMenu2_WBP_TabBot_K2Node_ComponentBoundEvent_20_Go_Back__DelegateSignature();
 	void BndEvt__WBP_PracticeModeMenu2_WBP_TabBot_K2Node_ComponentBoundEvent_19_Add_Bot__DelegateSignature();
 	void BndEvt__WBP_PracticeModeMenu2_WBP_TabBot_K2Node_ComponentBoundEvent_18_Edit_Bot__DelegateSignature(const struct FMABotConfig& Bot);
-	void BndEvt__WBP_PracticeModeMenu2_WBP_PracticeModeMenuItem_1_K2Node_ComponentBoundEvent_1_Button_Clicked__DelegateSignature();
+	void BndEvt__WBP_PracticeModeMenu2_WBP_PracticeModeMenuItem_Drill_K2Node_ComponentBoundEvent_4_Button_Clicked__DelegateSignature();
 	void BndEvt__WBP_PracticeModeMenu2_WBP_TabLocation_Details_K2Node_ComponentBoundEvent_17_Location_Updated__DelegateSignature();
-	void BndEvt__WBP_PracticeModeMenu2_WBP_PracticeModeMenuItem_Location_K2Node_ComponentBoundEvent_2_Button_Clicked__DelegateSignature();
+	void BndEvt__WBP_PracticeModeMenu2_WBP_PracticeModeMenuItem_Setting_K2Node_ComponentBoundEvent_5_Button_Clicked__DelegateSignature();
 	void BndEvt__WBP_PracticeModeMenu2_WBP_TabLocation_K2Node_ComponentBoundEvent_16_Add_Location__DelegateSignature();
 	void BndEvt__WBP_PracticeModeMenu2_WBP_TabLocation_K2Node_ComponentBoundEvent_15_Edit_Location__DelegateSignature(const struct FMANamedLocation& Location);
 	void BndEvt__WBP_PracticeModeMenu2_WBP_TabLocation_Details_K2Node_ComponentBoundEvent_14_Go_Back__DelegateSignature();
@@ -88,16 +89,16 @@ public:
 	void BndEvt__WBP_PracticeModeMenu2_WBP_TabHome_K2Node_ComponentBoundEvent_0_TabHomeRowClicked__DelegateSignature(const class FString& TabName);
 	void C_OnVisibilityChanged(ESlateVisibility InVisibility);
 	void OnInitialized();
-	void BndEvt__WBP_PracticeModeMenu2_WBP_PracticeModeMenuItem_Bot_K2Node_ComponentBoundEvent_3_Button_Clicked__DelegateSignature();
 	void OnTogglePracticeMenu();
-	void BndEvt__WBP_PracticeModeMenu2_WBP_PracticeModeMenuItem_Drill_K2Node_ComponentBoundEvent_4_Button_Clicked__DelegateSignature();
-	void BndEvt__WBP_PracticeModeMenu2_WBP_PracticeModeMenuItem_Setting_K2Node_ComponentBoundEvent_5_Button_Clicked__DelegateSignature();
+	void Construct();
+	void BndEvt__WBP_PracticeModeMenu2_WBP_PracticeModeMenuItem_K2Node_ComponentBoundEvent_0_Button_Clicked__DelegateSignature();
 	void BndEvt__WBP_PracticeModeMenu2_Button_Close_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature();
 	void Set_Active_Tab_Widget(const class FString& TabName);
 	void GetMAPracticeComponentForWidget(class UMAPracticeComponent** MAPracticeComponent);
 	void LoadRoutesFromSelectedFile(const class FString& Filename);
 	struct FEventReply OnMouseWheel(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent);
 	struct FEventReply OnMouseButtonDown(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent);
+	struct FEventReply OnKeyDown(const struct FGeometry& MyGeometry, const struct FKeyEvent& InKeyEvent);
 
 	class UWidget* BP_GetDesiredFocusTarget() const;
 

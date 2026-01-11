@@ -11,13 +11,13 @@
 #include "Basic.hpp"
 
 #include "GameSettings_structs.hpp"
-#include "SlateCore_structs.hpp"
 #include "UMG_structs.hpp"
 #include "UMG_classes.hpp"
-#include "GameplayTags_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "CommonUI_classes.hpp"
+#include "SlateCore_structs.hpp"
 #include "Engine_classes.hpp"
+#include "GameplayTags_structs.hpp"
 
 
 namespace SDK

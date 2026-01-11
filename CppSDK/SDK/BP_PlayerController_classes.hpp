@@ -10,21 +10,21 @@
 
 #include "Basic.hpp"
 
-#include "Midair2_classes.hpp"
 #include "Engine_structs.hpp"
+#include "Midair2_classes.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_PlayerController.BP_PlayerController_C
-// 0x0020 (0x0BF0 - 0x0BD0)
+// 0x0020 (0x0C10 - 0x0BF0)
 class ABP_PlayerController_C final : public AMAPlayerController
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0BD0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UWBP_DeathEffects_C*                    DeathEffects;                                      // 0x0BD8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 CurrentLevelName;                                  // 0x0BE0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Transient, DisableEditOnInstance, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0BF0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UWBP_DeathEffects_C*                    DeathEffects;                                      // 0x0BF8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 CurrentLevelName;                                  // 0x0C00(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Transient, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_PlayerController(int32 EntryPoint);

@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "Midair2_structs.hpp"
 #include "Engine_structs.hpp"
-#include "UMG_classes.hpp"
+#include "Midair2_structs.hpp"
 #include "SlateCore_structs.hpp"
+#include "UMG_classes.hpp"
 
 
 namespace SDK
@@ -44,9 +44,9 @@ public:
 
 public:
 	void ExecuteUbergraph_WBP_PointOfInterest_Map(int32 EntryPoint);
-	void OnDied();
-	void Construct();
 	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
+	void Construct();
+	void OnDied();
 
 public:
 	static class UClass* StaticClass()

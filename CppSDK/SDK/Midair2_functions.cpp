@@ -17,149 +17,24 @@
 namespace SDK
 {
 
-// Function Midair2.GetCurrentLadderPlayerAsyncTask.GetCurrentLadderPlayer
+// Function Midair2.GetLocationBeaconsAsyncTask.GetLocationBeacons
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class UGetCurrentLadderPlayerAsyncTask* ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UGetLocationBeaconsAsyncTask*     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UGetCurrentLadderPlayerAsyncTask* UGetCurrentLadderPlayerAsyncTask::GetCurrentLadderPlayer()
+class UGetLocationBeaconsAsyncTask* UGetLocationBeaconsAsyncTask::GetLocationBeacons()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GetCurrentLadderPlayerAsyncTask", "GetCurrentLadderPlayer");
+		Func = StaticClass()->GetFunction("GetLocationBeaconsAsyncTask", "GetLocationBeacons");
 
-	Params::GetCurrentLadderPlayerAsyncTask_GetCurrentLadderPlayer Parms{};
+	Params::GetLocationBeaconsAsyncTask_GetLocationBeacons Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MACharacterMovement.MAClientAdjustEnergy
-// (Net, Native, Event, Public, NetClient)
-// Parameters:
-// float                                   Energy                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMACharacterMovement::MAClientAdjustEnergy(float Energy)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacterMovement", "MAClientAdjustEnergy");
-
-	Params::MACharacterMovement_MAClientAdjustEnergy Parms{};
-
-	Parms.Energy = Energy;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacterMovement.MAServerMove
-// (Net, Native, Event, Public, NetServer, NetValidate)
-// Parameters:
-// const struct FMAPackedMoveBundle&       Bundle                                                 (ConstParm, Parm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void UMACharacterMovement::MAServerMove(const struct FMAPackedMoveBundle& Bundle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacterMovement", "MAServerMove");
-
-	Params::MACharacterMovement_MAServerMove Parms{};
-
-	Parms.Bundle = std::move(Bundle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacterMovement.IsSkatingOnGround
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UMACharacterMovement::IsSkatingOnGround() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacterMovement", "IsSkatingOnGround");
-
-	Params::MACharacterMovement_IsSkatingOnGround Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAPlatformEmulationSettings.GetKnownDeviceProfiles
-// (Final, Native, Private, Const)
-// Parameters:
-// TArray<class FName>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<class FName> UMAPlatformEmulationSettings::GetKnownDeviceProfiles() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAPlatformEmulationSettings", "GetKnownDeviceProfiles");
-
-	Params::MAPlatformEmulationSettings_GetKnownDeviceProfiles Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAPlatformEmulationSettings.GetKnownPlatformIds
-// (Final, Native, Private, Const)
-// Parameters:
-// TArray<class FName>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<class FName> UMAPlatformEmulationSettings::GetKnownPlatformIds() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAPlatformEmulationSettings", "GetKnownPlatformIds");
-
-	Params::MAPlatformEmulationSettings_GetKnownPlatformIds Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -279,6 +154,2374 @@ class AMACharacter* AAIPlayerController::GetControlledCharacter() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.SensorNetworkComponent.Reactivate
+// (Native, Public)
+
+void USensorNetworkComponent::Reactivate()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SensorNetworkComponent", "Reactivate");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.SensorNetworkComponent.SetSensorChannel
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// uint8                                   NewChannel                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USensorNetworkComponent::SetSensorChannel(uint8 NewChannel)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SensorNetworkComponent", "SetSensorChannel");
+
+	Params::SensorNetworkComponent_SetSensorChannel Parms{};
+
+	Parms.NewChannel = NewChannel;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.SensorNetworkComponent.GetSensorChannel
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// uint8                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+uint8 USensorNetworkComponent::GetSensorChannel() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SensorNetworkComponent", "GetSensorChannel");
+
+	Params::SensorNetworkComponent_GetSensorChannel Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.SensorNetworkComponent.HasDetectedTarget
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UTargetComponent*                 TargetComponent                                        (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool USensorNetworkComponent::HasDetectedTarget(class UTargetComponent* TargetComponent) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SensorNetworkComponent", "HasDetectedTarget");
+
+	Params::SensorNetworkComponent_HasDetectedTarget Parms{};
+
+	Parms.TargetComponent = TargetComponent;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.DeletePracticeTutorialAsyncTask.DeletePracticeTutorial
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FMATutorial&               TutorialToDelete                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// class UDeletePracticeTutorialAsyncTask* ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UDeletePracticeTutorialAsyncTask* UDeletePracticeTutorialAsyncTask::DeletePracticeTutorial(const struct FMATutorial& TutorialToDelete)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("DeletePracticeTutorialAsyncTask", "DeletePracticeTutorial");
+
+	Params::DeletePracticeTutorialAsyncTask_DeletePracticeTutorial Parms{};
+
+	Parms.TutorialToDelete = std::move(TutorialToDelete);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAPickup.ApplyImpulse_NM
+// (Net, NetReliable, Native, Event, NetMulticast, Public, HasDefaults)
+// Parameters:
+// const struct FVector&                   Impulse                                                (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMAPickup::ApplyImpulse_NM(const struct FVector& Impulse)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPickup", "ApplyImpulse_NM");
+
+	Params::MAPickup_ApplyImpulse_NM Parms{};
+
+	Parms.Impulse = std::move(Impulse);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAPickup.OnBeginOverlap
+// (Native, Public, HasOutParams)
+// Parameters:
+// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void AMAPickup::OnBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPickup", "OnBeginOverlap");
+
+	Params::MAPickup_OnBeginOverlap Parms{};
+
+	Parms.OverlappedComponent = OverlappedComponent;
+	Parms.OtherActor = OtherActor;
+	Parms.OtherComp = OtherComp;
+	Parms.OtherBodyIndex = OtherBodyIndex;
+	Parms.bFromSweep = bFromSweep;
+	Parms.SweepResult = std::move(SweepResult);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAPickup.OnStop
+// (Native, Public, HasOutParams)
+// Parameters:
+// const struct FHitResult&                ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void AMAPickup::OnStop(const struct FHitResult& ImpactResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPickup", "OnStop");
+
+	Params::MAPickup_OnStop Parms{};
+
+	Parms.ImpactResult = std::move(ImpactResult);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAPickup.PlayLandingEffects
+// (Net, Native, Event, NetMulticast, Public)
+
+void AMAPickup::PlayLandingEffects()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPickup", "PlayLandingEffects");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAPickup.PlayPickupEffects
+// (Net, Native, Event, NetMulticast, Public)
+// Parameters:
+// class AMAPlayerController*              Controller                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMAPickup::PlayPickupEffects(class AMAPlayerController* Controller)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPickup", "PlayPickupEffects");
+
+	Params::MAPickup_PlayPickupEffects Parms{};
+
+	Parms.Controller = Controller;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MALocalMessage.GetText
+// (Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FLocalMessageData&         MessageData                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+class FText UMALocalMessage::GetText(const struct FLocalMessageData& MessageData) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MALocalMessage", "GetText");
+
+	Params::MALocalMessage_GetText Parms{};
+
+	Parms.MessageData = std::move(MessageData);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MALocalMessage.GetTextColor
+// (Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   MessageIndex                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FLinearColor                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FLinearColor UMALocalMessage::GetTextColor(int32 MessageIndex) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MALocalMessage", "GetTextColor");
+
+	Params::MALocalMessage_GetTextColor Parms{};
+
+	Parms.MessageIndex = MessageIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.AmmoPickup.SetupFromCharacter
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class AMACharacter*                     Character                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AAmmoPickup::SetupFromCharacter(class AMACharacter* Character)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AmmoPickup", "SetupFromCharacter");
+
+	Params::AmmoPickup_SetupFromCharacter Parms{};
+
+	Parms.Character = Character;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.AmmoPickup.GetRelatedPlayer
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class AMAPlayerState*                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AMAPlayerState* AAmmoPickup::GetRelatedPlayer() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AmmoPickup", "GetRelatedPlayer");
+
+	Params::AmmoPickup_GetRelatedPlayer Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.TargetDummy.ForceKill
+// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+
+void ATargetDummy::ForceKill()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TargetDummy", "ForceKill");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.TargetDummy.OnDied
+// (Final, Native, Public)
+
+void ATargetDummy::OnDied()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TargetDummy", "OnDied");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.TargetDummy.GetTeamID
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// ETeamId                                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+ETeamId ATargetDummy::GetTeamID() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TargetDummy", "GetTeamID");
+
+	Params::TargetDummy_GetTeamID Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAGameMode.EndsIn10
+// (Native, Public, BlueprintCallable)
+
+void AMAGameMode::EndsIn10()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameMode", "EndsIn10");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAGameMode.EndsIn60
+// (Native, Public, BlueprintCallable)
+
+void AMAGameMode::EndsIn60()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameMode", "EndsIn60");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAGameMode.IsPracticeModeEnabled
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMAGameMode::IsPracticeModeEnabled()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameMode", "IsPracticeModeEnabled");
+
+	Params::MAGameMode_IsPracticeModeEnabled Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAGameMode.IsTournamentModeEnabled
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMAGameMode::IsTournamentModeEnabled()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameMode", "IsTournamentModeEnabled");
+
+	Params::MAGameMode_IsTournamentModeEnabled Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAGameMode.ReturnPrefix
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString AMAGameMode::ReturnPrefix()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameMode", "ReturnPrefix");
+
+	Params::MAGameMode_ReturnPrefix Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAGameMode.TryAssignPlayerToVoiceTeamWhenReady
+// (Final, Native, Protected)
+// Parameters:
+// class AMAPlayerState*                   PS                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   AttemptsLeft                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMAGameMode::TryAssignPlayerToVoiceTeamWhenReady(class AMAPlayerState* PS, int32 AttemptsLeft)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameMode", "TryAssignPlayerToVoiceTeamWhenReady");
+
+	Params::MAGameMode_TryAssignPlayerToVoiceTeamWhenReady Parms{};
+
+	Parms.PS = PS;
+	Parms.AttemptsLeft = AttemptsLeft;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAGameMode.FilterDisallowedItems
+// (Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TArray<TSubclassOf<class UObjectInfo>>& ItemsIn                                                (Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
+// TArray<TSubclassOf<class UObjectInfo>>* ItemsOut                                               (Parm, OutParm, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+
+void AMAGameMode::FilterDisallowedItems(TArray<TSubclassOf<class UObjectInfo>>& ItemsIn, TArray<TSubclassOf<class UObjectInfo>>* ItemsOut) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameMode", "FilterDisallowedItems");
+
+	Params::MAGameMode_FilterDisallowedItems Parms{};
+
+	Parms.ItemsIn = std::move(ItemsIn);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	ItemsIn = std::move(Parms.ItemsIn);
+
+	if (ItemsOut != nullptr)
+		*ItemsOut = std::move(Parms.ItemsOut);
+}
+
+
+// Function Midair2.MAGameMode.IsBackpackAllowed
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class UBackpackInfo>        PackClass                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMAGameMode::IsBackpackAllowed(TSubclassOf<class UBackpackInfo> PackClass) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameMode", "IsBackpackAllowed");
+
+	Params::MAGameMode_IsBackpackAllowed Parms{};
+
+	Parms.PackClass = PackClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAGameMode.IsDeployableAllowed
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class UDeployableInfo>      DeployableClass                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMAGameMode::IsDeployableAllowed(TSubclassOf<class UDeployableInfo> DeployableClass) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameMode", "IsDeployableAllowed");
+
+	Params::MAGameMode_IsDeployableAllowed Parms{};
+
+	Parms.DeployableClass = DeployableClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAGameMode.IsThrowableAllowed
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class UThrowableInfo>       ThrowableClass                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMAGameMode::IsThrowableAllowed(TSubclassOf<class UThrowableInfo> ThrowableClass) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameMode", "IsThrowableAllowed");
+
+	Params::MAGameMode_IsThrowableAllowed Parms{};
+
+	Parms.ThrowableClass = ThrowableClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAGameMode.IsTournamentWeaponAllowed
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class UWeaponInfo>          WeaponClass                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMAGameMode::IsTournamentWeaponAllowed(TSubclassOf<class UWeaponInfo> WeaponClass) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameMode", "IsTournamentWeaponAllowed");
+
+	Params::MAGameMode_IsTournamentWeaponAllowed Parms{};
+
+	Parms.WeaponClass = WeaponClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAGameMode.IsWeaponAllowed
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class UWeaponInfo>          WeaponClass                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMAGameMode::IsWeaponAllowed(TSubclassOf<class UWeaponInfo> WeaponClass) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameMode", "IsWeaponAllowed");
+
+	Params::MAGameMode_IsWeaponAllowed Parms{};
+
+	Parms.WeaponClass = WeaponClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.GetMapPracticeDataAsyncTask.GetMapPracticeData
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    mapName                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UGetMapPracticeDataAsyncTask*     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UGetMapPracticeDataAsyncTask* UGetMapPracticeDataAsyncTask::GetMapPracticeData(const class FString& mapName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GetMapPracticeDataAsyncTask", "GetMapPracticeData");
+
+	Params::GetMapPracticeDataAsyncTask_GetMapPracticeData Parms{};
+
+	Parms.mapName = std::move(mapName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MACarriedObjectBase.ObjectChanged
+// (Native, Protected)
+
+void AMACarriedObjectBase::ObjectChanged()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACarriedObjectBase", "ObjectChanged");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACarriedObjectBase.ObjectStateChanged
+// (Native, Public)
+
+void AMACarriedObjectBase::ObjectStateChanged()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACarriedObjectBase", "ObjectStateChanged");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAPlayerState.AdjustScore
+// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ScoreAdjustment                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMAPlayerState::AdjustScore(int32 ScoreAdjustment)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPlayerState", "AdjustScore");
+
+	Params::MAPlayerState_AdjustScore Parms{};
+
+	Parms.ScoreAdjustment = ScoreAdjustment;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAPlayerState.Client_NotifyScoreApplied
+// (Net, Native, Event, Public, NetClient)
+// Parameters:
+// int32                                   ScoreID                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMAPlayerState::Client_NotifyScoreApplied(int32 ScoreID, float Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPlayerState", "Client_NotifyScoreApplied");
+
+	Params::MAPlayerState_Client_NotifyScoreApplied Parms{};
+
+	Parms.ScoreID = ScoreID;
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAPlayerState.GetMAPlayerController
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class AMAPlayerController*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AMAPlayerController* AMAPlayerState::GetMAPlayerController()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPlayerState", "GetMAPlayerController");
+
+	Params::MAPlayerState_GetMAPlayerController Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAPlayerState.GetUniqueIdAsString
+// (Final, Native, Private, BlueprintCallable)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString AMAPlayerState::GetUniqueIdAsString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPlayerState", "GetUniqueIdAsString");
+
+	Params::MAPlayerState_GetUniqueIdAsString Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAPlayerState.GetWeaponStats
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TMap<class FString, struct FMatchWeaponStats>ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+TMap<class FString, struct FMatchWeaponStats> AMAPlayerState::GetWeaponStats()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPlayerState", "GetWeaponStats");
+
+	Params::MAPlayerState_GetWeaponStats Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAPlayerState.IncrementAssists
+// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UDamageType>          DamageType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AMAPlayerState*                   Victim                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMAPlayerState::IncrementAssists(TSubclassOf<class UDamageType> DamageType, class AMAPlayerState* Victim)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPlayerState", "IncrementAssists");
+
+	Params::MAPlayerState_IncrementAssists Parms{};
+
+	Parms.DamageType = DamageType;
+	Parms.Victim = Victim;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAPlayerState.IncrementDeaths
+// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UDamageType>          DamageType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AMAPlayerState*                   Victim                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMAPlayerState::IncrementDeaths(TSubclassOf<class UDamageType> DamageType, class AMAPlayerState* Victim)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPlayerState", "IncrementDeaths");
+
+	Params::MAPlayerState_IncrementDeaths Parms{};
+
+	Parms.DamageType = DamageType;
+	Parms.Victim = Victim;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAPlayerState.IncrementEvacuations
+// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+
+void AMAPlayerState::IncrementEvacuations()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPlayerState", "IncrementEvacuations");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAPlayerState.IncrementKills
+// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UDamageType>          DamageType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AMAPlayerState*                   Victim                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMAPlayerState::IncrementKills(TSubclassOf<class UDamageType> DamageType, class AMAPlayerState* Victim)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPlayerState", "IncrementKills");
+
+	Params::MAPlayerState_IncrementKills Parms{};
+
+	Parms.DamageType = DamageType;
+	Parms.Victim = Victim;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAPlayerState.IncrementLives
+// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+
+void AMAPlayerState::IncrementLives()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPlayerState", "IncrementLives");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAPlayerState.IncrementTeamkills
+// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+
+void AMAPlayerState::IncrementTeamkills()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPlayerState", "IncrementTeamkills");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAPlayerState.NotifyTeamChanged
+// (Final, Native, Public)
+
+void AMAPlayerState::NotifyTeamChanged()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPlayerState", "NotifyTeamChanged");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAPlayerState.OnRep_LastCauseHitInfo
+// (Native, Protected)
+
+void AMAPlayerState::OnRep_LastCauseHitInfo()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPlayerState", "OnRep_LastCauseHitInfo");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAPlayerState.OnRep_NewSpray
+// (Native, Public)
+
+void AMAPlayerState::OnRep_NewSpray()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPlayerState", "OnRep_NewSpray");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAPlayerState.ServerRequestChangeTeam
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+// Parameters:
+// ETeamId                                 DesiredTeamId                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMAPlayerState::ServerRequestChangeTeam(ETeamId DesiredTeamId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPlayerState", "ServerRequestChangeTeam");
+
+	Params::MAPlayerState_ServerRequestChangeTeam Parms{};
+
+	Parms.DesiredTeamId = DesiredTeamId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAPlayerState.SetHoldingFlag
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+// Parameters:
+// bool                                    bIsHolding                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMAPlayerState::SetHoldingFlag(bool bIsHolding)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPlayerState", "SetHoldingFlag");
+
+	Params::MAPlayerState_SetHoldingFlag Parms{};
+
+	Parms.bIsHolding = bIsHolding;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAPlayerState.UpdateMatchResult
+// (Net, NetReliable, Native, Event, Public, NetClient)
+// Parameters:
+// const struct FMatchHistory&             MatchHistory                                           (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void AMAPlayerState::UpdateMatchResult(const struct FMatchHistory& MatchHistory)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPlayerState", "UpdateMatchResult");
+
+	Params::MAPlayerState_UpdateMatchResult Parms{};
+
+	Parms.MatchHistory = std::move(MatchHistory);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAPlayerState.GetPowerUp
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class AMAPowerup*                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AMAPowerup* AMAPlayerState::GetPowerUp() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPlayerState", "GetPowerUp");
+
+	Params::MAPlayerState_GetPowerUp Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAPlayerState.IsAlive
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMAPlayerState::IsAlive() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPlayerState", "IsAlive");
+
+	Params::MAPlayerState_IsAlive Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.Augment_Art.SetActive
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bActive                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAugment_Art::SetActive(bool bActive)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Augment_Art", "SetActive");
+
+	Params::Augment_Art_SetActive Parms{};
+
+	Parms.bActive = bActive;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.Augment_Art.SetActive_Audio
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bActive                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAugment_Art::SetActive_Audio(bool bActive)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Augment_Art", "SetActive_Audio");
+
+	Params::Augment_Art_SetActive_Audio Parms{};
+
+	Parms.bActive = bActive;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.Augment_Art.SetActive_Visuals
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bActive                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAugment_Art::SetActive_Visuals(bool bActive)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Augment_Art", "SetActive_Visuals");
+
+	Params::Augment_Art_SetActive_Visuals Parms{};
+
+	Parms.bActive = bActive;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.Augment_Art.Tick
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAugment_Art::Tick(float DeltaTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Augment_Art", "Tick");
+
+	Params::Augment_Art_Tick Parms{};
+
+	Parms.DeltaTime = DeltaTime;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.GetDemoAsyncTask.PlayDemo
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    demoId                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    PlayDemo_0                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UGetDemoAsyncTask*                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UGetDemoAsyncTask* UGetDemoAsyncTask::PlayDemo(const class FString& demoId, bool PlayDemo_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GetDemoAsyncTask", "PlayDemo");
+
+	Params::GetDemoAsyncTask_PlayDemo Parms{};
+
+	Parms.demoId = std::move(demoId);
+	Parms.PlayDemo_0 = PlayDemo_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAEOSPartyId.ToString
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UMAEOSPartyId::ToString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAEOSPartyId", "ToString");
+
+	Params::MAEOSPartyId_ToString Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.Augment.GetArtObjectFor
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AMACharacter*                     Character                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAugment_Art*                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UAugment_Art* UAugment::GetArtObjectFor(class AMACharacter* Character)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Augment", "GetArtObjectFor");
+
+	Params::Augment_GetArtObjectFor Parms{};
+
+	Parms.Character = Character;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.Augment.K2_Draw
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class UCanvas*                          Canvas                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   RenderDelta                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAugment::K2_Draw(class UCanvas* Canvas, float RenderDelta)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Augment", "K2_Draw");
+
+	Params::Augment_K2_Draw Parms{};
+
+	Parms.Canvas = Canvas;
+	Parms.RenderDelta = RenderDelta;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Midair2.Augment.MakePassive
+// (Final, Native, Public, BlueprintCallable)
+
+void UAugment::MakePassive()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Augment", "MakePassive");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.Augment.OnActiveChanged
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// class AMACharacter*                     ReceivingCharacter                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAugment::OnActiveChanged(class AMACharacter* ReceivingCharacter)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Augment", "OnActiveChanged");
+
+	Params::Augment_OnActiveChanged Parms{};
+
+	Parms.ReceivingCharacter = ReceivingCharacter;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.Augment.OnAddBuddy
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class AMACharacter*                     Buddy                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAugment::OnAddBuddy(class AMACharacter* Buddy)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Augment", "OnAddBuddy");
+
+	Params::Augment_OnAddBuddy Parms{};
+
+	Parms.Buddy = Buddy;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Midair2.Augment.OnEnergyDepleted
+// (Native, Event, Protected, BlueprintEvent)
+
+void UAugment::OnEnergyDepleted()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Augment", "OnEnergyDepleted");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.Augment.OnGivenTo
+// (Event, Protected, BlueprintEvent)
+
+void UAugment::OnGivenTo()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Augment", "OnGivenTo");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Midair2.Augment.OnRemoveBuddy
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class AMACharacter*                     Buddy                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAugment::OnRemoveBuddy(class AMACharacter* Buddy)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Augment", "OnRemoveBuddy");
+
+	Params::Augment_OnRemoveBuddy Parms{};
+
+	Parms.Buddy = Buddy;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Midair2.Augment.OnRemoved
+// (Event, Protected, BlueprintEvent)
+
+void UAugment::OnRemoved()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Augment", "OnRemoved");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Midair2.Augment.OnRep_Buddies
+// (Final, Native, Protected)
+
+void UAugment::OnRep_Buddies()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Augment", "OnRep_Buddies");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.Augment.OnRep_Trigger
+// (Final, Native, Protected)
+
+void UAugment::OnRep_Trigger()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Augment", "OnRep_Trigger");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.Augment.ResetType
+// (Final, Native, Public, BlueprintCallable)
+
+void UAugment::ResetType()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Augment", "ResetType");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.Augment.ServerUse
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+
+void UAugment::ServerUse()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Augment", "ServerUse");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.Augment.CanBeUsedWith
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class UAugment>             OtherAugmentClass                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UAugment::CanBeUsedWith(TSubclassOf<class UAugment> OtherAugmentClass) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Augment", "CanBeUsedWith");
+
+	Params::Augment_CanBeUsedWith Parms{};
+
+	Parms.OtherAugmentClass = OtherAugmentClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.Augment.GetCurrentEnergyChangeRate
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UAugment::GetCurrentEnergyChangeRate() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Augment", "GetCurrentEnergyChangeRate");
+
+	Params::Augment_GetCurrentEnergyChangeRate Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.Augment.IsReady
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UAugment::IsReady() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Augment", "IsReady");
+
+	Params::Augment_IsReady Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.Augment_Blink.OnBlinkOccured
+// (Native, Public)
+
+void UAugment_Blink::OnBlinkOccured()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Augment_Blink", "OnBlinkOccured");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.Augment_Blink.ReceiveBlinkLocation
+// (Native, Public)
+
+void UAugment_Blink::ReceiveBlinkLocation()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Augment_Blink", "ReceiveBlinkLocation");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.GetMapPracticeDrillsAsyncTask.GetPracticeDrills
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    mapName                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UGetMapPracticeDrillsAsyncTask*   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UGetMapPracticeDrillsAsyncTask* UGetMapPracticeDrillsAsyncTask::GetPracticeDrills(const class FString& mapName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GetMapPracticeDrillsAsyncTask", "GetPracticeDrills");
+
+	Params::GetMapPracticeDrillsAsyncTask_GetPracticeDrills Parms{};
+
+	Parms.mapName = std::move(mapName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.Augment_Blink_Art.StartBlink
+// (Event, Public, HasOutParams, HasDefaults, BlueprintEvent)
+// Parameters:
+// const struct FVector&                   Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAugment_Blink_Art::StartBlink(const struct FVector& Location)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Augment_Blink_Art", "StartBlink");
+
+	Params::Augment_Blink_Art_StartBlink Parms{};
+
+	Parms.Location = std::move(Location);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Midair2.Augment_Blink_Art.StopBlink
+// (Event, Public, HasOutParams, HasDefaults, BlueprintEvent)
+// Parameters:
+// const struct FVector&                   Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAugment_Blink_Art::StopBlink(const struct FVector& Location)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Augment_Blink_Art", "StopBlink");
+
+	Params::Augment_Blink_Art_StopBlink Parms{};
+
+	Parms.Location = std::move(Location);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Midair2.GetPlayerPracticeDataAsyncTask.GetPlayerPracticeData
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UGetPlayerPracticeDataAsyncTask*  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UGetPlayerPracticeDataAsyncTask* UGetPlayerPracticeDataAsyncTask::GetPlayerPracticeData()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GetPlayerPracticeDataAsyncTask", "GetPlayerPracticeData");
+
+	Params::GetPlayerPracticeDataAsyncTask_GetPlayerPracticeData Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.Augment_FlatShield.OwnerTookDamage
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// const struct FTakeHitInfo&              TakeHitInfo                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UAugment_FlatShield::OwnerTookDamage(const struct FTakeHitInfo& TakeHitInfo)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Augment_FlatShield", "OwnerTookDamage");
+
+	Params::Augment_FlatShield_OwnerTookDamage Parms{};
+
+	Parms.TakeHitInfo = std::move(TakeHitInfo);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAFrontendStateComponent.OnExperienceLoaded
+// (Final, Native, Public, BlueprintCallable)
+
+void UMAFrontendStateComponent::OnExperienceLoaded()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAFrontendStateComponent", "OnExperienceLoaded");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAFrontendStateComponent.OnUserInitialized
+// (Final, Native, Private)
+// Parameters:
+// bool                                    bSuccess                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FText&                      Error                                                  (Parm, NativeAccessSpecifierPublic)
+
+void UMAFrontendStateComponent::OnUserInitialized(bool bSuccess, const class FText& Error)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAFrontendStateComponent", "OnUserInitialized");
+
+	Params::MAFrontendStateComponent_OnUserInitialized Parms{};
+
+	Parms.bSuccess = bSuccess;
+	Parms.Error = std::move(Error);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAFrontendStateComponent.SetGameInstance
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UMAGameInstance*                  GI                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMAFrontendStateComponent::SetGameInstance(class UMAGameInstance* GI)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAFrontendStateComponent", "SetGameInstance");
+
+	Params::MAFrontendStateComponent_SetGameInstance Parms{};
+
+	Parms.GI = GI;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.CommonSession_SearchResult.GetCurrentPlayers
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UCommonSession_SearchResult::GetCurrentPlayers()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CommonSession_SearchResult", "GetCurrentPlayers");
+
+	Params::CommonSession_SearchResult_GetCurrentPlayers Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.CommonSession_SearchResult.GetMapName
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UCommonSession_SearchResult::GetMapName()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CommonSession_SearchResult", "GetMapName");
+
+	Params::CommonSession_SearchResult_GetMapName Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.CommonSession_SearchResult.GetMaxPlayers
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UCommonSession_SearchResult::GetMaxPlayers()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CommonSession_SearchResult", "GetMaxPlayers");
+
+	Params::CommonSession_SearchResult_GetMaxPlayers Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.CommonSession_SearchResult.IsPasswordProtected
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCommonSession_SearchResult::IsPasswordProtected()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CommonSession_SearchResult", "IsPasswordProtected");
+
+	Params::CommonSession_SearchResult_IsPasswordProtected Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.CommonSession_SearchResult.GetCustomServerName
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UCommonSession_SearchResult::GetCustomServerName() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CommonSession_SearchResult", "GetCustomServerName");
+
+	Params::CommonSession_SearchResult_GetCustomServerName Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.CommonSession_SearchResult.GetDescription
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UCommonSession_SearchResult::GetDescription() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CommonSession_SearchResult", "GetDescription");
+
+	Params::CommonSession_SearchResult_GetDescription Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.CommonSession_SearchResult.GetIntSetting
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FName                             Key                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  Value                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   bFoundValue                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCommonSession_SearchResult::GetIntSetting(class FName Key, int32* Value, bool* bFoundValue) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CommonSession_SearchResult", "GetIntSetting");
+
+	Params::CommonSession_SearchResult_GetIntSetting Parms{};
+
+	Parms.Key = Key;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (Value != nullptr)
+		*Value = Parms.Value;
+
+	if (bFoundValue != nullptr)
+		*bFoundValue = Parms.bFoundValue;
+}
+
+
+// Function Midair2.CommonSession_SearchResult.GetMaxPublicConnections
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UCommonSession_SearchResult::GetMaxPublicConnections() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CommonSession_SearchResult", "GetMaxPublicConnections");
+
+	Params::CommonSession_SearchResult_GetMaxPublicConnections Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.CommonSession_SearchResult.GetNumOpenPrivateConnections
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UCommonSession_SearchResult::GetNumOpenPrivateConnections() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CommonSession_SearchResult", "GetNumOpenPrivateConnections");
+
+	Params::CommonSession_SearchResult_GetNumOpenPrivateConnections Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.CommonSession_SearchResult.GetNumOpenPublicConnections
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UCommonSession_SearchResult::GetNumOpenPublicConnections() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CommonSession_SearchResult", "GetNumOpenPublicConnections");
+
+	Params::CommonSession_SearchResult_GetNumOpenPublicConnections Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.CommonSession_SearchResult.GetPingInMs
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UCommonSession_SearchResult::GetPingInMs() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CommonSession_SearchResult", "GetPingInMs");
+
+	Params::CommonSession_SearchResult_GetPingInMs Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.CommonSession_SearchResult.GetServerVersion
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UCommonSession_SearchResult::GetServerVersion() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CommonSession_SearchResult", "GetServerVersion");
+
+	Params::CommonSession_SearchResult_GetServerVersion Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.CommonSession_SearchResult.GetStringSetting
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FName                             Key                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          Value                                                  (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   bFoundValue                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCommonSession_SearchResult::GetStringSetting(class FName Key, class FString* Value, bool* bFoundValue) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CommonSession_SearchResult", "GetStringSetting");
+
+	Params::CommonSession_SearchResult_GetStringSetting Parms{};
+
+	Parms.Key = Key;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (Value != nullptr)
+		*Value = std::move(Parms.Value);
+
+	if (bFoundValue != nullptr)
+		*bFoundValue = Parms.bFoundValue;
+}
+
+
+// Function Midair2.MAItem.ClientGivenTo
+// (Net, NetReliable, Native, Event, Protected, NetClient)
+// Parameters:
+// class APawn*                            NewInstigator                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bAutoActivate                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMAItem::ClientGivenTo(class APawn* NewInstigator, bool bAutoActivate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAItem", "ClientGivenTo");
+
+	Params::MAItem_ClientGivenTo Parms{};
+
+	Parms.NewInstigator = NewInstigator;
+	Parms.bAutoActivate = bAutoActivate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAItem.K2_GivenTo
+// (BlueprintAuthorityOnly, Event, Public, BlueprintEvent)
+// Parameters:
+// class APawn*                            NewOwner                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bAutoActivate                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMAItem::K2_GivenTo(class APawn* NewOwner, bool bAutoActivate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAItem", "K2_GivenTo");
+
+	Params::MAItem_K2_GivenTo Parms{};
+
+	Parms.NewOwner = NewOwner;
+	Parms.bAutoActivate = bAutoActivate;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Midair2.MAItem.K2_Removed
+// (BlueprintAuthorityOnly, Event, Public, BlueprintEvent)
+
+void AMAItem::K2_Removed()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAItem", "K2_Removed");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -2148,9 +4391,9 @@ void AMAPlayerController::RouteFinderCycleForwards()
 // Function Midair2.MAPlayerController.SelectCurrentLoadout
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// const struct FMALoadout&                loadout                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FMALoadout&                Loadout                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void AMAPlayerController::SelectCurrentLoadout(const struct FMALoadout& loadout)
+void AMAPlayerController::SelectCurrentLoadout(const struct FMALoadout& Loadout)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2159,7 +4402,7 @@ void AMAPlayerController::SelectCurrentLoadout(const struct FMALoadout& loadout)
 
 	Params::MAPlayerController_SelectCurrentLoadout Parms{};
 
-	Parms.loadout = std::move(loadout);
+	Parms.Loadout = std::move(Loadout);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2678,9 +4921,9 @@ void AMAPlayerController::ServerSetDirectHitImpulseBonus(float ExtraImpulsePerce
 // Function Midair2.MAPlayerController.ServerSetLoadout
 // (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
 // Parameters:
-// const struct FMALoadout&                loadout                                                (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FMALoadout&                Loadout                                                (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void AMAPlayerController::ServerSetLoadout(const struct FMALoadout& loadout)
+void AMAPlayerController::ServerSetLoadout(const struct FMALoadout& Loadout)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2689,7 +4932,7 @@ void AMAPlayerController::ServerSetLoadout(const struct FMALoadout& loadout)
 
 	Params::MAPlayerController_ServerSetLoadout Parms{};
 
-	Parms.loadout = std::move(loadout);
+	Parms.Loadout = std::move(Loadout);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3727,6 +5970,56 @@ class AMACharacter* AMAPlayerController::GetControlledCharacter() const
 }
 
 
+// Function Midair2.MAPlayerController.GetControlledPassengerPawn
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class APassengerPawn*                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class APassengerPawn* AMAPlayerController::GetControlledPassengerPawn() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPlayerController", "GetControlledPassengerPawn");
+
+	Params::MAPlayerController_GetControlledPassengerPawn Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAPlayerController.GetControlledVehicle
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class AVehiclePawn*                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AVehiclePawn* AMAPlayerController::GetControlledVehicle() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPlayerController", "GetControlledVehicle");
+
+	Params::MAPlayerController_GetControlledVehicle Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function Midair2.MAPlayerController.GetCurrentXPPool
 // (Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -3765,6 +6058,31 @@ class AMACharacter* AMAPlayerController::GetLastControlledCharacter() const
 		Func = Class->GetFunction("MAPlayerController", "GetLastControlledCharacter");
 
 	Params::MAPlayerController_GetLastControlledCharacter Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAPlayerController.GetPlayerSeat
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UVehicleSeatComponent*            ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UVehicleSeatComponent* AMAPlayerController::GetPlayerSeat() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPlayerController", "GetPlayerSeat");
+
+	Params::MAPlayerController_GetPlayerSeat Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3860,21 +6178,49 @@ void AMADuelPlayerController::ToggleDuelRequestMenu()
 }
 
 
-// Function Midair2.MAPickup.ApplyImpulse_NM
-// (Net, NetReliable, Native, Event, NetMulticast, Public, HasDefaults)
+// Function Midair2.MAWeapon.AddAmmo
+// (Native, Public, BlueprintCallable)
 // Parameters:
-// const struct FVector&                   Impulse                                                (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Amount                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AMAPickup::ApplyImpulse_NM(const struct FVector& Impulse)
+int32 AMAWeapon::AddAmmo(int32 Amount)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MAPickup", "ApplyImpulse_NM");
+		Func = Class->GetFunction("MAWeapon", "AddAmmo");
 
-	Params::MAPickup_ApplyImpulse_NM Parms{};
+	Params::MAWeapon_AddAmmo Parms{};
 
-	Parms.Impulse = std::move(Impulse);
+	Parms.Amount = Amount;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAWeapon.ClientAddAmmo
+// (Net, NetReliable, Native, Event, Public, NetClient)
+// Parameters:
+// int32                                   Amount                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMAWeapon::ClientAddAmmo(int32 Amount)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAWeapon", "ClientAddAmmo");
+
+	Params::MAWeapon_ClientAddAmmo Parms{};
+
+	Parms.Amount = Amount;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3885,8 +6231,504 @@ void AMAPickup::ApplyImpulse_NM(const struct FVector& Impulse)
 }
 
 
-// Function Midair2.MAPickup.OnBeginOverlap
-// (Native, Public, HasOutParams)
+// Function Midair2.MAWeapon.K2_SetFireInterval
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   From                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   To                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMAWeapon::K2_SetFireInterval(float From, float To)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAWeapon", "K2_SetFireInterval");
+
+	Params::MAWeapon_K2_SetFireInterval Parms{};
+
+	Parms.From = From;
+	Parms.To = To;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAWeapon.ResetAmmo
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   NewTotal                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMAWeapon::ResetAmmo(int32 NewTotal)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAWeapon", "ResetAmmo");
+
+	Params::MAWeapon_ResetAmmo Parms{};
+
+	Parms.NewTotal = NewTotal;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAWeapon.BP_GetReloadCompletion
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float AMAWeapon::BP_GetReloadCompletion() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAWeapon", "BP_GetReloadCompletion");
+
+	Params::MAWeapon_BP_GetReloadCompletion Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAWeapon.GetAdjustedFireLocationAndRotation
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector*                         FireLocation                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FRotator*                        FireRotation                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+void AMAWeapon::GetAdjustedFireLocationAndRotation(struct FVector* FireLocation, struct FRotator* FireRotation) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAWeapon", "GetAdjustedFireLocationAndRotation");
+
+	Params::MAWeapon_GetAdjustedFireLocationAndRotation Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (FireLocation != nullptr)
+		*FireLocation = std::move(Parms.FireLocation);
+
+	if (FireRotation != nullptr)
+		*FireRotation = std::move(Parms.FireRotation);
+}
+
+
+// Function Midair2.MAWeapon.K2_GetFireInterval
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float*                                  From                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float*                                  To                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMAWeapon::K2_GetFireInterval(float* From, float* To) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAWeapon", "K2_GetFireInterval");
+
+	Params::MAWeapon_K2_GetFireInterval Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (From != nullptr)
+		*From = Parms.From;
+
+	if (To != nullptr)
+		*To = Parms.To;
+}
+
+
+// Function Midair2.CreatePracticeTrailAsyncTask.CreatePracticeTrail
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FMARouteTrail&             NewTrail                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// class UCreatePracticeTrailAsyncTask*    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCreatePracticeTrailAsyncTask* UCreatePracticeTrailAsyncTask::CreatePracticeTrail(const struct FMARouteTrail& NewTrail)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CreatePracticeTrailAsyncTask", "CreatePracticeTrail");
+
+	Params::CreatePracticeTrailAsyncTask_CreatePracticeTrail Parms{};
+
+	Parms.NewTrail = std::move(NewTrail);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAButtonBase.SetButtonText
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FText&                      InText                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UMAButtonBase::SetButtonText(const class FText& InText)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAButtonBase", "SetButtonText");
+
+	Params::MAButtonBase_SetButtonText Parms{};
+
+	Parms.InText = std::move(InText);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAButtonBase.UpdateButtonStyle
+// (Event, Protected, BlueprintEvent)
+
+void UMAButtonBase::UpdateButtonStyle()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAButtonBase", "UpdateButtonStyle");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Midair2.MAButtonBase.UpdateButtonText
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// const class FText&                      InText                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UMAButtonBase::UpdateButtonText(const class FText& InText)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAButtonBase", "UpdateButtonText");
+
+	Params::MAButtonBase_UpdateButtonText Parms{};
+
+	Parms.InText = std::move(InText);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Midair2.BPFunctionLibrary.GetStringFromOSClipboard
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString*                          FromClipboard                                          (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBPFunctionLibrary::GetStringFromOSClipboard(class FString* FromClipboard)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("BPFunctionLibrary", "GetStringFromOSClipboard");
+
+	Params::BPFunctionLibrary_GetStringFromOSClipboard Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (FromClipboard != nullptr)
+		*FromClipboard = std::move(Parms.FromClipboard);
+}
+
+
+// Function Midair2.BPFunctionLibrary.SaveStringToOSClipboard
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    ToClipboard                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBPFunctionLibrary::SaveStringToOSClipboard(const class FString& ToClipboard)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("BPFunctionLibrary", "SaveStringToOSClipboard");
+
+	Params::BPFunctionLibrary_SaveStringToOSClipboard Parms{};
+
+	Parms.ToClipboard = std::move(ToClipboard);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.CHAGameMode.GetActiveZone
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class ACHAShootingGalleryZone*          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class ACHAShootingGalleryZone* ACHAGameMode::GetActiveZone()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CHAGameMode", "GetActiveZone");
+
+	Params::CHAGameMode_GetActiveZone Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.CHAGameMode.HandleZoneEnded
+// (Final, Native, Private)
+// Parameters:
+// class ACHAShootingGalleryZone*          Zone                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACHAGameMode::HandleZoneEnded(class ACHAShootingGalleryZone* Zone)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CHAGameMode", "HandleZoneEnded");
+
+	Params::CHAGameMode_HandleZoneEnded Parms{};
+
+	Parms.Zone = Zone;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.CHAGameMode.HandleZoneStarted
+// (Final, Native, Private)
+// Parameters:
+// class ACHAShootingGalleryZone*          Zone                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACHAGameMode::HandleZoneStarted(class ACHAShootingGalleryZone* Zone)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CHAGameMode", "HandleZoneStarted");
+
+	Params::CHAGameMode_HandleZoneStarted Parms{};
+
+	Parms.Zone = Zone;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.CHAGameMode.SetActivePortal
+// (Final, Native, Private)
+// Parameters:
+// class ACHAPortal*                       Portal                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AMACharacter*                     MAChar                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACHAGameMode::SetActivePortal(class ACHAPortal* Portal, class AMACharacter* MAChar)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CHAGameMode", "SetActivePortal");
+
+	Params::CHAGameMode_SetActivePortal Parms{};
+
+	Parms.Portal = Portal;
+	Parms.MAChar = MAChar;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.CHAGameMode.StopAllOtherZones
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class ACHAShootingGalleryZone*          ExceptThis                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACHAGameMode::StopAllOtherZones(class ACHAShootingGalleryZone* ExceptThis)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CHAGameMode", "StopAllOtherZones");
+
+	Params::CHAGameMode_StopAllOtherZones Parms{};
+
+	Parms.ExceptThis = ExceptThis;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.CHAPortal.OnBeginOverlap
+// (Final, Native, Protected, HasOutParams)
+// Parameters:
+// class UPrimitiveComponent*              Comp                                                   (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Other                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   BodyIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void ACHAPortal::OnBeginOverlap(class UPrimitiveComponent* Comp, class AActor* Other, class UPrimitiveComponent* OtherComp, int32 BodyIndex, bool bFromSweep, const struct FHitResult& Hit)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CHAPortal", "OnBeginOverlap");
+
+	Params::CHAPortal_OnBeginOverlap Parms{};
+
+	Parms.Comp = Comp;
+	Parms.Other = Other;
+	Parms.OtherComp = OtherComp;
+	Parms.BodyIndex = BodyIndex;
+	Parms.bFromSweep = bFromSweep;
+	Parms.Hit = std::move(Hit);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.CHAPortal.OnEndOverlap
+// (Final, Native, Protected)
+// Parameters:
+// class UPrimitiveComponent*              Comp                                                   (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Other                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   BodyIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACHAPortal::OnEndOverlap(class UPrimitiveComponent* Comp, class AActor* Other, class UPrimitiveComponent* OtherComp, int32 BodyIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CHAPortal", "OnEndOverlap");
+
+	Params::CHAPortal_OnEndOverlap Parms{};
+
+	Parms.Comp = Comp;
+	Parms.Other = Other;
+	Parms.OtherComp = OtherComp;
+	Parms.BodyIndex = BodyIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.DeleteMatchmakingTicketAsyncTask.DeleteMatchmakingTicket
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    TicketId                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UDeleteMatchmakingTicketAsyncTask*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UDeleteMatchmakingTicketAsyncTask* UDeleteMatchmakingTicketAsyncTask::DeleteMatchmakingTicket(const class FString& TicketId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("DeleteMatchmakingTicketAsyncTask", "DeleteMatchmakingTicket");
+
+	Params::DeleteMatchmakingTicketAsyncTask_DeleteMatchmakingTicket Parms{};
+
+	Parms.TicketId = std::move(TicketId);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MACarriedObject.AssistCapsuleTouched
+// (Native, Protected, HasOutParams)
 // Parameters:
 // class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -3895,14 +6737,14 @@ void AMAPickup::ApplyImpulse_NM(const struct FVector& Impulse)
 // bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-void AMAPickup::OnBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
+void AMACarriedObject::AssistCapsuleTouched(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MAPickup", "OnBeginOverlap");
+		Func = Class->GetFunction("MACarriedObject", "AssistCapsuleTouched");
 
-	Params::MAPickup_OnBeginOverlap Parms{};
+	Params::MACarriedObject_AssistCapsuleTouched Parms{};
 
 	Parms.OverlappedComponent = OverlappedComponent;
 	Parms.OtherActor = OtherActor;
@@ -3920,387 +6762,15 @@ void AMAPickup::OnBeginOverlap(class UPrimitiveComponent* OverlappedComponent, c
 }
 
 
-// Function Midair2.MAPickup.OnStop
-// (Native, Public, HasOutParams)
-// Parameters:
-// const struct FHitResult&                ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void AMAPickup::OnStop(const struct FHitResult& ImpactResult)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAPickup", "OnStop");
-
-	Params::MAPickup_OnStop Parms{};
-
-	Parms.ImpactResult = std::move(ImpactResult);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAPickup.PlayLandingEffects
-// (Net, Native, Event, NetMulticast, Public)
-
-void AMAPickup::PlayLandingEffects()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAPickup", "PlayLandingEffects");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAPickup.PlayPickupEffects
-// (Net, Native, Event, NetMulticast, Public)
-// Parameters:
-// class AMAPlayerController*              Controller                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMAPickup::PlayPickupEffects(class AMAPlayerController* Controller)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAPickup", "PlayPickupEffects");
-
-	Params::MAPickup_PlayPickupEffects Parms{};
-
-	Parms.Controller = Controller;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAPlayerState.AdjustScore
-// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   ScoreAdjustment                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMAPlayerState::AdjustScore(int32 ScoreAdjustment)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAPlayerState", "AdjustScore");
-
-	Params::MAPlayerState_AdjustScore Parms{};
-
-	Parms.ScoreAdjustment = ScoreAdjustment;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAPlayerState.Client_NotifyScoreApplied
-// (Net, Native, Event, Public, NetClient)
-// Parameters:
-// int32                                   ScoreID                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMAPlayerState::Client_NotifyScoreApplied(int32 ScoreID, float Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAPlayerState", "Client_NotifyScoreApplied");
-
-	Params::MAPlayerState_Client_NotifyScoreApplied Parms{};
-
-	Parms.ScoreID = ScoreID;
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAPlayerState.GetMAPlayerController
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// class AMAPlayerController*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class AMAPlayerController* AMAPlayerState::GetMAPlayerController()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAPlayerState", "GetMAPlayerController");
-
-	Params::MAPlayerState_GetMAPlayerController Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAPlayerState.GetUniqueIdAsString
-// (Final, Native, Private, BlueprintCallable)
-// Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FString AMAPlayerState::GetUniqueIdAsString()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAPlayerState", "GetUniqueIdAsString");
-
-	Params::MAPlayerState_GetUniqueIdAsString Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAPlayerState.GetWeaponStats
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// TMap<class FString, struct FMatchWeaponStats>ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-TMap<class FString, struct FMatchWeaponStats> AMAPlayerState::GetWeaponStats()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAPlayerState", "GetWeaponStats");
-
-	Params::MAPlayerState_GetWeaponStats Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAPlayerState.IncrementAssists
-// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UDamageType>          DamageType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AMAPlayerState*                   Victim                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMAPlayerState::IncrementAssists(TSubclassOf<class UDamageType> DamageType, class AMAPlayerState* Victim)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAPlayerState", "IncrementAssists");
-
-	Params::MAPlayerState_IncrementAssists Parms{};
-
-	Parms.DamageType = DamageType;
-	Parms.Victim = Victim;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAPlayerState.IncrementDeaths
-// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UDamageType>          DamageType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AMAPlayerState*                   Victim                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMAPlayerState::IncrementDeaths(TSubclassOf<class UDamageType> DamageType, class AMAPlayerState* Victim)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAPlayerState", "IncrementDeaths");
-
-	Params::MAPlayerState_IncrementDeaths Parms{};
-
-	Parms.DamageType = DamageType;
-	Parms.Victim = Victim;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAPlayerState.IncrementEvacuations
-// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
-
-void AMAPlayerState::IncrementEvacuations()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAPlayerState", "IncrementEvacuations");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAPlayerState.IncrementKills
-// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UDamageType>          DamageType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AMAPlayerState*                   Victim                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMAPlayerState::IncrementKills(TSubclassOf<class UDamageType> DamageType, class AMAPlayerState* Victim)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAPlayerState", "IncrementKills");
-
-	Params::MAPlayerState_IncrementKills Parms{};
-
-	Parms.DamageType = DamageType;
-	Parms.Victim = Victim;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAPlayerState.IncrementLives
-// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
-
-void AMAPlayerState::IncrementLives()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAPlayerState", "IncrementLives");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAPlayerState.IncrementTeamkills
-// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
-
-void AMAPlayerState::IncrementTeamkills()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAPlayerState", "IncrementTeamkills");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAPlayerState.NotifyTeamChanged
-// (Final, Native, Public)
-
-void AMAPlayerState::NotifyTeamChanged()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAPlayerState", "NotifyTeamChanged");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAPlayerState.OnRep_LastCauseHitInfo
-// (Native, Protected)
-
-void AMAPlayerState::OnRep_LastCauseHitInfo()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAPlayerState", "OnRep_LastCauseHitInfo");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAPlayerState.OnRep_NewSpray
+// Function Midair2.MACarriedObject.AutoReturnTimer
 // (Native, Public)
 
-void AMAPlayerState::OnRep_NewSpray()
+void AMACarriedObject::AutoReturnTimer()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MAPlayerState", "OnRep_NewSpray");
+		Func = Class->GetFunction("MACarriedObject", "AutoReturnTimer");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4311,21 +6781,31 @@ void AMAPlayerState::OnRep_NewSpray()
 }
 
 
-// Function Midair2.MAPlayerState.ServerRequestChangeTeam
-// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+// Function Midair2.MACarriedObject.CapsuleTouched
+// (Native, Protected, HasOutParams)
 // Parameters:
-// ETeamId                                 DesiredTeamId                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-void AMAPlayerState::ServerRequestChangeTeam(ETeamId DesiredTeamId)
+void AMACarriedObject::CapsuleTouched(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MAPlayerState", "ServerRequestChangeTeam");
+		Func = Class->GetFunction("MACarriedObject", "CapsuleTouched");
 
-	Params::MAPlayerState_ServerRequestChangeTeam Parms{};
+	Params::MACarriedObject_CapsuleTouched Parms{};
 
-	Parms.DesiredTeamId = DesiredTeamId;
+	Parms.OverlappedComponent = OverlappedComponent;
+	Parms.OtherActor = OtherActor;
+	Parms.OtherComp = OtherComp;
+	Parms.OtherBodyIndex = OtherBodyIndex;
+	Parms.bFromSweep = bFromSweep;
+	Parms.SweepResult = std::move(SweepResult);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4336,1480 +6816,479 @@ void AMAPlayerState::ServerRequestChangeTeam(ETeamId DesiredTeamId)
 }
 
 
-// Function Midair2.MAPlayerState.SetHoldingFlag
-// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
-// Parameters:
-// bool                                    bIsHolding                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMAPlayerState::SetHoldingFlag(bool bIsHolding)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAPlayerState", "SetHoldingFlag");
-
-	Params::MAPlayerState_SetHoldingFlag Parms{};
-
-	Parms.bIsHolding = bIsHolding;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAPlayerState.UpdateMatchResult
-// (Net, NetReliable, Native, Event, Public, NetClient)
-// Parameters:
-// const struct FMatchHistory&             MatchHistory                                           (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void AMAPlayerState::UpdateMatchResult(const struct FMatchHistory& MatchHistory)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAPlayerState", "UpdateMatchResult");
-
-	Params::MAPlayerState_UpdateMatchResult Parms{};
-
-	Parms.MatchHistory = std::move(MatchHistory);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAPlayerState.GetPowerUp
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class AMAPowerup*                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class AMAPowerup* AMAPlayerState::GetPowerUp() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAPlayerState", "GetPowerUp");
-
-	Params::MAPlayerState_GetPowerUp Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAPlayerState.IsAlive
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMAPlayerState::IsAlive() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAPlayerState", "IsAlive");
-
-	Params::MAPlayerState_IsAlive Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.AmmoPickup.SetupFromCharacter
+// Function Midair2.MACarriedObject.CatchUp
 // (Native, Public, BlueprintCallable)
-// Parameters:
-// class AMACharacter*                     Character                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AAmmoPickup::SetupFromCharacter(class AMACharacter* Character)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AmmoPickup", "SetupFromCharacter");
-
-	Params::AmmoPickup_SetupFromCharacter Parms{};
-
-	Parms.Character = Character;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.AmmoPickup.GetRelatedPlayer
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class AMAPlayerState*                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class AMAPlayerState* AAmmoPickup::GetRelatedPlayer() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AmmoPickup", "GetRelatedPlayer");
-
-	Params::AmmoPickup_GetRelatedPlayer Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAInventoryBPLibrary.GetRarityFromItem
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UClass*                           Item                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ERarityType                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-ERarityType UMAInventoryBPLibrary::GetRarityFromItem(class UClass* Item)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MAInventoryBPLibrary", "GetRarityFromItem");
-
-	Params::MAInventoryBPLibrary_GetRarityFromItem Parms{};
-
-	Parms.Item = Item;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAGameMode.EndsIn10
-// (Native, Public, BlueprintCallable)
-
-void AMAGameMode::EndsIn10()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameMode", "EndsIn10");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAGameMode.EndsIn60
-// (Native, Public, BlueprintCallable)
-
-void AMAGameMode::EndsIn60()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameMode", "EndsIn60");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAGameMode.IsPracticeModeEnabled
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMAGameMode::IsPracticeModeEnabled()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameMode", "IsPracticeModeEnabled");
-
-	Params::MAGameMode_IsPracticeModeEnabled Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAGameMode.IsTournamentModeEnabled
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMAGameMode::IsTournamentModeEnabled()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameMode", "IsTournamentModeEnabled");
-
-	Params::MAGameMode_IsTournamentModeEnabled Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAGameMode.ReturnPrefix
-// (Final, Native, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FString AMAGameMode::ReturnPrefix()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameMode", "ReturnPrefix");
-
-	Params::MAGameMode_ReturnPrefix Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAGameMode.TryAssignPlayerToVoiceTeamWhenReady
-// (Final, Native, Protected)
-// Parameters:
-// class AMAPlayerState*                   PS                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   AttemptsLeft                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMAGameMode::TryAssignPlayerToVoiceTeamWhenReady(class AMAPlayerState* PS, int32 AttemptsLeft)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameMode", "TryAssignPlayerToVoiceTeamWhenReady");
-
-	Params::MAGameMode_TryAssignPlayerToVoiceTeamWhenReady Parms{};
-
-	Parms.PS = PS;
-	Parms.AttemptsLeft = AttemptsLeft;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAGameMode.FilterDisallowedItems
-// (Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TArray<TSubclassOf<class UObjectInfo>>& ItemsIn                                                (Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
-// TArray<TSubclassOf<class UObjectInfo>>* ItemsOut                                               (Parm, OutParm, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-
-void AMAGameMode::FilterDisallowedItems(TArray<TSubclassOf<class UObjectInfo>>& ItemsIn, TArray<TSubclassOf<class UObjectInfo>>* ItemsOut) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameMode", "FilterDisallowedItems");
-
-	Params::MAGameMode_FilterDisallowedItems Parms{};
-
-	Parms.ItemsIn = std::move(ItemsIn);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	ItemsIn = std::move(Parms.ItemsIn);
-
-	if (ItemsOut != nullptr)
-		*ItemsOut = std::move(Parms.ItemsOut);
-}
-
-
-// Function Midair2.MAGameMode.IsBackpackAllowed
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TSubclassOf<class UBackpackInfo>        PackClass                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMAGameMode::IsBackpackAllowed(TSubclassOf<class UBackpackInfo> PackClass) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameMode", "IsBackpackAllowed");
-
-	Params::MAGameMode_IsBackpackAllowed Parms{};
-
-	Parms.PackClass = PackClass;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAGameMode.IsDeployableAllowed
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TSubclassOf<class UDeployableInfo>      DeployableClass                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMAGameMode::IsDeployableAllowed(TSubclassOf<class UDeployableInfo> DeployableClass) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameMode", "IsDeployableAllowed");
-
-	Params::MAGameMode_IsDeployableAllowed Parms{};
-
-	Parms.DeployableClass = DeployableClass;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAGameMode.IsThrowableAllowed
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TSubclassOf<class UThrowableInfo>       ThrowableClass                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMAGameMode::IsThrowableAllowed(TSubclassOf<class UThrowableInfo> ThrowableClass) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameMode", "IsThrowableAllowed");
-
-	Params::MAGameMode_IsThrowableAllowed Parms{};
-
-	Parms.ThrowableClass = ThrowableClass;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAGameMode.IsTournamentWeaponAllowed
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TSubclassOf<class UWeaponInfo>          WeaponClass                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMAGameMode::IsTournamentWeaponAllowed(TSubclassOf<class UWeaponInfo> WeaponClass) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameMode", "IsTournamentWeaponAllowed");
-
-	Params::MAGameMode_IsTournamentWeaponAllowed Parms{};
-
-	Parms.WeaponClass = WeaponClass;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAGameMode.IsWeaponAllowed
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TSubclassOf<class UWeaponInfo>          WeaponClass                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMAGameMode::IsWeaponAllowed(TSubclassOf<class UWeaponInfo> WeaponClass) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameMode", "IsWeaponAllowed");
-
-	Params::MAGameMode_IsWeaponAllowed Parms{};
-
-	Parms.WeaponClass = WeaponClass;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.GetCurrentUserStatsAsyncTask.GetCurrentUserStats
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UGetCurrentUserStatsAsyncTask*    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UGetCurrentUserStatsAsyncTask* UGetCurrentUserStatsAsyncTask::GetCurrentUserStats()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GetCurrentUserStatsAsyncTask", "GetCurrentUserStats");
-
-	Params::GetCurrentUserStatsAsyncTask_GetCurrentUserStats Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAGameState.BeginMapVote
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bIsEndOfMatch                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMAGameState::BeginMapVote(bool bIsEndOfMatch)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameState", "BeginMapVote");
-
-	Params::MAGameState_BeginMapVote Parms{};
-
-	Parms.bIsEndOfMatch = bIsEndOfMatch;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAGameState.GenerateOptionsForMapVote
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EMapVoteStage                           Stage                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   voteOptions                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMAGameState::GenerateOptionsForMapVote(EMapVoteStage Stage, int32 voteOptions)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameState", "GenerateOptionsForMapVote");
-
-	Params::MAGameState_GenerateOptionsForMapVote Parms{};
-
-	Parms.Stage = Stage;
-	Parms.voteOptions = voteOptions;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAGameState.GetTeamStateById
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// ETeamId                                 TeamId                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AMATeamState*                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class AMATeamState* AMAGameState::GetTeamStateById(ETeamId TeamId)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameState", "GetTeamStateById");
-
-	Params::MAGameState_GetTeamStateById Parms{};
-
-	Parms.TeamId = TeamId;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAGameState.GetVotesForOption
-// (Final, Native, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// EMapVoteOption                          Option                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// uint8                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-uint8 AMAGameState::GetVotesForOption(EMapVoteOption Option)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameState", "GetVotesForOption");
-
-	Params::MAGameState_GetVotesForOption Parms{};
-
-	Parms.Option = Option;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAGameState.OnRep_DeathMessageData
-// (Final, Native, Public)
-
-void AMAGameState::OnRep_DeathMessageData()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameState", "OnRep_DeathMessageData");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAGameState.OnRep_MapVoteOptions
-// (Final, Native, Public)
-
-void AMAGameState::OnRep_MapVoteOptions()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameState", "OnRep_MapVoteOptions");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAGameState.OnRep_MatchHistory
-// (Final, Native, Public)
-
-void AMAGameState::OnRep_MatchHistory()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameState", "OnRep_MatchHistory");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAGameState.OnRep_PunishVote
-// (Final, Native, Public)
-
-void AMAGameState::OnRep_PunishVote()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameState", "OnRep_PunishVote");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAGameState.OnRep_TeamArray
-// (Final, Native, Public)
-
-void AMAGameState::OnRep_TeamArray()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameState", "OnRep_TeamArray");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAGameState.OnRep_VotingStage
-// (Final, Native, Public)
-
-void AMAGameState::OnRep_VotingStage()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameState", "OnRep_VotingStage");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAGameState.OnRep_WinningOption
-// (Final, Native, Public)
-
-void AMAGameState::OnRep_WinningOption()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameState", "OnRep_WinningOption");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAGameState.PredictWinner
-// (Final, Native, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// EMapVoteOption                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EMapVoteOption AMAGameState::PredictWinner()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameState", "PredictWinner");
-
-	Params::MAGameState_PredictWinner Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAGameState.ServerRequestEnablePracticeMode
-// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
-// Parameters:
-// bool                                    bIsEnabled                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMAGameState::ServerRequestEnablePracticeMode(bool bIsEnabled)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameState", "ServerRequestEnablePracticeMode");
-
-	Params::MAGameState_ServerRequestEnablePracticeMode Parms{};
-
-	Parms.bIsEnabled = bIsEnabled;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAGameState.ServerRequestEnableTournamentMode
-// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
-// Parameters:
-// bool                                    bIsEnabled                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMAGameState::ServerRequestEnableTournamentMode(bool bIsEnabled)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameState", "ServerRequestEnableTournamentMode");
-
-	Params::MAGameState_ServerRequestEnableTournamentMode Parms{};
-
-	Parms.bIsEnabled = bIsEnabled;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAGameState.SortPlayersByScore
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TArray<class APlayerState*>&            players                                                (Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void AMAGameState::SortPlayersByScore(TArray<class APlayerState*>& players)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameState", "SortPlayersByScore");
-
-	Params::MAGameState_SortPlayersByScore Parms{};
-
-	Parms.players = std::move(players);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	players = std::move(Parms.players);
-}
-
-
-// Function Midair2.MAGameState.GetCurrentHolder
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-class FText AMAGameState::GetCurrentHolder() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameState", "GetCurrentHolder");
-
-	Params::MAGameState_GetCurrentHolder Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAGameState.GetCurrentJackpot
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-class FText AMAGameState::GetCurrentJackpot() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameState", "GetCurrentJackpot");
-
-	Params::MAGameState_GetCurrentJackpot Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAGameState.GetFlagHolderTimer
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-class FText AMAGameState::GetFlagHolderTimer() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameState", "GetFlagHolderTimer");
-
-	Params::MAGameState_GetFlagHolderTimer Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAGameState.GetGameTime
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FString AMAGameState::GetGameTime() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameState", "GetGameTime");
-
-	Params::MAGameState_GetGameTime Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAGameState.GetLivePlayersOnTeam
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// uint8                                   TeamId                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// uint8                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-uint8 AMAGameState::GetLivePlayersOnTeam(uint8 TeamId) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameState", "GetLivePlayersOnTeam");
-
-	Params::MAGameState_GetLivePlayersOnTeam Parms{};
-
-	Parms.TeamId = TeamId;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAGameState.GetLivesLeftOnTeam
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// uint8                                   TeamId                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float AMAGameState::GetLivesLeftOnTeam(uint8 TeamId) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameState", "GetLivesLeftOnTeam");
-
-	Params::MAGameState_GetLivesLeftOnTeam Parms{};
-
-	Parms.TeamId = TeamId;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAGameState.GetMAGameModeClass
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TSubclassOf<class AMAGameMode>          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-TSubclassOf<class AMAGameMode> AMAGameState::GetMAGameModeClass() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameState", "GetMAGameModeClass");
-
-	Params::MAGameState_GetMAGameModeClass Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAGameState.GetMatchStatus
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-class FText AMAGameState::GetMatchStatus() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameState", "GetMatchStatus");
-
-	Params::MAGameState_GetMatchStatus Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAGameState.GetRankedPlayerArray
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TArray<class AMAPlayerState*>*          RankedArray                                            (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-
-void AMAGameState::GetRankedPlayerArray(TArray<class AMAPlayerState*>* RankedArray) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameState", "GetRankedPlayerArray");
-
-	Params::MAGameState_GetRankedPlayerArray Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (RankedArray != nullptr)
-		*RankedArray = std::move(Parms.RankedArray);
-}
-
-
-// Function Midair2.MAGameState.GetRankedPlayerArrays
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TArray<class AMAPlayerState*>*          Team1RankedArray                                       (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-// TArray<class AMAPlayerState*>*          Team2RankedArray                                       (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-
-void AMAGameState::GetRankedPlayerArrays(TArray<class AMAPlayerState*>* Team1RankedArray, TArray<class AMAPlayerState*>* Team2RankedArray) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameState", "GetRankedPlayerArrays");
-
-	Params::MAGameState_GetRankedPlayerArrays Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (Team1RankedArray != nullptr)
-		*Team1RankedArray = std::move(Parms.Team1RankedArray);
-
-	if (Team2RankedArray != nullptr)
-		*Team2RankedArray = std::move(Parms.Team2RankedArray);
-}
-
-
-// Function Midair2.MAGameState.GetSpectatorsArray
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TArray<class AMAPlayerState*>*          SpectatorsArray                                        (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-
-void AMAGameState::GetSpectatorsArray(TArray<class AMAPlayerState*>* SpectatorsArray) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameState", "GetSpectatorsArray");
-
-	Params::MAGameState_GetSpectatorsArray Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (SpectatorsArray != nullptr)
-		*SpectatorsArray = std::move(Parms.SpectatorsArray);
-}
-
-
-// Function Midair2.MAGameState.GetTeamMaxObjectCount
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TSubclassOf<class UObject>              ObjectType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// uint8                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-uint8 AMAGameState::GetTeamMaxObjectCount(TSubclassOf<class UObject> ObjectType) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameState", "GetTeamMaxObjectCount");
-
-	Params::MAGameState_GetTeamMaxObjectCount Parms{};
-
-	Parms.ObjectType = ObjectType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAGameState.GetTotalPlayersOnTeam
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// uint8                                   TeamId                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// uint8                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-uint8 AMAGameState::GetTotalPlayersOnTeam(uint8 TeamId) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameState", "GetTotalPlayersOnTeam");
-
-	Params::MAGameState_GetTotalPlayersOnTeam Parms{};
-
-	Parms.TeamId = TeamId;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAGameState.IsAnySimpleVoteInProgress
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMAGameState::IsAnySimpleVoteInProgress() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameState", "IsAnySimpleVoteInProgress");
-
-	Params::MAGameState_IsAnySimpleVoteInProgress Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAGameState.OnSameTeam
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const class AActor*                     Actor1                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class AActor*                     Actor2                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMAGameState::OnSameTeam(const class AActor* Actor1, const class AActor* Actor2) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAGameState", "OnSameTeam");
-
-	Params::MAGameState_OnSameTeam Parms{};
-
-	Parms.Actor1 = Actor1;
-	Parms.Actor2 = Actor2;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.TDMGameState.GetHoldingTeam
-// (Native, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// ETeamId                                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-ETeamId ATDMGameState::GetHoldingTeam()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TDMGameState", "GetHoldingTeam");
-
-	Params::TDMGameState_GetHoldingTeam Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.TDMGameState.GetIsFlagHolder
-// (Native, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class AMAPlayerState*                   PlayerState                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool ATDMGameState::GetIsFlagHolder(class AMAPlayerState* PlayerState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TDMGameState", "GetIsFlagHolder");
-
-	Params::TDMGameState_GetIsFlagHolder Parms{};
-
-	Parms.PlayerState = PlayerState;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.TDMGameState.GetFlagBase
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class ATDMFlagBase*                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class ATDMFlagBase* ATDMGameState::GetFlagBase() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TDMGameState", "GetFlagBase");
-
-	Params::TDMGameState_GetFlagBase Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.TDMGameState.GetFlagStateName
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FName ATDMGameState::GetFlagStateName() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TDMGameState", "GetFlagStateName");
-
-	Params::TDMGameState_GetFlagStateName Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.GetLocationBeaconsAsyncTask.GetLocationBeacons
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UGetLocationBeaconsAsyncTask*     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UGetLocationBeaconsAsyncTask* UGetLocationBeaconsAsyncTask::GetLocationBeacons()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GetLocationBeaconsAsyncTask", "GetLocationBeacons");
-
-	Params::GetLocationBeaconsAsyncTask_GetLocationBeacons Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.Augment_Art.SetActive
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    bActive                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAugment_Art::SetActive(bool bActive)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Augment_Art", "SetActive");
-
-	Params::Augment_Art_SetActive Parms{};
-
-	Parms.bActive = bActive;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.Augment_Art.SetActive_Audio
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    bActive                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAugment_Art::SetActive_Audio(bool bActive)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Augment_Art", "SetActive_Audio");
-
-	Params::Augment_Art_SetActive_Audio Parms{};
-
-	Parms.bActive = bActive;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.Augment_Art.SetActive_Visuals
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    bActive                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAugment_Art::SetActive_Visuals(bool bActive)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Augment_Art", "SetActive_Visuals");
-
-	Params::Augment_Art_SetActive_Visuals Parms{};
-
-	Parms.bActive = bActive;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.Augment_Art.Tick
-// (Native, Event, Public, BlueprintEvent)
 // Parameters:
 // float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAugment_Art::Tick(float DeltaTime)
+void AMACarriedObject::CatchUp(float DeltaTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Augment_Art", "Tick");
+		Func = Class->GetFunction("MACarriedObject", "CatchUp");
 
-	Params::Augment_Art_Tick Parms{};
+	Params::MACarriedObject_CatchUp Parms{};
 
 	Parms.DeltaTime = DeltaTime;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACarriedObject.ChangeState
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             NewState                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMACarriedObject::ChangeState(class FName NewState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACarriedObject", "ChangeState");
+
+	Params::MACarriedObject_ChangeState Parms{};
+
+	Parms.NewState = NewState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACarriedObject.GetRemainingOOBReturnTime
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float AMACarriedObject::GetRemainingOOBReturnTime()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACarriedObject", "GetRemainingOOBReturnTime");
+
+	Params::MACarriedObject_GetRemainingOOBReturnTime Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MACarriedObject.HolderChanged
+// (Native, Protected)
+
+void AMACarriedObject::HolderChanged()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACarriedObject", "HolderChanged");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACarriedObject.OnRep_MAReplicatedMovement
+// (Native, Public)
+
+void AMACarriedObject::OnRep_MAReplicatedMovement()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACarriedObject", "OnRep_MAReplicatedMovement");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACarriedObject.OnRep_RemainingAutoReturnSyncTime
+// (Native, Public)
+
+void AMACarriedObject::OnRep_RemainingAutoReturnSyncTime()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACarriedObject", "OnRep_RemainingAutoReturnSyncTime");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACarriedObject.OnRep_RemainingAutoReturnTime
+// (Native, Public)
+
+void AMACarriedObject::OnRep_RemainingAutoReturnTime()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACarriedObject", "OnRep_RemainingAutoReturnTime");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACarriedObject.StateChanged
+// (Native, Public)
+
+void AMACarriedObject::StateChanged()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACarriedObject", "StateChanged");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACarriedObject.TeamChanged
+// (Native, Event, Protected, BlueprintEvent)
+
+void AMACarriedObject::TeamChanged()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACarriedObject", "TeamChanged");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACarriedObject.UpdateCameraDist
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   CameraDistPct                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMACarriedObject::UpdateCameraDist(float CameraDistPct)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACarriedObject", "UpdateCameraDist");
+
+	Params::MACarriedObject_UpdateCameraDist Parms{};
+
+	Parms.CameraDistPct = CameraDistPct;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACarriedObject.IsFlagOutOfBounds
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMACarriedObject::IsFlagOutOfBounds() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACarriedObject", "IsFlagOutOfBounds");
+
+	Params::MACarriedObject_IsFlagOutOfBounds Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MACarriedObject.IsHome
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMACarriedObject::IsHome() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACarriedObject", "IsHome");
+
+	Params::MACarriedObject_IsHome Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MACarriedObject.IsInState
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FName                             InStateName                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMACarriedObject::IsInState(class FName InStateName) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACarriedObject", "IsInState");
+
+	Params::MACarriedObject_IsInState Parms{};
+
+	Parms.InStateName = InStateName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.CHARoundConsole.GetZone
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class ACHAShootingGalleryZone*          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class ACHAShootingGalleryZone* ACHARoundConsole::GetZone()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CHARoundConsole", "GetZone");
+
+	Params::CHARoundConsole_GetZone Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.CHARoundConsole.HandleZoneEnded
+// (Final, Native, Protected)
+// Parameters:
+// class ACHAShootingGalleryZone*          EndedZone                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACHARoundConsole::HandleZoneEnded(class ACHAShootingGalleryZone* EndedZone)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CHARoundConsole", "HandleZoneEnded");
+
+	Params::CHARoundConsole_HandleZoneEnded Parms{};
+
+	Parms.EndedZone = EndedZone;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.CHARoundConsole.HandleZoneStarted
+// (Final, Native, Protected)
+// Parameters:
+// class ACHAShootingGalleryZone*          StartedZone                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACHARoundConsole::HandleZoneStarted(class ACHAShootingGalleryZone* StartedZone)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CHARoundConsole", "HandleZoneStarted");
+
+	Params::CHARoundConsole_HandleZoneStarted Parms{};
+
+	Parms.StartedZone = StartedZone;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.CHARoundConsole.OnBeginOverlap
+// (Final, Native, Protected, HasOutParams)
+// Parameters:
+// class UPrimitiveComponent*              Comp                                                   (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Other                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   BodyIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void ACHARoundConsole::OnBeginOverlap(class UPrimitiveComponent* Comp, class AActor* Other, class UPrimitiveComponent* OtherComp, int32 BodyIndex, bool bFromSweep, const struct FHitResult& Hit)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CHARoundConsole", "OnBeginOverlap");
+
+	Params::CHARoundConsole_OnBeginOverlap Parms{};
+
+	Parms.Comp = Comp;
+	Parms.Other = Other;
+	Parms.OtherComp = OtherComp;
+	Parms.BodyIndex = BodyIndex;
+	Parms.bFromSweep = bFromSweep;
+	Parms.Hit = std::move(Hit);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.CHARoundConsole.OnEndOverlap
+// (Final, Native, Protected)
+// Parameters:
+// class UPrimitiveComponent*              Comp                                                   (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Other                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   BodyIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACHARoundConsole::OnEndOverlap(class UPrimitiveComponent* Comp, class AActor* Other, class UPrimitiveComponent* OtherComp, int32 BodyIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CHARoundConsole", "OnEndOverlap");
+
+	Params::CHARoundConsole_OnEndOverlap Parms{};
+
+	Parms.Comp = Comp;
+	Parms.Other = Other;
+	Parms.OtherComp = OtherComp;
+	Parms.BodyIndex = BodyIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.CHARoundConsole.ServerActivate
+// (Net, NetReliable, Native, Event, Protected, NetServer)
+// Parameters:
+// class ACharacter*                       InstigatingCharacter                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACHARoundConsole::ServerActivate(class ACharacter* InstigatingCharacter)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CHARoundConsole", "ServerActivate");
+
+	Params::CHARoundConsole_ServerActivate Parms{};
+
+	Parms.InstigatingCharacter = InstigatingCharacter;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.CHARoundConsole.TryActivate
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class ACharacter*                       InstigatingCharacter                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACHARoundConsole::TryActivate(class ACharacter* InstigatingCharacter)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CHARoundConsole", "TryActivate");
+
+	Params::CHARoundConsole_TryActivate Parms{};
+
+	Parms.InstigatingCharacter = InstigatingCharacter;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5847,65 +7326,15 @@ void UAvatarDynBridge::OnDyn(bool bOK, const TSoftObjectPtr<class UTexture>& Tex
 }
 
 
-// Function Midair2.Augment.GetArtObjectFor
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class AMACharacter*                     Character                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UAugment_Art*                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UAugment_Art* UAugment::GetArtObjectFor(class AMACharacter* Character)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Augment", "GetArtObjectFor");
-
-	Params::Augment_GetArtObjectFor Parms{};
-
-	Parms.Character = Character;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.Augment.K2_Draw
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class UCanvas*                          Canvas                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   RenderDelta                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAugment::K2_Draw(class UCanvas* Canvas, float RenderDelta)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Augment", "K2_Draw");
-
-	Params::Augment_K2_Draw Parms{};
-
-	Parms.Canvas = Canvas;
-	Parms.RenderDelta = RenderDelta;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Midair2.Augment.MakePassive
+// Function Midair2.CHAShootingGalleryZone.EndRound
 // (Final, Native, Public, BlueprintCallable)
 
-void UAugment::MakePassive()
+void ACHAShootingGalleryZone::EndRound()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Augment", "MakePassive");
+		Func = Class->GetFunction("CHAShootingGalleryZone", "EndRound");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5916,210 +7345,23 @@ void UAugment::MakePassive()
 }
 
 
-// Function Midair2.Augment.OnActiveChanged
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// class AMACharacter*                     ReceivingCharacter                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAugment::OnActiveChanged(class AMACharacter* ReceivingCharacter)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Augment", "OnActiveChanged");
-
-	Params::Augment_OnActiveChanged Parms{};
-
-	Parms.ReceivingCharacter = ReceivingCharacter;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.Augment.OnAddBuddy
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class AMACharacter*                     Buddy                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAugment::OnAddBuddy(class AMACharacter* Buddy)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Augment", "OnAddBuddy");
-
-	Params::Augment_OnAddBuddy Parms{};
-
-	Parms.Buddy = Buddy;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Midair2.Augment.OnEnergyDepleted
-// (Native, Event, Protected, BlueprintEvent)
-
-void UAugment::OnEnergyDepleted()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Augment", "OnEnergyDepleted");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.Augment.OnGivenTo
-// (Event, Protected, BlueprintEvent)
-
-void UAugment::OnGivenTo()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Augment", "OnGivenTo");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Midair2.Augment.OnRemoveBuddy
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class AMACharacter*                     Buddy                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAugment::OnRemoveBuddy(class AMACharacter* Buddy)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Augment", "OnRemoveBuddy");
-
-	Params::Augment_OnRemoveBuddy Parms{};
-
-	Parms.Buddy = Buddy;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Midair2.Augment.OnRemoved
-// (Event, Protected, BlueprintEvent)
-
-void UAugment::OnRemoved()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Augment", "OnRemoved");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Midair2.Augment.OnRep_Buddies
+// Function Midair2.CHAShootingGalleryZone.OnBeginOverlap
 // (Final, Native, Protected)
-
-void UAugment::OnRep_Buddies()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Augment", "OnRep_Buddies");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.Augment.OnRep_Trigger
-// (Final, Native, Protected)
-
-void UAugment::OnRep_Trigger()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Augment", "OnRep_Trigger");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.Augment.ResetType
-// (Final, Native, Public, BlueprintCallable)
-
-void UAugment::ResetType()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Augment", "ResetType");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.Augment.ServerUse
-// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
-
-void UAugment::ServerUse()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Augment", "ServerUse");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.Augment.CanBeUsedWith
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
-// TSubclassOf<class UAugment>             OtherAugmentClass                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Overlapped                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Other                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UAugment::CanBeUsedWith(TSubclassOf<class UAugment> OtherAugmentClass) const
+void ACHAShootingGalleryZone::OnBeginOverlap(class AActor* Overlapped, class AActor* Other)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Augment", "CanBeUsedWith");
+		Func = Class->GetFunction("CHAShootingGalleryZone", "OnBeginOverlap");
 
-	Params::Augment_CanBeUsedWith Parms{};
+	Params::CHAShootingGalleryZone_OnBeginOverlap Parms{};
 
-	Parms.OtherAugmentClass = OtherAugmentClass;
+	Parms.Overlapped = Overlapped;
+	Parms.Other = Other;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6127,24 +7369,66 @@ bool UAugment::CanBeUsedWith(TSubclassOf<class UAugment> OtherAugmentClass) cons
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function Midair2.Augment.GetCurrentEnergyChangeRate
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Function Midair2.CHAShootingGalleryZone.OnDroneDestroyed
+// (Final, Native, Public)
+// Parameters:
+// class AActor*                           DestroyedActor                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACHAShootingGalleryZone::OnDroneDestroyed(class AActor* DestroyedActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CHAShootingGalleryZone", "OnDroneDestroyed");
+
+	Params::CHAShootingGalleryZone_OnDroneDestroyed Parms{};
+
+	Parms.DestroyedActor = DestroyedActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.CHAShootingGalleryZone.StartRound
+// (Final, Native, Public, BlueprintCallable)
+
+void ACHAShootingGalleryZone::StartRound()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CHAShootingGalleryZone", "StartRound");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.CHAShootingGalleryZone.GetTimeRemaining
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UAugment::GetCurrentEnergyChangeRate() const
+float ACHAShootingGalleryZone::GetTimeRemaining() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Augment", "GetCurrentEnergyChangeRate");
+		Func = Class->GetFunction("CHAShootingGalleryZone", "GetTimeRemaining");
 
-	Params::Augment_GetCurrentEnergyChangeRate Parms{};
+	Params::CHAShootingGalleryZone_GetTimeRemaining Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6157,54 +7441,294 @@ float UAugment::GetCurrentEnergyChangeRate() const
 }
 
 
-// Function Midair2.Augment.IsReady
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Function Midair2.ChatWidget.AddMessage
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
+// class APlayerState*                     Speaker                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Message                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bTeamOnly_0                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bPartyOnly_0                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UChatWidget::AddMessage(class APlayerState* Speaker, const class FString& Message, bool bTeamOnly_0, bool bPartyOnly_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ChatWidget", "AddMessage");
+
+	Params::ChatWidget_AddMessage Parms{};
+
+	Parms.Speaker = Speaker;
+	Parms.Message = std::move(Message);
+	Parms.bTeamOnly_0 = bTeamOnly_0;
+	Parms.bPartyOnly_0 = bPartyOnly_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.ChatWidget.ClaimOwnership
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UWidget*                          NewOwner                                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UChatWidget::ClaimOwnership(class UWidget* NewOwner)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ChatWidget", "ClaimOwnership");
+
+	Params::ChatWidget_ClaimOwnership Parms{};
+
+	Parms.NewOwner = NewOwner;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.ChatWidget.CommitMessage
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    Message                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UChatWidget::CommitMessage(const class FString& Message)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ChatWidget", "CommitMessage");
+
+	Params::ChatWidget_CommitMessage Parms{};
+
+	Parms.Message = std::move(Message);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.ChatWidget.FocusPrompt
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bTeamOnly_0                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bPartyOnly_0                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UChatWidget::FocusPrompt(bool bTeamOnly_0, bool bPartyOnly_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ChatWidget", "FocusPrompt");
+
+	Params::ChatWidget_FocusPrompt Parms{};
+
+	Parms.bTeamOnly_0 = bTeamOnly_0;
+	Parms.bPartyOnly_0 = bPartyOnly_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.ChatWidget.OnFocusPrompt
+// (Event, Protected, BlueprintEvent)
+
+void UChatWidget::OnFocusPrompt()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ChatWidget", "OnFocusPrompt");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Midair2.ChatWidget.OnPartyChatMessageReceived
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const struct FPartyMessage&             PartyMessage                                           (Parm, NativeAccessSpecifierPublic)
+
+void UChatWidget::OnPartyChatMessageReceived(const struct FPartyMessage& PartyMessage)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ChatWidget", "OnPartyChatMessageReceived");
+
+	Params::ChatWidget_OnPartyChatMessageReceived Parms{};
+
+	Parms.PartyMessage = std::move(PartyMessage);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.ChatWidget.ReceiveMessage
+// (Event, Protected, HasOutParams, HasDefaults, BlueprintEvent)
+// Parameters:
+// const class FString&                    PlayerName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FLinearColor&              NameColor                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Message                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FLinearColor&              MessageColor                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UChatWidget::ReceiveMessage(const class FString& PlayerName, const struct FLinearColor& NameColor, const class FString& Message, const struct FLinearColor& MessageColor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ChatWidget", "ReceiveMessage");
+
+	Params::ChatWidget_ReceiveMessage Parms{};
+
+	Parms.PlayerName = std::move(PlayerName);
+	Parms.NameColor = std::move(NameColor);
+	Parms.Message = std::move(Message);
+	Parms.MessageColor = std::move(MessageColor);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Midair2.ChatWidget.ReleaseFocus
+// (Final, Native, Public, BlueprintCallable)
+
+void UChatWidget::ReleaseFocus()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ChatWidget", "ReleaseFocus");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.ChatWidget.ReleaseOwnership
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UWidget*                          CurrentOwner                                           (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UChatWidget::ReleaseOwnership(class UWidget* CurrentOwner)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ChatWidget", "ReleaseOwnership");
+
+	Params::ChatWidget_ReleaseOwnership Parms{};
+
+	Parms.CurrentOwner = CurrentOwner;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.DirectHotkey.HandleDirectNamedHotkey
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// const class FString&                    Hotkey                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UAugment::IsReady() const
+bool IDirectHotkey::HandleDirectNamedHotkey(const class FString& Hotkey)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Augment", "IsReady");
+		Func = AsUObject()->Class->GetFunction("DirectHotkey", "HandleDirectNamedHotkey");
 
-	Params::Augment_IsReady Parms{};
+	Params::DirectHotkey_HandleDirectNamedHotkey Parms{};
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
+	Parms.Hotkey = std::move(Hotkey);
 
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
+	AsUObject()->ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
 }
 
 
-// Function Midair2.MAPowerup.AssistCapsuleTouched
-// (Native, Protected, HasOutParams)
+// Function Midair2.DirectHotkey.HandleNamedHotkeyWithInt
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const class FString&                    Hotkey                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Int                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AMAPowerup::AssistCapsuleTouched(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
+bool IDirectHotkey::HandleNamedHotkeyWithInt(const class FString& Hotkey, int32 Int)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MAPowerup", "AssistCapsuleTouched");
+		Func = AsUObject()->Class->GetFunction("DirectHotkey", "HandleNamedHotkeyWithInt");
 
-	Params::MAPowerup_AssistCapsuleTouched Parms{};
+	Params::DirectHotkey_HandleNamedHotkeyWithInt Parms{};
+
+	Parms.Hotkey = std::move(Hotkey);
+	Parms.Int = Int;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MACarriedObjectOOBVolume.OnCarriedObjectOOB
+// (Native, Protected, HasOutParams, BlueprintCallable)
+// Parameters:
+// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   BodyIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void AMACarriedObjectOOBVolume::OnCarriedObjectOOB(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 BodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACarriedObjectOOBVolume", "OnCarriedObjectOOB");
+
+	Params::MACarriedObjectOOBVolume_OnCarriedObjectOOB Parms{};
 
 	Parms.OverlappedComponent = OverlappedComponent;
 	Parms.OtherActor = OtherActor;
 	Parms.OtherComp = OtherComp;
-	Parms.OtherBodyIndex = OtherBodyIndex;
+	Parms.BodyIndex = BodyIndex;
 	Parms.bFromSweep = bFromSweep;
 	Parms.SweepResult = std::move(SweepResult);
 
@@ -6217,82 +7741,24 @@ void AMAPowerup::AssistCapsuleTouched(class UPrimitiveComponent* OverlappedCompo
 }
 
 
-// Function Midair2.MAPowerup.CapsuleTouched
-// (Native, Protected, HasOutParams)
-// Parameters:
-// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void AMAPowerup::CapsuleTouched(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAPowerup", "CapsuleTouched");
-
-	Params::MAPowerup_CapsuleTouched Parms{};
-
-	Parms.OverlappedComponent = OverlappedComponent;
-	Parms.OtherActor = OtherActor;
-	Parms.OtherComp = OtherComp;
-	Parms.OtherBodyIndex = OtherBodyIndex;
-	Parms.bFromSweep = bFromSweep;
-	Parms.SweepResult = std::move(SweepResult);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAPowerup.Tick
-// (Native, Protected)
-// Parameters:
-// float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMAPowerup::Tick(float DeltaTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAPowerup", "Tick");
-
-	Params::MAPowerup_Tick Parms{};
-
-	Parms.DeltaTime = DeltaTime;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.GetMapPracticeTutorialsAsyncTask.GetPracticeTutorials
+// Function Midair2.CloseCustomGameAsyncTask.CloseCustomGame
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// const class FString&                    mapName                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UGetMapPracticeTutorialsAsyncTask*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class APlayerController*                InPlayerController                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FMAHathoraServer&          ServerToClose                                          (Parm, NativeAccessSpecifierPublic)
+// class UCloseCustomGameAsyncTask*        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UGetMapPracticeTutorialsAsyncTask* UGetMapPracticeTutorialsAsyncTask::GetPracticeTutorials(const class FString& mapName)
+class UCloseCustomGameAsyncTask* UCloseCustomGameAsyncTask::CloseCustomGame(class APlayerController* InPlayerController, const struct FMAHathoraServer& ServerToClose)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GetMapPracticeTutorialsAsyncTask", "GetPracticeTutorials");
+		Func = StaticClass()->GetFunction("CloseCustomGameAsyncTask", "CloseCustomGame");
 
-	Params::GetMapPracticeTutorialsAsyncTask_GetPracticeTutorials Parms{};
+	Params::CloseCustomGameAsyncTask_CloseCustomGame Parms{};
 
-	Parms.mapName = std::move(mapName);
+	Parms.InPlayerController = InPlayerController;
+	Parms.ServerToClose = std::move(ServerToClose);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6305,15 +7771,429 @@ class UGetMapPracticeTutorialsAsyncTask* UGetMapPracticeTutorialsAsyncTask::GetP
 }
 
 
-// Function Midair2.Augment_Blink.OnBlinkOccured
-// (Native, Public)
+// Function Midair2.ComplexStatusBar.SetFillColorAndOpacity
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FLinearColor&              InColor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAugment_Blink::OnBlinkOccured()
+void UComplexStatusBar::SetFillColorAndOpacity(const struct FLinearColor& InColor)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Augment_Blink", "OnBlinkOccured");
+		Func = Class->GetFunction("ComplexStatusBar", "SetFillColorAndOpacity");
+
+	Params::ComplexStatusBar_SetFillColorAndOpacity Parms{};
+
+	Parms.InColor = std::move(InColor);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.ComplexStatusBar.SetFillColorAndOpacity2
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FLinearColor&              InColor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UComplexStatusBar::SetFillColorAndOpacity2(const struct FLinearColor& InColor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ComplexStatusBar", "SetFillColorAndOpacity2");
+
+	Params::ComplexStatusBar_SetFillColorAndOpacity2 Parms{};
+
+	Parms.InColor = std::move(InColor);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.ComplexStatusBar.SetFillMarkerColorAndOpacity
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FLinearColor&              InColor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UComplexStatusBar::SetFillMarkerColorAndOpacity(const struct FLinearColor& InColor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ComplexStatusBar", "SetFillMarkerColorAndOpacity");
+
+	Params::ComplexStatusBar_SetFillMarkerColorAndOpacity Parms{};
+
+	Parms.InColor = std::move(InColor);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.ComplexStatusBar.SetIsMarquee
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    InbIsMarquee                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UComplexStatusBar::SetIsMarquee(bool InbIsMarquee)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ComplexStatusBar", "SetIsMarquee");
+
+	Params::ComplexStatusBar_SetIsMarquee Parms{};
+
+	Parms.InbIsMarquee = InbIsMarquee;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.ComplexStatusBar.SetValue1
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InPercent                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UComplexStatusBar::SetValue1(float InPercent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ComplexStatusBar", "SetValue1");
+
+	Params::ComplexStatusBar_SetValue1 Parms{};
+
+	Parms.InPercent = InPercent;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.ComplexStatusBar.SetValue2
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InPercent                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UComplexStatusBar::SetValue2(float InPercent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ComplexStatusBar", "SetValue2");
+
+	Params::ComplexStatusBar_SetValue2 Parms{};
+
+	Parms.InPercent = InPercent;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.OOBVolume.BP_PlayOOBEffects
+// (Event, Protected, HasDefaults, BlueprintEvent)
+// Parameters:
+// class AActor*                           ActorExiting                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Location                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   WallNormal                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AOOBVolume::BP_PlayOOBEffects(class AActor* ActorExiting, const struct FVector& Location, const struct FVector& WallNormal)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("OOBVolume", "BP_PlayOOBEffects");
+
+	Params::OOBVolume_BP_PlayOOBEffects Parms{};
+
+	Parms.ActorExiting = ActorExiting;
+	Parms.Location = std::move(Location);
+	Parms.WallNormal = std::move(WallNormal);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Midair2.OOBVolume.CheckForCarriedObject
+// (Native, Protected, HasOutParams)
+// Parameters:
+// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   BodyIndexbool                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void AOOBVolume::CheckForCarriedObject(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 BodyIndexbool, bool bFromSweep, const struct FHitResult& SweepResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("OOBVolume", "CheckForCarriedObject");
+
+	Params::OOBVolume_CheckForCarriedObject Parms{};
+
+	Parms.OverlappedComponent = OverlappedComponent;
+	Parms.OtherActor = OtherActor;
+	Parms.OtherComp = OtherComp;
+	Parms.BodyIndexbool = BodyIndexbool;
+	Parms.bFromSweep = bFromSweep;
+	Parms.SweepResult = std::move(SweepResult);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.OOBVolume.CheckForCarriedObjectLeaving
+// (Native, Protected)
+// Parameters:
+// class UPrimitiveComponent*              OverlappedComp                                         (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AOOBVolume::CheckForCarriedObjectLeaving(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("OOBVolume", "CheckForCarriedObjectLeaving");
+
+	Params::OOBVolume_CheckForCarriedObjectLeaving Parms{};
+
+	Parms.OverlappedComp = OverlappedComp;
+	Parms.OtherActor = OtherActor;
+	Parms.OtherComp = OtherComp;
+	Parms.OtherBodyIndex = OtherBodyIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.OOBVolume.PlayOOBEffects
+// (Final, Native, Protected, HasDefaults)
+// Parameters:
+// class AActor*                           ActorExiting                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Location                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Direction                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AOOBVolume::PlayOOBEffects(class AActor* ActorExiting, const struct FVector& Location, const struct FVector& Direction)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("OOBVolume", "PlayOOBEffects");
+
+	Params::OOBVolume_PlayOOBEffects Parms{};
+
+	Parms.ActorExiting = ActorExiting;
+	Parms.Location = std::move(Location);
+	Parms.Direction = std::move(Direction);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.DeletePracticeDrillAsyncTask.DeletePracticeDrill
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FMADrill&                  DrillToDelete                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// class UDeletePracticeDrillAsyncTask*    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UDeletePracticeDrillAsyncTask* UDeletePracticeDrillAsyncTask::DeletePracticeDrill(const struct FMADrill& DrillToDelete)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("DeletePracticeDrillAsyncTask", "DeletePracticeDrill");
+
+	Params::DeletePracticeDrillAsyncTask_DeletePracticeDrill Parms{};
+
+	Parms.DrillToDelete = std::move(DrillToDelete);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.GetCurrentLadderPlayerAsyncTask.GetCurrentLadderPlayer
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UGetCurrentLadderPlayerAsyncTask* ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UGetCurrentLadderPlayerAsyncTask* UGetCurrentLadderPlayerAsyncTask::GetCurrentLadderPlayer()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GetCurrentLadderPlayerAsyncTask", "GetCurrentLadderPlayer");
+
+	Params::GetCurrentLadderPlayerAsyncTask_GetCurrentLadderPlayer Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MACharacter.AddItem
+// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Parameters:
+// class AMAItem*                          ItemToAdd                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bAutoActivate                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMACharacter::AddItem(class AMAItem* ItemToAdd, bool bAutoActivate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "AddItem");
+
+	Params::MACharacter_AddItem Parms{};
+
+	Parms.ItemToAdd = ItemToAdd;
+	Parms.bAutoActivate = bAutoActivate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MACharacter.BP_EndPurchaseVehicle
+// (Event, Protected, BlueprintEvent)
+
+void AMACharacter::BP_EndPurchaseVehicle()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "BP_EndPurchaseVehicle");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Midair2.MACharacter.BP_OnRep_PlayerState
+// (Event, Public, BlueprintEvent)
+
+void AMACharacter::BP_OnRep_PlayerState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "BP_OnRep_PlayerState");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Midair2.MACharacter.BP_StartPurchaseVehicle
+// (Event, Protected, BlueprintEvent)
+
+void AMACharacter::BP_StartPurchaseVehicle()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "BP_StartPurchaseVehicle");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Midair2.MACharacter.BP_UpdateForClientPerspective
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bFirstPerson                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMACharacter::BP_UpdateForClientPerspective(bool bFirstPerson)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "BP_UpdateForClientPerspective");
+
+	Params::MACharacter_BP_UpdateForClientPerspective Parms{};
+
+	Parms.bFirstPerson = bFirstPerson;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Midair2.MACharacter.CameraShakeUpdated
+// (Native, Public)
+
+void AMACharacter::CameraShakeUpdated()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "CameraShakeUpdated");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6324,15 +8204,15 @@ void UAugment_Blink::OnBlinkOccured()
 }
 
 
-// Function Midair2.Augment_Blink.ReceiveBlinkLocation
-// (Native, Public)
+// Function Midair2.MACharacter.CheckMeleeHit
+// (Final, Native, Private)
 
-void UAugment_Blink::ReceiveBlinkLocation()
+void AMACharacter::CheckMeleeHit()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Augment_Blink", "ReceiveBlinkLocation");
+		Func = Class->GetFunction("MACharacter", "CheckMeleeHit");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6343,190 +8223,133 @@ void UAugment_Blink::ReceiveBlinkLocation()
 }
 
 
-// Function Midair2.MALocalMessage.GetText
-// (Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const struct FLocalMessageData&         MessageData                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+// Function Midair2.MACharacter.CleanupDeadBody
+// (Native, Protected)
 
-class FText UMALocalMessage::GetText(const struct FLocalMessageData& MessageData) const
+void AMACharacter::CleanupDeadBody()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MALocalMessage", "GetText");
-
-	Params::MALocalMessage_GetText Parms{};
-
-	Parms.MessageData = std::move(MessageData);
+		Func = Class->GetFunction("MACharacter", "CleanupDeadBody");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function Midair2.MALocalMessage.GetTextColor
-// (Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   MessageIndex                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FLinearColor                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Midair2.MACharacter.ClearTriggers
+// (Final, Native, Public, BlueprintCallable)
 
-struct FLinearColor UMALocalMessage::GetTextColor(int32 MessageIndex) const
+void AMACharacter::ClearTriggers()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MALocalMessage", "GetTextColor");
-
-	Params::MALocalMessage_GetTextColor Parms{};
-
-	Parms.MessageIndex = MessageIndex;
+		Func = Class->GetFunction("MACharacter", "ClearTriggers");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function Midair2.Augment_Blink_Art.StartBlink
-// (Event, Public, HasOutParams, HasDefaults, BlueprintEvent)
-// Parameters:
-// const struct FVector&                   Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Midair2.MACharacter.ClientLoadoutRefreshed
+// (Net, NetReliable, Native, Event, Public, NetClient)
 
-void UAugment_Blink_Art::StartBlink(const struct FVector& Location)
+void AMACharacter::ClientLoadoutRefreshed()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Augment_Blink_Art", "StartBlink");
-
-	Params::Augment_Blink_Art_StartBlink Parms{};
-
-	Parms.Location = std::move(Location);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Midair2.Augment_Blink_Art.StopBlink
-// (Event, Public, HasOutParams, HasDefaults, BlueprintEvent)
-// Parameters:
-// const struct FVector&                   Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAugment_Blink_Art::StopBlink(const struct FVector& Location)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Augment_Blink_Art", "StopBlink");
-
-	Params::Augment_Blink_Art_StopBlink Parms{};
-
-	Parms.Location = std::move(Location);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Midair2.CommonSession_SearchResult.GetCurrentPlayers
-// (Final, Native, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UCommonSession_SearchResult::GetCurrentPlayers()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CommonSession_SearchResult", "GetCurrentPlayers");
-
-	Params::CommonSession_SearchResult_GetCurrentPlayers Parms{};
+		Func = Class->GetFunction("MACharacter", "ClientLoadoutRefreshed");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function Midair2.CommonSession_SearchResult.GetMapName
-// (Final, Native, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Midair2.MACharacter.CycleZoom
+// (Native, Public, BlueprintCallable)
 
-class FString UCommonSession_SearchResult::GetMapName()
+void AMACharacter::CycleZoom()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CommonSession_SearchResult", "GetMapName");
-
-	Params::CommonSession_SearchResult_GetMapName Parms{};
+		Func = Class->GetFunction("MACharacter", "CycleZoom");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function Midair2.CommonSession_SearchResult.GetMaxPlayers
-// (Final, Native, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Midair2.MACharacter.DiscardInventory
+// (Native, Public, BlueprintCallable)
 
-int32 UCommonSession_SearchResult::GetMaxPlayers()
+void AMACharacter::DiscardInventory()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CommonSession_SearchResult", "GetMaxPlayers");
-
-	Params::CommonSession_SearchResult_GetMaxPlayers Parms{};
+		Func = Class->GetFunction("MACharacter", "DiscardInventory");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function Midair2.CommonSession_SearchResult.IsPasswordProtected
-// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Function Midair2.MACharacter.EndInvulnerability
+// (Native, Public, BlueprintCallable)
+
+void AMACharacter::EndInvulnerability()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "EndInvulnerability");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.Evacuate
+// (Native, Public, BlueprintCallable)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UCommonSession_SearchResult::IsPasswordProtected()
+bool AMACharacter::Evacuate()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CommonSession_SearchResult", "IsPasswordProtected");
+		Func = Class->GetFunction("MACharacter", "Evacuate");
 
-	Params::CommonSession_SearchResult_IsPasswordProtected Parms{};
+	Params::MACharacter_Evacuate Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6539,19 +8362,19 @@ bool UCommonSession_SearchResult::IsPasswordProtected()
 }
 
 
-// Function Midair2.CommonSession_SearchResult.GetCustomServerName
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Function Midair2.MACharacter.GetHeightAboveSurface
+// (Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString UCommonSession_SearchResult::GetCustomServerName() const
+float AMACharacter::GetHeightAboveSurface()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CommonSession_SearchResult", "GetCustomServerName");
+		Func = Class->GetFunction("MACharacter", "GetHeightAboveSurface");
 
-	Params::CommonSession_SearchResult_GetCustomServerName Parms{};
+	Params::MACharacter_GetHeightAboveSurface Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6564,19 +8387,76 @@ class FString UCommonSession_SearchResult::GetCustomServerName() const
 }
 
 
-// Function Midair2.CommonSession_SearchResult.GetDescription
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Midair2.MACharacter.HandleMeleeInput
+// (Final, Native, Public)
 
-class FString UCommonSession_SearchResult::GetDescription() const
+void AMACharacter::HandleMeleeInput()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CommonSession_SearchResult", "GetDescription");
+		Func = Class->GetFunction("MACharacter", "HandleMeleeInput");
 
-	Params::CommonSession_SearchResult_GetDescription Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.HideEmoteWheel
+// (Event, Public, BlueprintEvent)
+
+void AMACharacter::HideEmoteWheel()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "HideEmoteWheel");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Midair2.MACharacter.Jet
+// (Native, Public, BlueprintCallable)
+
+void AMACharacter::Jet()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "Jet");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.K2_CreateItem
+// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class AMAItem>              NewItemClass                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bAutoActivate                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AMAItem*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AMAItem* AMACharacter::K2_CreateItem(TSubclassOf<class AMAItem> NewItemClass, bool bAutoActivate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "K2_CreateItem");
+
+	Params::MACharacter_K2_CreateItem Parms{};
+
+	Parms.NewItemClass = NewItemClass;
+	Parms.bAutoActivate = bAutoActivate;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6589,23 +8469,97 @@ class FString UCommonSession_SearchResult::GetDescription() const
 }
 
 
-// Function Midair2.CommonSession_SearchResult.GetIntSetting
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FName                             Key                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32*                                  Value                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool*                                   bFoundValue                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Midair2.MACharacter.MulticastPlayMeleeAnimation
+// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
 
-void UCommonSession_SearchResult::GetIntSetting(class FName Key, int32* Value, bool* bFoundValue) const
+void AMACharacter::MulticastPlayMeleeAnimation()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CommonSession_SearchResult", "GetIntSetting");
+		Func = Class->GetFunction("MACharacter", "MulticastPlayMeleeAnimation");
 
-	Params::CommonSession_SearchResult_GetIntSetting Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
-	Parms.Key = Key;
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.OnDied
+// (Native, Protected)
+
+void AMACharacter::OnDied()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "OnDied");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.OnEnergyDamage
+// (Native, Public)
+
+void AMACharacter::OnEnergyDamage()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "OnEnergyDamage");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.OnFootStep
+// (Native, Public, BlueprintCallable)
+
+void AMACharacter::OnFootStep()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "OnFootStep");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.OnHealthChanged
+// (Native, Public)
+// Parameters:
+// bool                                    bFromDamage                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMACharacter::OnHealthChanged(bool bFromDamage)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "OnHealthChanged");
+
+	Params::MACharacter_OnHealthChanged Parms{};
+
+	Parms.bFromDamage = bFromDamage;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6613,28 +8567,45 @@ void UCommonSession_SearchResult::GetIntSetting(class FName Key, int32* Value, b
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	if (Value != nullptr)
-		*Value = Parms.Value;
-
-	if (bFoundValue != nullptr)
-		*bFoundValue = Parms.bFoundValue;
 }
 
 
-// Function Midair2.CommonSession_SearchResult.GetMaxPublicConnections
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Midair2.MACharacter.OnMeleeEnd
+// (Final, Native, Public)
 
-int32 UCommonSession_SearchResult::GetMaxPublicConnections() const
+void AMACharacter::OnMeleeEnd()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CommonSession_SearchResult", "GetMaxPublicConnections");
+		Func = Class->GetFunction("MACharacter", "OnMeleeEnd");
 
-	Params::CommonSession_SearchResult_GetMaxPublicConnections Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.OnMeleeMontageEnded
+// (Final, Native, Private)
+// Parameters:
+// class UAnimMontage*                     Montage                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bInterrupted                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMACharacter::OnMeleeMontageEnded(class UAnimMontage* Montage, bool bInterrupted)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "OnMeleeMontageEnded");
+
+	Params::MACharacter_OnMeleeMontageEnded Parms{};
+
+	Parms.Montage = Montage;
+	Parms.bInterrupted = bInterrupted;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6642,24 +8613,43 @@ int32 UCommonSession_SearchResult::GetMaxPublicConnections() const
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function Midair2.CommonSession_SearchResult.GetNumOpenPrivateConnections
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Midair2.MACharacter.OnMeleeStart
+// (Final, Native, Public)
 
-int32 UCommonSession_SearchResult::GetNumOpenPrivateConnections() const
+void AMACharacter::OnMeleeStart()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CommonSession_SearchResult", "GetNumOpenPrivateConnections");
+		Func = Class->GetFunction("MACharacter", "OnMeleeStart");
 
-	Params::CommonSession_SearchResult_GetNumOpenPrivateConnections Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.OnPurchasedVehicleSpawned
+// (Final, Native, Protected)
+// Parameters:
+// class AVehiclePawn*                     Vehicle                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMACharacter::OnPurchasedVehicleSpawned(class AVehiclePawn* Vehicle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "OnPurchasedVehicleSpawned");
+
+	Params::MACharacter_OnPurchasedVehicleSpawned Parms{};
+
+	Parms.Vehicle = Vehicle;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6667,132 +8657,136 @@ int32 UCommonSession_SearchResult::GetNumOpenPrivateConnections() const
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function Midair2.CommonSession_SearchResult.GetNumOpenPublicConnections
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Midair2.MACharacter.OnRep_IsSkating
+// (Native, Public)
 
-int32 UCommonSession_SearchResult::GetNumOpenPublicConnections() const
+void AMACharacter::OnRep_IsSkating()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CommonSession_SearchResult", "GetNumOpenPublicConnections");
-
-	Params::CommonSession_SearchResult_GetNumOpenPublicConnections Parms{};
+		Func = Class->GetFunction("MACharacter", "OnRep_IsSkating");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function Midair2.CommonSession_SearchResult.GetPingInMs
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Midair2.MACharacter.OnRep_LastAttachedSurfaceImpact
+// (Final, Native, Public)
 
-int32 UCommonSession_SearchResult::GetPingInMs() const
+void AMACharacter::OnRep_LastAttachedSurfaceImpact()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CommonSession_SearchResult", "GetPingInMs");
-
-	Params::CommonSession_SearchResult_GetPingInMs Parms{};
+		Func = Class->GetFunction("MACharacter", "OnRep_LastAttachedSurfaceImpact");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function Midair2.CommonSession_SearchResult.GetServerVersion
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Midair2.MACharacter.OnRep_LMS
+// (Final, Native, Public)
 
-class FString UCommonSession_SearchResult::GetServerVersion() const
+void AMACharacter::OnRep_LMS()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CommonSession_SearchResult", "GetServerVersion");
-
-	Params::CommonSession_SearchResult_GetServerVersion Parms{};
+		Func = Class->GetFunction("MACharacter", "OnRep_LMS");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function Midair2.CommonSession_SearchResult.GetStringSetting
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FName                             Key                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString*                          Value                                                  (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool*                                   bFoundValue                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Midair2.MACharacter.OnRep_MAReplicatedMovement
+// (Native, Public)
 
-void UCommonSession_SearchResult::GetStringSetting(class FName Key, class FString* Value, bool* bFoundValue) const
+void AMACharacter::OnRep_MAReplicatedMovement()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CommonSession_SearchResult", "GetStringSetting");
-
-	Params::CommonSession_SearchResult_GetStringSetting Parms{};
-
-	Parms.Key = Key;
+		Func = Class->GetFunction("MACharacter", "OnRep_MAReplicatedMovement");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-
-	if (Value != nullptr)
-		*Value = std::move(Parms.Value);
-
-	if (bFoundValue != nullptr)
-		*bFoundValue = Parms.bFoundValue;
 }
 
 
-// Function Midair2.Augment_FlatShield.OwnerTookDamage
-// (Final, Native, Public, HasOutParams)
+// Function Midair2.MACharacter.OnRep_PressedJet
+// (Native, Public)
+
+void AMACharacter::OnRep_PressedJet()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "OnRep_PressedJet");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.OnRep_ReplicatedAccelInfo
+// (Native, Public)
+
+void AMACharacter::OnRep_ReplicatedAccelInfo()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "OnRep_ReplicatedAccelInfo");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.OnTookDamage
+// (Native, Public, HasOutParams)
 // Parameters:
 // const struct FTakeHitInfo&              TakeHitInfo                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UAugment_FlatShield::OwnerTookDamage(const struct FTakeHitInfo& TakeHitInfo)
+void AMACharacter::OnTookDamage(const struct FTakeHitInfo& TakeHitInfo)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Augment_FlatShield", "OwnerTookDamage");
+		Func = Class->GetFunction("MACharacter", "OnTookDamage");
 
-	Params::Augment_FlatShield_OwnerTookDamage Parms{};
+	Params::MACharacter_OnTookDamage Parms{};
 
 	Parms.TakeHitInfo = std::move(TakeHitInfo);
 
@@ -6802,6 +8796,1523 @@ void UAugment_FlatShield::OwnerTookDamage(const struct FTakeHitInfo& TakeHitInfo
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.PlayCameraShake
+// (Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCameraShakeBase>     Shake                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Scale                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bPlayInUserSpace                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  UserSpaceRot                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+void AMACharacter::PlayCameraShake(TSubclassOf<class UCameraShakeBase> Shake, float Scale, bool bPlayInUserSpace, const struct FRotator& UserSpaceRot)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "PlayCameraShake");
+
+	Params::MACharacter_PlayCameraShake Parms{};
+
+	Parms.Shake = Shake;
+	Parms.Scale = Scale;
+	Parms.bPlayInUserSpace = bPlayInUserSpace;
+	Parms.UserSpaceRot = std::move(UserSpaceRot);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.PlayEmote
+// (Final, Native, Public, BlueprintCallable)
+
+void AMACharacter::PlayEmote()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "PlayEmote");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.PlayMeleeAnimationLocal
+// (Final, Native, Public)
+
+void AMACharacter::PlayMeleeAnimationLocal()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "PlayMeleeAnimationLocal");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.ProcessMeleeHit
+// (Final, Native, Private, HasOutParams, HasDefaults)
+// Parameters:
+// const struct FVector&                   Start                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   End                                                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMACharacter::ProcessMeleeHit(const struct FVector& Start, const struct FVector& End)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "ProcessMeleeHit");
+
+	Params::MACharacter_ProcessMeleeHit Parms{};
+
+	Parms.Start = std::move(Start);
+	Parms.End = std::move(End);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.RemoveItem
+// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Parameters:
+// class AMAItem*                          ItemToRemove                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMACharacter::RemoveItem(class AMAItem* ItemToRemove)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "RemoveItem");
+
+	Params::MACharacter_RemoveItem Parms{};
+
+	Parms.ItemToRemove = ItemToRemove;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.Server_UseSpray
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+
+void AMACharacter::Server_UseSpray()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "Server_UseSpray");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.ServerHandleMelee
+// (Final, Net, NetReliable, Native, Event, Private, NetServer)
+
+void AMACharacter::ServerHandleMelee()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "ServerHandleMelee");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.ServerProcessMeleeHit
+// (Final, Net, NetReliable, Native, Event, Private, NetServer, HasDefaults)
+// Parameters:
+// const struct FVector&                   Start                                                  (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   End                                                    (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMACharacter::ServerProcessMeleeHit(const struct FVector& Start, const struct FVector& End)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "ServerProcessMeleeHit");
+
+	Params::MACharacter_ServerProcessMeleeHit Parms{};
+
+	Parms.Start = std::move(Start);
+	Parms.End = std::move(End);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.ServerRequestBeacon
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+
+void AMACharacter::ServerRequestBeacon()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "ServerRequestBeacon");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.ServerSetCameraMode
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+// Parameters:
+// ECameraMode                             InCameraMode                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMACharacter::ServerSetCameraMode(ECameraMode InCameraMode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "ServerSetCameraMode");
+
+	Params::MACharacter_ServerSetCameraMode Parms{};
+
+	Parms.InCameraMode = InCameraMode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.ServerSpawnBeacon
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+
+void AMACharacter::ServerSpawnBeacon()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "ServerSpawnBeacon");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.ServerTossCarriedObject
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+// Parameters:
+// float                                   Strength                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMACharacter::ServerTossCarriedObject(float Strength)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "ServerTossCarriedObject");
+
+	Params::MACharacter_ServerTossCarriedObject Parms{};
+
+	Parms.Strength = Strength;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.ServerTryEnterVehicle
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+// Parameters:
+// class AVehiclePawn*                     Vehicle                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMACharacter::ServerTryEnterVehicle(class AVehiclePawn* Vehicle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "ServerTryEnterVehicle");
+
+	Params::MACharacter_ServerTryEnterVehicle Parms{};
+
+	Parms.Vehicle = Vehicle;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.ServerTryExitVehicle
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+
+void AMACharacter::ServerTryExitVehicle()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "ServerTryExitVehicle");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.ServerTryPurchaseVehicleAtIndex
+// (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
+// Parameters:
+// class AVehicleSpawnConsole*             SpawnConsole                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint8                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMACharacter::ServerTryPurchaseVehicleAtIndex(class AVehicleSpawnConsole* SpawnConsole, uint8 Index_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "ServerTryPurchaseVehicleAtIndex");
+
+	Params::MACharacter_ServerTryPurchaseVehicleAtIndex Parms{};
+
+	Parms.SpawnConsole = SpawnConsole;
+	Parms.Index_0 = Index_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.ServerTrySpecificPickup
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+// Parameters:
+// class AMAPickup*                        Pickup                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMACharacter::ServerTrySpecificPickup(class AMAPickup* Pickup)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "ServerTrySpecificPickup");
+
+	Params::MACharacter_ServerTrySpecificPickup Parms{};
+
+	Parms.Pickup = Pickup;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.SetCameraMode
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// ECameraMode                             InCameraMode                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMACharacter::SetCameraMode(ECameraMode InCameraMode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "SetCameraMode");
+
+	Params::MACharacter_SetCameraMode Parms{};
+
+	Parms.InCameraMode = InCameraMode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.SetLoadout
+// (Native, Public, HasOutParams)
+// Parameters:
+// const struct FMALoadout&                Loadout                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// bool                                    bSetMaxes                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIsBaseInventory                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMACharacter::SetLoadout(const struct FMALoadout& Loadout, bool bSetMaxes, bool bIsBaseInventory)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "SetLoadout");
+
+	Params::MACharacter_SetLoadout Parms{};
+
+	Parms.Loadout = std::move(Loadout);
+	Parms.bSetMaxes = bSetMaxes;
+	Parms.bIsBaseInventory = bIsBaseInventory;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.SetOverrideMaterials
+// (BlueprintCosmetic, Native, Public, BlueprintCallable)
+// Parameters:
+// class UMaterialInterface*               NewMaterial3P                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UMaterialInterface*               NewMaterial1P                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMACharacter::SetOverrideMaterials(class UMaterialInterface* NewMaterial3P, class UMaterialInterface* NewMaterial1P)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "SetOverrideMaterials");
+
+	Params::MACharacter_SetOverrideMaterials Parms{};
+
+	Parms.NewMaterial3P = NewMaterial3P;
+	Parms.NewMaterial1P = NewMaterial1P;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.SetTrigger
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// uint8                                   FireMode                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bSet                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMACharacter::SetTrigger(uint8 FireMode, bool bSet)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "SetTrigger");
+
+	Params::MACharacter_SetTrigger Parms{};
+
+	Parms.FireMode = FireMode;
+	Parms.bSet = bSet;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.SetWarpedIn
+// (Final, Native, Public, BlueprintCallable)
+
+void AMACharacter::SetWarpedIn()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "SetWarpedIn");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.ShowEmoteWheel
+// (Event, Public, BlueprintEvent)
+
+void AMACharacter::ShowEmoteWheel()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "ShowEmoteWheel");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Midair2.MACharacter.Skate
+// (Native, Public, BlueprintCallable)
+
+void AMACharacter::Skate()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "Skate");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.StartInvulnerability
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   Length                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMACharacter::StartInvulnerability(float Length)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "StartInvulnerability");
+
+	Params::MACharacter_StartInvulnerability Parms{};
+
+	Parms.Length = Length;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.StartPickup
+// (Native, Public, BlueprintCallable)
+
+void AMACharacter::StartPickup()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "StartPickup");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.StopJetting
+// (Native, Public, BlueprintCallable)
+
+void AMACharacter::StopJetting()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "StopJetting");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.StopMeleeHitWindow
+// (Final, Native, Public)
+
+void AMACharacter::StopMeleeHitWindow()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "StopMeleeHitWindow");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.StopPickup
+// (Native, Public, BlueprintCallable)
+
+void AMACharacter::StopPickup()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "StopPickup");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.StopPurchaseVehicle
+// (Native, Public, BlueprintCallable)
+
+void AMACharacter::StopPurchaseVehicle()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "StopPurchaseVehicle");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.StopSkating
+// (Native, Public, BlueprintCallable)
+
+void AMACharacter::StopSkating()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "StopSkating");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.SwapTriggerBuffers
+// (Final, Native, Public, BlueprintCallable)
+
+void AMACharacter::SwapTriggerBuffers()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "SwapTriggerBuffers");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.SwitchToNextWeapon
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   Direction                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMACharacter::SwitchToNextWeapon(int32 Direction)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "SwitchToNextWeapon");
+
+	Params::MACharacter_SwitchToNextWeapon Parms{};
+
+	Parms.Direction = Direction;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MACharacter.SwitchToWeapon
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class AMAWeapon*                        NewWeapon                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMACharacter::SwitchToWeapon(class AMAWeapon* NewWeapon)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "SwitchToWeapon");
+
+	Params::MACharacter_SwitchToWeapon Parms{};
+
+	Parms.NewWeapon = NewWeapon;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MACharacter.SwitchToWeaponAtIndex
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMACharacter::SwitchToWeaponAtIndex(int32 Index_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "SwitchToWeaponAtIndex");
+
+	Params::MACharacter_SwitchToWeaponAtIndex Parms{};
+
+	Parms.Index_0 = Index_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MACharacter.ToggleTrigger
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// uint8                                   FireMode                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMACharacter::ToggleTrigger(uint8 FireMode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "ToggleTrigger");
+
+	Params::MACharacter_ToggleTrigger Parms{};
+
+	Parms.FireMode = FireMode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.ToggleZoom
+// (Native, Public, BlueprintCallable)
+
+void AMACharacter::ToggleZoom()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "ToggleZoom");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.TossCarriedObject
+// (Exec, Native, Public)
+// Parameters:
+// float                                   Strength                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMACharacter::TossCarriedObject(float Strength)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "TossCarriedObject");
+
+	Params::MACharacter_TossCarriedObject Parms{};
+
+	Parms.Strength = Strength;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.TossFlag
+// (Final, Exec, Native, Public)
+// Parameters:
+// float                                   StrengthOverride                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMACharacter::TossFlag(float StrengthOverride)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "TossFlag");
+
+	Params::MACharacter_TossFlag Parms{};
+
+	Parms.StrengthOverride = StrengthOverride;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.TryEnterVehicle
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AVehiclePawn*                     Vehicle                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMACharacter::TryEnterVehicle(class AVehiclePawn* Vehicle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "TryEnterVehicle");
+
+	Params::MACharacter_TryEnterVehicle Parms{};
+
+	Parms.Vehicle = Vehicle;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.TryExitVehicle
+// (Final, Native, Public, BlueprintCallable)
+
+void AMACharacter::TryExitVehicle()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "TryExitVehicle");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.TryPurchaseVehicleAtIndex
+// (Native, Protected, BlueprintCallable)
+// Parameters:
+// class AVehicleSpawnConsole*             SpawnConsole                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint8                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMACharacter::TryPurchaseVehicleAtIndex(class AVehicleSpawnConsole* SpawnConsole, uint8 Index_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "TryPurchaseVehicleAtIndex");
+
+	Params::MACharacter_TryPurchaseVehicleAtIndex Parms{};
+
+	Parms.SpawnConsole = SpawnConsole;
+	Parms.Index_0 = Index_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.UpdateCameraDist
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   CameraDistPct                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMACharacter::UpdateCameraDist(float CameraDistPct)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "UpdateCameraDist");
+
+	Params::MACharacter_UpdateCameraDist Parms{};
+
+	Parms.CameraDistPct = CameraDistPct;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.UpdateForClientPerspective
+// (Final, Native, Public, BlueprintCallable)
+
+void AMACharacter::UpdateForClientPerspective()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "UpdateForClientPerspective");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.UpdateVisualsToMatchCosmeticCustomizations
+// (Final, Native, Public)
+
+void AMACharacter::UpdateVisualsToMatchCosmeticCustomizations()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "UpdateVisualsToMatchCosmeticCustomizations");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.UpdateWeaponAttachment
+// (Native, Public)
+
+void AMACharacter::UpdateWeaponAttachment()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "UpdateWeaponAttachment");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.UsePack
+// (Final, Exec, Native, Public)
+
+void AMACharacter::UsePack()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "UsePack");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.Vocalize
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class USoundBase*                       Sound                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMACharacter::Vocalize(class USoundBase* Sound)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "Vocalize");
+
+	Params::MACharacter_Vocalize Parms{};
+
+	Parms.Sound = Sound;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.WeaponActivityUpdated
+// (Native, Public)
+
+void AMACharacter::WeaponActivityUpdated()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "WeaponActivityUpdated");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.ZoomUpdated
+// (Native, Public)
+
+void AMACharacter::ZoomUpdated()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "ZoomUpdated");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacter.BP_GetViewRotation
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FRotator                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FRotator AMACharacter::BP_GetViewRotation() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "BP_GetViewRotation");
+
+	Params::MACharacter_BP_GetViewRotation Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MACharacter.GetAccelerationYaw
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float AMACharacter::GetAccelerationYaw() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "GetAccelerationYaw");
+
+	Params::MACharacter_GetAccelerationYaw Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MACharacter.GetEnergy
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float AMACharacter::GetEnergy() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "GetEnergy");
+
+	Params::MACharacter_GetEnergy Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MACharacter.GetEnergyPct
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float AMACharacter::GetEnergyPct() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "GetEnergyPct");
+
+	Params::MACharacter_GetEnergyPct Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MACharacter.GetHealth
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float AMACharacter::GetHealth() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "GetHealth");
+
+	Params::MACharacter_GetHealth Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MACharacter.GetHealthPct
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float AMACharacter::GetHealthPct() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "GetHealthPct");
+
+	Params::MACharacter_GetHealthPct Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MACharacter.GetIsWarpingIn
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMACharacter::GetIsWarpingIn() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "GetIsWarpingIn");
+
+	Params::MACharacter_GetIsWarpingIn Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MACharacter.GetIsWarpingOut
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMACharacter::GetIsWarpingOut() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "GetIsWarpingOut");
+
+	Params::MACharacter_GetIsWarpingOut Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MACharacter.GetRemoteViewPitch
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float AMACharacter::GetRemoteViewPitch() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "GetRemoteViewPitch");
+
+	Params::MACharacter_GetRemoteViewPitch Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MACharacter.GetTossStrength
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float AMACharacter::GetTossStrength() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "GetTossStrength");
+
+	Params::MACharacter_GetTossStrength Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MACharacter.IsAccelerating
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMACharacter::IsAccelerating() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "IsAccelerating");
+
+	Params::MACharacter_IsAccelerating Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MACharacter.IsDead
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMACharacter::IsDead() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "IsDead");
+
+	Params::MACharacter_IsDead Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MACharacter.IsInInventory
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const class AMAItem*                    ItemToFind                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMACharacter::IsInInventory(const class AMAItem* ItemToFind) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "IsInInventory");
+
+	Params::MACharacter_IsInInventory Parms{};
+
+	Parms.ItemToFind = ItemToFind;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MACharacter.IsTriggerSet
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// uint8                                   FireMode                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMACharacter::IsTriggerSet(uint8 FireMode) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "IsTriggerSet");
+
+	Params::MACharacter_IsTriggerSet Parms{};
+
+	Parms.FireMode = FireMode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MACharacter.K2_FindItem
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class AMAItem>              Type                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bExactClass                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AMAItem*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AMAItem* AMACharacter::K2_FindItem(TSubclassOf<class AMAItem> Type, bool bExactClass) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "K2_FindItem");
+
+	Params::MACharacter_K2_FindItem Parms{};
+
+	Parms.Type = Type;
+	Parms.bExactClass = bExactClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MACharacter.K2_FindPack
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class AMAItem>              Type                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bExactClass                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AMAItem*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AMAItem* AMACharacter::K2_FindPack(TSubclassOf<class AMAItem> Type, bool bExactClass) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacter", "K2_FindPack");
+
+	Params::MACharacter_K2_FindPack Parms{};
+
+	Parms.Type = Type;
+	Parms.bExactClass = bExactClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -8101,115 +11612,24 @@ class AWorldSettings* UMAGameInstance::GetWorldSettings() const
 }
 
 
-// Function Midair2.MAItem.ClientGivenTo
-// (Net, NetReliable, Native, Event, Protected, NetClient)
-// Parameters:
-// class APawn*                            NewInstigator                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bAutoActivate                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMAItem::ClientGivenTo(class APawn* NewInstigator, bool bAutoActivate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAItem", "ClientGivenTo");
-
-	Params::MAItem_ClientGivenTo Parms{};
-
-	Parms.NewInstigator = NewInstigator;
-	Parms.bAutoActivate = bAutoActivate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAItem.K2_GivenTo
-// (BlueprintAuthorityOnly, Event, Public, BlueprintEvent)
-// Parameters:
-// class APawn*                            NewOwner                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bAutoActivate                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMAItem::K2_GivenTo(class APawn* NewOwner, bool bAutoActivate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAItem", "K2_GivenTo");
-
-	Params::MAItem_K2_GivenTo Parms{};
-
-	Parms.NewOwner = NewOwner;
-	Parms.bAutoActivate = bAutoActivate;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Midair2.MAItem.K2_Removed
-// (BlueprintAuthorityOnly, Event, Public, BlueprintEvent)
-
-void AMAItem::K2_Removed()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAItem", "K2_Removed");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Midair2.MAHandGrenade.GetMaxAmmoCountFor
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class AMACharacter*                     Character                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 AMAHandGrenade::GetMaxAmmoCountFor(class AMACharacter* Character)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAHandGrenade", "GetMaxAmmoCountFor");
-
-	Params::MAHandGrenade_GetMaxAmmoCountFor Parms{};
-
-	Parms.Character = Character;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.LeaveCustomGameAsyncTask.LeaveCustomGame
+// Function Midair2.CreateGroupMatchmakingTicketAsyncTask.CreateGroupMatchmakingTicket
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class APlayerController*                InPlayerController                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FMAHathoraServer&          ServerToLeave                                          (Parm, NativeAccessSpecifierPublic)
-// class ULeaveCustomGameAsyncTask*        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    GameMode                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    TicketAttributes                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCreateGroupMatchmakingTicketAsyncTask*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class ULeaveCustomGameAsyncTask* ULeaveCustomGameAsyncTask::LeaveCustomGame(class APlayerController* InPlayerController, const struct FMAHathoraServer& ServerToLeave)
+class UCreateGroupMatchmakingTicketAsyncTask* UCreateGroupMatchmakingTicketAsyncTask::CreateGroupMatchmakingTicket(const class FString& GameMode, const class FString& TicketAttributes)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("LeaveCustomGameAsyncTask", "LeaveCustomGame");
+		Func = StaticClass()->GetFunction("CreateGroupMatchmakingTicketAsyncTask", "CreateGroupMatchmakingTicket");
 
-	Params::LeaveCustomGameAsyncTask_LeaveCustomGame Parms{};
+	Params::CreateGroupMatchmakingTicketAsyncTask_CreateGroupMatchmakingTicket Parms{};
 
-	Parms.InPlayerController = InPlayerController;
-	Parms.ServerToLeave = std::move(ServerToLeave);
+	Parms.GameMode = std::move(GameMode);
+	Parms.TicketAttributes = std::move(TicketAttributes);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -8219,3865 +11639,6 @@ class ULeaveCustomGameAsyncTask* ULeaveCustomGameAsyncTask::LeaveCustomGame(clas
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAWeapon.AddAmmo
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   Amount                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 AMAWeapon::AddAmmo(int32 Amount)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAWeapon", "AddAmmo");
-
-	Params::MAWeapon_AddAmmo Parms{};
-
-	Parms.Amount = Amount;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAWeapon.ClientAddAmmo
-// (Net, NetReliable, Native, Event, Public, NetClient)
-// Parameters:
-// int32                                   Amount                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMAWeapon::ClientAddAmmo(int32 Amount)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAWeapon", "ClientAddAmmo");
-
-	Params::MAWeapon_ClientAddAmmo Parms{};
-
-	Parms.Amount = Amount;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAWeapon.K2_SetFireInterval
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   From                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   To                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMAWeapon::K2_SetFireInterval(float From, float To)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAWeapon", "K2_SetFireInterval");
-
-	Params::MAWeapon_K2_SetFireInterval Parms{};
-
-	Parms.From = From;
-	Parms.To = To;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAWeapon.ResetAmmo
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   NewTotal                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMAWeapon::ResetAmmo(int32 NewTotal)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAWeapon", "ResetAmmo");
-
-	Params::MAWeapon_ResetAmmo Parms{};
-
-	Parms.NewTotal = NewTotal;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAWeapon.BP_GetReloadCompletion
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float AMAWeapon::BP_GetReloadCompletion() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAWeapon", "BP_GetReloadCompletion");
-
-	Params::MAWeapon_BP_GetReloadCompletion Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAWeapon.GetAdjustedFireLocationAndRotation
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FVector*                         FireLocation                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator*                        FireRotation                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-void AMAWeapon::GetAdjustedFireLocationAndRotation(struct FVector* FireLocation, struct FRotator* FireRotation) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAWeapon", "GetAdjustedFireLocationAndRotation");
-
-	Params::MAWeapon_GetAdjustedFireLocationAndRotation Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (FireLocation != nullptr)
-		*FireLocation = std::move(Parms.FireLocation);
-
-	if (FireRotation != nullptr)
-		*FireRotation = std::move(Parms.FireRotation);
-}
-
-
-// Function Midair2.MAWeapon.K2_GetFireInterval
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float*                                  From                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float*                                  To                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMAWeapon::K2_GetFireInterval(float* From, float* To) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAWeapon", "K2_GetFireInterval");
-
-	Params::MAWeapon_K2_GetFireInterval Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (From != nullptr)
-		*From = Parms.From;
-
-	if (To != nullptr)
-		*To = Parms.To;
-}
-
-
-// Function Midair2.MAInGameMenuScreen.CloseMenu
-// (Final, Native, Public, BlueprintCallable)
-
-void UMAInGameMenuScreen::CloseMenu()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAInGameMenuScreen", "CloseMenu");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.BPFunctionLibrary.GetStringFromOSClipboard
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class FString*                          FromClipboard                                          (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBPFunctionLibrary::GetStringFromOSClipboard(class FString* FromClipboard)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("BPFunctionLibrary", "GetStringFromOSClipboard");
-
-	Params::BPFunctionLibrary_GetStringFromOSClipboard Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (FromClipboard != nullptr)
-		*FromClipboard = std::move(Parms.FromClipboard);
-}
-
-
-// Function Midair2.BPFunctionLibrary.SaveStringToOSClipboard
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    ToClipboard                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBPFunctionLibrary::SaveStringToOSClipboard(const class FString& ToClipboard)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("BPFunctionLibrary", "SaveStringToOSClipboard");
-
-	Params::BPFunctionLibrary_SaveStringToOSClipboard Parms{};
-
-	Parms.ToClipboard = std::move(ToClipboard);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.CHAGameMode.GetActiveZone
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class ACHAShootingGalleryZone*          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class ACHAShootingGalleryZone* ACHAGameMode::GetActiveZone()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CHAGameMode", "GetActiveZone");
-
-	Params::CHAGameMode_GetActiveZone Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.CHAGameMode.HandleZoneEnded
-// (Final, Native, Private)
-// Parameters:
-// class ACHAShootingGalleryZone*          Zone                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACHAGameMode::HandleZoneEnded(class ACHAShootingGalleryZone* Zone)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CHAGameMode", "HandleZoneEnded");
-
-	Params::CHAGameMode_HandleZoneEnded Parms{};
-
-	Parms.Zone = Zone;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.CHAGameMode.HandleZoneStarted
-// (Final, Native, Private)
-// Parameters:
-// class ACHAShootingGalleryZone*          Zone                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACHAGameMode::HandleZoneStarted(class ACHAShootingGalleryZone* Zone)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CHAGameMode", "HandleZoneStarted");
-
-	Params::CHAGameMode_HandleZoneStarted Parms{};
-
-	Parms.Zone = Zone;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.CHAGameMode.StopAllOtherZones
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class ACHAShootingGalleryZone*          ExceptThis                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACHAGameMode::StopAllOtherZones(class ACHAShootingGalleryZone* ExceptThis)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CHAGameMode", "StopAllOtherZones");
-
-	Params::CHAGameMode_StopAllOtherZones Parms{};
-
-	Parms.ExceptThis = ExceptThis;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.CHARoundConsole.GetZone
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class ACHAShootingGalleryZone*          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class ACHAShootingGalleryZone* ACHARoundConsole::GetZone()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CHARoundConsole", "GetZone");
-
-	Params::CHARoundConsole_GetZone Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.CHARoundConsole.HandleZoneEnded
-// (Final, Native, Protected)
-// Parameters:
-// class ACHAShootingGalleryZone*          EndedZone                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACHARoundConsole::HandleZoneEnded(class ACHAShootingGalleryZone* EndedZone)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CHARoundConsole", "HandleZoneEnded");
-
-	Params::CHARoundConsole_HandleZoneEnded Parms{};
-
-	Parms.EndedZone = EndedZone;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.CHARoundConsole.HandleZoneStarted
-// (Final, Native, Protected)
-// Parameters:
-// class ACHAShootingGalleryZone*          StartedZone                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACHARoundConsole::HandleZoneStarted(class ACHAShootingGalleryZone* StartedZone)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CHARoundConsole", "HandleZoneStarted");
-
-	Params::CHARoundConsole_HandleZoneStarted Parms{};
-
-	Parms.StartedZone = StartedZone;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.CHARoundConsole.OnBeginOverlap
-// (Final, Native, Protected, HasOutParams)
-// Parameters:
-// class UPrimitiveComponent*              Comp                                                   (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           Other                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   BodyIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void ACHARoundConsole::OnBeginOverlap(class UPrimitiveComponent* Comp, class AActor* Other, class UPrimitiveComponent* OtherComp, int32 BodyIndex, bool bFromSweep, const struct FHitResult& Hit)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CHARoundConsole", "OnBeginOverlap");
-
-	Params::CHARoundConsole_OnBeginOverlap Parms{};
-
-	Parms.Comp = Comp;
-	Parms.Other = Other;
-	Parms.OtherComp = OtherComp;
-	Parms.BodyIndex = BodyIndex;
-	Parms.bFromSweep = bFromSweep;
-	Parms.Hit = std::move(Hit);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.CHARoundConsole.OnEndOverlap
-// (Final, Native, Protected)
-// Parameters:
-// class UPrimitiveComponent*              Comp                                                   (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           Other                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   BodyIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACHARoundConsole::OnEndOverlap(class UPrimitiveComponent* Comp, class AActor* Other, class UPrimitiveComponent* OtherComp, int32 BodyIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CHARoundConsole", "OnEndOverlap");
-
-	Params::CHARoundConsole_OnEndOverlap Parms{};
-
-	Parms.Comp = Comp;
-	Parms.Other = Other;
-	Parms.OtherComp = OtherComp;
-	Parms.BodyIndex = BodyIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.CHARoundConsole.ServerActivate
-// (Net, NetReliable, Native, Event, Protected, NetServer)
-// Parameters:
-// class ACharacter*                       InstigatingCharacter                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACHARoundConsole::ServerActivate(class ACharacter* InstigatingCharacter)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CHARoundConsole", "ServerActivate");
-
-	Params::CHARoundConsole_ServerActivate Parms{};
-
-	Parms.InstigatingCharacter = InstigatingCharacter;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.CHARoundConsole.TryActivate
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class ACharacter*                       InstigatingCharacter                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACHARoundConsole::TryActivate(class ACharacter* InstigatingCharacter)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CHARoundConsole", "TryActivate");
-
-	Params::CHARoundConsole_TryActivate Parms{};
-
-	Parms.InstigatingCharacter = InstigatingCharacter;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACarriedObject.AssistCapsuleTouched
-// (Native, Protected, HasOutParams)
-// Parameters:
-// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void AMACarriedObject::AssistCapsuleTouched(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACarriedObject", "AssistCapsuleTouched");
-
-	Params::MACarriedObject_AssistCapsuleTouched Parms{};
-
-	Parms.OverlappedComponent = OverlappedComponent;
-	Parms.OtherActor = OtherActor;
-	Parms.OtherComp = OtherComp;
-	Parms.OtherBodyIndex = OtherBodyIndex;
-	Parms.bFromSweep = bFromSweep;
-	Parms.SweepResult = std::move(SweepResult);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACarriedObject.AutoReturnTimer
-// (Native, Public)
-
-void AMACarriedObject::AutoReturnTimer()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACarriedObject", "AutoReturnTimer");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACarriedObject.CapsuleTouched
-// (Native, Protected, HasOutParams)
-// Parameters:
-// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void AMACarriedObject::CapsuleTouched(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACarriedObject", "CapsuleTouched");
-
-	Params::MACarriedObject_CapsuleTouched Parms{};
-
-	Parms.OverlappedComponent = OverlappedComponent;
-	Parms.OtherActor = OtherActor;
-	Parms.OtherComp = OtherComp;
-	Parms.OtherBodyIndex = OtherBodyIndex;
-	Parms.bFromSweep = bFromSweep;
-	Parms.SweepResult = std::move(SweepResult);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACarriedObject.CatchUp
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMACarriedObject::CatchUp(float DeltaTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACarriedObject", "CatchUp");
-
-	Params::MACarriedObject_CatchUp Parms{};
-
-	Parms.DeltaTime = DeltaTime;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACarriedObject.ChangeState
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// class FName                             NewState                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMACarriedObject::ChangeState(class FName NewState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACarriedObject", "ChangeState");
-
-	Params::MACarriedObject_ChangeState Parms{};
-
-	Parms.NewState = NewState;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACarriedObject.GetRemainingOOBReturnTime
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float AMACarriedObject::GetRemainingOOBReturnTime()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACarriedObject", "GetRemainingOOBReturnTime");
-
-	Params::MACarriedObject_GetRemainingOOBReturnTime Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MACarriedObject.HolderChanged
-// (Native, Protected)
-
-void AMACarriedObject::HolderChanged()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACarriedObject", "HolderChanged");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACarriedObject.OnRep_MAReplicatedMovement
-// (Native, Public)
-
-void AMACarriedObject::OnRep_MAReplicatedMovement()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACarriedObject", "OnRep_MAReplicatedMovement");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACarriedObject.OnRep_RemainingAutoReturnSyncTime
-// (Native, Public)
-
-void AMACarriedObject::OnRep_RemainingAutoReturnSyncTime()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACarriedObject", "OnRep_RemainingAutoReturnSyncTime");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACarriedObject.OnRep_RemainingAutoReturnTime
-// (Native, Public)
-
-void AMACarriedObject::OnRep_RemainingAutoReturnTime()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACarriedObject", "OnRep_RemainingAutoReturnTime");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACarriedObject.StateChanged
-// (Native, Public)
-
-void AMACarriedObject::StateChanged()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACarriedObject", "StateChanged");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACarriedObject.TeamChanged
-// (Native, Event, Protected, BlueprintEvent)
-
-void AMACarriedObject::TeamChanged()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACarriedObject", "TeamChanged");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACarriedObject.UpdateCameraDist
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   CameraDistPct                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMACarriedObject::UpdateCameraDist(float CameraDistPct)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACarriedObject", "UpdateCameraDist");
-
-	Params::MACarriedObject_UpdateCameraDist Parms{};
-
-	Parms.CameraDistPct = CameraDistPct;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACarriedObject.IsFlagOutOfBounds
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMACarriedObject::IsFlagOutOfBounds() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACarriedObject", "IsFlagOutOfBounds");
-
-	Params::MACarriedObject_IsFlagOutOfBounds Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MACarriedObject.IsHome
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMACarriedObject::IsHome() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACarriedObject", "IsHome");
-
-	Params::MACarriedObject_IsHome Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MACarriedObject.IsInState
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FName                             InStateName                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMACarriedObject::IsInState(class FName InStateName) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACarriedObject", "IsInState");
-
-	Params::MACarriedObject_IsInState Parms{};
-
-	Parms.InStateName = InStateName;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MALeagueFlag.AutoDropTimer
-// (Native, Public)
-
-void AMALeagueFlag::AutoDropTimer()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MALeagueFlag", "AutoDropTimer");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MALeagueFlag.OnBounce
-// (Native, Public, HasOutParams, HasDefaults)
-// Parameters:
-// const struct FHitResult&                ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// const struct FVector&                   ImpactVelocity                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMALeagueFlag::OnBounce(const struct FHitResult& ImpactResult, const struct FVector& ImpactVelocity)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MALeagueFlag", "OnBounce");
-
-	Params::MALeagueFlag_OnBounce Parms{};
-
-	Parms.ImpactResult = std::move(ImpactResult);
-	Parms.ImpactVelocity = std::move(ImpactVelocity);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MALeagueFlag.OnRep_RemainingAutoDropSyncTime
-// (Native, Public)
-
-void AMALeagueFlag::OnRep_RemainingAutoDropSyncTime()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MALeagueFlag", "OnRep_RemainingAutoDropSyncTime");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MALeagueFlag.OnRep_RemainingAutoDropTime
-// (Native, Public)
-
-void AMALeagueFlag::OnRep_RemainingAutoDropTime()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MALeagueFlag", "OnRep_RemainingAutoDropTime");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MALeagueFlag.OnStop
-// (Native, Public, HasOutParams)
-// Parameters:
-// const struct FHitResult&                ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void AMALeagueFlag::OnStop(const struct FHitResult& ImpactResult)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MALeagueFlag", "OnStop");
-
-	Params::MALeagueFlag_OnStop Parms{};
-
-	Parms.ImpactResult = std::move(ImpactResult);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.CHAShootingGalleryZone.EndRound
-// (Final, Native, Public, BlueprintCallable)
-
-void ACHAShootingGalleryZone::EndRound()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CHAShootingGalleryZone", "EndRound");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.CHAShootingGalleryZone.OnBeginOverlap
-// (Final, Native, Protected)
-// Parameters:
-// class AActor*                           Overlapped                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           Other                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACHAShootingGalleryZone::OnBeginOverlap(class AActor* Overlapped, class AActor* Other)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CHAShootingGalleryZone", "OnBeginOverlap");
-
-	Params::CHAShootingGalleryZone_OnBeginOverlap Parms{};
-
-	Parms.Overlapped = Overlapped;
-	Parms.Other = Other;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.CHAShootingGalleryZone.OnDroneDestroyed
-// (Final, Native, Public)
-// Parameters:
-// class AActor*                           DestroyedActor                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACHAShootingGalleryZone::OnDroneDestroyed(class AActor* DestroyedActor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CHAShootingGalleryZone", "OnDroneDestroyed");
-
-	Params::CHAShootingGalleryZone_OnDroneDestroyed Parms{};
-
-	Parms.DestroyedActor = DestroyedActor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.CHAShootingGalleryZone.StartRound
-// (Final, Native, Public, BlueprintCallable)
-
-void ACHAShootingGalleryZone::StartRound()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CHAShootingGalleryZone", "StartRound");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.CHAShootingGalleryZone.GetTimeRemaining
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float ACHAShootingGalleryZone::GetTimeRemaining() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CHAShootingGalleryZone", "GetTimeRemaining");
-
-	Params::CHAShootingGalleryZone_GetTimeRemaining Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAFrontendStateComponent.OnExperienceLoaded
-// (Final, Native, Public, BlueprintCallable)
-
-void UMAFrontendStateComponent::OnExperienceLoaded()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAFrontendStateComponent", "OnExperienceLoaded");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAFrontendStateComponent.OnUserInitialized
-// (Final, Native, Private)
-// Parameters:
-// bool                                    bSuccess                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FText&                      Error                                                  (Parm, NativeAccessSpecifierPublic)
-
-void UMAFrontendStateComponent::OnUserInitialized(bool bSuccess, const class FText& Error)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAFrontendStateComponent", "OnUserInitialized");
-
-	Params::MAFrontendStateComponent_OnUserInitialized Parms{};
-
-	Parms.bSuccess = bSuccess;
-	Parms.Error = std::move(Error);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MAFrontendStateComponent.SetGameInstance
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UMAGameInstance*                  GI                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMAFrontendStateComponent::SetGameInstance(class UMAGameInstance* GI)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAFrontendStateComponent", "SetGameInstance");
-
-	Params::MAFrontendStateComponent_SetGameInstance Parms{};
-
-	Parms.GI = GI;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.ChatWidget.AddMessage
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class APlayerState*                     Speaker                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    Message                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bTeamOnly_0                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bPartyOnly_0                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UChatWidget::AddMessage(class APlayerState* Speaker, const class FString& Message, bool bTeamOnly_0, bool bPartyOnly_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ChatWidget", "AddMessage");
-
-	Params::ChatWidget_AddMessage Parms{};
-
-	Parms.Speaker = Speaker;
-	Parms.Message = std::move(Message);
-	Parms.bTeamOnly_0 = bTeamOnly_0;
-	Parms.bPartyOnly_0 = bPartyOnly_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.ChatWidget.ClaimOwnership
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UWidget*                          NewOwner                                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UChatWidget::ClaimOwnership(class UWidget* NewOwner)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ChatWidget", "ClaimOwnership");
-
-	Params::ChatWidget_ClaimOwnership Parms{};
-
-	Parms.NewOwner = NewOwner;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.ChatWidget.CommitMessage
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    Message                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UChatWidget::CommitMessage(const class FString& Message)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ChatWidget", "CommitMessage");
-
-	Params::ChatWidget_CommitMessage Parms{};
-
-	Parms.Message = std::move(Message);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.ChatWidget.FocusPrompt
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bTeamOnly_0                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bPartyOnly_0                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UChatWidget::FocusPrompt(bool bTeamOnly_0, bool bPartyOnly_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ChatWidget", "FocusPrompt");
-
-	Params::ChatWidget_FocusPrompt Parms{};
-
-	Parms.bTeamOnly_0 = bTeamOnly_0;
-	Parms.bPartyOnly_0 = bPartyOnly_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.ChatWidget.OnFocusPrompt
-// (Event, Protected, BlueprintEvent)
-
-void UChatWidget::OnFocusPrompt()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ChatWidget", "OnFocusPrompt");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Midair2.ChatWidget.OnPartyChatMessageReceived
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const struct FPartyMessage&             PartyMessage                                           (Parm, NativeAccessSpecifierPublic)
-
-void UChatWidget::OnPartyChatMessageReceived(const struct FPartyMessage& PartyMessage)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ChatWidget", "OnPartyChatMessageReceived");
-
-	Params::ChatWidget_OnPartyChatMessageReceived Parms{};
-
-	Parms.PartyMessage = std::move(PartyMessage);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.ChatWidget.ReceiveMessage
-// (Event, Protected, HasOutParams, HasDefaults, BlueprintEvent)
-// Parameters:
-// const class FString&                    PlayerName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FLinearColor&              NameColor                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    Message                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FLinearColor&              MessageColor                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UChatWidget::ReceiveMessage(const class FString& PlayerName, const struct FLinearColor& NameColor, const class FString& Message, const struct FLinearColor& MessageColor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ChatWidget", "ReceiveMessage");
-
-	Params::ChatWidget_ReceiveMessage Parms{};
-
-	Parms.PlayerName = std::move(PlayerName);
-	Parms.NameColor = std::move(NameColor);
-	Parms.Message = std::move(Message);
-	Parms.MessageColor = std::move(MessageColor);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Midair2.ChatWidget.ReleaseFocus
-// (Final, Native, Public, BlueprintCallable)
-
-void UChatWidget::ReleaseFocus()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ChatWidget", "ReleaseFocus");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.ChatWidget.ReleaseOwnership
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UWidget*                          CurrentOwner                                           (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UChatWidget::ReleaseOwnership(class UWidget* CurrentOwner)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ChatWidget", "ReleaseOwnership");
-
-	Params::ChatWidget_ReleaseOwnership Parms{};
-
-	Parms.CurrentOwner = CurrentOwner;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.CloseCustomGameAsyncTask.CloseCustomGame
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class APlayerController*                InPlayerController                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FMAHathoraServer&          ServerToClose                                          (Parm, NativeAccessSpecifierPublic)
-// class UCloseCustomGameAsyncTask*        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCloseCustomGameAsyncTask* UCloseCustomGameAsyncTask::CloseCustomGame(class APlayerController* InPlayerController, const struct FMAHathoraServer& ServerToClose)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CloseCustomGameAsyncTask", "CloseCustomGame");
-
-	Params::CloseCustomGameAsyncTask_CloseCustomGame Parms{};
-
-	Parms.InPlayerController = InPlayerController;
-	Parms.ServerToClose = std::move(ServerToClose);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.EdgegapLatencySubsystem.StartLatencyTestForMultipleServers
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const TArray<struct FIPPortInfo>&       ServerList                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TDelegate<void(const TArray<struct FIPPortInfo>& SortedServers)>OnLatencyTestCompleted                                 (Parm, ZeroConstructor, NoDestructor, NativeAccessSpecifierPublic)
-
-void UEdgegapLatencySubsystem::StartLatencyTestForMultipleServers(const TArray<struct FIPPortInfo>& ServerList, TDelegate<void(const TArray<struct FIPPortInfo>& SortedServers)> OnLatencyTestCompleted)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EdgegapLatencySubsystem", "StartLatencyTestForMultipleServers");
-
-	Params::EdgegapLatencySubsystem_StartLatencyTestForMultipleServers Parms{};
-
-	Parms.ServerList = std::move(ServerList);
-	Parms.OnLatencyTestCompleted = OnLatencyTestCompleted;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.AddItem
-// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
-// Parameters:
-// class AMAItem*                          ItemToAdd                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bAutoActivate                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMACharacter::AddItem(class AMAItem* ItemToAdd, bool bAutoActivate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "AddItem");
-
-	Params::MACharacter_AddItem Parms{};
-
-	Parms.ItemToAdd = ItemToAdd;
-	Parms.bAutoActivate = bAutoActivate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MACharacter.BP_OnRep_PlayerState
-// (Event, Public, BlueprintEvent)
-
-void AMACharacter::BP_OnRep_PlayerState()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "BP_OnRep_PlayerState");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Midair2.MACharacter.BP_UpdateForClientPerspective
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bFirstPerson                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMACharacter::BP_UpdateForClientPerspective(bool bFirstPerson)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "BP_UpdateForClientPerspective");
-
-	Params::MACharacter_BP_UpdateForClientPerspective Parms{};
-
-	Parms.bFirstPerson = bFirstPerson;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Midair2.MACharacter.CameraShakeUpdated
-// (Native, Public)
-
-void AMACharacter::CameraShakeUpdated()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "CameraShakeUpdated");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.CheckMeleeHit
-// (Final, Native, Private)
-
-void AMACharacter::CheckMeleeHit()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "CheckMeleeHit");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.CleanupDeadBody
-// (Native, Protected)
-
-void AMACharacter::CleanupDeadBody()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "CleanupDeadBody");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.ClearTriggers
-// (Final, Native, Public, BlueprintCallable)
-
-void AMACharacter::ClearTriggers()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "ClearTriggers");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.ClientLoadoutRefreshed
-// (Net, NetReliable, Native, Event, Public, NetClient)
-
-void AMACharacter::ClientLoadoutRefreshed()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "ClientLoadoutRefreshed");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.CycleZoom
-// (Native, Public, BlueprintCallable)
-
-void AMACharacter::CycleZoom()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "CycleZoom");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.DiscardInventory
-// (Native, Public, BlueprintCallable)
-
-void AMACharacter::DiscardInventory()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "DiscardInventory");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.EndInvulnerability
-// (Native, Public, BlueprintCallable)
-
-void AMACharacter::EndInvulnerability()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "EndInvulnerability");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.Evacuate
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMACharacter::Evacuate()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "Evacuate");
-
-	Params::MACharacter_Evacuate Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MACharacter.GetHeightAboveSurface
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float AMACharacter::GetHeightAboveSurface()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "GetHeightAboveSurface");
-
-	Params::MACharacter_GetHeightAboveSurface Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MACharacter.HandleMeleeInput
-// (Final, Native, Public)
-
-void AMACharacter::HandleMeleeInput()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "HandleMeleeInput");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.HideEmoteWheel
-// (Event, Public, BlueprintEvent)
-
-void AMACharacter::HideEmoteWheel()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "HideEmoteWheel");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Midair2.MACharacter.Jet
-// (Native, Public, BlueprintCallable)
-
-void AMACharacter::Jet()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "Jet");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.K2_CreateItem
-// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class AMAItem>              NewItemClass                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bAutoActivate                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AMAItem*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class AMAItem* AMACharacter::K2_CreateItem(TSubclassOf<class AMAItem> NewItemClass, bool bAutoActivate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "K2_CreateItem");
-
-	Params::MACharacter_K2_CreateItem Parms{};
-
-	Parms.NewItemClass = NewItemClass;
-	Parms.bAutoActivate = bAutoActivate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MACharacter.MulticastPlayMeleeAnimation
-// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
-
-void AMACharacter::MulticastPlayMeleeAnimation()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "MulticastPlayMeleeAnimation");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.OnDied
-// (Native, Protected)
-
-void AMACharacter::OnDied()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "OnDied");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.OnEnergyDamage
-// (Native, Public)
-
-void AMACharacter::OnEnergyDamage()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "OnEnergyDamage");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.OnFootStep
-// (Native, Public, BlueprintCallable)
-
-void AMACharacter::OnFootStep()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "OnFootStep");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.OnHealthChanged
-// (Native, Public)
-// Parameters:
-// bool                                    bFromDamage                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMACharacter::OnHealthChanged(bool bFromDamage)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "OnHealthChanged");
-
-	Params::MACharacter_OnHealthChanged Parms{};
-
-	Parms.bFromDamage = bFromDamage;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.OnMeleeEnd
-// (Final, Native, Public)
-
-void AMACharacter::OnMeleeEnd()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "OnMeleeEnd");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.OnMeleeMontageEnded
-// (Final, Native, Private)
-// Parameters:
-// class UAnimMontage*                     Montage                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bInterrupted                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMACharacter::OnMeleeMontageEnded(class UAnimMontage* Montage, bool bInterrupted)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "OnMeleeMontageEnded");
-
-	Params::MACharacter_OnMeleeMontageEnded Parms{};
-
-	Parms.Montage = Montage;
-	Parms.bInterrupted = bInterrupted;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.OnMeleeStart
-// (Final, Native, Public)
-
-void AMACharacter::OnMeleeStart()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "OnMeleeStart");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.OnRep_IsSkating
-// (Native, Public)
-
-void AMACharacter::OnRep_IsSkating()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "OnRep_IsSkating");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.OnRep_LastAttachedSurfaceImpact
-// (Final, Native, Public)
-
-void AMACharacter::OnRep_LastAttachedSurfaceImpact()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "OnRep_LastAttachedSurfaceImpact");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.OnRep_LMS
-// (Final, Native, Public)
-
-void AMACharacter::OnRep_LMS()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "OnRep_LMS");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.OnRep_MAReplicatedMovement
-// (Native, Public)
-
-void AMACharacter::OnRep_MAReplicatedMovement()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "OnRep_MAReplicatedMovement");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.OnRep_PressedJet
-// (Native, Public)
-
-void AMACharacter::OnRep_PressedJet()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "OnRep_PressedJet");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.OnRep_ReplicatedAccelInfo
-// (Native, Public)
-
-void AMACharacter::OnRep_ReplicatedAccelInfo()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "OnRep_ReplicatedAccelInfo");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.OnTookDamage
-// (Native, Public, HasOutParams)
-// Parameters:
-// const struct FTakeHitInfo&              TakeHitInfo                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void AMACharacter::OnTookDamage(const struct FTakeHitInfo& TakeHitInfo)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "OnTookDamage");
-
-	Params::MACharacter_OnTookDamage Parms{};
-
-	Parms.TakeHitInfo = std::move(TakeHitInfo);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.PlayCameraShake
-// (Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UCameraShakeBase>     Shake                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Scale                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bPlayInUserSpace                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FRotator&                  UserSpaceRot                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-void AMACharacter::PlayCameraShake(TSubclassOf<class UCameraShakeBase> Shake, float Scale, bool bPlayInUserSpace, const struct FRotator& UserSpaceRot)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "PlayCameraShake");
-
-	Params::MACharacter_PlayCameraShake Parms{};
-
-	Parms.Shake = Shake;
-	Parms.Scale = Scale;
-	Parms.bPlayInUserSpace = bPlayInUserSpace;
-	Parms.UserSpaceRot = std::move(UserSpaceRot);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.PlayEmote
-// (Final, Native, Public, BlueprintCallable)
-
-void AMACharacter::PlayEmote()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "PlayEmote");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.PlayMeleeAnimationLocal
-// (Final, Native, Public)
-
-void AMACharacter::PlayMeleeAnimationLocal()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "PlayMeleeAnimationLocal");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.ProcessMeleeHit
-// (Final, Native, Private, HasOutParams, HasDefaults)
-// Parameters:
-// const struct FVector&                   Start                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   End                                                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMACharacter::ProcessMeleeHit(const struct FVector& Start, const struct FVector& End)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "ProcessMeleeHit");
-
-	Params::MACharacter_ProcessMeleeHit Parms{};
-
-	Parms.Start = std::move(Start);
-	Parms.End = std::move(End);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.RemoveItem
-// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
-// Parameters:
-// class AMAItem*                          ItemToRemove                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMACharacter::RemoveItem(class AMAItem* ItemToRemove)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "RemoveItem");
-
-	Params::MACharacter_RemoveItem Parms{};
-
-	Parms.ItemToRemove = ItemToRemove;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.Server_UseSpray
-// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
-
-void AMACharacter::Server_UseSpray()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "Server_UseSpray");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.ServerHandleMelee
-// (Final, Net, NetReliable, Native, Event, Private, NetServer)
-
-void AMACharacter::ServerHandleMelee()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "ServerHandleMelee");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.ServerProcessMeleeHit
-// (Final, Net, NetReliable, Native, Event, Private, NetServer, HasDefaults)
-// Parameters:
-// const struct FVector&                   Start                                                  (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   End                                                    (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMACharacter::ServerProcessMeleeHit(const struct FVector& Start, const struct FVector& End)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "ServerProcessMeleeHit");
-
-	Params::MACharacter_ServerProcessMeleeHit Parms{};
-
-	Parms.Start = std::move(Start);
-	Parms.End = std::move(End);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.ServerRequestBeacon
-// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
-
-void AMACharacter::ServerRequestBeacon()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "ServerRequestBeacon");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.ServerSetCameraMode
-// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
-// Parameters:
-// ECameraMode                             InCameraMode                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMACharacter::ServerSetCameraMode(ECameraMode InCameraMode)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "ServerSetCameraMode");
-
-	Params::MACharacter_ServerSetCameraMode Parms{};
-
-	Parms.InCameraMode = InCameraMode;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.ServerSpawnBeacon
-// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
-
-void AMACharacter::ServerSpawnBeacon()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "ServerSpawnBeacon");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.ServerTossCarriedObject
-// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
-// Parameters:
-// float                                   Strength                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMACharacter::ServerTossCarriedObject(float Strength)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "ServerTossCarriedObject");
-
-	Params::MACharacter_ServerTossCarriedObject Parms{};
-
-	Parms.Strength = Strength;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.ServerTrySpecificPickup
-// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
-// Parameters:
-// class AMAPickup*                        Pickup                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMACharacter::ServerTrySpecificPickup(class AMAPickup* Pickup)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "ServerTrySpecificPickup");
-
-	Params::MACharacter_ServerTrySpecificPickup Parms{};
-
-	Parms.Pickup = Pickup;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.SetCameraMode
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// ECameraMode                             InCameraMode                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMACharacter::SetCameraMode(ECameraMode InCameraMode)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "SetCameraMode");
-
-	Params::MACharacter_SetCameraMode Parms{};
-
-	Parms.InCameraMode = InCameraMode;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.SetLoadout
-// (Native, Public, HasOutParams)
-// Parameters:
-// const struct FMALoadout&                loadout                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// bool                                    bSetMaxes                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bIsBaseInventory                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMACharacter::SetLoadout(const struct FMALoadout& loadout, bool bSetMaxes, bool bIsBaseInventory)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "SetLoadout");
-
-	Params::MACharacter_SetLoadout Parms{};
-
-	Parms.loadout = std::move(loadout);
-	Parms.bSetMaxes = bSetMaxes;
-	Parms.bIsBaseInventory = bIsBaseInventory;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.SetOverrideMaterials
-// (BlueprintCosmetic, Native, Public, BlueprintCallable)
-// Parameters:
-// class UMaterialInterface*               NewMaterial3P                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UMaterialInterface*               NewMaterial1P                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMACharacter::SetOverrideMaterials(class UMaterialInterface* NewMaterial3P, class UMaterialInterface* NewMaterial1P)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "SetOverrideMaterials");
-
-	Params::MACharacter_SetOverrideMaterials Parms{};
-
-	Parms.NewMaterial3P = NewMaterial3P;
-	Parms.NewMaterial1P = NewMaterial1P;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.SetTrigger
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// uint8                                   FireMode                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bSet                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMACharacter::SetTrigger(uint8 FireMode, bool bSet)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "SetTrigger");
-
-	Params::MACharacter_SetTrigger Parms{};
-
-	Parms.FireMode = FireMode;
-	Parms.bSet = bSet;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.SetWarpedIn
-// (Final, Native, Public, BlueprintCallable)
-
-void AMACharacter::SetWarpedIn()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "SetWarpedIn");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.ShowEmoteWheel
-// (Event, Public, BlueprintEvent)
-
-void AMACharacter::ShowEmoteWheel()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "ShowEmoteWheel");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Midair2.MACharacter.Skate
-// (Native, Public, BlueprintCallable)
-
-void AMACharacter::Skate()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "Skate");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.StartInvulnerability
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   Length                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMACharacter::StartInvulnerability(float Length)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "StartInvulnerability");
-
-	Params::MACharacter_StartInvulnerability Parms{};
-
-	Parms.Length = Length;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.StartPickup
-// (Native, Public, BlueprintCallable)
-
-void AMACharacter::StartPickup()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "StartPickup");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.StopJetting
-// (Native, Public, BlueprintCallable)
-
-void AMACharacter::StopJetting()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "StopJetting");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.StopMeleeHitWindow
-// (Final, Native, Public)
-
-void AMACharacter::StopMeleeHitWindow()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "StopMeleeHitWindow");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.StopPickup
-// (Native, Public, BlueprintCallable)
-
-void AMACharacter::StopPickup()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "StopPickup");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.StopSkating
-// (Native, Public, BlueprintCallable)
-
-void AMACharacter::StopSkating()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "StopSkating");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.SwapTriggerBuffers
-// (Final, Native, Public, BlueprintCallable)
-
-void AMACharacter::SwapTriggerBuffers()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "SwapTriggerBuffers");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.SwitchToNextWeapon
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   Direction                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMACharacter::SwitchToNextWeapon(int32 Direction)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "SwitchToNextWeapon");
-
-	Params::MACharacter_SwitchToNextWeapon Parms{};
-
-	Parms.Direction = Direction;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MACharacter.SwitchToWeapon
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// class AMAWeapon*                        NewWeapon                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMACharacter::SwitchToWeapon(class AMAWeapon* NewWeapon)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "SwitchToWeapon");
-
-	Params::MACharacter_SwitchToWeapon Parms{};
-
-	Parms.NewWeapon = NewWeapon;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MACharacter.SwitchToWeaponAtIndex
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMACharacter::SwitchToWeaponAtIndex(int32 Index_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "SwitchToWeaponAtIndex");
-
-	Params::MACharacter_SwitchToWeaponAtIndex Parms{};
-
-	Parms.Index_0 = Index_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MACharacter.ToggleTrigger
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// uint8                                   FireMode                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMACharacter::ToggleTrigger(uint8 FireMode)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "ToggleTrigger");
-
-	Params::MACharacter_ToggleTrigger Parms{};
-
-	Parms.FireMode = FireMode;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.ToggleZoom
-// (Native, Public, BlueprintCallable)
-
-void AMACharacter::ToggleZoom()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "ToggleZoom");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.TossCarriedObject
-// (Exec, Native, Public)
-// Parameters:
-// float                                   Strength                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMACharacter::TossCarriedObject(float Strength)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "TossCarriedObject");
-
-	Params::MACharacter_TossCarriedObject Parms{};
-
-	Parms.Strength = Strength;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.TossFlag
-// (Final, Exec, Native, Public)
-// Parameters:
-// float                                   StrengthOverride                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMACharacter::TossFlag(float StrengthOverride)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "TossFlag");
-
-	Params::MACharacter_TossFlag Parms{};
-
-	Parms.StrengthOverride = StrengthOverride;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.UpdateCameraDist
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   CameraDistPct                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMACharacter::UpdateCameraDist(float CameraDistPct)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "UpdateCameraDist");
-
-	Params::MACharacter_UpdateCameraDist Parms{};
-
-	Parms.CameraDistPct = CameraDistPct;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.UpdateForClientPerspective
-// (Final, Native, Public, BlueprintCallable)
-
-void AMACharacter::UpdateForClientPerspective()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "UpdateForClientPerspective");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.UpdateVisualsToMatchCosmeticCustomizations
-// (Final, Native, Public)
-
-void AMACharacter::UpdateVisualsToMatchCosmeticCustomizations()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "UpdateVisualsToMatchCosmeticCustomizations");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.UpdateWeaponAttachment
-// (Native, Public)
-
-void AMACharacter::UpdateWeaponAttachment()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "UpdateWeaponAttachment");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.UsePack
-// (Final, Exec, Native, Public)
-
-void AMACharacter::UsePack()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "UsePack");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.Vocalize
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// class USoundBase*                       Sound                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMACharacter::Vocalize(class USoundBase* Sound)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "Vocalize");
-
-	Params::MACharacter_Vocalize Parms{};
-
-	Parms.Sound = Sound;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.WeaponActivityUpdated
-// (Native, Public)
-
-void AMACharacter::WeaponActivityUpdated()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "WeaponActivityUpdated");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.ZoomUpdated
-// (Native, Public)
-
-void AMACharacter::ZoomUpdated()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "ZoomUpdated");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACharacter.BP_GetViewRotation
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FRotator                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FRotator AMACharacter::BP_GetViewRotation() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "BP_GetViewRotation");
-
-	Params::MACharacter_BP_GetViewRotation Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MACharacter.GetAccelerationYaw
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float AMACharacter::GetAccelerationYaw() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "GetAccelerationYaw");
-
-	Params::MACharacter_GetAccelerationYaw Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MACharacter.GetEnergy
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float AMACharacter::GetEnergy() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "GetEnergy");
-
-	Params::MACharacter_GetEnergy Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MACharacter.GetEnergyPct
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float AMACharacter::GetEnergyPct() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "GetEnergyPct");
-
-	Params::MACharacter_GetEnergyPct Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MACharacter.GetHealth
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float AMACharacter::GetHealth() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "GetHealth");
-
-	Params::MACharacter_GetHealth Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MACharacter.GetHealthPct
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float AMACharacter::GetHealthPct() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "GetHealthPct");
-
-	Params::MACharacter_GetHealthPct Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MACharacter.GetIsWarpingIn
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMACharacter::GetIsWarpingIn() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "GetIsWarpingIn");
-
-	Params::MACharacter_GetIsWarpingIn Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MACharacter.GetIsWarpingOut
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMACharacter::GetIsWarpingOut() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "GetIsWarpingOut");
-
-	Params::MACharacter_GetIsWarpingOut Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MACharacter.GetRemoteViewPitch
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float AMACharacter::GetRemoteViewPitch() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "GetRemoteViewPitch");
-
-	Params::MACharacter_GetRemoteViewPitch Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MACharacter.GetTossStrength
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float AMACharacter::GetTossStrength() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "GetTossStrength");
-
-	Params::MACharacter_GetTossStrength Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MACharacter.IsAccelerating
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMACharacter::IsAccelerating() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "IsAccelerating");
-
-	Params::MACharacter_IsAccelerating Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MACharacter.IsDead
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMACharacter::IsDead() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "IsDead");
-
-	Params::MACharacter_IsDead Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MACharacter.IsInInventory
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const class AMAItem*                    ItemToFind                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMACharacter::IsInInventory(const class AMAItem* ItemToFind) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "IsInInventory");
-
-	Params::MACharacter_IsInInventory Parms{};
-
-	Parms.ItemToFind = ItemToFind;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MACharacter.IsTriggerSet
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// uint8                                   FireMode                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMACharacter::IsTriggerSet(uint8 FireMode) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "IsTriggerSet");
-
-	Params::MACharacter_IsTriggerSet Parms{};
-
-	Parms.FireMode = FireMode;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MACharacter.K2_FindItem
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TSubclassOf<class AMAItem>              Type                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bExactClass                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AMAItem*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class AMAItem* AMACharacter::K2_FindItem(TSubclassOf<class AMAItem> Type, bool bExactClass) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "K2_FindItem");
-
-	Params::MACharacter_K2_FindItem Parms{};
-
-	Parms.Type = Type;
-	Parms.bExactClass = bExactClass;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MACharacter.K2_FindPack
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TSubclassOf<class AMAItem>              Type                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bExactClass                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AMAItem*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class AMAItem* AMACharacter::K2_FindPack(TSubclassOf<class AMAItem> Type, bool bExactClass) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACharacter", "K2_FindPack");
-
-	Params::MACharacter_K2_FindPack Parms{};
-
-	Parms.Type = Type;
-	Parms.bExactClass = bExactClass;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.ComplexStatusBar.SetFillColorAndOpacity
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FLinearColor&              InColor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UComplexStatusBar::SetFillColorAndOpacity(const struct FLinearColor& InColor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ComplexStatusBar", "SetFillColorAndOpacity");
-
-	Params::ComplexStatusBar_SetFillColorAndOpacity Parms{};
-
-	Parms.InColor = std::move(InColor);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.ComplexStatusBar.SetFillColorAndOpacity2
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FLinearColor&              InColor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UComplexStatusBar::SetFillColorAndOpacity2(const struct FLinearColor& InColor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ComplexStatusBar", "SetFillColorAndOpacity2");
-
-	Params::ComplexStatusBar_SetFillColorAndOpacity2 Parms{};
-
-	Parms.InColor = std::move(InColor);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.ComplexStatusBar.SetFillMarkerColorAndOpacity
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FLinearColor&              InColor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UComplexStatusBar::SetFillMarkerColorAndOpacity(const struct FLinearColor& InColor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ComplexStatusBar", "SetFillMarkerColorAndOpacity");
-
-	Params::ComplexStatusBar_SetFillMarkerColorAndOpacity Parms{};
-
-	Parms.InColor = std::move(InColor);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.ComplexStatusBar.SetIsMarquee
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    InbIsMarquee                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UComplexStatusBar::SetIsMarquee(bool InbIsMarquee)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ComplexStatusBar", "SetIsMarquee");
-
-	Params::ComplexStatusBar_SetIsMarquee Parms{};
-
-	Parms.InbIsMarquee = InbIsMarquee;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.ComplexStatusBar.SetValue1
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   InPercent                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UComplexStatusBar::SetValue1(float InPercent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ComplexStatusBar", "SetValue1");
-
-	Params::ComplexStatusBar_SetValue1 Parms{};
-
-	Parms.InPercent = InPercent;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.ComplexStatusBar.SetValue2
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   InPercent                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UComplexStatusBar::SetValue2(float InPercent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ComplexStatusBar", "SetValue2");
-
-	Params::ComplexStatusBar_SetValue2 Parms{};
-
-	Parms.InPercent = InPercent;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.OOBVolume.BP_PlayOOBEffects
-// (Event, Protected, HasDefaults, BlueprintEvent)
-// Parameters:
-// class AActor*                           ActorExiting                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   Location                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   WallNormal                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AOOBVolume::BP_PlayOOBEffects(class AActor* ActorExiting, const struct FVector& Location, const struct FVector& WallNormal)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("OOBVolume", "BP_PlayOOBEffects");
-
-	Params::OOBVolume_BP_PlayOOBEffects Parms{};
-
-	Parms.ActorExiting = ActorExiting;
-	Parms.Location = std::move(Location);
-	Parms.WallNormal = std::move(WallNormal);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Midair2.OOBVolume.CheckForCarriedObject
-// (Native, Protected, HasOutParams)
-// Parameters:
-// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   BodyIndexbool                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void AOOBVolume::CheckForCarriedObject(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 BodyIndexbool, bool bFromSweep, const struct FHitResult& SweepResult)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("OOBVolume", "CheckForCarriedObject");
-
-	Params::OOBVolume_CheckForCarriedObject Parms{};
-
-	Parms.OverlappedComponent = OverlappedComponent;
-	Parms.OtherActor = OtherActor;
-	Parms.OtherComp = OtherComp;
-	Parms.BodyIndexbool = BodyIndexbool;
-	Parms.bFromSweep = bFromSweep;
-	Parms.SweepResult = std::move(SweepResult);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.OOBVolume.CheckForCarriedObjectLeaving
-// (Native, Protected)
-// Parameters:
-// class UPrimitiveComponent*              OverlappedComp                                         (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AOOBVolume::CheckForCarriedObjectLeaving(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("OOBVolume", "CheckForCarriedObjectLeaving");
-
-	Params::OOBVolume_CheckForCarriedObjectLeaving Parms{};
-
-	Parms.OverlappedComp = OverlappedComp;
-	Parms.OtherActor = OtherActor;
-	Parms.OtherComp = OtherComp;
-	Parms.OtherBodyIndex = OtherBodyIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.OOBVolume.PlayOOBEffects
-// (Final, Native, Protected, HasDefaults)
-// Parameters:
-// class AActor*                           ActorExiting                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   Location                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   Direction                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AOOBVolume::PlayOOBEffects(class AActor* ActorExiting, const struct FVector& Location, const struct FVector& Direction)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("OOBVolume", "PlayOOBEffects");
-
-	Params::OOBVolume_PlayOOBEffects Parms{};
-
-	Parms.ActorExiting = ActorExiting;
-	Parms.Location = std::move(Location);
-	Parms.Direction = std::move(Direction);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.GetCustomGameInfoAsyncTask.GetCustomGameInfo
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    RoomId                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UGetCustomGameInfoAsyncTask*      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UGetCustomGameInfoAsyncTask* UGetCustomGameInfoAsyncTask::GetCustomGameInfo(const class FString& RoomId)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GetCustomGameInfoAsyncTask", "GetCustomGameInfo");
-
-	Params::GetCustomGameInfoAsyncTask_GetCustomGameInfo Parms{};
-
-	Parms.RoomId = std::move(RoomId);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MACoreControllerInterface.PlayRecordedCameraInput
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                                   Pitch                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Yaw                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMACoreControllerInterface::PlayRecordedCameraInput(float Pitch, float Yaw)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MACoreControllerInterface", "PlayRecordedCameraInput");
-
-	Params::MACoreControllerInterface_PlayRecordedCameraInput Parms{};
-
-	Parms.Pitch = Pitch;
-	Parms.Yaw = Yaw;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACoreControllerInterface.PlayRecordedInput
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EPlayerRecordableInputTypes             InputType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMACoreControllerInterface::PlayRecordedInput(EPlayerRecordableInputTypes InputType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MACoreControllerInterface", "PlayRecordedInput");
-
-	Params::MACoreControllerInterface_PlayRecordedInput Parms{};
-
-	Parms.InputType = InputType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -12139,62 +11700,6 @@ class UCreatePracticeDrillAsyncTask* UCreatePracticeDrillAsyncTask::CreatePracti
 }
 
 
-// Function Midair2.CreatePracticeTrailAsyncTask.CreatePracticeTrail
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FMARouteTrail&             NewTrail                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// class UCreatePracticeTrailAsyncTask*    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCreatePracticeTrailAsyncTask* UCreatePracticeTrailAsyncTask::CreatePracticeTrail(const struct FMARouteTrail& NewTrail)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CreatePracticeTrailAsyncTask", "CreatePracticeTrail");
-
-	Params::CreatePracticeTrailAsyncTask_CreatePracticeTrail Parms{};
-
-	Parms.NewTrail = std::move(NewTrail);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.GetMapPracticeDataAsyncTask.GetMapPracticeData
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    mapName                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UGetMapPracticeDataAsyncTask*     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UGetMapPracticeDataAsyncTask* UGetMapPracticeDataAsyncTask::GetMapPracticeData(const class FString& mapName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GetMapPracticeDataAsyncTask", "GetMapPracticeData");
-
-	Params::GetMapPracticeDataAsyncTask_GetMapPracticeData Parms{};
-
-	Parms.mapName = std::move(mapName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function Midair2.CreatePracticeTutorialAsyncTask.CreatePracticeTutorial
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -12211,250 +11716,6 @@ class UCreatePracticeTutorialAsyncTask* UCreatePracticeTutorialAsyncTask::Create
 	Params::CreatePracticeTutorialAsyncTask_CreatePracticeTutorial Parms{};
 
 	Parms.NewTutorial = std::move(NewTutorial);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MALeagueFlagGoal.GetCurrentEffectsound
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class USoundBase*                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class USoundBase* AMALeagueFlagGoal::GetCurrentEffectsound()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MALeagueFlagGoal", "GetCurrentEffectsound");
-
-	Params::MALeagueFlagGoal_GetCurrentEffectsound Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MALeagueFlagGoal.PlayGoalEffect
-// (Final, Native, Public, BlueprintCallable)
-
-void AMALeagueFlagGoal::PlayGoalEffect()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MALeagueFlagGoal", "PlayGoalEffect");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MALeagueFlagGoal.PlayGoalEffectAudio
-// (Final, Native, Public, BlueprintCallable)
-
-void AMALeagueFlagGoal::PlayGoalEffectAudio()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MALeagueFlagGoal", "PlayGoalEffectAudio");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MALeagueFlagGoal.SetGoalEffectConfigurationFromInfo
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class AGoalEffectParticleConfiguration>GoalEffectInfo                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMALeagueFlagGoal::SetGoalEffectConfigurationFromInfo(TSubclassOf<class AGoalEffectParticleConfiguration> GoalEffectInfo)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MALeagueFlagGoal", "SetGoalEffectConfigurationFromInfo");
-
-	Params::MALeagueFlagGoal_SetGoalEffectConfigurationFromInfo Parms{};
-
-	Parms.GoalEffectInfo = GoalEffectInfo;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MALeagueFlagGoal.StopGoalEffect
-// (Final, Native, Public, BlueprintCallable)
-
-void AMALeagueFlagGoal::StopGoalEffect()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MALeagueFlagGoal", "StopGoalEffect");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MALeagueFlagGoal.UpdateGoalEffectToMatchCosmeticCustomizations
-// (Final, Native, Public, BlueprintCallable)
-
-void AMALeagueFlagGoal::UpdateGoalEffectToMatchCosmeticCustomizations()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MALeagueFlagGoal", "UpdateGoalEffectToMatchCosmeticCustomizations");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.GetDemoAsyncTask.PlayDemo
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    demoId                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    PlayDemo_0                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UGetDemoAsyncTask*                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UGetDemoAsyncTask* UGetDemoAsyncTask::PlayDemo(const class FString& demoId, bool PlayDemo_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GetDemoAsyncTask", "PlayDemo");
-
-	Params::GetDemoAsyncTask_PlayDemo Parms{};
-
-	Parms.demoId = std::move(demoId);
-	Parms.PlayDemo_0 = PlayDemo_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.DeleteMatchmakingTicketAsyncTask.DeleteMatchmakingTicket
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    TicketId                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UDeleteMatchmakingTicketAsyncTask*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UDeleteMatchmakingTicketAsyncTask* UDeleteMatchmakingTicketAsyncTask::DeleteMatchmakingTicket(const class FString& TicketId)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("DeleteMatchmakingTicketAsyncTask", "DeleteMatchmakingTicket");
-
-	Params::DeleteMatchmakingTicketAsyncTask_DeleteMatchmakingTicket Parms{};
-
-	Parms.TicketId = std::move(TicketId);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.GetMatchHistoryAsyncTask.GetMatchHistory
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class APlayerController*                PlayerController                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             GameMode                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const int32                             Count                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UGetMatchHistoryAsyncTask*        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UGetMatchHistoryAsyncTask* UGetMatchHistoryAsyncTask::GetMatchHistory(class APlayerController* PlayerController, class FName GameMode, const int32 Count)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GetMatchHistoryAsyncTask", "GetMatchHistory");
-
-	Params::GetMatchHistoryAsyncTask_GetMatchHistory Parms{};
-
-	Parms.PlayerController = PlayerController;
-	Parms.GameMode = GameMode;
-	Parms.Count = Count;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.DeletePracticeDrillAsyncTask.DeletePracticeDrill
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FMADrill&                  DrillToDelete                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// class UDeletePracticeDrillAsyncTask*    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UDeletePracticeDrillAsyncTask* UDeletePracticeDrillAsyncTask::DeletePracticeDrill(const struct FMADrill& DrillToDelete)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("DeletePracticeDrillAsyncTask", "DeletePracticeDrill");
-
-	Params::DeletePracticeDrillAsyncTask_DeletePracticeDrill Parms{};
-
-	Parms.DrillToDelete = std::move(DrillToDelete);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -12495,79 +11756,30 @@ class UDeletePracticeTrailAsyncTask* UDeletePracticeTrailAsyncTask::DeletePracti
 }
 
 
-// Function Midair2.DeletePracticeTutorialAsyncTask.DeletePracticeTutorial
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Function Midair2.EdgegapLatencySubsystem.StartLatencyTestForMultipleServers
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// const struct FMATutorial&               TutorialToDelete                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// class UDeletePracticeTutorialAsyncTask* ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<struct FIPPortInfo>&       ServerList                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TDelegate<void(const TArray<struct FIPPortInfo>& SortedServers)>OnLatencyTestCompleted                                 (Parm, ZeroConstructor, NoDestructor, NativeAccessSpecifierPublic)
 
-class UDeletePracticeTutorialAsyncTask* UDeletePracticeTutorialAsyncTask::DeletePracticeTutorial(const struct FMATutorial& TutorialToDelete)
+void UEdgegapLatencySubsystem::StartLatencyTestForMultipleServers(const TArray<struct FIPPortInfo>& ServerList, TDelegate<void(const TArray<struct FIPPortInfo>& SortedServers)> OnLatencyTestCompleted)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("DeletePracticeTutorialAsyncTask", "DeletePracticeTutorial");
+		Func = Class->GetFunction("EdgegapLatencySubsystem", "StartLatencyTestForMultipleServers");
 
-	Params::DeletePracticeTutorialAsyncTask_DeletePracticeTutorial Parms{};
+	Params::EdgegapLatencySubsystem_StartLatencyTestForMultipleServers Parms{};
 
-	Parms.TutorialToDelete = std::move(TutorialToDelete);
+	Parms.ServerList = std::move(ServerList);
+	Parms.OnLatencyTestCompleted = OnLatencyTestCompleted;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.DirectHotkey.HandleDirectNamedHotkey
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// const class FString&                    Hotkey                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool IDirectHotkey::HandleDirectNamedHotkey(const class FString& Hotkey)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("DirectHotkey", "HandleDirectNamedHotkey");
-
-	Params::DirectHotkey_HandleDirectNamedHotkey Parms{};
-
-	Parms.Hotkey = std::move(Hotkey);
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.DirectHotkey.HandleNamedHotkeyWithInt
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// const class FString&                    Hotkey                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Int                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool IDirectHotkey::HandleNamedHotkeyWithInt(const class FString& Hotkey, int32 Int)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("DirectHotkey", "HandleNamedHotkeyWithInt");
-
-	Params::DirectHotkey_HandleNamedHotkeyWithInt Parms{};
-
-	Parms.Hotkey = std::move(Hotkey);
-	Parms.Int = Int;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
 }
 
 
@@ -12637,6 +11849,59 @@ void AEnergyConduit::OnComponentOverlapEnd(class UPrimitiveComponent* Overlapped
 }
 
 
+// Function Midair2.GetCurrentUserStatsAsyncTask.GetCurrentUserStats
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UGetCurrentUserStatsAsyncTask*    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UGetCurrentUserStatsAsyncTask* UGetCurrentUserStatsAsyncTask::GetCurrentUserStats()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GetCurrentUserStatsAsyncTask", "GetCurrentUserStats");
+
+	Params::GetCurrentUserStatsAsyncTask_GetCurrentUserStats Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.GetCustomGameInfoAsyncTask.GetCustomGameInfo
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    RoomId                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UGetCustomGameInfoAsyncTask*      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UGetCustomGameInfoAsyncTask* UGetCustomGameInfoAsyncTask::GetCustomGameInfo(const class FString& RoomId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GetCustomGameInfoAsyncTask", "GetCustomGameInfo");
+
+	Params::GetCustomGameInfoAsyncTask_GetCustomGameInfo Parms{};
+
+	Parms.RoomId = std::move(RoomId);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function Midair2.GetLeaderBoardEntriesAsyncTask.GetLeaderBoardEntries
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -12673,34 +11938,6 @@ class UGetLeaderBoardEntriesAsyncTask* UGetLeaderBoardEntriesAsyncTask::GetLeade
 }
 
 
-// Function Midair2.GetMapPracticeDrillsAsyncTask.GetPracticeDrills
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    mapName                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UGetMapPracticeDrillsAsyncTask*   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UGetMapPracticeDrillsAsyncTask* UGetMapPracticeDrillsAsyncTask::GetPracticeDrills(const class FString& mapName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GetMapPracticeDrillsAsyncTask", "GetPracticeDrills");
-
-	Params::GetMapPracticeDrillsAsyncTask_GetPracticeDrills Parms{};
-
-	Parms.mapName = std::move(mapName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function Midair2.GetMapPracticeTrailsAsyncTask.GetPracticeTrails
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -12717,6 +11954,91 @@ class UGetMapPracticeTrailsAsyncTask* UGetMapPracticeTrailsAsyncTask::GetPractic
 	Params::GetMapPracticeTrailsAsyncTask_GetPracticeTrails Parms{};
 
 	Parms.mapName = std::move(mapName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.GetMapPracticeTutorialsAsyncTask.GetPracticeTutorials
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    mapName                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UGetMapPracticeTutorialsAsyncTask*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UGetMapPracticeTutorialsAsyncTask* UGetMapPracticeTutorialsAsyncTask::GetPracticeTutorials(const class FString& mapName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GetMapPracticeTutorialsAsyncTask", "GetPracticeTutorials");
+
+	Params::GetMapPracticeTutorialsAsyncTask_GetPracticeTutorials Parms{};
+
+	Parms.mapName = std::move(mapName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.GetMatchHistoryAsyncTask.GetMatchHistory
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class APlayerController*                PlayerController                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             GameMode                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             Count                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UGetMatchHistoryAsyncTask*        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UGetMatchHistoryAsyncTask* UGetMatchHistoryAsyncTask::GetMatchHistory(class APlayerController* PlayerController, class FName GameMode, const int32 Count)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GetMatchHistoryAsyncTask", "GetMatchHistory");
+
+	Params::GetMatchHistoryAsyncTask_GetMatchHistory Parms{};
+
+	Parms.PlayerController = PlayerController;
+	Parms.GameMode = GameMode;
+	Parms.Count = Count;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.GetMatchmakingQueueInfoAsyncTask.GetMatchmakingQueueInfo
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UGetMatchmakingQueueInfoAsyncTask*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UGetMatchmakingQueueInfoAsyncTask* UGetMatchmakingQueueInfoAsyncTask::GetMatchmakingQueueInfo()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GetMatchmakingQueueInfoAsyncTask", "GetMatchmakingQueueInfo");
+
+	Params::GetMatchmakingQueueInfoAsyncTask_GetMatchmakingQueueInfo Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -12782,39 +12104,14 @@ class UGetMyCustomGameInfoAsyncTask* UGetMyCustomGameInfoAsyncTask::GetMyCustomG
 }
 
 
-// Function Midair2.GetPlayerPracticeDataAsyncTask.GetPlayerPracticeData
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UGetPlayerPracticeDataAsyncTask*  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UGetPlayerPracticeDataAsyncTask* UGetPlayerPracticeDataAsyncTask::GetPlayerPracticeData()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GetPlayerPracticeDataAsyncTask", "GetPlayerPracticeData");
-
-	Params::GetPlayerPracticeDataAsyncTask_GetPlayerPracticeData Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function Midair2.GetUserAvatarAsyncTask.GetUserAvatar
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// const struct FUniqueNetIdRepl&          steamID                                                (ConstParm, Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FUniqueNetIdRepl&          SteamId                                                (ConstParm, Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    DisplayName                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UGetUserAvatarAsyncTask*          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UGetUserAvatarAsyncTask* UGetUserAvatarAsyncTask::GetUserAvatar(const struct FUniqueNetIdRepl& steamID, const class FString& DisplayName)
+class UGetUserAvatarAsyncTask* UGetUserAvatarAsyncTask::GetUserAvatar(const struct FUniqueNetIdRepl& SteamId, const class FString& DisplayName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -12823,7 +12120,7 @@ class UGetUserAvatarAsyncTask* UGetUserAvatarAsyncTask::GetUserAvatar(const stru
 
 	Params::GetUserAvatarAsyncTask_GetUserAvatar Parms{};
 
-	Parms.steamID = std::move(steamID);
+	Parms.SteamId = std::move(SteamId);
 	Parms.DisplayName = std::move(DisplayName);
 
 	auto Flgs = Func->FunctionFlags;
@@ -12840,11 +12137,11 @@ class UGetUserAvatarAsyncTask* UGetUserAvatarAsyncTask::GetUserAvatar(const stru
 // Function Midair2.GetUserStatsAsyncTask.GetUserStats
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// const class FString&                    steamID                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SteamId                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    GameMode                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UGetUserStatsAsyncTask*           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UGetUserStatsAsyncTask* UGetUserStatsAsyncTask::GetUserStats(const class FString& steamID, const class FString& GameMode)
+class UGetUserStatsAsyncTask* UGetUserStatsAsyncTask::GetUserStats(const class FString& SteamId, const class FString& GameMode)
 {
 	static class UFunction* Func = nullptr;
 
@@ -12853,7 +12150,7 @@ class UGetUserStatsAsyncTask* UGetUserStatsAsyncTask::GetUserStats(const class F
 
 	Params::GetUserStatsAsyncTask_GetUserStats Parms{};
 
-	Parms.steamID = std::move(steamID);
+	Parms.SteamId = std::move(SteamId);
 	Parms.GameMode = std::move(GameMode);
 
 	auto Flgs = Func->FunctionFlags;
@@ -12885,6 +12182,36 @@ class UJoinCustomGameAsyncTask* UJoinCustomGameAsyncTask::JoinCustomGame(class A
 
 	Parms.InPlayerController = InPlayerController;
 	Parms.ServerToJoin = std::move(ServerToJoin);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.LeaveCustomGameAsyncTask.LeaveCustomGame
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class APlayerController*                InPlayerController                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FMAHathoraServer&          ServerToLeave                                          (Parm, NativeAccessSpecifierPublic)
+// class ULeaveCustomGameAsyncTask*        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class ULeaveCustomGameAsyncTask* ULeaveCustomGameAsyncTask::LeaveCustomGame(class APlayerController* InPlayerController, const struct FMAHathoraServer& ServerToLeave)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LeaveCustomGameAsyncTask", "LeaveCustomGame");
+
+	Params::LeaveCustomGameAsyncTask_LeaveCustomGame Parms{};
+
+	Parms.InPlayerController = InPlayerController;
+	Parms.ServerToLeave = std::move(ServerToLeave);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -15218,21 +14545,21 @@ void UMABotAIComponent::WaitForBetterShot()
 }
 
 
-// Function Midair2.MAButtonBase.SetButtonText
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Function Midair2.MACharacterMovement.MAClientAdjustEnergy
+// (Net, Native, Event, Public, NetClient)
 // Parameters:
-// const class FText&                      InText                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// float                                   Energy                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMAButtonBase::SetButtonText(const class FText& InText)
+void UMACharacterMovement::MAClientAdjustEnergy(float Energy)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MAButtonBase", "SetButtonText");
+		Func = Class->GetFunction("MACharacterMovement", "MAClientAdjustEnergy");
 
-	Params::MAButtonBase_SetButtonText Parms{};
+	Params::MACharacterMovement_MAClientAdjustEnergy Parms{};
 
-	Parms.InText = std::move(InText);
+	Parms.Energy = Energy;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -15243,103 +14570,21 @@ void UMAButtonBase::SetButtonText(const class FText& InText)
 }
 
 
-// Function Midair2.MAButtonBase.UpdateButtonStyle
-// (Event, Protected, BlueprintEvent)
-
-void UMAButtonBase::UpdateButtonStyle()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAButtonBase", "UpdateButtonStyle");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Midair2.MAButtonBase.UpdateButtonText
-// (Event, Protected, HasOutParams, BlueprintEvent)
+// Function Midair2.MACharacterMovement.MAServerMove
+// (Net, Native, Event, Public, NetServer, NetValidate)
 // Parameters:
-// const class FText&                      InText                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FMAPackedMoveBundle&       Bundle                                                 (ConstParm, Parm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-void UMAButtonBase::UpdateButtonText(const class FText& InText)
+void UMACharacterMovement::MAServerMove(const struct FMAPackedMoveBundle& Bundle)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MAButtonBase", "UpdateButtonText");
+		Func = Class->GetFunction("MACharacterMovement", "MAServerMove");
 
-	Params::MAButtonBase_UpdateButtonText Parms{};
+	Params::MACharacterMovement_MAServerMove Parms{};
 
-	Parms.InText = std::move(InText);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Midair2.MACarriedObjectBase.ObjectChanged
-// (Native, Protected)
-
-void AMACarriedObjectBase::ObjectChanged()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACarriedObjectBase", "ObjectChanged");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACarriedObjectBase.ObjectStateChanged
-// (Native, Public)
-
-void AMACarriedObjectBase::ObjectStateChanged()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACarriedObjectBase", "ObjectStateChanged");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MACarriedObjectOOBVolume.OnCarriedObjectOOB
-// (Native, Protected, HasOutParams, BlueprintCallable)
-// Parameters:
-// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   BodyIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void AMACarriedObjectOOBVolume::OnCarriedObjectOOB(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 BodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MACarriedObjectOOBVolume", "OnCarriedObjectOOB");
-
-	Params::MACarriedObjectOOBVolume_OnCarriedObjectOOB Parms{};
-
-	Parms.OverlappedComponent = OverlappedComponent;
-	Parms.OtherActor = OtherActor;
-	Parms.OtherComp = OtherComp;
-	Parms.BodyIndex = BodyIndex;
-	Parms.bFromSweep = bFromSweep;
-	Parms.SweepResult = std::move(SweepResult);
+	Parms.Bundle = std::move(Bundle);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -15347,6 +14592,31 @@ void AMACarriedObjectOOBVolume::OnCarriedObjectOOB(class UPrimitiveComponent* Ov
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACharacterMovement.IsSkatingOnGround
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UMACharacterMovement::IsSkatingOnGround() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MACharacterMovement", "IsSkatingOnGround");
+
+	Params::MACharacterMovement_IsSkatingOnGround Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -15377,6 +14647,58 @@ struct FEventReply UMAConfirmationScreen::HandleTapToCloseZoneMouseButtonDown(co
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MACoreControllerInterface.PlayRecordedCameraInput
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   Pitch                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Yaw                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMACoreControllerInterface::PlayRecordedCameraInput(float Pitch, float Yaw)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MACoreControllerInterface", "PlayRecordedCameraInput");
+
+	Params::MACoreControllerInterface_PlayRecordedCameraInput Parms{};
+
+	Parms.Pitch = Pitch;
+	Parms.Yaw = Yaw;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MACoreControllerInterface.PlayRecordedInput
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EPlayerRecordableInputTypes             InputType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMACoreControllerInterface::PlayRecordedInput(EPlayerRecordableInputTypes InputType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MACoreControllerInterface", "PlayRecordedInput");
+
+	Params::MACoreControllerInterface_PlayRecordedInput Parms{};
+
+	Parms.InputType = InputType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -15473,6 +14795,748 @@ void AMACTFFlag::OnStop(const struct FHitResult& ImpactResult)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAGameState.BeginMapVote
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bIsEndOfMatch                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMAGameState::BeginMapVote(bool bIsEndOfMatch)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameState", "BeginMapVote");
+
+	Params::MAGameState_BeginMapVote Parms{};
+
+	Parms.bIsEndOfMatch = bIsEndOfMatch;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAGameState.GenerateOptionsForMapVote
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EMapVoteStage                           Stage                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   voteOptions                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMAGameState::GenerateOptionsForMapVote(EMapVoteStage Stage, int32 voteOptions)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameState", "GenerateOptionsForMapVote");
+
+	Params::MAGameState_GenerateOptionsForMapVote Parms{};
+
+	Parms.Stage = Stage;
+	Parms.voteOptions = voteOptions;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAGameState.GetTeamStateById
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// ETeamId                                 TeamId                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AMATeamState*                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AMATeamState* AMAGameState::GetTeamStateById(ETeamId TeamId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameState", "GetTeamStateById");
+
+	Params::MAGameState_GetTeamStateById Parms{};
+
+	Parms.TeamId = TeamId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAGameState.GetVotesForOption
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// EMapVoteOption                          Option                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint8                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+uint8 AMAGameState::GetVotesForOption(EMapVoteOption Option)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameState", "GetVotesForOption");
+
+	Params::MAGameState_GetVotesForOption Parms{};
+
+	Parms.Option = Option;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAGameState.OnRep_DeathMessageData
+// (Final, Native, Public)
+
+void AMAGameState::OnRep_DeathMessageData()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameState", "OnRep_DeathMessageData");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAGameState.OnRep_MapVoteOptions
+// (Final, Native, Public)
+
+void AMAGameState::OnRep_MapVoteOptions()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameState", "OnRep_MapVoteOptions");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAGameState.OnRep_MatchHistory
+// (Final, Native, Public)
+
+void AMAGameState::OnRep_MatchHistory()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameState", "OnRep_MatchHistory");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAGameState.OnRep_PunishVote
+// (Final, Native, Public)
+
+void AMAGameState::OnRep_PunishVote()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameState", "OnRep_PunishVote");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAGameState.OnRep_TeamArray
+// (Final, Native, Public)
+
+void AMAGameState::OnRep_TeamArray()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameState", "OnRep_TeamArray");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAGameState.OnRep_VotingStage
+// (Final, Native, Public)
+
+void AMAGameState::OnRep_VotingStage()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameState", "OnRep_VotingStage");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAGameState.OnRep_WinningOption
+// (Final, Native, Public)
+
+void AMAGameState::OnRep_WinningOption()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameState", "OnRep_WinningOption");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAGameState.PredictWinner
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// EMapVoteOption                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EMapVoteOption AMAGameState::PredictWinner()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameState", "PredictWinner");
+
+	Params::MAGameState_PredictWinner Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAGameState.ServerRequestEnablePracticeMode
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+// Parameters:
+// bool                                    bIsEnabled                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMAGameState::ServerRequestEnablePracticeMode(bool bIsEnabled)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameState", "ServerRequestEnablePracticeMode");
+
+	Params::MAGameState_ServerRequestEnablePracticeMode Parms{};
+
+	Parms.bIsEnabled = bIsEnabled;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAGameState.ServerRequestEnableTournamentMode
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+// Parameters:
+// bool                                    bIsEnabled                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMAGameState::ServerRequestEnableTournamentMode(bool bIsEnabled)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameState", "ServerRequestEnableTournamentMode");
+
+	Params::MAGameState_ServerRequestEnableTournamentMode Parms{};
+
+	Parms.bIsEnabled = bIsEnabled;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAGameState.SortPlayersByScore
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TArray<class APlayerState*>&            players                                                (Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void AMAGameState::SortPlayersByScore(TArray<class APlayerState*>& players)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameState", "SortPlayersByScore");
+
+	Params::MAGameState_SortPlayersByScore Parms{};
+
+	Parms.players = std::move(players);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	players = std::move(Parms.players);
+}
+
+
+// Function Midair2.MAGameState.GetCurrentHolder
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+class FText AMAGameState::GetCurrentHolder() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameState", "GetCurrentHolder");
+
+	Params::MAGameState_GetCurrentHolder Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAGameState.GetCurrentJackpot
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+class FText AMAGameState::GetCurrentJackpot() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameState", "GetCurrentJackpot");
+
+	Params::MAGameState_GetCurrentJackpot Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAGameState.GetFlagHolderTimer
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+class FText AMAGameState::GetFlagHolderTimer() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameState", "GetFlagHolderTimer");
+
+	Params::MAGameState_GetFlagHolderTimer Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAGameState.GetGameTime
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString AMAGameState::GetGameTime() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameState", "GetGameTime");
+
+	Params::MAGameState_GetGameTime Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAGameState.GetLivePlayersOnTeam
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// uint8                                   TeamId                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint8                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+uint8 AMAGameState::GetLivePlayersOnTeam(uint8 TeamId) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameState", "GetLivePlayersOnTeam");
+
+	Params::MAGameState_GetLivePlayersOnTeam Parms{};
+
+	Parms.TeamId = TeamId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAGameState.GetLivesLeftOnTeam
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// uint8                                   TeamId                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float AMAGameState::GetLivesLeftOnTeam(uint8 TeamId) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameState", "GetLivesLeftOnTeam");
+
+	Params::MAGameState_GetLivesLeftOnTeam Parms{};
+
+	Parms.TeamId = TeamId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAGameState.GetMAGameModeClass
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class AMAGameMode>          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+TSubclassOf<class AMAGameMode> AMAGameState::GetMAGameModeClass() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameState", "GetMAGameModeClass");
+
+	Params::MAGameState_GetMAGameModeClass Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAGameState.GetMatchStatus
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+class FText AMAGameState::GetMatchStatus() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameState", "GetMatchStatus");
+
+	Params::MAGameState_GetMatchStatus Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAGameState.GetRankedPlayerArray
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TArray<class AMAPlayerState*>*          RankedArray                                            (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void AMAGameState::GetRankedPlayerArray(TArray<class AMAPlayerState*>* RankedArray) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameState", "GetRankedPlayerArray");
+
+	Params::MAGameState_GetRankedPlayerArray Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (RankedArray != nullptr)
+		*RankedArray = std::move(Parms.RankedArray);
+}
+
+
+// Function Midair2.MAGameState.GetRankedPlayerArrays
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TArray<class AMAPlayerState*>*          Team1RankedArray                                       (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<class AMAPlayerState*>*          Team2RankedArray                                       (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void AMAGameState::GetRankedPlayerArrays(TArray<class AMAPlayerState*>* Team1RankedArray, TArray<class AMAPlayerState*>* Team2RankedArray) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameState", "GetRankedPlayerArrays");
+
+	Params::MAGameState_GetRankedPlayerArrays Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (Team1RankedArray != nullptr)
+		*Team1RankedArray = std::move(Parms.Team1RankedArray);
+
+	if (Team2RankedArray != nullptr)
+		*Team2RankedArray = std::move(Parms.Team2RankedArray);
+}
+
+
+// Function Midair2.MAGameState.GetSpectatorsArray
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TArray<class AMAPlayerState*>*          SpectatorsArray                                        (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void AMAGameState::GetSpectatorsArray(TArray<class AMAPlayerState*>* SpectatorsArray) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameState", "GetSpectatorsArray");
+
+	Params::MAGameState_GetSpectatorsArray Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (SpectatorsArray != nullptr)
+		*SpectatorsArray = std::move(Parms.SpectatorsArray);
+}
+
+
+// Function Midair2.MAGameState.GetTeamMaxObjectCount
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class UObject>              ObjectType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint8                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+uint8 AMAGameState::GetTeamMaxObjectCount(TSubclassOf<class UObject> ObjectType) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameState", "GetTeamMaxObjectCount");
+
+	Params::MAGameState_GetTeamMaxObjectCount Parms{};
+
+	Parms.ObjectType = ObjectType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAGameState.GetTotalPlayersOnTeam
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// uint8                                   TeamId                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint8                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+uint8 AMAGameState::GetTotalPlayersOnTeam(uint8 TeamId) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameState", "GetTotalPlayersOnTeam");
+
+	Params::MAGameState_GetTotalPlayersOnTeam Parms{};
+
+	Parms.TeamId = TeamId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAGameState.IsAnySimpleVoteInProgress
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMAGameState::IsAnySimpleVoteInProgress() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameState", "IsAnySimpleVoteInProgress");
+
+	Params::MAGameState_IsAnySimpleVoteInProgress Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAGameState.OnSameTeam
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const class AActor*                     Actor1                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class AActor*                     Actor2                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMAGameState::OnSameTeam(const class AActor* Actor1, const class AActor* Actor2) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAGameState", "OnSameTeam");
+
+	Params::MAGameState_OnSameTeam Parms{};
+
+	Parms.Actor1 = Actor1;
+	Parms.Actor2 = Actor2;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -16554,31 +16618,6 @@ class FString UMAFriend::ToString()
 		Func = Class->GetFunction("MAFriend", "ToString");
 
 	Params::MAFriend_ToString Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.MAEOSPartyId.ToString
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FString UMAEOSPartyId::ToString()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MAEOSPartyId", "ToString");
-
-	Params::MAEOSPartyId_ToString Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -21752,6 +21791,486 @@ float UMAGameUserSettings::GetUserFOV() const
 }
 
 
+// Function Midair2.VehicleMoveComponent.AddFixedAngularImpulse
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FVector&                   Impulse                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bVelChange                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVehicleMoveComponent::AddFixedAngularImpulse(const struct FVector& Impulse, bool bVelChange)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleMoveComponent", "AddFixedAngularImpulse");
+
+	Params::VehicleMoveComponent_AddFixedAngularImpulse Parms{};
+
+	Parms.Impulse = std::move(Impulse);
+	Parms.bVelChange = bVelChange;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehicleMoveComponent.AddFixedForce
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FVector&                   Force                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVehicleMoveComponent::AddFixedForce(const struct FVector& Force)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleMoveComponent", "AddFixedForce");
+
+	Params::VehicleMoveComponent_AddFixedForce Parms{};
+
+	Parms.Force = std::move(Force);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehicleMoveComponent.AddFixedForceAtLocation
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FVector&                   Force                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVehicleMoveComponent::AddFixedForceAtLocation(const struct FVector& Force, const struct FVector& Location)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleMoveComponent", "AddFixedForceAtLocation");
+
+	Params::VehicleMoveComponent_AddFixedForceAtLocation Parms{};
+
+	Parms.Force = std::move(Force);
+	Parms.Location = std::move(Location);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehicleMoveComponent.AddFixedForceNonVelChange
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FVector&                   Force                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVehicleMoveComponent::AddFixedForceNonVelChange(const struct FVector& Force)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleMoveComponent", "AddFixedForceNonVelChange");
+
+	Params::VehicleMoveComponent_AddFixedForceNonVelChange Parms{};
+
+	Parms.Force = std::move(Force);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehicleMoveComponent.AddFixedImpulse
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FVector&                   Impulse                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVehicleMoveComponent::AddFixedImpulse(const struct FVector& Impulse)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleMoveComponent", "AddFixedImpulse");
+
+	Params::VehicleMoveComponent_AddFixedImpulse Parms{};
+
+	Parms.Impulse = std::move(Impulse);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehicleMoveComponent.AddFixedImpulseAtLocation
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FVector&                   Impulse                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVehicleMoveComponent::AddFixedImpulseAtLocation(const struct FVector& Impulse, const struct FVector& Location)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleMoveComponent", "AddFixedImpulseAtLocation");
+
+	Params::VehicleMoveComponent_AddFixedImpulseAtLocation Parms{};
+
+	Parms.Impulse = std::move(Impulse);
+	Parms.Location = std::move(Location);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehicleMoveComponent.AddFixedTorque
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FVector&                   Torque                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVehicleMoveComponent::AddFixedTorque(const struct FVector& Torque)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleMoveComponent", "AddFixedTorque");
+
+	Params::VehicleMoveComponent_AddFixedTorque Parms{};
+
+	Parms.Torque = std::move(Torque);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehicleMoveComponent.AddFixedTorqueNonVelChange
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FVector&                   Torque                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVehicleMoveComponent::AddFixedTorqueNonVelChange(const struct FVector& Torque)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleMoveComponent", "AddFixedTorqueNonVelChange");
+
+	Params::VehicleMoveComponent_AddFixedTorqueNonVelChange Parms{};
+
+	Parms.Torque = std::move(Torque);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehicleMoveComponent.GetSocketWorldLocation
+// (Final, Native, Protected, HasDefaults, BlueprintCallable)
+// Parameters:
+// class FName                             InSocketName                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector UVehicleMoveComponent::GetSocketWorldLocation(class FName InSocketName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleMoveComponent", "GetSocketWorldLocation");
+
+	Params::VehicleMoveComponent_GetSocketWorldLocation Parms{};
+
+	Parms.InSocketName = InSocketName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.VehicleMoveComponent.GetSocketWorldRotation
+// (Final, Native, Protected, HasDefaults, BlueprintCallable)
+// Parameters:
+// class FName                             InSocketName                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FQuat                            ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FQuat UVehicleMoveComponent::GetSocketWorldRotation(class FName InSocketName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleMoveComponent", "GetSocketWorldRotation");
+
+	Params::VehicleMoveComponent_GetSocketWorldRotation Parms{};
+
+	Parms.InSocketName = InSocketName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.VehicleMoveComponent.HoverFactorForSurface
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// EPhysicalSurface                        Surface                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UVehicleMoveComponent::HoverFactorForSurface(EPhysicalSurface Surface)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleMoveComponent", "HoverFactorForSurface");
+
+	Params::VehicleMoveComponent_HoverFactorForSurface Parms{};
+
+	Parms.Surface = Surface;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.VehicleMoveComponent.ServerUpdateState
+// (Net, Native, Event, Public, NetServer, NetValidate)
+// Parameters:
+// const struct FRepStickInput&            StickInput                                             (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FRepThrustInput&           ThrustInput                                            (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+void UVehicleMoveComponent::ServerUpdateState(const struct FRepStickInput& StickInput, const struct FRepThrustInput& ThrustInput)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleMoveComponent", "ServerUpdateState");
+
+	Params::VehicleMoveComponent_ServerUpdateState Parms{};
+
+	Parms.StickInput = std::move(StickInput);
+	Parms.ThrustInput = std::move(ThrustInput);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehicleMoveComponent.SetAutoRoll
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bNewAutoRoll                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVehicleMoveComponent::SetAutoRoll(bool bNewAutoRoll)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleMoveComponent", "SetAutoRoll");
+
+	Params::VehicleMoveComponent_SetAutoRoll Parms{};
+
+	Parms.bNewAutoRoll = bNewAutoRoll;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehicleMoveComponent.GetFixedForwardVector
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector UVehicleMoveComponent::GetFixedForwardVector() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleMoveComponent", "GetFixedForwardVector");
+
+	Params::VehicleMoveComponent_GetFixedForwardVector Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.VehicleMoveComponent.GetOrientationInfo
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FQuat*                           OutOrientationRotation                                 (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// float*                                  OutProgradeDot                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVehicleMoveComponent::GetOrientationInfo(struct FQuat* OutOrientationRotation, float* OutProgradeDot) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleMoveComponent", "GetOrientationInfo");
+
+	Params::VehicleMoveComponent_GetOrientationInfo Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutOrientationRotation != nullptr)
+		*OutOrientationRotation = std::move(Parms.OutOrientationRotation);
+
+	if (OutProgradeDot != nullptr)
+		*OutProgradeDot = Parms.OutProgradeDot;
+}
+
+
+// Function Midair2.VehicleMoveComponent.GetSocketTransform
+// (Final, Native, Protected, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FName                             InSocketName                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ERelativeTransformSpace                 TransformSpace                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FTransform                       ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FTransform UVehicleMoveComponent::GetSocketTransform(class FName InSocketName, ERelativeTransformSpace TransformSpace) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleMoveComponent", "GetSocketTransform");
+
+	Params::VehicleMoveComponent_GetSocketTransform Parms{};
+
+	Parms.InSocketName = InSocketName;
+	Parms.TransformSpace = TransformSpace;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.VehicleMoveComponent.IsUsingAfterburner
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UVehicleMoveComponent::IsUsingAfterburner() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleMoveComponent", "IsUsingAfterburner");
+
+	Params::VehicleMoveComponent_IsUsingAfterburner Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAHandGrenade.GetMaxAmmoCountFor
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AMACharacter*                     Character                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 AMAHandGrenade::GetMaxAmmoCountFor(class AMACharacter* Character)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAHandGrenade", "GetMaxAmmoCountFor");
+
+	Params::MAHandGrenade_GetMaxAmmoCountFor Parms{};
+
+	Parms.Character = Character;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function Midair2.MAHUD.BP_OnScoreApplied
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
@@ -22355,6 +22874,414 @@ bool AMAHUD::IsScoreboardVisible() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.ObjectInfo.ConvertObjectArrayToItemArray
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// TArray<TSubclassOf<class UObjectInfo>>& objects                                                (Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
+// TArray<TSubclassOf<class UItemInfo>>*   OutItems                                               (Parm, OutParm, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+
+void UObjectInfo::ConvertObjectArrayToItemArray(TArray<TSubclassOf<class UObjectInfo>>& objects, TArray<TSubclassOf<class UItemInfo>>* OutItems)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("ObjectInfo", "ConvertObjectArrayToItemArray");
+
+	Params::ObjectInfo_ConvertObjectArrayToItemArray Parms{};
+
+	Parms.objects = std::move(objects);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	objects = std::move(Parms.objects);
+
+	if (OutItems != nullptr)
+		*OutItems = std::move(Parms.OutItems);
+}
+
+
+// Function Midair2.ObjectInfo.FilterObjectInfoArray
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// TArray<TSubclassOf<class UObjectInfo>>& Base                                                   (Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
+// TArray<TSubclassOf<class UObjectInfo>>& AppliedFilter                                          (Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
+// TArray<TSubclassOf<class UObjectInfo>>* OutResult                                              (Parm, OutParm, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+// bool                                    bReturnInBoth                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UObjectInfo::FilterObjectInfoArray(TArray<TSubclassOf<class UObjectInfo>>& Base, TArray<TSubclassOf<class UObjectInfo>>& AppliedFilter, TArray<TSubclassOf<class UObjectInfo>>* OutResult, bool bReturnInBoth)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("ObjectInfo", "FilterObjectInfoArray");
+
+	Params::ObjectInfo_FilterObjectInfoArray Parms{};
+
+	Parms.Base = std::move(Base);
+	Parms.AppliedFilter = std::move(AppliedFilter);
+	Parms.bReturnInBoth = bReturnInBoth;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	Base = std::move(Parms.Base);
+	AppliedFilter = std::move(Parms.AppliedFilter);
+
+	if (OutResult != nullptr)
+		*OutResult = std::move(Parms.OutResult);
+}
+
+
+// Function Midair2.ObjectInfo.GetObjectInfo
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class UObject*                          InObject                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObjectInfo*                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UObjectInfo* UObjectInfo::GetObjectInfo(class UObject* InObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("ObjectInfo", "GetObjectInfo");
+
+	Params::ObjectInfo_GetObjectInfo Parms{};
+
+	Parms.InObject = InObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.ObjectInfo.GetObjectInfoFromClass
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class UClass*                           InObjectClass                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObjectInfo*                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UObjectInfo* UObjectInfo::GetObjectInfoFromClass(class UClass* InObjectClass)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("ObjectInfo", "GetObjectInfoFromClass");
+
+	Params::ObjectInfo_GetObjectInfoFromClass Parms{};
+
+	Parms.InObjectClass = InObjectClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.ObjectInfo.GetActionText
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// const class AActor*                     Actor                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+class FText UObjectInfo::GetActionText(const class AActor* Actor) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ObjectInfo", "GetActionText");
+
+	Params::ObjectInfo_GetActionText Parms{};
+
+	Parms.Actor = Actor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAImpactEffect.CheckVisibility
+// (Final, Native, Private)
+
+void AMAImpactEffect::CheckVisibility()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAImpactEffect", "CheckVisibility");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehicleSpawnPad.OnBeginOverlap
+// (Native, Public, HasOutParams)
+// Parameters:
+// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void AVehicleSpawnPad::OnBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleSpawnPad", "OnBeginOverlap");
+
+	Params::VehicleSpawnPad_OnBeginOverlap Parms{};
+
+	Parms.OverlappedComponent = OverlappedComponent;
+	Parms.OtherActor = OtherActor;
+	Parms.OtherComp = OtherComp;
+	Parms.OtherBodyIndex = OtherBodyIndex;
+	Parms.bFromSweep = bFromSweep;
+	Parms.SweepResult = std::move(SweepResult);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehicleSpawnPad.OnEndOverlap
+// (Native, Public)
+// Parameters:
+// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AVehicleSpawnPad::OnEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleSpawnPad", "OnEndOverlap");
+
+	Params::VehicleSpawnPad_OnEndOverlap Parms{};
+
+	Parms.OverlappedComponent = OverlappedComponent;
+	Parms.OtherActor = OtherActor;
+	Parms.OtherComp = OtherComp;
+	Parms.OtherBodyIndex = OtherBodyIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehicleSpawnPad.OnRep_PadState
+// (Final, Native, Public)
+
+void AVehicleSpawnPad::OnRep_PadState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleSpawnPad", "OnRep_PadState");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehicleSpawnPad.OnVehicleDied
+// (Native, Public)
+// Parameters:
+// class AVehiclePawn*                     Vehicle                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AVehicleSpawnPad::OnVehicleDied(class AVehiclePawn* Vehicle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleSpawnPad", "OnVehicleDied");
+
+	Params::VehicleSpawnPad_OnVehicleDied Parms{};
+
+	Parms.Vehicle = Vehicle;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehicleSpawnPad.CanSpawnClass
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class AVehiclePawn>         VehicleClass                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AVehicleSpawnPad::CanSpawnClass(TSubclassOf<class AVehiclePawn> VehicleClass) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleSpawnPad", "CanSpawnClass");
+
+	Params::VehicleSpawnPad_CanSpawnClass Parms{};
+
+	Parms.VehicleClass = VehicleClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.VehicleSpawnPad.GetMaxVehicleCount
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class AVehiclePawn>         VehicleClass                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 AVehicleSpawnPad::GetMaxVehicleCount(TSubclassOf<class AVehiclePawn> VehicleClass) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleSpawnPad", "GetMaxVehicleCount");
+
+	Params::VehicleSpawnPad_GetMaxVehicleCount Parms{};
+
+	Parms.VehicleClass = VehicleClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.VehicleSpawnPad.GetPadState
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EVehicleSpawnState                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EVehicleSpawnState AVehicleSpawnPad::GetPadState() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleSpawnPad", "GetPadState");
+
+	Params::VehicleSpawnPad_GetPadState Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.VehicleSpawnPad.GetVehicleCount
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class AVehiclePawn>         VehicleClass                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 AVehicleSpawnPad::GetVehicleCount(TSubclassOf<class AVehiclePawn> VehicleClass) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleSpawnPad", "GetVehicleCount");
+
+	Params::VehicleSpawnPad_GetVehicleCount Parms{};
+
+	Parms.VehicleClass = VehicleClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAInGameMenuScreen.CloseMenu
+// (Final, Native, Public, BlueprintCallable)
+
+void UMAInGameMenuScreen::CloseMenu()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAInGameMenuScreen", "CloseMenu");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -23232,6 +24159,291 @@ void UMAInviteToastWidget::TickCountdown()
 }
 
 
+// Function Midair2.MALeagueFlag.AutoDropTimer
+// (Native, Public)
+
+void AMALeagueFlag::AutoDropTimer()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MALeagueFlag", "AutoDropTimer");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MALeagueFlag.OnBounce
+// (Native, Public, HasOutParams, HasDefaults)
+// Parameters:
+// const struct FHitResult&                ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FVector&                   ImpactVelocity                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMALeagueFlag::OnBounce(const struct FHitResult& ImpactResult, const struct FVector& ImpactVelocity)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MALeagueFlag", "OnBounce");
+
+	Params::MALeagueFlag_OnBounce Parms{};
+
+	Parms.ImpactResult = std::move(ImpactResult);
+	Parms.ImpactVelocity = std::move(ImpactVelocity);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MALeagueFlag.OnRep_RemainingAutoDropSyncTime
+// (Native, Public)
+
+void AMALeagueFlag::OnRep_RemainingAutoDropSyncTime()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MALeagueFlag", "OnRep_RemainingAutoDropSyncTime");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MALeagueFlag.OnRep_RemainingAutoDropTime
+// (Native, Public)
+
+void AMALeagueFlag::OnRep_RemainingAutoDropTime()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MALeagueFlag", "OnRep_RemainingAutoDropTime");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MALeagueFlag.OnStop
+// (Native, Public, HasOutParams)
+// Parameters:
+// const struct FHitResult&                ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void AMALeagueFlag::OnStop(const struct FHitResult& ImpactResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MALeagueFlag", "OnStop");
+
+	Params::MALeagueFlag_OnStop Parms{};
+
+	Parms.ImpactResult = std::move(ImpactResult);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.BackpackInfo.GetAvailablePrimaryAugments
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TArray<TSubclassOf<class UAugmentInfo>> ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
+
+TArray<TSubclassOf<class UAugmentInfo>> UBackpackInfo::GetAvailablePrimaryAugments() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BackpackInfo", "GetAvailablePrimaryAugments");
+
+	Params::BackpackInfo_GetAvailablePrimaryAugments Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.BackpackInfo.GetAvailableSecondaryAugments
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TArray<TSubclassOf<class UAugmentInfo>> ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
+
+TArray<TSubclassOf<class UAugmentInfo>> UBackpackInfo::GetAvailableSecondaryAugments() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BackpackInfo", "GetAvailableSecondaryAugments");
+
+	Params::BackpackInfo_GetAvailableSecondaryAugments Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MALeagueFlagGoal.GetCurrentEffectsound
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class USoundBase*                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class USoundBase* AMALeagueFlagGoal::GetCurrentEffectsound()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MALeagueFlagGoal", "GetCurrentEffectsound");
+
+	Params::MALeagueFlagGoal_GetCurrentEffectsound Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MALeagueFlagGoal.PlayGoalEffect
+// (Final, Native, Public, BlueprintCallable)
+
+void AMALeagueFlagGoal::PlayGoalEffect()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MALeagueFlagGoal", "PlayGoalEffect");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MALeagueFlagGoal.PlayGoalEffectAudio
+// (Final, Native, Public, BlueprintCallable)
+
+void AMALeagueFlagGoal::PlayGoalEffectAudio()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MALeagueFlagGoal", "PlayGoalEffectAudio");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MALeagueFlagGoal.SetGoalEffectConfigurationFromInfo
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class AGoalEffectParticleConfiguration>GoalEffectInfo                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMALeagueFlagGoal::SetGoalEffectConfigurationFromInfo(TSubclassOf<class AGoalEffectParticleConfiguration> GoalEffectInfo)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MALeagueFlagGoal", "SetGoalEffectConfigurationFromInfo");
+
+	Params::MALeagueFlagGoal_SetGoalEffectConfigurationFromInfo Parms{};
+
+	Parms.GoalEffectInfo = GoalEffectInfo;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MALeagueFlagGoal.StopGoalEffect
+// (Final, Native, Public, BlueprintCallable)
+
+void AMALeagueFlagGoal::StopGoalEffect()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MALeagueFlagGoal", "StopGoalEffect");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MALeagueFlagGoal.UpdateGoalEffectToMatchCosmeticCustomizations
+// (Final, Native, Public, BlueprintCallable)
+
+void AMALeagueFlagGoal::UpdateGoalEffectToMatchCosmeticCustomizations()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MALeagueFlagGoal", "UpdateGoalEffectToMatchCosmeticCustomizations");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function Midair2.MALeagueGameMode.GetHotPotatoLength
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -23898,41 +25110,290 @@ void UMALoadoutLabel::HandleButtonClick()
 }
 
 
-// Function Midair2.ObjectLauncher.LaunchActor
-// (Native, Public)
+// Function Midair2.CharacterInfo.GetAvailableBackpacks
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TArray<TSubclassOf<class UBackpackInfo>>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 
-void AObjectLauncher::LaunchActor()
+TArray<TSubclassOf<class UBackpackInfo>> UCharacterInfo::GetAvailableBackpacks() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ObjectLauncher", "LaunchActor");
+		Func = Class->GetFunction("CharacterInfo", "GetAvailableBackpacks");
+
+	Params::CharacterInfo_GetAvailableBackpacks Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
-// Function Midair2.ObjectLauncher.OnSpawnedActorDeath
-// (Native, Public)
+// Function Midair2.CharacterInfo.GetAvailableDeployables
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TArray<TSubclassOf<class UDeployableInfo>>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 
-void AObjectLauncher::OnSpawnedActorDeath()
+TArray<TSubclassOf<class UDeployableInfo>> UCharacterInfo::GetAvailableDeployables() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ObjectLauncher", "OnSpawnedActorDeath");
+		Func = Class->GetFunction("CharacterInfo", "GetAvailableDeployables");
+
+	Params::CharacterInfo_GetAvailableDeployables Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.CharacterInfo.GetAvailableThrowables
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TArray<TSubclassOf<class UThrowableInfo>>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
+
+TArray<TSubclassOf<class UThrowableInfo>> UCharacterInfo::GetAvailableThrowables() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CharacterInfo", "GetAvailableThrowables");
+
+	Params::CharacterInfo_GetAvailableThrowables Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.CharacterInfo.GetAvailableVoiceSets
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TArray<TSubclassOf<class UVoiceSetInfo>>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
+
+TArray<TSubclassOf<class UVoiceSetInfo>> UCharacterInfo::GetAvailableVoiceSets() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CharacterInfo", "GetAvailableVoiceSets");
+
+	Params::CharacterInfo_GetAvailableVoiceSets Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.CharacterInfo.GetAvailableWeapons
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TArray<TSubclassOf<class UWeaponInfo>>  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
+
+TArray<TSubclassOf<class UWeaponInfo>> UCharacterInfo::GetAvailableWeapons() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CharacterInfo", "GetAvailableWeapons");
+
+	Params::CharacterInfo_GetAvailableWeapons Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.CharacterInfo.GetStats
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FCharacterStatDetails            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FCharacterStatDetails UCharacterInfo::GetStats() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CharacterInfo", "GetStats");
+
+	Params::CharacterInfo_GetStats Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.CharacterInfo.GetUnavailableAugments
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TArray<TSubclassOf<class UAugmentInfo>> ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
+
+TArray<TSubclassOf<class UAugmentInfo>> UCharacterInfo::GetUnavailableAugments() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CharacterInfo", "GetUnavailableAugments");
+
+	Params::CharacterInfo_GetUnavailableAugments Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.CharacterInfo.IsAugmentAvailable
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class UAugmentInfo>         Augment                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCharacterInfo::IsAugmentAvailable(TSubclassOf<class UAugmentInfo> Augment) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CharacterInfo", "IsAugmentAvailable");
+
+	Params::CharacterInfo_IsAugmentAvailable Parms{};
+
+	Parms.Augment = Augment;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.CharacterInfo.IsThrowableAvailable
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class UThrowableInfo>       Throwable                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCharacterInfo::IsThrowableAvailable(TSubclassOf<class UThrowableInfo> Throwable) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CharacterInfo", "IsThrowableAvailable");
+
+	Params::CharacterInfo_IsThrowableAvailable Parms{};
+
+	Parms.Throwable = Throwable;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.CharacterInfo.IsVoiceSetAvailable
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class UVoiceSetInfo>        VoiceSet                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCharacterInfo::IsVoiceSetAvailable(TSubclassOf<class UVoiceSetInfo> VoiceSet) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CharacterInfo", "IsVoiceSetAvailable");
+
+	Params::CharacterInfo_IsVoiceSetAvailable Parms{};
+
+	Parms.VoiceSet = VoiceSet;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.CharacterInfo.IsWeaponAvailable
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class UWeaponInfo>          Weapon                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCharacterInfo::IsWeaponAvailable(TSubclassOf<class UWeaponInfo> Weapon) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CharacterInfo", "IsWeaponAvailable");
+
+	Params::CharacterInfo_IsWeaponAvailable Parms{};
+
+	Parms.Weapon = Weapon;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -24368,154 +25829,6 @@ void UMALoadoutSkinButton::UpdateText(const class FText& NewText)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.PRGameMode.AdvanceToNextLesson
-// (Native, Public, BlueprintCallable)
-
-void APRGameMode::AdvanceToNextLesson()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PRGameMode", "AdvanceToNextLesson");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.PRGameMode.AdvanceTrackingToLesson
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void APRGameMode::AdvanceTrackingToLesson(int32 Index_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PRGameMode", "AdvanceTrackingToLesson");
-
-	Params::PRGameMode_AdvanceTrackingToLesson Parms{};
-
-	Parms.Index_0 = Index_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.PRGameMode.OnTriggerBeginLesson
-// (Native, Public)
-// Parameters:
-// class AActor*                           OverlappedActor                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void APRGameMode::OnTriggerBeginLesson(class AActor* OverlappedActor, class AActor* OtherActor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PRGameMode", "OnTriggerBeginLesson");
-
-	Params::PRGameMode_OnTriggerBeginLesson Parms{};
-
-	Parms.OverlappedActor = OverlappedActor;
-	Parms.OtherActor = OtherActor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.PRGameMode.OnTriggerEndLesson
-// (Native, Public)
-// Parameters:
-// class AActor*                           OverlappedActor                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void APRGameMode::OnTriggerEndLesson(class AActor* OverlappedActor, class AActor* OtherActor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PRGameMode", "OnTriggerEndLesson");
-
-	Params::PRGameMode_OnTriggerEndLesson Parms{};
-
-	Parms.OverlappedActor = OverlappedActor;
-	Parms.OtherActor = OtherActor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.PRGameMode.GetCurrentLesson
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FPracticeLessonDetails           ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-struct FPracticeLessonDetails APRGameMode::GetCurrentLesson() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PRGameMode", "GetCurrentLesson");
-
-	Params::PRGameMode_GetCurrentLesson Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.PRGameMode.GetCurrentLessonTag
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FName APRGameMode::GetCurrentLessonTag() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PRGameMode", "GetCurrentLessonTag");
-
-	Params::PRGameMode_GetCurrentLessonTag Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -25214,78 +26527,41 @@ TArray<struct FTeamAssignment> UMALobbyManager::GetTeamAssignmentsFromLobby() co
 }
 
 
-// Function Midair2.GoalEffectParticleConfiguration.SetParticlesOnActor
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Midair2.ObjectLauncher.LaunchActor
+// (Native, Public)
 
-void AGoalEffectParticleConfiguration::SetParticlesOnActor(class AActor* Actor)
+void AObjectLauncher::LaunchActor()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GoalEffectParticleConfiguration", "SetParticlesOnActor");
-
-	Params::GoalEffectParticleConfiguration_SetParticlesOnActor Parms{};
-
-	Parms.Actor = Actor;
+		Func = Class->GetFunction("ObjectLauncher", "LaunchActor");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function Midair2.GoalEffectParticleConfiguration.SetParticlesOnComponent
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// class UParticleSystemComponent*         Component                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Midair2.ObjectLauncher.OnSpawnedActorDeath
+// (Native, Public)
 
-void AGoalEffectParticleConfiguration::SetParticlesOnComponent(class UParticleSystemComponent* Component)
+void AObjectLauncher::OnSpawnedActorDeath()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GoalEffectParticleConfiguration", "SetParticlesOnComponent");
-
-	Params::GoalEffectParticleConfiguration_SetParticlesOnComponent Parms{};
-
-	Parms.Component = Component;
+		Func = Class->GetFunction("ObjectLauncher", "OnSpawnedActorDeath");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.GoalEffectParticleConfiguration.GetAssociatedAudioClass
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class USoundBase*                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class USoundBase* AGoalEffectParticleConfiguration::GetAssociatedAudioClass() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GoalEffectParticleConfiguration", "GetAssociatedAudioClass");
-
-	Params::GoalEffectParticleConfiguration_GetAssociatedAudioClass Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -25518,21 +26794,21 @@ class UMASettingsShared* UMALocalPlayer::GetSharedSettings() const
 }
 
 
-// Function Midair2.ObjectivePrompt.ClearPrompt
+// Function Midair2.GoalEffectParticleConfiguration.SetParticlesOnActor
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    bCompleted                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UObjectivePrompt::ClearPrompt(bool bCompleted)
+void AGoalEffectParticleConfiguration::SetParticlesOnActor(class AActor* Actor)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ObjectivePrompt", "ClearPrompt");
+		Func = Class->GetFunction("GoalEffectParticleConfiguration", "SetParticlesOnActor");
 
-	Params::ObjectivePrompt_ClearPrompt Parms{};
+	Params::GoalEffectParticleConfiguration_SetParticlesOnActor Parms{};
 
-	Parms.bCompleted = bCompleted;
+	Parms.Actor = Actor;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -25543,47 +26819,21 @@ void UObjectivePrompt::ClearPrompt(bool bCompleted)
 }
 
 
-// Function Midair2.ObjectivePrompt.OnObjectiveCompleted
-// (Event, Public, BlueprintEvent)
-
-void UObjectivePrompt::OnObjectiveCompleted()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ObjectivePrompt", "OnObjectiveCompleted");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Midair2.ObjectivePrompt.OnPromptChanged
-// (Event, Public, BlueprintEvent)
-
-void UObjectivePrompt::OnPromptChanged()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ObjectivePrompt", "OnPromptChanged");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Midair2.ObjectivePrompt.SetPrompt
-// (Native, Public, HasOutParams, BlueprintCallable)
+// Function Midair2.GoalEffectParticleConfiguration.SetParticlesOnComponent
+// (Native, Public, BlueprintCallable)
 // Parameters:
-// struct FMidairObjectiveInfo*            NewObjectiveInfo                                       (Parm, OutParm, NativeAccessSpecifierPublic)
+// class UParticleSystemComponent*         Component                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UObjectivePrompt::SetPrompt(struct FMidairObjectiveInfo* NewObjectiveInfo)
+void AGoalEffectParticleConfiguration::SetParticlesOnComponent(class UParticleSystemComponent* Component)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ObjectivePrompt", "SetPrompt");
+		Func = Class->GetFunction("GoalEffectParticleConfiguration", "SetParticlesOnComponent");
 
-	Params::ObjectivePrompt_SetPrompt Parms{};
+	Params::GoalEffectParticleConfiguration_SetParticlesOnComponent Parms{};
+
+	Parms.Component = Component;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -25591,30 +26841,22 @@ void UObjectivePrompt::SetPrompt(struct FMidairObjectiveInfo* NewObjectiveInfo)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	if (NewObjectiveInfo != nullptr)
-		*NewObjectiveInfo = std::move(Parms.NewObjectiveInfo);
 }
 
 
-// Function Midair2.ObjectivePrompt.UpdateExistingPrompt
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Function Midair2.GoalEffectParticleConfiguration.GetAssociatedAudioClass
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FMidairObjectiveInfo*            DeltaObjectiveInfo                                     (Parm, OutParm, NativeAccessSpecifierPublic)
-// EObjectiveUpdateType                    UpdateType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bWantsUpdate                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class USoundBase*                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UObjectivePrompt::UpdateExistingPrompt(struct FMidairObjectiveInfo* DeltaObjectiveInfo, EObjectiveUpdateType UpdateType, bool bWantsUpdate)
+class USoundBase* AGoalEffectParticleConfiguration::GetAssociatedAudioClass() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ObjectivePrompt", "UpdateExistingPrompt");
+		Func = Class->GetFunction("GoalEffectParticleConfiguration", "GetAssociatedAudioClass");
 
-	Params::ObjectivePrompt_UpdateExistingPrompt Parms{};
-
-	Parms.UpdateType = UpdateType;
-	Parms.bWantsUpdate = bWantsUpdate;
+	Params::GoalEffectParticleConfiguration_GetAssociatedAudioClass Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -25623,8 +26865,7 @@ void UObjectivePrompt::UpdateExistingPrompt(struct FMidairObjectiveInfo* DeltaOb
 
 	Func->FunctionFlags = Flgs;
 
-	if (DeltaObjectiveInfo != nullptr)
-		*DeltaObjectiveInfo = std::move(Parms.DeltaObjectiveInfo);
+	return Parms.ReturnValue;
 }
 
 
@@ -25639,6 +26880,31 @@ void UMAMainMenuScreen::BP_HandleQuit()
 		Func = Class->GetFunction("MAMainMenuScreen", "BP_HandleQuit");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Midair2.MAMainMenuScreen.GetBroadcasts
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// TArray<struct FMABroadcast>             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<struct FMABroadcast> UMAMainMenuScreen::GetBroadcasts()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAMainMenuScreen", "GetBroadcasts");
+
+	Params::MAMainMenuScreen_GetBroadcasts Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -25694,111 +26960,20 @@ class FString UMAMainMenuScreen::HandleMatchmakingQueue()
 }
 
 
-// Function Midair2.TutorialDialougeManager.NewDialougeManager
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UObject*                          Owner                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UTutorialDialougeManager*         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UTutorialDialougeManager* UTutorialDialougeManager::NewDialougeManager(class UObject* Owner)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("TutorialDialougeManager", "NewDialougeManager");
-
-	Params::TutorialDialougeManager_NewDialougeManager Parms{};
-
-	Parms.Owner = Owner;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.TutorialDialougeManager.ClearAndStopAllSounds
+// Function Midair2.MAMainMenuScreen.ListBroadcasts
 // (Final, Native, Public, BlueprintCallable)
 
-void UTutorialDialougeManager::ClearAndStopAllSounds()
+void UMAMainMenuScreen::ListBroadcasts()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TutorialDialougeManager", "ClearAndStopAllSounds");
+		Func = Class->GetFunction("MAMainMenuScreen", "ListBroadcasts");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.TutorialDialougeManager.DialougeFinished
-// (Final, Native, Public)
-
-void UTutorialDialougeManager::DialougeFinished()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TutorialDialougeManager", "DialougeFinished");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.TutorialDialougeManager.StartNewDialouge
-// (Final, Native, Public)
-
-void UTutorialDialougeManager::StartNewDialouge()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TutorialDialougeManager", "StartNewDialouge");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.TutorialDialougeManager.TryAddSound
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const struct FTutorialDialougeDetails&  NewSound                                               (Parm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UTutorialDialougeManager::TryAddSound(const struct FTutorialDialougeDetails& NewSound)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TutorialDialougeManager", "TryAddSound");
-
-	Params::TutorialDialougeManager_TryAddSound Parms{};
-
-	Parms.NewSound = std::move(NewSound);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -25883,6 +27058,31 @@ void UMAMatchMakerSubsystem::DeleteTicket()
 	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAMatchMakerSubsystem.GetCurrentGameMode
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UMAMatchMakerSubsystem::GetCurrentGameMode()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAMatchMakerSubsystem", "GetCurrentGameMode");
+
+	Params::MAMatchMakerSubsystem_GetCurrentGameMode Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -26043,24 +27243,346 @@ void UMAMatchMakerSubsystem::ToggleMatchmaking(const class FString& GameMode)
 }
 
 
-// Function Midair2.SetUserBanStatusAsyncTask.BanUser
-// (Final, Native, Static, Public, BlueprintCallable)
+// Function Midair2.ObjectivePrompt.ClearPrompt
+// (Native, Public, BlueprintCallable)
 // Parameters:
-// class APlayerState*                     PlayerState                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const bool                              bIsBanned                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class USetUserBanStatusAsyncTask*       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bCompleted                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class USetUserBanStatusAsyncTask* USetUserBanStatusAsyncTask::BanUser(class APlayerState* PlayerState, const bool bIsBanned)
+void UObjectivePrompt::ClearPrompt(bool bCompleted)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("SetUserBanStatusAsyncTask", "BanUser");
+		Func = Class->GetFunction("ObjectivePrompt", "ClearPrompt");
 
-	Params::SetUserBanStatusAsyncTask_BanUser Parms{};
+	Params::ObjectivePrompt_ClearPrompt Parms{};
 
-	Parms.PlayerState = PlayerState;
-	Parms.bIsBanned = bIsBanned;
+	Parms.bCompleted = bCompleted;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.ObjectivePrompt.OnObjectiveCompleted
+// (Event, Public, BlueprintEvent)
+
+void UObjectivePrompt::OnObjectiveCompleted()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ObjectivePrompt", "OnObjectiveCompleted");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Midair2.ObjectivePrompt.OnPromptChanged
+// (Event, Public, BlueprintEvent)
+
+void UObjectivePrompt::OnPromptChanged()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ObjectivePrompt", "OnPromptChanged");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Midair2.ObjectivePrompt.SetPrompt
+// (Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FMidairObjectiveInfo*            NewObjectiveInfo                                       (Parm, OutParm, NativeAccessSpecifierPublic)
+
+void UObjectivePrompt::SetPrompt(struct FMidairObjectiveInfo* NewObjectiveInfo)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ObjectivePrompt", "SetPrompt");
+
+	Params::ObjectivePrompt_SetPrompt Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (NewObjectiveInfo != nullptr)
+		*NewObjectiveInfo = std::move(Parms.NewObjectiveInfo);
+}
+
+
+// Function Midair2.ObjectivePrompt.UpdateExistingPrompt
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FMidairObjectiveInfo*            DeltaObjectiveInfo                                     (Parm, OutParm, NativeAccessSpecifierPublic)
+// EObjectiveUpdateType                    UpdateType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bWantsUpdate                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UObjectivePrompt::UpdateExistingPrompt(struct FMidairObjectiveInfo* DeltaObjectiveInfo, EObjectiveUpdateType UpdateType, bool bWantsUpdate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ObjectivePrompt", "UpdateExistingPrompt");
+
+	Params::ObjectivePrompt_UpdateExistingPrompt Parms{};
+
+	Parms.UpdateType = UpdateType;
+	Parms.bWantsUpdate = bWantsUpdate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (DeltaObjectiveInfo != nullptr)
+		*DeltaObjectiveInfo = std::move(Parms.DeltaObjectiveInfo);
+}
+
+
+// Function Midair2.MATurretAsset.NetMulticast_FireProjectiles
+// (Net, Native, Event, NetMulticast, Public)
+
+void AMATurretAsset::NetMulticast_FireProjectiles()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MATurretAsset", "NetMulticast_FireProjectiles");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MATurretAsset.OnPerceptionUpdated
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const TArray<class AActor*>&            UpdatedActors                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void AMATurretAsset::OnPerceptionUpdated(const TArray<class AActor*>& UpdatedActors)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MATurretAsset", "OnPerceptionUpdated");
+
+	Params::MATurretAsset_OnPerceptionUpdated Parms{};
+
+	Parms.UpdatedActors = std::move(UpdatedActors);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MATurretAsset.OnTargetUpdated
+// (Native, Protected)
+// Parameters:
+// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAIStimulus&               Stimulus                                               (Parm, NoDestructor, NativeAccessSpecifierPublic)
+
+void AMATurretAsset::OnTargetUpdated(class AActor* Actor, const struct FAIStimulus& Stimulus)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MATurretAsset", "OnTargetUpdated");
+
+	Params::MATurretAsset_OnTargetUpdated Parms{};
+
+	Parms.Actor = Actor;
+	Parms.Stimulus = std::move(Stimulus);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MATurretAsset.TargetAcquired
+// (Native, Protected)
+
+void AMATurretAsset::TargetAcquired()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MATurretAsset", "TargetAcquired");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MATurretAsset.TargetDroppedFromSensorChannel
+// (Native, Protected)
+// Parameters:
+// class UTargetComponent*                 Target                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint8                                   Channel                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMATurretAsset::TargetDroppedFromSensorChannel(class UTargetComponent* Target, uint8 Channel)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MATurretAsset", "TargetDroppedFromSensorChannel");
+
+	Params::MATurretAsset_TargetDroppedFromSensorChannel Parms{};
+
+	Parms.Target = Target;
+	Parms.Channel = Channel;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MATurretAsset.TryTargetLost
+// (Native, Protected)
+// Parameters:
+// class UTargetComponent*                 Target                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMATurretAsset::TryTargetLost(class UTargetComponent* Target)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MATurretAsset", "TryTargetLost");
+
+	Params::MATurretAsset_TryTargetLost Parms{};
+
+	Parms.Target = Target;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.ServiceBlueprintLibrary.CancelGetDemo
+// (Final, Native, Static, Public, BlueprintCallable)
+
+void UServiceBlueprintLibrary::CancelGetDemo()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("ServiceBlueprintLibrary", "CancelGetDemo");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.ServiceBlueprintLibrary.GetDemoProgress
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UServiceBlueprintLibrary::GetDemoProgress()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("ServiceBlueprintLibrary", "GetDemoProgress");
+
+	Params::ServiceBlueprintLibrary_GetDemoProgress Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.ServiceBlueprintLibrary.IsDownloadedDemo
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const class FString&                    demoId                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UServiceBlueprintLibrary::IsDownloadedDemo(const class FString& demoId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("ServiceBlueprintLibrary", "IsDownloadedDemo");
+
+	Params::ServiceBlueprintLibrary_IsDownloadedDemo Parms{};
+
+	Parms.demoId = std::move(demoId);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.ServiceBlueprintLibrary.IsSameDemoVersion
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    DemoVersion                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UServiceBlueprintLibrary::IsSameDemoVersion(const class FString& DemoVersion)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("ServiceBlueprintLibrary", "IsSameDemoVersion");
+
+	Params::ServiceBlueprintLibrary_IsSameDemoVersion Parms{};
+
+	Parms.DemoVersion = std::move(DemoVersion);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -26689,32 +28211,152 @@ const TArray<struct FPartyMemberView> UMAPartySubsystem::GetPartyMembers() const
 }
 
 
-// Function Midair2.ServerBrowserSupport.DoUDPPing
-// (Final, Native, Static, Public, BlueprintCallable)
+// Function Midair2.TargetComponent.PopSensorModifiers
+// (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// const class FString&                    Address                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Timeout                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(bool got_reply, float latency)>Callback                                               (Parm, ZeroConstructor, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FSensorTargetModifiers&    Modifiers                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UServerBrowserSupport::DoUDPPing(const class FString& Address, float Timeout, TDelegate<void(bool got_reply, float latency)> Callback)
+void UTargetComponent::PopSensorModifiers(const struct FSensorTargetModifiers& Modifiers)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("ServerBrowserSupport", "DoUDPPing");
+		Func = Class->GetFunction("TargetComponent", "PopSensorModifiers");
 
-	Params::ServerBrowserSupport_DoUDPPing Parms{};
+	Params::TargetComponent_PopSensorModifiers Parms{};
 
-	Parms.Address = std::move(Address);
-	Parms.Timeout = Timeout;
-	Parms.Callback = Callback;
+	Parms.Modifiers = std::move(Modifiers);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.TargetComponent.PushSensorModifiers
+// (Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FSensorTargetModifiers&    Modifiers                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UTargetComponent::PushSensorModifiers(const struct FSensorTargetModifiers& Modifiers)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TargetComponent", "PushSensorModifiers");
+
+	Params::TargetComponent_PushSensorModifiers Parms{};
+
+	Parms.Modifiers = std::move(Modifiers);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.TargetComponent.SetSensorResolutionStrengthTime
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// ESensorResolutionStrength               Strength                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Time                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UTargetComponent::SetSensorResolutionStrengthTime(ESensorResolutionStrength Strength, float Time)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TargetComponent", "SetSensorResolutionStrengthTime");
+
+	Params::TargetComponent_SetSensorResolutionStrengthTime Parms{};
+
+	Parms.Strength = Strength;
+	Parms.Time = Time;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.TargetComponent.StopAllTargetting
+// (Native, Protected)
+
+void UTargetComponent::StopAllTargetting()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TargetComponent", "StopAllTargetting");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.TargetComponent.GetHighestDetectedState
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EDetectedState                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EDetectedState UTargetComponent::GetHighestDetectedState() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TargetComponent", "GetHighestDetectedState");
+
+	Params::TargetComponent_GetHighestDetectedState Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.TargetComponent.IsDetectedByChannel
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// uint8                                   InChannel                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UTargetComponent::IsDetectedByChannel(uint8 InChannel) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TargetComponent", "IsDetectedByChannel");
+
+	Params::TargetComponent_IsDetectedByChannel Parms{};
+
+	Parms.InChannel = InChannel;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -26859,6 +28501,674 @@ void AMAPickupBackpack::UpdateVisuals()
 }
 
 
+// Function Midair2.MAPlatformEmulationSettings.GetKnownDeviceProfiles
+// (Final, Native, Private, Const)
+// Parameters:
+// TArray<class FName>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class FName> UMAPlatformEmulationSettings::GetKnownDeviceProfiles() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPlatformEmulationSettings", "GetKnownDeviceProfiles");
+
+	Params::MAPlatformEmulationSettings_GetKnownDeviceProfiles Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAPlatformEmulationSettings.GetKnownPlatformIds
+// (Final, Native, Private, Const)
+// Parameters:
+// TArray<class FName>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class FName> UMAPlatformEmulationSettings::GetKnownPlatformIds() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPlatformEmulationSettings", "GetKnownPlatformIds");
+
+	Params::MAPlatformEmulationSettings_GetKnownPlatformIds Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.VehiclePawn.CanReseatCharacter
+// (Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class AMACharacter*                     Character                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   NewSeatPosition                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UVehicleSeatComponent*            ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UVehicleSeatComponent* AVehiclePawn::CanReseatCharacter(class AMACharacter* Character, int32 NewSeatPosition)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehiclePawn", "CanReseatCharacter");
+
+	Params::VehiclePawn_CanReseatCharacter Parms{};
+
+	Parms.Character = Character;
+	Parms.NewSeatPosition = NewSeatPosition;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.VehiclePawn.FindAvailableSeat
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class AMACharacter*                     Character                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UVehicleSeatComponent*            ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UVehicleSeatComponent* AVehiclePawn::FindAvailableSeat(class AMACharacter* Character)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehiclePawn", "FindAvailableSeat");
+
+	Params::VehiclePawn_FindAvailableSeat Parms{};
+
+	Parms.Character = Character;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.VehiclePawn.FindOccupiedSeat
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AMACharacter*                     Character                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UVehicleSeatComponent*            ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UVehicleSeatComponent* AVehiclePawn::FindOccupiedSeat(class AMACharacter* Character)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehiclePawn", "FindOccupiedSeat");
+
+	Params::VehiclePawn_FindOccupiedSeat Parms{};
+
+	Parms.Character = Character;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.VehiclePawn.GetSeatForWeapon
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UVehicleWeaponComponent*          Weapon                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UVehicleSeatComponent*            ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UVehicleSeatComponent* AVehiclePawn::GetSeatForWeapon(class UVehicleWeaponComponent* Weapon)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehiclePawn", "GetSeatForWeapon");
+
+	Params::VehiclePawn_GetSeatForWeapon Parms{};
+
+	Parms.Weapon = Weapon;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.VehiclePawn.HasAnyOccupiedSeat
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AVehiclePawn::HasAnyOccupiedSeat()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehiclePawn", "HasAnyOccupiedSeat");
+
+	Params::VehiclePawn_HasAnyOccupiedSeat Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.VehiclePawn.HasRoomForCharacter
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class AMACharacter*                     Character                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AVehiclePawn::HasRoomForCharacter(class AMACharacter* Character)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehiclePawn", "HasRoomForCharacter");
+
+	Params::VehiclePawn_HasRoomForCharacter Parms{};
+
+	Parms.Character = Character;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.VehiclePawn.NetMulticast_FireWeaponComponent
+// (Net, Native, Event, NetMulticast, Public)
+// Parameters:
+// class UVehicleWeaponComponent*          WeaponComponent                                        (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint8                                   FireIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AVehiclePawn::NetMulticast_FireWeaponComponent(class UVehicleWeaponComponent* WeaponComponent, uint8 FireIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehiclePawn", "NetMulticast_FireWeaponComponent");
+
+	Params::VehiclePawn_NetMulticast_FireWeaponComponent Parms{};
+
+	Parms.WeaponComponent = WeaponComponent;
+	Parms.FireIndex = FireIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehiclePawn.OnDeath
+// (Native, Protected)
+
+void AVehiclePawn::OnDeath()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehiclePawn", "OnDeath");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehiclePawn.OnHit
+// (Native, Public, HasOutParams, HasDefaults)
+// Parameters:
+// class UPrimitiveComponent*              HitComp                                                (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   NormalImpulse                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void AVehiclePawn::OnHit(class UPrimitiveComponent* HitComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, const struct FVector& NormalImpulse, const struct FHitResult& Hit)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehiclePawn", "OnHit");
+
+	Params::VehiclePawn_OnHit Parms{};
+
+	Parms.HitComp = HitComp;
+	Parms.OtherActor = OtherActor;
+	Parms.OtherComp = OtherComp;
+	Parms.NormalImpulse = std::move(NormalImpulse);
+	Parms.Hit = std::move(Hit);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehiclePawn.OnRep_ControlPitchYaw
+// (Native, Protected)
+
+void AVehiclePawn::OnRep_ControlPitchYaw()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehiclePawn", "OnRep_ControlPitchYaw");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehiclePawn.OnRep_SpawningTeamId
+// (Native, Public)
+
+void AVehiclePawn::OnRep_SpawningTeamId()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehiclePawn", "OnRep_SpawningTeamId");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehiclePawn.OnRep_StickInput
+// (Native, Protected)
+
+void AVehiclePawn::OnRep_StickInput()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehiclePawn", "OnRep_StickInput");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehiclePawn.OnRep_ThrustInput
+// (Native, Protected)
+
+void AVehiclePawn::OnRep_ThrustInput()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehiclePawn", "OnRep_ThrustInput");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehiclePawn.PostNetReceivePhysicState
+// (Native, Public)
+
+void AVehiclePawn::PostNetReceivePhysicState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehiclePawn", "PostNetReceivePhysicState");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehiclePawn.RemoveCharacter
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class AMACharacter*                     Character                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AVehiclePawn::RemoveCharacter(class AMACharacter* Character)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehiclePawn", "RemoveCharacter");
+
+	Params::VehiclePawn_RemoveCharacter Parms{};
+
+	Parms.Character = Character;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.VehiclePawn.Server_SetCameraMode
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+// Parameters:
+// ECameraMode                             NewCameraMode                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AVehiclePawn::Server_SetCameraMode(ECameraMode NewCameraMode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehiclePawn", "Server_SetCameraMode");
+
+	Params::VehiclePawn_Server_SetCameraMode Parms{};
+
+	Parms.NewCameraMode = NewCameraMode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehiclePawn.ServerSetRelativeControlRotation
+// (Net, Native, Event, Public, NetServer, NetValidate)
+// Parameters:
+// uint32                                  NewControlPitchYaw                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AVehiclePawn::ServerSetRelativeControlRotation(uint32 NewControlPitchYaw)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehiclePawn", "ServerSetRelativeControlRotation");
+
+	Params::VehiclePawn_ServerSetRelativeControlRotation Parms{};
+
+	Parms.NewControlPitchYaw = NewControlPitchYaw;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehiclePawn.TryReseatCharacter
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class AMACharacter*                     Character                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   NewSeatPosition                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AVehiclePawn::TryReseatCharacter(class AMACharacter* Character, int32 NewSeatPosition)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehiclePawn", "TryReseatCharacter");
+
+	Params::VehiclePawn_TryReseatCharacter Parms{};
+
+	Parms.Character = Character;
+	Parms.NewSeatPosition = NewSeatPosition;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.VehiclePawn.TrySeatCharacter
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AMACharacter*                     Character                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AVehiclePawn::TrySeatCharacter(class AMACharacter* Character)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehiclePawn", "TrySeatCharacter");
+
+	Params::VehiclePawn_TrySeatCharacter Parms{};
+
+	Parms.Character = Character;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.VehiclePawn.GetAllPossibleWeaponsForSeat
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const class UVehicleSeatComponent*      Seat                                                   (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class UVehicleWeaponComponent*>  ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+TArray<class UVehicleWeaponComponent*> AVehiclePawn::GetAllPossibleWeaponsForSeat(const class UVehicleSeatComponent* Seat) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehiclePawn", "GetAllPossibleWeaponsForSeat");
+
+	Params::VehiclePawn_GetAllPossibleWeaponsForSeat Parms{};
+
+	Parms.Seat = Seat;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.VehiclePawn.GetSeats
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TArray<class UVehicleSeatComponent*>    ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+TArray<class UVehicleSeatComponent*> AVehiclePawn::GetSeats() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehiclePawn", "GetSeats");
+
+	Params::VehiclePawn_GetSeats Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.StormLordVehicle.AbortSiege
+// (Native, Public, BlueprintCallable)
+
+void AStormLordVehicle::AbortSiege()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StormLordVehicle", "AbortSiege");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.StormLordVehicle.EnterNewTankMode
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// ETankMode                               NewMode                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AStormLordVehicle::EnterNewTankMode(ETankMode NewMode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StormLordVehicle", "EnterNewTankMode");
+
+	Params::StormLordVehicle_EnterNewTankMode Parms{};
+
+	Parms.NewMode = NewMode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.StormLordVehicle.OnEnterNewTankMode
+// (Native, Event, Public, BlueprintEvent)
+
+void AStormLordVehicle::OnEnterNewTankMode()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StormLordVehicle", "OnEnterNewTankMode");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.StormLordVehicle.ServerSetActiveSiege
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+// Parameters:
+// bool                                    bActive                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AStormLordVehicle::ServerSetActiveSiege(bool bActive)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StormLordVehicle", "ServerSetActiveSiege");
+
+	Params::StormLordVehicle_ServerSetActiveSiege Parms{};
+
+	Parms.bActive = bActive;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function Midair2.MAPlaybackComponent.K2_CreateAndAddEvent
 // (Native, Public, BlueprintCallable)
 // Parameters:
@@ -26884,6 +29194,86 @@ class UMAPlaybackEvent* UMAPlaybackComponent::K2_CreateAndAddEvent(TSubclassOf<c
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAInventoryBPLibrary.GetRarityFromItem
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UClass*                           Item                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ERarityType                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+ERarityType UMAInventoryBPLibrary::GetRarityFromItem(class UClass* Item)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MAInventoryBPLibrary", "GetRarityFromItem");
+
+	Params::MAInventoryBPLibrary_GetRarityFromItem Parms{};
+
+	Parms.Item = Item;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.TDMFlag.OnBounce
+// (Native, Public, HasOutParams, HasDefaults)
+// Parameters:
+// const struct FHitResult&                ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FVector&                   ImpactVelocity                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ATDMFlag::OnBounce(const struct FHitResult& ImpactResult, const struct FVector& ImpactVelocity)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TDMFlag", "OnBounce");
+
+	Params::TDMFlag_OnBounce Parms{};
+
+	Parms.ImpactResult = std::move(ImpactResult);
+	Parms.ImpactVelocity = std::move(ImpactVelocity);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.TDMFlag.OnStop
+// (Native, Public, HasOutParams)
+// Parameters:
+// const struct FHitResult&                ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void ATDMFlag::OnStop(const struct FHitResult& ImpactResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TDMFlag", "OnStop");
+
+	Params::TDMFlag_OnStop Parms{};
+
+	Parms.ImpactResult = std::move(ImpactResult);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -26922,6 +29312,386 @@ void UMAPlayerStatsScreen::BP_UpdateStats()
 		Func = Class->GetFunction("MAPlayerStatsScreen", "BP_UpdateStats");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Midair2.VehicleSpawnConsole.OnBeginOverlap
+// (Native, Public, HasOutParams)
+// Parameters:
+// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void AVehicleSpawnConsole::OnBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleSpawnConsole", "OnBeginOverlap");
+
+	Params::VehicleSpawnConsole_OnBeginOverlap Parms{};
+
+	Parms.OverlappedComponent = OverlappedComponent;
+	Parms.OtherActor = OtherActor;
+	Parms.OtherComp = OtherComp;
+	Parms.OtherBodyIndex = OtherBodyIndex;
+	Parms.bFromSweep = bFromSweep;
+	Parms.SweepResult = std::move(SweepResult);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehicleSpawnConsole.OnBeginUseBoxOverlap
+// (Final, Native, Protected, HasOutParams)
+// Parameters:
+// class UPrimitiveComponent*              Comp                                                   (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Other                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   BodyIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void AVehicleSpawnConsole::OnBeginUseBoxOverlap(class UPrimitiveComponent* Comp, class AActor* Other, class UPrimitiveComponent* OtherComp, int32 BodyIndex, bool bFromSweep, const struct FHitResult& Hit)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleSpawnConsole", "OnBeginUseBoxOverlap");
+
+	Params::VehicleSpawnConsole_OnBeginUseBoxOverlap Parms{};
+
+	Parms.Comp = Comp;
+	Parms.Other = Other;
+	Parms.OtherComp = OtherComp;
+	Parms.BodyIndex = BodyIndex;
+	Parms.bFromSweep = bFromSweep;
+	Parms.Hit = std::move(Hit);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehicleSpawnConsole.OnEndOverlap
+// (Native, Public)
+// Parameters:
+// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AVehicleSpawnConsole::OnEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleSpawnConsole", "OnEndOverlap");
+
+	Params::VehicleSpawnConsole_OnEndOverlap Parms{};
+
+	Parms.OverlappedComponent = OverlappedComponent;
+	Parms.OtherActor = OtherActor;
+	Parms.OtherComp = OtherComp;
+	Parms.OtherBodyIndex = OtherBodyIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehicleSpawnConsole.OnEndUseBoxOverlap
+// (Final, Native, Protected)
+// Parameters:
+// class UPrimitiveComponent*              Comp                                                   (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Other                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   BodyIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AVehicleSpawnConsole::OnEndUseBoxOverlap(class UPrimitiveComponent* Comp, class AActor* Other, class UPrimitiveComponent* OtherComp, int32 BodyIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleSpawnConsole", "OnEndUseBoxOverlap");
+
+	Params::VehicleSpawnConsole_OnEndUseBoxOverlap Parms{};
+
+	Parms.Comp = Comp;
+	Parms.Other = Other;
+	Parms.OtherComp = OtherComp;
+	Parms.BodyIndex = BodyIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehicleSpawnConsole.OnRep_ConsoleState
+// (Final, Native, Public)
+
+void AVehicleSpawnConsole::OnRep_ConsoleState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleSpawnConsole", "OnRep_ConsoleState");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehicleSpawnConsole.OnVehicleDied
+// (Native, Public)
+// Parameters:
+// class AVehiclePawn*                     Vehicle                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AVehicleSpawnConsole::OnVehicleDied(class AVehiclePawn* Vehicle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleSpawnConsole", "OnVehicleDied");
+
+	Params::VehicleSpawnConsole_OnVehicleDied Parms{};
+
+	Parms.Vehicle = Vehicle;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehicleSpawnConsole.CanSpawnClass
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class AVehiclePawn>         VehicleClass                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AVehicleSpawnConsole::CanSpawnClass(TSubclassOf<class AVehiclePawn> VehicleClass) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleSpawnConsole", "CanSpawnClass");
+
+	Params::VehicleSpawnConsole_CanSpawnClass Parms{};
+
+	Parms.VehicleClass = VehicleClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.VehicleSpawnConsole.GetConsoleState
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EVehicleSpawnState                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EVehicleSpawnState AVehicleSpawnConsole::GetConsoleState() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleSpawnConsole", "GetConsoleState");
+
+	Params::VehicleSpawnConsole_GetConsoleState Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.VehicleSpawnConsole.GetMaxVehicleCount
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class AVehiclePawn>         VehicleClass                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 AVehicleSpawnConsole::GetMaxVehicleCount(TSubclassOf<class AVehiclePawn> VehicleClass) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleSpawnConsole", "GetMaxVehicleCount");
+
+	Params::VehicleSpawnConsole_GetMaxVehicleCount Parms{};
+
+	Parms.VehicleClass = VehicleClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.VehicleSpawnConsole.GetVehicleCount
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class AVehiclePawn>         VehicleClass                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 AVehicleSpawnConsole::GetVehicleCount(TSubclassOf<class AVehiclePawn> VehicleClass) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleSpawnConsole", "GetVehicleCount");
+
+	Params::VehicleSpawnConsole_GetVehicleCount Parms{};
+
+	Parms.VehicleClass = VehicleClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.MAPowerup.AssistCapsuleTouched
+// (Native, Protected, HasOutParams)
+// Parameters:
+// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void AMAPowerup::AssistCapsuleTouched(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPowerup", "AssistCapsuleTouched");
+
+	Params::MAPowerup_AssistCapsuleTouched Parms{};
+
+	Parms.OverlappedComponent = OverlappedComponent;
+	Parms.OtherActor = OtherActor;
+	Parms.OtherComp = OtherComp;
+	Parms.OtherBodyIndex = OtherBodyIndex;
+	Parms.bFromSweep = bFromSweep;
+	Parms.SweepResult = std::move(SweepResult);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAPowerup.CapsuleTouched
+// (Native, Protected, HasOutParams)
+// Parameters:
+// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void AMAPowerup::CapsuleTouched(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPowerup", "CapsuleTouched");
+
+	Params::MAPowerup_CapsuleTouched Parms{};
+
+	Parms.OverlappedComponent = OverlappedComponent;
+	Parms.OtherActor = OtherActor;
+	Parms.OtherComp = OtherComp;
+	Parms.OtherBodyIndex = OtherBodyIndex;
+	Parms.bFromSweep = bFromSweep;
+	Parms.SweepResult = std::move(SweepResult);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MAPowerup.Tick
+// (Native, Protected)
+// Parameters:
+// float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMAPowerup::Tick(float DeltaTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MAPowerup", "Tick");
+
+	Params::MAPowerup_Tick Parms{};
+
+	Parms.DeltaTime = DeltaTime;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -28521,9 +31291,9 @@ void UMAPracticeComponent::SaveSelectedLocation(const class FString& Name_0, con
 // Parameters:
 // const class FString&                    Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    Description                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    Author                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    author                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMAPracticeComponent::SaveSelectedTutorial(const class FString& Name_0, const class FString& Description, const class FString& Author)
+void UMAPracticeComponent::SaveSelectedTutorial(const class FString& Name_0, const class FString& Description, const class FString& author)
 {
 	static class UFunction* Func = nullptr;
 
@@ -28534,7 +31304,7 @@ void UMAPracticeComponent::SaveSelectedTutorial(const class FString& Name_0, con
 
 	Parms.Name_0 = std::move(Name_0);
 	Parms.Description = std::move(Description);
-	Parms.Author = std::move(Author);
+	Parms.author = std::move(author);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -29352,6 +32122,52 @@ void UStagedMissileMovement::StartNewStage(float InStageLength)
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MASettingKeyboardInput.HandleBindingChanged
+// (Final, Native, Protected)
+// Parameters:
+// class FName                             Category                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FMidairInputMapping&       ChangedMapping                                         (Parm, NativeAccessSpecifierPublic)
+
+void UMASettingKeyboardInput::HandleBindingChanged(class FName Category, const struct FMidairInputMapping& ChangedMapping)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MASettingKeyboardInput", "HandleBindingChanged");
+
+	Params::MASettingKeyboardInput_HandleBindingChanged Parms{};
+
+	Parms.Category = Category;
+	Parms.ChangedMapping = std::move(ChangedMapping);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.MASettingScreen.HandleResetToDefaults
+// (Final, Native, Protected, BlueprintCallable)
+
+void UMASettingScreen::HandleResetToDefaults()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MASettingScreen", "HandleResetToDefaults");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -34835,6 +37651,51 @@ bool UMASettingsShared::GetTriggerPullUsesHapticThreshold() const
 }
 
 
+// Function Midair2.ViperVehicle.ApplyCustomLift
+// (Native, Public)
+// Parameters:
+// float                                   DeltaSeconds                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AViperVehicle::ApplyCustomLift(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ViperVehicle", "ApplyCustomLift");
+
+	Params::ViperVehicle_ApplyCustomLift Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.ViperVehicle.BP_LookRight
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   Val                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AViperVehicle::BP_LookRight(float Val)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ViperVehicle", "BP_LookRight");
+
+	Params::ViperVehicle_BP_LookRight Parms{};
+
+	Parms.Val = Val;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function Midair2.MAStatsSubsystem.AddStat
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -35002,6 +37863,81 @@ bool UMAWeaponStats::IsWeapon(TSubclassOf<class AMAItem> WClass)
 	Params::MAWeaponStats_IsWeapon Parms{};
 
 	Parms.WClass = WClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.PointOfInterestComponent.GetOwnerVitals
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UMAVitalsComponent*               ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UMAVitalsComponent* UPointOfInterestComponent::GetOwnerVitals()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PointOfInterestComponent", "GetOwnerVitals");
+
+	Params::PointOfInterestComponent_GetOwnerVitals Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.PointOfInterestComponent.GetTargetComponent
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UTargetComponent*                 ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UTargetComponent* UPointOfInterestComponent::GetTargetComponent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PointOfInterestComponent", "GetTargetComponent");
+
+	Params::PointOfInterestComponent_GetTargetComponent Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.PointOfInterestComponent.GetTargetCompState
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FName UPointOfInterestComponent::GetTargetCompState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PointOfInterestComponent", "GetTargetCompState");
+
+	Params::PointOfInterestComponent_GetTargetCompState Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -35675,6 +38611,1002 @@ void AMATargetDrone::TryTargetLost(class UTargetComponent* Target)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.GetCustomLoadoutsSave
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// bool                                    bForceNew                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPlayerLoadoutsSave*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UPlayerLoadoutsSave* UPlayerLoadoutsSave::GetCustomLoadoutsSave(bool bForceNew)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlayerLoadoutsSave", "GetCustomLoadoutsSave");
+
+	Params::PlayerLoadoutsSave_GetCustomLoadoutsSave Parms{};
+
+	Parms.bForceNew = bForceNew;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.GetGlobalLoadoutsSave
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// bool                                    bForceNew                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPlayerLoadoutsSave*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UPlayerLoadoutsSave* UPlayerLoadoutsSave::GetGlobalLoadoutsSave(bool bForceNew)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlayerLoadoutsSave", "GetGlobalLoadoutsSave");
+
+	Params::PlayerLoadoutsSave_GetGlobalLoadoutsSave Parms{};
+
+	Parms.bForceNew = bForceNew;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.GetLoadoutBackpack
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// TSubclassOf<class UBackpackInfo>*       OutBackpack                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPlayerLoadoutsSave::GetLoadoutBackpack(TSubclassOf<class UBackpackInfo>* OutBackpack)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlayerLoadoutsSave", "GetLoadoutBackpack");
+
+	Params::PlayerLoadoutsSave_GetLoadoutBackpack Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutBackpack != nullptr)
+		*OutBackpack = Parms.OutBackpack;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.GetLoadoutBackpackInfo
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class UBackpackInfo*                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UBackpackInfo* UPlayerLoadoutsSave::GetLoadoutBackpackInfo()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlayerLoadoutsSave", "GetLoadoutBackpackInfo");
+
+	Params::PlayerLoadoutsSave_GetLoadoutBackpackInfo Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.GetLoadoutCharacter
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// TSubclassOf<class UCharacterInfo>*      OutCharacter                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPlayerLoadoutsSave::GetLoadoutCharacter(TSubclassOf<class UCharacterInfo>* OutCharacter)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlayerLoadoutsSave", "GetLoadoutCharacter");
+
+	Params::PlayerLoadoutsSave_GetLoadoutCharacter Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutCharacter != nullptr)
+		*OutCharacter = Parms.OutCharacter;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.GetLoadoutCharacterInfo
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class UCharacterInfo*                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCharacterInfo* UPlayerLoadoutsSave::GetLoadoutCharacterInfo()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlayerLoadoutsSave", "GetLoadoutCharacterInfo");
+
+	Params::PlayerLoadoutsSave_GetLoadoutCharacterInfo Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.GetLoadoutThrowables
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// TArray<TSubclassOf<class UThrowableInfo>>*OutThrowables                                          (Parm, OutParm, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+
+void UPlayerLoadoutsSave::GetLoadoutThrowables(TArray<TSubclassOf<class UThrowableInfo>>* OutThrowables)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlayerLoadoutsSave", "GetLoadoutThrowables");
+
+	Params::PlayerLoadoutsSave_GetLoadoutThrowables Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutThrowables != nullptr)
+		*OutThrowables = std::move(Parms.OutThrowables);
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.GetLoadoutWeapons
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// TArray<TSubclassOf<class UWeaponInfo>>* OutWeapons                                             (Parm, OutParm, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+
+void UPlayerLoadoutsSave::GetLoadoutWeapons(TArray<TSubclassOf<class UWeaponInfo>>* OutWeapons)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlayerLoadoutsSave", "GetLoadoutWeapons");
+
+	Params::PlayerLoadoutsSave_GetLoadoutWeapons Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutWeapons != nullptr)
+		*OutWeapons = std::move(Parms.OutWeapons);
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.GetSprayIdent
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FName UPlayerLoadoutsSave::GetSprayIdent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlayerLoadoutsSave", "GetSprayIdent");
+
+	Params::PlayerLoadoutsSave_GetSprayIdent Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.GetVoiceIdent
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FName UPlayerLoadoutsSave::GetVoiceIdent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlayerLoadoutsSave", "GetVoiceIdent");
+
+	Params::PlayerLoadoutsSave_GetVoiceIdent Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.ChangeSelectedLoadout
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FMALoadout&                      Loadout                                                (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UPlayerLoadoutsSave::ChangeSelectedLoadout(struct FMALoadout& Loadout)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerLoadoutsSave", "ChangeSelectedLoadout");
+
+	Params::PlayerLoadoutsSave_ChangeSelectedLoadout Parms{};
+
+	Parms.Loadout = std::move(Loadout);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	Loadout = std::move(Parms.Loadout);
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.CheckCharacterForCurrentLoadout
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCharacterInfo>       DesiredCharacter                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class FText>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class FText> UPlayerLoadoutsSave::CheckCharacterForCurrentLoadout(TSubclassOf<class UCharacterInfo> DesiredCharacter)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerLoadoutsSave", "CheckCharacterForCurrentLoadout");
+
+	Params::PlayerLoadoutsSave_CheckCharacterForCurrentLoadout Parms{};
+
+	Parms.DesiredCharacter = DesiredCharacter;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.CheckCharacterForLoadout
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCharacterInfo>       DesiredCharacter                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FMALoadout&                UseLoadout                                             (Parm, NativeAccessSpecifierPublic)
+// TArray<class FText>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class FText> UPlayerLoadoutsSave::CheckCharacterForLoadout(TSubclassOf<class UCharacterInfo> DesiredCharacter, const struct FMALoadout& UseLoadout)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerLoadoutsSave", "CheckCharacterForLoadout");
+
+	Params::PlayerLoadoutsSave_CheckCharacterForLoadout Parms{};
+
+	Parms.DesiredCharacter = DesiredCharacter;
+	Parms.UseLoadout = std::move(UseLoadout);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.CheckPackForCurrentLoadout
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UBackpackInfo>        DesiredBackpack                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UCharacterInfo>       OverrideComparisonCharacter                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class FText>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class FText> UPlayerLoadoutsSave::CheckPackForCurrentLoadout(TSubclassOf<class UBackpackInfo> DesiredBackpack, TSubclassOf<class UCharacterInfo> OverrideComparisonCharacter)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerLoadoutsSave", "CheckPackForCurrentLoadout");
+
+	Params::PlayerLoadoutsSave_CheckPackForCurrentLoadout Parms{};
+
+	Parms.DesiredBackpack = DesiredBackpack;
+	Parms.OverrideComparisonCharacter = OverrideComparisonCharacter;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.CheckPackForLoadout
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UBackpackInfo>        DesiredBackpack                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FMALoadout&                UseLoadout                                             (Parm, NativeAccessSpecifierPublic)
+// TSubclassOf<class UCharacterInfo>       OverrideComparisonCharacter                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class FText>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class FText> UPlayerLoadoutsSave::CheckPackForLoadout(TSubclassOf<class UBackpackInfo> DesiredBackpack, const struct FMALoadout& UseLoadout, TSubclassOf<class UCharacterInfo> OverrideComparisonCharacter)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerLoadoutsSave", "CheckPackForLoadout");
+
+	Params::PlayerLoadoutsSave_CheckPackForLoadout Parms{};
+
+	Parms.DesiredBackpack = DesiredBackpack;
+	Parms.UseLoadout = std::move(UseLoadout);
+	Parms.OverrideComparisonCharacter = OverrideComparisonCharacter;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.CheckThrowableForCurrentLoadout
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   IndexAt                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UThrowableInfo>       DesiredThrowable                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class FText>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class FText> UPlayerLoadoutsSave::CheckThrowableForCurrentLoadout(int32 IndexAt, TSubclassOf<class UThrowableInfo> DesiredThrowable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerLoadoutsSave", "CheckThrowableForCurrentLoadout");
+
+	Params::PlayerLoadoutsSave_CheckThrowableForCurrentLoadout Parms{};
+
+	Parms.IndexAt = IndexAt;
+	Parms.DesiredThrowable = DesiredThrowable;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.CheckThrowableForLoadout
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   IndexAt                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UThrowableInfo>       DesiredThrowable                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FMALoadout&                UseLoadout                                             (Parm, NativeAccessSpecifierPublic)
+// TArray<class FText>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class FText> UPlayerLoadoutsSave::CheckThrowableForLoadout(int32 IndexAt, TSubclassOf<class UThrowableInfo> DesiredThrowable, const struct FMALoadout& UseLoadout)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerLoadoutsSave", "CheckThrowableForLoadout");
+
+	Params::PlayerLoadoutsSave_CheckThrowableForLoadout Parms{};
+
+	Parms.IndexAt = IndexAt;
+	Parms.DesiredThrowable = DesiredThrowable;
+	Parms.UseLoadout = std::move(UseLoadout);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.CheckWeaponForCurrentLoadout
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   IndexAt                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UWeaponInfo>          DesiredWeapon                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class FText>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class FText> UPlayerLoadoutsSave::CheckWeaponForCurrentLoadout(int32 IndexAt, TSubclassOf<class UWeaponInfo> DesiredWeapon)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerLoadoutsSave", "CheckWeaponForCurrentLoadout");
+
+	Params::PlayerLoadoutsSave_CheckWeaponForCurrentLoadout Parms{};
+
+	Parms.IndexAt = IndexAt;
+	Parms.DesiredWeapon = DesiredWeapon;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.CheckWeaponForLoadout
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   IndexAt                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UWeaponInfo>          DesiredWeapon                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FMALoadout&                UseLoadout                                             (Parm, NativeAccessSpecifierPublic)
+// TArray<class FText>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class FText> UPlayerLoadoutsSave::CheckWeaponForLoadout(int32 IndexAt, TSubclassOf<class UWeaponInfo> DesiredWeapon, const struct FMALoadout& UseLoadout)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerLoadoutsSave", "CheckWeaponForLoadout");
+
+	Params::PlayerLoadoutsSave_CheckWeaponForLoadout Parms{};
+
+	Parms.IndexAt = IndexAt;
+	Parms.DesiredWeapon = DesiredWeapon;
+	Parms.UseLoadout = std::move(UseLoadout);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.GetLastSelectedLoadout
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FMALoadout*                      outLoadout                                             (Parm, OutParm, NativeAccessSpecifierPublic)
+
+void UPlayerLoadoutsSave::GetLastSelectedLoadout(struct FMALoadout* outLoadout)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerLoadoutsSave", "GetLastSelectedLoadout");
+
+	Params::PlayerLoadoutsSave_GetLastSelectedLoadout Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (outLoadout != nullptr)
+		*outLoadout = std::move(Parms.outLoadout);
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.GetLoadoutsForGamemode
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TArray<struct FMALoadout>               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<struct FMALoadout> UPlayerLoadoutsSave::GetLoadoutsForGamemode()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerLoadoutsSave", "GetLoadoutsForGamemode");
+
+	Params::PlayerLoadoutsSave_GetLoadoutsForGamemode Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.GetNamedCosmeticSelection
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UClass*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UClass* UPlayerLoadoutsSave::GetNamedCosmeticSelection(class FName Name_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerLoadoutsSave", "GetNamedCosmeticSelection");
+
+	Params::PlayerLoadoutsSave_GetNamedCosmeticSelection Parms{};
+
+	Parms.Name_0 = Name_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.ModifyNamedCosmeticSelection
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UClass*                           Cosmetic                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPlayerLoadoutsSave::ModifyNamedCosmeticSelection(class FName Name_0, class UClass* Cosmetic)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerLoadoutsSave", "ModifyNamedCosmeticSelection");
+
+	Params::PlayerLoadoutsSave_ModifyNamedCosmeticSelection Parms{};
+
+	Parms.Name_0 = Name_0;
+	Parms.Cosmetic = Cosmetic;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.ModifySelectedLoadout_Character
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCharacterInfo>       DesiredCharacter                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bDoCheck                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UPlayerLoadoutsSave::ModifySelectedLoadout_Character(TSubclassOf<class UCharacterInfo> DesiredCharacter, bool bDoCheck)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerLoadoutsSave", "ModifySelectedLoadout_Character");
+
+	Params::PlayerLoadoutsSave_ModifySelectedLoadout_Character Parms{};
+
+	Parms.DesiredCharacter = DesiredCharacter;
+	Parms.bDoCheck = bDoCheck;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.ModifySelectedLoadout_Name
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class FString&                          DesiredName                                            (Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPlayerLoadoutsSave::ModifySelectedLoadout_Name(class FString& DesiredName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerLoadoutsSave", "ModifySelectedLoadout_Name");
+
+	Params::PlayerLoadoutsSave_ModifySelectedLoadout_Name Parms{};
+
+	Parms.DesiredName = std::move(DesiredName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	DesiredName = std::move(Parms.DesiredName);
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.ModifySelectedLoadout_ObjectSkin
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UObjectInfo>          ObjectInfoClass                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class ACosmeticConfiguration>DesiredSkin                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UPlayerLoadoutsSave::ModifySelectedLoadout_ObjectSkin(TSubclassOf<class UObjectInfo> ObjectInfoClass, TSubclassOf<class ACosmeticConfiguration> DesiredSkin)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerLoadoutsSave", "ModifySelectedLoadout_ObjectSkin");
+
+	Params::PlayerLoadoutsSave_ModifySelectedLoadout_ObjectSkin Parms{};
+
+	Parms.ObjectInfoClass = ObjectInfoClass;
+	Parms.DesiredSkin = DesiredSkin;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.ModifySelectedLoadout_Pack
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UBackpackInfo>        DesiredBackpack                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bDoCheck                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UPlayerLoadoutsSave::ModifySelectedLoadout_Pack(TSubclassOf<class UBackpackInfo> DesiredBackpack, bool bDoCheck)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerLoadoutsSave", "ModifySelectedLoadout_Pack");
+
+	Params::PlayerLoadoutsSave_ModifySelectedLoadout_Pack Parms{};
+
+	Parms.DesiredBackpack = DesiredBackpack;
+	Parms.bDoCheck = bDoCheck;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.ModifySelectedLoadout_Throwable
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   IndexAt                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UThrowableInfo>       DesiredThrowable                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bDoCheck                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UPlayerLoadoutsSave::ModifySelectedLoadout_Throwable(int32 IndexAt, TSubclassOf<class UThrowableInfo> DesiredThrowable, bool bDoCheck)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerLoadoutsSave", "ModifySelectedLoadout_Throwable");
+
+	Params::PlayerLoadoutsSave_ModifySelectedLoadout_Throwable Parms{};
+
+	Parms.IndexAt = IndexAt;
+	Parms.DesiredThrowable = DesiredThrowable;
+	Parms.bDoCheck = bDoCheck;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.ModifySelectedLoadout_VoiceSet
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UVoiceSetInfo>        DesiredVoiceSet                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UPlayerLoadoutsSave::ModifySelectedLoadout_VoiceSet(TSubclassOf<class UVoiceSetInfo> DesiredVoiceSet)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerLoadoutsSave", "ModifySelectedLoadout_VoiceSet");
+
+	Params::PlayerLoadoutsSave_ModifySelectedLoadout_VoiceSet Parms{};
+
+	Parms.DesiredVoiceSet = DesiredVoiceSet;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.ModifySelectedLoadout_Weapon
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   IndexAt                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UWeaponInfo>          DesiredWeapon                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class AWeaponSkinConfiguration>DesiredSkin                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bDoCheck                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UPlayerLoadoutsSave::ModifySelectedLoadout_Weapon(int32 IndexAt, TSubclassOf<class UWeaponInfo> DesiredWeapon, TSubclassOf<class AWeaponSkinConfiguration> DesiredSkin, bool bDoCheck)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerLoadoutsSave", "ModifySelectedLoadout_Weapon");
+
+	Params::PlayerLoadoutsSave_ModifySelectedLoadout_Weapon Parms{};
+
+	Parms.IndexAt = IndexAt;
+	Parms.DesiredWeapon = DesiredWeapon;
+	Parms.DesiredSkin = DesiredSkin;
+	Parms.bDoCheck = bDoCheck;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.RestoreDefaultLoadoutsForGame
+// (Final, Native, Public, BlueprintCallable)
+
+void UPlayerLoadoutsSave::RestoreDefaultLoadoutsForGame()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerLoadoutsSave", "RestoreDefaultLoadoutsForGame");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.SaveChanges
+// (Final, Native, Public, BlueprintCallable)
+
+void UPlayerLoadoutsSave::SaveChanges()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerLoadoutsSave", "SaveChanges");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.SetLastSelectedIndex
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPlayerLoadoutsSave::SetLastSelectedIndex(int32 Index_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerLoadoutsSave", "SetLastSelectedIndex");
+
+	Params::PlayerLoadoutsSave_SetLastSelectedIndex Parms{};
+
+	Parms.Index_0 = Index_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.CheckLoadoutNameUnique
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FString&                          DesiredName                                            (Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UPlayerLoadoutsSave::CheckLoadoutNameUnique(class FString& DesiredName) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerLoadoutsSave", "CheckLoadoutNameUnique");
+
+	Params::PlayerLoadoutsSave_CheckLoadoutNameUnique Parms{};
+
+	Parms.DesiredName = std::move(DesiredName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	DesiredName = std::move(Parms.DesiredName);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.GetLastSelectedIndex
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UPlayerLoadoutsSave::GetLastSelectedIndex() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerLoadoutsSave", "GetLastSelectedIndex");
+
+	Params::PlayerLoadoutsSave_GetLastSelectedIndex Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.PlayerLoadoutsSave.GetLoadoutIndex
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FMALoadout&                      Loadout                                                (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UPlayerLoadoutsSave::GetLoadoutIndex(struct FMALoadout& Loadout) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerLoadoutsSave", "GetLoadoutIndex");
+
+	Params::PlayerLoadoutsSave_GetLoadoutIndex Parms{};
+
+	Parms.Loadout = std::move(Loadout);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	Loadout = std::move(Parms.Loadout);
+
+	return Parms.ReturnValue;
 }
 
 
@@ -36383,69 +40315,6 @@ void UMACountdownWidget::SetCountdownText(int32 CountdownTime)
 }
 
 
-// Function Midair2.TargetDummy.ForceKill
-// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
-
-void ATargetDummy::ForceKill()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TargetDummy", "ForceKill");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.TargetDummy.OnDied
-// (Final, Native, Public)
-
-void ATargetDummy::OnDied()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TargetDummy", "OnDied");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.TargetDummy.GetTeamID
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// ETeamId                                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-ETeamId ATargetDummy::GetTeamID() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TargetDummy", "GetTeamID");
-
-	Params::TargetDummy_GetTeamID Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function Midair2.MATrackDirectionArrow.ApplyLocalVisibility
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -36922,184 +40791,6 @@ void AMATrackPlayerState::SetPeronsalBest(int32 NewPB)
 	Parms.NewPB = NewPB;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Midair2.MATurretAsset.NetMulticast_FireProjectiles
-// (Net, Native, Event, NetMulticast, Public)
-
-void AMATurretAsset::NetMulticast_FireProjectiles()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MATurretAsset", "NetMulticast_FireProjectiles");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MATurretAsset.OnPerceptionUpdated
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const TArray<class AActor*>&            UpdatedActors                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void AMATurretAsset::OnPerceptionUpdated(const TArray<class AActor*>& UpdatedActors)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MATurretAsset", "OnPerceptionUpdated");
-
-	Params::MATurretAsset_OnPerceptionUpdated Parms{};
-
-	Parms.UpdatedActors = std::move(UpdatedActors);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MATurretAsset.OnTargetUpdated
-// (Native, Protected)
-// Parameters:
-// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FAIStimulus&               Stimulus                                               (Parm, NoDestructor, NativeAccessSpecifierPublic)
-
-void AMATurretAsset::OnTargetUpdated(class AActor* Actor, const struct FAIStimulus& Stimulus)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MATurretAsset", "OnTargetUpdated");
-
-	Params::MATurretAsset_OnTargetUpdated Parms{};
-
-	Parms.Actor = Actor;
-	Parms.Stimulus = std::move(Stimulus);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MATurretAsset.TargetAcquired
-// (Native, Protected)
-
-void AMATurretAsset::TargetAcquired()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MATurretAsset", "TargetAcquired");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MATurretAsset.TargetDroppedFromSensorChannel
-// (Native, Protected)
-// Parameters:
-// class UTargetComponent*                 Target                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// uint8                                   Channel                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMATurretAsset::TargetDroppedFromSensorChannel(class UTargetComponent* Target, uint8 Channel)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MATurretAsset", "TargetDroppedFromSensorChannel");
-
-	Params::MATurretAsset_TargetDroppedFromSensorChannel Parms{};
-
-	Parms.Target = Target;
-	Parms.Channel = Channel;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.MATurretAsset.TryTargetLost
-// (Native, Protected)
-// Parameters:
-// class UTargetComponent*                 Target                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMATurretAsset::TryTargetLost(class UTargetComponent* Target)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MATurretAsset", "TryTargetLost");
-
-	Params::MATurretAsset_TryTargetLost Parms{};
-
-	Parms.Target = Target;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.SubmitUserReportAsyncTask.SubmitUserReport
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    steamID                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    summary                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    Description                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    Reproduce                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Severity                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class USubmitUserReportAsyncTask*       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class USubmitUserReportAsyncTask* USubmitUserReportAsyncTask::SubmitUserReport(const class FString& steamID, const class FString& summary, const class FString& Description, const class FString& Reproduce, int32 Severity)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("SubmitUserReportAsyncTask", "SubmitUserReport");
-
-	Params::SubmitUserReportAsyncTask_SubmitUserReport Parms{};
-
-	Parms.steamID = std::move(steamID);
-	Parms.summary = std::move(summary);
-	Parms.Description = std::move(Description);
-	Parms.Reproduce = std::move(Reproduce);
-	Parms.Severity = Severity;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -37897,9 +41588,9 @@ void UMAVoteComponent::BeginEndMatchVote(uint8 MapIndex)
 // (Net, NetReliable, Native, Event, Public, NetClient)
 // Parameters:
 // uint8                                   PlayerIndex                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    steamID                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SteamId                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMAVoteComponent::BeginPlayerAdminVote(uint8 PlayerIndex, const class FString& steamID)
+void UMAVoteComponent::BeginPlayerAdminVote(uint8 PlayerIndex, const class FString& SteamId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -37909,7 +41600,7 @@ void UMAVoteComponent::BeginPlayerAdminVote(uint8 PlayerIndex, const class FStri
 	Params::MAVoteComponent_BeginPlayerAdminVote Parms{};
 
 	Parms.PlayerIndex = PlayerIndex;
-	Parms.steamID = std::move(steamID);
+	Parms.SteamId = std::move(SteamId);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -38094,9 +41785,9 @@ void UMAVoteComponent::ServerVoteEndWithNextMap(uint8 MapIndex)
 // (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable, NetValidate)
 // Parameters:
 // uint8                                   PlayerIndex                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    steamID                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SteamId                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMAVoteComponent::ServerVoteMakePlayerAdmin(uint8 PlayerIndex, const class FString& steamID)
+void UMAVoteComponent::ServerVoteMakePlayerAdmin(uint8 PlayerIndex, const class FString& SteamId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -38106,7 +41797,7 @@ void UMAVoteComponent::ServerVoteMakePlayerAdmin(uint8 PlayerIndex, const class 
 	Params::MAVoteComponent_ServerVoteMakePlayerAdmin Parms{};
 
 	Parms.PlayerIndex = PlayerIndex;
-	Parms.steamID = std::move(steamID);
+	Parms.SteamId = std::move(SteamId);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -38409,94 +42100,24 @@ TSubclassOf<class UUserWidget> UMAWidgetFactory::FindWidgetClassForData(const cl
 }
 
 
-// Function Midair2.ObjectInfo.ConvertObjectArrayToItemArray
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Function Midair2.VehicleInfo.GetMaxSeatableArmorSize
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// TArray<TSubclassOf<class UObjectInfo>>& objects                                                (Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
-// TArray<TSubclassOf<class UItemInfo>>*   OutItems                                               (Parm, OutParm, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+// EArmorSize                              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UObjectInfo::ConvertObjectArrayToItemArray(TArray<TSubclassOf<class UObjectInfo>>& objects, TArray<TSubclassOf<class UItemInfo>>* OutItems)
+EArmorSize UVehicleInfo::GetMaxSeatableArmorSize() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("ObjectInfo", "ConvertObjectArrayToItemArray");
+		Func = Class->GetFunction("VehicleInfo", "GetMaxSeatableArmorSize");
 
-	Params::ObjectInfo_ConvertObjectArrayToItemArray Parms{};
-
-	Parms.objects = std::move(objects);
+	Params::VehicleInfo_GetMaxSeatableArmorSize Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	objects = std::move(Parms.objects);
-
-	if (OutItems != nullptr)
-		*OutItems = std::move(Parms.OutItems);
-}
-
-
-// Function Midair2.ObjectInfo.FilterObjectInfoArray
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
-// Parameters:
-// TArray<TSubclassOf<class UObjectInfo>>& Base                                                   (Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
-// TArray<TSubclassOf<class UObjectInfo>>& AppliedFilter                                          (Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
-// TArray<TSubclassOf<class UObjectInfo>>* OutResult                                              (Parm, OutParm, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-// bool                                    bReturnInBoth                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UObjectInfo::FilterObjectInfoArray(TArray<TSubclassOf<class UObjectInfo>>& Base, TArray<TSubclassOf<class UObjectInfo>>& AppliedFilter, TArray<TSubclassOf<class UObjectInfo>>* OutResult, bool bReturnInBoth)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("ObjectInfo", "FilterObjectInfoArray");
-
-	Params::ObjectInfo_FilterObjectInfoArray Parms{};
-
-	Parms.Base = std::move(Base);
-	Parms.AppliedFilter = std::move(AppliedFilter);
-	Parms.bReturnInBoth = bReturnInBoth;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	Base = std::move(Parms.Base);
-	AppliedFilter = std::move(Parms.AppliedFilter);
-
-	if (OutResult != nullptr)
-		*OutResult = std::move(Parms.OutResult);
-}
-
-
-// Function Midair2.ObjectInfo.GetObjectInfo
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class UObject*                          InObject                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UObjectInfo*                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UObjectInfo* UObjectInfo::GetObjectInfo(class UObject* InObject)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("ObjectInfo", "GetObjectInfo");
-
-	Params::ObjectInfo_GetObjectInfo Parms{};
-
-	Parms.InObject = InObject;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -38504,50 +42125,19 @@ class UObjectInfo* UObjectInfo::GetObjectInfo(class UObject* InObject)
 }
 
 
-// Function Midair2.ObjectInfo.GetObjectInfoFromClass
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Function Midair2.VehicleInfo.GetSeatCount
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class UClass*                           InObjectClass                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UObjectInfo*                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint8                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UObjectInfo* UObjectInfo::GetObjectInfoFromClass(class UClass* InObjectClass)
+uint8 UVehicleInfo::GetSeatCount() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("ObjectInfo", "GetObjectInfoFromClass");
+		Func = Class->GetFunction("VehicleInfo", "GetSeatCount");
 
-	Params::ObjectInfo_GetObjectInfoFromClass Parms{};
-
-	Parms.InObjectClass = InObjectClass;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.ObjectInfo.GetActionText
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// const class AActor*                     Actor                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-class FText UObjectInfo::GetActionText(const class AActor* Actor) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ObjectInfo", "GetActionText");
-
-	Params::ObjectInfo_GetActionText Parms{};
-
-	Parms.Actor = Actor;
+	Params::VehicleInfo_GetSeatCount Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -38601,343 +42191,6 @@ bool UAugmentInfo::CanBeUsedWith(class UAugmentInfo* AugmentInfo) const
 	Params::AugmentInfo_CanBeUsedWith Parms{};
 
 	Parms.AugmentInfo = AugmentInfo;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.BackpackInfo.GetAvailablePrimaryAugments
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TArray<TSubclassOf<class UAugmentInfo>> ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
-
-TArray<TSubclassOf<class UAugmentInfo>> UBackpackInfo::GetAvailablePrimaryAugments() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BackpackInfo", "GetAvailablePrimaryAugments");
-
-	Params::BackpackInfo_GetAvailablePrimaryAugments Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.BackpackInfo.GetAvailableSecondaryAugments
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TArray<TSubclassOf<class UAugmentInfo>> ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
-
-TArray<TSubclassOf<class UAugmentInfo>> UBackpackInfo::GetAvailableSecondaryAugments() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BackpackInfo", "GetAvailableSecondaryAugments");
-
-	Params::BackpackInfo_GetAvailableSecondaryAugments Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.CharacterInfo.GetAvailableBackpacks
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TArray<TSubclassOf<class UBackpackInfo>>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
-
-TArray<TSubclassOf<class UBackpackInfo>> UCharacterInfo::GetAvailableBackpacks() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CharacterInfo", "GetAvailableBackpacks");
-
-	Params::CharacterInfo_GetAvailableBackpacks Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.CharacterInfo.GetAvailableDeployables
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TArray<TSubclassOf<class UDeployableInfo>>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
-
-TArray<TSubclassOf<class UDeployableInfo>> UCharacterInfo::GetAvailableDeployables() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CharacterInfo", "GetAvailableDeployables");
-
-	Params::CharacterInfo_GetAvailableDeployables Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.CharacterInfo.GetAvailableThrowables
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TArray<TSubclassOf<class UThrowableInfo>>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
-
-TArray<TSubclassOf<class UThrowableInfo>> UCharacterInfo::GetAvailableThrowables() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CharacterInfo", "GetAvailableThrowables");
-
-	Params::CharacterInfo_GetAvailableThrowables Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.CharacterInfo.GetAvailableVoiceSets
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TArray<TSubclassOf<class UVoiceSetInfo>>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
-
-TArray<TSubclassOf<class UVoiceSetInfo>> UCharacterInfo::GetAvailableVoiceSets() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CharacterInfo", "GetAvailableVoiceSets");
-
-	Params::CharacterInfo_GetAvailableVoiceSets Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.CharacterInfo.GetAvailableWeapons
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TArray<TSubclassOf<class UWeaponInfo>>  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
-
-TArray<TSubclassOf<class UWeaponInfo>> UCharacterInfo::GetAvailableWeapons() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CharacterInfo", "GetAvailableWeapons");
-
-	Params::CharacterInfo_GetAvailableWeapons Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.CharacterInfo.GetStats
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FCharacterStatDetails            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FCharacterStatDetails UCharacterInfo::GetStats() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CharacterInfo", "GetStats");
-
-	Params::CharacterInfo_GetStats Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.CharacterInfo.GetUnavailableAugments
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TArray<TSubclassOf<class UAugmentInfo>> ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
-
-TArray<TSubclassOf<class UAugmentInfo>> UCharacterInfo::GetUnavailableAugments() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CharacterInfo", "GetUnavailableAugments");
-
-	Params::CharacterInfo_GetUnavailableAugments Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.CharacterInfo.IsAugmentAvailable
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TSubclassOf<class UAugmentInfo>         Augment                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UCharacterInfo::IsAugmentAvailable(TSubclassOf<class UAugmentInfo> Augment) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CharacterInfo", "IsAugmentAvailable");
-
-	Params::CharacterInfo_IsAugmentAvailable Parms{};
-
-	Parms.Augment = Augment;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.CharacterInfo.IsThrowableAvailable
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TSubclassOf<class UThrowableInfo>       Throwable                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UCharacterInfo::IsThrowableAvailable(TSubclassOf<class UThrowableInfo> Throwable) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CharacterInfo", "IsThrowableAvailable");
-
-	Params::CharacterInfo_IsThrowableAvailable Parms{};
-
-	Parms.Throwable = Throwable;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.CharacterInfo.IsVoiceSetAvailable
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TSubclassOf<class UVoiceSetInfo>        VoiceSet                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UCharacterInfo::IsVoiceSetAvailable(TSubclassOf<class UVoiceSetInfo> VoiceSet) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CharacterInfo", "IsVoiceSetAvailable");
-
-	Params::CharacterInfo_IsVoiceSetAvailable Parms{};
-
-	Parms.VoiceSet = VoiceSet;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.CharacterInfo.IsWeaponAvailable
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TSubclassOf<class UWeaponInfo>          Weapon                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UCharacterInfo::IsWeaponAvailable(TSubclassOf<class UWeaponInfo> Weapon) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CharacterInfo", "IsWeaponAvailable");
-
-	Params::CharacterInfo_IsWeaponAvailable Parms{};
-
-	Parms.Weapon = Weapon;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -39091,863 +42344,15 @@ void AParticleConfiguration::SetParticlesOnComponent(class UParticleSystemCompon
 }
 
 
-// Function Midair2.PlayerLoadoutsSave.GetCustomLoadoutsSave
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// bool                                    bForceNew                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPlayerLoadoutsSave*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Midair2.PassengerPawn.OnRep_ControlPitchYaw
+// (Native, Public)
 
-class UPlayerLoadoutsSave* UPlayerLoadoutsSave::GetCustomLoadoutsSave(bool bForceNew)
+void APassengerPawn::OnRep_ControlPitchYaw()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PlayerLoadoutsSave", "GetCustomLoadoutsSave");
-
-	Params::PlayerLoadoutsSave_GetCustomLoadoutsSave Parms{};
-
-	Parms.bForceNew = bForceNew;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.PlayerLoadoutsSave.GetGlobalLoadoutsSave
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// bool                                    bForceNew                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPlayerLoadoutsSave*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UPlayerLoadoutsSave* UPlayerLoadoutsSave::GetGlobalLoadoutsSave(bool bForceNew)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PlayerLoadoutsSave", "GetGlobalLoadoutsSave");
-
-	Params::PlayerLoadoutsSave_GetGlobalLoadoutsSave Parms{};
-
-	Parms.bForceNew = bForceNew;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.PlayerLoadoutsSave.GetLoadoutBackpack
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
-// Parameters:
-// TSubclassOf<class UBackpackInfo>*       OutBackpack                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPlayerLoadoutsSave::GetLoadoutBackpack(TSubclassOf<class UBackpackInfo>* OutBackpack)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PlayerLoadoutsSave", "GetLoadoutBackpack");
-
-	Params::PlayerLoadoutsSave_GetLoadoutBackpack Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutBackpack != nullptr)
-		*OutBackpack = Parms.OutBackpack;
-}
-
-
-// Function Midair2.PlayerLoadoutsSave.GetLoadoutBackpackInfo
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class UBackpackInfo*                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UBackpackInfo* UPlayerLoadoutsSave::GetLoadoutBackpackInfo()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PlayerLoadoutsSave", "GetLoadoutBackpackInfo");
-
-	Params::PlayerLoadoutsSave_GetLoadoutBackpackInfo Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.PlayerLoadoutsSave.GetLoadoutCharacter
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
-// Parameters:
-// TSubclassOf<class UCharacterInfo>*      OutCharacter                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPlayerLoadoutsSave::GetLoadoutCharacter(TSubclassOf<class UCharacterInfo>* OutCharacter)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PlayerLoadoutsSave", "GetLoadoutCharacter");
-
-	Params::PlayerLoadoutsSave_GetLoadoutCharacter Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutCharacter != nullptr)
-		*OutCharacter = Parms.OutCharacter;
-}
-
-
-// Function Midair2.PlayerLoadoutsSave.GetLoadoutCharacterInfo
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class UCharacterInfo*                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCharacterInfo* UPlayerLoadoutsSave::GetLoadoutCharacterInfo()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PlayerLoadoutsSave", "GetLoadoutCharacterInfo");
-
-	Params::PlayerLoadoutsSave_GetLoadoutCharacterInfo Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.PlayerLoadoutsSave.GetLoadoutThrowables
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
-// Parameters:
-// TArray<TSubclassOf<class UThrowableInfo>>*OutThrowables                                          (Parm, OutParm, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-
-void UPlayerLoadoutsSave::GetLoadoutThrowables(TArray<TSubclassOf<class UThrowableInfo>>* OutThrowables)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PlayerLoadoutsSave", "GetLoadoutThrowables");
-
-	Params::PlayerLoadoutsSave_GetLoadoutThrowables Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutThrowables != nullptr)
-		*OutThrowables = std::move(Parms.OutThrowables);
-}
-
-
-// Function Midair2.PlayerLoadoutsSave.GetLoadoutWeapons
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
-// Parameters:
-// TArray<TSubclassOf<class UWeaponInfo>>* OutWeapons                                             (Parm, OutParm, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-
-void UPlayerLoadoutsSave::GetLoadoutWeapons(TArray<TSubclassOf<class UWeaponInfo>>* OutWeapons)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PlayerLoadoutsSave", "GetLoadoutWeapons");
-
-	Params::PlayerLoadoutsSave_GetLoadoutWeapons Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutWeapons != nullptr)
-		*OutWeapons = std::move(Parms.OutWeapons);
-}
-
-
-// Function Midair2.PlayerLoadoutsSave.GetSprayIdent
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FName UPlayerLoadoutsSave::GetSprayIdent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PlayerLoadoutsSave", "GetSprayIdent");
-
-	Params::PlayerLoadoutsSave_GetSprayIdent Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.PlayerLoadoutsSave.GetVoiceIdent
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FName UPlayerLoadoutsSave::GetVoiceIdent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PlayerLoadoutsSave", "GetVoiceIdent");
-
-	Params::PlayerLoadoutsSave_GetVoiceIdent Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.PlayerLoadoutsSave.ChangeSelectedLoadout
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FMALoadout&                      loadout                                                (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UPlayerLoadoutsSave::ChangeSelectedLoadout(struct FMALoadout& loadout)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerLoadoutsSave", "ChangeSelectedLoadout");
-
-	Params::PlayerLoadoutsSave_ChangeSelectedLoadout Parms{};
-
-	Parms.loadout = std::move(loadout);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	loadout = std::move(Parms.loadout);
-}
-
-
-// Function Midair2.PlayerLoadoutsSave.CheckCharacterForCurrentLoadout
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UCharacterInfo>       DesiredCharacter                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class FText>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<class FText> UPlayerLoadoutsSave::CheckCharacterForCurrentLoadout(TSubclassOf<class UCharacterInfo> DesiredCharacter)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerLoadoutsSave", "CheckCharacterForCurrentLoadout");
-
-	Params::PlayerLoadoutsSave_CheckCharacterForCurrentLoadout Parms{};
-
-	Parms.DesiredCharacter = DesiredCharacter;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.PlayerLoadoutsSave.CheckCharacterForLoadout
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UCharacterInfo>       DesiredCharacter                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FMALoadout&                UseLoadout                                             (Parm, NativeAccessSpecifierPublic)
-// TArray<class FText>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<class FText> UPlayerLoadoutsSave::CheckCharacterForLoadout(TSubclassOf<class UCharacterInfo> DesiredCharacter, const struct FMALoadout& UseLoadout)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerLoadoutsSave", "CheckCharacterForLoadout");
-
-	Params::PlayerLoadoutsSave_CheckCharacterForLoadout Parms{};
-
-	Parms.DesiredCharacter = DesiredCharacter;
-	Parms.UseLoadout = std::move(UseLoadout);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.PlayerLoadoutsSave.CheckPackForCurrentLoadout
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UBackpackInfo>        DesiredBackpack                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UCharacterInfo>       OverrideComparisonCharacter                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class FText>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<class FText> UPlayerLoadoutsSave::CheckPackForCurrentLoadout(TSubclassOf<class UBackpackInfo> DesiredBackpack, TSubclassOf<class UCharacterInfo> OverrideComparisonCharacter)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerLoadoutsSave", "CheckPackForCurrentLoadout");
-
-	Params::PlayerLoadoutsSave_CheckPackForCurrentLoadout Parms{};
-
-	Parms.DesiredBackpack = DesiredBackpack;
-	Parms.OverrideComparisonCharacter = OverrideComparisonCharacter;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.PlayerLoadoutsSave.CheckPackForLoadout
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UBackpackInfo>        DesiredBackpack                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FMALoadout&                UseLoadout                                             (Parm, NativeAccessSpecifierPublic)
-// TSubclassOf<class UCharacterInfo>       OverrideComparisonCharacter                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class FText>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<class FText> UPlayerLoadoutsSave::CheckPackForLoadout(TSubclassOf<class UBackpackInfo> DesiredBackpack, const struct FMALoadout& UseLoadout, TSubclassOf<class UCharacterInfo> OverrideComparisonCharacter)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerLoadoutsSave", "CheckPackForLoadout");
-
-	Params::PlayerLoadoutsSave_CheckPackForLoadout Parms{};
-
-	Parms.DesiredBackpack = DesiredBackpack;
-	Parms.UseLoadout = std::move(UseLoadout);
-	Parms.OverrideComparisonCharacter = OverrideComparisonCharacter;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.PlayerLoadoutsSave.CheckThrowableForCurrentLoadout
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   IndexAt                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UThrowableInfo>       DesiredThrowable                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class FText>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<class FText> UPlayerLoadoutsSave::CheckThrowableForCurrentLoadout(int32 IndexAt, TSubclassOf<class UThrowableInfo> DesiredThrowable)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerLoadoutsSave", "CheckThrowableForCurrentLoadout");
-
-	Params::PlayerLoadoutsSave_CheckThrowableForCurrentLoadout Parms{};
-
-	Parms.IndexAt = IndexAt;
-	Parms.DesiredThrowable = DesiredThrowable;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.PlayerLoadoutsSave.CheckThrowableForLoadout
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   IndexAt                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UThrowableInfo>       DesiredThrowable                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FMALoadout&                UseLoadout                                             (Parm, NativeAccessSpecifierPublic)
-// TArray<class FText>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<class FText> UPlayerLoadoutsSave::CheckThrowableForLoadout(int32 IndexAt, TSubclassOf<class UThrowableInfo> DesiredThrowable, const struct FMALoadout& UseLoadout)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerLoadoutsSave", "CheckThrowableForLoadout");
-
-	Params::PlayerLoadoutsSave_CheckThrowableForLoadout Parms{};
-
-	Parms.IndexAt = IndexAt;
-	Parms.DesiredThrowable = DesiredThrowable;
-	Parms.UseLoadout = std::move(UseLoadout);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.PlayerLoadoutsSave.CheckWeaponForCurrentLoadout
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   IndexAt                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UWeaponInfo>          DesiredWeapon                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class FText>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<class FText> UPlayerLoadoutsSave::CheckWeaponForCurrentLoadout(int32 IndexAt, TSubclassOf<class UWeaponInfo> DesiredWeapon)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerLoadoutsSave", "CheckWeaponForCurrentLoadout");
-
-	Params::PlayerLoadoutsSave_CheckWeaponForCurrentLoadout Parms{};
-
-	Parms.IndexAt = IndexAt;
-	Parms.DesiredWeapon = DesiredWeapon;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.PlayerLoadoutsSave.CheckWeaponForLoadout
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   IndexAt                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UWeaponInfo>          DesiredWeapon                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FMALoadout&                UseLoadout                                             (Parm, NativeAccessSpecifierPublic)
-// TArray<class FText>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<class FText> UPlayerLoadoutsSave::CheckWeaponForLoadout(int32 IndexAt, TSubclassOf<class UWeaponInfo> DesiredWeapon, const struct FMALoadout& UseLoadout)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerLoadoutsSave", "CheckWeaponForLoadout");
-
-	Params::PlayerLoadoutsSave_CheckWeaponForLoadout Parms{};
-
-	Parms.IndexAt = IndexAt;
-	Parms.DesiredWeapon = DesiredWeapon;
-	Parms.UseLoadout = std::move(UseLoadout);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.PlayerLoadoutsSave.GetLastSelectedLoadout
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FMALoadout*                      outLoadout                                             (Parm, OutParm, NativeAccessSpecifierPublic)
-
-void UPlayerLoadoutsSave::GetLastSelectedLoadout(struct FMALoadout* outLoadout)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerLoadoutsSave", "GetLastSelectedLoadout");
-
-	Params::PlayerLoadoutsSave_GetLastSelectedLoadout Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (outLoadout != nullptr)
-		*outLoadout = std::move(Parms.outLoadout);
-}
-
-
-// Function Midair2.PlayerLoadoutsSave.GetLoadoutsForGamemode
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// TArray<struct FMALoadout>               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<struct FMALoadout> UPlayerLoadoutsSave::GetLoadoutsForGamemode()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerLoadoutsSave", "GetLoadoutsForGamemode");
-
-	Params::PlayerLoadoutsSave_GetLoadoutsForGamemode Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.PlayerLoadoutsSave.GetNamedCosmeticSelection
-// (Final, Native, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UClass*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UClass* UPlayerLoadoutsSave::GetNamedCosmeticSelection(class FName Name_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerLoadoutsSave", "GetNamedCosmeticSelection");
-
-	Params::PlayerLoadoutsSave_GetNamedCosmeticSelection Parms{};
-
-	Parms.Name_0 = Name_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.PlayerLoadoutsSave.ModifyNamedCosmeticSelection
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UClass*                           Cosmetic                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPlayerLoadoutsSave::ModifyNamedCosmeticSelection(class FName Name_0, class UClass* Cosmetic)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerLoadoutsSave", "ModifyNamedCosmeticSelection");
-
-	Params::PlayerLoadoutsSave_ModifyNamedCosmeticSelection Parms{};
-
-	Parms.Name_0 = Name_0;
-	Parms.Cosmetic = Cosmetic;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.PlayerLoadoutsSave.ModifySelectedLoadout_Character
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UCharacterInfo>       DesiredCharacter                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bDoCheck                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UPlayerLoadoutsSave::ModifySelectedLoadout_Character(TSubclassOf<class UCharacterInfo> DesiredCharacter, bool bDoCheck)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerLoadoutsSave", "ModifySelectedLoadout_Character");
-
-	Params::PlayerLoadoutsSave_ModifySelectedLoadout_Character Parms{};
-
-	Parms.DesiredCharacter = DesiredCharacter;
-	Parms.bDoCheck = bDoCheck;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.PlayerLoadoutsSave.ModifySelectedLoadout_Name
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// class FString&                          DesiredName                                            (Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPlayerLoadoutsSave::ModifySelectedLoadout_Name(class FString& DesiredName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerLoadoutsSave", "ModifySelectedLoadout_Name");
-
-	Params::PlayerLoadoutsSave_ModifySelectedLoadout_Name Parms{};
-
-	Parms.DesiredName = std::move(DesiredName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	DesiredName = std::move(Parms.DesiredName);
-}
-
-
-// Function Midair2.PlayerLoadoutsSave.ModifySelectedLoadout_ObjectSkin
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UObjectInfo>          ObjectInfoClass                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class ACosmeticConfiguration>DesiredSkin                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UPlayerLoadoutsSave::ModifySelectedLoadout_ObjectSkin(TSubclassOf<class UObjectInfo> ObjectInfoClass, TSubclassOf<class ACosmeticConfiguration> DesiredSkin)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerLoadoutsSave", "ModifySelectedLoadout_ObjectSkin");
-
-	Params::PlayerLoadoutsSave_ModifySelectedLoadout_ObjectSkin Parms{};
-
-	Parms.ObjectInfoClass = ObjectInfoClass;
-	Parms.DesiredSkin = DesiredSkin;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.PlayerLoadoutsSave.ModifySelectedLoadout_Pack
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UBackpackInfo>        DesiredBackpack                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bDoCheck                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UPlayerLoadoutsSave::ModifySelectedLoadout_Pack(TSubclassOf<class UBackpackInfo> DesiredBackpack, bool bDoCheck)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerLoadoutsSave", "ModifySelectedLoadout_Pack");
-
-	Params::PlayerLoadoutsSave_ModifySelectedLoadout_Pack Parms{};
-
-	Parms.DesiredBackpack = DesiredBackpack;
-	Parms.bDoCheck = bDoCheck;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.PlayerLoadoutsSave.ModifySelectedLoadout_Throwable
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   IndexAt                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UThrowableInfo>       DesiredThrowable                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bDoCheck                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UPlayerLoadoutsSave::ModifySelectedLoadout_Throwable(int32 IndexAt, TSubclassOf<class UThrowableInfo> DesiredThrowable, bool bDoCheck)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerLoadoutsSave", "ModifySelectedLoadout_Throwable");
-
-	Params::PlayerLoadoutsSave_ModifySelectedLoadout_Throwable Parms{};
-
-	Parms.IndexAt = IndexAt;
-	Parms.DesiredThrowable = DesiredThrowable;
-	Parms.bDoCheck = bDoCheck;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.PlayerLoadoutsSave.ModifySelectedLoadout_VoiceSet
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UVoiceSetInfo>        DesiredVoiceSet                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UPlayerLoadoutsSave::ModifySelectedLoadout_VoiceSet(TSubclassOf<class UVoiceSetInfo> DesiredVoiceSet)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerLoadoutsSave", "ModifySelectedLoadout_VoiceSet");
-
-	Params::PlayerLoadoutsSave_ModifySelectedLoadout_VoiceSet Parms{};
-
-	Parms.DesiredVoiceSet = DesiredVoiceSet;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.PlayerLoadoutsSave.ModifySelectedLoadout_Weapon
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   IndexAt                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UWeaponInfo>          DesiredWeapon                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class AWeaponSkinConfiguration>DesiredSkin                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bDoCheck                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UPlayerLoadoutsSave::ModifySelectedLoadout_Weapon(int32 IndexAt, TSubclassOf<class UWeaponInfo> DesiredWeapon, TSubclassOf<class AWeaponSkinConfiguration> DesiredSkin, bool bDoCheck)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerLoadoutsSave", "ModifySelectedLoadout_Weapon");
-
-	Params::PlayerLoadoutsSave_ModifySelectedLoadout_Weapon Parms{};
-
-	Parms.IndexAt = IndexAt;
-	Parms.DesiredWeapon = DesiredWeapon;
-	Parms.DesiredSkin = DesiredSkin;
-	Parms.bDoCheck = bDoCheck;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.PlayerLoadoutsSave.RestoreDefaultLoadoutsForGame
-// (Final, Native, Public, BlueprintCallable)
-
-void UPlayerLoadoutsSave::RestoreDefaultLoadoutsForGame()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerLoadoutsSave", "RestoreDefaultLoadoutsForGame");
+		Func = Class->GetFunction("PassengerPawn", "OnRep_ControlPitchYaw");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -39958,15 +42363,15 @@ void UPlayerLoadoutsSave::RestoreDefaultLoadoutsForGame()
 }
 
 
-// Function Midair2.PlayerLoadoutsSave.SaveChanges
-// (Final, Native, Public, BlueprintCallable)
+// Function Midair2.PassengerPawn.RemoveCharacter
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
 
-void UPlayerLoadoutsSave::SaveChanges()
+void APassengerPawn::RemoveCharacter()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerLoadoutsSave", "SaveChanges");
+		Func = Class->GetFunction("PassengerPawn", "RemoveCharacter");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -39977,19 +42382,336 @@ void UPlayerLoadoutsSave::SaveChanges()
 }
 
 
-// Function Midair2.PlayerLoadoutsSave.SetLastSelectedIndex
+// Function Midair2.PassengerPawn.Server_SetActiveFirstAbility
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+// Parameters:
+// bool                                    bActive                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void APassengerPawn::Server_SetActiveFirstAbility(bool bActive)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PassengerPawn", "Server_SetActiveFirstAbility");
+
+	Params::PassengerPawn_Server_SetActiveFirstAbility Parms{};
+
+	Parms.bActive = bActive;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.PassengerPawn.Server_SetActiveSecondAbility
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+// Parameters:
+// bool                                    bActive                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void APassengerPawn::Server_SetActiveSecondAbility(bool bActive)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PassengerPawn", "Server_SetActiveSecondAbility");
+
+	Params::PassengerPawn_Server_SetActiveSecondAbility Parms{};
+
+	Parms.bActive = bActive;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.PassengerPawn.Server_SetActiveThirdAbility
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+// Parameters:
+// bool                                    bActive                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void APassengerPawn::Server_SetActiveThirdAbility(bool bActive)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PassengerPawn", "Server_SetActiveThirdAbility");
+
+	Params::PassengerPawn_Server_SetActiveThirdAbility Parms{};
+
+	Parms.bActive = bActive;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.PassengerPawn.Server_SetCameraMode
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+// Parameters:
+// ECameraMode                             NewCameraMode                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void APassengerPawn::Server_SetCameraMode(ECameraMode NewCameraMode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PassengerPawn", "Server_SetCameraMode");
+
+	Params::PassengerPawn_Server_SetCameraMode Parms{};
+
+	Parms.NewCameraMode = NewCameraMode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.PassengerPawn.ServerReload
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+
+void APassengerPawn::ServerReload()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PassengerPawn", "ServerReload");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.PassengerPawn.ServerReseatCharacter
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+// Parameters:
+// uint8                                   NewSeatPosition                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void APassengerPawn::ServerReseatCharacter(uint8 NewSeatPosition)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PassengerPawn", "ServerReseatCharacter");
+
+	Params::PassengerPawn_ServerReseatCharacter Parms{};
+
+	Parms.NewSeatPosition = NewSeatPosition;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.PassengerPawn.ServerSetRelativeControlRotation
+// (Net, Native, Event, Public, NetServer, NetValidate)
+// Parameters:
+// uint32                                  NewControlPitchYaw                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void APassengerPawn::ServerSetRelativeControlRotation(uint32 NewControlPitchYaw)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PassengerPawn", "ServerSetRelativeControlRotation");
+
+	Params::PassengerPawn_ServerSetRelativeControlRotation Parms{};
+
+	Parms.NewControlPitchYaw = NewControlPitchYaw;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.PassengerPawn.TryReload
+// (Final, Native, Public)
+
+void APassengerPawn::TryReload()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PassengerPawn", "TryReload");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.TutorialDialougeManager.NewDialougeManager
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          Owner                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UTutorialDialougeManager*         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UTutorialDialougeManager* UTutorialDialougeManager::NewDialougeManager(class UObject* Owner)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TutorialDialougeManager", "NewDialougeManager");
+
+	Params::TutorialDialougeManager_NewDialougeManager Parms{};
+
+	Parms.Owner = Owner;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.TutorialDialougeManager.ClearAndStopAllSounds
 // (Final, Native, Public, BlueprintCallable)
+
+void UTutorialDialougeManager::ClearAndStopAllSounds()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TutorialDialougeManager", "ClearAndStopAllSounds");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.TutorialDialougeManager.DialougeFinished
+// (Final, Native, Public)
+
+void UTutorialDialougeManager::DialougeFinished()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TutorialDialougeManager", "DialougeFinished");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.TutorialDialougeManager.StartNewDialouge
+// (Final, Native, Public)
+
+void UTutorialDialougeManager::StartNewDialouge()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TutorialDialougeManager", "StartNewDialouge");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.TutorialDialougeManager.TryAddSound
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const struct FTutorialDialougeDetails&  NewSound                                               (Parm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UTutorialDialougeManager::TryAddSound(const struct FTutorialDialougeDetails& NewSound)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TutorialDialougeManager", "TryAddSound");
+
+	Params::TutorialDialougeManager_TryAddSound Parms{};
+
+	Parms.NewSound = std::move(NewSound);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.PRGameMode.AdvanceToNextLesson
+// (Native, Public, BlueprintCallable)
+
+void APRGameMode::AdvanceToNextLesson()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PRGameMode", "AdvanceToNextLesson");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.PRGameMode.AdvanceTrackingToLesson
+// (Native, Public, BlueprintCallable)
 // Parameters:
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPlayerLoadoutsSave::SetLastSelectedIndex(int32 Index_0)
+void APRGameMode::AdvanceTrackingToLesson(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerLoadoutsSave", "SetLastSelectedIndex");
+		Func = Class->GetFunction("PRGameMode", "AdvanceTrackingToLesson");
 
-	Params::PlayerLoadoutsSave_SetLastSelectedIndex Parms{};
+	Params::PRGameMode_AdvanceTrackingToLesson Parms{};
 
 	Parms.Index_0 = Index_0;
 
@@ -40002,22 +42724,23 @@ void UPlayerLoadoutsSave::SetLastSelectedIndex(int32 Index_0)
 }
 
 
-// Function Midair2.PlayerLoadoutsSave.CheckLoadoutNameUnique
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Function Midair2.PRGameMode.OnTriggerBeginLesson
+// (Native, Public)
 // Parameters:
-// class FString&                          DesiredName                                            (Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OverlappedActor                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UPlayerLoadoutsSave::CheckLoadoutNameUnique(class FString& DesiredName) const
+void APRGameMode::OnTriggerBeginLesson(class AActor* OverlappedActor, class AActor* OtherActor)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerLoadoutsSave", "CheckLoadoutNameUnique");
+		Func = Class->GetFunction("PRGameMode", "OnTriggerBeginLesson");
 
-	Params::PlayerLoadoutsSave_CheckLoadoutNameUnique Parms{};
+	Params::PRGameMode_OnTriggerBeginLesson Parms{};
 
-	Parms.DesiredName = std::move(DesiredName);
+	Parms.OverlappedActor = OverlappedActor;
+	Parms.OtherActor = OtherActor;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -40025,26 +42748,49 @@ bool UPlayerLoadoutsSave::CheckLoadoutNameUnique(class FString& DesiredName) con
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	DesiredName = std::move(Parms.DesiredName);
-
-	return Parms.ReturnValue;
 }
 
 
-// Function Midair2.PlayerLoadoutsSave.GetLastSelectedIndex
+// Function Midair2.PRGameMode.OnTriggerEndLesson
+// (Native, Public)
+// Parameters:
+// class AActor*                           OverlappedActor                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void APRGameMode::OnTriggerEndLesson(class AActor* OverlappedActor, class AActor* OtherActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PRGameMode", "OnTriggerEndLesson");
+
+	Params::PRGameMode_OnTriggerEndLesson Parms{};
+
+	Parms.OverlappedActor = OverlappedActor;
+	Parms.OtherActor = OtherActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.PRGameMode.GetCurrentLesson
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FPracticeLessonDetails           ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-int32 UPlayerLoadoutsSave::GetLastSelectedIndex() const
+struct FPracticeLessonDetails APRGameMode::GetCurrentLesson() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerLoadoutsSave", "GetLastSelectedIndex");
+		Func = Class->GetFunction("PRGameMode", "GetCurrentLesson");
 
-	Params::PlayerLoadoutsSave_GetLastSelectedIndex Parms{};
+	Params::PRGameMode_GetCurrentLesson Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -40057,99 +42803,19 @@ int32 UPlayerLoadoutsSave::GetLastSelectedIndex() const
 }
 
 
-// Function Midair2.PlayerLoadoutsSave.GetLoadoutIndex
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FMALoadout&                      loadout                                                (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UPlayerLoadoutsSave::GetLoadoutIndex(struct FMALoadout& loadout) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerLoadoutsSave", "GetLoadoutIndex");
-
-	Params::PlayerLoadoutsSave_GetLoadoutIndex Parms{};
-
-	Parms.loadout = std::move(loadout);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	loadout = std::move(Parms.loadout);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.PointOfInterestComponent.GetOwnerVitals
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UMAVitalsComponent*               ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UMAVitalsComponent* UPointOfInterestComponent::GetOwnerVitals()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PointOfInterestComponent", "GetOwnerVitals");
-
-	Params::PointOfInterestComponent_GetOwnerVitals Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.PointOfInterestComponent.GetTargetComponent
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UTargetComponent*                 ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UTargetComponent* UPointOfInterestComponent::GetTargetComponent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PointOfInterestComponent", "GetTargetComponent");
-
-	Params::PointOfInterestComponent_GetTargetComponent Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.PointOfInterestComponent.GetTargetCompState
-// (Final, Native, Public, BlueprintCallable)
+// Function Midair2.PRGameMode.GetCurrentLessonTag
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FName UPointOfInterestComponent::GetTargetCompState()
+class FName APRGameMode::GetCurrentLessonTag() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PointOfInterestComponent", "GetTargetCompState");
+		Func = Class->GetFunction("PRGameMode", "GetCurrentLessonTag");
 
-	Params::PointOfInterestComponent_GetTargetCompState Parms{};
+	Params::PRGameMode_GetCurrentLessonTag Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -40162,15 +42828,322 @@ class FName UPointOfInterestComponent::GetTargetCompState()
 }
 
 
-// Function Midair2.SensorNetworkComponent.Reactivate
-// (Native, Public)
+// Function Midair2.ServerBrowserSupport.DoUDPPing
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    Address                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Timeout                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TDelegate<void(bool got_reply, float latency)>Callback                                               (Parm, ZeroConstructor, NoDestructor, NativeAccessSpecifierPublic)
 
-void USensorNetworkComponent::Reactivate()
+void UServerBrowserSupport::DoUDPPing(const class FString& Address, float Timeout, TDelegate<void(bool got_reply, float latency)> Callback)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SensorNetworkComponent", "Reactivate");
+		Func = StaticClass()->GetFunction("ServerBrowserSupport", "DoUDPPing");
+
+	Params::ServerBrowserSupport_DoUDPPing Parms{};
+
+	Parms.Address = std::move(Address);
+	Parms.Timeout = Timeout;
+	Parms.Callback = Callback;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.SetUserBanStatusAsyncTask.BanUser
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class APlayerState*                     PlayerState                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bIsBanned                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class USetUserBanStatusAsyncTask*       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class USetUserBanStatusAsyncTask* USetUserBanStatusAsyncTask::BanUser(class APlayerState* PlayerState, const bool bIsBanned)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("SetUserBanStatusAsyncTask", "BanUser");
+
+	Params::SetUserBanStatusAsyncTask_BanUser Parms{};
+
+	Parms.PlayerState = PlayerState;
+	Parms.bIsBanned = bIsBanned;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.SubmitUserReportAsyncTask.SubmitUserReport
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    SteamId                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    summary                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Description                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Reproduce                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Severity                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class USubmitUserReportAsyncTask*       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class USubmitUserReportAsyncTask* USubmitUserReportAsyncTask::SubmitUserReport(const class FString& SteamId, const class FString& summary, const class FString& Description, const class FString& Reproduce, int32 Severity)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("SubmitUserReportAsyncTask", "SubmitUserReport");
+
+	Params::SubmitUserReportAsyncTask_SubmitUserReport Parms{};
+
+	Parms.SteamId = std::move(SteamId);
+	Parms.summary = std::move(summary);
+	Parms.Description = std::move(Description);
+	Parms.Reproduce = std::move(Reproduce);
+	Parms.Severity = Severity;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.TDMGameState.GetHoldingTeam
+// (Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// ETeamId                                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+ETeamId ATDMGameState::GetHoldingTeam()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TDMGameState", "GetHoldingTeam");
+
+	Params::TDMGameState_GetHoldingTeam Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.TDMGameState.GetIsFlagHolder
+// (Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class AMAPlayerState*                   PlayerState                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ATDMGameState::GetIsFlagHolder(class AMAPlayerState* PlayerState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TDMGameState", "GetIsFlagHolder");
+
+	Params::TDMGameState_GetIsFlagHolder Parms{};
+
+	Parms.PlayerState = PlayerState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.TDMGameState.GetFlagBase
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class ATDMFlagBase*                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class ATDMFlagBase* ATDMGameState::GetFlagBase() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TDMGameState", "GetFlagBase");
+
+	Params::TDMGameState_GetFlagBase Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.TDMGameState.GetFlagStateName
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FName ATDMGameState::GetFlagStateName() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TDMGameState", "GetFlagStateName");
+
+	Params::TDMGameState_GetFlagStateName Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.VehicleSeatComponent.CanSit
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class AMACharacter*                     Character                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UVehicleSeatComponent::CanSit(class AMACharacter* Character)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleSeatComponent", "CanSit");
+
+	Params::VehicleSeatComponent_CanSit Parms{};
+
+	Parms.Character = Character;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.VehicleSeatComponent.GetSeatedPlayer
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class AMAPlayerState*                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AMAPlayerState* UVehicleSeatComponent::GetSeatedPlayer()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleSeatComponent", "GetSeatedPlayer");
+
+	Params::VehicleSeatComponent_GetSeatedPlayer Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.VehicleSeatComponent.RemoveCharacter
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bEject                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UVehicleSeatComponent::RemoveCharacter(bool bEject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleSeatComponent", "RemoveCharacter");
+
+	Params::VehicleSeatComponent_RemoveCharacter Parms{};
+
+	Parms.bEject = bEject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.VehicleSeatComponent.SeatCharacter
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class AMACharacter*                     Character                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UVehicleSeatComponent::SeatCharacter(class AMACharacter* Character)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleSeatComponent", "SeatCharacter");
+
+	Params::VehicleSeatComponent_SeatCharacter Parms{};
+
+	Parms.Character = Character;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.VehicleSeatComponent.ServerRemoveCharacter
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+
+void UVehicleSeatComponent::ServerRemoveCharacter()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleSeatComponent", "ServerRemoveCharacter");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -40181,21 +43154,21 @@ void USensorNetworkComponent::Reactivate()
 }
 
 
-// Function Midair2.SensorNetworkComponent.SetSensorChannel
-// (Final, Native, Public, BlueprintCallable)
+// Function Midair2.VehicleSeatComponent.ServerReseatCharacter
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
 // Parameters:
-// uint8                                   NewChannel                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint8                                   NewSeatPosition                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USensorNetworkComponent::SetSensorChannel(uint8 NewChannel)
+void UVehicleSeatComponent::ServerReseatCharacter(uint8 NewSeatPosition)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SensorNetworkComponent", "SetSensorChannel");
+		Func = Class->GetFunction("VehicleSeatComponent", "ServerReseatCharacter");
 
-	Params::SensorNetworkComponent_SetSensorChannel Parms{};
+	Params::VehicleSeatComponent_ServerReseatCharacter Parms{};
 
-	Parms.NewChannel = NewChannel;
+	Parms.NewSeatPosition = NewSeatPosition;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -40206,19 +43179,69 @@ void USensorNetworkComponent::SetSensorChannel(uint8 NewChannel)
 }
 
 
-// Function Midair2.SensorNetworkComponent.GetSensorChannel
+// Function Midair2.VehicleSeatComponent.ServerSeatCharacter
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+// Parameters:
+// class AMACharacter*                     Character                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVehicleSeatComponent::ServerSeatCharacter(class AMACharacter* Character)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleSeatComponent", "ServerSeatCharacter");
+
+	Params::VehicleSeatComponent_ServerSeatCharacter Parms{};
+
+	Parms.Character = Character;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehicleSeatComponent.SetTrigger
+// (Native, Public)
+// Parameters:
+// bool                                    bActive                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVehicleSeatComponent::SetTrigger(bool bActive)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleSeatComponent", "SetTrigger");
+
+	Params::VehicleSeatComponent_SetTrigger Parms{};
+
+	Parms.bActive = bActive;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehicleSeatComponent.GetSecondaryWeapons
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// uint8                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class UVehicleWeaponComponent*>  ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-uint8 USensorNetworkComponent::GetSensorChannel() const
+TArray<class UVehicleWeaponComponent*> UVehicleSeatComponent::GetSecondaryWeapons() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SensorNetworkComponent", "GetSensorChannel");
+		Func = Class->GetFunction("VehicleSeatComponent", "GetSecondaryWeapons");
 
-	Params::SensorNetworkComponent_GetSensorChannel Parms{};
+	Params::VehicleSeatComponent_GetSecondaryWeapons Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -40231,22 +43254,44 @@ uint8 USensorNetworkComponent::GetSensorChannel() const
 }
 
 
-// Function Midair2.SensorNetworkComponent.HasDetectedTarget
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Function Midair2.VehicleSeatComponent.GetVehicleStateText
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class UTargetComponent*                 TargetComponent                                        (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+class FText UVehicleSeatComponent::GetVehicleStateText() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleSeatComponent", "GetVehicleStateText");
+
+	Params::VehicleSeatComponent_GetVehicleStateText Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.VehicleSeatComponent.IsEmpty
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USensorNetworkComponent::HasDetectedTarget(class UTargetComponent* TargetComponent) const
+bool UVehicleSeatComponent::IsEmpty() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SensorNetworkComponent", "HasDetectedTarget");
+		Func = Class->GetFunction("VehicleSeatComponent", "IsEmpty");
 
-	Params::SensorNetworkComponent_HasDetectedTarget Parms{};
-
-	Parms.TargetComponent = TargetComponent;
+	Params::VehicleSeatComponent_IsEmpty Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -40259,215 +43304,176 @@ bool USensorNetworkComponent::HasDetectedTarget(class UTargetComponent* TargetCo
 }
 
 
-// Function Midair2.ServiceBlueprintLibrary.CancelGetDemo
-// (Final, Native, Static, Public, BlueprintCallable)
+// Function Midair2.VehicleWeaponComponent.NM_FinishReloadSound
+// (Net, NetReliable, Native, Event, NetMulticast, Public)
 
-void UServiceBlueprintLibrary::CancelGetDemo()
+void UVehicleWeaponComponent::NM_FinishReloadSound()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("ServiceBlueprintLibrary", "CancelGetDemo");
+		Func = Class->GetFunction("VehicleWeaponComponent", "NM_FinishReloadSound");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	GetDefaultObj()->ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function Midair2.ServiceBlueprintLibrary.GetDemoProgress
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Function Midair2.VehicleWeaponComponent.NM_StartReloadSound
+// (Net, NetReliable, Native, Event, NetMulticast, Public)
+
+void UVehicleWeaponComponent::NM_StartReloadSound()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleWeaponComponent", "NM_StartReloadSound");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehicleWeaponComponent.ServerFireProjectiles
+// (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
+// Parameters:
+// uint8                                   FireIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVehicleWeaponComponent::ServerFireProjectiles(uint8 FireIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleWeaponComponent", "ServerFireProjectiles");
+
+	Params::VehicleWeaponComponent_ServerFireProjectiles Parms{};
+
+	Parms.FireIndex = FireIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehicleWeaponComponent.ServerSetTrigger
+// (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
+// Parameters:
+// bool                                    bSet                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVehicleWeaponComponent::ServerSetTrigger(bool bSet)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleWeaponComponent", "ServerSetTrigger");
+
+	Params::VehicleWeaponComponent_ServerSetTrigger Parms{};
+
+	Parms.bSet = bSet;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehicleWeaponComponent.ServerTryReload
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+
+void UVehicleWeaponComponent::ServerTryReload()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleWeaponComponent", "ServerTryReload");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Midair2.VehicleWeaponComponent.TryFire
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UVehicleWeaponComponent::TryFire()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleWeaponComponent", "TryFire");
+
+	Params::VehicleWeaponComponent_TryFire Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.VehicleWeaponComponent.CanFire
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UVehicleWeaponComponent::CanFire() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleWeaponComponent", "CanFire");
+
+	Params::VehicleWeaponComponent_CanFire Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Midair2.VehicleWeaponComponent.GetRemainingReload
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UServiceBlueprintLibrary::GetDemoProgress()
+float UVehicleWeaponComponent::GetRemainingReload() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("ServiceBlueprintLibrary", "GetDemoProgress");
+		Func = Class->GetFunction("VehicleWeaponComponent", "GetRemainingReload");
 
-	Params::ServiceBlueprintLibrary_GetDemoProgress Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.ServiceBlueprintLibrary.IsDownloadedDemo
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// const class FString&                    demoId                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UServiceBlueprintLibrary::IsDownloadedDemo(const class FString& demoId)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("ServiceBlueprintLibrary", "IsDownloadedDemo");
-
-	Params::ServiceBlueprintLibrary_IsDownloadedDemo Parms{};
-
-	Parms.demoId = std::move(demoId);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.ServiceBlueprintLibrary.IsSameDemoVersion
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    DemoVersion                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UServiceBlueprintLibrary::IsSameDemoVersion(const class FString& DemoVersion)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("ServiceBlueprintLibrary", "IsSameDemoVersion");
-
-	Params::ServiceBlueprintLibrary_IsSameDemoVersion Parms{};
-
-	Parms.DemoVersion = std::move(DemoVersion);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.TargetComponent.PopSensorModifiers
-// (Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FSensorTargetModifiers&    Modifiers                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UTargetComponent::PopSensorModifiers(const struct FSensorTargetModifiers& Modifiers)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TargetComponent", "PopSensorModifiers");
-
-	Params::TargetComponent_PopSensorModifiers Parms{};
-
-	Parms.Modifiers = std::move(Modifiers);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.TargetComponent.PushSensorModifiers
-// (Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FSensorTargetModifiers&    Modifiers                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UTargetComponent::PushSensorModifiers(const struct FSensorTargetModifiers& Modifiers)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TargetComponent", "PushSensorModifiers");
-
-	Params::TargetComponent_PushSensorModifiers Parms{};
-
-	Parms.Modifiers = std::move(Modifiers);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.TargetComponent.SetSensorResolutionStrengthTime
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// ESensorResolutionStrength               Strength                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Time                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UTargetComponent::SetSensorResolutionStrengthTime(ESensorResolutionStrength Strength, float Time)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TargetComponent", "SetSensorResolutionStrengthTime");
-
-	Params::TargetComponent_SetSensorResolutionStrengthTime Parms{};
-
-	Parms.Strength = Strength;
-	Parms.Time = Time;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.TargetComponent.StopAllTargetting
-// (Native, Protected)
-
-void UTargetComponent::StopAllTargetting()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TargetComponent", "StopAllTargetting");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.TargetComponent.GetHighestDetectedState
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// EDetectedState                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EDetectedState UTargetComponent::GetHighestDetectedState() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TargetComponent", "GetHighestDetectedState");
-
-	Params::TargetComponent_GetHighestDetectedState Parms{};
+	Params::VehicleWeaponComponent_GetRemainingReload Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -40477,86 +43483,6 @@ EDetectedState UTargetComponent::GetHighestDetectedState() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.TargetComponent.IsDetectedByChannel
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// uint8                                   InChannel                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UTargetComponent::IsDetectedByChannel(uint8 InChannel) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TargetComponent", "IsDetectedByChannel");
-
-	Params::TargetComponent_IsDetectedByChannel Parms{};
-
-	Parms.InChannel = InChannel;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Midair2.TDMFlag.OnBounce
-// (Native, Public, HasOutParams, HasDefaults)
-// Parameters:
-// const struct FHitResult&                ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// const struct FVector&                   ImpactVelocity                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ATDMFlag::OnBounce(const struct FHitResult& ImpactResult, const struct FVector& ImpactVelocity)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TDMFlag", "OnBounce");
-
-	Params::TDMFlag_OnBounce Parms{};
-
-	Parms.ImpactResult = std::move(ImpactResult);
-	Parms.ImpactVelocity = std::move(ImpactVelocity);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Midair2.TDMFlag.OnStop
-// (Native, Public, HasOutParams)
-// Parameters:
-// const struct FHitResult&                ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void ATDMFlag::OnStop(const struct FHitResult& ImpactResult)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TDMFlag", "OnStop");
-
-	Params::TDMFlag_OnStop Parms{};
-
-	Parms.ImpactResult = std::move(ImpactResult);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 

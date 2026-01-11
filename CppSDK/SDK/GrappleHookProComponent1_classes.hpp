@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "EGrappleHookProType_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "EGrappleHookProStatus_structs.hpp"
 
 

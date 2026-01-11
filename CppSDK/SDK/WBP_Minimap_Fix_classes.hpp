@@ -44,7 +44,7 @@ public:
 	void Construct();
 	void AddPlayerIcon();
 	void Cycle_Zoom();
-	void AddPOI(class AActor* Actor, const struct FSlateColor& TintColor, bool IsStatic, bool OverrideSensor);
+	void AddPOI(class AActor* Actor, const struct FSlateColor& TintColor, bool isStatic, bool OverrideSensor);
 	void InitMinimap();
 
 public:

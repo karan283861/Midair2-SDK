@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_ARGameMode.BP_ARGameMode_C
-// 0x0008 (0x0D10 - 0x0D08)
+// 0x0008 (0x0D18 - 0x0D10)
 class ABP_ARGameMode_C final : public AARGameMode
 {
 public:
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0D08(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0D10(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

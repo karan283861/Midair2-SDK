@@ -18,6 +18,35 @@
 namespace SDK
 {
 
+// Class GameplayTasks.GameplayTaskOwnerInterface
+// 0x0000 (0x0000 - 0x0000)
+class IGameplayTaskOwnerInterface final
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("GameplayTaskOwnerInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"GameplayTaskOwnerInterface")
+	}
+	static class IGameplayTaskOwnerInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IGameplayTaskOwnerInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IGameplayTaskOwnerInterface;
+
 // Class GameplayTasks.GameplayTasksComponent
 // 0x0070 (0x0120 - 0x00B0)
 class UGameplayTasksComponent : public UActorComponent
@@ -87,31 +116,6 @@ public:
 };
 DUMPER7_ASSERTS_UGameplayTask;
 
-// Class GameplayTasks.GameplayTask_TimeLimitedExecution
-// 0x0030 (0x0098 - 0x0068)
-class UGameplayTask_TimeLimitedExecution final : public UGameplayTask
-{
-public:
-	TMulticastInlineDelegate<void()>              OnFinished;                                        // 0x0068(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnTimeExpired;                                     // 0x0078(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_88[0x10];                                      // 0x0088(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("GameplayTask_TimeLimitedExecution")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"GameplayTask_TimeLimitedExecution")
-	}
-	static class UGameplayTask_TimeLimitedExecution* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UGameplayTask_TimeLimitedExecution>();
-	}
-};
-DUMPER7_ASSERTS_UGameplayTask_TimeLimitedExecution;
-
 // Class GameplayTasks.GameplayTask_ClaimResource
 // 0x0000 (0x0068 - 0x0068)
 class UGameplayTask_ClaimResource final : public UGameplayTask
@@ -168,6 +172,31 @@ public:
 };
 DUMPER7_ASSERTS_UGameplayTask_SpawnActor;
 
+// Class GameplayTasks.GameplayTask_TimeLimitedExecution
+// 0x0030 (0x0098 - 0x0068)
+class UGameplayTask_TimeLimitedExecution final : public UGameplayTask
+{
+public:
+	TMulticastInlineDelegate<void()>              OnFinished;                                        // 0x0068(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnTimeExpired;                                     // 0x0078(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_88[0x10];                                      // 0x0088(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("GameplayTask_TimeLimitedExecution")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"GameplayTask_TimeLimitedExecution")
+	}
+	static class UGameplayTask_TimeLimitedExecution* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UGameplayTask_TimeLimitedExecution>();
+	}
+};
+DUMPER7_ASSERTS_UGameplayTask_TimeLimitedExecution;
+
 // Class GameplayTasks.GameplayTask_WaitDelay
 // 0x0018 (0x0080 - 0x0068)
 class UGameplayTask_WaitDelay final : public UGameplayTask
@@ -194,35 +223,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UGameplayTask_WaitDelay;
-
-// Class GameplayTasks.GameplayTaskOwnerInterface
-// 0x0000 (0x0000 - 0x0000)
-class IGameplayTaskOwnerInterface final
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("GameplayTaskOwnerInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"GameplayTaskOwnerInterface")
-	}
-	static class IGameplayTaskOwnerInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IGameplayTaskOwnerInterface>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IGameplayTaskOwnerInterface;
 
 // Class GameplayTasks.GameplayTaskResource
 // 0x0010 (0x0038 - 0x0028)

@@ -10,16 +10,39 @@
 
 #include "Basic.hpp"
 
+#include "Landscape_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "Landscape_structs.hpp"
 #include "DeveloperSettings_classes.hpp"
 
 
 namespace SDK
 {
+
+// Class Landscape.LandscapeInfoMap
+// 0x0058 (0x0080 - 0x0028)
+class ULandscapeInfoMap final : public UObject
+{
+public:
+	uint8                                         Pad_28[0x58];                                      // 0x0028(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LandscapeInfoMap")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LandscapeInfoMap")
+	}
+	static class ULandscapeInfoMap* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULandscapeInfoMap>();
+	}
+};
+DUMPER7_ASSERTS_ULandscapeInfoMap;
 
 // Class Landscape.ControlPointMeshActor
 // 0x0008 (0x0230 - 0x0228)
@@ -67,6 +90,69 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UControlPointMeshComponent;
+
+// Class Landscape.LandscapeHeightfieldCollisionComponent
+// 0x00E0 (0x0530 - 0x0450)
+class ULandscapeHeightfieldCollisionComponent : public UPrimitiveComponent
+{
+public:
+	TArray<class ULandscapeLayerInfoObject*>      ComponentLayerInfos;                               // 0x0450(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         SectionBaseX;                                      // 0x0460(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SectionBaseY;                                      // 0x0464(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CollisionSizeQuads;                                // 0x0468(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CollisionScale;                                    // 0x046C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SimpleCollisionSizeQuads;                          // 0x0470(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_474[0x4];                                      // 0x0474(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<uint8>                                 CollisionQuadFlags;                                // 0x0478(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FGuid                                  HeightfieldGuid;                                   // 0x0488(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBox                                   CachedLocalBox;                                    // 0x0498(0x001C)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	TLazyObjectPtr<class ULandscapeComponent>     RenderComponent;                                   // 0x04B4(0x001C)(ExportObject, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4D0[0x10];                                     // 0x04D0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UPhysicalMaterial*>              CookedPhysicalMaterials;                           // 0x04E0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4F0[0x40];                                     // 0x04F0(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	class ULandscapeComponent* GetRenderComponent() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LandscapeHeightfieldCollisionComponent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LandscapeHeightfieldCollisionComponent")
+	}
+	static class ULandscapeHeightfieldCollisionComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULandscapeHeightfieldCollisionComponent>();
+	}
+};
+DUMPER7_ASSERTS_ULandscapeHeightfieldCollisionComponent;
+
+// Class Landscape.LandscapeMeshCollisionComponent
+// 0x0020 (0x0550 - 0x0530)
+class ULandscapeMeshCollisionComponent final : public ULandscapeHeightfieldCollisionComponent
+{
+public:
+	struct FGuid                                  MeshGuid;                                          // 0x0530(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_540[0x10];                                     // 0x0540(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LandscapeMeshCollisionComponent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LandscapeMeshCollisionComponent")
+	}
+	static class ULandscapeMeshCollisionComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULandscapeMeshCollisionComponent>();
+	}
+};
+DUMPER7_ASSERTS_ULandscapeMeshCollisionComponent;
 
 // Class Landscape.LandscapeProxy
 // 0x0378 (0x05A0 - 0x0228)
@@ -349,6 +435,29 @@ public:
 };
 DUMPER7_ASSERTS_ALandscapeGizmoActor;
 
+// Class Landscape.MaterialExpressionLandscapePhysicalMaterialOutput
+// 0x0010 (0x0050 - 0x0040)
+class UMaterialExpressionLandscapePhysicalMaterialOutput final : public UMaterialExpressionCustomOutput
+{
+public:
+	TArray<struct FPhysicalMaterialInput>         Inputs;                                            // 0x0040(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MaterialExpressionLandscapePhysicalMaterialOutput")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MaterialExpressionLandscapePhysicalMaterialOutput")
+	}
+	static class UMaterialExpressionLandscapePhysicalMaterialOutput* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMaterialExpressionLandscapePhysicalMaterialOutput>();
+	}
+};
+DUMPER7_ASSERTS_UMaterialExpressionLandscapePhysicalMaterialOutput;
+
 // Class Landscape.LandscapeGizmoActiveActor
 // 0x0050 (0x0278 - 0x0228)
 class ALandscapeGizmoActiveActor final : public ALandscapeGizmoActor
@@ -425,45 +534,6 @@ public:
 };
 DUMPER7_ASSERTS_ULandscapeGrassType;
 
-// Class Landscape.LandscapeHeightfieldCollisionComponent
-// 0x00E0 (0x0530 - 0x0450)
-class ULandscapeHeightfieldCollisionComponent : public UPrimitiveComponent
-{
-public:
-	TArray<class ULandscapeLayerInfoObject*>      ComponentLayerInfos;                               // 0x0450(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	int32                                         SectionBaseX;                                      // 0x0460(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SectionBaseY;                                      // 0x0464(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         CollisionSizeQuads;                                // 0x0468(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CollisionScale;                                    // 0x046C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SimpleCollisionSizeQuads;                          // 0x0470(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_474[0x4];                                      // 0x0474(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<uint8>                                 CollisionQuadFlags;                                // 0x0478(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FGuid                                  HeightfieldGuid;                                   // 0x0488(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBox                                   CachedLocalBox;                                    // 0x0498(0x001C)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	TLazyObjectPtr<class ULandscapeComponent>     RenderComponent;                                   // 0x04B4(0x001C)(ExportObject, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4D0[0x10];                                     // 0x04D0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UPhysicalMaterial*>              CookedPhysicalMaterials;                           // 0x04E0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4F0[0x40];                                     // 0x04F0(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	class ULandscapeComponent* GetRenderComponent() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("LandscapeHeightfieldCollisionComponent")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"LandscapeHeightfieldCollisionComponent")
-	}
-	static class ULandscapeHeightfieldCollisionComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULandscapeHeightfieldCollisionComponent>();
-	}
-};
-DUMPER7_ASSERTS_ULandscapeHeightfieldCollisionComponent;
-
 // Class Landscape.LandscapeInfo
 // 0x01E8 (0x0210 - 0x0028)
 class ULandscapeInfo final : public UObject
@@ -494,29 +564,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_ULandscapeInfo;
-
-// Class Landscape.LandscapeInfoMap
-// 0x0058 (0x0080 - 0x0028)
-class ULandscapeInfoMap final : public UObject
-{
-public:
-	uint8                                         Pad_28[0x58];                                      // 0x0028(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("LandscapeInfoMap")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"LandscapeInfoMap")
-	}
-	static class ULandscapeInfoMap* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULandscapeInfoMap>();
-	}
-};
-DUMPER7_ASSERTS_ULandscapeInfoMap;
 
 // Class Landscape.LandscapeLayerInfoObject
 // 0x0028 (0x0050 - 0x0028)
@@ -572,30 +619,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_ULandscapeMaterialInstanceConstant;
-
-// Class Landscape.LandscapeMeshCollisionComponent
-// 0x0020 (0x0550 - 0x0530)
-class ULandscapeMeshCollisionComponent final : public ULandscapeHeightfieldCollisionComponent
-{
-public:
-	struct FGuid                                  MeshGuid;                                          // 0x0530(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_540[0x10];                                     // 0x0540(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("LandscapeMeshCollisionComponent")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"LandscapeMeshCollisionComponent")
-	}
-	static class ULandscapeMeshCollisionComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULandscapeMeshCollisionComponent>();
-	}
-};
-DUMPER7_ASSERTS_ULandscapeMeshCollisionComponent;
 
 // Class Landscape.LandscapeMeshProxyActor
 // 0x0008 (0x0230 - 0x0228)
@@ -993,29 +1016,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMaterialExpressionLandscapeLayerWeight;
-
-// Class Landscape.MaterialExpressionLandscapePhysicalMaterialOutput
-// 0x0010 (0x0050 - 0x0040)
-class UMaterialExpressionLandscapePhysicalMaterialOutput final : public UMaterialExpressionCustomOutput
-{
-public:
-	TArray<struct FPhysicalMaterialInput>         Inputs;                                            // 0x0040(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MaterialExpressionLandscapePhysicalMaterialOutput")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MaterialExpressionLandscapePhysicalMaterialOutput")
-	}
-	static class UMaterialExpressionLandscapePhysicalMaterialOutput* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMaterialExpressionLandscapePhysicalMaterialOutput>();
-	}
-};
-DUMPER7_ASSERTS_UMaterialExpressionLandscapePhysicalMaterialOutput;
 
 // Class Landscape.MaterialExpressionLandscapeVisibilityMask
 // 0x0010 (0x0050 - 0x0040)

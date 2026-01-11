@@ -18,26 +18,6 @@
 namespace SDK
 {
 
-// Class TimeManagement.FixedFrameRateCustomTimeStep
-// 0x0000 (0x0028 - 0x0028)
-class UFixedFrameRateCustomTimeStep : public UEngineCustomTimeStep
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("FixedFrameRateCustomTimeStep")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"FixedFrameRateCustomTimeStep")
-	}
-	static class UFixedFrameRateCustomTimeStep* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UFixedFrameRateCustomTimeStep>();
-	}
-};
-DUMPER7_ASSERTS_UFixedFrameRateCustomTimeStep;
-
 // Class TimeManagement.TimeSynchronizationSource
 // 0x0008 (0x0030 - 0x0028)
 class UTimeSynchronizationSource : public UObject
@@ -62,6 +42,26 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UTimeSynchronizationSource;
+
+// Class TimeManagement.FixedFrameRateCustomTimeStep
+// 0x0000 (0x0028 - 0x0028)
+class UFixedFrameRateCustomTimeStep : public UEngineCustomTimeStep
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("FixedFrameRateCustomTimeStep")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"FixedFrameRateCustomTimeStep")
+	}
+	static class UFixedFrameRateCustomTimeStep* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UFixedFrameRateCustomTimeStep>();
+	}
+};
+DUMPER7_ASSERTS_UFixedFrameRateCustomTimeStep;
 
 // Class TimeManagement.GenlockedCustomTimeStep
 // 0x0000 (0x0028 - 0x0028)

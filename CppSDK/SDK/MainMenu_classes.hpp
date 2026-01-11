@@ -6,7 +6,7 @@
 * https://github.com/Encryqed/Dumper-7
 */
 
-// Package: MainMenu3
+// Package: MainMenu
 
 #include "Basic.hpp"
 
@@ -17,9 +17,9 @@
 namespace SDK
 {
 
-// BlueprintGeneratedClass MainMenu3.MainMenu3_C
-// 0x0050 (0x0280 - 0x0230)
-class AMainMenu3_C final : public ALevelScriptActor
+// BlueprintGeneratedClass MainMenu.MainMenu_C
+// 0x0058 (0x0288 - 0x0230)
+class AMainMenu_C final : public ALevelScriptActor
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0230(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
@@ -30,12 +30,13 @@ public:
 	class UMAGameInstance*                        MAGameInstance;                                    // 0x0258(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          HasLoaded;                                         // 0x0260(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_261[0x7];                                      // 0x0261(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class ACameraActor*                           CameraActor_0_ExecuteUbergraph_MainMenu3_RefProperty; // 0x0268(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AMainMenu_CharacterPreview_C*           MainMenu_CharacterPreview_0_ExecuteUbergraph_MainMenu3_RefProperty; // 0x0270(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ABP_TRFlagGoal_C*                       BP_TRFlagGoal_0_ExecuteUbergraph_MainMenu3_RefProperty; // 0x0278(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMAEOSSubsystem*                        Friends;                                           // 0x0268(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AMainMenu_CharacterPreview_C*           MainMenu_CharacterPreview_2_ExecuteUbergraph_MainMenu_RefProperty; // 0x0270(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ABP_TRFlagGoal_C*                       BP_TRFlagGoal_2_ExecuteUbergraph_MainMenu_RefProperty; // 0x0278(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ACameraActor*                           CameraActor_2_ExecuteUbergraph_MainMenu_RefProperty; // 0x0280(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_MainMenu3(int32 EntryPoint);
+	void ExecuteUbergraph_MainMenu(int32 EntryPoint);
 	void GoToPressStart();
 	void Load_Next_Level();
 	void ReceiveBeginPlay();
@@ -44,18 +45,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		BP_STATIC_CLASS_IMPL("MainMenu3_C")
+		BP_STATIC_CLASS_IMPL("MainMenu_C")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MainMenu3_C")
+		STATIC_NAME_IMPL(L"MainMenu_C")
 	}
-	static class AMainMenu3_C* GetDefaultObj()
+	static class AMainMenu_C* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<AMainMenu3_C>();
+		return GetDefaultObjImpl<AMainMenu_C>();
 	}
 };
-DUMPER7_ASSERTS_AMainMenu3_C;
+DUMPER7_ASSERTS_AMainMenu_C;
 
 }
 

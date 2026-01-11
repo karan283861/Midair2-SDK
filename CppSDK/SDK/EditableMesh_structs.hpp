@@ -340,17 +340,6 @@ public:
 };
 DUMPER7_ASSERTS_FVertexToCreate;
 
-// ScriptStruct EditableMesh.SubdividedWireEdge
-// 0x000C (0x000C - 0x0000)
-struct FSubdividedWireEdge final
-{
-public:
-	int32                                         EdgeVertex0PositionIndex;                          // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         EdgeVertex1PositionIndex;                          // 0x0004(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8[0x4];                                        // 0x0008(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSubdividedWireEdge;
-
 // ScriptStruct EditableMesh.SubdividedQuadVertex
 // 0x0034 (0x0034 - 0x0000)
 struct FSubdividedQuadVertex final
@@ -386,6 +375,17 @@ public:
 	TArray<struct FSubdividedQuad>                SubdividedQuads;                                   // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FSubdivisionLimitSection;
+
+// ScriptStruct EditableMesh.SubdividedWireEdge
+// 0x000C (0x000C - 0x0000)
+struct FSubdividedWireEdge final
+{
+public:
+	int32                                         EdgeVertex0PositionIndex;                          // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         EdgeVertex1PositionIndex;                          // 0x0004(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8[0x4];                                        // 0x0008(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSubdividedWireEdge;
 
 // ScriptStruct EditableMesh.SubdivisionLimitData
 // 0x0030 (0x0030 - 0x0000)

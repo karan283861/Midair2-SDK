@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "OnlineSubsystemUtils_structs.hpp"
+#include "Engine_structs.hpp"
 #include "Midair2_structs.hpp"
 #include "Midair2_classes.hpp"
-#include "Engine_structs.hpp"
 #include "CommonGame_structs.hpp"
 
 

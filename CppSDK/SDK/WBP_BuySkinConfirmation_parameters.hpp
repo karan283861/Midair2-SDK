@@ -18,7 +18,7 @@ namespace SDK::Params
 {
 
 // Function WBP_BuySkinConfirmation.WBP_BuySkinConfirmation_C.ExecuteUbergraph_WBP_BuySkinConfirmation
-// 0x01B8 (0x01B8 - 0x0000)
+// 0x0298 (0x0298 - 0x0000)
 struct WBP_BuySkinConfirmation_C_ExecuteUbergraph_WBP_BuySkinConfirmation final
 {
 public:
@@ -40,30 +40,32 @@ public:
 	int32                                         CallFunc_Subtract_IntInt_ReturnValue;              // 0x005C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLootLockerResponse                    K2Node_CustomEvent_Var_1;                          // 0x0068(0x0070)()
-	class FString                                 CallFunc_GetLootLockerCatalogIdFromClass_ReturnValue; // 0x00D8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Conv_StringToInt_ReturnValue_1;           // 0x00E8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Subtract_IntInt_ReturnValue_1;            // 0x00EC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_GetLootLockerShardCatalogIdFromClass_ReturnValue; // 0x00F0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x0100(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_101[0x7];                                      // 0x0101(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLootLockerResponse                    K2Node_CustomEvent_Var;                            // 0x0108(0x0070)()
-	class UWBP_SelectableButton_C*                K2Node_ComponentBoundEvent_Clicked_Button_2;       // 0x0178(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UWBP_SelectableButton_C*                K2Node_ComponentBoundEvent_Clicked_Button_1;       // 0x0180(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UWBP_SelectableButton_C*                K2Node_ComponentBoundEvent_Clicked_Button;         // 0x0188(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UWBP_SelectableButton_C*                K2Node_ComponentBoundEvent_Selected_Button;        // 0x0190(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Conv_StringToInt_ReturnValue_2;           // 0x0198(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Subtract_IntInt_ReturnValue_2;            // 0x019C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Greater_IntInt_ReturnValue_1;             // 0x01A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1A1[0x3];                                      // 0x01A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Conv_StringToInt_ReturnValue_3;           // 0x01A4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Subtract_IntInt_ReturnValue_3;            // 0x01A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Greater_IntInt_ReturnValue_2;             // 0x01AC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x01AD(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1AE[0x2];                                      // 0x01AE(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_GetItemShardPriceFromClass_ReturnValue;   // 0x01B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Greater_IntInt_ReturnValue_3;             // 0x01B4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanAND_ReturnValue_1;                 // 0x01B5(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FLootLockerResponse                    K2Node_CustomEvent_Var_1;                          // 0x0068(0x00D0)()
+	class FString                                 CallFunc_GetLootLockerCatalogIdFromClass_ReturnValue; // 0x0138(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_LootLockerPurchaseSingleCatalogItem_ReturnValue; // 0x0148(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Conv_StringToInt_ReturnValue_1;           // 0x0158(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Subtract_IntInt_ReturnValue_1;            // 0x015C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_GetLootLockerShardCatalogIdFromClass_ReturnValue; // 0x0160(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x0170(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_171[0x7];                                      // 0x0171(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_LootLockerPurchaseSingleCatalogItem_ReturnValue_1; // 0x0178(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	struct FLootLockerResponse                    K2Node_CustomEvent_Var;                            // 0x0188(0x00D0)()
+	class UWBP_SelectableButton_C*                K2Node_ComponentBoundEvent_Clicked_Button_2;       // 0x0258(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UWBP_SelectableButton_C*                K2Node_ComponentBoundEvent_Clicked_Button_1;       // 0x0260(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UWBP_SelectableButton_C*                K2Node_ComponentBoundEvent_Clicked_Button;         // 0x0268(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UWBP_SelectableButton_C*                K2Node_ComponentBoundEvent_Selected_Button;        // 0x0270(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Conv_StringToInt_ReturnValue_2;           // 0x0278(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Subtract_IntInt_ReturnValue_2;            // 0x027C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Greater_IntInt_ReturnValue_1;             // 0x0280(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_281[0x3];                                      // 0x0281(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Conv_StringToInt_ReturnValue_3;           // 0x0284(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Subtract_IntInt_ReturnValue_3;            // 0x0288(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Greater_IntInt_ReturnValue_2;             // 0x028C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x028D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_28E[0x2];                                      // 0x028E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_GetItemShardPriceFromClass_ReturnValue;   // 0x0290(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Greater_IntInt_ReturnValue_3;             // 0x0294(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanAND_ReturnValue_1;                 // 0x0295(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_WBP_BuySkinConfirmation_C_ExecuteUbergraph_WBP_BuySkinConfirmation;
 
@@ -104,20 +106,20 @@ public:
 DUMPER7_ASSERTS_WBP_BuySkinConfirmation_C_BndEvt__WBP_BuySkinConfirmation_ConfirmButton_4_K2Node_ComponentBoundEvent_1_ButtonClicked__DelegateSignature;
 
 // Function WBP_BuySkinConfirmation.WBP_BuySkinConfirmation_C.CustomEvent_0
-// 0x0070 (0x0070 - 0x0000)
+// 0x00D0 (0x00D0 - 0x0000)
 struct WBP_BuySkinConfirmation_C_CustomEvent_0 final
 {
 public:
-	struct FLootLockerResponse                    Var;                                               // 0x0000(0x0070)(BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FLootLockerResponse                    Var;                                               // 0x0000(0x00D0)(BlueprintVisible, BlueprintReadOnly, Parm)
 };
 DUMPER7_ASSERTS_WBP_BuySkinConfirmation_C_CustomEvent_0;
 
 // Function WBP_BuySkinConfirmation.WBP_BuySkinConfirmation_C.PurchaseRequestComplete
-// 0x0070 (0x0070 - 0x0000)
+// 0x00D0 (0x00D0 - 0x0000)
 struct WBP_BuySkinConfirmation_C_PurchaseRequestComplete final
 {
 public:
-	struct FLootLockerResponse                    Var;                                               // 0x0000(0x0070)(BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FLootLockerResponse                    Var;                                               // 0x0000(0x00D0)(BlueprintVisible, BlueprintReadOnly, Parm)
 };
 DUMPER7_ASSERTS_WBP_BuySkinConfirmation_C_PurchaseRequestComplete;
 

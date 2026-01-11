@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
-#include "Midair2_structs.hpp"
 #include "SlateCore_structs.hpp"
+#include "Midair2_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK::Params
@@ -52,7 +52,7 @@ public:
 	class FString                                 CallFunc_GetGameTime_ReturnValue;                  // 0x00A8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FText                                   CallFunc_Conv_StringToText_ReturnValue_1;          // 0x00B8(0x0018)()
 };
-//DUMPER7_ASSERTS_WBP_EndOfMatch_C_ExecuteUbergraph_WBP_EndOfMatch;
+DUMPER7_ASSERTS_WBP_EndOfMatch_C_ExecuteUbergraph_WBP_EndOfMatch;
 
 // Function WBP_EndOfMatch.WBP_EndOfMatch_C.PreConstruct
 // 0x0001 (0x0001 - 0x0000)
@@ -150,7 +150,7 @@ public:
 	float                                         CallFunc_Multiply_FloatFloat_ReturnValue;          // 0x01B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x01B4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-//DUMPER7_ASSERTS_WBP_EndOfMatch_C_TempStatGenerator;
+DUMPER7_ASSERTS_WBP_EndOfMatch_C_TempStatGenerator;
 
 // Function WBP_EndOfMatch.WBP_EndOfMatch_C.UpdateTeamScore
 // 0x0060 (0x0060 - 0x0000)

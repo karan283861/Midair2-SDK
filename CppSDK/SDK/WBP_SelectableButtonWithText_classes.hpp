@@ -11,10 +11,10 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "UMG_structs.hpp"
 #include "Slate_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "WBP_SelectableButton_classes.hpp"
+#include "UMG_structs.hpp"
 
 
 namespace SDK

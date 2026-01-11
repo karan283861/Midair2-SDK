@@ -13,8 +13,8 @@
 #include "Dynamic_Crosshair_Struct_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Dynamic_Crossahair_Dot_Shapes_Enum_structs.hpp"
-#include "SlateCore_structs.hpp"
 #include "UMG_structs.hpp"
+#include "SlateCore_structs.hpp"
 
 
 namespace SDK::Params

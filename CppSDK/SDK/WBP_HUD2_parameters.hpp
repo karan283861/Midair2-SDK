@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "Dynamic_Crosshair_Struct_structs.hpp"
-#include "Midair2_structs.hpp"
-#include "UMG_structs.hpp"
 #include "SlateCore_structs.hpp"
+#include "Midair2_structs.hpp"
+#include "Dynamic_Crosshair_Struct_structs.hpp"
+#include "UMG_structs.hpp"
 
 
 namespace SDK::Params

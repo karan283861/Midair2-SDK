@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
+#include "SlateCore_structs.hpp"
 #include "ESkinStatus_structs.hpp"
 #include "ESelectionStatus_structs.hpp"
-#include "SlateCore_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK::Params

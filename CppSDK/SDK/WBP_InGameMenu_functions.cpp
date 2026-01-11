@@ -502,9 +502,9 @@ void UWBP_InGameMenu_C::BndEvt__ChangeMapButton_K2Node_ComponentBoundEvent_9_But
 // Parameters:
 // class UWBP_ESC_Options_BTN_C*           ClickedBTN                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   OptionIndex                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const class FString&                    steamID                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    SteamId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
-void UWBP_InGameMenu_C::AdminToVoteSelected(class UWBP_ESC_Options_BTN_C* ClickedBTN, int32 OptionIndex, const class FString& steamID)
+void UWBP_InGameMenu_C::AdminToVoteSelected(class UWBP_ESC_Options_BTN_C* ClickedBTN, int32 OptionIndex, const class FString& SteamId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -515,7 +515,7 @@ void UWBP_InGameMenu_C::AdminToVoteSelected(class UWBP_ESC_Options_BTN_C* Clicke
 
 	Parms.ClickedBTN = ClickedBTN;
 	Parms.OptionIndex = OptionIndex;
-	Parms.steamID = std::move(steamID);
+	Parms.SteamId = std::move(SteamId);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

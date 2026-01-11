@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "Midair2_classes.hpp"
 #include "Engine_structs.hpp"
 #include "SlateCore_structs.hpp"
+#include "Midair2_classes.hpp"
 #include "UMG_structs.hpp"
 
 

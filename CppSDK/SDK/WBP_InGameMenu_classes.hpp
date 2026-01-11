@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "Midair2_classes.hpp"
 #include "Engine_structs.hpp"
 #include "UMG_structs.hpp"
+#include "Midair2_classes.hpp"
 #include "CommonGame_structs.hpp"
 
 
@@ -20,7 +20,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass WBP_InGameMenu.WBP_InGameMenu_C
-// 0x0200 (0x0528 - 0x0328)
+// 0x0208 (0x0530 - 0x0328)
 class UWBP_InGameMenu_C final : public UMAInGameMenuScreen
 {
 public:
@@ -86,6 +86,7 @@ public:
 	class UWBP_LoadoutsPanel_New_C*               LoadoutMenu;                                       // 0x0510(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UWBP_ConsoleSettingsMenu_C*             Console_Settings_Menu;                             // 0x0518(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UWBP_Settings_Menu_C*                   UpdatingSettings;                                  // 0x0520(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          WidgetCustomizationLoaded;                         // 0x0528(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
 	void ExecuteUbergraph_WBP_InGameMenu(int32 EntryPoint);
@@ -117,7 +118,7 @@ public:
 	void MapToVoteSelected(class UWBP_ESC_Options_BTN_C* ClickedBTN, int32 OptionIndex);
 	void MapOptionSelected(class UWBP_ESC_Options_BTN_C* Clicked_BTN, int32 Option_Index);
 	void BndEvt__ChangeMapButton_K2Node_ComponentBoundEvent_9_ButtonClicked__DelegateSignature();
-	void AdminToVoteSelected(class UWBP_ESC_Options_BTN_C* ClickedBTN, int32 OptionIndex, const class FString& steamID);
+	void AdminToVoteSelected(class UWBP_ESC_Options_BTN_C* ClickedBTN, int32 OptionIndex, const class FString& SteamId);
 	void OnResult_7E280664437AE1EC74875EA3567FF7B1(ECommonMessagingResult Result);
 	void OnResult_B74893FF49FB71702952999EBCCCB7AF(ECommonMessagingResult Result);
 	void BeforePush_9DC5165C4C64DEAEE6E40E88EE7FBC87(class UCommonActivatableWidget* UserWidget);
