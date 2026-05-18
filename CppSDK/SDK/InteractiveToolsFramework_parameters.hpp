@@ -16,15 +16,6 @@
 namespace SDK::Params
 {
 
-// Function InteractiveToolsFramework.GizmoClickTarget.UpdateHoverState
-// 0x0001 (0x0001 - 0x0000)
-struct GizmoClickTarget_UpdateHoverState final
-{
-public:
-	bool                                          bHovering;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GizmoClickTarget_UpdateHoverState;
-
 // Function InteractiveToolsFramework.GizmoBaseComponent.UpdateHoverState
 // 0x0001 (0x0001 - 0x0000)
 struct GizmoBaseComponent_UpdateHoverState final
@@ -42,24 +33,6 @@ public:
 	bool                                          bWorldIn;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_GizmoBaseComponent_UpdateWorldLocalState;
-
-// Function InteractiveToolsFramework.GizmoTransformSource.SetTransform
-// 0x0030 (0x0030 - 0x0000)
-struct GizmoTransformSource_SetTransform final
-{
-public:
-	struct FTransform                             NewTransform;                                      // 0x0000(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GizmoTransformSource_SetTransform;
-
-// Function InteractiveToolsFramework.GizmoTransformSource.GetTransform
-// 0x0030 (0x0030 - 0x0000)
-struct GizmoTransformSource_GetTransform final
-{
-public:
-	struct FTransform                             ReturnValue;                                       // 0x0000(0x0030)(Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GizmoTransformSource_GetTransform;
 
 // Function InteractiveToolsFramework.GizmoAxisSource.GetDirection
 // 0x000C (0x000C - 0x0000)
@@ -97,6 +70,33 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_GizmoAxisSource_HasTangentVectors;
+
+// Function InteractiveToolsFramework.GizmoTransformSource.SetTransform
+// 0x0030 (0x0030 - 0x0000)
+struct GizmoTransformSource_SetTransform final
+{
+public:
+	struct FTransform                             NewTransform;                                      // 0x0000(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GizmoTransformSource_SetTransform;
+
+// Function InteractiveToolsFramework.GizmoTransformSource.GetTransform
+// 0x0030 (0x0030 - 0x0000)
+struct GizmoTransformSource_GetTransform final
+{
+public:
+	struct FTransform                             ReturnValue;                                       // 0x0000(0x0030)(Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GizmoTransformSource_GetTransform;
+
+// Function InteractiveToolsFramework.GizmoClickTarget.UpdateHoverState
+// 0x0001 (0x0001 - 0x0000)
+struct GizmoClickTarget_UpdateHoverState final
+{
+public:
+	bool                                          bHovering;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GizmoClickTarget_UpdateHoverState;
 
 // Function InteractiveToolsFramework.GizmoFloatParameterSource.SetParameter
 // 0x0004 (0x0004 - 0x0000)

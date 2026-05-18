@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_MortarAttachment.BP_MortarAttachment_C
-// 0x0000 (0x05C0 - 0x05C0)
+// 0x0000 (0x05D8 - 0x05D8)
 class ABP_MortarAttachment_C final : public AMAWeaponAttachment
 {
 public:

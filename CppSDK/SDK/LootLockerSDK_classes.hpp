@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "LootLockerSDK_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "LootLockerSDK_structs.hpp"
 #include "Engine_classes.hpp"
 
 
@@ -98,6 +98,26 @@ public:
 };
 DUMPER7_ASSERTS_ULootLockerBalanceRequestHandler;
 
+// Class LootLockerSDK.LootLockerBroadcastRequestHandler
+// 0x0000 (0x0028 - 0x0028)
+class ULootLockerBroadcastRequestHandler final : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LootLockerBroadcastRequestHandler")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LootLockerBroadcastRequestHandler")
+	}
+	static class ULootLockerBroadcastRequestHandler* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULootLockerBroadcastRequestHandler>();
+	}
+};
+DUMPER7_ASSERTS_ULootLockerBroadcastRequestHandler;
+
 // Class LootLockerSDK.LootLockerCatalogRequestHandler
 // 0x0000 (0x0028 - 0x0028)
 class ULootLockerCatalogRequestHandler final : public UObject
@@ -159,21 +179,46 @@ public:
 DUMPER7_ASSERTS_ULootLockerCollectablesRequestHandler;
 
 // Class LootLockerSDK.LootLockerConfig
-// 0x0050 (0x0078 - 0x0028)
+// 0x00B0 (0x00D8 - 0x0028)
 class ULootLockerConfig final : public UObject
 {
 public:
-	class FString                                 LootLockerGameKey;                                 // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 GameVersion;                                       // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 InvalidGameVersionWarning;                         // 0x0048(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, Config, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          AllowTokenRefresh;                                 // 0x0058(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 DomainKey;                                         // 0x0060(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsValidGameVersion;                                // 0x0070(0x0001)(Edit, ZeroConstructor, DisableEditOnTemplate, Transient, Config, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_71[0x7];                                       // 0x0071(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_28[0x10];                                      // 0x0028(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 OutdatedSDKWarning;                                // 0x0038(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, Config, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 LootLockerGameKey;                                 // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 GameVersion;                                       // 0x0058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 InvalidGameVersionWarning;                         // 0x0068(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, Config, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          AllowTokenRefresh;                                 // 0x0078(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 DomainKey;                                         // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          LogOutsideOfEditor;                                // 0x0090(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerLogLevel                           LootLockerLogLevel;                                // 0x0091(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableFileLogging;                                // 0x0092(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_93[0x5];                                       // 0x0093(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 LogFileName;                                       // 0x0098(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 LongLogFilePath;                                   // 0x00A8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, Config, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnablePresence;                                   // 0x00B8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnablePresenceAutoConnect;                        // 0x00B9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnablePresenceAutoDisconnectOnFocusChange;        // 0x00BA(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnablePresenceInEditor;                           // 0x00BB(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_BC[0x14];                                      // 0x00BC(0x0014)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          IsValidGameVersion;                                // 0x00D0(0x0001)(Edit, ZeroConstructor, DisableEditOnTemplate, Transient, Config, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          IsOutdatedSDK;                                     // 0x00D1(0x0001)(Edit, ZeroConstructor, DisableEditOnTemplate, Transient, Config, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_D2[0x6];                                       // 0x00D2(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
+	static void DisableFileLogging();
+	static void EnableFileLogging(const class FString& Filename);
+	static class FString GetLogFilePath();
+	static ELootLockerLogLevel GetRuntimeLogLevel();
+	static bool IsFileLoggingEnabled();
+	static bool IsPresenceAutoConnectEnabled();
+	static bool IsPresenceAutoDisconnectOnFocusChangeEnabled();
+	static bool IsPresenceEnabled();
+	static bool IsPresenceEnabledInEditor();
 	static bool IsSemverString(const class FString& str);
+	static void SetRuntimeLogLevel(ELootLockerLogLevel NewLevel);
+	static bool ShouldLog();
 
 public:
 	static class UClass* StaticClass()
@@ -291,6 +336,46 @@ public:
 };
 DUMPER7_ASSERTS_ULootLockerFeedbackRequestHandler;
 
+// Class LootLockerSDK.LootLockerFollowersRequestHandler
+// 0x0000 (0x0028 - 0x0028)
+class ULootLockerFollowersRequestHandler final : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LootLockerFollowersRequestHandler")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LootLockerFollowersRequestHandler")
+	}
+	static class ULootLockerFollowersRequestHandler* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULootLockerFollowersRequestHandler>();
+	}
+};
+DUMPER7_ASSERTS_ULootLockerFollowersRequestHandler;
+
+// Class LootLockerSDK.LootLockerFriendsRequestHandler
+// 0x0000 (0x0028 - 0x0028)
+class ULootLockerFriendsRequestHandler final : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LootLockerFriendsRequestHandler")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LootLockerFriendsRequestHandler")
+	}
+	static class ULootLockerFriendsRequestHandler* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULootLockerFriendsRequestHandler>();
+	}
+};
+DUMPER7_ASSERTS_ULootLockerFriendsRequestHandler;
+
 // Class LootLockerSDK.LootLockerGameEndpoints
 // 0x0000 (0x0028 - 0x0028)
 class ULootLockerGameEndpoints final : public UObject
@@ -316,6 +401,7 @@ DUMPER7_ASSERTS_ULootLockerGameEndpoints;
 class ULootLockerGoogleSubsystemHelper final : public UObject
 {
 public:
+	static class FString GetAuthCode(int32 LocalUserNumber);
 	static class FString GetIDToken(int32 LocalUserNumber);
 	static bool HasGoogleOnlineSubsystem();
 	static bool HasGooglePlayOnlineSubsystem();
@@ -323,7 +409,7 @@ public:
 	static void PurchaseOffer(int32 LocalUserNumber, const class FString& OfferId, bool IsConsumable, TDelegate<void(bool success, int32 LocalUserNumber, const class FString& ErrorMsg, const class FString& ReceiptOfferID, const class FString& ReceiptPurchaseToken)> Callback);
 	static void ReadOfferInformation(int32 LocalUserNumber, const class FString& OfferId, TDelegate<void(bool success, int32 LocalUserNumber, const class FString& ErrorMsg, const struct FLootLockerGoogleSubsystemStoreOffer& OfferInformation)> Callback);
 	static void SignInWithGoogle(int32 LocalUserNumber, const TDelegate<void(bool success, int32 LocalUserNumber, const class FString& ErrorMsg, const class FString& IDToken)> Callback);
-	static void SignInWithGooglePlay(int32 LocalUserNumber, const TDelegate<void(bool success, int32 LocalUserNumber, const class FString& ErrorMsg)> Callback);
+	static void SignInWithGooglePlay(int32 LocalUserNumber, const TDelegate<void(bool success, int32 LocalUserNumber, const class FString& ErrorMsg, const class FString& AuthCode)> Callback);
 	static void SignOutWithGoogle(int32 LocalUserNumber, const TDelegate<void(bool success, int32 LocalUserNumber, const class FString& ErrorMsg)> Callback);
 	static void SignOutWithGooglePlay(int32 LocalUserNumber, const TDelegate<void(bool success, int32 LocalUserNumber, const class FString& ErrorMsg)> Callback);
 
@@ -423,210 +509,339 @@ public:
 };
 DUMPER7_ASSERTS_ULootLockerLeaderboardRequestHandler;
 
+// Class LootLockerSDK.LootLockerLifeCycleManager
+// 0x0070 (0x0098 - 0x0028)
+class ULootLockerLifeCycleManager final : public UObject
+{
+public:
+	TMulticastInlineDelegate<void()>              OnApplicationBackground;                           // 0x0028(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnApplicationForeground;                           // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnApplicationStart;                                // 0x0048(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnApplicationShutdown;                             // 0x0058(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_68[0x30];                                      // 0x0068(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class ULootLockerLifeCycleManager* GetInstance();
+	static void Initialize();
+	static void Shutdown();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LootLockerLifeCycleManager")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LootLockerLifeCycleManager")
+	}
+	static class ULootLockerLifeCycleManager* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULootLockerLifeCycleManager>();
+	}
+};
+DUMPER7_ASSERTS_ULootLockerLifeCycleManager;
+
 // Class LootLockerSDK.LootLockerManager
 // 0x0000 (0x0028 - 0x0028)
 class ULootLockerManager final : public UObject
 {
 public:
-	static void ActivateRentalAsset(int32 AssetInstanceId, const TDelegate<void(const struct FLootLockerActivateRentalAssetResponse& Response)>& OnActivateRentalAssetCompleted);
-	static void AddAssetToFavourites(int32 AssetId, const TDelegate<void(const struct FLootLockerGetFavouriteAssetIndicesResponse& FavouriteAssetIndicesResponse)>& OnAddAssetToFavouritesRequestCompleted);
-	static void AddAssetToHeroLoadout(const int32 HeroID, const int32 AssetInstanceId, const TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)>& OnCompleteBP);
-	static void AddFileToAssetCandidate(int32 AssetCandidateId, const class FString& FilePath, ELootLockerAssetFilePurpose FilePurpose, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnAddFileToAssetCandidateCompleted);
-	static void AddGlobalAssetToHeroLoadout(const int32 HeroID, const int32 AssetId, const TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)>& OnCompleteBP);
-	static void AddGlobalAssetVariationToHeroLoadout(const int32 HeroID, const int32 AssetId, const int32 AssetVariationID, const TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)>& OnCompleteBP);
-	static void AddItemsToPersistentStorage(const struct FLootLockerPersistentStorageItems& Items, const TDelegate<void(const struct FLootLockerPersistentStorageItemsResponse& Response)>& OnPersistentStorageItemsAddRequestCompleted);
-	static void AddItemToPersistentStorage(const struct FLootLockerPersistentStorageItem& Item, const TDelegate<void(const struct FLootLockerPersistentStorageItemResponse& Response)>& OnPersistentStorageItemAddRequestCompleted);
-	static void AddPointsToCharacterProgression(const int32& CharacterId, const class FString& ProgressionKey, const int32& Amount, const TDelegate<void(const struct FLootLockerCharacterProgressionWithRewardsResponse& Response)>& OnCompletedRequest);
-	static void AddPointsToInstanceProgression(const int32 AssetInstanceId, const class FString& ProgressionKey, const int32 Amount, const TDelegate<void(const struct FLootLockerInstanceProgressionWithRewardsResponse& Response)>& OnCompletedRequestBP);
-	static void AddPointsToPlayerProgression(const class FString& ProgressionKey, const int32& Amount, const TDelegate<void(const struct FLootLockerPlayerProgressionWithRewardsResponse& Response)>& OnCompletedRequest);
-	static void BeginSteamPurchaseRedemption(const class FString& steamID, const class FString& Currency, const class FString& Language, const class FString& CatalogItemId, const TDelegate<void(const struct FLootLockerBeginSteamPurchaseRedemptionResponse& Response)>& OnCompletedRequest);
-	static void BeginSteamPurchaseRedemptionForClass(const int32 ClassId, const class FString& steamID, const class FString& Currency, const class FString& Language, const class FString& CatalogItemId, const TDelegate<void(const struct FLootLockerBeginSteamPurchaseRedemptionResponse& Response)>& OnCompletedRequest);
+	static class FString AcceptIncomingFriendRequest(const class FString& ForPlayerWithUlid, const class FString& PlayerUlid, const TDelegate<void(const struct FLootLockerFriendActionResponse& Response)>& OnResponseCompletedBP);
+	static class FString ActivateRentalAsset(const class FString& ForPlayerWithUlid, int32 AssetInstanceId, const TDelegate<void(const struct FLootLockerActivateRentalAssetResponse& Response)>& OnActivateRentalAssetCompleted);
+	static class FString AddAssetToFavourites(const class FString& ForPlayerWithUlid, int32 AssetId, const TDelegate<void(const struct FLootLockerGetFavouriteAssetIndicesResponse& FavouriteAssetIndicesResponse)>& OnAddAssetToFavouritesRequestCompleted);
+	static class FString AddAssetToHeroLoadout(const class FString& ForPlayerWithUlid, const int32 HeroID, const int32 AssetInstanceId, const TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)>& OnCompleteBP);
+	static class FString AddFileToAssetCandidate(const class FString& ForPlayerWithUlid, int32 AssetCandidateId, const class FString& FilePath, ELootLockerAssetFilePurpose FilePurpose, const TDelegate<void(const struct FLootLockerAssetCandidateResponse& Response)>& OnAddFileToAssetCandidateCompleted);
+	static class FString AddGlobalAssetToHeroLoadout(const class FString& ForPlayerWithUlid, const int32 HeroID, const int32 AssetId, const TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)>& OnCompleteBP);
+	static class FString AddGlobalAssetVariationToHeroLoadout(const class FString& ForPlayerWithUlid, const int32 HeroID, const int32 AssetId, const int32 AssetVariationID, const TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)>& OnCompleteBP);
+	static class FString AddItemsToPersistentStorage(const class FString& ForPlayerWithUlid, const struct FLootLockerPersistentStorageItems& Items, const TDelegate<void(const struct FLootLockerPersistentStorageItemsResponse& Response)>& OnPersistentStorageItemsAddRequestCompleted);
+	static class FString AddItemToPersistentStorage(const class FString& ForPlayerWithUlid, const struct FLootLockerPersistentStorageItem& Item, const TDelegate<void(const struct FLootLockerPersistentStorageItemResponse& Response)>& OnPersistentStorageItemAddRequestCompleted);
+	static class FString AddPointsToCharacterProgression(const class FString& ForPlayerWithUlid, const int32& CharacterId, const class FString& ProgressionKey, const int32& Amount, const TDelegate<void(const struct FLootLockerCharacterProgressionWithRewardsResponse& Response)>& OnCompletedRequest);
+	static class FString AddPointsToInstanceProgression(const class FString& ForPlayerWithUlid, const int32 AssetInstanceId, const class FString& ProgressionKey, const int32 Amount, const TDelegate<void(const struct FLootLockerInstanceProgressionWithRewardsResponse& Response)>& OnCompletedRequestBP);
+	static class FString AddPointsToPlayerProgression(const class FString& ForPlayerWithUlid, const class FString& ProgressionKey, const int32& Amount, const TDelegate<void(const struct FLootLockerPlayerProgressionWithRewardsResponse& Response)>& OnCompletedRequest);
+	static class FString BeginSteamPurchaseRedemption(const class FString& ForPlayerWithUlid, const class FString& steamID, const class FString& currency, const class FString& Language, const class FString& CatalogItemId, const TDelegate<void(const struct FLootLockerBeginSteamPurchaseRedemptionResponse& Response)>& OnCompletedRequest);
+	static class FString BeginSteamPurchaseRedemptionForClass(const class FString& ForPlayerWithUlid, const int32 ClassId, const class FString& steamID, const class FString& currency, const class FString& Language, const class FString& CatalogItemId, const TDelegate<void(const struct FLootLockerBeginSteamPurchaseRedemptionResponse& Response)>& OnCompletedRequest);
+	static class FString BlockPlayer(const class FString& ForPlayerWithUlid, const class FString& PlayerUlid, const TDelegate<void(const struct FLootLockerFriendActionResponse& Response)>& OnResponseCompletedBP);
+	static class FString CancelOutgoingFriendRequest(const class FString& ForPlayerWithUlid, const class FString& PlayerUlid, const TDelegate<void(const struct FLootLockerFriendActionResponse& Response)>& OnResponseCompletedBP);
 	static void CancelRemoteSessionProcess(const class FString& ProcessId);
-	static void CheckPlayerAssetActivationNotification(const TDelegate<void(const struct FLootLockerPlayerAssetNotificationResponse& Value)>& OnCheckPlayerAssetDeactivationNotificationRequestCompleted);
-	static void CollectItem(const struct FLootLockerCollectItemPayload& Item, const TDelegate<void(const struct FLootLockerCollectablesResponse& Response)>& OnCollectItemCompleted);
-	static void ComputeAndLockDropTable(int32 TableId, const TDelegate<void(const struct FLootLockerComputeAndLockDropTableResponse& Response)>& OnCompletedRequestBP);
-	static void ConnectAppleAccountByRestSignIn(const class FString& AuthorizationCode, const TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)>& OnCompleteBP);
-	static void ConnectGoogleAccount(const class FString& IDToken, const TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)>& OnCompleteBP);
-	static void ConnectGoogleAccountWithPlatform(const class FString& IDToken, EGoogleAccountProviderPlatform Platform, const TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)>& OnCompleteBP);
+	static class FString CheckPlayerAssetActivationNotification(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerPlayerAssetNotificationResponse& Value)>& OnCheckPlayerAssetDeactivationNotificationRequestCompleted);
+	static void ClearAllPlayerCaches();
+	static void ClearAllPlayerCachesExceptForPlayer(const class FString& PlayerUlid);
+	static void ClearCacheForPlayer(const class FString& PlayerUlid);
+	static class FString CollectItem(const class FString& ForPlayerWithUlid, const struct FLootLockerCollectItemPayload& Item, const TDelegate<void(const struct FLootLockerCollectablesResponse& Response)>& OnCollectItemCompleted);
+	static class FString ComputeAndLockDropTable(const class FString& ForPlayerWithUlid, int32 TableId, const TDelegate<void(const struct FLootLockerComputeAndLockDropTableResponse& Response)>& OnCompletedRequestBP);
+	static class FString ConnectAppleAccountByRestSignIn(const class FString& ForPlayerWithUlid, const class FString& AuthorizationCode, const TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)>& OnCompleteBP);
+	static class FString ConnectDiscordAccount(const class FString& ForPlayerWithUlid, const class FString& Token, const TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)>& OnCompleteBP);
+	static class FString ConnectEpicAccount(const class FString& ForPlayerWithUlid, const class FString& Token, const TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)>& OnCompleteBP);
+	static class FString ConnectGoogleAccount(const class FString& ForPlayerWithUlid, const class FString& IDToken, const TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)>& OnCompleteBP);
+	static class FString ConnectGoogleAccountWithPlatform(const class FString& ForPlayerWithUlid, const class FString& IDToken, EGoogleAccountProviderPlatform Platform, const TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)>& OnCompleteBP);
+	static class FString ConnectPlaystationAccount(const class FString& ForPlayerWithUlid, const class FString& Environment, const class FString& Code, const TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)>& OnCompleteBP);
+	static class FString ConnectRemoteSessionAccount(const class FString& ForPlayerWithUlid, const class FString& Code, const class FString& Nonce, const TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)>& OnCompleteBP);
+	static class FString ConnectTwitchAccount(const class FString& ForPlayerWithUlid, const class FString& AuthorizationCode, const TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)>& OnCompleteBP);
 	static TArray<struct FLootLockerInlinedCatalogEntry> ConvertCatalogToInlineItems(const struct FLootLockerListCatalogPricesResponse& Catalog);
-	static void CreateAKeyValuePairForAssetInstance(int32 AssetInstanceId, const struct FLootLockerAssetInstanceStorageItem& Item, const TDelegate<void(const struct FLootLockerAssetInstanceStorageItemsResponse& Response)>& OnCreateAKeyValuePairForAssetInstanceCompleted);
-	static void CreateAssetCandidate(const struct FLootLockerCreateAssetCandidateData& AssetCandidateData, const TDelegate<void(const struct FLootLockerCreateAssetCandidateResponse& Response)>& OnCreateAssetCandidateCompleted);
-	static void CreateCharacter(bool IsDefault, const class FString& CharacterName, const class FString& CharacterTypeId, const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>& OnCompletedRequestBP);
-	static void CreateHero(const struct FLootLockerCreateHeroRequest& Request, const TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)>& OnCompleteBP);
-	static void CreateHeroWithVariation(const struct FLootLockerCreateHeroWithVariationRequest& Request, const TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)>& OnCompleteBP);
-	static void CreditBalanceToWallet(const class FString& WalletID, const class FString& CurrencyID, const class FString& Amount, const TDelegate<void(const struct FLootLockerCreditWalletResponse& Response)>& OnComplete);
-	static void DebitBalanceToWallet(const class FString& WalletID, const class FString& CurrencyID, const class FString& Amount, const TDelegate<void(const struct FLootLockerDebitWalletResponse& Response)>& OnComplete);
-	static void DeleteAKeyValuePairByIdForAssetInstance(int32 AssetInstanceId, int32 StorageItemId, const TDelegate<void(const struct FLootLockerAssetInstanceStorageItemsResponse& Response)>& OnDeleteAKeyValuePairByIdForAssetInstanceCompleted);
-	static void DeleteAssetCandidate(int32 AssetCandidateId, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnDeleteAssetCandidateCompleted);
-	static void DeleteAssetInstanceFromPlayerInventory(int32 AssetInstanceId, const TDelegate<void(const struct FLootLockerDeleteAssetInstanceResponse& Response)>& OnCompleted);
-	static void DeleteCharacterProgression(const int32& CharacterId, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnCompletedRequest);
-	static void DeleteFileFromAssetCandidate(int32 AssetCandidateId, int32 FileId, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnDeleteFileFromAssetCandidateCompleted);
-	static void DeleteHero(const int32 HeroID, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnCompleteBP);
-	static void DeleteInstanceProgression(const int32 AssetInstanceId, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnCompletedRequestBP);
-	static void DeleteItemFromPersistentStorage(const class FString& Key, const TDelegate<void(const struct FLootLockerPersistentStorageItemsResponse& Response)>& OnPersistentStorageItemDeleteRequestCompleted);
-	static void DeletePlayer(const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest);
-	static void DeletePlayerFile(const int32 FileId, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnComplete);
-	static void DeletePlayerProgression(const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnCompletedRequest);
-	static void DisconnectAccount(const ELootLockerAccountProvider AccountToDisconnect, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompleteBP);
-	static void EndSession(const TDelegate<void(const struct FLootLockerResponse& Var)>& OnEndSessionRequestCompleted);
-	static void EquipAssetToCharacterById(int32 CharacterId, int32 AssetId, int32 AssetVariationID, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnEquipAssetToCharacterByIdRequestCompleted);
-	static void EquipAssetToCharacterByIdAndInstance(int32 CharacterId, int32 InstanceId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnEquipAssetToCharacterByIdRequestCompleted);
-	static void EquipAssetToDefaultCharacter(int32 InstanceId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnEquipAssetToDefaultCharacterRequestCompleted);
-	static void FinalizeSteamPurchaseRedemption(const class FString& EntitlementId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest);
-	static void FinishMission(int32 MissionId, const struct FLootLockerFinishMissionData& MissionData, const TDelegate<void(const struct FLootLockerFinishMissionResponse& Response)>& OnFinishMissionCompleted);
-	static void GetAKeyValuePairByIdForAssetInstance(int32 AssetInstanceId, int32 StorageItemId, const TDelegate<void(const struct FLootLockerAssetInstanceStorageItemResponse& Response)>& OnGetAKeyValuePairByIdForAssetInstanceCompleted);
-	static void GetAllAssetCandidates(const TDelegate<void(const struct FLootLockerAssetCandidatesResponse& Response)>& OnGetAllAssetCandidatesCompleted);
-	static void GetAllCollectables(const TDelegate<void(const struct FLootLockerCollectablesResponse& Response)>& OnGetAllCollectablesCompleted);
-	static void GetAllKeyValuePairsForAssetInstance(int32 AssetInstanceId, const TDelegate<void(const struct FLootLockerAssetInstanceStorageItemsResponse& Response)>& OnGetAllKeyValuePairsForAssetInstanceCompleted);
-	static void GetAllMemberRanks(const class FString& MemberId, const int32 Count, const int32 after, const TDelegate<void(const struct FLootLockerGetAllMemberRanksResponse& Response)>& OnCompletedRequestBP);
-	static void GetAllMissions(const TDelegate<void(const struct FLootLockerMissionsResponse& Response)>& OnGetAllMissionsCompleted);
-	static void GetAssetBones(const TDelegate<void(const struct FLootLockerGetAssetBonesResponse& AssetBonesResponse)>& OnGetAssetBonesRequestCompleted);
-	static void GetAssetCandidate(int32 AssetCandidateId, const TDelegate<void(const struct FLootLockerAssetCandidateResponse& Response)>& OnGetAssetCandidateCompleted);
-	static void GetAssets(const TDelegate<void(const struct FLootLockerGetAssetsResponse& AssetsResponse)>& OnGetAssetsRequestCompleted, int32 StartFromIndex, int32 ItemsCount, ELootLockerAssetFilter AssetFilter, int32 Context, bool IncludeUGC);
-	static void GetAssetsByIds(const TArray<int32>& AssetIds, const TDelegate<void(const struct FLootLockerGetAssetsResponse& AssetsResponse)>& OnGetAssetsByIdsRequestCompleted);
-	static void GetByListOfMembers(const TArray<class FString>& members, const class FString& LeaderboardKey, const TDelegate<void(const struct FLootLockerGetByListOfMembersResponse& Response)>& OnCompletedRequestBP);
-	static void GetCharacterLoadout(const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>& OnGetCharacterLoadoutRequestCompleted);
-	static void GetCharacterProgression(const int32& CharacterId, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerCharacterProgressionResponse& Response)>& OnCompletedRequest);
-	static void GetCharacterProgressions(const int32& CharacterId, const int32 Count, const class FString& after, const TDelegate<void(const struct FLootLockerPaginatedCharacterProgressionResponse& Response)>& OnCompletedRequest);
-	static void GetContexts(const TDelegate<void(const struct FLootLockerGetContextResponse& ContextsResponse)>& OnGetContextsRequestCompleted);
-	static void GetCurrencyBalance(const TDelegate<void(const struct FLootLockerBalanceResponse& Value)>& OnGetCurrencyBalance);
-	static void GetCurrencyDenominationsByCode(const class FString& CurrencyCode, const TDelegate<void(const struct FLootLockerListDenominationsResponse& Response)>& OnCompletedRequest);
-	static void GetCurrentLoadoutToDefaultCharacter(const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>& OnGetCurrentLoadoutToDefaultCharacterRequestCompleted);
-	static void GetDLCsMigration(const TDelegate<void(const struct FLootLockerDlcResponse& Value)>& OnGotDlcMigration);
-	static void GetEntirePersistentStorage(const TDelegate<void(const struct FLootLockerPersistentStorageItemsResponse& Response)>& OnPersistentStorageItemsRequestCompleted);
-	static void GetEntitlement(const class FString& EntitlementId, const TDelegate<void(const struct FLootLockerSingleEntitlementResponse& Response)>& OnComplete);
-	static void GetEquipableContextsByCharacterId(int32 OtherCharacterId, const TDelegate<void(const struct FLootLockerGetContextResponse& ContextsResponse)>& OnGetEquipableContextsByCharacterIdRequestCompleted);
-	static void GetEquipableContextsToDefaultCharacter(const TDelegate<void(const struct FLootLockerGetContextResponse& ContextsResponse)>& OnGetEquipableContextsToDefaultCharacterRequestCompleted);
-	static void GetFavouriteAssetIndices(const TDelegate<void(const struct FLootLockerGetFavouriteAssetIndicesResponse& FavouriteAssetIndicesResponse)>& OnGetFavouriteAssetIndicesRequestCompleted);
-	static void GetGameHeroes(const TDelegate<void(const struct FLootLockerGameHeroListResponse& Response)>& OnCompleteBP);
-	static void GetHero(const int32 HeroID, const TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)>& OnCompleteBP);
-	static void GetHeroInventory(const int32 HeroID, const TDelegate<void(const struct FLootLockerInventoryResponse& Value)>& OnCompleteBP);
-	static void GetHeroLoadout(const int32 HeroID, const TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)>& OnCompleteBP);
-	static void GetInstanceProgression(const int32 AssetInstanceId, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerInstanceProgressionResponse& Response)>& OnCompletedRequestBP);
-	static void GetInstanceProgressions(const int32 AssetInstanceId, const int32 Count, const class FString& after, const TDelegate<void(const struct FLootLockerPaginatedInstanceProgressionResponse& Response)>& OnCompletedRequestBP);
-	static void GetInventory(const TDelegate<void(const struct FLootLockerInventoryResponse& Value)>& OnGetInventoryRequestCompleted);
-	static void GetItemFromPersistentStorage(const class FString& Key, const TDelegate<void(const struct FLootLockerPersistentStorageItemResponse& Response)>& OnPersistentStorageItemRequestCompleted);
-	static class FString GetLastActivePlatform();
-	static void GetLeaderboardArchive(const class FString& Key, int32 Count, const class FString& after, const TDelegate<void(const struct FLootLockerLeaderboardArchiveDetailsResponse& Response)>& OnCompletedRequestBP);
-	static void GetLeaderboardDetails(const class FString& LeaderboardKey, const TDelegate<void(const struct FLootLockerLeaderboardDetailsResponse& Response)>& OnCompletedRequestBP);
-	static void GetMaps(const TDelegate<void(const struct FLootLockerGetMapsResponse& Response)>& OnGetMapsCompleted);
-	static void GetMemberRank(const class FString& LeaderboardKey, const class FString& MemberId, const TDelegate<void(const struct FLootLockerGetMemberRankResponse& Response)>& OnCompletedRequestBP);
-	static void GetMessages(const TDelegate<void(const struct FLootLockerMessagesResponse& Response)>& OnGetMessagesCompleted);
-	static void GetMission(int32 MissionId, const TDelegate<void(const struct FLootLockerMissionResponse& Response)>& OnGetMissionCompleted);
-	static void GetMultiplePlayersXp(const class FString& Platform, const TArray<class FString>& PlayerIDs, const TDelegate<void(const struct FLootLockerMultiplePlayerXpResponse& Value)>& OnGetOtherPlayerInfoRequestCompleted);
-	static void GetOrderDetails(int32 OrderId, const bool NoProducts, const TDelegate<void(const struct FLootLockerOrderDetailsResponse& Response)>& OnCompleteBP);
-	static void GetOtherPlayersCurrentLoadoutToDefaultCharacter(const class FString& OtherPlayerId, const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>& OnGetOtherPlayersCurrentLoadoutToDefaultCharacterRequestCompleted, const class FString& OtherPlayerPlatform);
-	static void GetOtherPlayersDefaultHeroBySteamID64(const int32 SteamID64, const TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)>& OnCompleteBP);
-	static void GetOtherPlayersHeroLoadout(const int32 HeroID, const TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)>& OnCompleteBP);
-	static void GetOtherPlayersXpAndLevel(const class FString& OtherPlayerId, const TDelegate<void(const struct FLootLockerOtherPlayersXpAndLevelResponse& Value)>& OnGetOtherPlayersXpAndLevelRequestCompleted, const class FString& OtherPlayerPlatform);
-	static void GetPlayerInfo(const TDelegate<void(const struct FLootLockerPlayerInfoResponse& Value)>& OnGetPlayerInfoRequestComplete);
-	static void GetPlayerName(const TDelegate<void(const struct FLootLockerNameResponse& Value)>& OnGetPlayerName);
-	static void GetPlayerPersistentStorage(const class FString& PlayerId, const TDelegate<void(const struct FLootLockerPersistentStorageItemsResponse& Response)>& OnGetPlayerPersistentStorageRequestCompleted);
-	static void GetPlayerProgression(const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerPlayerProgressionResponse& Response)>& OnCompletedRequest);
-	static void GetPlayerProgressions(const int32 Count, const class FString& after, const TDelegate<void(const struct FLootLockerPaginatedPlayerProgressionResponse& Response)>& OnCompletedRequest);
-	static void GetProgression(const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerProgressionResponse& Response)>& OnCompletedRequest);
-	static void GetProgressions(const int32 Count, const class FString& after, const TDelegate<void(const struct FLootLockerPaginatedProgressionsResponse& Response)>& OnCompletedRequest);
-	static void GetProgressionTiers(const class FString& ProgressionKey, const int32 Count, const int32 after, const TDelegate<void(const struct FLootLockerPaginatedProgressionTiersResponse& Response)>& OnCompletedRequest);
-	static void GetScoreList(const class FString& LeaderboardKey, int32 Count, int32 after, const TDelegate<void(const struct FLootLockerGetScoreListResponse& Response)>& OnCompletedRequestBP);
-	static void GetScoreListInitial(const class FString& LeaderboardKey, int32 Count, const TDelegate<void(const struct FLootLockerGetScoreListResponse& Response)>& OnCompletedRequestBP);
-	static void GetServerTime(const TDelegate<void(const struct FLootLockerTimeResponse& Response)>& OnCompletedRequestBP);
-	static void GetSingleFile(const int32 FileId, const TDelegate<void(const struct FLootLockerPlayerFileResponse& Response)>& OnComplete);
-	static void GetTriggeredEvents(const TDelegate<void(const struct FLootLockerTriggersResponse& Value)>& OnGetTriggeredEventsCompleted);
-	static void GetUniversalAssets(int32 after, int32 ItemsCount, const TDelegate<void(const struct FLootLockerUniversalAssetsResponse& UniversalAssetsResponse)>& OnCompletedRequest);
-	static void GetWalletByHolderID(const class FString& HolderULID, const ELootLockerWalletHolderTypes& HolderType, const TDelegate<void(const struct FLootLockerGetWalletResponse& Response)>& OnComplete);
-	static void GetWalletByWalletID(const class FString& WalletID, const TDelegate<void(const struct FLootLockerGetWalletResponse& Response)>& OnComplete);
-	static void GrantAssetToPlayerInventory(const int32 AssetId, const TDelegate<void(const struct FLootLockerGrantAssetResponse& Response)>& OnCompletedRequest);
-	static void GrantAssetWithVariationToPlayerInventory(const int32 AssetId, const int32 AssetVariationID, const int32 AssetRentalOptionID, const TDelegate<void(const struct FLootLockerGrantAssetResponse& Response)>& OnCompletedRequest);
-	static void GuestLogin(const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnCompletedRequestBP, const class FString& PlayerIdentifier);
-	static void InitiateDLCMigration(const TDelegate<void(const struct FLootLockerResponse& Response)>& OnInitiateDlcMigration);
-	static void InspectLootBox(int32 AssetInstanceId, const TDelegate<void(const struct FLootLockerLootBoxContentResponse& Response)>& OnInspectLootBoxCompleted);
-	static void ListBalancesInWallet(const class FString& WalletID, const TDelegate<void(const struct FLootLockerListBalancesForWalletResponse& Response)>& OnComplete);
-	static void ListCatalogItems(const class FString& CatalogKey, int32 Count, const class FString& after, const TDelegate<void(const struct FLootLockerListCatalogPricesResponse& Response)>& OnComplete);
-	static void ListCatalogs(const TDelegate<void(const struct FLootLockerListCatalogsResponse& Response)>& OnComplete);
-	static void ListCharacterTypes(const TDelegate<void(const struct FLootLockerListCharacterTypesResponse& Var)>& OnCompletedRequestBP);
-	static void ListConnectedAccounts(const TDelegate<void(const struct FLootLockerListConnectedAccountsResponse& Response)>& OnCompleteBP);
-	static void ListCurrencies(const TDelegate<void(const struct FLootLockerListCurrenciesResponse& Response)>& OnCompletedRequest);
-	static void ListEntitlements(int32 Count, const class FString& after, const TDelegate<void(const struct FLootLockerEntitlementHistoryResponse& Response)>& OnComplete);
-	static void ListFiles(const TDelegate<void(const struct FLootLockerFileListResponse& Response)>& OnComplete);
-	static void ListGameFeedbackCategories(const TDelegate<void(const struct FLootLockerFeedbackCategoryResponse& Response)>& OnComplete);
-	static void ListLeaderboardArchive(const class FString& LeaderboardKey, const TDelegate<void(const struct FLootLockerLeaderboardArchiveResponse& Response)>& OnCompletedRequestBP);
-	static void ListOtherPlayersHeroesBySteamID64(const int64 SteamID64, const TDelegate<void(const struct FLootLockerHeroListResponse& Response)>& OnCompleteBP);
-	static void ListOtherPlayersPublicFiles(const int32 PlayerId, const TDelegate<void(const struct FLootLockerFileListResponse& Response)>& OnCompleteBP);
-	static void ListPlayerCharacters(const TDelegate<void(const struct FLootLockerListPlayerCharactersResponse& Var)>& OnCompletedRequestBP);
-	static void ListPlayerFeedbackCategories(const TDelegate<void(const struct FLootLockerFeedbackCategoryResponse& Response)>& OnComplete);
-	static void ListPlayerHeroes(const TDelegate<void(const struct FLootLockerHeroListResponse& Response)>& OnCompleteBP);
-	static void ListUGCFeedbackCategories(const TDelegate<void(const struct FLootLockerFeedbackCategoryResponse& Response)>& OnComplete);
-	static void LookupMultiplePlayerNames1stPlatformIDs(const struct FLootLockerMultiplePlayerNamesAndPlatformsRequest& Request, const TDelegate<void(const struct FLootLockerMultiplePlayersPlatformIdsResponse& Value)>& OnCompletedRequest);
-	static void LookupMultiplePlayerNamesUsingIDs(const struct FLootLockerMultiplePlayerNamesRequest& Request, const TDelegate<void(const struct FLootLockerMultiplePlayersNamesResponse& Value)>& OnCompletedRequest);
-	static void LootLockerPurchaseCatalogItems(const class FString& WalletID, const TArray<struct FLootLockerCatalogItemAndQuantityPair>& ItemsToPurchase, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest);
-	static void LootLockerPurchaseSingleCatalogItem(const class FString& WalletID, const class FString& CatalogItemListingId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest);
-	static void OpenLootBox(int32 AssetInstanceId, const TDelegate<void(const struct FLootLockerOpenLootBoxResponse& Response)>& OnOpenLootBoxCompleted);
-	static void PickDropsFromDropTable(const TArray<int32>& picks, int32 TableId, const TDelegate<void(const struct FLootLockerPickDropsFromDropTableResponse& Response)>& OnCompletedRequestBP);
-	static void PollingOrderStatus(int32 PurchaseId, const TDelegate<void(const struct FLootLockerPurchaseStatusResponse& Response)>& OnPollingStatusCompleted);
-	static void PurchaseAssets(const TArray<struct FLootLockerAssetPurchaseData>& PurchaseData, const TDelegate<void(const struct FLootLockerPurchaseResponse& Response)>& OnPurchaseAssetsCompleted);
-	static void PurchaseAssetsAndroid(const TArray<struct FLootLockerAndroidAssetPurchaseData>& PurchaseData, const TDelegate<void(const struct FLootLockerPurchaseResponse& Response)>& OnPurchaseAssetsAndroidCompleted);
-	static void PurchaseAssetsIOS(const TArray<struct FLootLockerVerifyPurchaseIosData>& PurchaseData, const TDelegate<void(const struct FLootLockerPurchaseResponse& Response)>& OnPurchaseAssetsIOSCompleted);
-	static void QuerySteamPurchaseRedemptionStatus(const class FString& EntitlementId, const TDelegate<void(const struct FLootLockerQuerySteamPurchaseRedemptionStatusResponse& Response)>& OnCompletedRequest);
-	static void RedeemAppleAppStorePurchaseForClass(const int32 ClassId, const class FString& TransactionId, bool Sandboxed, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest);
-	static void RedeemAppleAppStorePurchaseForPlayer(const class FString& TransactionId, bool Sandboxed, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest);
-	static void RedeemGooglePlayStorePurchaseForClass(const int32 ClassId, const class FString& ProductId, const class FString& PurchaseToken, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest);
-	static void RedeemGooglePlayStorePurchaseForPlayer(const class FString& ProductId, const class FString& PurchaseToken, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest);
-	static void RefreshAppleGameCenterSession(const class FString& RefreshToken, const TDelegate<void(const struct FLootLockerAppleGameCenterSessionResponse& Response)>& OnRefreshAppleGameCenterSessionCompleted);
-	static void RefreshAppleSession(const class FString& RefreshToken, const TDelegate<void(const struct FLootLockerAppleSessionResponse& Var)>& OnRefreshAppleSessionCompleted);
-	static void RefreshEpicSession(const class FString& RefreshToken, const TDelegate<void(const struct FLootLockerEpicSessionResponse& Var)>& OnRefreshEpicSessionCompleted);
-	static void RefreshGoogleSession(const class FString& RefreshToken, const TDelegate<void(const struct FLootLockerGoogleSessionResponse& Var)>& OnRefreshGoogleSessionCompleted);
-	static void RefreshMetaSession(const class FString& RefreshToken, const TDelegate<void(const struct FLootLockerMetaSessionResponse& Var)>& OnRefreshMetaSessionCompleted);
-	static void RefreshRemoteSession(const class FString& RefreshToken, const TDelegate<void(const struct FLootLockerRefreshRemoteSessionResponse& Response)>& OnCompletedRequest);
-	static void RemoveAssetFromFavourites(int32 AssetId, const TDelegate<void(const struct FLootLockerGetFavouriteAssetIndicesResponse& FavouriteAssetIndicesResponse)>& OnRemoveAssetFromFavouritesRequestCompleted);
-	static void RemoveAssetToHeroLoadout(const int32 HeroID, const int32 AssetInstanceId, const TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)>& OnCompleteBP);
-	static void ResetCharacterProgression(const int32& CharacterId, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerCharacterProgressionWithRewardsResponse& Response)>& OnCompletedRequest);
-	static void ResetInstanceProgression(const int32 AssetInstanceId, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerInstanceProgressionWithRewardsResponse& Response)>& OnCompletedRequestBP);
-	static void ResetPlayerProgression(const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerPlayerProgressionWithRewardsResponse& Response)>& OnCompletedRequest);
-	static void SendGameFeedback(const class FString& Description, const class FString& CategoryID, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnComplete);
-	static void SendPlayerFeedback(const class FString& ulid, const class FString& Description, const class FString& CategoryID, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnComplete);
-	static void SendUGCFeedback(const class FString& ulid, const class FString& Description, const class FString& CategoryID, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnComplete);
-	static void SetPlayerName(const class FString& Name_0, const TDelegate<void(const struct FLootLockerNameResponse& Value)>& OnSetPlayerName);
-	static void SetProfilePrivate(const TDelegate<void(const struct FLootLockerResponse& Response)>& OnProfileSetPrivate);
-	static void SetProfilePublic(const TDelegate<void(const struct FLootLockerResponse& Response)>& OnProfileSetPublic);
-	static void StartAmazonLunaSession(const class FString& AmazonLunaGuid, const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnStartedSessionRequestCompleted);
-	static void StartAndroidSession(const class FString& DeviceID, const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnStartedSessionRequestCompleted);
-	static void StartAppleGameCenterSession(const class FString& BundleId, const class FString& PlayerId, const class FString& PublicKeyUrl, const class FString& signature, const class FString& salt, const class FString& Timestamp, const TDelegate<void(const struct FLootLockerAppleGameCenterSessionResponse& Response)>& OnStartedAppleGameCenterSessionCompleted);
-	static void StartAppleSession(const class FString& AuthorizationCode, const TDelegate<void(const struct FLootLockerAppleSessionResponse& Var)>& OnStartedAppleSessionCompleted);
-	static void StartEpicSession(const class FString& IDToken, const TDelegate<void(const struct FLootLockerEpicSessionResponse& Var)>& OnStartedEpicSessionRequestCompleted);
-	static void StartGoogleSession(const class FString& IDToken, const TDelegate<void(const struct FLootLockerGoogleSessionResponse& Var)>& OnStartedGoogleSessionRequestCompleted);
-	static void StartGoogleSessionForPlatform(const class FString& IDToken, ELootLockerGoogleClientPlatform Platform, const TDelegate<void(const struct FLootLockerGoogleSessionResponse& Var)>& OnStartedGoogleSessionRequestCompleted);
-	static void StartMetaSession(const class FString& UserId, const class FString& Nonce, const TDelegate<void(const struct FLootLockerMetaSessionResponse& Var)>& OnMetaSessionRequestCompleted);
-	static void StartMission(int32 MissionId, const TDelegate<void(const struct FLootLockerStartMissionResponse& Response)>& OnStartMissionCompleted);
-	static void StartNintendoSwitchSession(const class FString& NSAIdToken, const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnStartedNintendoSwitchSessionRequestCompleted);
-	static void StartPlaystationNetworkSession(const class FString& PsnOnlineId, const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnStartedSessionRequestCompleted);
+	static TArray<struct FLootLockerInlinedCatalogEntry> ConvertCatalogV2ToInlineItems(const struct FLootLockerListCatalogPricesV2Response& Catalog);
+	static class FString CreateAKeyValuePairForAssetInstance(const class FString& ForPlayerWithUlid, int32 AssetInstanceId, const struct FLootLockerAssetInstanceStorageItem& Item, const TDelegate<void(const struct FLootLockerAssetInstanceStorageItemsResponse& Response)>& OnCreateAKeyValuePairForAssetInstanceCompleted);
+	static class FString CreateAssetCandidate(const class FString& ForPlayerWithUlid, const struct FLootLockerCreateAssetCandidateData& AssetCandidateData, const TDelegate<void(const struct FLootLockerCreateAssetCandidateResponse& Response)>& OnCreateAssetCandidateCompleted);
+	static class FString CreateAssetCandidateAndMarkComplete(const class FString& ForPlayerWithUlid, const struct FLootLockerCreateAssetCandidateData& AssetCandidateData, const TDelegate<void(const struct FLootLockerCreateAssetCandidateResponse& Response)>& OnCreateAssetCandidateCompleted);
+	static class FString CreateCharacter(const class FString& ForPlayerWithUlid, bool IsDefault, const class FString& CharacterName, int32 CharacterTypeId, const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>& OnCompletedRequestBP);
+	static class FString CreateHero(const class FString& ForPlayerWithUlid, const struct FLootLockerCreateHeroRequest& Request, const TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)>& OnCompleteBP);
+	static class FString CreateHeroWithVariation(const class FString& ForPlayerWithUlid, const struct FLootLockerCreateHeroWithVariationRequest& Request, const TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)>& OnCompleteBP);
+	static class FString CreditBalanceToWallet(const class FString& ForPlayerWithUlid, const class FString& WalletID, const class FString& CurrencyID, const class FString& Amount, const TDelegate<void(const struct FLootLockerCreditWalletResponse& Response)>& OnComplete);
+	static class FString DebitBalanceToWallet(const class FString& ForPlayerWithUlid, const class FString& WalletID, const class FString& CurrencyID, const class FString& Amount, const TDelegate<void(const struct FLootLockerDebitWalletResponse& Response)>& OnComplete);
+	static class FString DeclineIncomingFriendRequest(const class FString& ForPlayerWithUlid, const class FString& PlayerUlid, const TDelegate<void(const struct FLootLockerFriendActionResponse& Response)>& OnResponseCompletedBP);
+	static class FString DeleteAKeyValuePairByIdForAssetInstance(const class FString& ForPlayerWithUlid, int32 AssetInstanceId, int32 StorageItemId, const TDelegate<void(const struct FLootLockerAssetInstanceStorageItemsResponse& Response)>& OnDeleteAKeyValuePairByIdForAssetInstanceCompleted);
+	static class FString DeleteAssetCandidate(const class FString& ForPlayerWithUlid, int32 AssetCandidateId, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnDeleteAssetCandidateCompleted);
+	static class FString DeleteAssetInstanceFromPlayerInventory(const class FString& ForPlayerWithUlid, int32 AssetInstanceId, const TDelegate<void(const struct FLootLockerDeleteAssetInstanceResponse& Response)>& OnCompleted);
+	static class FString DeleteCharacter(const class FString& ForPlayerWithUlid, int32 CharacterId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequestBP);
+	static class FString DeleteCharacterProgression(const class FString& ForPlayerWithUlid, const int32& CharacterId, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnCompletedRequest);
+	static class FString DeleteFileFromAssetCandidate(const class FString& ForPlayerWithUlid, int32 AssetCandidateId, int32 FileId, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnDeleteFileFromAssetCandidateCompleted);
+	static class FString DeleteFriend(const class FString& ForPlayerWithUlid, const class FString& PlayerUlid, const TDelegate<void(const struct FLootLockerFriendActionResponse& Response)>& OnResponseCompletedBP);
+	static class FString DeleteHero(const class FString& ForPlayerWithUlid, const int32 HeroID, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnCompleteBP);
+	static class FString DeleteInstanceProgression(const class FString& ForPlayerWithUlid, const int32 AssetInstanceId, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnCompletedRequestBP);
+	static class FString DeleteItemFromPersistentStorage(const class FString& ForPlayerWithUlid, const class FString& Key, const TDelegate<void(const struct FLootLockerPersistentStorageItemsResponse& Response)>& OnPersistentStorageItemDeleteRequestCompleted);
+	static class FString DeletePlayer(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest);
+	static class FString DeletePlayerFile(const class FString& ForPlayerWithUlid, const int32 FileId, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnComplete);
+	static class FString DeletePlayerProgression(const class FString& ForPlayerWithUlid, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnCompletedRequest);
+	static class FString DisconnectAccount(const class FString& ForPlayerWithUlid, const ELootLockerAccountProvider AccountToDisconnect, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompleteBP);
+	static class FString EndSession(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnEndSessionRequestCompleted);
+	static class FString EquipAssetToCharacterById(const class FString& ForPlayerWithUlid, int32 CharacterId, int32 AssetId, int32 AssetVariationID, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnEquipAssetToCharacterByIdRequestCompleted);
+	static class FString EquipAssetToCharacterByIdAndInstance(const class FString& ForPlayerWithUlid, int32 CharacterId, int32 InstanceId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnEquipAssetToCharacterByIdRequestCompleted);
+	static class FString EquipAssetToDefaultCharacter(const class FString& ForPlayerWithUlid, int32 InstanceId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnEquipAssetToDefaultCharacterRequestCompleted);
+	static class FString FinalizeSteamPurchaseRedemption(const class FString& ForPlayerWithUlid, const class FString& EntitlementId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest);
+	static class FString FinishMission(const class FString& ForPlayerWithUlid, int32 MissionId, const struct FLootLockerFinishMissionData& MissionData, const TDelegate<void(const struct FLootLockerFinishMissionResponse& Response)>& OnFinishMissionCompleted);
+	static class FString FollowPlayer(const class FString& ForPlayerWithUlid, const class FString& PlayerPublicUid, const TDelegate<void(const struct FLootLockerFollowActionResponse& Response)>& OnResponseCompletedBP);
+	static void ForceStartPresenceConnection(const TDelegate<void(bool bSuccess, const class FString& ErrorMessage)>& OnCompleted, const class FString& ForPlayerWithUlid);
+	static void ForceStopAllPresenceConnections();
+	static void ForceStopPresenceConnection(const TDelegate<void(bool bSuccess, const class FString& ErrorMessage)>& OnCompleted, const class FString& ForPlayerWithUlid);
+	static TArray<class FString> GetActivePlayerUlids();
+	static class FString GetAKeyValuePairByIdForAssetInstance(const class FString& ForPlayerWithUlid, int32 AssetInstanceId, int32 StorageItemId, const TDelegate<void(const struct FLootLockerAssetInstanceStorageItemResponse& Response)>& OnGetAKeyValuePairByIdForAssetInstanceCompleted);
+	static class FString GetAllAssetCandidates(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerAssetCandidatesResponse& Response)>& OnGetAllAssetCandidatesCompleted);
+	static class FString GetAllCollectables(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerCollectablesResponse& Response)>& OnGetAllCollectablesCompleted);
+	static class FString GetAllKeyValuePairsForAssetInstance(const class FString& ForPlayerWithUlid, int32 AssetInstanceId, const TDelegate<void(const struct FLootLockerAssetInstanceStorageItemsResponse& Response)>& OnGetAllKeyValuePairsForAssetInstanceCompleted);
+	static class FString GetAllMemberRanks(const class FString& ForPlayerWithUlid, const class FString& MemberId, const int32 Count, const int32 after, const TDelegate<void(const struct FLootLockerGetAllMemberRanksResponse& Response)>& OnCompletedRequestBP);
+	static class FString GetAllMissions(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerMissionsResponse& Response)>& OnGetAllMissionsCompleted);
+	static class FString GetAssetBones(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerGetAssetBonesResponse& AssetBonesResponse)>& OnGetAssetBonesRequestCompleted);
+	static class FString GetAssetCandidate(const class FString& ForPlayerWithUlid, int32 AssetCandidateId, const TDelegate<void(const struct FLootLockerAssetCandidateResponse& Response)>& OnGetAssetCandidateCompleted);
+	static class FString GetAssets(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerGetAssetsResponse& AssetsResponse)>& OnGetAssetsRequestCompleted, int32 StartFromIndex, int32 ItemsCount, ELootLockerAssetFilter AssetFilter, int32 Context, bool IncludeUGC);
+	static class FString GetAssetsByIds(const class FString& ForPlayerWithUlid, const TArray<int32>& AssetIds, const TDelegate<void(const struct FLootLockerGetAssetsResponse& AssetsResponse)>& OnGetAssetsByIdsRequestCompleted);
+	static class FString GetByListOfMembers(const class FString& ForPlayerWithUlid, const TArray<class FString>& members, const class FString& LeaderboardKey, const TDelegate<void(const struct FLootLockerGetByListOfMembersResponse& Response)>& OnCompletedRequestBP);
+	static TArray<class FString> GetCachedPlayerUlids();
+	static class FString GetCharacterLoadout(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>& OnGetCharacterLoadoutRequestCompleted);
+	static class FString GetCharacterProgression(const class FString& ForPlayerWithUlid, const int32& CharacterId, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerCharacterProgressionResponse& Response)>& OnCompletedRequest);
+	static class FString GetCharacterProgressions(const class FString& ForPlayerWithUlid, const int32& CharacterId, const int32 Count, const class FString& after, const TDelegate<void(const struct FLootLockerPaginatedCharacterProgressionResponse& Response)>& OnCompletedRequest);
+	static class FString GetContexts(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerGetContextResponse& ContextsResponse)>& OnGetContextsRequestCompleted);
+	static class FString GetCurrencyBalance(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerBalanceResponse& Value)>& OnGetCurrencyBalance);
+	static class FString GetCurrencyDenominationsByCode(const class FString& ForPlayerWithUlid, const class FString& CurrencyCode, const TDelegate<void(const struct FLootLockerListDenominationsResponse& Response)>& OnCompletedRequest);
+	static class FString GetCurrencyDetails(const class FString& ForPlayerWithUlid, const class FString& CurrencyCode, const TDelegate<void(const struct FLootLockerGetCurrencyDetailsResponse& Response)>& OnCompletedRequest);
+	static class FString GetCurrentLoadoutToDefaultCharacter(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>& OnGetCurrentLoadoutToDefaultCharacterRequestCompleted);
+	static class FString GetCurrentPlayerInfo(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerGetCurrentPlayerInfoResponse& Value)>& OnCompletedRequest);
+	static class FString GetCurrentPresenceStatus(const class FString& ForPlayerWithUlid);
+	static class FString GetDefaultPlayerUlid();
+	static class FString GetDLCsMigration(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerDlcResponse& Value)>& OnGotDlcMigration);
+	static class FString GetEntirePersistentStorage(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerPersistentStorageItemsResponse& Response)>& OnPersistentStorageItemsRequestCompleted);
+	static class FString GetEntitlement(const class FString& ForPlayerWithUlid, const class FString& EntitlementId, const TDelegate<void(const struct FLootLockerSingleEntitlementResponse& Response)>& OnComplete);
+	static class FString GetEquipableContextsByCharacterId(const class FString& ForPlayerWithUlid, int32 OtherCharacterId, const TDelegate<void(const struct FLootLockerGetContextResponse& ContextsResponse)>& OnGetEquipableContextsByCharacterIdRequestCompleted);
+	static class FString GetEquipableContextsToDefaultCharacter(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerGetContextResponse& ContextsResponse)>& OnGetEquipableContextsToDefaultCharacterRequestCompleted);
+	static class FString GetFavouriteAssetIndices(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerGetFavouriteAssetIndicesResponse& FavouriteAssetIndicesResponse)>& OnGetFavouriteAssetIndicesRequestCompleted);
+	static class FString GetFriend(const class FString& ForPlayerWithUlid, const class FString& FriendUlid, const TDelegate<void(const struct FLootLockerGetFriendResponse& Response)>& OnResponseCompletedBP);
+	static class FString GetFullInventory(const class FString& ForPlayerWithUlid, int32 StartIndex, const TDelegate<void(const struct FLootLockerInventoryResponse& Value)>& OnGetInventoryRequestCompleted);
+	static class FString GetGameHeroes(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerGameHeroListResponse& Response)>& OnCompleteBP);
+	static class FString GetGameInfo(const TDelegate<void(const struct FLootLockerGameInfoResponse& Response)>& OnCompletedRequestBP);
+	static class FString GetHero(const class FString& ForPlayerWithUlid, const int32 HeroID, const TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)>& OnCompleteBP);
+	static class FString GetHeroInventory(const class FString& ForPlayerWithUlid, const int32 HeroID, const TDelegate<void(const struct FLootLockerInventoryResponse& Value)>& OnCompleteBP);
+	static class FString GetHeroLoadout(const class FString& ForPlayerWithUlid, const int32 HeroID, const TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)>& OnCompleteBP);
+	static class FString GetInstanceProgression(const class FString& ForPlayerWithUlid, const int32 AssetInstanceId, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerInstanceProgressionResponse& Response)>& OnCompletedRequestBP);
+	static class FString GetInstanceProgressions(const class FString& ForPlayerWithUlid, const int32 AssetInstanceId, const int32 Count, const class FString& after, const TDelegate<void(const struct FLootLockerPaginatedInstanceProgressionResponse& Response)>& OnCompletedRequestBP);
+	static class FString GetInventory(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerInventoryResponse& Value)>& OnGetInventoryRequestCompleted);
+	static class FString GetItemFromPersistentStorage(const class FString& ForPlayerWithUlid, const class FString& Key, const TDelegate<void(const struct FLootLockerPersistentStorageItemResponse& Response)>& OnPersistentStorageItemRequestCompleted);
+	static class FString GetLastActivePlatform(const class FString& ForPlayerWithUlid);
+	static class FString GetLeaderboardArchive(const class FString& ForPlayerWithUlid, const class FString& Key, int32 Count, const class FString& after, const TDelegate<void(const struct FLootLockerLeaderboardArchiveDetailsResponse& Response)>& OnCompletedRequestBP);
+	static class FString GetLeaderboardDetails(const class FString& ForPlayerWithUlid, const class FString& LeaderboardKey, const TDelegate<void(const struct FLootLockerLeaderboardDetailsResponse& Response)>& OnCompletedRequestBP);
+	static class FString GetMaps(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerGetMapsResponse& Response)>& OnGetMapsCompleted);
+	static class FString GetMemberRank(const class FString& ForPlayerWithUlid, const class FString& LeaderboardKey, const class FString& MemberId, const TDelegate<void(const struct FLootLockerGetMemberRankResponse& Response)>& OnCompletedRequestBP);
+	static class FString GetMessages(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerMessagesResponse& Response)>& OnGetMessagesCompleted);
+	static class FString GetMetadata(const class FString& ForPlayerWithUlid, const ELootLockerMetadataSources Source, const class FString& SourceID, const class FString& Key, const bool IgnoreFiles, const TDelegate<void(const struct FLootLockerGetMetadataResponse& Response)>& OnComplete);
+	static class FString GetMission(const class FString& ForPlayerWithUlid, int32 MissionId, const TDelegate<void(const struct FLootLockerMissionResponse& Response)>& OnGetMissionCompleted);
+	static class FString GetMultisourceMetadata(const class FString& ForPlayerWithUlid, const TArray<struct FLootLockerMetadataSourceAndKeys>& SourcesAndKeysToGet, const bool IgnoreFiles, const TDelegate<void(const struct FLootLockerGetMultisourceMetadataResponse& Response)>& OnComplete);
+	static class FString GetOtherPlayersCharacterLoadouts(const class FString& ForPlayerWithUlid, const class FString& OtherPlayerId, const class FString& OtherPlayerPlatform, const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>& OnCompletedRequest);
+	static class FString GetOtherPlayersCharacterLoadoutsByUid(const class FString& ForPlayerWithUlid, const class FString& OtherPlayerUid, const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>& OnCompletedRequest);
+	static class FString GetOtherPlayersCurrentLoadoutToDefaultCharacter(const class FString& ForPlayerWithUlid, const class FString& OtherPlayerId, const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>& OnGetOtherPlayersCurrentLoadoutToDefaultCharacterRequestCompleted, const class FString& OtherPlayerPlatform);
+	static class FString GetOtherPlayersDefaultHeroBySteamID64(const class FString& ForPlayerWithUlid, const int32 SteamID64, const TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)>& OnCompleteBP);
+	static class FString GetOtherPlayersHeroLoadout(const class FString& ForPlayerWithUlid, const int32 HeroID, const TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)>& OnCompleteBP);
+	static class FString GetOtherPlayersProgression(const class FString& ForPlayerWithUlid, const class FString& PlayerUlid, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerPlayerProgressionResponse& Response)>& OnCompletedRequest);
+	static class FString GetOtherPlayersProgressions(const class FString& ForPlayerWithUlid, const class FString& PlayerUlid, const int32 Count, const class FString& after, const TDelegate<void(const struct FLootLockerPaginatedPlayerProgressionResponse& Response)>& OnCompletedRequest);
+	static class FString GetPlayerName(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerNameResponse& Value)>& OnGetPlayerName);
+	static class FString GetPlayerPersistentStorage(const class FString& ForPlayerWithUlid, const class FString& PlayerId, const TDelegate<void(const struct FLootLockerPersistentStorageItemsResponse& Response)>& OnGetPlayerPersistentStorageRequestCompleted);
+	static class FString GetPlayerProgression(const class FString& ForPlayerWithUlid, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerPlayerProgressionResponse& Response)>& OnCompletedRequest);
+	static class FString GetPlayerProgressions(const class FString& ForPlayerWithUlid, const int32 Count, const class FString& after, const TDelegate<void(const struct FLootLockerPaginatedPlayerProgressionResponse& Response)>& OnCompletedRequest);
+	static ELootLockerPresenceConnectionState GetPresenceConnectionState(const class FString& ForPlayerWithUlid);
+	static struct FLootLockerPresenceConnectionStats GetPresenceConnectionStats(const class FString& ForPlayerWithUlid);
+	static class FString GetProgression(const class FString& ForPlayerWithUlid, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerProgressionResponse& Response)>& OnCompletedRequest);
+	static class FString GetProgressions(const class FString& ForPlayerWithUlid, const int32 Count, const class FString& after, const TDelegate<void(const struct FLootLockerPaginatedProgressionsResponse& Response)>& OnCompletedRequest);
+	static class FString GetProgressionTiers(const class FString& ForPlayerWithUlid, const class FString& ProgressionKey, const int32 Count, const int32 after, const TDelegate<void(const struct FLootLockerPaginatedProgressionTiersResponse& Response)>& OnCompletedRequest);
+	static struct FLootLockerPlayerData GetSavedStateOrDefaultOrEmptyForPlayer(const class FString& PlayerUlid);
+	static class FString GetScoreList(const class FString& ForPlayerWithUlid, const class FString& LeaderboardKey, int32 Count, int32 after, const TDelegate<void(const struct FLootLockerGetScoreListResponse& Response)>& OnCompletedRequestBP);
+	static class FString GetScoreListInitial(const class FString& ForPlayerWithUlid, const class FString& LeaderboardKey, int32 Count, const TDelegate<void(const struct FLootLockerGetScoreListResponse& Response)>& OnCompletedRequestBP);
+	static class FString GetServerTime(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerTimeResponse& Response)>& OnCompletedRequestBP);
+	static class FString GetSingleFile(const class FString& ForPlayerWithUlid, const int32 FileId, const TDelegate<void(const struct FLootLockerPlayerFileResponse& Response)>& OnComplete);
+	static class FString GetUniversalAssets(const class FString& ForPlayerWithUlid, int32 after, int32 ItemsCount, const TDelegate<void(const struct FLootLockerUniversalAssetsResponse& UniversalAssetsResponse)>& OnCompletedRequest);
+	static class FString GetWalletByHolderID(const class FString& ForPlayerWithUlid, const class FString& HolderULID, const ELootLockerWalletHolderTypes& HolderType, const TDelegate<void(const struct FLootLockerGetWalletResponse& Response)>& OnComplete);
+	static class FString GetWalletByWalletID(const class FString& ForPlayerWithUlid, const class FString& WalletID, const TDelegate<void(const struct FLootLockerGetWalletResponse& Response)>& OnComplete);
+	static class FString GrantAssetToPlayerInventory(const class FString& ForPlayerWithUlid, const int32 AssetId, const TDelegate<void(const struct FLootLockerGrantAssetResponse& Response)>& OnCompletedRequest);
+	static class FString GrantAssetWithVariationToPlayerInventory(const class FString& ForPlayerWithUlid, const int32 AssetId, const int32 AssetVariationID, const int32 AssetRentalOptionID, const TDelegate<void(const struct FLootLockerGrantAssetResponse& Response)>& OnCompletedRequest);
+	static class FString GuestLogin(const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnCompletedRequestBP, const class FString& PlayerIdentifier, const struct FLootLockerSessionOptionals& Optionals);
+	static class FString IncrementScore(const class FString& MemberId, const class FString& LeaderboardKey, const int32 Amount, const TDelegate<void(const struct FLootLockerSubmitScoreResponse& Response)>& OnCompletedRequestBP, const class FString& ForPlayerWithUlid);
+	static class FString InitiateDLCMigration(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnInitiateDlcMigration);
+	static class FString InspectLootBox(const class FString& ForPlayerWithUlid, int32 AssetInstanceId, const TDelegate<void(const struct FLootLockerLootBoxContentResponse& Response)>& OnInspectLootBoxCompleted);
+	static class FString InvokeTriggersByKey(const class FString& ForPlayerWithUlid, const TArray<class FString>& KeysToInvoke, const TDelegate<void(const struct FLootLockerInvokeTriggersByKeyResponse& Response)>& OnComplete);
+	static bool IsPresenceAutoConnectEnabled();
+	static bool IsPresenceAutoDisconnectOnFocusChangeEnabled();
+	static bool IsPresenceConnected(const class FString& ForPlayerWithUlid);
+	static bool IsPresenceEnabled();
+	static class FString ListAssets(const class FString& ForPlayerWithUlid, const struct FLootLockerListSimpleAssetsRequest& Request, int32 PerPage, int32 Page, ELootLockerOrderAssetListBy OrderBy, ELootLockerOrderAssetListDirection OrderDirection, const TDelegate<void(const struct FLootLockerListSimpleAssetsResponse& Response)>& OnCompletedRequest);
+	static class FString ListAssetsWithDefaultParameters(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerListSimpleAssetsResponse& Response)>& OnCompletedRequest);
+	static class FString ListBalancesInWallet(const class FString& ForPlayerWithUlid, const class FString& WalletID, const TDelegate<void(const struct FLootLockerListBalancesForWalletResponse& Response)>& OnComplete);
+	static class FString ListBlockedPlayers(const class FString& ForPlayerWithUlid, int32 Page, int32 PerPage, const TDelegate<void(const struct FLootLockerListBlockedPlayersResponse& Response)>& OnResponseCompletedBP);
+	static class FString ListBroadcasts(const TArray<class FString>& languages, int32 Limit, const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerListBroadcastsResponse& Response)>& OnComplete);
+	static class FString ListCatalogItems(const class FString& ForPlayerWithUlid, const class FString& CatalogKey, int32 Count, const class FString& after, const TDelegate<void(const struct FLootLockerListCatalogPricesResponse& Response)>& OnComplete);
+	static class FString ListCatalogItemsV2(const class FString& ForPlayerWithUlid, const class FString& CatalogKey, int32 PerPage, int32 Page, const TDelegate<void(const struct FLootLockerListCatalogPricesV2Response& Response)>& OnComplete);
+	static class FString ListCatalogs(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerListCatalogsResponse& Response)>& OnComplete);
+	static class FString ListCharacterInventory(const class FString& ForPlayerWithUlid, int32 CharacterId, const struct FLootLockerListSimplifiedInventoryRequest& Request, int32 PerPage, const int32& Page, const TDelegate<void(const struct FLootLockerSimpleInventoryResponse& Value)>& OnCompletedRequest);
+	static class FString ListCharacterTypes(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerListCharacterTypesResponse& Var)>& OnCompletedRequestBP);
+	static class FString ListConnectedAccounts(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerListConnectedAccountsResponse& Response)>& OnCompleteBP);
+	static class FString ListCurrencies(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerListCurrenciesResponse& Response)>& OnCompletedRequest);
+	static class FString ListEntitlements(const class FString& ForPlayerWithUlid, int32 Count, const class FString& after, const TDelegate<void(const struct FLootLockerEntitlementHistoryResponse& Response)>& OnComplete);
+	static class FString ListFiles(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerFileListResponse& Response)>& OnComplete);
+	static class FString ListFollowers(const class FString& ForPlayerWithUlid, const class FString& Cursor, int32 Count, const TDelegate<void(const struct FLootLockerListFollowersResponse& Response)>& OnResponseCompletedBP);
+	static class FString ListFollowersForPlayer(const class FString& ForPlayerWithUlid, const class FString& PlayerPublicUid, const class FString& Cursor, int32 Count, const TDelegate<void(const struct FLootLockerListFollowersResponse& Response)>& OnResponseCompletedBP);
+	static class FString ListFollowing(const class FString& ForPlayerWithUlid, const class FString& Cursor, int32 Count, const TDelegate<void(const struct FLootLockerListFollowersResponse& Response)>& OnResponseCompletedBP);
+	static class FString ListFollowingForPlayer(const class FString& ForPlayerWithUlid, const class FString& PlayerPublicUid, const class FString& Cursor, int32 Count, const TDelegate<void(const struct FLootLockerListFollowersResponse& Response)>& OnResponseCompletedBP);
+	static class FString ListFriends(const class FString& ForPlayerWithUlid, int32 Page, int32 PerPage, const TDelegate<void(const struct FLootLockerListFriendsResponse& Response)>& OnResponseCompletedBP);
+	static class FString ListGameFeedbackCategories(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerFeedbackCategoryResponse& Response)>& OnComplete);
+	static class FString ListIncomingFriendRequests(const class FString& ForPlayerWithUlid, int32 Page, int32 PerPage, const TDelegate<void(const struct FLootLockerListIncomingFriendRequestsResponse& Response)>& OnResponseCompletedBP);
+	static class FString ListLeaderboardArchive(const class FString& ForPlayerWithUlid, const class FString& LeaderboardKey, const TDelegate<void(const struct FLootLockerLeaderboardArchiveResponse& Response)>& OnCompletedRequestBP);
+	static class FString ListLeaderboards(const class FString& ForPlayerWithUlid, int32 Count, int32 after, const TDelegate<void(const struct FLootLockerListLeaderboardsResponse& Response)>& OnCompletedRequestBP);
+	static class FString ListMetadata(const class FString& ForPlayerWithUlid, const ELootLockerMetadataSources Source, const class FString& SourceID, const int32 Page, const int32 PerPage, const bool IgnoreFiles, const TDelegate<void(const struct FLootLockerListMetadataResponse& Response)>& OnComplete);
+	static class FString ListMetadataWithTags(const class FString& ForPlayerWithUlid, const ELootLockerMetadataSources Source, const class FString& SourceID, const TArray<class FString>& Tags, const int32 Page, const int32 PerPage, const bool IgnoreFiles, const TDelegate<void(const struct FLootLockerListMetadataResponse& Response)>& OnComplete);
+	static class FString ListNotifications(const class FString& ForPlayerWithUlid, bool ShowRead, const class FString& OfType, const class FString& WithSource, ELootLockerCustomNotificationFiltering CustomNotificationsFilter, int32 PerPage, int32 Page, const TDelegate<void(const struct FLootLockerListNotificationsResponse& Response)>& OnComplete);
+	static class FString ListNotificationsWithDefaultParameters(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerListNotificationsResponse& Response)>& OnComplete);
+	static class FString ListNotificationsWithPriority(const class FString& ForPlayerWithUlid, ELootLockerNotificationPriority WithPriority, bool ShowRead, const class FString& OfType, const class FString& WithSource, ELootLockerCustomNotificationFiltering CustomNotificationsFilter, int32 PerPage, int32 Page, const TDelegate<void(const struct FLootLockerListNotificationsResponse& Response)>& OnComplete);
+	static class FString ListOtherPlayersHeroesBySteamID64(const class FString& ForPlayerWithUlid, const int64 SteamID64, const TDelegate<void(const struct FLootLockerHeroListResponse& Response)>& OnCompleteBP);
+	static class FString ListOtherPlayersPublicFiles(const class FString& ForPlayerWithUlid, const int32 PlayerId, const TDelegate<void(const struct FLootLockerFileListResponse& Response)>& OnCompleteBP);
+	static class FString ListOutgoingFriendRequests(const class FString& ForPlayerWithUlid, int32 Page, int32 PerPage, const TDelegate<void(const struct FLootLockerListOutgoingFriendRequestsResponse& Response)>& OnResponseCompletedBP);
+	static class FString ListPlayerCharacters(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerListPlayerCharactersResponse& Var)>& OnCompletedRequestBP);
+	static class FString ListPlayerFeedbackCategories(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerFeedbackCategoryResponse& Response)>& OnComplete);
+	static class FString ListPlayerHeroes(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerHeroListResponse& Response)>& OnCompleteBP);
+	static class FString ListPlayerInfo(const class FString& ForPlayerWithUlid, const TArray<class FString>& PlayerIdsToLookUp, const TArray<int32>& PlayerLegacyIdsToLookUp, const TArray<class FString>& PlayerPublicUidsToLookUp, const TDelegate<void(const struct FLootLockerListPlayerInfoResponse& Value)>& OnCompletedRequest);
+	static class FString ListPlayerInventory(const class FString& ForPlayerWithUlid, const struct FLootLockerListSimplifiedInventoryRequest& Request, int32 PerPage, const int32& Page, const TDelegate<void(const struct FLootLockerSimpleInventoryResponse& Value)>& OnCompletedRequest);
+	static TArray<class FString> ListPresenceConnections();
+	static class FString ListUGCFeedbackCategories(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerFeedbackCategoryResponse& Response)>& OnComplete);
+	static class FString LookupMultiplePlayerNames1stPlatformIDs(const class FString& ForPlayerWithUlid, const struct FLootLockerMultiplePlayerNamesAndPlatformsRequest& Request, const TDelegate<void(const struct FLootLockerMultiplePlayersPlatformIdsResponse& Value)>& OnCompletedRequest);
+	static class FString LookupMultiplePlayerNamesUsingIDs(const class FString& ForPlayerWithUlid, const struct FLootLockerMultiplePlayerNamesRequest& Request, const TDelegate<void(const struct FLootLockerMultiplePlayersNamesResponse& Value)>& OnCompletedRequest);
+	static class FString LookupMultiplePlayersDataUsingIDs(const class FString& ForPlayerWithUlid, const struct FLootLockerLookupMultiplePlayersDataRequest& Request, const TDelegate<void(const struct FLootLockerMultiplePlayersNamesResponse& Value)>& OnCompletedRequest);
+	static class FString LootLockerPurchaseCatalogItems(const class FString& ForPlayerWithUlid, const class FString& WalletID, const TArray<struct FLootLockerCatalogItemAndQuantityPair>& ItemsToPurchase, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest);
+	static class FString LootLockerPurchaseSingleCatalogItem(const class FString& ForPlayerWithUlid, const class FString& WalletID, const class FString& CatalogItemListingId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest);
+	static struct FLootLockerSetMetadataAction MakeMetadataActionBase64(ELootLockerMetadataActions action, const class FString& Key, const struct FLootLockerMetadataBase64Value& Value, const TArray<class FString>& Tags, const TArray<class FString>& Access);
+	static struct FLootLockerSetMetadataAction MakeMetadataActionBool(ELootLockerMetadataActions action, const class FString& Key, const bool Value, const TArray<class FString>& Tags, const TArray<class FString>& Access);
+	static struct FLootLockerSetMetadataAction MakeMetadataActionFloat(ELootLockerMetadataActions action, const class FString& Key, const float& Value, const TArray<class FString>& Tags, const TArray<class FString>& Access);
+	static struct FLootLockerSetMetadataAction MakeMetadataActionInteger(ELootLockerMetadataActions action, const class FString& Key, const int32 Value, const TArray<class FString>& Tags, const TArray<class FString>& Access);
+	static void MakeMetadataActionJson(ELootLockerMetadataActions action, const class FString& Key, const class FString& Value, const TArray<class FString>& Tags, const TArray<class FString>& Access, bool* Succeeded, struct FLootLockerSetMetadataAction* ConstructedEntry);
+	static struct FLootLockerSetMetadataAction MakeMetadataActionString(ELootLockerMetadataActions action, const class FString& Key, const class FString& Value, const TArray<class FString>& Tags, const TArray<class FString>& Access);
+	static class FString MarkAllNotificationsAsRead(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerReadNotificationsResponse& Response)>& OnComplete);
+	static class FString MarkNotificationsAsRead(const class FString& ForPlayerWithUlid, const TArray<struct FLootLockerNotification>& Notifications, const TDelegate<void(const struct FLootLockerReadNotificationsResponse& Response)>& OnComplete);
+	static class FString MarkNotificationsAsReadByIds(const class FString& ForPlayerWithUlid, const TArray<class FString>& NotificationIDs, const TDelegate<void(const struct FLootLockerReadNotificationsResponse& Response)>& OnComplete);
+	static class FString OpenLootBox(const class FString& ForPlayerWithUlid, int32 AssetInstanceId, const TDelegate<void(const struct FLootLockerOpenLootBoxResponse& Response)>& OnOpenLootBoxCompleted);
+	static void ParseLootLockerMetadataEntry(const struct FLootLockerMetadataEntry& Entry, ELootLockerMetadataParserOutputTypes* MetadataTypeSwitch, class FString* StringValue, int32* IntegerValue, float* FloatValue, class FString* NumberString, bool* BoolValue, class FString* JsonStringValue, struct FLootLockerMetadataBase64Value* Base64Value, class FString* ErrorMessage, struct FLootLockerMetadataEntry* OutEntry);
+	static class FString PickDropsFromDropTable(const class FString& ForPlayerWithUlid, const TArray<int32>& picks, int32 TableId, const TDelegate<void(const struct FLootLockerPickDropsFromDropTableResponse& Response)>& OnCompletedRequestBP);
+	static class FString QueryScore(const class FString& LeaderboardKey, const int32 score, const TDelegate<void(const struct FLootLockerSubmitScoreResponse& Response)>& OnCompletedRequestBP, const class FString& ForPlayerWithUlid);
+	static class FString QuerySteamPurchaseRedemptionStatus(const class FString& ForPlayerWithUlid, const class FString& EntitlementId, const TDelegate<void(const struct FLootLockerQuerySteamPurchaseRedemptionStatusResponse& Response)>& OnCompletedRequest);
+	static class FString RedeemAppleAppStorePurchaseForClass(const class FString& ForPlayerWithUlid, const int32 ClassId, const class FString& TransactionId, bool Sandboxed, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest);
+	static class FString RedeemAppleAppStorePurchaseForPlayer(const class FString& ForPlayerWithUlid, const class FString& TransactionId, bool Sandboxed, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest);
+	static class FString RedeemEpicStorePurchase(const class FString& ForPlayerWithUlid, const class FString& AccountId, const class FString& BearerToken, const TArray<class FString>& EntitlementIds, const class FString& SandboxId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest);
+	static class FString RedeemEpicStorePurchaseForCharacter(const class FString& ForPlayerWithUlid, const class FString& CharacterId, const class FString& AccountId, const class FString& BearerToken, const TArray<class FString>& EntitlementIds, const class FString& SandboxId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest);
+	static class FString RedeemGooglePlayStorePurchaseForClass(const class FString& ForPlayerWithUlid, const int32 ClassId, const class FString& ProductId, const class FString& PurchaseToken, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest);
+	static class FString RedeemGooglePlayStorePurchaseForPlayer(const class FString& ForPlayerWithUlid, const class FString& ProductId, const class FString& PurchaseToken, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnCompletedRequest);
+	static class FString RefreshAppleGameCenterSession(const class FString& ForPlayerWithUlid, const class FString& RefreshToken, const TDelegate<void(const struct FLootLockerAppleGameCenterSessionResponse& Response)>& OnRefreshAppleGameCenterSessionCompleted, const struct FLootLockerSessionOptionals& Optionals);
+	static class FString RefreshAppleSession(const class FString& ForPlayerWithUlid, const class FString& RefreshToken, const TDelegate<void(const struct FLootLockerAppleSessionResponse& Var)>& OnRefreshAppleSessionCompleted, const struct FLootLockerSessionOptionals& Optionals);
+	static class FString RefreshDiscordSession(const class FString& ForPlayerWithUlid, const class FString& RefreshToken, const TDelegate<void(const struct FLootLockerDiscordSessionResponse& Var)>& OnRefreshDiscordSessionCompleted, const struct FLootLockerSessionOptionals& Optionals);
+	static class FString RefreshEpicSession(const class FString& ForPlayerWithUlid, const class FString& RefreshToken, const TDelegate<void(const struct FLootLockerEpicSessionResponse& Var)>& OnRefreshEpicSessionCompleted, const struct FLootLockerSessionOptionals& Optionals);
+	static class FString RefreshGooglePlayGamesSession(const class FString& ForPlayerWithUlid, const class FString& RefreshToken, const TDelegate<void(const struct FLootLockerGooglePlayGamesSessionResponse& Var)>& OnRefreshGooglePlayGamesSessionCompleted, const struct FLootLockerSessionOptionals& Optionals);
+	static class FString RefreshGoogleSession(const class FString& ForPlayerWithUlid, const class FString& RefreshToken, const TDelegate<void(const struct FLootLockerGoogleSessionResponse& Var)>& OnRefreshGoogleSessionCompleted, const struct FLootLockerSessionOptionals& Optionals);
+	static class FString RefreshMetaSession(const class FString& ForPlayerWithUlid, const class FString& RefreshToken, const TDelegate<void(const struct FLootLockerMetaSessionResponse& Var)>& OnRefreshMetaSessionCompleted, const struct FLootLockerSessionOptionals& Optionals);
+	static class FString RefreshRemoteSession(const class FString& ForPlayerWithUlid, const class FString& RefreshToken, const TDelegate<void(const struct FLootLockerRefreshRemoteSessionResponse& Response)>& OnCompletedRequest);
+	static class FString RemoveAssetFromFavourites(const class FString& ForPlayerWithUlid, int32 AssetId, const TDelegate<void(const struct FLootLockerGetFavouriteAssetIndicesResponse& FavouriteAssetIndicesResponse)>& OnRemoveAssetFromFavouritesRequestCompleted);
+	static class FString RemoveAssetToHeroLoadout(const class FString& ForPlayerWithUlid, const int32 HeroID, const int32 AssetInstanceId, const TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)>& OnCompleteBP);
+	static class FString ResetCharacterProgression(const class FString& ForPlayerWithUlid, const int32& CharacterId, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerCharacterProgressionWithRewardsResponse& Response)>& OnCompletedRequest);
+	static class FString ResetInstanceProgression(const class FString& ForPlayerWithUlid, const int32 AssetInstanceId, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerInstanceProgressionWithRewardsResponse& Response)>& OnCompletedRequestBP);
+	static class FString ResetPlayerProgression(const class FString& ForPlayerWithUlid, const class FString& ProgressionKey, const TDelegate<void(const struct FLootLockerPlayerProgressionWithRewardsResponse& Response)>& OnCompletedRequest);
+	static class FString SendFriendRequest(const class FString& ForPlayerWithUlid, const class FString& PlayerUlid, const TDelegate<void(const struct FLootLockerFriendActionResponse& Response)>& OnResponseCompletedBP);
+	static class FString SendGameFeedback(const class FString& ForPlayerWithUlid, const class FString& Description, const class FString& CategoryID, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnComplete);
+	static class FString SendPlayerFeedback(const class FString& ForPlayerWithUlid, const class FString& ulid, const class FString& Description, const class FString& CategoryID, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnComplete);
+	static class FString SendUGCFeedback(const class FString& ForPlayerWithUlid, const class FString& ulid, const class FString& Description, const class FString& CategoryID, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnComplete);
+	static void SetAllPlayersToInactive();
+	static void SetAllPlayersToInactiveExceptForPlayer(const class FString& PlayerUlid);
+	static bool SetDefaultPlayer(const class FString& PlayerUlid);
+	static class FString SetMetadata(const class FString& ForPlayerWithUlid, const ELootLockerMetadataSources Source, const class FString& SourceID, const TArray<struct FLootLockerSetMetadataAction>& MetadataToActionsToPerform, const TDelegate<void(const struct FLootLockerSetMetadataResponse& Response)>& OnComplete);
+	static class FString SetPlayerName(const class FString& ForPlayerWithUlid, const class FString& Name_0, const TDelegate<void(const struct FLootLockerNameResponse& Value)>& OnSetPlayerName);
+	static void SetPlayerUlidToInactive(const class FString& PlayerUlid);
+	static void SetPresenceAutoConnectEnabled(bool bEnabled);
+	static void SetPresenceAutoDisconnectOnFocusChangeEnabled(bool bEnabled);
+	static void SetPresenceEnabled(bool bEnabled);
+	static class FString SetProfilePrivate(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnProfileSetPrivate);
+	static class FString SetProfilePublic(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerResponse& Response)>& OnProfileSetPublic);
+	static class FString StartAmazonLunaSession(const class FString& AmazonLunaGuid, const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnStartedSessionRequestCompleted, const struct FLootLockerSessionOptionals& Optionals);
+	static class FString StartAndroidSession(const class FString& DeviceID, const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnStartedSessionRequestCompleted, const struct FLootLockerSessionOptionals& Optionals);
+	static class FString StartAppleGameCenterSession(const class FString& BundleId, const class FString& PlayerId, const class FString& PublicKeyUrl, const class FString& signature, const class FString& salt, const class FString& Timestamp, const TDelegate<void(const struct FLootLockerAppleGameCenterSessionResponse& Response)>& OnStartedAppleGameCenterSessionCompleted, const struct FLootLockerSessionOptionals& Optionals);
+	static class FString StartAppleSession(const class FString& AuthorizationCode, const TDelegate<void(const struct FLootLockerAppleSessionResponse& Var)>& OnStartedAppleSessionCompleted, const struct FLootLockerSessionOptionals& Optionals);
+	static class FString StartDiscordSession(const class FString& AccessToken, const TDelegate<void(const struct FLootLockerDiscordSessionResponse& Var)>& OnStartedDiscordSessionRequestCompleted, const struct FLootLockerSessionOptionals& Optionals);
+	static class FString StartEpicSession(const class FString& IDToken, const TDelegate<void(const struct FLootLockerEpicSessionResponse& Var)>& OnStartedEpicSessionRequestCompleted, const struct FLootLockerSessionOptionals& Optionals);
+	static class FString StartGooglePlayGamesSession(const class FString& AuthCode, const TDelegate<void(const struct FLootLockerGooglePlayGamesSessionResponse& Var)>& OnStartedGooglePlayGamesSessionRequestCompleted, const struct FLootLockerSessionOptionals& Optionals);
+	static class FString StartGoogleSession(const class FString& IDToken, const TDelegate<void(const struct FLootLockerGoogleSessionResponse& Var)>& OnStartedGoogleSessionRequestCompleted, const struct FLootLockerSessionOptionals& Optionals);
+	static class FString StartGoogleSessionForPlatform(const class FString& IDToken, ELootLockerGoogleClientPlatform Platform, const TDelegate<void(const struct FLootLockerGoogleSessionResponse& Var)>& OnStartedGoogleSessionRequestCompleted, const struct FLootLockerSessionOptionals& Optionals);
+	static class FString StartMetaSession(const class FString& UserId, const class FString& Nonce, const TDelegate<void(const struct FLootLockerMetaSessionResponse& Var)>& OnMetaSessionRequestCompleted, const struct FLootLockerSessionOptionals& Optionals);
+	static class FString StartMission(const class FString& ForPlayerWithUlid, int32 MissionId, const TDelegate<void(const struct FLootLockerStartMissionResponse& Response)>& OnStartMissionCompleted);
+	static class FString StartNintendoSwitchSession(const class FString& NSAIdToken, const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnStartedNintendoSwitchSessionRequestCompleted, const struct FLootLockerSessionOptionals& Optionals);
+	static class FString StartPlaystationNetworkSession(const class FString& PsnOnlineId, const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnStartedSessionRequestCompleted, const struct FLootLockerSessionOptionals& Optionals);
 	static class FString StartRemoteSession(const TDelegate<void(const struct FLootLockerLeaseRemoteSessionResponse& Response)>& RemoteSessionLeaseInformation, const TDelegate<void(const struct FLootLockerRemoteSessionStatusPollingResponse& Response)>& RemoteSessionLeaseStatusUpdate, const TDelegate<void(const struct FLootLockerStartRemoteSessionResponse& Response)>& OnComplete, float PollingIntervalSeconds, float TimeOutAfterMinutes);
-	static void StartSteamSession(const class FString& SteamID64, const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnStartedSessionRequestCompleted);
-	static void StartXboxSession(const class FString& XboxUserToken, const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnStartedXboxSessionCompleted);
-	static void SubmitScore(const class FString& MemberId, const class FString& LeaderboardKey, int32 score, const class FString& MetaData, const TDelegate<void(const struct FLootLockerSubmitScoreResponse& Response)>& OnCompletedRequestBP);
-	static void SubmitXP(int32 Points, const TDelegate<void(const struct FLootLockerSubmitXpResponse& Value)>& OnSubmitXPRequestCompleted);
-	static void SubtractPointsFromCharacterProgression(const int32& CharacterId, const class FString& ProgressionKey, const int32& Amount, const TDelegate<void(const struct FLootLockerCharacterProgressionWithRewardsResponse& Response)>& OnCompletedRequest);
-	static void SubtractPointsFromInstanceProgression(const int32 AssetInstanceId, const class FString& ProgressionKey, const int32 Amount, const TDelegate<void(const struct FLootLockerInstanceProgressionWithRewardsResponse& Response)>& OnCompletedRequestBP);
-	static void SubtractPointsFromPlayerProgression(const class FString& ProgressionKey, const int32& Amount, const TDelegate<void(const struct FLootLockerPlayerProgressionWithRewardsResponse& Response)>& OnCompletedRequest);
-	static void TriggerEvent(const struct FLootLockerTriggerEvent& Event, const TDelegate<void(const struct FLootLockerTriggerEventResponse& Value)>& OnTriggerEventCompleted);
-	static void UnEquipAssetToCharacterById(int32 CharacterId, int32 InstanceId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnUnEquipAssetToCharacterByIdRequestCompleted);
-	static void UnEquipAssetToDefaultCharacter(int32 InstanceId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnUnEquipAssetToDefaultCharacterRequestCompleted);
-	static void UpdateAKeyValuePairByIdForAssetInstance(int32 AssetInstanceId, int32 StorageItemId, const struct FLootLockerAssetInstanceStorageItem& Item, const TDelegate<void(const struct FLootLockerAssetInstanceStorageItemResponse& Response)>& OnUpdateAKeyValuePairByIdForAssetInstanceCompleted);
-	static void UpdateAssetCandidate(int32 AssetCandidateId, const struct FLootLockerUpdateAssetCandidateData& AssetCandidateData, const TDelegate<void(const struct FLootLockerAssetCandidateResponse& Response)>& OnUpdateAssetCandidateCompleted);
-	static void UpdateCharacter(int32 CharacterId, bool IsDefault, const class FString& Name_0, const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>& OnCompletedRequest);
-	static void UpdateFile(const int32 FileId, const struct FLootLockerFileUpdateRequest& Request, const TDelegate<void(const struct FLootLockerPlayerFileResponse& Response)>& OnComplete);
-	static void UpdateHero(const int32 HeroID, const struct FLootLockerUpdateHeroRequest& Request, const TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)>& OnCompleteBP);
-	static void UpdateOneOrMoreKeyValuePairForAssetInstance(int32 AssetInstanceId, const struct FLootLockerAssetInstanceStorageItems& Items, const TDelegate<void(const struct FLootLockerAssetInstanceStorageItemsResponse& Response)>& OnUpdateOneOrMoreKeyValuePairForAssetInstanceCompleted);
-	static void UploadFile(const struct FLootLockerFileUploadRequest& Request, const TDelegate<void(const struct FLootLockerPlayerFileResponse& Response)>& OnComplete);
-	static void VerifyPlayer(const class FString& PlatformToken, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnVerifyPlayerRequestCompleted, const class FString& Platform);
-	static void VerifyPlayerAndStartSteamSession(const class FString& SteamID64, const class FString& PlatformToken, const int32 SteamAppId, const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnCompletedRequest);
-	static void WhiteLabelCreateAccount(const class FString& email, const class FString& Password, const TDelegate<void(const struct FLootLockerLoginResponse& AuthVar)>& OnWhiteLabelAccountCreationRequestCompleted);
-	static void WhiteLabelLogin(const class FString& email, const class FString& Password, const TDelegate<void(const struct FLootLockerLoginResponse& AuthVar)>& OnWhiteLabelLoginRequestCompleted, const bool remember);
-	static void WhiteLabelLoginAndStartSession(const class FString& email, const class FString& Password, const TDelegate<void(const struct FLootLockerWhiteLabelLoginAndSessionResponse& Var)>& OnWhiteLabelLoginAndStartSessionRequestCompleted, const bool remember);
-	static void WhiteLabelRequestUserVerification(const int32& UserId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnRequestWhiteLabelUserVerificationRequestCompleted);
-	static void WhiteLabelRequestUserVerificationByEmail(const class FString& email, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnRequestWhiteLabelUserVerificationRequestCompleted);
-	static void WhiteLabelResetPassword(const class FString& email, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnResetWhiteLabelPasswordRequestCompleted);
-	static void WhiteLabelStartSession(const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnStartWhiteLabelSessionRequestCompleted);
-	static void WhiteLabelVerifySession(const TDelegate<void(const struct FLootLockerWhiteLabelVerifySessionResponse& Response)>& OnVerifyWhiteLabelSessionRequestCompleted);
+	static void StartSessionManual(const class FString& SessionToken, const class FString& PlayerUlid, const struct FLootLockerPlatformRepresentation& CurrentPlatform, const class FString& RefreshToken, const class FString& PlayerIdentifier, const class FString& PlayerPublicUid, const class FString& PlayerName, const class FString& WhiteLabelEmail, const class FString& WhiteLabelToken, const class FString& LastSignIn, const class FString& PlayerCreatedAt, const struct FLootLockerSessionOptionals& SessionOptionals);
+	static class FString StartSteamSessionUsingTicket(const class FString& SteamSessionTicket, const class FString& SteamAppId, const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnCompletedRequest, const struct FLootLockerSessionOptionals& Optionals);
+	static class FString StartXboxSession(const class FString& XboxUserToken, const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnStartedXboxSessionCompleted, const struct FLootLockerSessionOptionals& Optionals);
+	static class FString SubmitScore(const class FString& ForPlayerWithUlid, const class FString& MemberId, const class FString& LeaderboardKey, int32 score, const class FString& MetaData, const TDelegate<void(const struct FLootLockerSubmitScoreResponse& Response)>& OnCompletedRequestBP);
+	static class FString SubtractPointsFromCharacterProgression(const class FString& ForPlayerWithUlid, const int32& CharacterId, const class FString& ProgressionKey, const int32& Amount, const TDelegate<void(const struct FLootLockerCharacterProgressionWithRewardsResponse& Response)>& OnCompletedRequest);
+	static class FString SubtractPointsFromInstanceProgression(const class FString& ForPlayerWithUlid, const int32 AssetInstanceId, const class FString& ProgressionKey, const int32 Amount, const TDelegate<void(const struct FLootLockerInstanceProgressionWithRewardsResponse& Response)>& OnCompletedRequestBP);
+	static class FString SubtractPointsFromPlayerProgression(const class FString& ForPlayerWithUlid, const class FString& ProgressionKey, const int32& Amount, const TDelegate<void(const struct FLootLockerPlayerProgressionWithRewardsResponse& Response)>& OnCompletedRequest);
+	static class FString TransferIdentityProvidersBetweenAccounts(const class FString& FromPlayerWithUlid, const class FString& ToPlayerWithUlid, const TArray<ELootLockerAccountProvider>& ProvidersToTransfer, const TDelegate<void(const struct FLootLockerListConnectedAccountsResponse& Response)>& OnCompleteBP);
+	static bool TryGetContentBodyAsBool(const struct FLootLockerNotificationContent& Content, bool* OutValue);
+	static bool TryGetContentBodyAsBoolArray(const struct FLootLockerNotificationContent& Content, TArray<bool>* OutValue);
+	static bool TryGetContentBodyAsFloat(const struct FLootLockerNotificationContent& Content, float* OutValue);
+	static bool TryGetContentBodyAsFloatArray(const struct FLootLockerNotificationContent& Content, TArray<float>* OutValue);
+	static bool TryGetContentBodyAsInteger(const struct FLootLockerNotificationContent& Content, int32* OutValue);
+	static bool TryGetContentBodyAsIntegerArray(const struct FLootLockerNotificationContent& Content, TArray<int32>* OutValue);
+	static bool TryGetContentBodyAsRewardNotification(const struct FLootLockerNotificationContent& Content, struct FLootLockerNotificationContentRewardBody* OutValue);
+	static bool TryGetContentBodyAsString(const struct FLootLockerNotificationContent& Content, class FString* OutValue);
+	static bool TryGetNotificationsByIdentifyingValue(const struct FLootLockerListNotificationsResponse& NotificationsResponse, const class FString& IdentifyingValue, TArray<struct FLootLockerNotification>* Notifications);
+	static class FString UnblockPlayer(const class FString& ForPlayerWithUlid, const class FString& PlayerUlid, const TDelegate<void(const struct FLootLockerFriendActionResponse& Response)>& OnResponseCompletedBP);
+	static class FString UnEquipAssetToCharacterById(const class FString& ForPlayerWithUlid, int32 CharacterId, int32 InstanceId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnUnEquipAssetToCharacterByIdRequestCompleted);
+	static class FString UnEquipAssetToDefaultCharacter(const class FString& ForPlayerWithUlid, int32 InstanceId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnUnEquipAssetToDefaultCharacterRequestCompleted);
+	static class FString UnfollowPlayer(const class FString& ForPlayerWithUlid, const class FString& PlayerPublicUid, const TDelegate<void(const struct FLootLockerFollowActionResponse& Response)>& OnResponseCompletedBP);
+	static class FString UpdateAKeyValuePairByIdForAssetInstance(const class FString& ForPlayerWithUlid, int32 AssetInstanceId, int32 StorageItemId, const struct FLootLockerAssetInstanceStorageItem& Item, const TDelegate<void(const struct FLootLockerAssetInstanceStorageItemResponse& Response)>& OnUpdateAKeyValuePairByIdForAssetInstanceCompleted);
+	static class FString UpdateAssetCandidate(const class FString& ForPlayerWithUlid, int32 AssetCandidateId, const struct FLootLockerUpdateAssetCandidateData& AssetCandidateData, const TDelegate<void(const struct FLootLockerAssetCandidateResponse& Response)>& OnUpdateAssetCandidateCompleted);
+	static class FString UpdateCharacter(const class FString& ForPlayerWithUlid, int32 CharacterId, bool IsDefault, const class FString& Name_0, const TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)>& OnCompletedRequest);
+	static class FString UpdateFile(const class FString& ForPlayerWithUlid, const int32 FileId, const struct FLootLockerFileUpdateRequest& Request, const TDelegate<void(const struct FLootLockerPlayerFileResponse& Response)>& OnComplete);
+	static class FString UpdateHero(const class FString& ForPlayerWithUlid, const int32 HeroID, const struct FLootLockerUpdateHeroRequest& Request, const TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)>& OnCompleteBP);
+	static class FString UpdateOneOrMoreKeyValuePairForAssetInstance(const class FString& ForPlayerWithUlid, int32 AssetInstanceId, const struct FLootLockerAssetInstanceStorageItems& Items, const TDelegate<void(const struct FLootLockerAssetInstanceStorageItemsResponse& Response)>& OnUpdateOneOrMoreKeyValuePairForAssetInstanceCompleted);
+	static void UpdatePresenceStatus(const class FString& Status, const TMap<class FString, class FString>& MetaData, const TDelegate<void(bool bSuccess, const class FString& ErrorMessage)>& OnCompleted, const class FString& ForPlayerWithUlid);
+	static class FString UploadFile(const class FString& ForPlayerWithUlid, const struct FLootLockerFileUploadRequest& Request, const TDelegate<void(const struct FLootLockerPlayerFileResponse& Response)>& OnComplete);
+	static class FString VerifyPlayer(const class FString& ForPlayerWithUlid, const class FString& PlatformToken, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnVerifyPlayerRequestCompleted, const class FString& Platform);
+	static class FString VerifyPlayerAndStartPlaystationNetworkSession(const class FString& AuthCode, const class FString& AccountId, const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnCompletedRequest, int32 PsnIssuerId, const struct FLootLockerSessionOptionals& Optionals);
+	static class FString VerifyPlayerAndStartPlaystationNetworkV3Session(const class FString& AuthCode, const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnCompletedRequest, int32 EnvIssuerId, const struct FLootLockerSessionOptionals& Optionals);
+	static class FString WhiteLabelCreateAccount(const class FString& email, const class FString& Password, const TDelegate<void(const struct FLootLockerLoginResponse& AuthVar)>& OnWhiteLabelAccountCreationRequestCompleted);
+	static class FString WhiteLabelLogin(const class FString& email, const class FString& Password, const TDelegate<void(const struct FLootLockerLoginResponse& AuthVar)>& OnWhiteLabelLoginRequestCompleted, const bool remember);
+	static class FString WhiteLabelLoginAndStartSession(const class FString& email, const class FString& Password, const TDelegate<void(const struct FLootLockerWhiteLabelLoginAndSessionResponse& Var)>& OnWhiteLabelLoginAndStartSessionRequestCompleted, const bool remember, const struct FLootLockerSessionOptionals& Optionals);
+	static class FString WhiteLabelRequestUserVerification(const int32& UserId, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnRequestWhiteLabelUserVerificationRequestCompleted);
+	static class FString WhiteLabelRequestUserVerificationByEmail(const class FString& email, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnRequestWhiteLabelUserVerificationRequestCompleted);
+	static class FString WhiteLabelResetPassword(const class FString& email, const TDelegate<void(const struct FLootLockerResponse& Var)>& OnResetWhiteLabelPasswordRequestCompleted);
+	static class FString WhiteLabelStartSession(const TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)>& OnStartWhiteLabelSessionRequestCompleted, const struct FLootLockerSessionOptionals& Optionals);
+	static class FString WhiteLabelVerifySession(const class FString& ForPlayerWithUlid, const TDelegate<void(const struct FLootLockerWhiteLabelVerifySessionResponse& Response)>& OnVerifyWhiteLabelSessionRequestCompleted);
 
 public:
 	static class UClass* StaticClass()
@@ -684,6 +899,26 @@ public:
 };
 DUMPER7_ASSERTS_ULootLockerMessagesRequestHandler;
 
+// Class LootLockerSDK.LootLockerMetadataRequestHandler
+// 0x0000 (0x0028 - 0x0028)
+class ULootLockerMetadataRequestHandler final : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LootLockerMetadataRequestHandler")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LootLockerMetadataRequestHandler")
+	}
+	static class ULootLockerMetadataRequestHandler* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULootLockerMetadataRequestHandler>();
+	}
+};
+DUMPER7_ASSERTS_ULootLockerMetadataRequestHandler;
+
 // Class LootLockerSDK.LootLockerMiscellaneousRequestHandler
 // 0x0000 (0x0028 - 0x0028)
 class ULootLockerMiscellaneousRequestHandler final : public UObject
@@ -724,34 +959,72 @@ public:
 };
 DUMPER7_ASSERTS_ULootLockerMissionsRequestHandler;
 
-// Class LootLockerSDK.LootLockerPersistedState
-// 0x0070 (0x0098 - 0x0028)
-class ULootLockerPersistedState final : public USaveGame
+// Class LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables
+// 0x0000 (0x0028 - 0x0028)
+class ULootLockerStaticNotificationStringBlueprintCallables final : public UObject
 {
 public:
-	class FString                                 Token;                                             // 0x0028(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 SteamToken;                                        // 0x0038(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 RefreshToken;                                      // 0x0048(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 PlayerIdentifier;                                  // 0x0058(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 WhiteLabelEmail;                                   // 0x0068(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 WhiteLabelToken;                                   // 0x0078(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 LastActivePlatform;                                // 0x0088(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	static class FString GetNotificationsSourceLootLockerConsoleString();
+	static class FString GetNotificationsSourceLootLockerServerAPIString();
+	static class FString GetNotificationsSourcePurchasingAppleAppStoreString();
+	static class FString GetNotificationsSourcePurchasingGooglePlayStoreString();
+	static class FString GetNotificationsSourcePurchasingLootLockerString();
+	static class FString GetNotificationsSourcePurchasingSteamStoreString();
+	static class FString GetNotificationsSourceTriggersString();
+	static class FString GetNotificationsSourceTwitchDropString();
+	static class FString GetStandardPurchasingAppleAppStoreContextKeyCatalogIdString();
+	static class FString GetStandardPurchasingAppleAppStoreContextKeyCatalogItemIdString();
+	static class FString GetStandardPurchasingAppleAppStoreContextKeyTransactionIdString();
+	static class FString GetStandardPurchasingGooglePlayStoreContextKeyCatalogIdString();
+	static class FString GetStandardPurchasingGooglePlayStoreContextKeyCatalogItemIdString();
+	static class FString GetStandardPurchasingGooglePlayStoreContextKeyProductIdString();
+	static class FString GetStandardPurchasingLootLockerContextKeyCatalogIdString();
+	static class FString GetStandardPurchasingLootLockerContextKeyCatalogItemIdString();
+	static class FString GetStandardPurchasingSteamStoreContextKeyCatalogIdString();
+	static class FString GetStandardPurchasingSteamStoreContextKeyCatalogItemIdString();
+	static class FString GetStandardPurchasingSteamStoreContextKeyCharacterIdString();
+	static class FString GetStandardPurchasingSteamStoreContextKeyEntitlementIdString();
+	static class FString GetStandardTriggersContextKeyIdString();
+	static class FString GetStandardTriggersContextKeyKeyString();
+	static class FString GetStandardTriggersContextKeyLimitString();
+	static class FString GetStandardTwitchDropContextKeyTwitchRewardIdString();
+	static class FString GetTypePullRewardAcquiredString();
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("LootLockerPersistedState")
+		STATIC_CLASS_IMPL("LootLockerStaticNotificationStringBlueprintCallables")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"LootLockerPersistedState")
+		STATIC_NAME_IMPL(L"LootLockerStaticNotificationStringBlueprintCallables")
 	}
-	static class ULootLockerPersistedState* GetDefaultObj()
+	static class ULootLockerStaticNotificationStringBlueprintCallables* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<ULootLockerPersistedState>();
+		return GetDefaultObjImpl<ULootLockerStaticNotificationStringBlueprintCallables>();
 	}
 };
-DUMPER7_ASSERTS_ULootLockerPersistedState;
+DUMPER7_ASSERTS_ULootLockerStaticNotificationStringBlueprintCallables;
+
+// Class LootLockerSDK.LootLockerNotificationsRequestHandler
+// 0x0000 (0x0028 - 0x0028)
+class ULootLockerNotificationsRequestHandler final : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LootLockerNotificationsRequestHandler")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LootLockerNotificationsRequestHandler")
+	}
+	static class ULootLockerNotificationsRequestHandler* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULootLockerNotificationsRequestHandler>();
+	}
+};
+DUMPER7_ASSERTS_ULootLockerNotificationsRequestHandler;
 
 // Class LootLockerSDK.LootLockerPersistentStorageRequestHandler
 // 0x0000 (0x0028 - 0x0028)
@@ -773,29 +1046,28 @@ public:
 };
 DUMPER7_ASSERTS_ULootLockerPersistentStorageRequestHandler;
 
-// Class LootLockerSDK.LootLockerCurrentPlatform
+// Class LootLockerSDK.LootLockerPlatforms
 // 0x0000 (0x0028 - 0x0028)
-class ULootLockerCurrentPlatform final : public UObject
+class ULootLockerPlatforms final : public UObject
 {
 public:
-	static const struct FLootLockerPlatformRepresentation GetPlatformRepresentation();
 	static const struct FLootLockerPlatformRepresentation GetPlatformRepresentationForPlatform(const ELootLockerPlatform Platform);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("LootLockerCurrentPlatform")
+		STATIC_CLASS_IMPL("LootLockerPlatforms")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"LootLockerCurrentPlatform")
+		STATIC_NAME_IMPL(L"LootLockerPlatforms")
 	}
-	static class ULootLockerCurrentPlatform* GetDefaultObj()
+	static class ULootLockerPlatforms* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<ULootLockerCurrentPlatform>();
+		return GetDefaultObjImpl<ULootLockerPlatforms>();
 	}
 };
-DUMPER7_ASSERTS_ULootLockerCurrentPlatform;
+DUMPER7_ASSERTS_ULootLockerPlatforms;
 
 // Class LootLockerSDK.LLPlayerFilesRequestHandler
 // 0x0000 (0x0028 - 0x0028)
@@ -836,6 +1108,60 @@ public:
 	}
 };
 DUMPER7_ASSERTS_ULootLockerPlayerRequestHandler;
+
+// Class LootLockerSDK.LootLockerPresenceClient
+// 0x01B8 (0x01E0 - 0x0028)
+class ULootLockerPresenceClient final : public UObject
+{
+public:
+	uint8                                         Pad_28[0x1B8];                                     // 0x0028(0x01B8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LootLockerPresenceClient")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LootLockerPresenceClient")
+	}
+	static class ULootLockerPresenceClient* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULootLockerPresenceClient>();
+	}
+};
+DUMPER7_ASSERTS_ULootLockerPresenceClient;
+
+// Class LootLockerSDK.LootLockerPresenceManager
+// 0x0170 (0x0198 - 0x0028)
+class ULootLockerPresenceManager final : public UObject
+{
+public:
+	TMap<class FString, class ULootLockerPresenceClient*> PresenceClients;                           // 0x0028(0x0050)(NativeAccessSpecifierPrivate)
+	uint8                                         Pad_78[0x120];                                     // 0x0078(0x0120)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void HandleApplicationBackground();
+	void HandleApplicationForeground();
+	void HandleConfigurationUpdated(const class FString& SettingName);
+	void HandleShutdown();
+	void HandleStartup();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LootLockerPresenceManager")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LootLockerPresenceManager")
+	}
+	static class ULootLockerPresenceManager* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULootLockerPresenceManager>();
+	}
+};
+DUMPER7_ASSERTS_ULootLockerPresenceManager;
 
 // Class LootLockerSDK.LootLockerProgressionsRequestHandler
 // 0x0000 (0x0028 - 0x0028)
@@ -897,32 +1223,43 @@ public:
 };
 DUMPER7_ASSERTS_ULootLockerRemoteSessionRequestHandler;
 
-// Class LootLockerSDK.LootLockerSaveState
-// 0x0050 (0x0078 - 0x0028)
-class ULootLockerSaveState final : public USaveGame
+// Class LootLockerSDK.LootLockerAsyncStartRemoteSession
+// 0x00F0 (0x0120 - 0x0030)
+class ULootLockerAsyncStartRemoteSession final : public UBlueprintAsyncActionBase
 {
 public:
-	class FString                                 Token;                                             // 0x0028(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 SteamToken;                                        // 0x0038(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 PlayerIdentifier;                                  // 0x0048(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 WhiteLabelEmail;                                   // 0x0058(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 WhiteLabelToken;                                   // 0x0068(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& LeaseProcessID, const struct FLootLockerRemoteSessionLeaseData& LeaseData, bool HasPlayerData, const class FString& SessionTokenOnSuccess, const class FString& RefreshTokenOnSuccess, const struct FLootLockerRemoteSessionPlayerData& PlayerDataOnSuccess, const struct FLootLockerResponse& ResponseOnFailure)> OnProcessStarted; // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& LeaseProcessID, const struct FLootLockerRemoteSessionLeaseData& LeaseData, bool HasPlayerData, const class FString& SessionTokenOnSuccess, const class FString& RefreshTokenOnSuccess, const struct FLootLockerRemoteSessionPlayerData& PlayerDataOnSuccess, const struct FLootLockerResponse& ResponseOnFailure)> OnLeaseClaimed; // 0x0040(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& LeaseProcessID, const struct FLootLockerRemoteSessionLeaseData& LeaseData, bool HasPlayerData, const class FString& SessionTokenOnSuccess, const class FString& RefreshTokenOnSuccess, const struct FLootLockerRemoteSessionPlayerData& PlayerDataOnSuccess, const struct FLootLockerResponse& ResponseOnFailure)> OnLeaseVerified; // 0x0050(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& LeaseProcessID, const struct FLootLockerRemoteSessionLeaseData& LeaseData, bool HasPlayerData, const class FString& SessionTokenOnSuccess, const class FString& RefreshTokenOnSuccess, const struct FLootLockerRemoteSessionPlayerData& PlayerDataOnSuccess, const struct FLootLockerResponse& ResponseOnFailure)> OnProcessCancelled; // 0x0060(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& LeaseProcessID, const struct FLootLockerRemoteSessionLeaseData& LeaseData, bool HasPlayerData, const class FString& SessionTokenOnSuccess, const class FString& RefreshTokenOnSuccess, const struct FLootLockerRemoteSessionPlayerData& PlayerDataOnSuccess, const struct FLootLockerResponse& ResponseOnFailure)> OnProcessTimedOut; // 0x0070(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& LeaseProcessID, const struct FLootLockerRemoteSessionLeaseData& LeaseData, bool HasPlayerData, const class FString& SessionTokenOnSuccess, const class FString& RefreshTokenOnSuccess, const struct FLootLockerRemoteSessionPlayerData& PlayerDataOnSuccess, const struct FLootLockerResponse& ResponseOnFailure)> OnProcessFailed; // 0x0080(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& LeaseProcessID, const struct FLootLockerRemoteSessionLeaseData& LeaseData, bool HasPlayerData, const class FString& SessionTokenOnSuccess, const class FString& RefreshTokenOnSuccess, const struct FLootLockerRemoteSessionPlayerData& PlayerDataOnSuccess, const struct FLootLockerResponse& ResponseOnFailure)> OnProcessFinished; // 0x0090(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A0[0x80];                                      // 0x00A0(0x0080)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class ULootLockerAsyncStartRemoteSession* AsyncStartRemoteSession(class UObject* WorldContextObjectfloat, float PollingIntervalSeconds, float TimeOutAfterMinutes);
+	static class ULootLockerAsyncStartRemoteSession* AsyncStartRemoteSessionForLinking(class UObject* WorldContextObject, const class FString& ForPlayerWithUlid, float PollingIntervalSeconds, float TimeOutAfterMinutes);
+
+	void HandleLeaseProcessCompleted(const struct FLootLockerStartRemoteSessionResponse& LeaseProcessCompletedResponse);
+	void HandleLeaseProcessStarted(const struct FLootLockerLeaseRemoteSessionResponse& LeaseProcessStartedResponse);
+	void HandleLeaseProcessUpdate(const struct FLootLockerRemoteSessionStatusPollingResponse& LeaseProcessUpdateResponse);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("LootLockerSaveState")
+		STATIC_CLASS_IMPL("LootLockerAsyncStartRemoteSession")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"LootLockerSaveState")
+		STATIC_NAME_IMPL(L"LootLockerAsyncStartRemoteSession")
 	}
-	static class ULootLockerSaveState* GetDefaultObj()
+	static class ULootLockerAsyncStartRemoteSession* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<ULootLockerSaveState>();
+		return GetDefaultObjImpl<ULootLockerAsyncStartRemoteSession>();
 	}
 };
-DUMPER7_ASSERTS_ULootLockerSaveState;
+DUMPER7_ASSERTS_ULootLockerAsyncStartRemoteSession;
 
 // Class LootLockerSDK.LootLockerSDKManager
 // 0x0000 (0x0028 - 0x0028)
@@ -944,6 +1281,63 @@ public:
 };
 DUMPER7_ASSERTS_ULootLockerSDKManager;
 
+// Class LootLockerSDK.LootLockerStateMetaDataSaveGame
+// 0x0020 (0x0048 - 0x0028)
+class ULootLockerStateMetaDataSaveGame final : public USaveGame
+{
+public:
+	TArray<class FString>                         SavedPlayerStateUlids;                             // 0x0028(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
+	class FString                                 DefaultPlayer;                                     // 0x0038(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LootLockerStateMetaDataSaveGame")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LootLockerStateMetaDataSaveGame")
+	}
+	static class ULootLockerStateMetaDataSaveGame* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULootLockerStateMetaDataSaveGame>();
+	}
+};
+DUMPER7_ASSERTS_ULootLockerStateMetaDataSaveGame;
+
+// Class LootLockerSDK.LootLockerPlayerDataSaveGame
+// 0x00C8 (0x00F0 - 0x0028)
+class ULootLockerPlayerDataSaveGame final : public USaveGame
+{
+public:
+	class FString                                 Token;                                             // 0x0028(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 RefreshToken;                                      // 0x0038(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerIdentifier;                                  // 0x0048(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerUlid;                                        // 0x0058(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerPublicUid;                                   // 0x0068(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerName;                                        // 0x0078(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 WhiteLabelEmail;                                   // 0x0088(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 WhiteLabelToken;                                   // 0x0098(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerPlatformRepresentation      CurrentPlatform;                                   // 0x00A8(0x0028)(Edit, EditConst, NativeAccessSpecifierPublic)
+	class FString                                 LastSignIn;                                        // 0x00D0(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerCreatedAt;                                   // 0x00E0(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LootLockerPlayerDataSaveGame")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LootLockerPlayerDataSaveGame")
+	}
+	static class ULootLockerPlayerDataSaveGame* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULootLockerPlayerDataSaveGame>();
+	}
+};
+DUMPER7_ASSERTS_ULootLockerPlayerDataSaveGame;
+
 // Class LootLockerSDK.LootLockerStateData
 // 0x0000 (0x0028 - 0x0028)
 class ULootLockerStateData final : public UObject
@@ -964,25 +1358,25 @@ public:
 };
 DUMPER7_ASSERTS_ULootLockerStateData;
 
-// Class LootLockerSDK.LootLockerTriggerEventsRequestHandler
+// Class LootLockerSDK.LootLockerTriggersRequestHandler
 // 0x0000 (0x0028 - 0x0028)
-class ULootLockerTriggerEventsRequestHandler final : public UObject
+class ULootLockerTriggersRequestHandler final : public UObject
 {
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("LootLockerTriggerEventsRequestHandler")
+		STATIC_CLASS_IMPL("LootLockerTriggersRequestHandler")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"LootLockerTriggerEventsRequestHandler")
+		STATIC_NAME_IMPL(L"LootLockerTriggersRequestHandler")
 	}
-	static class ULootLockerTriggerEventsRequestHandler* GetDefaultObj()
+	static class ULootLockerTriggersRequestHandler* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<ULootLockerTriggerEventsRequestHandler>();
+		return GetDefaultObjImpl<ULootLockerTriggersRequestHandler>();
 	}
 };
-DUMPER7_ASSERTS_ULootLockerTriggerEventsRequestHandler;
+DUMPER7_ASSERTS_ULootLockerTriggersRequestHandler;
 
 // Class LootLockerSDK.LootLockerUserGeneratedContentRequestHandler
 // 0x0000 (0x0028 - 0x0028)

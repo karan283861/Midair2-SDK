@@ -34,7 +34,7 @@ public:
 DUMPER7_ASSERTS_WBP_TabBot_C_ExecuteUbergraph_WBP_TabBot;
 
 // Function WBP_TabBot.WBP_TabBot_C.UpdateBotList
-// 0x01E0 (0x01E0 - 0x0000)
+// 0x01E8 (0x01E8 - 0x0000)
 struct WBP_TabBot_C_UpdateBotList final
 {
 public:
@@ -44,16 +44,16 @@ public:
 	TArray<struct FMABotConfig>                   CallFunc_GetLoadedBots_ReturnValue;                // 0x0018(0x0010)(ReferenceParm)
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FMABotConfig                           CallFunc_Array_Get_Item;                           // 0x0030(0x0168)()
-	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0198(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_19C[0x4];                                      // 0x019C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPanelSlot*                             CallFunc_AddChild_ReturnValue;                     // 0x01A0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x01A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1A9[0x3];                                      // 0x01A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x01AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(const struct FMABotConfig& Bot)> K2Node_CreateDelegate_OutputDelegate;            // 0x01B0(0x0010)(ZeroConstructor, NoDestructor)
-	TDelegate<void(const struct FMABotConfig& Bot)> K2Node_CreateDelegate_OutputDelegate_1;          // 0x01C0(0x0010)(ZeroConstructor, NoDestructor)
-	TDelegate<void(const struct FMABotConfig& Bot)> K2Node_CreateDelegate_OutputDelegate_2;          // 0x01D0(0x0010)(ZeroConstructor, NoDestructor)
+	struct FMABotConfig                           CallFunc_Array_Get_Item;                           // 0x0030(0x0170)()
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x01A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1A4[0x4];                                      // 0x01A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPanelSlot*                             CallFunc_AddChild_ReturnValue;                     // 0x01A8(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x01B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1B1[0x3];                                      // 0x01B1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x01B4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(const struct FMABotConfig& Bot)> K2Node_CreateDelegate_OutputDelegate;            // 0x01B8(0x0010)(ZeroConstructor, NoDestructor)
+	TDelegate<void(const struct FMABotConfig& Bot)> K2Node_CreateDelegate_OutputDelegate_1;          // 0x01C8(0x0010)(ZeroConstructor, NoDestructor)
+	TDelegate<void(const struct FMABotConfig& Bot)> K2Node_CreateDelegate_OutputDelegate_2;          // 0x01D8(0x0010)(ZeroConstructor, NoDestructor)
 };
 DUMPER7_ASSERTS_WBP_TabBot_C_UpdateBotList;
 
@@ -73,37 +73,37 @@ public:
 DUMPER7_ASSERTS_WBP_TabBot_C_GetMAPracticeComponentForWidget;
 
 // Function WBP_TabBot.WBP_TabBot_C.EditBot
-// 0x0168 (0x0168 - 0x0000)
+// 0x0170 (0x0170 - 0x0000)
 struct WBP_TabBot_C_EditBot final
 {
 public:
-	struct FMABotConfig                           Bot;                                               // 0x0000(0x0168)(BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FMABotConfig                           Bot;                                               // 0x0000(0x0170)(BlueprintVisible, BlueprintReadOnly, Parm)
 };
 DUMPER7_ASSERTS_WBP_TabBot_C_EditBot;
 
 // Function WBP_TabBot.WBP_TabBot_C.DeleteBot
-// 0x0198 (0x0198 - 0x0000)
+// 0x01A0 (0x01A0 - 0x0000)
 struct WBP_TabBot_C_DeleteBot final
 {
 public:
-	struct FMABotConfig                           Bot;                                               // 0x0000(0x0168)(BlueprintVisible, BlueprintReadOnly, Parm)
-	class UMAPracticeComponent*                   CallFunc_GetMAPracticeComponentForWidget_MAPracticeComponent; // 0x0168(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class APlayerController*                      CallFunc_GetOwningPlayer_ReturnValue;              // 0x0170(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_GetPlayerControllerID_ReturnValue;        // 0x0178(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_17C[0x4];                                      // 0x017C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0180(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AMAPlayerController*                    K2Node_DynamicCast_AsMAPlayer_Controller;          // 0x0188(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0190(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FMABotConfig                           Bot;                                               // 0x0000(0x0170)(BlueprintVisible, BlueprintReadOnly, Parm)
+	class UMAPracticeComponent*                   CallFunc_GetMAPracticeComponentForWidget_MAPracticeComponent; // 0x0170(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class APlayerController*                      CallFunc_GetOwningPlayer_ReturnValue;              // 0x0178(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_GetPlayerControllerID_ReturnValue;        // 0x0180(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_184[0x4];                                      // 0x0184(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0188(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AMAPlayerController*                    K2Node_DynamicCast_AsMAPlayer_Controller;          // 0x0190(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0198(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_WBP_TabBot_C_DeleteBot;
 
 // Function WBP_TabBot.WBP_TabBot_C.LoadBot
-// 0x0170 (0x0170 - 0x0000)
+// 0x0178 (0x0178 - 0x0000)
 struct WBP_TabBot_C_LoadBot final
 {
 public:
-	struct FMABotConfig                           Bot;                                               // 0x0000(0x0168)(BlueprintVisible, BlueprintReadOnly, Parm)
-	class UMAPracticeComponent*                   CallFunc_GetMAPracticeComponentForWidget_MAPracticeComponent; // 0x0168(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FMABotConfig                           Bot;                                               // 0x0000(0x0170)(BlueprintVisible, BlueprintReadOnly, Parm)
+	class UMAPracticeComponent*                   CallFunc_GetMAPracticeComponentForWidget_MAPracticeComponent; // 0x0170(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_TabBot_C_LoadBot;
 

@@ -128,6 +128,23 @@ enum class EMagicLeapHeadTrackingError : uint8
 	EMagicLeapHeadTrackingError_MAX          = 4,
 };
 
+// ScriptStruct MagicLeap.MagicLeapRaycastQueryParams
+// 0x0038 (0x0038 - 0x0000)
+struct FMagicLeapRaycastQueryParams final
+{
+public:
+	struct FVector                                position;                                          // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Direction;                                         // 0x000C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                UpVector;                                          // 0x0018(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Width;                                             // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Height;                                            // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HorizontalFovDegrees;                              // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          CollideWithUnobserved;                             // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         UserData;                                          // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMagicLeapRaycastQueryParams;
+
 // ScriptStruct MagicLeap.MagicLeapMeshBlockInfo
 // 0x0048 (0x0048 - 0x0000)
 struct FMagicLeapMeshBlockInfo final
@@ -157,6 +174,19 @@ public:
 };
 DUMPER7_ASSERTS_FPurchaseItemDetails;
 
+// ScriptStruct MagicLeap.PurchaseConfirmation
+// 0x0050 (0x0050 - 0x0000)
+struct FPurchaseConfirmation final
+{
+public:
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 PackageName;                                       // 0x0010(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_20[0x28];                                      // 0x0020(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
+	EPurchaseType                                 Type;                                              // 0x0048(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FPurchaseConfirmation;
+
 // ScriptStruct MagicLeap.MagicLeapRaycastHitResult
 // 0x0024 (0x0024 - 0x0000)
 struct FMagicLeapRaycastHitResult final
@@ -170,19 +200,6 @@ public:
 	int32                                         UserData;                                          // 0x0020(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FMagicLeapRaycastHitResult;
-
-// ScriptStruct MagicLeap.PurchaseConfirmation
-// 0x0050 (0x0050 - 0x0000)
-struct FPurchaseConfirmation final
-{
-public:
-	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 PackageName;                                       // 0x0010(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_20[0x28];                                      // 0x0020(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
-	EPurchaseType                                 Type;                                              // 0x0048(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FPurchaseConfirmation;
 
 // ScriptStruct MagicLeap.MagicLeapMeshBlockRequest
 // 0x0014 (0x0014 - 0x0000)
@@ -204,23 +221,6 @@ public:
 	TArray<struct FMagicLeapMeshBlockInfo>        BlockData;                                         // 0x0008(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FMagicLeapTrackingMeshInfo;
-
-// ScriptStruct MagicLeap.MagicLeapRaycastQueryParams
-// 0x0038 (0x0038 - 0x0000)
-struct FMagicLeapRaycastQueryParams final
-{
-public:
-	struct FVector                                position;                                          // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Direction;                                         // 0x000C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                UpVector;                                          // 0x0018(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Width;                                             // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Height;                                            // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         HorizontalFovDegrees;                              // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          CollideWithUnobserved;                             // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         UserData;                                          // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMagicLeapRaycastQueryParams;
 
 // ScriptStruct MagicLeap.MagicLeapGraphicsClientPerformanceInfo
 // 0x001C (0x001C - 0x0000)

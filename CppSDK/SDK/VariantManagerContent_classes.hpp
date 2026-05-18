@@ -304,7 +304,7 @@ public:
 	class FText                                   DisplayText;                                       // 0x0038(0x0018)(Deprecated, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_50[0x18];                                      // 0x0050(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UVariantObjectBinding*>          ObjectBindings;                                    // 0x0068(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	class UTexture2D*                             Thumbnail;                                         // 0x0078(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UTexture2D*                             thumbnail;                                         // 0x0078(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	int32 AddDependency(struct FVariantDependency* Dependency);
@@ -381,7 +381,7 @@ public:
 	bool                                          bExpanded;                                         // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UVariant*>                       Variants;                                          // 0x0060(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	class UTexture2D*                             Thumbnail;                                         // 0x0070(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UTexture2D*                             thumbnail;                                         // 0x0070(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	class ULevelVariantSets* GetParent();

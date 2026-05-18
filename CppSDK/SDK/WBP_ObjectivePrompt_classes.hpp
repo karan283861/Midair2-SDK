@@ -43,6 +43,7 @@ public:
 	void OnPromptChanged();
 	bool ObjectiveNotEmpty(const struct FMidairObjectiveInfo& MidairObjectiveInfo);
 	void UpdateDisplay();
+	void BP_Update();
 
 public:
 	static class UClass* StaticClass()

@@ -17,6 +17,26 @@
 namespace SDK
 {
 
+// Function W_Experience.W_Experience_C.UpdateTitle
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const class FText&                      NewTitle                                               (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UW_Experience_C::UpdateTitle(const class FText& NewTitle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Experience_C", "UpdateTitle");
+
+	Params::W_Experience_C_UpdateTitle Parms{};
+
+	Parms.NewTitle = std::move(NewTitle);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function W_Experience.W_Experience_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:

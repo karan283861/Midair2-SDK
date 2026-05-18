@@ -16,6 +16,78 @@
 namespace SDK::Params
 {
 
+// Function LootLockerSDK.LootLockerConfig.EnableFileLogging
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerConfig_EnableFileLogging final
+{
+public:
+	class FString                                 Filename;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerConfig_EnableFileLogging;
+
+// Function LootLockerSDK.LootLockerConfig.GetLogFilePath
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerConfig_GetLogFilePath final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerConfig_GetLogFilePath;
+
+// Function LootLockerSDK.LootLockerConfig.GetRuntimeLogLevel
+// 0x0001 (0x0001 - 0x0000)
+struct LootLockerConfig_GetRuntimeLogLevel final
+{
+public:
+	ELootLockerLogLevel                           ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerConfig_GetRuntimeLogLevel;
+
+// Function LootLockerSDK.LootLockerConfig.IsFileLoggingEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct LootLockerConfig_IsFileLoggingEnabled final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerConfig_IsFileLoggingEnabled;
+
+// Function LootLockerSDK.LootLockerConfig.IsPresenceAutoConnectEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct LootLockerConfig_IsPresenceAutoConnectEnabled final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerConfig_IsPresenceAutoConnectEnabled;
+
+// Function LootLockerSDK.LootLockerConfig.IsPresenceAutoDisconnectOnFocusChangeEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct LootLockerConfig_IsPresenceAutoDisconnectOnFocusChangeEnabled final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerConfig_IsPresenceAutoDisconnectOnFocusChangeEnabled;
+
+// Function LootLockerSDK.LootLockerConfig.IsPresenceEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct LootLockerConfig_IsPresenceEnabled final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerConfig_IsPresenceEnabled;
+
+// Function LootLockerSDK.LootLockerConfig.IsPresenceEnabledInEditor
+// 0x0001 (0x0001 - 0x0000)
+struct LootLockerConfig_IsPresenceEnabledInEditor final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerConfig_IsPresenceEnabledInEditor;
+
 // Function LootLockerSDK.LootLockerConfig.IsSemverString
 // 0x0018 (0x0018 - 0x0000)
 struct LootLockerConfig_IsSemverString final
@@ -26,6 +98,35 @@ public:
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_LootLockerConfig_IsSemverString;
+
+// Function LootLockerSDK.LootLockerConfig.SetRuntimeLogLevel
+// 0x0001 (0x0001 - 0x0000)
+struct LootLockerConfig_SetRuntimeLogLevel final
+{
+public:
+	ELootLockerLogLevel                           NewLevel;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerConfig_SetRuntimeLogLevel;
+
+// Function LootLockerSDK.LootLockerConfig.ShouldLog
+// 0x0001 (0x0001 - 0x0000)
+struct LootLockerConfig_ShouldLog final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerConfig_ShouldLog;
+
+// Function LootLockerSDK.LootLockerGoogleSubsystemHelper.GetAuthCode
+// 0x0018 (0x0018 - 0x0000)
+struct LootLockerGoogleSubsystemHelper_GetAuthCode final
+{
+public:
+	int32                                         LocalUserNumber;                                   // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerGoogleSubsystemHelper_GetAuthCode;
 
 // Function LootLockerSDK.LootLockerGoogleSubsystemHelper.GetIDToken
 // 0x0018 (0x0018 - 0x0000)
@@ -99,7 +200,7 @@ struct LootLockerGoogleSubsystemHelper_SignInWithGooglePlay final
 {
 public:
 	int32                                         LocalUserNumber;                                   // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(bool success, int32 LocalUserNumber, const class FString& ErrorMsg)> Callback;    // 0x0004(0x0010)(ConstParm, Parm, ZeroConstructor, NoDestructor, NativeAccessSpecifierPublic)
+	TDelegate<void(bool success, int32 LocalUserNumber, const class FString& ErrorMsg, const class FString& AuthCode)> Callback; // 0x0004(0x0010)(ConstParm, Parm, ZeroConstructor, NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerGoogleSubsystemHelper_SignInWithGooglePlay;
 
@@ -123,162 +224,236 @@ public:
 };
 DUMPER7_ASSERTS_LootLockerGoogleSubsystemHelper_SignOutWithGooglePlay;
 
+// Function LootLockerSDK.LootLockerLifeCycleManager.GetInstance
+// 0x0008 (0x0008 - 0x0000)
+struct LootLockerLifeCycleManager_GetInstance final
+{
+public:
+	class ULootLockerLifeCycleManager*            ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerLifeCycleManager_GetInstance;
+
+// Function LootLockerSDK.LootLockerManager.AcceptIncomingFriendRequest
+// 0x0040 (0x0040 - 0x0000)
+struct LootLockerManager_AcceptIncomingFriendRequest final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerUlid;                                        // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerFriendActionResponse& Response)> OnResponseCompletedBP;   // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_AcceptIncomingFriendRequest;
+
 // Function LootLockerSDK.LootLockerManager.ActivateRentalAsset
-// 0x0014 (0x0014 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_ActivateRentalAsset final
 {
 public:
-	int32                                         AssetInstanceId;                                   // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerActivateRentalAssetResponse& Response)> OnActivateRentalAssetCompleted; // 0x0004(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetInstanceId;                                   // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerActivateRentalAssetResponse& Response)> OnActivateRentalAssetCompleted; // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_ActivateRentalAsset;
 
 // Function LootLockerSDK.LootLockerManager.AddAssetToFavourites
-// 0x0014 (0x0014 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_AddAssetToFavourites final
 {
 public:
-	int32                                         AssetId;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerGetFavouriteAssetIndicesResponse& FavouriteAssetIndicesResponse)> OnAddAssetToFavouritesRequestCompleted; // 0x0004(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetId;                                           // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerGetFavouriteAssetIndicesResponse& FavouriteAssetIndicesResponse)> OnAddAssetToFavouritesRequestCompleted; // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_AddAssetToFavourites;
 
 // Function LootLockerSDK.LootLockerManager.AddAssetToHeroLoadout
-// 0x0018 (0x0018 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_AddAssetToHeroLoadout final
 {
 public:
-	int32                                         HeroID;                                            // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         AssetInstanceId;                                   // 0x0004(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)> OnCompleteBP;             // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         HeroID;                                            // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetInstanceId;                                   // 0x0014(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)> OnCompleteBP;             // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_AddAssetToHeroLoadout;
 
 // Function LootLockerSDK.LootLockerManager.AddFileToAssetCandidate
-// 0x0030 (0x0030 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct LootLockerManager_AddFileToAssetCandidate final
 {
 public:
-	int32                                         AssetCandidateId;                                  // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 FilePath;                                          // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ELootLockerAssetFilePurpose                   FilePurpose;                                       // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(const struct FLootLockerResponse& Response)> OnAddFileToAssetCandidateCompleted;  // 0x001C(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetCandidateId;                                  // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 FilePath;                                          // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerAssetFilePurpose                   FilePurpose;                                       // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(const struct FLootLockerAssetCandidateResponse& Response)> OnAddFileToAssetCandidateCompleted; // 0x002C(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_AddFileToAssetCandidate;
 
 // Function LootLockerSDK.LootLockerManager.AddGlobalAssetToHeroLoadout
-// 0x0018 (0x0018 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_AddGlobalAssetToHeroLoadout final
 {
 public:
-	int32                                         HeroID;                                            // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         AssetId;                                           // 0x0004(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)> OnCompleteBP;             // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         HeroID;                                            // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetId;                                           // 0x0014(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)> OnCompleteBP;             // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_AddGlobalAssetToHeroLoadout;
 
 // Function LootLockerSDK.LootLockerManager.AddGlobalAssetVariationToHeroLoadout
-// 0x001C (0x001C - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct LootLockerManager_AddGlobalAssetVariationToHeroLoadout final
 {
 public:
-	int32                                         HeroID;                                            // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         AssetId;                                           // 0x0004(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         AssetVariationID;                                  // 0x0008(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)> OnCompleteBP;             // 0x000C(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         HeroID;                                            // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetId;                                           // 0x0014(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetVariationID;                                  // 0x0018(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)> OnCompleteBP;             // 0x001C(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_AddGlobalAssetVariationToHeroLoadout;
 
 // Function LootLockerSDK.LootLockerManager.AddItemsToPersistentStorage
-// 0x0020 (0x0020 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct LootLockerManager_AddItemsToPersistentStorage final
 {
 public:
-	struct FLootLockerPersistentStorageItems      Items;                                             // 0x0000(0x0010)(Parm, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerPersistentStorageItemsResponse& Response)> OnPersistentStorageItemsAddRequestCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerPersistentStorageItems      Items;                                             // 0x0010(0x0010)(Parm, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerPersistentStorageItemsResponse& Response)> OnPersistentStorageItemsAddRequestCompleted; // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_AddItemsToPersistentStorage;
 
 // Function LootLockerSDK.LootLockerManager.AddItemToPersistentStorage
-// 0x0038 (0x0038 - 0x0000)
+// 0x0058 (0x0058 - 0x0000)
 struct LootLockerManager_AddItemToPersistentStorage final
 {
 public:
-	struct FLootLockerPersistentStorageItem       Item;                                              // 0x0000(0x0028)(Parm, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerPersistentStorageItemResponse& Response)> OnPersistentStorageItemAddRequestCompleted; // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerPersistentStorageItem       Item;                                              // 0x0010(0x0028)(Parm, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerPersistentStorageItemResponse& Response)> OnPersistentStorageItemAddRequestCompleted; // 0x0038(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0048(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_AddItemToPersistentStorage;
 
 // Function LootLockerSDK.LootLockerManager.AddPointsToCharacterProgression
-// 0x0030 (0x0030 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct LootLockerManager_AddPointsToCharacterProgression final
 {
 public:
-	int32                                         CharacterId;                                       // 0x0000(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ProgressionKey;                                    // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Amount;                                            // 0x0018(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerCharacterProgressionWithRewardsResponse& Response)> OnCompletedRequest; // 0x001C(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CharacterId;                                       // 0x0010(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ProgressionKey;                                    // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Amount;                                            // 0x0028(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerCharacterProgressionWithRewardsResponse& Response)> OnCompletedRequest; // 0x002C(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_AddPointsToCharacterProgression;
 
 // Function LootLockerSDK.LootLockerManager.AddPointsToInstanceProgression
-// 0x0030 (0x0030 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct LootLockerManager_AddPointsToInstanceProgression final
 {
 public:
-	int32                                         AssetInstanceId;                                   // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ProgressionKey;                                    // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Amount;                                            // 0x0018(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerInstanceProgressionWithRewardsResponse& Response)> OnCompletedRequestBP; // 0x001C(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetInstanceId;                                   // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ProgressionKey;                                    // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Amount;                                            // 0x0028(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerInstanceProgressionWithRewardsResponse& Response)> OnCompletedRequestBP; // 0x002C(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_AddPointsToInstanceProgression;
 
 // Function LootLockerSDK.LootLockerManager.AddPointsToPlayerProgression
-// 0x0028 (0x0028 - 0x0000)
+// 0x0048 (0x0048 - 0x0000)
 struct LootLockerManager_AddPointsToPlayerProgression final
 {
 public:
-	class FString                                 ProgressionKey;                                    // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Amount;                                            // 0x0010(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerPlayerProgressionWithRewardsResponse& Response)> OnCompletedRequest; // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ProgressionKey;                                    // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Amount;                                            // 0x0020(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerPlayerProgressionWithRewardsResponse& Response)> OnCompletedRequest; // 0x0024(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_AddPointsToPlayerProgression;
 
 // Function LootLockerSDK.LootLockerManager.BeginSteamPurchaseRedemption
-// 0x0050 (0x0050 - 0x0000)
+// 0x0070 (0x0070 - 0x0000)
 struct LootLockerManager_BeginSteamPurchaseRedemption final
 {
 public:
-	class FString                                 steamID;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Currency;                                          // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Language;                                          // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 CatalogItemId;                                     // 0x0030(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerBeginSteamPurchaseRedemptionResponse& Response)> OnCompletedRequest; // 0x0040(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 steamID;                                           // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 currency;                                          // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Language;                                          // 0x0030(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 CatalogItemId;                                     // 0x0040(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerBeginSteamPurchaseRedemptionResponse& Response)> OnCompletedRequest; // 0x0050(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0060(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_BeginSteamPurchaseRedemption;
 
 // Function LootLockerSDK.LootLockerManager.BeginSteamPurchaseRedemptionForClass
-// 0x0058 (0x0058 - 0x0000)
+// 0x0078 (0x0078 - 0x0000)
 struct LootLockerManager_BeginSteamPurchaseRedemptionForClass final
 {
 public:
-	int32                                         ClassId;                                           // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 steamID;                                           // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Currency;                                          // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Language;                                          // 0x0028(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 CatalogItemId;                                     // 0x0038(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerBeginSteamPurchaseRedemptionResponse& Response)> OnCompletedRequest; // 0x0048(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ClassId;                                           // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 steamID;                                           // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 currency;                                          // 0x0028(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Language;                                          // 0x0038(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 CatalogItemId;                                     // 0x0048(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerBeginSteamPurchaseRedemptionResponse& Response)> OnCompletedRequest; // 0x0058(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0068(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_BeginSteamPurchaseRedemptionForClass;
+
+// Function LootLockerSDK.LootLockerManager.BlockPlayer
+// 0x0040 (0x0040 - 0x0000)
+struct LootLockerManager_BlockPlayer final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerUlid;                                        // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerFriendActionResponse& Response)> OnResponseCompletedBP;   // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_BlockPlayer;
+
+// Function LootLockerSDK.LootLockerManager.CancelOutgoingFriendRequest
+// 0x0040 (0x0040 - 0x0000)
+struct LootLockerManager_CancelOutgoingFriendRequest final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerUlid;                                        // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerFriendActionResponse& Response)> OnResponseCompletedBP;   // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_CancelOutgoingFriendRequest;
 
 // Function LootLockerSDK.LootLockerManager.CancelRemoteSessionProcess
 // 0x0010 (0x0010 - 0x0000)
@@ -290,1548 +465,2850 @@ public:
 DUMPER7_ASSERTS_LootLockerManager_CancelRemoteSessionProcess;
 
 // Function LootLockerSDK.LootLockerManager.CheckPlayerAssetActivationNotification
-// 0x0010 (0x0010 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_CheckPlayerAssetActivationNotification final
 {
 public:
-	TDelegate<void(const struct FLootLockerPlayerAssetNotificationResponse& Value)> OnCheckPlayerAssetDeactivationNotificationRequestCompleted; // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerPlayerAssetNotificationResponse& Value)> OnCheckPlayerAssetDeactivationNotificationRequestCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_CheckPlayerAssetActivationNotification;
 
+// Function LootLockerSDK.LootLockerManager.ClearAllPlayerCachesExceptForPlayer
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerManager_ClearAllPlayerCachesExceptForPlayer final
+{
+public:
+	class FString                                 PlayerUlid;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ClearAllPlayerCachesExceptForPlayer;
+
+// Function LootLockerSDK.LootLockerManager.ClearCacheForPlayer
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerManager_ClearCacheForPlayer final
+{
+public:
+	class FString                                 PlayerUlid;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ClearCacheForPlayer;
+
 // Function LootLockerSDK.LootLockerManager.CollectItem
-// 0x0020 (0x0020 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct LootLockerManager_CollectItem final
 {
 public:
-	struct FLootLockerCollectItemPayload          Item;                                              // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerCollectablesResponse& Response)> OnCollectItemCompleted;  // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerCollectItemPayload          Item;                                              // 0x0010(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerCollectablesResponse& Response)> OnCollectItemCompleted;  // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_CollectItem;
 
 // Function LootLockerSDK.LootLockerManager.ComputeAndLockDropTable
-// 0x0014 (0x0014 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_ComputeAndLockDropTable final
 {
 public:
-	int32                                         TableId;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerComputeAndLockDropTableResponse& Response)> OnCompletedRequestBP; // 0x0004(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TableId;                                           // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerComputeAndLockDropTableResponse& Response)> OnCompletedRequestBP; // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_ComputeAndLockDropTable;
 
 // Function LootLockerSDK.LootLockerManager.ConnectAppleAccountByRestSignIn
-// 0x0020 (0x0020 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct LootLockerManager_ConnectAppleAccountByRestSignIn final
 {
 public:
-	class FString                                 AuthorizationCode;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)> OnCompleteBP;        // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 AuthorizationCode;                                 // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)> OnCompleteBP;        // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_ConnectAppleAccountByRestSignIn;
 
+// Function LootLockerSDK.LootLockerManager.ConnectDiscordAccount
+// 0x0040 (0x0040 - 0x0000)
+struct LootLockerManager_ConnectDiscordAccount final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Token;                                             // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)> OnCompleteBP;        // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ConnectDiscordAccount;
+
+// Function LootLockerSDK.LootLockerManager.ConnectEpicAccount
+// 0x0040 (0x0040 - 0x0000)
+struct LootLockerManager_ConnectEpicAccount final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Token;                                             // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)> OnCompleteBP;        // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ConnectEpicAccount;
+
 // Function LootLockerSDK.LootLockerManager.ConnectGoogleAccount
-// 0x0020 (0x0020 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct LootLockerManager_ConnectGoogleAccount final
 {
 public:
-	class FString                                 IDToken;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)> OnCompleteBP;        // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 IDToken;                                           // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)> OnCompleteBP;        // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_ConnectGoogleAccount;
 
 // Function LootLockerSDK.LootLockerManager.ConnectGoogleAccountWithPlatform
-// 0x0028 (0x0028 - 0x0000)
+// 0x0048 (0x0048 - 0x0000)
 struct LootLockerManager_ConnectGoogleAccountWithPlatform final
 {
 public:
-	class FString                                 IDToken;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGoogleAccountProviderPlatform                Platform;                                          // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)> OnCompleteBP;        // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 IDToken;                                           // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGoogleAccountProviderPlatform                Platform;                                          // 0x0020(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)> OnCompleteBP;        // 0x0024(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_ConnectGoogleAccountWithPlatform;
 
+// Function LootLockerSDK.LootLockerManager.ConnectPlaystationAccount
+// 0x0050 (0x0050 - 0x0000)
+struct LootLockerManager_ConnectPlaystationAccount final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Environment;                                       // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Code;                                              // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)> OnCompleteBP;        // 0x0030(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ConnectPlaystationAccount;
+
+// Function LootLockerSDK.LootLockerManager.ConnectRemoteSessionAccount
+// 0x0050 (0x0050 - 0x0000)
+struct LootLockerManager_ConnectRemoteSessionAccount final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Code;                                              // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Nonce;                                             // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)> OnCompleteBP;        // 0x0030(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ConnectRemoteSessionAccount;
+
+// Function LootLockerSDK.LootLockerManager.ConnectTwitchAccount
+// 0x0040 (0x0040 - 0x0000)
+struct LootLockerManager_ConnectTwitchAccount final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 AuthorizationCode;                                 // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerAccountConnectedResponse& Response)> OnCompleteBP;        // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ConnectTwitchAccount;
+
 // Function LootLockerSDK.LootLockerManager.ConvertCatalogToInlineItems
-// 0x0298 (0x0298 - 0x0000)
+// 0x0348 (0x0348 - 0x0000)
 struct LootLockerManager_ConvertCatalogToInlineItems final
 {
 public:
-	struct FLootLockerListCatalogPricesResponse   Catalog;                                           // 0x0000(0x0288)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerInlinedCatalogEntry> ReturnValue;                                       // 0x0288(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+	struct FLootLockerListCatalogPricesResponse   Catalog;                                           // 0x0000(0x0338)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerInlinedCatalogEntry> ReturnValue;                                       // 0x0338(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_ConvertCatalogToInlineItems;
 
+// Function LootLockerSDK.LootLockerManager.ConvertCatalogV2ToInlineItems
+// 0x0368 (0x0368 - 0x0000)
+struct LootLockerManager_ConvertCatalogV2ToInlineItems final
+{
+public:
+	struct FLootLockerListCatalogPricesV2Response Catalog;                                           // 0x0000(0x0358)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerInlinedCatalogEntry> ReturnValue;                                       // 0x0358(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ConvertCatalogV2ToInlineItems;
+
 // Function LootLockerSDK.LootLockerManager.CreateAKeyValuePairForAssetInstance
-// 0x0038 (0x0038 - 0x0000)
+// 0x0058 (0x0058 - 0x0000)
 struct LootLockerManager_CreateAKeyValuePairForAssetInstance final
 {
 public:
-	int32                                         AssetInstanceId;                                   // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLootLockerAssetInstanceStorageItem    Item;                                              // 0x0008(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerAssetInstanceStorageItemsResponse& Response)> OnCreateAKeyValuePairForAssetInstanceCompleted; // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetInstanceId;                                   // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLootLockerAssetInstanceStorageItem    Item;                                              // 0x0018(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerAssetInstanceStorageItemsResponse& Response)> OnCreateAKeyValuePairForAssetInstanceCompleted; // 0x0038(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0048(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_CreateAKeyValuePairForAssetInstance;
 
 // Function LootLockerSDK.LootLockerManager.CreateAssetCandidate
-// 0x0058 (0x0058 - 0x0000)
+// 0x0078 (0x0078 - 0x0000)
 struct LootLockerManager_CreateAssetCandidate final
 {
 public:
-	struct FLootLockerCreateAssetCandidateData    AssetCandidateData;                                // 0x0000(0x0048)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerCreateAssetCandidateResponse& Response)> OnCreateAssetCandidateCompleted; // 0x0048(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerCreateAssetCandidateData    AssetCandidateData;                                // 0x0010(0x0048)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerCreateAssetCandidateResponse& Response)> OnCreateAssetCandidateCompleted; // 0x0058(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0068(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_CreateAssetCandidate;
 
+// Function LootLockerSDK.LootLockerManager.CreateAssetCandidateAndMarkComplete
+// 0x0078 (0x0078 - 0x0000)
+struct LootLockerManager_CreateAssetCandidateAndMarkComplete final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerCreateAssetCandidateData    AssetCandidateData;                                // 0x0010(0x0048)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerCreateAssetCandidateResponse& Response)> OnCreateAssetCandidateCompleted; // 0x0058(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0068(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_CreateAssetCandidateAndMarkComplete;
+
 // Function LootLockerSDK.LootLockerManager.CreateCharacter
-// 0x0038 (0x0038 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct LootLockerManager_CreateCharacter final
 {
 public:
-	bool                                          IsDefault;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CharacterName;                                     // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 CharacterTypeId;                                   // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)> OnCompletedRequestBP;     // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsDefault;                                         // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CharacterName;                                     // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CharacterTypeId;                                   // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)> OnCompletedRequestBP;     // 0x002C(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_CreateCharacter;
 
 // Function LootLockerSDK.LootLockerManager.CreateHero
-// 0x0030 (0x0030 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct LootLockerManager_CreateHero final
 {
 public:
-	struct FLootLockerCreateHeroRequest           Request;                                           // 0x0000(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)> OnCompleteBP;              // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerCreateHeroRequest           Request;                                           // 0x0010(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)> OnCompleteBP;              // 0x0030(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_CreateHero;
 
 // Function LootLockerSDK.LootLockerManager.CreateHeroWithVariation
-// 0x0030 (0x0030 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct LootLockerManager_CreateHeroWithVariation final
 {
 public:
-	struct FLootLockerCreateHeroWithVariationRequest Request;                                        // 0x0000(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)> OnCompleteBP;              // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerCreateHeroWithVariationRequest Request;                                        // 0x0010(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)> OnCompleteBP;              // 0x0030(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_CreateHeroWithVariation;
 
 // Function LootLockerSDK.LootLockerManager.CreditBalanceToWallet
-// 0x0040 (0x0040 - 0x0000)
+// 0x0060 (0x0060 - 0x0000)
 struct LootLockerManager_CreditBalanceToWallet final
 {
 public:
-	class FString                                 WalletID;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 CurrencyID;                                        // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Amount;                                            // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerCreditWalletResponse& Response)> OnComplete;              // 0x0030(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 WalletID;                                          // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 CurrencyID;                                        // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Amount;                                            // 0x0030(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerCreditWalletResponse& Response)> OnComplete;              // 0x0040(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0050(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_CreditBalanceToWallet;
 
 // Function LootLockerSDK.LootLockerManager.DebitBalanceToWallet
-// 0x0040 (0x0040 - 0x0000)
+// 0x0060 (0x0060 - 0x0000)
 struct LootLockerManager_DebitBalanceToWallet final
 {
 public:
-	class FString                                 WalletID;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 CurrencyID;                                        // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Amount;                                            // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerDebitWalletResponse& Response)> OnComplete;               // 0x0030(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 WalletID;                                          // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 CurrencyID;                                        // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Amount;                                            // 0x0030(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerDebitWalletResponse& Response)> OnComplete;               // 0x0040(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0050(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_DebitBalanceToWallet;
 
+// Function LootLockerSDK.LootLockerManager.DeclineIncomingFriendRequest
+// 0x0040 (0x0040 - 0x0000)
+struct LootLockerManager_DeclineIncomingFriendRequest final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerUlid;                                        // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerFriendActionResponse& Response)> OnResponseCompletedBP;   // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_DeclineIncomingFriendRequest;
+
 // Function LootLockerSDK.LootLockerManager.DeleteAKeyValuePairByIdForAssetInstance
-// 0x0018 (0x0018 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_DeleteAKeyValuePairByIdForAssetInstance final
 {
 public:
-	int32                                         AssetInstanceId;                                   // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         StorageItemId;                                     // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerAssetInstanceStorageItemsResponse& Response)> OnDeleteAKeyValuePairByIdForAssetInstanceCompleted; // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetInstanceId;                                   // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         StorageItemId;                                     // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerAssetInstanceStorageItemsResponse& Response)> OnDeleteAKeyValuePairByIdForAssetInstanceCompleted; // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_DeleteAKeyValuePairByIdForAssetInstance;
 
 // Function LootLockerSDK.LootLockerManager.DeleteAssetCandidate
-// 0x0014 (0x0014 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_DeleteAssetCandidate final
 {
 public:
-	int32                                         AssetCandidateId;                                  // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerResponse& Response)> OnDeleteAssetCandidateCompleted;     // 0x0004(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetCandidateId;                                  // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerResponse& Response)> OnDeleteAssetCandidateCompleted;     // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_DeleteAssetCandidate;
 
 // Function LootLockerSDK.LootLockerManager.DeleteAssetInstanceFromPlayerInventory
-// 0x0014 (0x0014 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_DeleteAssetInstanceFromPlayerInventory final
 {
 public:
-	int32                                         AssetInstanceId;                                   // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerDeleteAssetInstanceResponse& Response)> OnCompleted;      // 0x0004(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetInstanceId;                                   // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerDeleteAssetInstanceResponse& Response)> OnCompleted;      // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_DeleteAssetInstanceFromPlayerInventory;
 
+// Function LootLockerSDK.LootLockerManager.DeleteCharacter
+// 0x0038 (0x0038 - 0x0000)
+struct LootLockerManager_DeleteCharacter final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CharacterId;                                       // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerResponse& Var)> OnCompletedRequestBP;                     // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_DeleteCharacter;
+
 // Function LootLockerSDK.LootLockerManager.DeleteCharacterProgression
-// 0x0028 (0x0028 - 0x0000)
+// 0x0048 (0x0048 - 0x0000)
 struct LootLockerManager_DeleteCharacterProgression final
 {
 public:
-	int32                                         CharacterId;                                       // 0x0000(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ProgressionKey;                                    // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerResponse& Response)> OnCompletedRequest;                  // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CharacterId;                                       // 0x0010(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ProgressionKey;                                    // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerResponse& Response)> OnCompletedRequest;                  // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_DeleteCharacterProgression;
 
 // Function LootLockerSDK.LootLockerManager.DeleteFileFromAssetCandidate
-// 0x0018 (0x0018 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_DeleteFileFromAssetCandidate final
 {
 public:
-	int32                                         AssetCandidateId;                                  // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         FileId;                                            // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerResponse& Response)> OnDeleteFileFromAssetCandidateCompleted; // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetCandidateId;                                  // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         FileId;                                            // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerResponse& Response)> OnDeleteFileFromAssetCandidateCompleted; // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_DeleteFileFromAssetCandidate;
 
+// Function LootLockerSDK.LootLockerManager.DeleteFriend
+// 0x0040 (0x0040 - 0x0000)
+struct LootLockerManager_DeleteFriend final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerUlid;                                        // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerFriendActionResponse& Response)> OnResponseCompletedBP;   // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_DeleteFriend;
+
 // Function LootLockerSDK.LootLockerManager.DeleteHero
-// 0x0014 (0x0014 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_DeleteHero final
 {
 public:
-	int32                                         HeroID;                                            // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerResponse& Response)> OnCompleteBP;                        // 0x0004(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         HeroID;                                            // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerResponse& Response)> OnCompleteBP;                        // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_DeleteHero;
 
 // Function LootLockerSDK.LootLockerManager.DeleteInstanceProgression
-// 0x0028 (0x0028 - 0x0000)
+// 0x0048 (0x0048 - 0x0000)
 struct LootLockerManager_DeleteInstanceProgression final
 {
 public:
-	int32                                         AssetInstanceId;                                   // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ProgressionKey;                                    // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerResponse& Response)> OnCompletedRequestBP;                // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetInstanceId;                                   // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ProgressionKey;                                    // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerResponse& Response)> OnCompletedRequestBP;                // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_DeleteInstanceProgression;
 
 // Function LootLockerSDK.LootLockerManager.DeleteItemFromPersistentStorage
-// 0x0020 (0x0020 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct LootLockerManager_DeleteItemFromPersistentStorage final
 {
 public:
-	class FString                                 Key;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerPersistentStorageItemsResponse& Response)> OnPersistentStorageItemDeleteRequestCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Key;                                               // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerPersistentStorageItemsResponse& Response)> OnPersistentStorageItemDeleteRequestCompleted; // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_DeleteItemFromPersistentStorage;
 
 // Function LootLockerSDK.LootLockerManager.DeletePlayer
-// 0x0010 (0x0010 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_DeletePlayer final
 {
 public:
-	TDelegate<void(const struct FLootLockerResponse& Var)> OnCompletedRequest;                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerResponse& Var)> OnCompletedRequest;                       // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_DeletePlayer;
 
 // Function LootLockerSDK.LootLockerManager.DeletePlayerFile
-// 0x0014 (0x0014 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_DeletePlayerFile final
 {
 public:
-	int32                                         FileId;                                            // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerResponse& Response)> OnComplete;                          // 0x0004(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         FileId;                                            // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerResponse& Response)> OnComplete;                          // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_DeletePlayerFile;
 
 // Function LootLockerSDK.LootLockerManager.DeletePlayerProgression
-// 0x0020 (0x0020 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct LootLockerManager_DeletePlayerProgression final
 {
 public:
-	class FString                                 ProgressionKey;                                    // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerResponse& Response)> OnCompletedRequest;                  // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ProgressionKey;                                    // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerResponse& Response)> OnCompletedRequest;                  // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_DeletePlayerProgression;
 
 // Function LootLockerSDK.LootLockerManager.DisconnectAccount
-// 0x0014 (0x0014 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_DisconnectAccount final
 {
 public:
-	ELootLockerAccountProvider                    AccountToDisconnect;                               // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(const struct FLootLockerResponse& Var)> OnCompleteBP;                             // 0x0004(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerAccountProvider                    AccountToDisconnect;                               // 0x0010(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(const struct FLootLockerResponse& Var)> OnCompleteBP;                             // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_DisconnectAccount;
 
 // Function LootLockerSDK.LootLockerManager.EndSession
-// 0x0010 (0x0010 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_EndSession final
 {
 public:
-	TDelegate<void(const struct FLootLockerResponse& Var)> OnEndSessionRequestCompleted;             // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerResponse& Var)> OnEndSessionRequestCompleted;             // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_EndSession;
 
 // Function LootLockerSDK.LootLockerManager.EquipAssetToCharacterById
-// 0x001C (0x001C - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct LootLockerManager_EquipAssetToCharacterById final
 {
 public:
-	int32                                         CharacterId;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         AssetId;                                           // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         AssetVariationID;                                  // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerResponse& Var)> OnEquipAssetToCharacterByIdRequestCompleted; // 0x000C(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CharacterId;                                       // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetId;                                           // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetVariationID;                                  // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerResponse& Var)> OnEquipAssetToCharacterByIdRequestCompleted; // 0x001C(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_EquipAssetToCharacterById;
 
 // Function LootLockerSDK.LootLockerManager.EquipAssetToCharacterByIdAndInstance
-// 0x0018 (0x0018 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_EquipAssetToCharacterByIdAndInstance final
 {
 public:
-	int32                                         CharacterId;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         InstanceId;                                        // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerResponse& Var)> OnEquipAssetToCharacterByIdRequestCompleted; // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CharacterId;                                       // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InstanceId;                                        // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerResponse& Var)> OnEquipAssetToCharacterByIdRequestCompleted; // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_EquipAssetToCharacterByIdAndInstance;
 
 // Function LootLockerSDK.LootLockerManager.EquipAssetToDefaultCharacter
-// 0x0014 (0x0014 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_EquipAssetToDefaultCharacter final
 {
 public:
-	int32                                         InstanceId;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerResponse& Var)> OnEquipAssetToDefaultCharacterRequestCompleted; // 0x0004(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InstanceId;                                        // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerResponse& Var)> OnEquipAssetToDefaultCharacterRequestCompleted; // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_EquipAssetToDefaultCharacter;
 
 // Function LootLockerSDK.LootLockerManager.FinalizeSteamPurchaseRedemption
-// 0x0020 (0x0020 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct LootLockerManager_FinalizeSteamPurchaseRedemption final
 {
 public:
-	class FString                                 EntitlementId;                                     // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerResponse& Var)> OnCompletedRequest;                       // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 EntitlementId;                                     // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerResponse& Var)> OnCompletedRequest;                       // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_FinalizeSteamPurchaseRedemption;
 
 // Function LootLockerSDK.LootLockerManager.FinishMission
-// 0x0058 (0x0058 - 0x0000)
+// 0x0078 (0x0078 - 0x0000)
 struct LootLockerManager_FinishMission final
 {
 public:
-	int32                                         MissionId;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLootLockerFinishMissionData           MissionData;                                       // 0x0008(0x0040)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerFinishMissionResponse& Response)> OnFinishMissionCompleted; // 0x0048(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MissionId;                                         // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLootLockerFinishMissionData           MissionData;                                       // 0x0018(0x0040)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerFinishMissionResponse& Response)> OnFinishMissionCompleted; // 0x0058(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0068(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_FinishMission;
 
+// Function LootLockerSDK.LootLockerManager.FollowPlayer
+// 0x0040 (0x0040 - 0x0000)
+struct LootLockerManager_FollowPlayer final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerPublicUid;                                   // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerFollowActionResponse& Response)> OnResponseCompletedBP;   // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_FollowPlayer;
+
+// Function LootLockerSDK.LootLockerManager.ForceStartPresenceConnection
+// 0x0020 (0x0020 - 0x0000)
+struct LootLockerManager_ForceStartPresenceConnection final
+{
+public:
+	TDelegate<void(bool bSuccess, const class FString& ErrorMessage)> OnCompleted;                   // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0010(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ForceStartPresenceConnection;
+
+// Function LootLockerSDK.LootLockerManager.ForceStopPresenceConnection
+// 0x0020 (0x0020 - 0x0000)
+struct LootLockerManager_ForceStopPresenceConnection final
+{
+public:
+	TDelegate<void(bool bSuccess, const class FString& ErrorMessage)> OnCompleted;                   // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0010(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ForceStopPresenceConnection;
+
+// Function LootLockerSDK.LootLockerManager.GetActivePlayerUlids
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerManager_GetActivePlayerUlids final
+{
+public:
+	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_GetActivePlayerUlids;
+
 // Function LootLockerSDK.LootLockerManager.GetAKeyValuePairByIdForAssetInstance
-// 0x0018 (0x0018 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_GetAKeyValuePairByIdForAssetInstance final
 {
 public:
-	int32                                         AssetInstanceId;                                   // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         StorageItemId;                                     // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerAssetInstanceStorageItemResponse& Response)> OnGetAKeyValuePairByIdForAssetInstanceCompleted; // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetInstanceId;                                   // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         StorageItemId;                                     // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerAssetInstanceStorageItemResponse& Response)> OnGetAKeyValuePairByIdForAssetInstanceCompleted; // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetAKeyValuePairByIdForAssetInstance;
 
 // Function LootLockerSDK.LootLockerManager.GetAllAssetCandidates
-// 0x0010 (0x0010 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_GetAllAssetCandidates final
 {
 public:
-	TDelegate<void(const struct FLootLockerAssetCandidatesResponse& Response)> OnGetAllAssetCandidatesCompleted; // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerAssetCandidatesResponse& Response)> OnGetAllAssetCandidatesCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetAllAssetCandidates;
 
 // Function LootLockerSDK.LootLockerManager.GetAllCollectables
-// 0x0010 (0x0010 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_GetAllCollectables final
 {
 public:
-	TDelegate<void(const struct FLootLockerCollectablesResponse& Response)> OnGetAllCollectablesCompleted; // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerCollectablesResponse& Response)> OnGetAllCollectablesCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetAllCollectables;
 
 // Function LootLockerSDK.LootLockerManager.GetAllKeyValuePairsForAssetInstance
-// 0x0014 (0x0014 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_GetAllKeyValuePairsForAssetInstance final
 {
 public:
-	int32                                         AssetInstanceId;                                   // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerAssetInstanceStorageItemsResponse& Response)> OnGetAllKeyValuePairsForAssetInstanceCompleted; // 0x0004(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetInstanceId;                                   // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerAssetInstanceStorageItemsResponse& Response)> OnGetAllKeyValuePairsForAssetInstanceCompleted; // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetAllKeyValuePairsForAssetInstance;
 
 // Function LootLockerSDK.LootLockerManager.GetAllMemberRanks
-// 0x0028 (0x0028 - 0x0000)
+// 0x0048 (0x0048 - 0x0000)
 struct LootLockerManager_GetAllMemberRanks final
 {
 public:
-	class FString                                 MemberId;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Count;                                             // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         after;                                             // 0x0014(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerGetAllMemberRanksResponse& Response)> OnCompletedRequestBP; // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 MemberId;                                          // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Count;                                             // 0x0020(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         after;                                             // 0x0024(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerGetAllMemberRanksResponse& Response)> OnCompletedRequestBP; // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetAllMemberRanks;
 
 // Function LootLockerSDK.LootLockerManager.GetAllMissions
-// 0x0010 (0x0010 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_GetAllMissions final
 {
 public:
-	TDelegate<void(const struct FLootLockerMissionsResponse& Response)> OnGetAllMissionsCompleted;   // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerMissionsResponse& Response)> OnGetAllMissionsCompleted;   // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetAllMissions;
 
 // Function LootLockerSDK.LootLockerManager.GetAssetBones
-// 0x0010 (0x0010 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_GetAssetBones final
 {
 public:
-	TDelegate<void(const struct FLootLockerGetAssetBonesResponse& AssetBonesResponse)> OnGetAssetBonesRequestCompleted; // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerGetAssetBonesResponse& AssetBonesResponse)> OnGetAssetBonesRequestCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetAssetBones;
 
 // Function LootLockerSDK.LootLockerManager.GetAssetCandidate
-// 0x0014 (0x0014 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_GetAssetCandidate final
 {
 public:
-	int32                                         AssetCandidateId;                                  // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerAssetCandidateResponse& Response)> OnGetAssetCandidateCompleted; // 0x0004(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetCandidateId;                                  // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerAssetCandidateResponse& Response)> OnGetAssetCandidateCompleted; // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetAssetCandidate;
 
 // Function LootLockerSDK.LootLockerManager.GetAssets
-// 0x0024 (0x0024 - 0x0000)
+// 0x0048 (0x0048 - 0x0000)
 struct LootLockerManager_GetAssets final
 {
 public:
-	TDelegate<void(const struct FLootLockerGetAssetsResponse& AssetsResponse)> OnGetAssetsRequestCompleted; // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         StartFromIndex;                                    // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ItemsCount;                                        // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ELootLockerAssetFilter                        AssetFilter;                                       // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Context;                                           // 0x001C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IncludeUGC;                                        // 0x0020(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerGetAssetsResponse& AssetsResponse)> OnGetAssetsRequestCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         StartFromIndex;                                    // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ItemsCount;                                        // 0x0024(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerAssetFilter                        AssetFilter;                                       // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Context;                                           // 0x002C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IncludeUGC;                                        // 0x0030(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetAssets;
 
 // Function LootLockerSDK.LootLockerManager.GetAssetsByIds
-// 0x0020 (0x0020 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct LootLockerManager_GetAssetsByIds final
 {
 public:
-	TArray<int32>                                 AssetIds;                                          // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerGetAssetsResponse& AssetsResponse)> OnGetAssetsByIdsRequestCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<int32>                                 AssetIds;                                          // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerGetAssetsResponse& AssetsResponse)> OnGetAssetsByIdsRequestCompleted; // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetAssetsByIds;
 
 // Function LootLockerSDK.LootLockerManager.GetByListOfMembers
-// 0x0030 (0x0030 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct LootLockerManager_GetByListOfMembers final
 {
 public:
-	TArray<class FString>                         members;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-	class FString                                 LeaderboardKey;                                    // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerGetByListOfMembersResponse& Response)> OnCompletedRequestBP; // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         members;                                           // 0x0010(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FString                                 LeaderboardKey;                                    // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerGetByListOfMembersResponse& Response)> OnCompletedRequestBP; // 0x0030(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetByListOfMembers;
 
-// Function LootLockerSDK.LootLockerManager.GetCharacterLoadout
+// Function LootLockerSDK.LootLockerManager.GetCachedPlayerUlids
 // 0x0010 (0x0010 - 0x0000)
+struct LootLockerManager_GetCachedPlayerUlids final
+{
+public:
+	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_GetCachedPlayerUlids;
+
+// Function LootLockerSDK.LootLockerManager.GetCharacterLoadout
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_GetCharacterLoadout final
 {
 public:
-	TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)> OnGetCharacterLoadoutRequestCompleted; // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)> OnGetCharacterLoadoutRequestCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetCharacterLoadout;
 
 // Function LootLockerSDK.LootLockerManager.GetCharacterProgression
-// 0x0028 (0x0028 - 0x0000)
+// 0x0048 (0x0048 - 0x0000)
 struct LootLockerManager_GetCharacterProgression final
 {
 public:
-	int32                                         CharacterId;                                       // 0x0000(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ProgressionKey;                                    // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerCharacterProgressionResponse& Response)> OnCompletedRequest; // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CharacterId;                                       // 0x0010(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ProgressionKey;                                    // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerCharacterProgressionResponse& Response)> OnCompletedRequest; // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetCharacterProgression;
 
 // Function LootLockerSDK.LootLockerManager.GetCharacterProgressions
-// 0x0028 (0x0028 - 0x0000)
+// 0x0048 (0x0048 - 0x0000)
 struct LootLockerManager_GetCharacterProgressions final
 {
 public:
-	int32                                         CharacterId;                                       // 0x0000(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Count;                                             // 0x0004(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 after;                                             // 0x0008(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerPaginatedCharacterProgressionResponse& Response)> OnCompletedRequest; // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CharacterId;                                       // 0x0010(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Count;                                             // 0x0014(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 after;                                             // 0x0018(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerPaginatedCharacterProgressionResponse& Response)> OnCompletedRequest; // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetCharacterProgressions;
 
 // Function LootLockerSDK.LootLockerManager.GetContexts
-// 0x0010 (0x0010 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_GetContexts final
 {
 public:
-	TDelegate<void(const struct FLootLockerGetContextResponse& ContextsResponse)> OnGetContextsRequestCompleted; // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerGetContextResponse& ContextsResponse)> OnGetContextsRequestCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetContexts;
 
 // Function LootLockerSDK.LootLockerManager.GetCurrencyBalance
-// 0x0010 (0x0010 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_GetCurrencyBalance final
 {
 public:
-	TDelegate<void(const struct FLootLockerBalanceResponse& Value)> OnGetCurrencyBalance;            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerBalanceResponse& Value)> OnGetCurrencyBalance;            // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetCurrencyBalance;
 
 // Function LootLockerSDK.LootLockerManager.GetCurrencyDenominationsByCode
-// 0x0020 (0x0020 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct LootLockerManager_GetCurrencyDenominationsByCode final
 {
 public:
-	class FString                                 CurrencyCode;                                      // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerListDenominationsResponse& Response)> OnCompletedRequest; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 CurrencyCode;                                      // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerListDenominationsResponse& Response)> OnCompletedRequest; // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetCurrencyDenominationsByCode;
 
+// Function LootLockerSDK.LootLockerManager.GetCurrencyDetails
+// 0x0040 (0x0040 - 0x0000)
+struct LootLockerManager_GetCurrencyDetails final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 CurrencyCode;                                      // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerGetCurrencyDetailsResponse& Response)> OnCompletedRequest; // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_GetCurrencyDetails;
+
 // Function LootLockerSDK.LootLockerManager.GetCurrentLoadoutToDefaultCharacter
-// 0x0010 (0x0010 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_GetCurrentLoadoutToDefaultCharacter final
 {
 public:
-	TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)> OnGetCurrentLoadoutToDefaultCharacterRequestCompleted; // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)> OnGetCurrentLoadoutToDefaultCharacterRequestCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetCurrentLoadoutToDefaultCharacter;
 
-// Function LootLockerSDK.LootLockerManager.GetDLCsMigration
-// 0x0010 (0x0010 - 0x0000)
-struct LootLockerManager_GetDLCsMigration final
+// Function LootLockerSDK.LootLockerManager.GetCurrentPlayerInfo
+// 0x0030 (0x0030 - 0x0000)
+struct LootLockerManager_GetCurrentPlayerInfo final
 {
 public:
-	TDelegate<void(const struct FLootLockerDlcResponse& Value)> OnGotDlcMigration;                   // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerGetCurrentPlayerInfoResponse& Value)> OnCompletedRequest; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_LootLockerManager_GetDLCsMigration;
+DUMPER7_ASSERTS_LootLockerManager_GetCurrentPlayerInfo;
 
-// Function LootLockerSDK.LootLockerManager.GetEntirePersistentStorage
-// 0x0010 (0x0010 - 0x0000)
-struct LootLockerManager_GetEntirePersistentStorage final
-{
-public:
-	TDelegate<void(const struct FLootLockerPersistentStorageItemsResponse& Response)> OnPersistentStorageItemsRequestCompleted; // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LootLockerManager_GetEntirePersistentStorage;
-
-// Function LootLockerSDK.LootLockerManager.GetEntitlement
+// Function LootLockerSDK.LootLockerManager.GetCurrentPresenceStatus
 // 0x0020 (0x0020 - 0x0000)
-struct LootLockerManager_GetEntitlement final
+struct LootLockerManager_GetCurrentPresenceStatus final
 {
 public:
-	class FString                                 EntitlementId;                                     // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerSingleEntitlementResponse& Response)> OnComplete;         // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_LootLockerManager_GetEntitlement;
+DUMPER7_ASSERTS_LootLockerManager_GetCurrentPresenceStatus;
 
-// Function LootLockerSDK.LootLockerManager.GetEquipableContextsByCharacterId
-// 0x0014 (0x0014 - 0x0000)
-struct LootLockerManager_GetEquipableContextsByCharacterId final
-{
-public:
-	int32                                         OtherCharacterId;                                  // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerGetContextResponse& ContextsResponse)> OnGetEquipableContextsByCharacterIdRequestCompleted; // 0x0004(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LootLockerManager_GetEquipableContextsByCharacterId;
-
-// Function LootLockerSDK.LootLockerManager.GetEquipableContextsToDefaultCharacter
+// Function LootLockerSDK.LootLockerManager.GetDefaultPlayerUlid
 // 0x0010 (0x0010 - 0x0000)
-struct LootLockerManager_GetEquipableContextsToDefaultCharacter final
-{
-public:
-	TDelegate<void(const struct FLootLockerGetContextResponse& ContextsResponse)> OnGetEquipableContextsToDefaultCharacterRequestCompleted; // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LootLockerManager_GetEquipableContextsToDefaultCharacter;
-
-// Function LootLockerSDK.LootLockerManager.GetFavouriteAssetIndices
-// 0x0010 (0x0010 - 0x0000)
-struct LootLockerManager_GetFavouriteAssetIndices final
-{
-public:
-	TDelegate<void(const struct FLootLockerGetFavouriteAssetIndicesResponse& FavouriteAssetIndicesResponse)> OnGetFavouriteAssetIndicesRequestCompleted; // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LootLockerManager_GetFavouriteAssetIndices;
-
-// Function LootLockerSDK.LootLockerManager.GetGameHeroes
-// 0x0010 (0x0010 - 0x0000)
-struct LootLockerManager_GetGameHeroes final
-{
-public:
-	TDelegate<void(const struct FLootLockerGameHeroListResponse& Response)> OnCompleteBP;            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LootLockerManager_GetGameHeroes;
-
-// Function LootLockerSDK.LootLockerManager.GetHero
-// 0x0014 (0x0014 - 0x0000)
-struct LootLockerManager_GetHero final
-{
-public:
-	int32                                         HeroID;                                            // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)> OnCompleteBP;              // 0x0004(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LootLockerManager_GetHero;
-
-// Function LootLockerSDK.LootLockerManager.GetHeroInventory
-// 0x0014 (0x0014 - 0x0000)
-struct LootLockerManager_GetHeroInventory final
-{
-public:
-	int32                                         HeroID;                                            // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerInventoryResponse& Value)> OnCompleteBP;                  // 0x0004(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LootLockerManager_GetHeroInventory;
-
-// Function LootLockerSDK.LootLockerManager.GetHeroLoadout
-// 0x0014 (0x0014 - 0x0000)
-struct LootLockerManager_GetHeroLoadout final
-{
-public:
-	int32                                         HeroID;                                            // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)> OnCompleteBP;             // 0x0004(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LootLockerManager_GetHeroLoadout;
-
-// Function LootLockerSDK.LootLockerManager.GetInstanceProgression
-// 0x0028 (0x0028 - 0x0000)
-struct LootLockerManager_GetInstanceProgression final
-{
-public:
-	int32                                         AssetInstanceId;                                   // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ProgressionKey;                                    // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerInstanceProgressionResponse& Response)> OnCompletedRequestBP; // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LootLockerManager_GetInstanceProgression;
-
-// Function LootLockerSDK.LootLockerManager.GetInstanceProgressions
-// 0x0028 (0x0028 - 0x0000)
-struct LootLockerManager_GetInstanceProgressions final
-{
-public:
-	int32                                         AssetInstanceId;                                   // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Count;                                             // 0x0004(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 after;                                             // 0x0008(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerPaginatedInstanceProgressionResponse& Response)> OnCompletedRequestBP; // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LootLockerManager_GetInstanceProgressions;
-
-// Function LootLockerSDK.LootLockerManager.GetInventory
-// 0x0010 (0x0010 - 0x0000)
-struct LootLockerManager_GetInventory final
-{
-public:
-	TDelegate<void(const struct FLootLockerInventoryResponse& Value)> OnGetInventoryRequestCompleted; // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LootLockerManager_GetInventory;
-
-// Function LootLockerSDK.LootLockerManager.GetItemFromPersistentStorage
-// 0x0020 (0x0020 - 0x0000)
-struct LootLockerManager_GetItemFromPersistentStorage final
-{
-public:
-	class FString                                 Key;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerPersistentStorageItemResponse& Response)> OnPersistentStorageItemRequestCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LootLockerManager_GetItemFromPersistentStorage;
-
-// Function LootLockerSDK.LootLockerManager.GetLastActivePlatform
-// 0x0010 (0x0010 - 0x0000)
-struct LootLockerManager_GetLastActivePlatform final
+struct LootLockerManager_GetDefaultPlayerUlid final
 {
 public:
 	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
+DUMPER7_ASSERTS_LootLockerManager_GetDefaultPlayerUlid;
+
+// Function LootLockerSDK.LootLockerManager.GetDLCsMigration
+// 0x0030 (0x0030 - 0x0000)
+struct LootLockerManager_GetDLCsMigration final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerDlcResponse& Value)> OnGotDlcMigration;                   // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_GetDLCsMigration;
+
+// Function LootLockerSDK.LootLockerManager.GetEntirePersistentStorage
+// 0x0030 (0x0030 - 0x0000)
+struct LootLockerManager_GetEntirePersistentStorage final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerPersistentStorageItemsResponse& Response)> OnPersistentStorageItemsRequestCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_GetEntirePersistentStorage;
+
+// Function LootLockerSDK.LootLockerManager.GetEntitlement
+// 0x0040 (0x0040 - 0x0000)
+struct LootLockerManager_GetEntitlement final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 EntitlementId;                                     // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerSingleEntitlementResponse& Response)> OnComplete;         // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_GetEntitlement;
+
+// Function LootLockerSDK.LootLockerManager.GetEquipableContextsByCharacterId
+// 0x0038 (0x0038 - 0x0000)
+struct LootLockerManager_GetEquipableContextsByCharacterId final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         OtherCharacterId;                                  // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerGetContextResponse& ContextsResponse)> OnGetEquipableContextsByCharacterIdRequestCompleted; // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_GetEquipableContextsByCharacterId;
+
+// Function LootLockerSDK.LootLockerManager.GetEquipableContextsToDefaultCharacter
+// 0x0030 (0x0030 - 0x0000)
+struct LootLockerManager_GetEquipableContextsToDefaultCharacter final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerGetContextResponse& ContextsResponse)> OnGetEquipableContextsToDefaultCharacterRequestCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_GetEquipableContextsToDefaultCharacter;
+
+// Function LootLockerSDK.LootLockerManager.GetFavouriteAssetIndices
+// 0x0030 (0x0030 - 0x0000)
+struct LootLockerManager_GetFavouriteAssetIndices final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerGetFavouriteAssetIndicesResponse& FavouriteAssetIndicesResponse)> OnGetFavouriteAssetIndicesRequestCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_GetFavouriteAssetIndices;
+
+// Function LootLockerSDK.LootLockerManager.GetFriend
+// 0x0040 (0x0040 - 0x0000)
+struct LootLockerManager_GetFriend final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 FriendUlid;                                        // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerGetFriendResponse& Response)> OnResponseCompletedBP;      // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_GetFriend;
+
+// Function LootLockerSDK.LootLockerManager.GetFullInventory
+// 0x0038 (0x0038 - 0x0000)
+struct LootLockerManager_GetFullInventory final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         StartIndex;                                        // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerInventoryResponse& Value)> OnGetInventoryRequestCompleted; // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_GetFullInventory;
+
+// Function LootLockerSDK.LootLockerManager.GetGameHeroes
+// 0x0030 (0x0030 - 0x0000)
+struct LootLockerManager_GetGameHeroes final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerGameHeroListResponse& Response)> OnCompleteBP;            // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_GetGameHeroes;
+
+// Function LootLockerSDK.LootLockerManager.GetGameInfo
+// 0x0020 (0x0020 - 0x0000)
+struct LootLockerManager_GetGameInfo final
+{
+public:
+	TDelegate<void(const struct FLootLockerGameInfoResponse& Response)> OnCompletedRequestBP;        // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_GetGameInfo;
+
+// Function LootLockerSDK.LootLockerManager.GetHero
+// 0x0038 (0x0038 - 0x0000)
+struct LootLockerManager_GetHero final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         HeroID;                                            // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)> OnCompleteBP;              // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_GetHero;
+
+// Function LootLockerSDK.LootLockerManager.GetHeroInventory
+// 0x0038 (0x0038 - 0x0000)
+struct LootLockerManager_GetHeroInventory final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         HeroID;                                            // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerInventoryResponse& Value)> OnCompleteBP;                  // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_GetHeroInventory;
+
+// Function LootLockerSDK.LootLockerManager.GetHeroLoadout
+// 0x0038 (0x0038 - 0x0000)
+struct LootLockerManager_GetHeroLoadout final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         HeroID;                                            // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)> OnCompleteBP;             // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_GetHeroLoadout;
+
+// Function LootLockerSDK.LootLockerManager.GetInstanceProgression
+// 0x0048 (0x0048 - 0x0000)
+struct LootLockerManager_GetInstanceProgression final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetInstanceId;                                   // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ProgressionKey;                                    // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerInstanceProgressionResponse& Response)> OnCompletedRequestBP; // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_GetInstanceProgression;
+
+// Function LootLockerSDK.LootLockerManager.GetInstanceProgressions
+// 0x0048 (0x0048 - 0x0000)
+struct LootLockerManager_GetInstanceProgressions final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetInstanceId;                                   // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Count;                                             // 0x0014(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 after;                                             // 0x0018(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerPaginatedInstanceProgressionResponse& Response)> OnCompletedRequestBP; // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_GetInstanceProgressions;
+
+// Function LootLockerSDK.LootLockerManager.GetInventory
+// 0x0030 (0x0030 - 0x0000)
+struct LootLockerManager_GetInventory final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerInventoryResponse& Value)> OnGetInventoryRequestCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_GetInventory;
+
+// Function LootLockerSDK.LootLockerManager.GetItemFromPersistentStorage
+// 0x0040 (0x0040 - 0x0000)
+struct LootLockerManager_GetItemFromPersistentStorage final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Key;                                               // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerPersistentStorageItemResponse& Response)> OnPersistentStorageItemRequestCompleted; // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_GetItemFromPersistentStorage;
+
+// Function LootLockerSDK.LootLockerManager.GetLastActivePlatform
+// 0x0020 (0x0020 - 0x0000)
+struct LootLockerManager_GetLastActivePlatform final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
 DUMPER7_ASSERTS_LootLockerManager_GetLastActivePlatform;
 
 // Function LootLockerSDK.LootLockerManager.GetLeaderboardArchive
-// 0x0038 (0x0038 - 0x0000)
+// 0x0058 (0x0058 - 0x0000)
 struct LootLockerManager_GetLeaderboardArchive final
 {
 public:
-	class FString                                 Key;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Count;                                             // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 after;                                             // 0x0018(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerLeaderboardArchiveDetailsResponse& Response)> OnCompletedRequestBP; // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Key;                                               // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Count;                                             // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 after;                                             // 0x0028(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerLeaderboardArchiveDetailsResponse& Response)> OnCompletedRequestBP; // 0x0038(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0048(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetLeaderboardArchive;
 
 // Function LootLockerSDK.LootLockerManager.GetLeaderboardDetails
-// 0x0020 (0x0020 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct LootLockerManager_GetLeaderboardDetails final
 {
 public:
-	class FString                                 LeaderboardKey;                                    // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerLeaderboardDetailsResponse& Response)> OnCompletedRequestBP; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 LeaderboardKey;                                    // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerLeaderboardDetailsResponse& Response)> OnCompletedRequestBP; // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetLeaderboardDetails;
 
 // Function LootLockerSDK.LootLockerManager.GetMaps
-// 0x0010 (0x0010 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_GetMaps final
 {
 public:
-	TDelegate<void(const struct FLootLockerGetMapsResponse& Response)> OnGetMapsCompleted;           // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerGetMapsResponse& Response)> OnGetMapsCompleted;           // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetMaps;
 
 // Function LootLockerSDK.LootLockerManager.GetMemberRank
-// 0x0030 (0x0030 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct LootLockerManager_GetMemberRank final
 {
 public:
-	class FString                                 LeaderboardKey;                                    // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 MemberId;                                          // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerGetMemberRankResponse& Response)> OnCompletedRequestBP;   // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 LeaderboardKey;                                    // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 MemberId;                                          // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerGetMemberRankResponse& Response)> OnCompletedRequestBP;   // 0x0030(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetMemberRank;
 
 // Function LootLockerSDK.LootLockerManager.GetMessages
-// 0x0010 (0x0010 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_GetMessages final
 {
 public:
-	TDelegate<void(const struct FLootLockerMessagesResponse& Response)> OnGetMessagesCompleted;      // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerMessagesResponse& Response)> OnGetMessagesCompleted;      // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetMessages;
 
+// Function LootLockerSDK.LootLockerManager.GetMetadata
+// 0x0060 (0x0060 - 0x0000)
+struct LootLockerManager_GetMetadata final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerMetadataSources                    Source;                                            // 0x0010(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 SourceID;                                          // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Key;                                               // 0x0028(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IgnoreFiles;                                       // 0x0038(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_39[0x3];                                       // 0x0039(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(const struct FLootLockerGetMetadataResponse& Response)> OnComplete;               // 0x003C(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0050(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_GetMetadata;
+
 // Function LootLockerSDK.LootLockerManager.GetMission
-// 0x0014 (0x0014 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_GetMission final
 {
 public:
-	int32                                         MissionId;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerMissionResponse& Response)> OnGetMissionCompleted;        // 0x0004(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MissionId;                                         // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerMissionResponse& Response)> OnGetMissionCompleted;        // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetMission;
 
-// Function LootLockerSDK.LootLockerManager.GetMultiplePlayersXp
-// 0x0030 (0x0030 - 0x0000)
-struct LootLockerManager_GetMultiplePlayersXp final
+// Function LootLockerSDK.LootLockerManager.GetMultisourceMetadata
+// 0x0048 (0x0048 - 0x0000)
+struct LootLockerManager_GetMultisourceMetadata final
 {
 public:
-	class FString                                 Platform;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class FString>                         PlayerIDs;                                         // 0x0010(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerMultiplePlayerXpResponse& Value)> OnGetOtherPlayerInfoRequestCompleted; // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerMetadataSourceAndKeys> SourcesAndKeysToGet;                             // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          IgnoreFiles;                                       // 0x0020(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(const struct FLootLockerGetMultisourceMetadataResponse& Response)> OnComplete;    // 0x0024(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_LootLockerManager_GetMultiplePlayersXp;
+DUMPER7_ASSERTS_LootLockerManager_GetMultisourceMetadata;
 
-// Function LootLockerSDK.LootLockerManager.GetOrderDetails
-// 0x0018 (0x0018 - 0x0000)
-struct LootLockerManager_GetOrderDetails final
+// Function LootLockerSDK.LootLockerManager.GetOtherPlayersCharacterLoadouts
+// 0x0050 (0x0050 - 0x0000)
+struct LootLockerManager_GetOtherPlayersCharacterLoadouts final
 {
 public:
-	int32                                         OrderId;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          NoProducts;                                        // 0x0004(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(const struct FLootLockerOrderDetailsResponse& Response)> OnCompleteBP;            // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 OtherPlayerId;                                     // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 OtherPlayerPlatform;                               // 0x0020(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)> OnCompletedRequest;       // 0x0030(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_LootLockerManager_GetOrderDetails;
+DUMPER7_ASSERTS_LootLockerManager_GetOtherPlayersCharacterLoadouts;
+
+// Function LootLockerSDK.LootLockerManager.GetOtherPlayersCharacterLoadoutsByUid
+// 0x0040 (0x0040 - 0x0000)
+struct LootLockerManager_GetOtherPlayersCharacterLoadoutsByUid final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 OtherPlayerUid;                                    // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)> OnCompletedRequest;       // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_GetOtherPlayersCharacterLoadoutsByUid;
 
 // Function LootLockerSDK.LootLockerManager.GetOtherPlayersCurrentLoadoutToDefaultCharacter
-// 0x0030 (0x0030 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct LootLockerManager_GetOtherPlayersCurrentLoadoutToDefaultCharacter final
 {
 public:
-	class FString                                 OtherPlayerId;                                     // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)> OnGetOtherPlayersCurrentLoadoutToDefaultCharacterRequestCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	class FString                                 OtherPlayerPlatform;                               // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 OtherPlayerId;                                     // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)> OnGetOtherPlayersCurrentLoadoutToDefaultCharacterRequestCompleted; // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 OtherPlayerPlatform;                               // 0x0030(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetOtherPlayersCurrentLoadoutToDefaultCharacter;
 
 // Function LootLockerSDK.LootLockerManager.GetOtherPlayersDefaultHeroBySteamID64
-// 0x0014 (0x0014 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_GetOtherPlayersDefaultHeroBySteamID64 final
 {
 public:
-	int32                                         SteamID64;                                         // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)> OnCompleteBP;              // 0x0004(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SteamID64;                                         // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)> OnCompleteBP;              // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetOtherPlayersDefaultHeroBySteamID64;
 
 // Function LootLockerSDK.LootLockerManager.GetOtherPlayersHeroLoadout
-// 0x0014 (0x0014 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_GetOtherPlayersHeroLoadout final
 {
 public:
-	int32                                         HeroID;                                            // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)> OnCompleteBP;             // 0x0004(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         HeroID;                                            // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)> OnCompleteBP;             // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetOtherPlayersHeroLoadout;
 
-// Function LootLockerSDK.LootLockerManager.GetOtherPlayersXpAndLevel
-// 0x0030 (0x0030 - 0x0000)
-struct LootLockerManager_GetOtherPlayersXpAndLevel final
+// Function LootLockerSDK.LootLockerManager.GetOtherPlayersProgression
+// 0x0050 (0x0050 - 0x0000)
+struct LootLockerManager_GetOtherPlayersProgression final
 {
 public:
-	class FString                                 OtherPlayerId;                                     // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerOtherPlayersXpAndLevelResponse& Value)> OnGetOtherPlayersXpAndLevelRequestCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	class FString                                 OtherPlayerPlatform;                               // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerUlid;                                        // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ProgressionKey;                                    // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerPlayerProgressionResponse& Response)> OnCompletedRequest; // 0x0030(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_LootLockerManager_GetOtherPlayersXpAndLevel;
+DUMPER7_ASSERTS_LootLockerManager_GetOtherPlayersProgression;
 
-// Function LootLockerSDK.LootLockerManager.GetPlayerInfo
-// 0x0010 (0x0010 - 0x0000)
-struct LootLockerManager_GetPlayerInfo final
+// Function LootLockerSDK.LootLockerManager.GetOtherPlayersProgressions
+// 0x0058 (0x0058 - 0x0000)
+struct LootLockerManager_GetOtherPlayersProgressions final
 {
 public:
-	TDelegate<void(const struct FLootLockerPlayerInfoResponse& Value)> OnGetPlayerInfoRequestComplete; // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerUlid;                                        // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Count;                                             // 0x0020(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 after;                                             // 0x0028(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerPaginatedPlayerProgressionResponse& Response)> OnCompletedRequest; // 0x0038(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0048(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_LootLockerManager_GetPlayerInfo;
+DUMPER7_ASSERTS_LootLockerManager_GetOtherPlayersProgressions;
 
 // Function LootLockerSDK.LootLockerManager.GetPlayerName
-// 0x0010 (0x0010 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_GetPlayerName final
 {
 public:
-	TDelegate<void(const struct FLootLockerNameResponse& Value)> OnGetPlayerName;                    // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerNameResponse& Value)> OnGetPlayerName;                    // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetPlayerName;
 
 // Function LootLockerSDK.LootLockerManager.GetPlayerPersistentStorage
-// 0x0020 (0x0020 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct LootLockerManager_GetPlayerPersistentStorage final
 {
 public:
-	class FString                                 PlayerId;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerPersistentStorageItemsResponse& Response)> OnGetPlayerPersistentStorageRequestCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerId;                                          // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerPersistentStorageItemsResponse& Response)> OnGetPlayerPersistentStorageRequestCompleted; // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetPlayerPersistentStorage;
 
 // Function LootLockerSDK.LootLockerManager.GetPlayerProgression
-// 0x0020 (0x0020 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct LootLockerManager_GetPlayerProgression final
 {
 public:
-	class FString                                 ProgressionKey;                                    // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerPlayerProgressionResponse& Response)> OnCompletedRequest; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ProgressionKey;                                    // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerPlayerProgressionResponse& Response)> OnCompletedRequest; // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetPlayerProgression;
 
 // Function LootLockerSDK.LootLockerManager.GetPlayerProgressions
-// 0x0028 (0x0028 - 0x0000)
+// 0x0048 (0x0048 - 0x0000)
 struct LootLockerManager_GetPlayerProgressions final
 {
 public:
-	int32                                         Count;                                             // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 after;                                             // 0x0008(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerPaginatedPlayerProgressionResponse& Response)> OnCompletedRequest; // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Count;                                             // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 after;                                             // 0x0018(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerPaginatedPlayerProgressionResponse& Response)> OnCompletedRequest; // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetPlayerProgressions;
 
+// Function LootLockerSDK.LootLockerManager.GetPresenceConnectionState
+// 0x0018 (0x0018 - 0x0000)
+struct LootLockerManager_GetPresenceConnectionState final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerPresenceConnectionState            ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_LootLockerManager_GetPresenceConnectionState;
+
+// Function LootLockerSDK.LootLockerManager.GetPresenceConnectionStats
+// 0x0068 (0x0068 - 0x0000)
+struct LootLockerManager_GetPresenceConnectionStats final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerPresenceConnectionStats     ReturnValue;                                       // 0x0010(0x0058)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_GetPresenceConnectionStats;
+
 // Function LootLockerSDK.LootLockerManager.GetProgression
-// 0x0020 (0x0020 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct LootLockerManager_GetProgression final
 {
 public:
-	class FString                                 ProgressionKey;                                    // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerProgressionResponse& Response)> OnCompletedRequest;       // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ProgressionKey;                                    // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerProgressionResponse& Response)> OnCompletedRequest;       // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetProgression;
 
 // Function LootLockerSDK.LootLockerManager.GetProgressions
-// 0x0028 (0x0028 - 0x0000)
+// 0x0048 (0x0048 - 0x0000)
 struct LootLockerManager_GetProgressions final
 {
 public:
-	int32                                         Count;                                             // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 after;                                             // 0x0008(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerPaginatedProgressionsResponse& Response)> OnCompletedRequest; // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Count;                                             // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 after;                                             // 0x0018(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerPaginatedProgressionsResponse& Response)> OnCompletedRequest; // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetProgressions;
 
 // Function LootLockerSDK.LootLockerManager.GetProgressionTiers
-// 0x0028 (0x0028 - 0x0000)
+// 0x0048 (0x0048 - 0x0000)
 struct LootLockerManager_GetProgressionTiers final
 {
 public:
-	class FString                                 ProgressionKey;                                    // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Count;                                             // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         after;                                             // 0x0014(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerPaginatedProgressionTiersResponse& Response)> OnCompletedRequest; // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ProgressionKey;                                    // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Count;                                             // 0x0020(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         after;                                             // 0x0024(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerPaginatedProgressionTiersResponse& Response)> OnCompletedRequest; // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetProgressionTiers;
 
+// Function LootLockerSDK.LootLockerManager.GetSavedStateOrDefaultOrEmptyForPlayer
+// 0x00F8 (0x00F8 - 0x0000)
+struct LootLockerManager_GetSavedStateOrDefaultOrEmptyForPlayer final
+{
+public:
+	class FString                                 PlayerUlid;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerPlayerData                  ReturnValue;                                       // 0x0010(0x00E8)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_GetSavedStateOrDefaultOrEmptyForPlayer;
+
 // Function LootLockerSDK.LootLockerManager.GetScoreList
-// 0x0028 (0x0028 - 0x0000)
+// 0x0048 (0x0048 - 0x0000)
 struct LootLockerManager_GetScoreList final
 {
 public:
-	class FString                                 LeaderboardKey;                                    // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Count;                                             // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         after;                                             // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerGetScoreListResponse& Response)> OnCompletedRequestBP;    // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 LeaderboardKey;                                    // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Count;                                             // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         after;                                             // 0x0024(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerGetScoreListResponse& Response)> OnCompletedRequestBP;    // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetScoreList;
 
 // Function LootLockerSDK.LootLockerManager.GetScoreListInitial
-// 0x0028 (0x0028 - 0x0000)
+// 0x0048 (0x0048 - 0x0000)
 struct LootLockerManager_GetScoreListInitial final
 {
 public:
-	class FString                                 LeaderboardKey;                                    // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Count;                                             // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerGetScoreListResponse& Response)> OnCompletedRequestBP;    // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 LeaderboardKey;                                    // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Count;                                             // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerGetScoreListResponse& Response)> OnCompletedRequestBP;    // 0x0024(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetScoreListInitial;
 
 // Function LootLockerSDK.LootLockerManager.GetServerTime
-// 0x0010 (0x0010 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_GetServerTime final
 {
 public:
-	TDelegate<void(const struct FLootLockerTimeResponse& Response)> OnCompletedRequestBP;            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerTimeResponse& Response)> OnCompletedRequestBP;            // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetServerTime;
 
 // Function LootLockerSDK.LootLockerManager.GetSingleFile
-// 0x0014 (0x0014 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_GetSingleFile final
 {
 public:
-	int32                                         FileId;                                            // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerPlayerFileResponse& Response)> OnComplete;                // 0x0004(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         FileId;                                            // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerPlayerFileResponse& Response)> OnComplete;                // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetSingleFile;
 
-// Function LootLockerSDK.LootLockerManager.GetTriggeredEvents
-// 0x0010 (0x0010 - 0x0000)
-struct LootLockerManager_GetTriggeredEvents final
-{
-public:
-	TDelegate<void(const struct FLootLockerTriggersResponse& Value)> OnGetTriggeredEventsCompleted;  // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LootLockerManager_GetTriggeredEvents;
-
 // Function LootLockerSDK.LootLockerManager.GetUniversalAssets
-// 0x0018 (0x0018 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_GetUniversalAssets final
 {
 public:
-	int32                                         after;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ItemsCount;                                        // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerUniversalAssetsResponse& UniversalAssetsResponse)> OnCompletedRequest; // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         after;                                             // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ItemsCount;                                        // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerUniversalAssetsResponse& UniversalAssetsResponse)> OnCompletedRequest; // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetUniversalAssets;
 
 // Function LootLockerSDK.LootLockerManager.GetWalletByHolderID
-// 0x0028 (0x0028 - 0x0000)
+// 0x0048 (0x0048 - 0x0000)
 struct LootLockerManager_GetWalletByHolderID final
 {
 public:
-	class FString                                 HolderULID;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ELootLockerWalletHolderTypes                  HolderType;                                        // 0x0010(0x0001)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(const struct FLootLockerGetWalletResponse& Response)> OnComplete;                 // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 HolderULID;                                        // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerWalletHolderTypes                  HolderType;                                        // 0x0020(0x0001)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(const struct FLootLockerGetWalletResponse& Response)> OnComplete;                 // 0x0024(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetWalletByHolderID;
 
 // Function LootLockerSDK.LootLockerManager.GetWalletByWalletID
-// 0x0020 (0x0020 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct LootLockerManager_GetWalletByWalletID final
 {
 public:
-	class FString                                 WalletID;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerGetWalletResponse& Response)> OnComplete;                 // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 WalletID;                                          // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerGetWalletResponse& Response)> OnComplete;                 // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GetWalletByWalletID;
 
 // Function LootLockerSDK.LootLockerManager.GrantAssetToPlayerInventory
-// 0x0014 (0x0014 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_GrantAssetToPlayerInventory final
 {
 public:
-	int32                                         AssetId;                                           // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerGrantAssetResponse& Response)> OnCompletedRequest;        // 0x0004(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetId;                                           // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerGrantAssetResponse& Response)> OnCompletedRequest;        // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GrantAssetToPlayerInventory;
 
 // Function LootLockerSDK.LootLockerManager.GrantAssetWithVariationToPlayerInventory
-// 0x001C (0x001C - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct LootLockerManager_GrantAssetWithVariationToPlayerInventory final
 {
 public:
-	int32                                         AssetId;                                           // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         AssetVariationID;                                  // 0x0004(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         AssetRentalOptionID;                               // 0x0008(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerGrantAssetResponse& Response)> OnCompletedRequest;        // 0x000C(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetId;                                           // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetVariationID;                                  // 0x0014(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetRentalOptionID;                               // 0x0018(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerGrantAssetResponse& Response)> OnCompletedRequest;        // 0x001C(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GrantAssetWithVariationToPlayerInventory;
 
 // Function LootLockerSDK.LootLockerManager.GuestLogin
-// 0x0020 (0x0020 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct LootLockerManager_GuestLogin final
 {
 public:
 	TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)> OnCompletedRequestBP;       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	class FString                                 PlayerIdentifier;                                  // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerSessionOptionals            Optionals;                                         // 0x0020(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_GuestLogin;
 
+// Function LootLockerSDK.LootLockerManager.IncrementScore
+// 0x0058 (0x0058 - 0x0000)
+struct LootLockerManager_IncrementScore final
+{
+public:
+	class FString                                 MemberId;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 LeaderboardKey;                                    // 0x0010(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Amount;                                            // 0x0020(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerSubmitScoreResponse& Response)> OnCompletedRequestBP;     // 0x0024(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ForPlayerWithUlid;                                 // 0x0038(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0048(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_IncrementScore;
+
 // Function LootLockerSDK.LootLockerManager.InitiateDLCMigration
-// 0x0010 (0x0010 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_InitiateDLCMigration final
 {
 public:
-	TDelegate<void(const struct FLootLockerResponse& Response)> OnInitiateDlcMigration;              // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerResponse& Response)> OnInitiateDlcMigration;              // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_InitiateDLCMigration;
 
 // Function LootLockerSDK.LootLockerManager.InspectLootBox
-// 0x0014 (0x0014 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_InspectLootBox final
 {
 public:
-	int32                                         AssetInstanceId;                                   // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerLootBoxContentResponse& Response)> OnInspectLootBoxCompleted; // 0x0004(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetInstanceId;                                   // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerLootBoxContentResponse& Response)> OnInspectLootBoxCompleted; // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_InspectLootBox;
 
+// Function LootLockerSDK.LootLockerManager.InvokeTriggersByKey
+// 0x0040 (0x0040 - 0x0000)
+struct LootLockerManager_InvokeTriggersByKey final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         KeysToInvoke;                                      // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerInvokeTriggersByKeyResponse& Response)> OnComplete;       // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_InvokeTriggersByKey;
+
+// Function LootLockerSDK.LootLockerManager.IsPresenceAutoConnectEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct LootLockerManager_IsPresenceAutoConnectEnabled final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_IsPresenceAutoConnectEnabled;
+
+// Function LootLockerSDK.LootLockerManager.IsPresenceAutoDisconnectOnFocusChangeEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct LootLockerManager_IsPresenceAutoDisconnectOnFocusChangeEnabled final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_IsPresenceAutoDisconnectOnFocusChangeEnabled;
+
+// Function LootLockerSDK.LootLockerManager.IsPresenceConnected
+// 0x0018 (0x0018 - 0x0000)
+struct LootLockerManager_IsPresenceConnected final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_LootLockerManager_IsPresenceConnected;
+
+// Function LootLockerSDK.LootLockerManager.IsPresenceEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct LootLockerManager_IsPresenceEnabled final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_IsPresenceEnabled;
+
+// Function LootLockerSDK.LootLockerManager.ListAssets
+// 0x0070 (0x0070 - 0x0000)
+struct LootLockerManager_ListAssets final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerListSimpleAssetsRequest     Request;                                           // 0x0010(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	int32                                         PerPage;                                           // 0x0040(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Page;                                              // 0x0044(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerOrderAssetListBy                   OrderBy;                                           // 0x0048(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerOrderAssetListDirection            OrderDirection;                                    // 0x0049(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4A[0x2];                                       // 0x004A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(const struct FLootLockerListSimpleAssetsResponse& Response)> OnCompletedRequest;  // 0x004C(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0060(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ListAssets;
+
+// Function LootLockerSDK.LootLockerManager.ListAssetsWithDefaultParameters
+// 0x0030 (0x0030 - 0x0000)
+struct LootLockerManager_ListAssetsWithDefaultParameters final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerListSimpleAssetsResponse& Response)> OnCompletedRequest;  // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ListAssetsWithDefaultParameters;
+
 // Function LootLockerSDK.LootLockerManager.ListBalancesInWallet
-// 0x0020 (0x0020 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct LootLockerManager_ListBalancesInWallet final
 {
 public:
-	class FString                                 WalletID;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerListBalancesForWalletResponse& Response)> OnComplete;     // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 WalletID;                                          // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerListBalancesForWalletResponse& Response)> OnComplete;     // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_ListBalancesInWallet;
 
-// Function LootLockerSDK.LootLockerManager.ListCatalogItems
+// Function LootLockerSDK.LootLockerManager.ListBlockedPlayers
 // 0x0038 (0x0038 - 0x0000)
+struct LootLockerManager_ListBlockedPlayers final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Page;                                              // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PerPage;                                           // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerListBlockedPlayersResponse& Response)> OnResponseCompletedBP; // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ListBlockedPlayers;
+
+// Function LootLockerSDK.LootLockerManager.ListBroadcasts
+// 0x0048 (0x0048 - 0x0000)
+struct LootLockerManager_ListBroadcasts final
+{
+public:
+	TArray<class FString>                         languages;                                         // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	int32                                         Limit;                                             // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ForPlayerWithUlid;                                 // 0x0018(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerListBroadcastsResponse& Response)> OnComplete;            // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ListBroadcasts;
+
+// Function LootLockerSDK.LootLockerManager.ListCatalogItems
+// 0x0058 (0x0058 - 0x0000)
 struct LootLockerManager_ListCatalogItems final
 {
 public:
-	class FString                                 CatalogKey;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Count;                                             // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 after;                                             // 0x0018(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerListCatalogPricesResponse& Response)> OnComplete;         // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 CatalogKey;                                        // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Count;                                             // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 after;                                             // 0x0028(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerListCatalogPricesResponse& Response)> OnComplete;         // 0x0038(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0048(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_ListCatalogItems;
 
+// Function LootLockerSDK.LootLockerManager.ListCatalogItemsV2
+// 0x0048 (0x0048 - 0x0000)
+struct LootLockerManager_ListCatalogItemsV2 final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 CatalogKey;                                        // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PerPage;                                           // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Page;                                              // 0x0024(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerListCatalogPricesV2Response& Response)> OnComplete;       // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ListCatalogItemsV2;
+
 // Function LootLockerSDK.LootLockerManager.ListCatalogs
-// 0x0010 (0x0010 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_ListCatalogs final
 {
 public:
-	TDelegate<void(const struct FLootLockerListCatalogsResponse& Response)> OnComplete;              // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerListCatalogsResponse& Response)> OnComplete;              // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_ListCatalogs;
 
+// Function LootLockerSDK.LootLockerManager.ListCharacterInventory
+// 0x0060 (0x0060 - 0x0000)
+struct LootLockerManager_ListCharacterInventory final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CharacterId;                                       // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLootLockerListSimplifiedInventoryRequest Request;                                        // 0x0018(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	int32                                         PerPage;                                           // 0x0038(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Page;                                              // 0x003C(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerSimpleInventoryResponse& Value)> OnCompletedRequest;      // 0x0040(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0050(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ListCharacterInventory;
+
 // Function LootLockerSDK.LootLockerManager.ListCharacterTypes
-// 0x0010 (0x0010 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_ListCharacterTypes final
 {
 public:
-	TDelegate<void(const struct FLootLockerListCharacterTypesResponse& Var)> OnCompletedRequestBP;   // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerListCharacterTypesResponse& Var)> OnCompletedRequestBP;   // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_ListCharacterTypes;
 
 // Function LootLockerSDK.LootLockerManager.ListConnectedAccounts
-// 0x0010 (0x0010 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_ListConnectedAccounts final
 {
 public:
-	TDelegate<void(const struct FLootLockerListConnectedAccountsResponse& Response)> OnCompleteBP;   // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerListConnectedAccountsResponse& Response)> OnCompleteBP;   // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_ListConnectedAccounts;
 
 // Function LootLockerSDK.LootLockerManager.ListCurrencies
-// 0x0010 (0x0010 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_ListCurrencies final
 {
 public:
-	TDelegate<void(const struct FLootLockerListCurrenciesResponse& Response)> OnCompletedRequest;    // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerListCurrenciesResponse& Response)> OnCompletedRequest;    // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_ListCurrencies;
 
 // Function LootLockerSDK.LootLockerManager.ListEntitlements
-// 0x0028 (0x0028 - 0x0000)
+// 0x0048 (0x0048 - 0x0000)
 struct LootLockerManager_ListEntitlements final
 {
 public:
-	int32                                         Count;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 after;                                             // 0x0008(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerEntitlementHistoryResponse& Response)> OnComplete;        // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Count;                                             // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 after;                                             // 0x0018(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerEntitlementHistoryResponse& Response)> OnComplete;        // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_ListEntitlements;
 
 // Function LootLockerSDK.LootLockerManager.ListFiles
-// 0x0010 (0x0010 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_ListFiles final
 {
 public:
-	TDelegate<void(const struct FLootLockerFileListResponse& Response)> OnComplete;                  // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerFileListResponse& Response)> OnComplete;                  // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_ListFiles;
 
+// Function LootLockerSDK.LootLockerManager.ListFollowers
+// 0x0048 (0x0048 - 0x0000)
+struct LootLockerManager_ListFollowers final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Cursor;                                            // 0x0010(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Count;                                             // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerListFollowersResponse& Response)> OnResponseCompletedBP;  // 0x0024(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ListFollowers;
+
+// Function LootLockerSDK.LootLockerManager.ListFollowersForPlayer
+// 0x0058 (0x0058 - 0x0000)
+struct LootLockerManager_ListFollowersForPlayer final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerPublicUid;                                   // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Cursor;                                            // 0x0020(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Count;                                             // 0x0030(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerListFollowersResponse& Response)> OnResponseCompletedBP;  // 0x0034(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0048(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ListFollowersForPlayer;
+
+// Function LootLockerSDK.LootLockerManager.ListFollowing
+// 0x0048 (0x0048 - 0x0000)
+struct LootLockerManager_ListFollowing final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Cursor;                                            // 0x0010(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Count;                                             // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerListFollowersResponse& Response)> OnResponseCompletedBP;  // 0x0024(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ListFollowing;
+
+// Function LootLockerSDK.LootLockerManager.ListFollowingForPlayer
+// 0x0058 (0x0058 - 0x0000)
+struct LootLockerManager_ListFollowingForPlayer final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerPublicUid;                                   // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Cursor;                                            // 0x0020(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Count;                                             // 0x0030(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerListFollowersResponse& Response)> OnResponseCompletedBP;  // 0x0034(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0048(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ListFollowingForPlayer;
+
+// Function LootLockerSDK.LootLockerManager.ListFriends
+// 0x0038 (0x0038 - 0x0000)
+struct LootLockerManager_ListFriends final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Page;                                              // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PerPage;                                           // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerListFriendsResponse& Response)> OnResponseCompletedBP;    // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ListFriends;
+
 // Function LootLockerSDK.LootLockerManager.ListGameFeedbackCategories
-// 0x0010 (0x0010 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_ListGameFeedbackCategories final
 {
 public:
-	TDelegate<void(const struct FLootLockerFeedbackCategoryResponse& Response)> OnComplete;          // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerFeedbackCategoryResponse& Response)> OnComplete;          // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_ListGameFeedbackCategories;
 
+// Function LootLockerSDK.LootLockerManager.ListIncomingFriendRequests
+// 0x0038 (0x0038 - 0x0000)
+struct LootLockerManager_ListIncomingFriendRequests final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Page;                                              // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PerPage;                                           // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerListIncomingFriendRequestsResponse& Response)> OnResponseCompletedBP; // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ListIncomingFriendRequests;
+
 // Function LootLockerSDK.LootLockerManager.ListLeaderboardArchive
-// 0x0020 (0x0020 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct LootLockerManager_ListLeaderboardArchive final
 {
 public:
-	class FString                                 LeaderboardKey;                                    // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerLeaderboardArchiveResponse& Response)> OnCompletedRequestBP; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 LeaderboardKey;                                    // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerLeaderboardArchiveResponse& Response)> OnCompletedRequestBP; // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_ListLeaderboardArchive;
 
+// Function LootLockerSDK.LootLockerManager.ListLeaderboards
+// 0x0038 (0x0038 - 0x0000)
+struct LootLockerManager_ListLeaderboards final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Count;                                             // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         after;                                             // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerListLeaderboardsResponse& Response)> OnCompletedRequestBP; // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ListLeaderboards;
+
+// Function LootLockerSDK.LootLockerManager.ListMetadata
+// 0x0058 (0x0058 - 0x0000)
+struct LootLockerManager_ListMetadata final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerMetadataSources                    Source;                                            // 0x0010(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 SourceID;                                          // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Page;                                              // 0x0028(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PerPage;                                           // 0x002C(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IgnoreFiles;                                       // 0x0030(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(const struct FLootLockerListMetadataResponse& Response)> OnComplete;              // 0x0034(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0048(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ListMetadata;
+
+// Function LootLockerSDK.LootLockerManager.ListMetadataWithTags
+// 0x0068 (0x0068 - 0x0000)
+struct LootLockerManager_ListMetadataWithTags final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerMetadataSources                    Source;                                            // 0x0010(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 SourceID;                                          // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         Tags;                                              // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	int32                                         Page;                                              // 0x0038(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PerPage;                                           // 0x003C(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IgnoreFiles;                                       // 0x0040(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_41[0x3];                                       // 0x0041(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(const struct FLootLockerListMetadataResponse& Response)> OnComplete;              // 0x0044(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0058(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ListMetadataWithTags;
+
+// Function LootLockerSDK.LootLockerManager.ListNotifications
+// 0x0068 (0x0068 - 0x0000)
+struct LootLockerManager_ListNotifications final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ShowRead;                                          // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 OfType;                                            // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 WithSource;                                        // 0x0028(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerCustomNotificationFiltering        CustomNotificationsFilter;                         // 0x0038(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_39[0x3];                                       // 0x0039(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         PerPage;                                           // 0x003C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Page;                                              // 0x0040(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerListNotificationsResponse& Response)> OnComplete;         // 0x0044(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0058(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ListNotifications;
+
+// Function LootLockerSDK.LootLockerManager.ListNotificationsWithDefaultParameters
+// 0x0030 (0x0030 - 0x0000)
+struct LootLockerManager_ListNotificationsWithDefaultParameters final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerListNotificationsResponse& Response)> OnComplete;         // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ListNotificationsWithDefaultParameters;
+
+// Function LootLockerSDK.LootLockerManager.ListNotificationsWithPriority
+// 0x0068 (0x0068 - 0x0000)
+struct LootLockerManager_ListNotificationsWithPriority final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerNotificationPriority               WithPriority;                                      // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ShowRead;                                          // 0x0011(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 OfType;                                            // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 WithSource;                                        // 0x0028(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerCustomNotificationFiltering        CustomNotificationsFilter;                         // 0x0038(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_39[0x3];                                       // 0x0039(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         PerPage;                                           // 0x003C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Page;                                              // 0x0040(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerListNotificationsResponse& Response)> OnComplete;         // 0x0044(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0058(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ListNotificationsWithPriority;
+
 // Function LootLockerSDK.LootLockerManager.ListOtherPlayersHeroesBySteamID64
-// 0x0018 (0x0018 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_ListOtherPlayersHeroesBySteamID64 final
 {
 public:
-	int64                                         SteamID64;                                         // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerHeroListResponse& Response)> OnCompleteBP;                // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         SteamID64;                                         // 0x0010(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerHeroListResponse& Response)> OnCompleteBP;                // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_ListOtherPlayersHeroesBySteamID64;
 
 // Function LootLockerSDK.LootLockerManager.ListOtherPlayersPublicFiles
-// 0x0014 (0x0014 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_ListOtherPlayersPublicFiles final
 {
 public:
-	int32                                         PlayerId;                                          // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerFileListResponse& Response)> OnCompleteBP;                // 0x0004(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PlayerId;                                          // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerFileListResponse& Response)> OnCompleteBP;                // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_ListOtherPlayersPublicFiles;
 
+// Function LootLockerSDK.LootLockerManager.ListOutgoingFriendRequests
+// 0x0038 (0x0038 - 0x0000)
+struct LootLockerManager_ListOutgoingFriendRequests final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Page;                                              // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PerPage;                                           // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerListOutgoingFriendRequestsResponse& Response)> OnResponseCompletedBP; // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ListOutgoingFriendRequests;
+
 // Function LootLockerSDK.LootLockerManager.ListPlayerCharacters
-// 0x0010 (0x0010 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_ListPlayerCharacters final
 {
 public:
-	TDelegate<void(const struct FLootLockerListPlayerCharactersResponse& Var)> OnCompletedRequestBP; // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerListPlayerCharactersResponse& Var)> OnCompletedRequestBP; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_ListPlayerCharacters;
 
 // Function LootLockerSDK.LootLockerManager.ListPlayerFeedbackCategories
-// 0x0010 (0x0010 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_ListPlayerFeedbackCategories final
 {
 public:
-	TDelegate<void(const struct FLootLockerFeedbackCategoryResponse& Response)> OnComplete;          // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerFeedbackCategoryResponse& Response)> OnComplete;          // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_ListPlayerFeedbackCategories;
 
 // Function LootLockerSDK.LootLockerManager.ListPlayerHeroes
-// 0x0010 (0x0010 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_ListPlayerHeroes final
 {
 public:
-	TDelegate<void(const struct FLootLockerHeroListResponse& Response)> OnCompleteBP;                // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerHeroListResponse& Response)> OnCompleteBP;                // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_ListPlayerHeroes;
 
-// Function LootLockerSDK.LootLockerManager.ListUGCFeedbackCategories
+// Function LootLockerSDK.LootLockerManager.ListPlayerInfo
+// 0x0060 (0x0060 - 0x0000)
+struct LootLockerManager_ListPlayerInfo final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         PlayerIdsToLookUp;                                 // 0x0010(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 PlayerLegacyIdsToLookUp;                           // 0x0020(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class FString>                         PlayerPublicUidsToLookUp;                          // 0x0030(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerListPlayerInfoResponse& Value)> OnCompletedRequest;       // 0x0040(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0050(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ListPlayerInfo;
+
+// Function LootLockerSDK.LootLockerManager.ListPlayerInventory
+// 0x0058 (0x0058 - 0x0000)
+struct LootLockerManager_ListPlayerInventory final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerListSimplifiedInventoryRequest Request;                                        // 0x0010(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	int32                                         PerPage;                                           // 0x0030(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Page;                                              // 0x0034(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerSimpleInventoryResponse& Value)> OnCompletedRequest;      // 0x0038(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0048(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ListPlayerInventory;
+
+// Function LootLockerSDK.LootLockerManager.ListPresenceConnections
 // 0x0010 (0x0010 - 0x0000)
+struct LootLockerManager_ListPresenceConnections final
+{
+public:
+	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ListPresenceConnections;
+
+// Function LootLockerSDK.LootLockerManager.ListUGCFeedbackCategories
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_ListUGCFeedbackCategories final
 {
 public:
-	TDelegate<void(const struct FLootLockerFeedbackCategoryResponse& Response)> OnComplete;          // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerFeedbackCategoryResponse& Response)> OnComplete;          // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_ListUGCFeedbackCategories;
 
 // Function LootLockerSDK.LootLockerManager.LookupMultiplePlayerNames1stPlatformIDs
-// 0x0030 (0x0030 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct LootLockerManager_LookupMultiplePlayerNames1stPlatformIDs final
 {
 public:
-	struct FLootLockerMultiplePlayerNamesAndPlatformsRequest Request;                                // 0x0000(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerMultiplePlayersPlatformIdsResponse& Value)> OnCompletedRequest; // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerMultiplePlayerNamesAndPlatformsRequest Request;                                // 0x0010(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerMultiplePlayersPlatformIdsResponse& Value)> OnCompletedRequest; // 0x0030(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_LookupMultiplePlayerNames1stPlatformIDs;
 
 // Function LootLockerSDK.LootLockerManager.LookupMultiplePlayerNamesUsingIDs
-// 0x0020 (0x0020 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct LootLockerManager_LookupMultiplePlayerNamesUsingIDs final
 {
 public:
-	struct FLootLockerMultiplePlayerNamesRequest  Request;                                           // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerMultiplePlayersNamesResponse& Value)> OnCompletedRequest; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerMultiplePlayerNamesRequest  Request;                                           // 0x0010(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerMultiplePlayersNamesResponse& Value)> OnCompletedRequest; // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_LookupMultiplePlayerNamesUsingIDs;
 
+// Function LootLockerSDK.LootLockerManager.LookupMultiplePlayersDataUsingIDs
+// 0x0040 (0x0040 - 0x0000)
+struct LootLockerManager_LookupMultiplePlayersDataUsingIDs final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerLookupMultiplePlayersDataRequest Request;                                      // 0x0010(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerMultiplePlayersNamesResponse& Value)> OnCompletedRequest; // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_LookupMultiplePlayersDataUsingIDs;
+
 // Function LootLockerSDK.LootLockerManager.LootLockerPurchaseCatalogItems
-// 0x0030 (0x0030 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct LootLockerManager_LootLockerPurchaseCatalogItems final
 {
 public:
-	class FString                                 WalletID;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerCatalogItemAndQuantityPair> ItemsToPurchase;                            // 0x0010(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerResponse& Var)> OnCompletedRequest;                       // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 WalletID;                                          // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerCatalogItemAndQuantityPair> ItemsToPurchase;                            // 0x0020(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerResponse& Var)> OnCompletedRequest;                       // 0x0030(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_LootLockerPurchaseCatalogItems;
 
 // Function LootLockerSDK.LootLockerManager.LootLockerPurchaseSingleCatalogItem
-// 0x0030 (0x0030 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct LootLockerManager_LootLockerPurchaseSingleCatalogItem final
 {
 public:
-	class FString                                 WalletID;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 CatalogItemListingId;                              // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerResponse& Var)> OnCompletedRequest;                       // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 WalletID;                                          // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 CatalogItemListingId;                              // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerResponse& Var)> OnCompletedRequest;                       // 0x0030(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_LootLockerPurchaseSingleCatalogItem;
 
+// Function LootLockerSDK.LootLockerManager.MakeMetadataActionBase64
+// 0x00E8 (0x00E8 - 0x0000)
+struct LootLockerManager_MakeMetadataActionBase64 final
+{
+public:
+	ELootLockerMetadataActions                    action;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Key;                                               // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerMetadataBase64Value         Value;                                             // 0x0018(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<class FString>                         Tags;                                              // 0x0038(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	TArray<class FString>                         Access;                                            // 0x0048(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	struct FLootLockerSetMetadataAction           ReturnValue;                                       // 0x0058(0x0090)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_MakeMetadataActionBase64;
+
+// Function LootLockerSDK.LootLockerManager.MakeMetadataActionBool
+// 0x00D0 (0x00D0 - 0x0000)
+struct LootLockerManager_MakeMetadataActionBool final
+{
+public:
+	ELootLockerMetadataActions                    action;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Key;                                               // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Value;                                             // 0x0018(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FString>                         Tags;                                              // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	TArray<class FString>                         Access;                                            // 0x0030(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	struct FLootLockerSetMetadataAction           ReturnValue;                                       // 0x0040(0x0090)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_MakeMetadataActionBool;
+
+// Function LootLockerSDK.LootLockerManager.MakeMetadataActionFloat
+// 0x00D0 (0x00D0 - 0x0000)
+struct LootLockerManager_MakeMetadataActionFloat final
+{
+public:
+	ELootLockerMetadataActions                    action;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Key;                                               // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Value;                                             // 0x0018(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FString>                         Tags;                                              // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	TArray<class FString>                         Access;                                            // 0x0030(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	struct FLootLockerSetMetadataAction           ReturnValue;                                       // 0x0040(0x0090)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_MakeMetadataActionFloat;
+
+// Function LootLockerSDK.LootLockerManager.MakeMetadataActionInteger
+// 0x00D0 (0x00D0 - 0x0000)
+struct LootLockerManager_MakeMetadataActionInteger final
+{
+public:
+	ELootLockerMetadataActions                    action;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Key;                                               // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Value;                                             // 0x0018(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FString>                         Tags;                                              // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	TArray<class FString>                         Access;                                            // 0x0030(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	struct FLootLockerSetMetadataAction           ReturnValue;                                       // 0x0040(0x0090)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_MakeMetadataActionInteger;
+
+// Function LootLockerSDK.LootLockerManager.MakeMetadataActionJson
+// 0x00E0 (0x00E0 - 0x0000)
+struct LootLockerManager_MakeMetadataActionJson final
+{
+public:
+	ELootLockerMetadataActions                    action;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Key;                                               // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Value;                                             // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         Tags;                                              // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	TArray<class FString>                         Access;                                            // 0x0038(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	bool                                          Succeeded;                                         // 0x0048(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLootLockerSetMetadataAction           ConstructedEntry;                                  // 0x0050(0x0090)(Parm, OutParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_MakeMetadataActionJson;
+
+// Function LootLockerSDK.LootLockerManager.MakeMetadataActionString
+// 0x00D8 (0x00D8 - 0x0000)
+struct LootLockerManager_MakeMetadataActionString final
+{
+public:
+	ELootLockerMetadataActions                    action;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Key;                                               // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Value;                                             // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         Tags;                                              // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	TArray<class FString>                         Access;                                            // 0x0038(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	struct FLootLockerSetMetadataAction           ReturnValue;                                       // 0x0048(0x0090)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_MakeMetadataActionString;
+
+// Function LootLockerSDK.LootLockerManager.MarkAllNotificationsAsRead
+// 0x0030 (0x0030 - 0x0000)
+struct LootLockerManager_MarkAllNotificationsAsRead final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerReadNotificationsResponse& Response)> OnComplete;         // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_MarkAllNotificationsAsRead;
+
+// Function LootLockerSDK.LootLockerManager.MarkNotificationsAsRead
+// 0x0040 (0x0040 - 0x0000)
+struct LootLockerManager_MarkNotificationsAsRead final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerNotification>        Notifications;                                     // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerReadNotificationsResponse& Response)> OnComplete;         // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_MarkNotificationsAsRead;
+
+// Function LootLockerSDK.LootLockerManager.MarkNotificationsAsReadByIds
+// 0x0040 (0x0040 - 0x0000)
+struct LootLockerManager_MarkNotificationsAsReadByIds final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         NotificationIDs;                                   // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerReadNotificationsResponse& Response)> OnComplete;         // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_MarkNotificationsAsReadByIds;
+
 // Function LootLockerSDK.LootLockerManager.OpenLootBox
-// 0x0014 (0x0014 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_OpenLootBox final
 {
 public:
-	int32                                         AssetInstanceId;                                   // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerOpenLootBoxResponse& Response)> OnOpenLootBoxCompleted;   // 0x0004(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetInstanceId;                                   // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerOpenLootBoxResponse& Response)> OnOpenLootBoxCompleted;   // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_OpenLootBox;
 
+// Function LootLockerSDK.LootLockerManager.ParseLootLockerMetadataEntry
+// 0x0188 (0x0188 - 0x0000)
+struct LootLockerManager_ParseLootLockerMetadataEntry final
+{
+public:
+	struct FLootLockerMetadataEntry               Entry;                                             // 0x0000(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	ELootLockerMetadataParserOutputTypes          MetadataTypeSwitch;                                // 0x0088(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_89[0x7];                                       // 0x0089(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 StringValue;                                       // 0x0090(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         IntegerValue;                                      // 0x00A0(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FloatValue;                                        // 0x00A4(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 NumberString;                                      // 0x00A8(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          BoolValue;                                         // 0x00B8(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B9[0x7];                                       // 0x00B9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 JsonStringValue;                                   // 0x00C0(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerMetadataBase64Value         Base64Value;                                       // 0x00D0(0x0020)(Parm, OutParm, NativeAccessSpecifierPublic)
+	class FString                                 ErrorMessage;                                      // 0x00F0(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerMetadataEntry               OutEntry;                                          // 0x0100(0x0088)(Parm, OutParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_ParseLootLockerMetadataEntry;
+
 // Function LootLockerSDK.LootLockerManager.PickDropsFromDropTable
-// 0x0028 (0x0028 - 0x0000)
+// 0x0048 (0x0048 - 0x0000)
 struct LootLockerManager_PickDropsFromDropTable final
 {
 public:
-	TArray<int32>                                 picks;                                             // 0x0000(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-	int32                                         TableId;                                           // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerPickDropsFromDropTableResponse& Response)> OnCompletedRequestBP; // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<int32>                                 picks;                                             // 0x0010(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         TableId;                                           // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerPickDropsFromDropTableResponse& Response)> OnCompletedRequestBP; // 0x0024(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_PickDropsFromDropTable;
 
-// Function LootLockerSDK.LootLockerManager.PollingOrderStatus
-// 0x0014 (0x0014 - 0x0000)
-struct LootLockerManager_PollingOrderStatus final
+// Function LootLockerSDK.LootLockerManager.QueryScore
+// 0x0048 (0x0048 - 0x0000)
+struct LootLockerManager_QueryScore final
 {
 public:
-	int32                                         PurchaseId;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerPurchaseStatusResponse& Response)> OnPollingStatusCompleted; // 0x0004(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 LeaderboardKey;                                    // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         score;                                             // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerSubmitScoreResponse& Response)> OnCompletedRequestBP;     // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ForPlayerWithUlid;                                 // 0x0028(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_LootLockerManager_PollingOrderStatus;
-
-// Function LootLockerSDK.LootLockerManager.PurchaseAssets
-// 0x0020 (0x0020 - 0x0000)
-struct LootLockerManager_PurchaseAssets final
-{
-public:
-	TArray<struct FLootLockerAssetPurchaseData>   PurchaseData;                                      // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerPurchaseResponse& Response)> OnPurchaseAssetsCompleted;   // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LootLockerManager_PurchaseAssets;
-
-// Function LootLockerSDK.LootLockerManager.PurchaseAssetsAndroid
-// 0x0020 (0x0020 - 0x0000)
-struct LootLockerManager_PurchaseAssetsAndroid final
-{
-public:
-	TArray<struct FLootLockerAndroidAssetPurchaseData> PurchaseData;                                 // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerPurchaseResponse& Response)> OnPurchaseAssetsAndroidCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LootLockerManager_PurchaseAssetsAndroid;
-
-// Function LootLockerSDK.LootLockerManager.PurchaseAssetsIOS
-// 0x0020 (0x0020 - 0x0000)
-struct LootLockerManager_PurchaseAssetsIOS final
-{
-public:
-	TArray<struct FLootLockerVerifyPurchaseIosData> PurchaseData;                                    // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerPurchaseResponse& Response)> OnPurchaseAssetsIOSCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LootLockerManager_PurchaseAssetsIOS;
+DUMPER7_ASSERTS_LootLockerManager_QueryScore;
 
 // Function LootLockerSDK.LootLockerManager.QuerySteamPurchaseRedemptionStatus
-// 0x0020 (0x0020 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct LootLockerManager_QuerySteamPurchaseRedemptionStatus final
 {
 public:
-	class FString                                 EntitlementId;                                     // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerQuerySteamPurchaseRedemptionStatusResponse& Response)> OnCompletedRequest; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 EntitlementId;                                     // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerQuerySteamPurchaseRedemptionStatusResponse& Response)> OnCompletedRequest; // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_QuerySteamPurchaseRedemptionStatus;
 
 // Function LootLockerSDK.LootLockerManager.RedeemAppleAppStorePurchaseForClass
-// 0x0030 (0x0030 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct LootLockerManager_RedeemAppleAppStorePurchaseForClass final
 {
 public:
-	int32                                         ClassId;                                           // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 TransactionId;                                     // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Sandboxed;                                         // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(const struct FLootLockerResponse& Var)> OnCompletedRequest;                       // 0x001C(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ClassId;                                           // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 TransactionId;                                     // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Sandboxed;                                         // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(const struct FLootLockerResponse& Var)> OnCompletedRequest;                       // 0x002C(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_RedeemAppleAppStorePurchaseForClass;
 
 // Function LootLockerSDK.LootLockerManager.RedeemAppleAppStorePurchaseForPlayer
-// 0x0028 (0x0028 - 0x0000)
+// 0x0048 (0x0048 - 0x0000)
 struct LootLockerManager_RedeemAppleAppStorePurchaseForPlayer final
 {
 public:
-	class FString                                 TransactionId;                                     // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Sandboxed;                                         // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(const struct FLootLockerResponse& Var)> OnCompletedRequest;                       // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 TransactionId;                                     // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Sandboxed;                                         // 0x0020(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(const struct FLootLockerResponse& Var)> OnCompletedRequest;                       // 0x0024(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_RedeemAppleAppStorePurchaseForPlayer;
 
+// Function LootLockerSDK.LootLockerManager.RedeemEpicStorePurchase
+// 0x0070 (0x0070 - 0x0000)
+struct LootLockerManager_RedeemEpicStorePurchase final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 AccountId;                                         // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 BearerToken;                                       // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         EntitlementIds;                                    // 0x0030(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	class FString                                 SandboxId;                                         // 0x0040(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerResponse& Var)> OnCompletedRequest;                       // 0x0050(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0060(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_RedeemEpicStorePurchase;
+
+// Function LootLockerSDK.LootLockerManager.RedeemEpicStorePurchaseForCharacter
+// 0x0080 (0x0080 - 0x0000)
+struct LootLockerManager_RedeemEpicStorePurchaseForCharacter final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 CharacterId;                                       // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 AccountId;                                         // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 BearerToken;                                       // 0x0030(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         EntitlementIds;                                    // 0x0040(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	class FString                                 SandboxId;                                         // 0x0050(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerResponse& Var)> OnCompletedRequest;                       // 0x0060(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0070(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_RedeemEpicStorePurchaseForCharacter;
+
 // Function LootLockerSDK.LootLockerManager.RedeemGooglePlayStorePurchaseForClass
-// 0x0038 (0x0038 - 0x0000)
+// 0x0058 (0x0058 - 0x0000)
 struct LootLockerManager_RedeemGooglePlayStorePurchaseForClass final
 {
 public:
-	int32                                         ClassId;                                           // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ProductId;                                         // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 PurchaseToken;                                     // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerResponse& Var)> OnCompletedRequest;                       // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ClassId;                                           // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ProductId;                                         // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PurchaseToken;                                     // 0x0028(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerResponse& Var)> OnCompletedRequest;                       // 0x0038(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0048(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_RedeemGooglePlayStorePurchaseForClass;
 
 // Function LootLockerSDK.LootLockerManager.RedeemGooglePlayStorePurchaseForPlayer
-// 0x0030 (0x0030 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct LootLockerManager_RedeemGooglePlayStorePurchaseForPlayer final
 {
 public:
-	class FString                                 ProductId;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 PurchaseToken;                                     // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerResponse& Var)> OnCompletedRequest;                       // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ProductId;                                         // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PurchaseToken;                                     // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerResponse& Var)> OnCompletedRequest;                       // 0x0030(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_RedeemGooglePlayStorePurchaseForPlayer;
 
 // Function LootLockerSDK.LootLockerManager.RefreshAppleGameCenterSession
-// 0x0020 (0x0020 - 0x0000)
+// 0x0060 (0x0060 - 0x0000)
 struct LootLockerManager_RefreshAppleGameCenterSession final
 {
 public:
-	class FString                                 RefreshToken;                                      // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerAppleGameCenterSessionResponse& Response)> OnRefreshAppleGameCenterSessionCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 RefreshToken;                                      // 0x0010(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerAppleGameCenterSessionResponse& Response)> OnRefreshAppleGameCenterSessionCompleted; // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FLootLockerSessionOptionals            Optionals;                                         // 0x0030(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0050(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_RefreshAppleGameCenterSession;
 
 // Function LootLockerSDK.LootLockerManager.RefreshAppleSession
-// 0x0020 (0x0020 - 0x0000)
+// 0x0060 (0x0060 - 0x0000)
 struct LootLockerManager_RefreshAppleSession final
 {
 public:
-	class FString                                 RefreshToken;                                      // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerAppleSessionResponse& Var)> OnRefreshAppleSessionCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 RefreshToken;                                      // 0x0010(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerAppleSessionResponse& Var)> OnRefreshAppleSessionCompleted; // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FLootLockerSessionOptionals            Optionals;                                         // 0x0030(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0050(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_RefreshAppleSession;
 
+// Function LootLockerSDK.LootLockerManager.RefreshDiscordSession
+// 0x0060 (0x0060 - 0x0000)
+struct LootLockerManager_RefreshDiscordSession final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 RefreshToken;                                      // 0x0010(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerDiscordSessionResponse& Var)> OnRefreshDiscordSessionCompleted; // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FLootLockerSessionOptionals            Optionals;                                         // 0x0030(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0050(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_RefreshDiscordSession;
+
 // Function LootLockerSDK.LootLockerManager.RefreshEpicSession
-// 0x0020 (0x0020 - 0x0000)
+// 0x0060 (0x0060 - 0x0000)
 struct LootLockerManager_RefreshEpicSession final
 {
 public:
-	class FString                                 RefreshToken;                                      // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerEpicSessionResponse& Var)> OnRefreshEpicSessionCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 RefreshToken;                                      // 0x0010(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerEpicSessionResponse& Var)> OnRefreshEpicSessionCompleted; // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FLootLockerSessionOptionals            Optionals;                                         // 0x0030(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0050(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_RefreshEpicSession;
 
+// Function LootLockerSDK.LootLockerManager.RefreshGooglePlayGamesSession
+// 0x0060 (0x0060 - 0x0000)
+struct LootLockerManager_RefreshGooglePlayGamesSession final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 RefreshToken;                                      // 0x0010(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerGooglePlayGamesSessionResponse& Var)> OnRefreshGooglePlayGamesSessionCompleted; // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FLootLockerSessionOptionals            Optionals;                                         // 0x0030(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0050(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_RefreshGooglePlayGamesSession;
+
 // Function LootLockerSDK.LootLockerManager.RefreshGoogleSession
-// 0x0020 (0x0020 - 0x0000)
+// 0x0060 (0x0060 - 0x0000)
 struct LootLockerManager_RefreshGoogleSession final
 {
 public:
-	class FString                                 RefreshToken;                                      // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerGoogleSessionResponse& Var)> OnRefreshGoogleSessionCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 RefreshToken;                                      // 0x0010(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerGoogleSessionResponse& Var)> OnRefreshGoogleSessionCompleted; // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FLootLockerSessionOptionals            Optionals;                                         // 0x0030(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0050(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_RefreshGoogleSession;
 
 // Function LootLockerSDK.LootLockerManager.RefreshMetaSession
-// 0x0020 (0x0020 - 0x0000)
+// 0x0060 (0x0060 - 0x0000)
 struct LootLockerManager_RefreshMetaSession final
 {
 public:
-	class FString                                 RefreshToken;                                      // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerMetaSessionResponse& Var)> OnRefreshMetaSessionCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 RefreshToken;                                      // 0x0010(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerMetaSessionResponse& Var)> OnRefreshMetaSessionCompleted; // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FLootLockerSessionOptionals            Optionals;                                         // 0x0030(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0050(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_RefreshMetaSession;
 
 // Function LootLockerSDK.LootLockerManager.RefreshRemoteSession
-// 0x0020 (0x0020 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct LootLockerManager_RefreshRemoteSession final
 {
 public:
-	class FString                                 RefreshToken;                                      // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerRefreshRemoteSessionResponse& Response)> OnCompletedRequest; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 RefreshToken;                                      // 0x0010(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerRefreshRemoteSessionResponse& Response)> OnCompletedRequest; // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_RefreshRemoteSession;
 
 // Function LootLockerSDK.LootLockerManager.RemoveAssetFromFavourites
-// 0x0014 (0x0014 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_RemoveAssetFromFavourites final
 {
 public:
-	int32                                         AssetId;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerGetFavouriteAssetIndicesResponse& FavouriteAssetIndicesResponse)> OnRemoveAssetFromFavouritesRequestCompleted; // 0x0004(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetId;                                           // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerGetFavouriteAssetIndicesResponse& FavouriteAssetIndicesResponse)> OnRemoveAssetFromFavouritesRequestCompleted; // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_RemoveAssetFromFavourites;
 
 // Function LootLockerSDK.LootLockerManager.RemoveAssetToHeroLoadout
-// 0x0018 (0x0018 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_RemoveAssetToHeroLoadout final
 {
 public:
-	int32                                         HeroID;                                            // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         AssetInstanceId;                                   // 0x0004(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)> OnCompleteBP;             // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         HeroID;                                            // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetInstanceId;                                   // 0x0014(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerHeroLoadoutResponse& Response)> OnCompleteBP;             // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_RemoveAssetToHeroLoadout;
 
 // Function LootLockerSDK.LootLockerManager.ResetCharacterProgression
-// 0x0028 (0x0028 - 0x0000)
+// 0x0048 (0x0048 - 0x0000)
 struct LootLockerManager_ResetCharacterProgression final
 {
 public:
-	int32                                         CharacterId;                                       // 0x0000(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ProgressionKey;                                    // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerCharacterProgressionWithRewardsResponse& Response)> OnCompletedRequest; // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CharacterId;                                       // 0x0010(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ProgressionKey;                                    // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerCharacterProgressionWithRewardsResponse& Response)> OnCompletedRequest; // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_ResetCharacterProgression;
 
 // Function LootLockerSDK.LootLockerManager.ResetInstanceProgression
-// 0x0028 (0x0028 - 0x0000)
+// 0x0048 (0x0048 - 0x0000)
 struct LootLockerManager_ResetInstanceProgression final
 {
 public:
-	int32                                         AssetInstanceId;                                   // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ProgressionKey;                                    // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerInstanceProgressionWithRewardsResponse& Response)> OnCompletedRequestBP; // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetInstanceId;                                   // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ProgressionKey;                                    // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerInstanceProgressionWithRewardsResponse& Response)> OnCompletedRequestBP; // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_ResetInstanceProgression;
 
 // Function LootLockerSDK.LootLockerManager.ResetPlayerProgression
-// 0x0020 (0x0020 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct LootLockerManager_ResetPlayerProgression final
 {
 public:
-	class FString                                 ProgressionKey;                                    // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerPlayerProgressionWithRewardsResponse& Response)> OnCompletedRequest; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ProgressionKey;                                    // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerPlayerProgressionWithRewardsResponse& Response)> OnCompletedRequest; // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_ResetPlayerProgression;
 
+// Function LootLockerSDK.LootLockerManager.SendFriendRequest
+// 0x0040 (0x0040 - 0x0000)
+struct LootLockerManager_SendFriendRequest final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerUlid;                                        // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerFriendActionResponse& Response)> OnResponseCompletedBP;   // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_SendFriendRequest;
+
 // Function LootLockerSDK.LootLockerManager.SendGameFeedback
-// 0x0030 (0x0030 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct LootLockerManager_SendGameFeedback final
 {
 public:
-	class FString                                 Description;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 CategoryID;                                        // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerResponse& Response)> OnComplete;                          // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Description;                                       // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 CategoryID;                                        // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerResponse& Response)> OnComplete;                          // 0x0030(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_SendGameFeedback;
 
 // Function LootLockerSDK.LootLockerManager.SendPlayerFeedback
-// 0x0040 (0x0040 - 0x0000)
+// 0x0060 (0x0060 - 0x0000)
 struct LootLockerManager_SendPlayerFeedback final
 {
 public:
-	class FString                                 ulid;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Description;                                       // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 CategoryID;                                        // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerResponse& Response)> OnComplete;                          // 0x0030(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ulid;                                              // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Description;                                       // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 CategoryID;                                        // 0x0030(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerResponse& Response)> OnComplete;                          // 0x0040(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0050(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_SendPlayerFeedback;
 
 // Function LootLockerSDK.LootLockerManager.SendUGCFeedback
-// 0x0040 (0x0040 - 0x0000)
+// 0x0060 (0x0060 - 0x0000)
 struct LootLockerManager_SendUGCFeedback final
 {
 public:
-	class FString                                 ulid;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Description;                                       // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 CategoryID;                                        // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerResponse& Response)> OnComplete;                          // 0x0030(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ulid;                                              // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Description;                                       // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 CategoryID;                                        // 0x0030(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerResponse& Response)> OnComplete;                          // 0x0040(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0050(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_SendUGCFeedback;
 
+// Function LootLockerSDK.LootLockerManager.SetAllPlayersToInactiveExceptForPlayer
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerManager_SetAllPlayersToInactiveExceptForPlayer final
+{
+public:
+	class FString                                 PlayerUlid;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_SetAllPlayersToInactiveExceptForPlayer;
+
+// Function LootLockerSDK.LootLockerManager.SetDefaultPlayer
+// 0x0018 (0x0018 - 0x0000)
+struct LootLockerManager_SetDefaultPlayer final
+{
+public:
+	class FString                                 PlayerUlid;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_LootLockerManager_SetDefaultPlayer;
+
+// Function LootLockerSDK.LootLockerManager.SetMetadata
+// 0x0058 (0x0058 - 0x0000)
+struct LootLockerManager_SetMetadata final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerMetadataSources                    Source;                                            // 0x0010(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 SourceID;                                          // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerSetMetadataAction>   MetadataToActionsToPerform;                        // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerSetMetadataResponse& Response)> OnComplete;               // 0x0038(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0048(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_SetMetadata;
+
 // Function LootLockerSDK.LootLockerManager.SetPlayerName
-// 0x0020 (0x0020 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct LootLockerManager_SetPlayerName final
 {
 public:
-	class FString                                 Name_0;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerNameResponse& Value)> OnSetPlayerName;                    // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name_0;                                            // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerNameResponse& Value)> OnSetPlayerName;                    // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_SetPlayerName;
 
-// Function LootLockerSDK.LootLockerManager.SetProfilePrivate
+// Function LootLockerSDK.LootLockerManager.SetPlayerUlidToInactive
 // 0x0010 (0x0010 - 0x0000)
+struct LootLockerManager_SetPlayerUlidToInactive final
+{
+public:
+	class FString                                 PlayerUlid;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_SetPlayerUlidToInactive;
+
+// Function LootLockerSDK.LootLockerManager.SetPresenceAutoConnectEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct LootLockerManager_SetPresenceAutoConnectEnabled final
+{
+public:
+	bool                                          bEnabled;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_SetPresenceAutoConnectEnabled;
+
+// Function LootLockerSDK.LootLockerManager.SetPresenceAutoDisconnectOnFocusChangeEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct LootLockerManager_SetPresenceAutoDisconnectOnFocusChangeEnabled final
+{
+public:
+	bool                                          bEnabled;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_SetPresenceAutoDisconnectOnFocusChangeEnabled;
+
+// Function LootLockerSDK.LootLockerManager.SetPresenceEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct LootLockerManager_SetPresenceEnabled final
+{
+public:
+	bool                                          bEnabled;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_SetPresenceEnabled;
+
+// Function LootLockerSDK.LootLockerManager.SetProfilePrivate
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_SetProfilePrivate final
 {
 public:
-	TDelegate<void(const struct FLootLockerResponse& Response)> OnProfileSetPrivate;                 // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerResponse& Response)> OnProfileSetPrivate;                 // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_SetProfilePrivate;
 
 // Function LootLockerSDK.LootLockerManager.SetProfilePublic
-// 0x0010 (0x0010 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_SetProfilePublic final
 {
 public:
-	TDelegate<void(const struct FLootLockerResponse& Response)> OnProfileSetPublic;                  // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerResponse& Response)> OnProfileSetPublic;                  // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_SetProfilePublic;
 
 // Function LootLockerSDK.LootLockerManager.StartAmazonLunaSession
-// 0x0020 (0x0020 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct LootLockerManager_StartAmazonLunaSession final
 {
 public:
 	class FString                                 AmazonLunaGuid;                                    // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)> OnStartedSessionRequestCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FLootLockerSessionOptionals            Optionals;                                         // 0x0020(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_StartAmazonLunaSession;
 
 // Function LootLockerSDK.LootLockerManager.StartAndroidSession
-// 0x0020 (0x0020 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct LootLockerManager_StartAndroidSession final
 {
 public:
 	class FString                                 DeviceID;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)> OnStartedSessionRequestCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FLootLockerSessionOptionals            Optionals;                                         // 0x0020(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_StartAndroidSession;
 
 // Function LootLockerSDK.LootLockerManager.StartAppleGameCenterSession
-// 0x0070 (0x0070 - 0x0000)
+// 0x00A0 (0x00A0 - 0x0000)
 struct LootLockerManager_StartAppleGameCenterSession final
 {
 public:
@@ -1842,41 +3319,73 @@ public:
 	class FString                                 salt;                                              // 0x0040(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 Timestamp;                                         // 0x0050(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TDelegate<void(const struct FLootLockerAppleGameCenterSessionResponse& Response)> OnStartedAppleGameCenterSessionCompleted; // 0x0060(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FLootLockerSessionOptionals            Optionals;                                         // 0x0070(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0090(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_StartAppleGameCenterSession;
 
 // Function LootLockerSDK.LootLockerManager.StartAppleSession
-// 0x0020 (0x0020 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct LootLockerManager_StartAppleSession final
 {
 public:
 	class FString                                 AuthorizationCode;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TDelegate<void(const struct FLootLockerAppleSessionResponse& Var)> OnStartedAppleSessionCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FLootLockerSessionOptionals            Optionals;                                         // 0x0020(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_StartAppleSession;
 
+// Function LootLockerSDK.LootLockerManager.StartDiscordSession
+// 0x0050 (0x0050 - 0x0000)
+struct LootLockerManager_StartDiscordSession final
+{
+public:
+	class FString                                 AccessToken;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerDiscordSessionResponse& Var)> OnStartedDiscordSessionRequestCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FLootLockerSessionOptionals            Optionals;                                         // 0x0020(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_StartDiscordSession;
+
 // Function LootLockerSDK.LootLockerManager.StartEpicSession
-// 0x0020 (0x0020 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct LootLockerManager_StartEpicSession final
 {
 public:
 	class FString                                 IDToken;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TDelegate<void(const struct FLootLockerEpicSessionResponse& Var)> OnStartedEpicSessionRequestCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FLootLockerSessionOptionals            Optionals;                                         // 0x0020(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_StartEpicSession;
 
+// Function LootLockerSDK.LootLockerManager.StartGooglePlayGamesSession
+// 0x0050 (0x0050 - 0x0000)
+struct LootLockerManager_StartGooglePlayGamesSession final
+{
+public:
+	class FString                                 AuthCode;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerGooglePlayGamesSessionResponse& Var)> OnStartedGooglePlayGamesSessionRequestCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FLootLockerSessionOptionals            Optionals;                                         // 0x0020(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_StartGooglePlayGamesSession;
+
 // Function LootLockerSDK.LootLockerManager.StartGoogleSession
-// 0x0020 (0x0020 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct LootLockerManager_StartGoogleSession final
 {
 public:
 	class FString                                 IDToken;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TDelegate<void(const struct FLootLockerGoogleSessionResponse& Var)> OnStartedGoogleSessionRequestCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FLootLockerSessionOptionals            Optionals;                                         // 0x0020(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_StartGoogleSession;
 
 // Function LootLockerSDK.LootLockerManager.StartGoogleSessionForPlatform
-// 0x0028 (0x0028 - 0x0000)
+// 0x0058 (0x0058 - 0x0000)
 struct LootLockerManager_StartGoogleSessionForPlatform final
 {
 public:
@@ -1884,48 +3393,59 @@ public:
 	ELootLockerGoogleClientPlatform               Platform;                                          // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	TDelegate<void(const struct FLootLockerGoogleSessionResponse& Var)> OnStartedGoogleSessionRequestCompleted; // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLootLockerSessionOptionals            Optionals;                                         // 0x0028(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0048(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_StartGoogleSessionForPlatform;
 
 // Function LootLockerSDK.LootLockerManager.StartMetaSession
-// 0x0030 (0x0030 - 0x0000)
+// 0x0060 (0x0060 - 0x0000)
 struct LootLockerManager_StartMetaSession final
 {
 public:
 	class FString                                 UserId;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 Nonce;                                             // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TDelegate<void(const struct FLootLockerMetaSessionResponse& Var)> OnMetaSessionRequestCompleted; // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FLootLockerSessionOptionals            Optionals;                                         // 0x0030(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0050(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_StartMetaSession;
 
 // Function LootLockerSDK.LootLockerManager.StartMission
-// 0x0014 (0x0014 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_StartMission final
 {
 public:
-	int32                                         MissionId;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerStartMissionResponse& Response)> OnStartMissionCompleted; // 0x0004(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MissionId;                                         // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerStartMissionResponse& Response)> OnStartMissionCompleted; // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_StartMission;
 
 // Function LootLockerSDK.LootLockerManager.StartNintendoSwitchSession
-// 0x0020 (0x0020 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct LootLockerManager_StartNintendoSwitchSession final
 {
 public:
 	class FString                                 NSAIdToken;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)> OnStartedNintendoSwitchSessionRequestCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FLootLockerSessionOptionals            Optionals;                                         // 0x0020(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_StartNintendoSwitchSession;
 
 // Function LootLockerSDK.LootLockerManager.StartPlaystationNetworkSession
-// 0x0020 (0x0020 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct LootLockerManager_StartPlaystationNetworkSession final
 {
 public:
 	class FString                                 PsnOnlineId;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)> OnStartedSessionRequestCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FLootLockerSessionOptionals            Optionals;                                         // 0x0020(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_StartPlaystationNetworkSession;
 
@@ -1943,241 +3463,450 @@ public:
 };
 DUMPER7_ASSERTS_LootLockerManager_StartRemoteSession;
 
-// Function LootLockerSDK.LootLockerManager.StartSteamSession
-// 0x0020 (0x0020 - 0x0000)
-struct LootLockerManager_StartSteamSession final
+// Function LootLockerSDK.LootLockerManager.StartSessionManual
+// 0x00E8 (0x00E8 - 0x0000)
+struct LootLockerManager_StartSessionManual final
 {
 public:
-	class FString                                 SteamID64;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)> OnStartedSessionRequestCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 SessionToken;                                      // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerUlid;                                        // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerPlatformRepresentation      CurrentPlatform;                                   // 0x0020(0x0028)(Parm, NativeAccessSpecifierPublic)
+	class FString                                 RefreshToken;                                      // 0x0048(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerIdentifier;                                  // 0x0058(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerPublicUid;                                   // 0x0068(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerName;                                        // 0x0078(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 WhiteLabelEmail;                                   // 0x0088(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 WhiteLabelToken;                                   // 0x0098(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 LastSignIn;                                        // 0x00A8(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerCreatedAt;                                   // 0x00B8(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerSessionOptionals            SessionOptionals;                                  // 0x00C8(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_LootLockerManager_StartSteamSession;
+DUMPER7_ASSERTS_LootLockerManager_StartSessionManual;
+
+// Function LootLockerSDK.LootLockerManager.StartSteamSessionUsingTicket
+// 0x0060 (0x0060 - 0x0000)
+struct LootLockerManager_StartSteamSessionUsingTicket final
+{
+public:
+	class FString                                 SteamSessionTicket;                                // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 SteamAppId;                                        // 0x0010(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)> OnCompletedRequest;         // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FLootLockerSessionOptionals            Optionals;                                         // 0x0030(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0050(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_StartSteamSessionUsingTicket;
 
 // Function LootLockerSDK.LootLockerManager.StartXboxSession
-// 0x0020 (0x0020 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct LootLockerManager_StartXboxSession final
 {
 public:
 	class FString                                 XboxUserToken;                                     // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)> OnStartedXboxSessionCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FLootLockerSessionOptionals            Optionals;                                         // 0x0020(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_StartXboxSession;
 
 // Function LootLockerSDK.LootLockerManager.SubmitScore
-// 0x0048 (0x0048 - 0x0000)
+// 0x0068 (0x0068 - 0x0000)
 struct LootLockerManager_SubmitScore final
 {
 public:
-	class FString                                 MemberId;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 LeaderboardKey;                                    // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         score;                                             // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 MetaData;                                          // 0x0028(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerSubmitScoreResponse& Response)> OnCompletedRequestBP;     // 0x0038(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 MemberId;                                          // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 LeaderboardKey;                                    // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         score;                                             // 0x0030(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 MetaData;                                          // 0x0038(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerSubmitScoreResponse& Response)> OnCompletedRequestBP;     // 0x0048(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0058(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_SubmitScore;
 
-// Function LootLockerSDK.LootLockerManager.SubmitXP
-// 0x0014 (0x0014 - 0x0000)
-struct LootLockerManager_SubmitXP final
-{
-public:
-	int32                                         Points;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerSubmitXpResponse& Value)> OnSubmitXPRequestCompleted;     // 0x0004(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LootLockerManager_SubmitXP;
-
 // Function LootLockerSDK.LootLockerManager.SubtractPointsFromCharacterProgression
-// 0x0030 (0x0030 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct LootLockerManager_SubtractPointsFromCharacterProgression final
 {
 public:
-	int32                                         CharacterId;                                       // 0x0000(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ProgressionKey;                                    // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Amount;                                            // 0x0018(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerCharacterProgressionWithRewardsResponse& Response)> OnCompletedRequest; // 0x001C(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CharacterId;                                       // 0x0010(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ProgressionKey;                                    // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Amount;                                            // 0x0028(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerCharacterProgressionWithRewardsResponse& Response)> OnCompletedRequest; // 0x002C(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_SubtractPointsFromCharacterProgression;
 
 // Function LootLockerSDK.LootLockerManager.SubtractPointsFromInstanceProgression
-// 0x0030 (0x0030 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct LootLockerManager_SubtractPointsFromInstanceProgression final
 {
 public:
-	int32                                         AssetInstanceId;                                   // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ProgressionKey;                                    // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Amount;                                            // 0x0018(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerInstanceProgressionWithRewardsResponse& Response)> OnCompletedRequestBP; // 0x001C(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetInstanceId;                                   // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ProgressionKey;                                    // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Amount;                                            // 0x0028(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerInstanceProgressionWithRewardsResponse& Response)> OnCompletedRequestBP; // 0x002C(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_SubtractPointsFromInstanceProgression;
 
 // Function LootLockerSDK.LootLockerManager.SubtractPointsFromPlayerProgression
-// 0x0028 (0x0028 - 0x0000)
+// 0x0048 (0x0048 - 0x0000)
 struct LootLockerManager_SubtractPointsFromPlayerProgression final
 {
 public:
-	class FString                                 ProgressionKey;                                    // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Amount;                                            // 0x0010(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerPlayerProgressionWithRewardsResponse& Response)> OnCompletedRequest; // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ProgressionKey;                                    // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Amount;                                            // 0x0020(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerPlayerProgressionWithRewardsResponse& Response)> OnCompletedRequest; // 0x0024(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_SubtractPointsFromPlayerProgression;
 
-// Function LootLockerSDK.LootLockerManager.TriggerEvent
-// 0x0020 (0x0020 - 0x0000)
-struct LootLockerManager_TriggerEvent final
+// Function LootLockerSDK.LootLockerManager.TransferIdentityProvidersBetweenAccounts
+// 0x0050 (0x0050 - 0x0000)
+struct LootLockerManager_TransferIdentityProvidersBetweenAccounts final
 {
 public:
-	struct FLootLockerTriggerEvent                Event;                                             // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerTriggerEventResponse& Value)> OnTriggerEventCompleted;    // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 FromPlayerWithUlid;                                // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ToPlayerWithUlid;                                  // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<ELootLockerAccountProvider>            ProvidersToTransfer;                               // 0x0020(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerListConnectedAccountsResponse& Response)> OnCompleteBP;   // 0x0030(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_LootLockerManager_TriggerEvent;
+DUMPER7_ASSERTS_LootLockerManager_TransferIdentityProvidersBetweenAccounts;
+
+// Function LootLockerSDK.LootLockerManager.TryGetContentBodyAsBool
+// 0x00A0 (0x00A0 - 0x0000)
+struct LootLockerManager_TryGetContentBodyAsBool final
+{
+public:
+	struct FLootLockerNotificationContent         Content;                                           // 0x0000(0x0098)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          OutValue;                                          // 0x0098(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0099(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9A[0x6];                                       // 0x009A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_LootLockerManager_TryGetContentBodyAsBool;
+
+// Function LootLockerSDK.LootLockerManager.TryGetContentBodyAsBoolArray
+// 0x00B0 (0x00B0 - 0x0000)
+struct LootLockerManager_TryGetContentBodyAsBoolArray final
+{
+public:
+	struct FLootLockerNotificationContent         Content;                                           // 0x0000(0x0098)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<bool>                                  OutValue;                                          // 0x0098(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x00A8(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A9[0x7];                                       // 0x00A9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_LootLockerManager_TryGetContentBodyAsBoolArray;
+
+// Function LootLockerSDK.LootLockerManager.TryGetContentBodyAsFloat
+// 0x00A0 (0x00A0 - 0x0000)
+struct LootLockerManager_TryGetContentBodyAsFloat final
+{
+public:
+	struct FLootLockerNotificationContent         Content;                                           // 0x0000(0x0098)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	float                                         OutValue;                                          // 0x0098(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x009C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9D[0x3];                                       // 0x009D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_LootLockerManager_TryGetContentBodyAsFloat;
+
+// Function LootLockerSDK.LootLockerManager.TryGetContentBodyAsFloatArray
+// 0x00B0 (0x00B0 - 0x0000)
+struct LootLockerManager_TryGetContentBodyAsFloatArray final
+{
+public:
+	struct FLootLockerNotificationContent         Content;                                           // 0x0000(0x0098)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<float>                                 OutValue;                                          // 0x0098(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x00A8(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A9[0x7];                                       // 0x00A9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_LootLockerManager_TryGetContentBodyAsFloatArray;
+
+// Function LootLockerSDK.LootLockerManager.TryGetContentBodyAsInteger
+// 0x00A0 (0x00A0 - 0x0000)
+struct LootLockerManager_TryGetContentBodyAsInteger final
+{
+public:
+	struct FLootLockerNotificationContent         Content;                                           // 0x0000(0x0098)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	int32                                         OutValue;                                          // 0x0098(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x009C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9D[0x3];                                       // 0x009D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_LootLockerManager_TryGetContentBodyAsInteger;
+
+// Function LootLockerSDK.LootLockerManager.TryGetContentBodyAsIntegerArray
+// 0x00B0 (0x00B0 - 0x0000)
+struct LootLockerManager_TryGetContentBodyAsIntegerArray final
+{
+public:
+	struct FLootLockerNotificationContent         Content;                                           // 0x0000(0x0098)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<int32>                                 OutValue;                                          // 0x0098(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x00A8(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A9[0x7];                                       // 0x00A9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_LootLockerManager_TryGetContentBodyAsIntegerArray;
+
+// Function LootLockerSDK.LootLockerManager.TryGetContentBodyAsRewardNotification
+// 0x0328 (0x0328 - 0x0000)
+struct LootLockerManager_TryGetContentBodyAsRewardNotification final
+{
+public:
+	struct FLootLockerNotificationContent         Content;                                           // 0x0000(0x0098)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FLootLockerNotificationContentRewardBody OutValue;                                        // 0x0098(0x0288)(Parm, OutParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0320(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_321[0x7];                                      // 0x0321(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_LootLockerManager_TryGetContentBodyAsRewardNotification;
+
+// Function LootLockerSDK.LootLockerManager.TryGetContentBodyAsString
+// 0x00B0 (0x00B0 - 0x0000)
+struct LootLockerManager_TryGetContentBodyAsString final
+{
+public:
+	struct FLootLockerNotificationContent         Content;                                           // 0x0000(0x0098)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class FString                                 OutValue;                                          // 0x0098(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x00A8(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A9[0x7];                                       // 0x00A9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_LootLockerManager_TryGetContentBodyAsString;
+
+// Function LootLockerSDK.LootLockerManager.TryGetNotificationsByIdentifyingValue
+// 0x01A0 (0x01A0 - 0x0000)
+struct LootLockerManager_TryGetNotificationsByIdentifyingValue final
+{
+public:
+	struct FLootLockerListNotificationsResponse   NotificationsResponse;                             // 0x0000(0x0178)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class FString                                 IdentifyingValue;                                  // 0x0178(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerNotification>        Notifications;                                     // 0x0188(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0198(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_199[0x7];                                      // 0x0199(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_LootLockerManager_TryGetNotificationsByIdentifyingValue;
+
+// Function LootLockerSDK.LootLockerManager.UnblockPlayer
+// 0x0040 (0x0040 - 0x0000)
+struct LootLockerManager_UnblockPlayer final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerUlid;                                        // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerFriendActionResponse& Response)> OnResponseCompletedBP;   // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_UnblockPlayer;
 
 // Function LootLockerSDK.LootLockerManager.UnEquipAssetToCharacterById
-// 0x0018 (0x0018 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_UnEquipAssetToCharacterById final
 {
 public:
-	int32                                         CharacterId;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         InstanceId;                                        // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerResponse& Var)> OnUnEquipAssetToCharacterByIdRequestCompleted; // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CharacterId;                                       // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InstanceId;                                        // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerResponse& Var)> OnUnEquipAssetToCharacterByIdRequestCompleted; // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_UnEquipAssetToCharacterById;
 
 // Function LootLockerSDK.LootLockerManager.UnEquipAssetToDefaultCharacter
-// 0x0014 (0x0014 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct LootLockerManager_UnEquipAssetToDefaultCharacter final
 {
 public:
-	int32                                         InstanceId;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerResponse& Var)> OnUnEquipAssetToDefaultCharacterRequestCompleted; // 0x0004(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InstanceId;                                        // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerResponse& Var)> OnUnEquipAssetToDefaultCharacterRequestCompleted; // 0x0014(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_UnEquipAssetToDefaultCharacter;
 
+// Function LootLockerSDK.LootLockerManager.UnfollowPlayer
+// 0x0040 (0x0040 - 0x0000)
+struct LootLockerManager_UnfollowPlayer final
+{
+public:
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerPublicUid;                                   // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerFollowActionResponse& Response)> OnResponseCompletedBP;   // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_UnfollowPlayer;
+
 // Function LootLockerSDK.LootLockerManager.UpdateAKeyValuePairByIdForAssetInstance
-// 0x0038 (0x0038 - 0x0000)
+// 0x0058 (0x0058 - 0x0000)
 struct LootLockerManager_UpdateAKeyValuePairByIdForAssetInstance final
 {
 public:
-	int32                                         AssetInstanceId;                                   // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         StorageItemId;                                     // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLootLockerAssetInstanceStorageItem    Item;                                              // 0x0008(0x0020)(ConstParm, Parm, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerAssetInstanceStorageItemResponse& Response)> OnUpdateAKeyValuePairByIdForAssetInstanceCompleted; // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetInstanceId;                                   // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         StorageItemId;                                     // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerAssetInstanceStorageItem    Item;                                              // 0x0018(0x0020)(ConstParm, Parm, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerAssetInstanceStorageItemResponse& Response)> OnUpdateAKeyValuePairByIdForAssetInstanceCompleted; // 0x0038(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0048(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_UpdateAKeyValuePairByIdForAssetInstance;
 
 // Function LootLockerSDK.LootLockerManager.UpdateAssetCandidate
-// 0x0068 (0x0068 - 0x0000)
+// 0x0088 (0x0088 - 0x0000)
 struct LootLockerManager_UpdateAssetCandidate final
 {
 public:
-	int32                                         AssetCandidateId;                                  // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLootLockerUpdateAssetCandidateData    AssetCandidateData;                                // 0x0008(0x0050)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerAssetCandidateResponse& Response)> OnUpdateAssetCandidateCompleted; // 0x0058(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetCandidateId;                                  // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLootLockerUpdateAssetCandidateData    AssetCandidateData;                                // 0x0018(0x0050)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerAssetCandidateResponse& Response)> OnUpdateAssetCandidateCompleted; // 0x0068(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0078(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_UpdateAssetCandidate;
 
 // Function LootLockerSDK.LootLockerManager.UpdateCharacter
-// 0x0028 (0x0028 - 0x0000)
+// 0x0048 (0x0048 - 0x0000)
 struct LootLockerManager_UpdateCharacter final
 {
 public:
-	int32                                         CharacterId;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsDefault;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Name_0;                                            // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)> OnCompletedRequest;       // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CharacterId;                                       // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsDefault;                                         // 0x0014(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Name_0;                                            // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerCharacterLoadoutResponse& Var)> OnCompletedRequest;       // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_UpdateCharacter;
 
 // Function LootLockerSDK.LootLockerManager.UpdateFile
-// 0x0028 (0x0028 - 0x0000)
+// 0x0048 (0x0048 - 0x0000)
 struct LootLockerManager_UpdateFile final
 {
 public:
-	int32                                         FileId;                                            // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLootLockerFileUpdateRequest           Request;                                           // 0x0008(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerPlayerFileResponse& Response)> OnComplete;                // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         FileId;                                            // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLootLockerFileUpdateRequest           Request;                                           // 0x0018(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerPlayerFileResponse& Response)> OnComplete;                // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_UpdateFile;
 
 // Function LootLockerSDK.LootLockerManager.UpdateHero
-// 0x0030 (0x0030 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct LootLockerManager_UpdateHero final
 {
 public:
-	int32                                         HeroID;                                            // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLootLockerUpdateHeroRequest           Request;                                           // 0x0008(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)> OnCompleteBP;              // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         HeroID;                                            // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLootLockerUpdateHeroRequest           Request;                                           // 0x0018(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerPlayerHeroResponse& Response)> OnCompleteBP;              // 0x0030(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_UpdateHero;
 
 // Function LootLockerSDK.LootLockerManager.UpdateOneOrMoreKeyValuePairForAssetInstance
-// 0x0028 (0x0028 - 0x0000)
+// 0x0048 (0x0048 - 0x0000)
 struct LootLockerManager_UpdateOneOrMoreKeyValuePairForAssetInstance final
 {
 public:
-	int32                                         AssetInstanceId;                                   // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLootLockerAssetInstanceStorageItems   Items;                                             // 0x0008(0x0010)(Parm, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerAssetInstanceStorageItemsResponse& Response)> OnUpdateOneOrMoreKeyValuePairForAssetInstanceCompleted; // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssetInstanceId;                                   // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLootLockerAssetInstanceStorageItems   Items;                                             // 0x0018(0x0010)(Parm, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerAssetInstanceStorageItemsResponse& Response)> OnUpdateOneOrMoreKeyValuePairForAssetInstanceCompleted; // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_UpdateOneOrMoreKeyValuePairForAssetInstance;
 
+// Function LootLockerSDK.LootLockerManager.UpdatePresenceStatus
+// 0x0080 (0x0080 - 0x0000)
+struct LootLockerManager_UpdatePresenceStatus final
+{
+public:
+	class FString                                 Status;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<class FString, class FString>            MetaData;                                          // 0x0010(0x0050)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(bool bSuccess, const class FString& ErrorMessage)> OnCompleted;                   // 0x0060(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0070(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_UpdatePresenceStatus;
+
 // Function LootLockerSDK.LootLockerManager.UploadFile
-// 0x0038 (0x0038 - 0x0000)
+// 0x0058 (0x0058 - 0x0000)
 struct LootLockerManager_UploadFile final
 {
 public:
-	struct FLootLockerFileUploadRequest           Request;                                           // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerPlayerFileResponse& Response)> OnComplete;                // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerFileUploadRequest           Request;                                           // 0x0010(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerPlayerFileResponse& Response)> OnComplete;                // 0x0038(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0048(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_UploadFile;
 
 // Function LootLockerSDK.LootLockerManager.VerifyPlayer
-// 0x0030 (0x0030 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct LootLockerManager_VerifyPlayer final
 {
 public:
-	class FString                                 PlatformToken;                                     // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerResponse& Var)> OnVerifyPlayerRequestCompleted;           // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	class FString                                 Platform;                                          // 0x0020(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlatformToken;                                     // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerResponse& Var)> OnVerifyPlayerRequestCompleted;           // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 Platform;                                          // 0x0030(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_VerifyPlayer;
 
-// Function LootLockerSDK.LootLockerManager.VerifyPlayerAndStartSteamSession
-// 0x0038 (0x0038 - 0x0000)
-struct LootLockerManager_VerifyPlayerAndStartSteamSession final
+// Function LootLockerSDK.LootLockerManager.VerifyPlayerAndStartPlaystationNetworkSession
+// 0x0068 (0x0068 - 0x0000)
+struct LootLockerManager_VerifyPlayerAndStartPlaystationNetworkSession final
 {
 public:
-	class FString                                 SteamID64;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 PlatformToken;                                     // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SteamAppId;                                        // 0x0020(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)> OnCompletedRequest;         // 0x0024(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 AuthCode;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 AccountId;                                         // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)> OnCompletedRequest;         // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         PsnIssuerId;                                       // 0x0030(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLootLockerSessionOptionals            Optionals;                                         // 0x0038(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0058(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_LootLockerManager_VerifyPlayerAndStartSteamSession;
+DUMPER7_ASSERTS_LootLockerManager_VerifyPlayerAndStartPlaystationNetworkSession;
+
+// Function LootLockerSDK.LootLockerManager.VerifyPlayerAndStartPlaystationNetworkV3Session
+// 0x0058 (0x0058 - 0x0000)
+struct LootLockerManager_VerifyPlayerAndStartPlaystationNetworkV3Session final
+{
+public:
+	class FString                                 AuthCode;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)> OnCompletedRequest;         // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         EnvIssuerId;                                       // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLootLockerSessionOptionals            Optionals;                                         // 0x0028(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0048(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerManager_VerifyPlayerAndStartPlaystationNetworkV3Session;
 
 // Function LootLockerSDK.LootLockerManager.WhiteLabelCreateAccount
-// 0x0030 (0x0030 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct LootLockerManager_WhiteLabelCreateAccount final
 {
 public:
 	class FString                                 email;                                             // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 Password;                                          // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TDelegate<void(const struct FLootLockerLoginResponse& AuthVar)> OnWhiteLabelAccountCreationRequestCompleted; // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_WhiteLabelCreateAccount;
 
 // Function LootLockerSDK.LootLockerManager.WhiteLabelLogin
-// 0x0038 (0x0038 - 0x0000)
+// 0x0048 (0x0048 - 0x0000)
 struct LootLockerManager_WhiteLabelLogin final
 {
 public:
@@ -2185,12 +3914,13 @@ public:
 	class FString                                 Password;                                          // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TDelegate<void(const struct FLootLockerLoginResponse& AuthVar)> OnWhiteLabelLoginRequestCompleted; // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          remember;                                          // 0x0030(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_WhiteLabelLogin;
 
 // Function LootLockerSDK.LootLockerManager.WhiteLabelLoginAndStartSession
-// 0x0038 (0x0038 - 0x0000)
+// 0x0068 (0x0068 - 0x0000)
 struct LootLockerManager_WhiteLabelLoginAndStartSession final
 {
 public:
@@ -2198,77 +3928,364 @@ public:
 	class FString                                 Password;                                          // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TDelegate<void(const struct FLootLockerWhiteLabelLoginAndSessionResponse& Var)> OnWhiteLabelLoginAndStartSessionRequestCompleted; // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          remember;                                          // 0x0030(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLootLockerSessionOptionals            Optionals;                                         // 0x0038(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0058(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_WhiteLabelLoginAndStartSession;
 
 // Function LootLockerSDK.LootLockerManager.WhiteLabelRequestUserVerification
-// 0x0014 (0x0014 - 0x0000)
+// 0x0028 (0x0028 - 0x0000)
 struct LootLockerManager_WhiteLabelRequestUserVerification final
 {
 public:
 	int32                                         UserId;                                            // 0x0000(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TDelegate<void(const struct FLootLockerResponse& Var)> OnRequestWhiteLabelUserVerificationRequestCompleted; // 0x0004(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0018(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_WhiteLabelRequestUserVerification;
 
 // Function LootLockerSDK.LootLockerManager.WhiteLabelRequestUserVerificationByEmail
-// 0x0020 (0x0020 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_WhiteLabelRequestUserVerificationByEmail final
 {
 public:
 	class FString                                 email;                                             // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TDelegate<void(const struct FLootLockerResponse& Var)> OnRequestWhiteLabelUserVerificationRequestCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_WhiteLabelRequestUserVerificationByEmail;
 
 // Function LootLockerSDK.LootLockerManager.WhiteLabelResetPassword
-// 0x0020 (0x0020 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_WhiteLabelResetPassword final
 {
 public:
 	class FString                                 email;                                             // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TDelegate<void(const struct FLootLockerResponse& Var)> OnResetWhiteLabelPasswordRequestCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_WhiteLabelResetPassword;
 
 // Function LootLockerSDK.LootLockerManager.WhiteLabelStartSession
-// 0x0010 (0x0010 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct LootLockerManager_WhiteLabelStartSession final
 {
 public:
 	TDelegate<void(const struct FLootLockerAuthenticationResponse& Var)> OnStartWhiteLabelSessionRequestCompleted; // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FLootLockerSessionOptionals            Optionals;                                         // 0x0010(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_WhiteLabelStartSession;
 
 // Function LootLockerSDK.LootLockerManager.WhiteLabelVerifySession
-// 0x0010 (0x0010 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct LootLockerManager_WhiteLabelVerifySession final
 {
 public:
-	TDelegate<void(const struct FLootLockerWhiteLabelVerifySessionResponse& Response)> OnVerifyWhiteLabelSessionRequestCompleted; // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLootLockerWhiteLabelVerifySessionResponse& Response)> OnVerifyWhiteLabelSessionRequestCompleted; // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LootLockerManager_WhiteLabelVerifySession;
 
-// Function LootLockerSDK.LootLockerCurrentPlatform.GetPlatformRepresentation
-// 0x0028 (0x0028 - 0x0000)
-struct LootLockerCurrentPlatform_GetPlatformRepresentation final
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetNotificationsSourceLootLockerConsoleString
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerStaticNotificationStringBlueprintCallables_GetNotificationsSourceLootLockerConsoleString final
 {
 public:
-	struct FLootLockerPlatformRepresentation      ReturnValue;                                       // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_LootLockerCurrentPlatform_GetPlatformRepresentation;
+DUMPER7_ASSERTS_LootLockerStaticNotificationStringBlueprintCallables_GetNotificationsSourceLootLockerConsoleString;
 
-// Function LootLockerSDK.LootLockerCurrentPlatform.GetPlatformRepresentationForPlatform
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetNotificationsSourceLootLockerServerAPIString
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerStaticNotificationStringBlueprintCallables_GetNotificationsSourceLootLockerServerAPIString final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerStaticNotificationStringBlueprintCallables_GetNotificationsSourceLootLockerServerAPIString;
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetNotificationsSourcePurchasingAppleAppStoreString
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerStaticNotificationStringBlueprintCallables_GetNotificationsSourcePurchasingAppleAppStoreString final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerStaticNotificationStringBlueprintCallables_GetNotificationsSourcePurchasingAppleAppStoreString;
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetNotificationsSourcePurchasingGooglePlayStoreString
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerStaticNotificationStringBlueprintCallables_GetNotificationsSourcePurchasingGooglePlayStoreString final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerStaticNotificationStringBlueprintCallables_GetNotificationsSourcePurchasingGooglePlayStoreString;
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetNotificationsSourcePurchasingLootLockerString
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerStaticNotificationStringBlueprintCallables_GetNotificationsSourcePurchasingLootLockerString final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerStaticNotificationStringBlueprintCallables_GetNotificationsSourcePurchasingLootLockerString;
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetNotificationsSourcePurchasingSteamStoreString
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerStaticNotificationStringBlueprintCallables_GetNotificationsSourcePurchasingSteamStoreString final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerStaticNotificationStringBlueprintCallables_GetNotificationsSourcePurchasingSteamStoreString;
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetNotificationsSourceTriggersString
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerStaticNotificationStringBlueprintCallables_GetNotificationsSourceTriggersString final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerStaticNotificationStringBlueprintCallables_GetNotificationsSourceTriggersString;
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetNotificationsSourceTwitchDropString
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerStaticNotificationStringBlueprintCallables_GetNotificationsSourceTwitchDropString final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerStaticNotificationStringBlueprintCallables_GetNotificationsSourceTwitchDropString;
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardPurchasingAppleAppStoreContextKeyCatalogIdString
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingAppleAppStoreContextKeyCatalogIdString final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingAppleAppStoreContextKeyCatalogIdString;
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardPurchasingAppleAppStoreContextKeyCatalogItemIdString
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingAppleAppStoreContextKeyCatalogItemIdString final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingAppleAppStoreContextKeyCatalogItemIdString;
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardPurchasingAppleAppStoreContextKeyTransactionIdString
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingAppleAppStoreContextKeyTransactionIdString final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingAppleAppStoreContextKeyTransactionIdString;
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardPurchasingGooglePlayStoreContextKeyCatalogIdString
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingGooglePlayStoreContextKeyCatalogIdString final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingGooglePlayStoreContextKeyCatalogIdString;
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardPurchasingGooglePlayStoreContextKeyCatalogItemIdString
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingGooglePlayStoreContextKeyCatalogItemIdString final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingGooglePlayStoreContextKeyCatalogItemIdString;
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardPurchasingGooglePlayStoreContextKeyProductIdString
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingGooglePlayStoreContextKeyProductIdString final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingGooglePlayStoreContextKeyProductIdString;
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardPurchasingLootLockerContextKeyCatalogIdString
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingLootLockerContextKeyCatalogIdString final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingLootLockerContextKeyCatalogIdString;
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardPurchasingLootLockerContextKeyCatalogItemIdString
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingLootLockerContextKeyCatalogItemIdString final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingLootLockerContextKeyCatalogItemIdString;
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardPurchasingSteamStoreContextKeyCatalogIdString
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingSteamStoreContextKeyCatalogIdString final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingSteamStoreContextKeyCatalogIdString;
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardPurchasingSteamStoreContextKeyCatalogItemIdString
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingSteamStoreContextKeyCatalogItemIdString final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingSteamStoreContextKeyCatalogItemIdString;
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardPurchasingSteamStoreContextKeyCharacterIdString
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingSteamStoreContextKeyCharacterIdString final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingSteamStoreContextKeyCharacterIdString;
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardPurchasingSteamStoreContextKeyEntitlementIdString
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingSteamStoreContextKeyEntitlementIdString final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerStaticNotificationStringBlueprintCallables_GetStandardPurchasingSteamStoreContextKeyEntitlementIdString;
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardTriggersContextKeyIdString
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerStaticNotificationStringBlueprintCallables_GetStandardTriggersContextKeyIdString final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerStaticNotificationStringBlueprintCallables_GetStandardTriggersContextKeyIdString;
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardTriggersContextKeyKeyString
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerStaticNotificationStringBlueprintCallables_GetStandardTriggersContextKeyKeyString final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerStaticNotificationStringBlueprintCallables_GetStandardTriggersContextKeyKeyString;
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardTriggersContextKeyLimitString
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerStaticNotificationStringBlueprintCallables_GetStandardTriggersContextKeyLimitString final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerStaticNotificationStringBlueprintCallables_GetStandardTriggersContextKeyLimitString;
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetStandardTwitchDropContextKeyTwitchRewardIdString
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerStaticNotificationStringBlueprintCallables_GetStandardTwitchDropContextKeyTwitchRewardIdString final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerStaticNotificationStringBlueprintCallables_GetStandardTwitchDropContextKeyTwitchRewardIdString;
+
+// Function LootLockerSDK.LootLockerStaticNotificationStringBlueprintCallables.GetTypePullRewardAcquiredString
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerStaticNotificationStringBlueprintCallables_GetTypePullRewardAcquiredString final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerStaticNotificationStringBlueprintCallables_GetTypePullRewardAcquiredString;
+
+// Function LootLockerSDK.LootLockerPlatforms.GetPlatformRepresentationForPlatform
 // 0x0030 (0x0030 - 0x0000)
-struct LootLockerCurrentPlatform_GetPlatformRepresentationForPlatform final
+struct LootLockerPlatforms_GetPlatformRepresentationForPlatform final
 {
 public:
 	ELootLockerPlatform                           Platform;                                          // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FLootLockerPlatformRepresentation      ReturnValue;                                       // 0x0008(0x0028)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_LootLockerCurrentPlatform_GetPlatformRepresentationForPlatform;
+DUMPER7_ASSERTS_LootLockerPlatforms_GetPlatformRepresentationForPlatform;
+
+// Function LootLockerSDK.LootLockerPresenceManager.HandleConfigurationUpdated
+// 0x0010 (0x0010 - 0x0000)
+struct LootLockerPresenceManager_HandleConfigurationUpdated final
+{
+public:
+	class FString                                 SettingName;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerPresenceManager_HandleConfigurationUpdated;
+
+// Function LootLockerSDK.LootLockerAsyncStartRemoteSession.AsyncStartRemoteSession
+// 0x0018 (0x0018 - 0x0000)
+struct LootLockerAsyncStartRemoteSession_AsyncStartRemoteSession final
+{
+public:
+	class UObject*                                WorldContextObjectfloat;                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PollingIntervalSeconds;                            // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TimeOutAfterMinutes;                               // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ULootLockerAsyncStartRemoteSession*     ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerAsyncStartRemoteSession_AsyncStartRemoteSession;
+
+// Function LootLockerSDK.LootLockerAsyncStartRemoteSession.AsyncStartRemoteSessionForLinking
+// 0x0028 (0x0028 - 0x0000)
+struct LootLockerAsyncStartRemoteSession_AsyncStartRemoteSessionForLinking final
+{
+public:
+	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ForPlayerWithUlid;                                 // 0x0008(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PollingIntervalSeconds;                            // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TimeOutAfterMinutes;                               // 0x001C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ULootLockerAsyncStartRemoteSession*     ReturnValue;                                       // 0x0020(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerAsyncStartRemoteSession_AsyncStartRemoteSessionForLinking;
+
+// Function LootLockerSDK.LootLockerAsyncStartRemoteSession.HandleLeaseProcessCompleted
+// 0x0198 (0x0198 - 0x0000)
+struct LootLockerAsyncStartRemoteSession_HandleLeaseProcessCompleted final
+{
+public:
+	struct FLootLockerStartRemoteSessionResponse  LeaseProcessCompletedResponse;                     // 0x0000(0x0198)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerAsyncStartRemoteSession_HandleLeaseProcessCompleted;
+
+// Function LootLockerSDK.LootLockerAsyncStartRemoteSession.HandleLeaseProcessStarted
+// 0x0128 (0x0128 - 0x0000)
+struct LootLockerAsyncStartRemoteSession_HandleLeaseProcessStarted final
+{
+public:
+	struct FLootLockerLeaseRemoteSessionResponse  LeaseProcessStartedResponse;                       // 0x0000(0x0128)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerAsyncStartRemoteSession_HandleLeaseProcessStarted;
+
+// Function LootLockerSDK.LootLockerAsyncStartRemoteSession.HandleLeaseProcessUpdate
+// 0x00D8 (0x00D8 - 0x0000)
+struct LootLockerAsyncStartRemoteSession_HandleLeaseProcessUpdate final
+{
+public:
+	struct FLootLockerRemoteSessionStatusPollingResponse LeaseProcessUpdateResponse;                 // 0x0000(0x00D8)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LootLockerAsyncStartRemoteSession_HandleLeaseProcessUpdate;
 
 }
 

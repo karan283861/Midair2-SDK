@@ -11,12 +11,21 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "MovieScene_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "MovieScene_structs.hpp"
 
 
 namespace SDK
 {
+
+// ScriptStruct LevelSequence.BoundActorProxy
+// 0x0001 (0x0001 - 0x0000)
+struct FBoundActorProxy final
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FBoundActorProxy;
 
 // ScriptStruct LevelSequence.LevelSequenceCameraSettings
 // 0x0002 (0x0002 - 0x0000)
@@ -27,15 +36,6 @@ public:
 	EAspectRatioAxisConstraint                    AspectRatioAxisConstraint;                         // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLevelSequenceCameraSettings;
-
-// ScriptStruct LevelSequence.BoundActorProxy
-// 0x0001 (0x0001 - 0x0000)
-struct FBoundActorProxy final
-{
-public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FBoundActorProxy;
 
 // ScriptStruct LevelSequence.LevelSequenceAnimSequenceLinkItem
 // 0x0030 (0x0030 - 0x0000)

@@ -18,46 +18,6 @@
 namespace SDK
 {
 
-// Class LiveLinkInterface.LiveLinkRole
-// 0x0000 (0x0028 - 0x0028)
-class ULiveLinkRole : public UObject
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("LiveLinkRole")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"LiveLinkRole")
-	}
-	static class ULiveLinkRole* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULiveLinkRole>();
-	}
-};
-DUMPER7_ASSERTS_ULiveLinkRole;
-
-// Class LiveLinkInterface.LiveLinkBasicRole
-// 0x0000 (0x0028 - 0x0028)
-class ULiveLinkBasicRole : public ULiveLinkRole
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("LiveLinkBasicRole")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"LiveLinkBasicRole")
-	}
-	static class ULiveLinkBasicRole* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULiveLinkBasicRole>();
-	}
-};
-DUMPER7_ASSERTS_ULiveLinkBasicRole;
-
 // Class LiveLinkInterface.LiveLinkSourceFactory
 // 0x0000 (0x0028 - 0x0028)
 class ULiveLinkSourceFactory : public UObject
@@ -137,6 +97,46 @@ public:
 	}
 };
 DUMPER7_ASSERTS_ULiveLinkFrameTranslator;
+
+// Class LiveLinkInterface.LiveLinkRole
+// 0x0000 (0x0028 - 0x0028)
+class ULiveLinkRole : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LiveLinkRole")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LiveLinkRole")
+	}
+	static class ULiveLinkRole* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULiveLinkRole>();
+	}
+};
+DUMPER7_ASSERTS_ULiveLinkRole;
+
+// Class LiveLinkInterface.LiveLinkBasicRole
+// 0x0000 (0x0028 - 0x0028)
+class ULiveLinkBasicRole : public ULiveLinkRole
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LiveLinkBasicRole")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LiveLinkBasicRole")
+	}
+	static class ULiveLinkBasicRole* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULiveLinkBasicRole>();
+	}
+};
+DUMPER7_ASSERTS_ULiveLinkBasicRole;
 
 // Class LiveLinkInterface.LiveLinkVirtualSubject
 // 0x0138 (0x0160 - 0x0028)

@@ -73,48 +73,6 @@ void ABP_BaseCharacter_C::BndEvt__BP_BaseCharacter_Radial_Wheel_AC_K2Node_Compon
 }
 
 
-// Function BP_BaseCharacter.BP_BaseCharacter_C.HideEmoteWheel
-// (Event, Public, BlueprintEvent)
-
-void ABP_BaseCharacter_C::HideEmoteWheel()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCharacter_C", "HideEmoteWheel");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_BaseCharacter.BP_BaseCharacter_C.ShowEmoteWheel
-// (Event, Public, BlueprintEvent)
-
-void ABP_BaseCharacter_C::ShowEmoteWheel()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCharacter_C", "ShowEmoteWheel");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_BaseCharacter.BP_BaseCharacter_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_BaseCharacter_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCharacter_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_BaseCharacter.BP_BaseCharacter_C.K2_OnMovementModeChanged
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -138,20 +96,6 @@ void ABP_BaseCharacter_C::K2_OnMovementModeChanged(EMovementMode PrevMovementMod
 	Parms.NewCustomMode = NewCustomMode;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_BaseCharacter.BP_BaseCharacter_C.BP_OnRep_PlayerState
-// (Event, Public, BlueprintEvent)
-
-void ABP_BaseCharacter_C::BP_OnRep_PlayerState()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCharacter_C", "BP_OnRep_PlayerState");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -186,6 +130,20 @@ void ABP_BaseCharacter_C::ReceiveTick(float DeltaSeconds)
 	Parms.DeltaSeconds = DeltaSeconds;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_BaseCharacter.BP_BaseCharacter_C.BP_OnRep_PlayerState
+// (Event, Public, BlueprintEvent)
+
+void ABP_BaseCharacter_C::BP_OnRep_PlayerState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseCharacter_C", "BP_OnRep_PlayerState");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

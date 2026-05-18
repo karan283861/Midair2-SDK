@@ -72,6 +72,15 @@ enum class EGameplayTagSourceType : uint8
 	EGameplayTagSourceType_MAX               = 6,
 };
 
+// ScriptStruct GameplayTags.GameplayTagReferenceHelper
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x08) FGameplayTagReferenceHelper final
+{
+public:
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FGameplayTagReferenceHelper;
+
 // ScriptStruct GameplayTags.GameplayTag
 // 0x0008 (0x0008 - 0x0000)
 struct FGameplayTag
@@ -100,6 +109,15 @@ public:
 };
 DUMPER7_ASSERTS_FGameplayTagCreationWidgetHelper;
 
+// ScriptStruct GameplayTags.GameplayTagNode
+// 0x0050 (0x0050 - 0x0000)
+struct alignas(0x08) FGameplayTagNode final
+{
+public:
+	uint8                                         Pad_0[0x50];                                       // 0x0000(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FGameplayTagNode;
+
 // ScriptStruct GameplayTags.GameplayTagQuery
 // 0x0048 (0x0048 - 0x0000)
 struct FGameplayTagQuery final
@@ -114,15 +132,6 @@ public:
 };
 DUMPER7_ASSERTS_FGameplayTagQuery;
 
-// ScriptStruct GameplayTags.GameplayTagReferenceHelper
-// 0x0010 (0x0010 - 0x0000)
-struct alignas(0x08) FGameplayTagReferenceHelper final
-{
-public:
-	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FGameplayTagReferenceHelper;
-
 // ScriptStruct GameplayTags.GameplayTagRedirect
 // 0x0010 (0x0010 - 0x0000)
 struct FGameplayTagRedirect final
@@ -132,15 +141,6 @@ public:
 	class FName                                   NewTagName;                                        // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FGameplayTagRedirect;
-
-// ScriptStruct GameplayTags.GameplayTagNode
-// 0x0050 (0x0050 - 0x0000)
-struct alignas(0x08) FGameplayTagNode final
-{
-public:
-	uint8                                         Pad_0[0x50];                                       // 0x0000(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FGameplayTagNode;
 
 // ScriptStruct GameplayTags.GameplayTagSource
 // 0x0020 (0x0020 - 0x0000)

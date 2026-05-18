@@ -37,101 +37,25 @@ void WBP_EndOfMatch::UWBP_EndOfMatch_C::ExecuteUbergraph_WBP_EndOfMatch(int32 En
 }
 
 
-// Function WBP_EndOfMatch.WBP_EndOfMatch_C.Destruct
+// Function WBP_EndOfMatch.WBP_EndOfMatch_C.Tick
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Parameters:
+// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void WBP_EndOfMatch::UWBP_EndOfMatch_C::Destruct()
+void WBP_EndOfMatch::UWBP_EndOfMatch_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EndOfMatch_C", "Destruct");
+		Func = Class->GetFunction("WBP_EndOfMatch_C", "Tick");
 
-	UObject::ProcessEvent(Func, nullptr);
-}
+	Params::WBP_EndOfMatch_C_Tick Parms{};
 
+	Parms.MyGeometry = std::move(MyGeometry);
+	Parms.InDeltaTime = InDeltaTime;
 
-// Function WBP_EndOfMatch.WBP_EndOfMatch_C.UpdateEndOfMatch_Event
-// (BlueprintCallable, BlueprintEvent)
-
-void WBP_EndOfMatch::UWBP_EndOfMatch_C::UpdateEndOfMatch_Event()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EndOfMatch_C", "UpdateEndOfMatch_Event");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_EndOfMatch.WBP_EndOfMatch_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void WBP_EndOfMatch::UWBP_EndOfMatch_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EndOfMatch_C", "Construct");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_EndOfMatch.WBP_EndOfMatch_C.BndEvt__Weapon3_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void WBP_EndOfMatch::UWBP_EndOfMatch_C::BndEvt__Weapon3_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EndOfMatch_C", "BndEvt__Weapon3_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_EndOfMatch.WBP_EndOfMatch_C.BndEvt__Weapon2_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void WBP_EndOfMatch::UWBP_EndOfMatch_C::BndEvt__Weapon2_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EndOfMatch_C", "BndEvt__Weapon2_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_EndOfMatch.WBP_EndOfMatch_C.BndEvt__Weapon1_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void WBP_EndOfMatch::UWBP_EndOfMatch_C::BndEvt__Weapon1_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EndOfMatch_C", "BndEvt__Weapon1_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_EndOfMatch.WBP_EndOfMatch_C.BndEvt__Button_416_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void WBP_EndOfMatch::UWBP_EndOfMatch_C::BndEvt__Button_416_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EndOfMatch_C", "BndEvt__Button_416_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -214,86 +138,6 @@ void WBP_EndOfMatch::UWBP_EndOfMatch_C::UpdateCurrentLevelName()
 		Func = Class->GetFunction("WBP_EndOfMatch_C", "UpdateCurrentLevelName");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_EndOfMatch.WBP_EndOfMatch_C.Get_weapon1text_Text_0
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm)
-
-class FText WBP_EndOfMatch::UWBP_EndOfMatch_C::Get_weapon1text_Text_0()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EndOfMatch_C", "Get_weapon1text_Text_0");
-
-	Params::WBP_EndOfMatch_C_Get_weapon1text_Text_0 Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function WBP_EndOfMatch.WBP_EndOfMatch_C.Get_generalstattext_Text_0
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm)
-
-class FText WBP_EndOfMatch::UWBP_EndOfMatch_C::Get_generalstattext_Text_0()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EndOfMatch_C", "Get_generalstattext_Text_0");
-
-	Params::WBP_EndOfMatch_C_Get_generalstattext_Text_0 Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function WBP_EndOfMatch.WBP_EndOfMatch_C.Get_weapon2stattext_Text_0
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm)
-
-class FText WBP_EndOfMatch::UWBP_EndOfMatch_C::Get_weapon2stattext_Text_0()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EndOfMatch_C", "Get_weapon2stattext_Text_0");
-
-	Params::WBP_EndOfMatch_C_Get_weapon2stattext_Text_0 Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function WBP_EndOfMatch.WBP_EndOfMatch_C.Get_weapon3stattext_Text_0
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm)
-
-class FText WBP_EndOfMatch::UWBP_EndOfMatch_C::Get_weapon3stattext_Text_0()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EndOfMatch_C", "Get_weapon3stattext_Text_0");
-
-	Params::WBP_EndOfMatch_C_Get_weapon3stattext_Text_0 Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
 }
 
 }

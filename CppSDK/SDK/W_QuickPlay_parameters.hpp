@@ -10,24 +10,67 @@
 
 #include "Basic.hpp"
 
+#include "Midair2_structs.hpp"
+
 
 namespace SDK::Params
 {
 
+// Function W_QuickPlay.W_QuickPlay_C.OnFail_8450BD184E4A521B71A2CF843A7DE057
+// 0x0014 (0x0014 - 0x0000)
+struct W_QuickPlay_C_OnFail_8450BD184E4A521B71A2CF843A7DE057 final
+{
+public:
+	struct FMAQueueInfo                           QueueInfo;                                         // 0x0000(0x0014)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+};
+DUMPER7_ASSERTS_W_QuickPlay_C_OnFail_8450BD184E4A521B71A2CF843A7DE057;
+
+// Function W_QuickPlay.W_QuickPlay_C.OnSuccess_8450BD184E4A521B71A2CF843A7DE057
+// 0x0014 (0x0014 - 0x0000)
+struct W_QuickPlay_C_OnSuccess_8450BD184E4A521B71A2CF843A7DE057 final
+{
+public:
+	struct FMAQueueInfo                           QueueInfo;                                         // 0x0000(0x0014)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+};
+DUMPER7_ASSERTS_W_QuickPlay_C_OnSuccess_8450BD184E4A521B71A2CF843A7DE057;
+
+// Function W_QuickPlay.W_QuickPlay_C.PreConstruct
+// 0x0001 (0x0001 - 0x0000)
+struct W_QuickPlay_C_PreConstruct final
+{
+public:
+	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_W_QuickPlay_C_PreConstruct;
+
 // Function W_QuickPlay.W_QuickPlay_C.ExecuteUbergraph_W_QuickPlay
-// 0x0030 (0x0030 - 0x0000)
+// 0x00F0 (0x00F0 - 0x0000)
 struct W_QuickPlay_C_ExecuteUbergraph_W_QuickPlay final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMAMatchMakerSubsystem*                 CallFunc_GetGameInstanceSubsystem_ReturnValue;     // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsSearchInProgress_ReturnValue;           // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMAMatchMakerSubsystem*                 CallFunc_GetGameInstanceSubsystem_ReturnValue_1;   // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMAMatchMakerSubsystem*                 CallFunc_GetGameInstanceSubsystem_ReturnValue_2;   // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsSearchInProgress_ReturnValue_1;         // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsSearchInProgress_ReturnValue_2;         // 0x0029(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FMAQueueInfo                           K2Node_CustomEvent_QueueInfo_1;                    // 0x0010(0x0014)(NoDestructor)
+	bool                                          CallFunc_IsSearchInProgress_ReturnValue;           // 0x0024(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMAQueueInfo                           K2Node_CustomEvent_QueueInfo;                      // 0x0028(0x0014)(NoDestructor)
+	TDelegate<void(const struct FMAQueueInfo& QueueInfo)> K2Node_CreateDelegate_OutputDelegate;      // 0x003C(0x0010)(ZeroConstructor, NoDestructor)
+	struct FMAQueueInfo                           Temp_struct_Variable;                              // 0x004C(0x0014)(NoDestructor)
+	class UGetMatchmakingQueueInfoAsyncTask*      CallFunc_GetMatchmakingQueueInfo_ReturnValue;      // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0068(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   CallFunc_Conv_IntToText_ReturnValue;               // 0x0070(0x0018)()
+	class FText                                   CallFunc_Conv_IntToText_ReturnValue_1;             // 0x0088(0x0018)()
+	class FText                                   CallFunc_Conv_IntToText_ReturnValue_2;             // 0x00A0(0x0018)()
+	TDelegate<void(const struct FMAQueueInfo& QueueInfo)> K2Node_CreateDelegate_OutputDelegate_1;    // 0x00B8(0x0010)(ZeroConstructor, NoDestructor)
+	bool                                          K2Node_Event_IsDesignTime;                         // 0x00C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_C9[0x7];                                       // 0x00C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMAMatchMakerSubsystem*                 CallFunc_GetGameInstanceSubsystem_ReturnValue_1;   // 0x00D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsSearchInProgress_ReturnValue_1;         // 0x00D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_D9[0x7];                                       // 0x00D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMAMatchMakerSubsystem*                 CallFunc_GetGameInstanceSubsystem_ReturnValue_2;   // 0x00E0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsSearchInProgress_ReturnValue_2;         // 0x00E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_W_QuickPlay_C_ExecuteUbergraph_W_QuickPlay;
 

@@ -305,7 +305,7 @@ public:
 DUMPER7_ASSERTS_WBP_TabDrill_Details_C_OnDrillSpawnLocationChanged;
 
 // Function WBP_TabDrill_Details.WBP_TabDrill_Details_C.UpdateBotList
-// 0x01C0 (0x01C0 - 0x0000)
+// 0x01C8 (0x01C8 - 0x0000)
 struct WBP_TabDrill_Details_C_UpdateBotList final
 {
 public:
@@ -317,28 +317,28 @@ public:
 	TDelegate<void(bool Checked, const struct FMABotConfig& Bot)> K2Node_CreateDelegate_OutputDelegate; // 0x0018(0x0010)(ZeroConstructor, NoDestructor)
 	class UMAPracticeComponent*                   CallFunc_GetMAPracticeComponentForWidget_MAPracticeComponent; // 0x0028(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<struct FMABotConfig>                   CallFunc_GetLoadedBots_ReturnValue;                // 0x0030(0x0010)(ReferenceParm)
-	struct FMABotConfig                           CallFunc_Array_Get_Item;                           // 0x0040(0x0168)()
-	class UPanelSlot*                             CallFunc_AddChild_ReturnValue;                     // 0x01A8(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x01B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Find_ReturnValue;                   // 0x01B4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x01B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_NotEqual_IntInt_ReturnValue;              // 0x01B9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FMABotConfig                           CallFunc_Array_Get_Item;                           // 0x0040(0x0170)()
+	class UPanelSlot*                             CallFunc_AddChild_ReturnValue;                     // 0x01B0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x01B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Find_ReturnValue;                   // 0x01BC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x01C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_NotEqual_IntInt_ReturnValue;              // 0x01C1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_WBP_TabDrill_Details_C_UpdateBotList;
 
 // Function WBP_TabDrill_Details.WBP_TabDrill_Details_C.OnDrillBotChanged
-// 0x0180 (0x0180 - 0x0000)
+// 0x0188 (0x0188 - 0x0000)
 struct WBP_TabDrill_Details_C_OnDrillBotChanged final
 {
 public:
 	bool                                          Checked;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMABotConfig                           Bot;                                               // 0x0008(0x0168)(BlueprintVisible, BlueprintReadOnly, Parm)
-	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0170(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Array_RemoveItem_ReturnValue;             // 0x0174(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Array_RemoveItem_ReturnValue_1;           // 0x0175(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_176[0x2];                                      // 0x0176(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMAPracticeComponent*                   CallFunc_GetMAPracticeComponentForWidget_MAPracticeComponent; // 0x0178(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FMABotConfig                           Bot;                                               // 0x0008(0x0170)(BlueprintVisible, BlueprintReadOnly, Parm)
+	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0178(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Array_RemoveItem_ReturnValue;             // 0x017C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Array_RemoveItem_ReturnValue_1;           // 0x017D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_17E[0x2];                                      // 0x017E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMAPracticeComponent*                   CallFunc_GetMAPracticeComponentForWidget_MAPracticeComponent; // 0x0180(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_TabDrill_Details_C_OnDrillBotChanged;
 

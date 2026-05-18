@@ -17,31 +17,6 @@
 namespace SDK
 {
 
-// Function InteractiveToolsFramework.GizmoClickTarget.UpdateHoverState
-// (Native, Public, Const)
-// Parameters:
-// bool                                    bHovering                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IGizmoClickTarget::UpdateHoverState(bool bHovering) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("GizmoClickTarget", "UpdateHoverState");
-
-	Params::GizmoClickTarget_UpdateHoverState Parms{};
-
-	Parms.bHovering = bHovering;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function InteractiveToolsFramework.GizmoBaseComponent.UpdateHoverState
 // (Final, Native, Public)
 // Parameters:
@@ -89,94 +64,6 @@ void UGizmoBaseComponent::UpdateWorldLocalState(bool bWorldIn)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function InteractiveToolsFramework.GizmoStateTarget.BeginUpdate
-// (Native, Public)
-
-void IGizmoStateTarget::BeginUpdate()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("GizmoStateTarget", "BeginUpdate");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function InteractiveToolsFramework.GizmoStateTarget.EndUpdate
-// (Native, Public)
-
-void IGizmoStateTarget::EndUpdate()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("GizmoStateTarget", "EndUpdate");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function InteractiveToolsFramework.GizmoTransformSource.SetTransform
-// (Native, Public, HasOutParams, HasDefaults)
-// Parameters:
-// const struct FTransform&                NewTransform                                           (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-void IGizmoTransformSource::SetTransform(const struct FTransform& NewTransform)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("GizmoTransformSource", "SetTransform");
-
-	Params::GizmoTransformSource_SetTransform Parms{};
-
-	Parms.NewTransform = std::move(NewTransform);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function InteractiveToolsFramework.GizmoTransformSource.GetTransform
-// (Native, Public, HasDefaults, Const)
-// Parameters:
-// struct FTransform                       ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FTransform IGizmoTransformSource::GetTransform() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("GizmoTransformSource", "GetTransform");
-
-	Params::GizmoTransformSource_GetTransform Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -282,6 +169,119 @@ bool IGizmoAxisSource::HasTangentVectors() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function InteractiveToolsFramework.GizmoTransformSource.SetTransform
+// (Native, Public, HasOutParams, HasDefaults)
+// Parameters:
+// const struct FTransform&                NewTransform                                           (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+void IGizmoTransformSource::SetTransform(const struct FTransform& NewTransform)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("GizmoTransformSource", "SetTransform");
+
+	Params::GizmoTransformSource_SetTransform Parms{};
+
+	Parms.NewTransform = std::move(NewTransform);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function InteractiveToolsFramework.GizmoTransformSource.GetTransform
+// (Native, Public, HasDefaults, Const)
+// Parameters:
+// struct FTransform                       ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FTransform IGizmoTransformSource::GetTransform() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("GizmoTransformSource", "GetTransform");
+
+	Params::GizmoTransformSource_GetTransform Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function InteractiveToolsFramework.GizmoClickTarget.UpdateHoverState
+// (Native, Public, Const)
+// Parameters:
+// bool                                    bHovering                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IGizmoClickTarget::UpdateHoverState(bool bHovering) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("GizmoClickTarget", "UpdateHoverState");
+
+	Params::GizmoClickTarget_UpdateHoverState Parms{};
+
+	Parms.bHovering = bHovering;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function InteractiveToolsFramework.GizmoStateTarget.BeginUpdate
+// (Native, Public)
+
+void IGizmoStateTarget::BeginUpdate()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("GizmoStateTarget", "BeginUpdate");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function InteractiveToolsFramework.GizmoStateTarget.EndUpdate
+// (Native, Public)
+
+void IGizmoStateTarget::EndUpdate()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("GizmoStateTarget", "EndUpdate");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 

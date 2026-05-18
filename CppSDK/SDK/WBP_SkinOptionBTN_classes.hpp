@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "ESkinStatus_structs.hpp"
 #include "Engine_structs.hpp"
 #include "UMG_classes.hpp"
 #include "SlateCore_structs.hpp"
+#include "ESkinStatus_structs.hpp"
 #include "ESelectionStatus_structs.hpp"
 
 

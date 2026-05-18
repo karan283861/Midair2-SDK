@@ -11,138 +11,48 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "Niagara_structs.hpp"
 #include "Engine_structs.hpp"
+#include "Niagara_structs.hpp"
 
 
 namespace SDK::Params
 {
 
-// Function Niagara.NiagaraFunctionLibrary.GetNiagaraParameterCollection
-// 0x0018 (0x0018 - 0x0000)
-struct NiagaraFunctionLibrary_GetNiagaraParameterCollection final
+// Function Niagara.NiagaraBaselineController.GetSystem
+// 0x0008 (0x0008 - 0x0000)
+struct NiagaraBaselineController_GetSystem final
 {
 public:
-	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UNiagaraParameterCollection*            Collection;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UNiagaraParameterCollectionInstance*    ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UNiagaraSystem*                         ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_NiagaraFunctionLibrary_GetNiagaraParameterCollection;
+DUMPER7_ASSERTS_NiagaraBaselineController_GetSystem;
 
-// Function Niagara.NiagaraFunctionLibrary.OverrideSystemUserVariableSkeletalMeshComponent
-// 0x0020 (0x0020 - 0x0000)
-struct NiagaraFunctionLibrary_OverrideSystemUserVariableSkeletalMeshComponent final
+// Function Niagara.NiagaraBaselineController.OnEndTest
+// 0x0010 (0x0010 - 0x0000)
+struct NiagaraBaselineController_OnEndTest final
 {
 public:
-	class UNiagaraComponent*                      NiagaraSystem;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 OverrideName;                                      // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USkeletalMeshComponent*                 SkeletalMeshComponent;                             // 0x0018(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FNiagaraPerfBaselineStats              stats;                                             // 0x0000(0x0010)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_NiagaraFunctionLibrary_OverrideSystemUserVariableSkeletalMeshComponent;
+DUMPER7_ASSERTS_NiagaraBaselineController_OnEndTest;
 
-// Function Niagara.NiagaraFunctionLibrary.OverrideSystemUserVariableStaticMesh
-// 0x0020 (0x0020 - 0x0000)
-struct NiagaraFunctionLibrary_OverrideSystemUserVariableStaticMesh final
+// Function Niagara.NiagaraBaselineController.OnOwnerTick
+// 0x0004 (0x0004 - 0x0000)
+struct NiagaraBaselineController_OnOwnerTick final
 {
 public:
-	class UNiagaraComponent*                      NiagaraSystem;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 OverrideName;                                      // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UStaticMesh*                            StaticMesh;                                        // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_NiagaraFunctionLibrary_OverrideSystemUserVariableStaticMesh;
+DUMPER7_ASSERTS_NiagaraBaselineController_OnOwnerTick;
 
-// Function Niagara.NiagaraFunctionLibrary.OverrideSystemUserVariableStaticMeshComponent
-// 0x0020 (0x0020 - 0x0000)
-struct NiagaraFunctionLibrary_OverrideSystemUserVariableStaticMeshComponent final
+// Function Niagara.NiagaraBaselineController.OnTickTest
+// 0x0001 (0x0001 - 0x0000)
+struct NiagaraBaselineController_OnTickTest final
 {
 public:
-	class UNiagaraComponent*                      NiagaraSystem;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 OverrideName;                                      // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UStaticMeshComponent*                   StaticMeshComponent;                               // 0x0018(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_NiagaraFunctionLibrary_OverrideSystemUserVariableStaticMeshComponent;
-
-// Function Niagara.NiagaraFunctionLibrary.SetSkeletalMeshDataInterfaceSamplingRegions
-// 0x0028 (0x0028 - 0x0000)
-struct NiagaraFunctionLibrary_SetSkeletalMeshDataInterfaceSamplingRegions final
-{
-public:
-	class UNiagaraComponent*                      NiagaraSystem;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 OverrideName;                                      // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class FName>                           SamplingRegions;                                   // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_NiagaraFunctionLibrary_SetSkeletalMeshDataInterfaceSamplingRegions;
-
-// Function Niagara.NiagaraFunctionLibrary.SetTexture2DArrayObject
-// 0x0020 (0x0020 - 0x0000)
-struct NiagaraFunctionLibrary_SetTexture2DArrayObject final
-{
-public:
-	class UNiagaraComponent*                      NiagaraSystem;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 OverrideName;                                      // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture2DArray*                        Texture;                                           // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_NiagaraFunctionLibrary_SetTexture2DArrayObject;
-
-// Function Niagara.NiagaraFunctionLibrary.SetTextureObject
-// 0x0020 (0x0020 - 0x0000)
-struct NiagaraFunctionLibrary_SetTextureObject final
-{
-public:
-	class UNiagaraComponent*                      NiagaraSystem;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 OverrideName;                                      // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture*                               Texture;                                           // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_NiagaraFunctionLibrary_SetTextureObject;
-
-// Function Niagara.NiagaraFunctionLibrary.SetVolumeTextureObject
-// 0x0020 (0x0020 - 0x0000)
-struct NiagaraFunctionLibrary_SetVolumeTextureObject final
-{
-public:
-	class UNiagaraComponent*                      NiagaraSystem;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 OverrideName;                                      // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UVolumeTexture*                         Texture;                                           // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_NiagaraFunctionLibrary_SetVolumeTextureObject;
-
-// Function Niagara.NiagaraFunctionLibrary.SpawnSystemAtLocation
-// 0x0040 (0x0040 - 0x0000)
-struct NiagaraFunctionLibrary_SpawnSystemAtLocation final
-{
-public:
-	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UNiagaraSystem*                         SystemTemplate;                                    // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Location;                                          // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               Rotation;                                          // 0x001C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector                                Scale;                                             // 0x0028(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAutoDestroy;                                      // 0x0034(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAutoActivate;                                     // 0x0035(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ENCPoolMethod                                 PoolingMethod;                                     // 0x0036(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPreCullCheck;                                     // 0x0037(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UNiagaraComponent*                      ReturnValue;                                       // 0x0038(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_NiagaraFunctionLibrary_SpawnSystemAtLocation;
-
-// Function Niagara.NiagaraFunctionLibrary.SpawnSystemAttached
-// 0x0040 (0x0040 - 0x0000)
-struct NiagaraFunctionLibrary_SpawnSystemAttached final
-{
-public:
-	class UNiagaraSystem*                         SystemTemplate;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USceneComponent*                        AttachToComponent;                                 // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   AttachPointName;                                   // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Location;                                          // 0x0018(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               Rotation;                                          // 0x0024(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	EAttachLocation                               LocationType;                                      // 0x0030(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAutoDestroy;                                      // 0x0031(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAutoActivate;                                     // 0x0032(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ENCPoolMethod                                 PoolingMethod;                                     // 0x0033(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPreCullCheck;                                     // 0x0034(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_35[0x3];                                       // 0x0035(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UNiagaraComponent*                      ReturnValue;                                       // 0x0038(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_NiagaraFunctionLibrary_SpawnSystemAttached;
+DUMPER7_ASSERTS_NiagaraBaselineController_OnTickTest;
 
 // Function Niagara.NiagaraActor.OnNiagaraSystemFinished
 // 0x0008 (0x0008 - 0x0000)
@@ -1220,6 +1130,132 @@ public:
 };
 DUMPER7_ASSERTS_NiagaraDataInterfaceGrid3DCollection_GetTextureSize;
 
+// Function Niagara.NiagaraFunctionLibrary.GetNiagaraParameterCollection
+// 0x0018 (0x0018 - 0x0000)
+struct NiagaraFunctionLibrary_GetNiagaraParameterCollection final
+{
+public:
+	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UNiagaraParameterCollection*            Collection;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UNiagaraParameterCollectionInstance*    ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_NiagaraFunctionLibrary_GetNiagaraParameterCollection;
+
+// Function Niagara.NiagaraFunctionLibrary.OverrideSystemUserVariableSkeletalMeshComponent
+// 0x0020 (0x0020 - 0x0000)
+struct NiagaraFunctionLibrary_OverrideSystemUserVariableSkeletalMeshComponent final
+{
+public:
+	class UNiagaraComponent*                      NiagaraSystem;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 OverrideName;                                      // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USkeletalMeshComponent*                 SkeletalMeshComponent;                             // 0x0018(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_NiagaraFunctionLibrary_OverrideSystemUserVariableSkeletalMeshComponent;
+
+// Function Niagara.NiagaraFunctionLibrary.OverrideSystemUserVariableStaticMesh
+// 0x0020 (0x0020 - 0x0000)
+struct NiagaraFunctionLibrary_OverrideSystemUserVariableStaticMesh final
+{
+public:
+	class UNiagaraComponent*                      NiagaraSystem;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 OverrideName;                                      // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UStaticMesh*                            StaticMesh;                                        // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_NiagaraFunctionLibrary_OverrideSystemUserVariableStaticMesh;
+
+// Function Niagara.NiagaraFunctionLibrary.OverrideSystemUserVariableStaticMeshComponent
+// 0x0020 (0x0020 - 0x0000)
+struct NiagaraFunctionLibrary_OverrideSystemUserVariableStaticMeshComponent final
+{
+public:
+	class UNiagaraComponent*                      NiagaraSystem;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 OverrideName;                                      // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UStaticMeshComponent*                   StaticMeshComponent;                               // 0x0018(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_NiagaraFunctionLibrary_OverrideSystemUserVariableStaticMeshComponent;
+
+// Function Niagara.NiagaraFunctionLibrary.SetSkeletalMeshDataInterfaceSamplingRegions
+// 0x0028 (0x0028 - 0x0000)
+struct NiagaraFunctionLibrary_SetSkeletalMeshDataInterfaceSamplingRegions final
+{
+public:
+	class UNiagaraComponent*                      NiagaraSystem;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 OverrideName;                                      // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FName>                           SamplingRegions;                                   // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_NiagaraFunctionLibrary_SetSkeletalMeshDataInterfaceSamplingRegions;
+
+// Function Niagara.NiagaraFunctionLibrary.SetTexture2DArrayObject
+// 0x0020 (0x0020 - 0x0000)
+struct NiagaraFunctionLibrary_SetTexture2DArrayObject final
+{
+public:
+	class UNiagaraComponent*                      NiagaraSystem;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 OverrideName;                                      // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture2DArray*                        Texture;                                           // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_NiagaraFunctionLibrary_SetTexture2DArrayObject;
+
+// Function Niagara.NiagaraFunctionLibrary.SetTextureObject
+// 0x0020 (0x0020 - 0x0000)
+struct NiagaraFunctionLibrary_SetTextureObject final
+{
+public:
+	class UNiagaraComponent*                      NiagaraSystem;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 OverrideName;                                      // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture*                               Texture;                                           // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_NiagaraFunctionLibrary_SetTextureObject;
+
+// Function Niagara.NiagaraFunctionLibrary.SetVolumeTextureObject
+// 0x0020 (0x0020 - 0x0000)
+struct NiagaraFunctionLibrary_SetVolumeTextureObject final
+{
+public:
+	class UNiagaraComponent*                      NiagaraSystem;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 OverrideName;                                      // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UVolumeTexture*                         Texture;                                           // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_NiagaraFunctionLibrary_SetVolumeTextureObject;
+
+// Function Niagara.NiagaraFunctionLibrary.SpawnSystemAtLocation
+// 0x0040 (0x0040 - 0x0000)
+struct NiagaraFunctionLibrary_SpawnSystemAtLocation final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UNiagaraSystem*                         SystemTemplate;                                    // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Location;                                          // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               Rotation;                                          // 0x001C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector                                Scale;                                             // 0x0028(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAutoDestroy;                                      // 0x0034(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAutoActivate;                                     // 0x0035(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ENCPoolMethod                                 PoolingMethod;                                     // 0x0036(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPreCullCheck;                                     // 0x0037(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UNiagaraComponent*                      ReturnValue;                                       // 0x0038(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_NiagaraFunctionLibrary_SpawnSystemAtLocation;
+
+// Function Niagara.NiagaraFunctionLibrary.SpawnSystemAttached
+// 0x0040 (0x0040 - 0x0000)
+struct NiagaraFunctionLibrary_SpawnSystemAttached final
+{
+public:
+	class UNiagaraSystem*                         SystemTemplate;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USceneComponent*                        AttachToComponent;                                 // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   AttachPointName;                                   // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Location;                                          // 0x0018(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               Rotation;                                          // 0x0024(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	EAttachLocation                               LocationType;                                      // 0x0030(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAutoDestroy;                                      // 0x0031(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAutoActivate;                                     // 0x0032(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ENCPoolMethod                                 PoolingMethod;                                     // 0x0033(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPreCullCheck;                                     // 0x0034(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_35[0x3];                                       // 0x0035(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UNiagaraComponent*                      ReturnValue;                                       // 0x0038(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_NiagaraFunctionLibrary_SpawnSystemAttached;
+
 // Function Niagara.NiagaraParameterCollectionInstance.GetBoolParameter
 // 0x0018 (0x0018 - 0x0000)
 struct NiagaraParameterCollectionInstance_GetBoolParameter final
@@ -1387,42 +1423,6 @@ public:
 	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_NiagaraParameterCollectionInstance_SetVectorParameter;
-
-// Function Niagara.NiagaraBaselineController.GetSystem
-// 0x0008 (0x0008 - 0x0000)
-struct NiagaraBaselineController_GetSystem final
-{
-public:
-	class UNiagaraSystem*                         ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_NiagaraBaselineController_GetSystem;
-
-// Function Niagara.NiagaraBaselineController.OnEndTest
-// 0x0010 (0x0010 - 0x0000)
-struct NiagaraBaselineController_OnEndTest final
-{
-public:
-	struct FNiagaraPerfBaselineStats              stats;                                             // 0x0000(0x0010)(Parm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_NiagaraBaselineController_OnEndTest;
-
-// Function Niagara.NiagaraBaselineController.OnOwnerTick
-// 0x0004 (0x0004 - 0x0000)
-struct NiagaraBaselineController_OnOwnerTick final
-{
-public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_NiagaraBaselineController_OnOwnerTick;
-
-// Function Niagara.NiagaraBaselineController.OnTickTest
-// 0x0001 (0x0001 - 0x0000)
-struct NiagaraBaselineController_OnTickTest final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_NiagaraBaselineController_OnTickTest;
 
 // Function Niagara.NiagaraPreviewBase.SetLabelText
 // 0x0030 (0x0030 - 0x0000)

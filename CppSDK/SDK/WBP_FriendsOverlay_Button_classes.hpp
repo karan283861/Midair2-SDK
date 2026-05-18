@@ -20,7 +20,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass WBP_FriendsOverlay_Button.WBP_FriendsOverlay_Button_C
-// 0x00B8 (0x0318 - 0x0260)
+// 0x00C8 (0x0328 - 0x0260)
 class UWBP_FriendsOverlay_Button_C final : public UUserWidget
 {
 public:
@@ -32,7 +32,7 @@ public:
 	class USizeBox*                               InviteWidget;                                      // 0x0288(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UWidgetSwitcher*                        MainWS;                                            // 0x0290(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UTextBlock*                             NameText;                                          // 0x0298(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	struct FPartyMemberView                       PartyMember;                                       // 0x02A0(0x0078)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FPartyMemberView                       PartyMember;                                       // 0x02A0(0x0088)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void ClearPartyMember();

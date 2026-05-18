@@ -21,6 +21,9 @@ namespace SDK
 class UW_PressAnyKey_C final : public UGameSettingPressAnyKey
 {
 public:
+	class UWidget* BP_GetDesiredFocusTarget() const;
+
+public:
 	static class UClass* StaticClass()
 	{
 		BP_STATIC_CLASS_IMPL("W_PressAnyKey_C")

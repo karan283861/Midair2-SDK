@@ -11,12 +11,12 @@
 #include "Basic.hpp"
 
 #include "NiagaraCore_classes.hpp"
-#include "CoreUObject_structs.hpp"
-#include "CoreUObject_classes.hpp"
 #include "MovieScene_classes.hpp"
-#include "Niagara_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "Niagara_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "CoreUObject_classes.hpp"
 #include "NiagaraShader_classes.hpp"
 #include "DeveloperSettings_classes.hpp"
 
@@ -93,61 +93,6 @@ public:
 };
 DUMPER7_ASSERTS_UNiagaraDataInterface;
 
-// Class Niagara.NiagaraDataInterfaceRWBase
-// 0x00A0 (0x00D8 - 0x0038)
-class UNiagaraDataInterfaceRWBase : public UNiagaraDataInterface
-{
-public:
-	TSet<int32>                                   OutputShaderStages;                                // 0x0038(0x0050)(Edit, AdvancedDisplay, NativeAccessSpecifierPublic)
-	TSet<int32>                                   IterationShaderStages;                             // 0x0088(0x0050)(Edit, AdvancedDisplay, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("NiagaraDataInterfaceRWBase")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"NiagaraDataInterfaceRWBase")
-	}
-	static class UNiagaraDataInterfaceRWBase* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UNiagaraDataInterfaceRWBase>();
-	}
-};
-DUMPER7_ASSERTS_UNiagaraDataInterfaceRWBase;
-
-// Class Niagara.NiagaraDataInterfaceRenderTarget2D
-// 0x00D0 (0x01A8 - 0x00D8)
-class UNiagaraDataInterfaceRenderTarget2D final : public UNiagaraDataInterfaceRWBase
-{
-public:
-	struct FIntPoint                              Size;                                              // 0x00D8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ENiagaraMipMapGeneration                      MipMapGeneration;                                  // 0x00E0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ETextureRenderTargetFormat                    OverrideRenderTargetFormat;                        // 0x00E1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bInheritUserParameterSettings : 1;                 // 0x00E2(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverrideFormat : 1;                               // 0x00E2(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_E3[0x5];                                       // 0x00E3(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FNiagaraUserParameterBinding           RenderTargetUserParameter;                         // 0x00E8(0x0020)(Edit, NativeAccessSpecifierPublic)
-	uint8                                         Pad_108[0x50];                                     // 0x0108(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<uint64, class UTextureRenderTarget2D*>   ManagedRenderTargets;                              // 0x0158(0x0050)(Transient, DuplicateTransient, Protected, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("NiagaraDataInterfaceRenderTarget2D")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"NiagaraDataInterfaceRenderTarget2D")
-	}
-	static class UNiagaraDataInterfaceRenderTarget2D* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UNiagaraDataInterfaceRenderTarget2D>();
-	}
-};
-DUMPER7_ASSERTS_UNiagaraDataInterfaceRenderTarget2D;
-
 // Class Niagara.NiagaraDataInterfaceArray
 // 0x0018 (0x0050 - 0x0038)
 class UNiagaraDataInterfaceArray : public UNiagaraDataInterface
@@ -196,77 +141,64 @@ public:
 };
 DUMPER7_ASSERTS_UNiagaraDataInterfaceArrayColor;
 
-// Class Niagara.NiagaraFunctionLibrary
-// 0x0000 (0x0028 - 0x0028)
-class UNiagaraFunctionLibrary final : public UBlueprintFunctionLibrary
+// Class Niagara.NiagaraBaselineController
+// 0x0040 (0x0068 - 0x0028)
+class UNiagaraBaselineController : public UObject
 {
 public:
-	static class UNiagaraParameterCollectionInstance* GetNiagaraParameterCollection(class UObject* WorldContextObject, class UNiagaraParameterCollection* Collection);
-	static void OverrideSystemUserVariableSkeletalMeshComponent(class UNiagaraComponent* NiagaraSystem, const class FString& OverrideName, class USkeletalMeshComponent* SkeletalMeshComponent);
-	static void OverrideSystemUserVariableStaticMesh(class UNiagaraComponent* NiagaraSystem, const class FString& OverrideName, class UStaticMesh* StaticMesh);
-	static void OverrideSystemUserVariableStaticMeshComponent(class UNiagaraComponent* NiagaraSystem, const class FString& OverrideName, class UStaticMeshComponent* StaticMeshComponent);
-	static void SetSkeletalMeshDataInterfaceSamplingRegions(class UNiagaraComponent* NiagaraSystem, const class FString& OverrideName, const TArray<class FName>& SamplingRegions);
-	static void SetTexture2DArrayObject(class UNiagaraComponent* NiagaraSystem, const class FString& OverrideName, class UTexture2DArray* Texture);
-	static void SetTextureObject(class UNiagaraComponent* NiagaraSystem, const class FString& OverrideName, class UTexture* Texture);
-	static void SetVolumeTextureObject(class UNiagaraComponent* NiagaraSystem, const class FString& OverrideName, class UVolumeTexture* Texture);
-	static class UNiagaraComponent* SpawnSystemAtLocation(const class UObject* WorldContextObject, class UNiagaraSystem* SystemTemplate, const struct FVector& Location, const struct FRotator& Rotation, const struct FVector& Scale, bool bAutoDestroy, bool bAutoActivate, ENCPoolMethod PoolingMethod, bool bPreCullCheck);
-	static class UNiagaraComponent* SpawnSystemAttached(class UNiagaraSystem* SystemTemplate, class USceneComponent* AttachToComponent, class FName AttachPointName, const struct FVector& Location, const struct FRotator& Rotation, EAttachLocation LocationType, bool bAutoDestroy, bool bAutoActivate, ENCPoolMethod PoolingMethod, bool bPreCullCheck);
+	float                                         TestDuration;                                      // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UNiagaraEffectType*                     EffectType;                                        // 0x0030(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ANiagaraPerfBaselineActor*              Owner;                                             // 0x0038(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UNiagaraSystem>          System;                                            // 0x0040(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	class UNiagaraSystem* GetSystem();
+	void OnBeginTest();
+	void OnEndTest(const struct FNiagaraPerfBaselineStats& stats);
+	void OnOwnerTick(float DeltaTime);
+	bool OnTickTest();
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("NiagaraFunctionLibrary")
+		STATIC_CLASS_IMPL("NiagaraBaselineController")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"NiagaraFunctionLibrary")
+		STATIC_NAME_IMPL(L"NiagaraBaselineController")
 	}
-	static class UNiagaraFunctionLibrary* GetDefaultObj()
+	static class UNiagaraBaselineController* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UNiagaraFunctionLibrary>();
+		return GetDefaultObjImpl<UNiagaraBaselineController>();
 	}
 };
-DUMPER7_ASSERTS_UNiagaraFunctionLibrary;
+DUMPER7_ASSERTS_UNiagaraBaselineController;
 
-// Class Niagara.NiagaraDataInterfaceSkeletalMesh
-// 0x0090 (0x00C8 - 0x0038)
-class UNiagaraDataInterfaceSkeletalMesh final : public UNiagaraDataInterface
+// Class Niagara.NiagaraBaselineController_Basic
+// 0x0018 (0x0080 - 0x0068)
+class UNiagaraBaselineController_Basic final : public UNiagaraBaselineController
 {
 public:
-	ENDISkeletalMesh_SourceMode                   SourceMode;                                        // 0x0038(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 Source;                                            // 0x0040(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FNiagaraUserParameterBinding           MeshUserParameter;                                 // 0x0048(0x0020)(Edit, NativeAccessSpecifierPublic)
-	class USkeletalMeshComponent*                 SourceComponent;                                   // 0x0068(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ENDISkeletalMesh_SkinningMode                 SkinningMode;                                      // 0x0070(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_71[0x7];                                       // 0x0071(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class FName>                           SamplingRegions;                                   // 0x0078(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	int32                                         WholeMeshLOD;                                      // 0x0088(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8C[0x4];                                       // 0x008C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class FName>                           FilteredBones;                                     // 0x0090(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class FName>                           FilteredSockets;                                   // 0x00A0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	class FName                                   ExcludeBoneName;                                   // 0x00B0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bExcludeBone : 1;                                  // 0x00B8(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_B9[0x3];                                       // 0x00B9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         UvSetIndex;                                        // 0x00BC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRequireCurrentFrameData;                          // 0x00C0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C1[0x7];                                       // 0x00C1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         NumInstances;                                      // 0x0068(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UNiagaraComponent*>              SpawnedComponents;                                 // 0x0070(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("NiagaraDataInterfaceSkeletalMesh")
+		STATIC_CLASS_IMPL("NiagaraBaselineController_Basic")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"NiagaraDataInterfaceSkeletalMesh")
+		STATIC_NAME_IMPL(L"NiagaraBaselineController_Basic")
 	}
-	static class UNiagaraDataInterfaceSkeletalMesh* GetDefaultObj()
+	static class UNiagaraBaselineController_Basic* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UNiagaraDataInterfaceSkeletalMesh>();
+		return GetDefaultObjImpl<UNiagaraBaselineController_Basic>();
 	}
 };
-DUMPER7_ASSERTS_UNiagaraDataInterfaceSkeletalMesh;
+DUMPER7_ASSERTS_UNiagaraBaselineController_Basic;
 
 // Class Niagara.MovieSceneNiagaraBoolParameterTrack
 // 0x0008 (0x00C8 - 0x00C0)
@@ -314,31 +246,58 @@ public:
 };
 DUMPER7_ASSERTS_UMovieSceneNiagaraColorParameterTrack;
 
-// Class Niagara.NiagaraDataInterfaceLandscape
-// 0x0020 (0x0058 - 0x0038)
-class UNiagaraDataInterfaceLandscape final : public UNiagaraDataInterface
+// Class Niagara.NiagaraDataInterfaceRWBase
+// 0x00A0 (0x00D8 - 0x0038)
+class UNiagaraDataInterfaceRWBase : public UNiagaraDataInterface
 {
 public:
-	class AActor*                                 SourceLandscape;                                   // 0x0038(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ENDILandscape_SourceMode                      SourceMode;                                        // 0x0040(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UPhysicalMaterial*>              PhysicalMaterials;                                 // 0x0048(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TSet<int32>                                   OutputShaderStages;                                // 0x0038(0x0050)(Edit, AdvancedDisplay, NativeAccessSpecifierPublic)
+	TSet<int32>                                   IterationShaderStages;                             // 0x0088(0x0050)(Edit, AdvancedDisplay, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("NiagaraDataInterfaceLandscape")
+		STATIC_CLASS_IMPL("NiagaraDataInterfaceRWBase")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"NiagaraDataInterfaceLandscape")
+		STATIC_NAME_IMPL(L"NiagaraDataInterfaceRWBase")
 	}
-	static class UNiagaraDataInterfaceLandscape* GetDefaultObj()
+	static class UNiagaraDataInterfaceRWBase* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UNiagaraDataInterfaceLandscape>();
+		return GetDefaultObjImpl<UNiagaraDataInterfaceRWBase>();
 	}
 };
-DUMPER7_ASSERTS_UNiagaraDataInterfaceLandscape;
+DUMPER7_ASSERTS_UNiagaraDataInterfaceRWBase;
+
+// Class Niagara.NiagaraDataInterfaceRenderTargetCube
+// 0x0078 (0x0150 - 0x00D8)
+class UNiagaraDataInterfaceRenderTargetCube final : public UNiagaraDataInterfaceRWBase
+{
+public:
+	int32                                         Size;                                              // 0x00D8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ETextureRenderTargetFormat                    OverrideRenderTargetFormat;                        // 0x00DC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bInheritUserParameterSettings : 1;                 // 0x00DD(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverrideFormat : 1;                               // 0x00DD(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_DE[0x2];                                       // 0x00DE(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FNiagaraUserParameterBinding           RenderTargetUserParameter;                         // 0x00E0(0x0020)(Edit, NativeAccessSpecifierPublic)
+	TMap<uint64, class UTextureRenderTargetCube*> ManagedRenderTargets;                              // 0x0100(0x0050)(Transient, DuplicateTransient, Protected, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("NiagaraDataInterfaceRenderTargetCube")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"NiagaraDataInterfaceRenderTargetCube")
+	}
+	static class UNiagaraDataInterfaceRenderTargetCube* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UNiagaraDataInterfaceRenderTargetCube>();
+	}
+};
+DUMPER7_ASSERTS_UNiagaraDataInterfaceRenderTargetCube;
 
 // Class Niagara.MovieSceneNiagaraFloatParameterTrack
 // 0x0008 (0x00C8 - 0x00C0)
@@ -363,26 +322,6 @@ public:
 };
 DUMPER7_ASSERTS_UMovieSceneNiagaraFloatParameterTrack;
 
-// Class Niagara.NiagaraDataInterfaceSimpleCounter
-// 0x0000 (0x0038 - 0x0038)
-class UNiagaraDataInterfaceSimpleCounter final : public UNiagaraDataInterface
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("NiagaraDataInterfaceSimpleCounter")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"NiagaraDataInterfaceSimpleCounter")
-	}
-	static class UNiagaraDataInterfaceSimpleCounter* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UNiagaraDataInterfaceSimpleCounter>();
-	}
-};
-DUMPER7_ASSERTS_UNiagaraDataInterfaceSimpleCounter;
-
 // Class Niagara.MovieSceneNiagaraIntegerParameterTrack
 // 0x0008 (0x00C8 - 0x00C0)
 class UMovieSceneNiagaraIntegerParameterTrack final : public UMovieSceneNiagaraParameterTrack
@@ -405,6 +344,82 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMovieSceneNiagaraIntegerParameterTrack;
+
+// Class Niagara.NiagaraDataInterfaceGrid3D
+// 0x0028 (0x0100 - 0x00D8)
+class UNiagaraDataInterfaceGrid3D : public UNiagaraDataInterfaceRWBase
+{
+public:
+	struct FIntVector                             NumCells;                                          // 0x00D8(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CellSize;                                          // 0x00E4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         NumCellsMaxAxis;                                   // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESetResolutionMethod                          SetResolutionMethod;                               // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                WorldBBoxSize;                                     // 0x00F0(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_FC[0x4];                                       // 0x00FC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("NiagaraDataInterfaceGrid3D")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"NiagaraDataInterfaceGrid3D")
+	}
+	static class UNiagaraDataInterfaceGrid3D* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UNiagaraDataInterfaceGrid3D>();
+	}
+};
+DUMPER7_ASSERTS_UNiagaraDataInterfaceGrid3D;
+
+// Class Niagara.NiagaraDataInterfaceNeighborGrid3D
+// 0x0008 (0x0108 - 0x0100)
+class UNiagaraDataInterfaceNeighborGrid3D final : public UNiagaraDataInterfaceGrid3D
+{
+public:
+	uint32                                        MaxNeighborsPerCell;                               // 0x0100(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_104[0x4];                                      // 0x0104(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("NiagaraDataInterfaceNeighborGrid3D")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"NiagaraDataInterfaceNeighborGrid3D")
+	}
+	static class UNiagaraDataInterfaceNeighborGrid3D* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UNiagaraDataInterfaceNeighborGrid3D>();
+	}
+};
+DUMPER7_ASSERTS_UNiagaraDataInterfaceNeighborGrid3D;
+
+// Class Niagara.NiagaraDataInterfaceSpline
+// 0x0028 (0x0060 - 0x0038)
+class UNiagaraDataInterfaceSpline final : public UNiagaraDataInterface
+{
+public:
+	class AActor*                                 Source;                                            // 0x0038(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FNiagaraUserParameterBinding           SplineUserParameter;                               // 0x0040(0x0020)(Edit, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("NiagaraDataInterfaceSpline")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"NiagaraDataInterfaceSpline")
+	}
+	static class UNiagaraDataInterfaceSpline* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UNiagaraDataInterfaceSpline>();
+	}
+};
+DUMPER7_ASSERTS_UNiagaraDataInterfaceSpline;
 
 // Class Niagara.MovieSceneNiagaraSystemSpawnSection
 // 0x0010 (0x00F8 - 0x00E8)
@@ -510,35 +525,6 @@ public:
 };
 DUMPER7_ASSERTS_ANiagaraActor;
 
-// Class Niagara.NiagaraDataInterfaceRenderTargetCube
-// 0x0078 (0x0150 - 0x00D8)
-class UNiagaraDataInterfaceRenderTargetCube final : public UNiagaraDataInterfaceRWBase
-{
-public:
-	int32                                         Size;                                              // 0x00D8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ETextureRenderTargetFormat                    OverrideRenderTargetFormat;                        // 0x00DC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bInheritUserParameterSettings : 1;                 // 0x00DD(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverrideFormat : 1;                               // 0x00DD(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_DE[0x2];                                       // 0x00DE(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FNiagaraUserParameterBinding           RenderTargetUserParameter;                         // 0x00E0(0x0020)(Edit, NativeAccessSpecifierPublic)
-	TMap<uint64, class UTextureRenderTargetCube*> ManagedRenderTargets;                              // 0x0100(0x0050)(Transient, DuplicateTransient, Protected, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("NiagaraDataInterfaceRenderTargetCube")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"NiagaraDataInterfaceRenderTargetCube")
-	}
-	static class UNiagaraDataInterfaceRenderTargetCube* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UNiagaraDataInterfaceRenderTargetCube>();
-	}
-};
-DUMPER7_ASSERTS_UNiagaraDataInterfaceRenderTargetCube;
-
 // Class Niagara.NiagaraBakerSettings
 // 0x00F0 (0x0118 - 0x0028)
 class UNiagaraBakerSettings final : public UObject
@@ -578,6 +564,26 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UNiagaraBakerSettings;
+
+// Class Niagara.NiagaraDataInterfaceSimpleCounter
+// 0x0000 (0x0038 - 0x0038)
+class UNiagaraDataInterfaceSimpleCounter final : public UNiagaraDataInterface
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("NiagaraDataInterfaceSimpleCounter")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"NiagaraDataInterfaceSimpleCounter")
+	}
+	static class UNiagaraDataInterfaceSimpleCounter* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UNiagaraDataInterfaceSimpleCounter>();
+	}
+};
+DUMPER7_ASSERTS_UNiagaraDataInterfaceSimpleCounter;
 
 // Class Niagara.NiagaraComponent
 // 0x01B0 (0x0600 - 0x0450)
@@ -843,29 +849,6 @@ public:
 };
 DUMPER7_ASSERTS_UNiagaraDataInterface2DArrayTexture;
 
-// Class Niagara.NiagaraDataInterfaceCollisionQuery
-// 0x0010 (0x0048 - 0x0038)
-class UNiagaraDataInterfaceCollisionQuery final : public UNiagaraDataInterface
-{
-public:
-	uint8                                         Pad_38[0x10];                                      // 0x0038(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("NiagaraDataInterfaceCollisionQuery")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"NiagaraDataInterfaceCollisionQuery")
-	}
-	static class UNiagaraDataInterfaceCollisionQuery* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UNiagaraDataInterfaceCollisionQuery>();
-	}
-};
-DUMPER7_ASSERTS_UNiagaraDataInterfaceCollisionQuery;
-
 // Class Niagara.NiagaraDataInterfaceArrayFloat
 // 0x0010 (0x0060 - 0x0050)
 class UNiagaraDataInterfaceArrayFloat final : public UNiagaraDataInterfaceArray
@@ -889,28 +872,64 @@ public:
 };
 DUMPER7_ASSERTS_UNiagaraDataInterfaceArrayFloat;
 
-// Class Niagara.NiagaraDataInterfaceArrayBool
-// 0x0010 (0x0060 - 0x0050)
-class UNiagaraDataInterfaceArrayBool final : public UNiagaraDataInterfaceArray
+// Class Niagara.NiagaraDataInterfaceCurveBase
+// 0x0038 (0x0070 - 0x0038)
+class UNiagaraDataInterfaceCurveBase : public UNiagaraDataInterface
 {
 public:
-	TArray<bool>                                  BoolData;                                          // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<float>                                 ShaderLUT;                                         // 0x0038(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	float                                         LUTMinTime;                                        // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         LUTMaxTime;                                        // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         LUTInvTimeRange;                                   // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         LUTNumSamplesMinusOne;                             // 0x0054(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         bUseLUT : 1;                                       // 0x0058(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bExposeCurve : 1;                                  // 0x0058(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_59[0x3];                                       // 0x0059(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   ExposedName;                                       // 0x005C(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture2D*                             ExposedTexture;                                    // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("NiagaraDataInterfaceArrayBool")
+		STATIC_CLASS_IMPL("NiagaraDataInterfaceCurveBase")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"NiagaraDataInterfaceArrayBool")
+		STATIC_NAME_IMPL(L"NiagaraDataInterfaceCurveBase")
 	}
-	static class UNiagaraDataInterfaceArrayBool* GetDefaultObj()
+	static class UNiagaraDataInterfaceCurveBase* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UNiagaraDataInterfaceArrayBool>();
+		return GetDefaultObjImpl<UNiagaraDataInterfaceCurveBase>();
 	}
 };
-DUMPER7_ASSERTS_UNiagaraDataInterfaceArrayBool;
+DUMPER7_ASSERTS_UNiagaraDataInterfaceCurveBase;
+
+// Class Niagara.NiagaraDataInterfaceColorCurve
+// 0x0200 (0x0270 - 0x0070)
+class UNiagaraDataInterfaceColorCurve final : public UNiagaraDataInterfaceCurveBase
+{
+public:
+	struct FRichCurve                             RedCurve;                                          // 0x0070(0x0080)(Edit, NativeAccessSpecifierPublic)
+	struct FRichCurve                             GreenCurve;                                        // 0x00F0(0x0080)(Edit, NativeAccessSpecifierPublic)
+	struct FRichCurve                             BlueCurve;                                         // 0x0170(0x0080)(Edit, NativeAccessSpecifierPublic)
+	struct FRichCurve                             AlphaCurve;                                        // 0x01F0(0x0080)(Edit, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("NiagaraDataInterfaceColorCurve")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"NiagaraDataInterfaceColorCurve")
+	}
+	static class UNiagaraDataInterfaceColorCurve* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UNiagaraDataInterfaceColorCurve>();
+	}
+};
+DUMPER7_ASSERTS_UNiagaraDataInterfaceColorCurve;
 
 // Class Niagara.NiagaraDataInterfaceArrayFloat2
 // 0x0010 (0x0060 - 0x0050)
@@ -958,6 +977,31 @@ public:
 };
 DUMPER7_ASSERTS_UNiagaraDataInterfaceArrayFloat3;
 
+// Class Niagara.NiagaraDataInterfaceAudioOscilloscope
+// 0x0010 (0x0048 - 0x0038)
+class UNiagaraDataInterfaceAudioOscilloscope final : public UNiagaraDataInterface
+{
+public:
+	class USoundSubmix*                           Submix;                                            // 0x0038(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Resolution;                                        // 0x0040(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ScopeInMilliseconds;                               // 0x0044(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("NiagaraDataInterfaceAudioOscilloscope")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"NiagaraDataInterfaceAudioOscilloscope")
+	}
+	static class UNiagaraDataInterfaceAudioOscilloscope* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UNiagaraDataInterfaceAudioOscilloscope>();
+	}
+};
+DUMPER7_ASSERTS_UNiagaraDataInterfaceAudioOscilloscope;
+
 // Class Niagara.NiagaraDataInterfaceArrayFloat4
 // 0x0010 (0x0060 - 0x0050)
 class UNiagaraDataInterfaceArrayFloat4 final : public UNiagaraDataInterfaceArray
@@ -980,55 +1024,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UNiagaraDataInterfaceArrayFloat4;
-
-// Class Niagara.NiagaraDataInterfaceAudioSubmix
-// 0x0008 (0x0040 - 0x0038)
-class UNiagaraDataInterfaceAudioSubmix : public UNiagaraDataInterface
-{
-public:
-	class USoundSubmix*                           Submix;                                            // 0x0038(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("NiagaraDataInterfaceAudioSubmix")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"NiagaraDataInterfaceAudioSubmix")
-	}
-	static class UNiagaraDataInterfaceAudioSubmix* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UNiagaraDataInterfaceAudioSubmix>();
-	}
-};
-DUMPER7_ASSERTS_UNiagaraDataInterfaceAudioSubmix;
-
-// Class Niagara.NiagaraDataInterfaceAudioSpectrum
-// 0x0010 (0x0050 - 0x0040)
-class UNiagaraDataInterfaceAudioSpectrum final : public UNiagaraDataInterfaceAudioSubmix
-{
-public:
-	int32                                         Resolution;                                        // 0x0040(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MinimumFrequency;                                  // 0x0044(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaximumFrequency;                                  // 0x0048(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NoiseFloorDb;                                      // 0x004C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("NiagaraDataInterfaceAudioSpectrum")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"NiagaraDataInterfaceAudioSpectrum")
-	}
-	static class UNiagaraDataInterfaceAudioSpectrum* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UNiagaraDataInterfaceAudioSpectrum>();
-	}
-};
-DUMPER7_ASSERTS_UNiagaraDataInterfaceAudioSpectrum;
 
 // Class Niagara.NiagaraDataInterfaceArrayQuat
 // 0x0010 (0x0060 - 0x0050)
@@ -1107,6 +1102,29 @@ public:
 };
 DUMPER7_ASSERTS_UNiagaraDataInterfaceArrayFunctionLibrary;
 
+// Class Niagara.NiagaraDataInterfaceCollisionQuery
+// 0x0010 (0x0048 - 0x0038)
+class UNiagaraDataInterfaceCollisionQuery final : public UNiagaraDataInterface
+{
+public:
+	uint8                                         Pad_38[0x10];                                      // 0x0038(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("NiagaraDataInterfaceCollisionQuery")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"NiagaraDataInterfaceCollisionQuery")
+	}
+	static class UNiagaraDataInterfaceCollisionQuery* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UNiagaraDataInterfaceCollisionQuery>();
+	}
+};
+DUMPER7_ASSERTS_UNiagaraDataInterfaceCollisionQuery;
+
 // Class Niagara.NiagaraDataInterfaceArrayInt32
 // 0x0010 (0x0060 - 0x0050)
 class UNiagaraDataInterfaceArrayInt32 final : public UNiagaraDataInterfaceArray
@@ -1130,30 +1148,51 @@ public:
 };
 DUMPER7_ASSERTS_UNiagaraDataInterfaceArrayInt32;
 
-// Class Niagara.NiagaraDataInterfaceAudioOscilloscope
-// 0x0010 (0x0048 - 0x0038)
-class UNiagaraDataInterfaceAudioOscilloscope final : public UNiagaraDataInterface
+// Class Niagara.NiagaraDataInterfaceArrayBool
+// 0x0010 (0x0060 - 0x0050)
+class UNiagaraDataInterfaceArrayBool final : public UNiagaraDataInterfaceArray
 {
 public:
-	class USoundSubmix*                           Submix;                                            // 0x0038(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Resolution;                                        // 0x0040(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ScopeInMilliseconds;                               // 0x0044(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<bool>                                  BoolData;                                          // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("NiagaraDataInterfaceAudioOscilloscope")
+		STATIC_CLASS_IMPL("NiagaraDataInterfaceArrayBool")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"NiagaraDataInterfaceAudioOscilloscope")
+		STATIC_NAME_IMPL(L"NiagaraDataInterfaceArrayBool")
 	}
-	static class UNiagaraDataInterfaceAudioOscilloscope* GetDefaultObj()
+	static class UNiagaraDataInterfaceArrayBool* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UNiagaraDataInterfaceAudioOscilloscope>();
+		return GetDefaultObjImpl<UNiagaraDataInterfaceArrayBool>();
 	}
 };
-DUMPER7_ASSERTS_UNiagaraDataInterfaceAudioOscilloscope;
+DUMPER7_ASSERTS_UNiagaraDataInterfaceArrayBool;
+
+// Class Niagara.NiagaraDataInterfaceAudioSubmix
+// 0x0008 (0x0040 - 0x0038)
+class UNiagaraDataInterfaceAudioSubmix : public UNiagaraDataInterface
+{
+public:
+	class USoundSubmix*                           Submix;                                            // 0x0038(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("NiagaraDataInterfaceAudioSubmix")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"NiagaraDataInterfaceAudioSubmix")
+	}
+	static class UNiagaraDataInterfaceAudioSubmix* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UNiagaraDataInterfaceAudioSubmix>();
+	}
+};
+DUMPER7_ASSERTS_UNiagaraDataInterfaceAudioSubmix;
 
 // Class Niagara.NiagaraDataInterfaceAudioPlayer
 // 0x0038 (0x0070 - 0x0038)
@@ -1186,6 +1225,32 @@ public:
 };
 DUMPER7_ASSERTS_UNiagaraDataInterfaceAudioPlayer;
 
+// Class Niagara.NiagaraDataInterfaceAudioSpectrum
+// 0x0010 (0x0050 - 0x0040)
+class UNiagaraDataInterfaceAudioSpectrum final : public UNiagaraDataInterfaceAudioSubmix
+{
+public:
+	int32                                         Resolution;                                        // 0x0040(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MinimumFrequency;                                  // 0x0044(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaximumFrequency;                                  // 0x0048(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NoiseFloorDb;                                      // 0x004C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("NiagaraDataInterfaceAudioSpectrum")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"NiagaraDataInterfaceAudioSpectrum")
+	}
+	static class UNiagaraDataInterfaceAudioSpectrum* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UNiagaraDataInterfaceAudioSpectrum>();
+	}
+};
+DUMPER7_ASSERTS_UNiagaraDataInterfaceAudioSpectrum;
+
 // Class Niagara.NiagaraDataInterfaceCamera
 // 0x0008 (0x0040 - 0x0038)
 class UNiagaraDataInterfaceCamera final : public UNiagaraDataInterface
@@ -1210,65 +1275,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UNiagaraDataInterfaceCamera;
-
-// Class Niagara.NiagaraDataInterfaceCurveBase
-// 0x0038 (0x0070 - 0x0038)
-class UNiagaraDataInterfaceCurveBase : public UNiagaraDataInterface
-{
-public:
-	TArray<float>                                 ShaderLUT;                                         // 0x0038(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	float                                         LUTMinTime;                                        // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         LUTMaxTime;                                        // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         LUTInvTimeRange;                                   // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         LUTNumSamplesMinusOne;                             // 0x0054(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         bUseLUT : 1;                                       // 0x0058(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bExposeCurve : 1;                                  // 0x0058(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_59[0x3];                                       // 0x0059(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   ExposedName;                                       // 0x005C(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture2D*                             ExposedTexture;                                    // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("NiagaraDataInterfaceCurveBase")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"NiagaraDataInterfaceCurveBase")
-	}
-	static class UNiagaraDataInterfaceCurveBase* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UNiagaraDataInterfaceCurveBase>();
-	}
-};
-DUMPER7_ASSERTS_UNiagaraDataInterfaceCurveBase;
-
-// Class Niagara.NiagaraDataInterfaceColorCurve
-// 0x0200 (0x0270 - 0x0070)
-class UNiagaraDataInterfaceColorCurve final : public UNiagaraDataInterfaceCurveBase
-{
-public:
-	struct FRichCurve                             RedCurve;                                          // 0x0070(0x0080)(Edit, NativeAccessSpecifierPublic)
-	struct FRichCurve                             GreenCurve;                                        // 0x00F0(0x0080)(Edit, NativeAccessSpecifierPublic)
-	struct FRichCurve                             BlueCurve;                                         // 0x0170(0x0080)(Edit, NativeAccessSpecifierPublic)
-	struct FRichCurve                             AlphaCurve;                                        // 0x01F0(0x0080)(Edit, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("NiagaraDataInterfaceColorCurve")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"NiagaraDataInterfaceColorCurve")
-	}
-	static class UNiagaraDataInterfaceColorCurve* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UNiagaraDataInterfaceColorCurve>();
-	}
-};
-DUMPER7_ASSERTS_UNiagaraDataInterfaceColorCurve;
 
 // Class Niagara.NiagaraDataInterfaceCubeTexture
 // 0x0010 (0x0048 - 0x0038)
@@ -1529,34 +1535,6 @@ public:
 };
 DUMPER7_ASSERTS_UNiagaraDataInterfaceGrid2DCollectionReader;
 
-// Class Niagara.NiagaraDataInterfaceGrid3D
-// 0x0028 (0x0100 - 0x00D8)
-class UNiagaraDataInterfaceGrid3D : public UNiagaraDataInterfaceRWBase
-{
-public:
-	struct FIntVector                             NumCells;                                          // 0x00D8(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CellSize;                                          // 0x00E4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         NumCellsMaxAxis;                                   // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESetResolutionMethod                          SetResolutionMethod;                               // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                WorldBBoxSize;                                     // 0x00F0(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_FC[0x4];                                       // 0x00FC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("NiagaraDataInterfaceGrid3D")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"NiagaraDataInterfaceGrid3D")
-	}
-	static class UNiagaraDataInterfaceGrid3D* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UNiagaraDataInterfaceGrid3D>();
-	}
-};
-DUMPER7_ASSERTS_UNiagaraDataInterfaceGrid3D;
-
 // Class Niagara.NiagaraDataInterfaceGrid3DCollection
 // 0x0080 (0x0180 - 0x0100)
 class UNiagaraDataInterfaceGrid3DCollection final : public UNiagaraDataInterfaceGrid3D
@@ -1616,6 +1594,32 @@ public:
 };
 DUMPER7_ASSERTS_UNiagaraDataInterfaceIntRenderTarget2D;
 
+// Class Niagara.NiagaraDataInterfaceLandscape
+// 0x0020 (0x0058 - 0x0038)
+class UNiagaraDataInterfaceLandscape final : public UNiagaraDataInterface
+{
+public:
+	class AActor*                                 SourceLandscape;                                   // 0x0038(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ENDILandscape_SourceMode                      SourceMode;                                        // 0x0040(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UPhysicalMaterial*>              PhysicalMaterials;                                 // 0x0048(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("NiagaraDataInterfaceLandscape")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"NiagaraDataInterfaceLandscape")
+	}
+	static class UNiagaraDataInterfaceLandscape* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UNiagaraDataInterfaceLandscape>();
+	}
+};
+DUMPER7_ASSERTS_UNiagaraDataInterfaceLandscape;
+
 // Class Niagara.NiagaraDataInterfaceMeshRendererInfo
 // 0x0018 (0x0050 - 0x0038)
 class UNiagaraDataInterfaceMeshRendererInfo final : public UNiagaraDataInterface
@@ -1639,30 +1643,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UNiagaraDataInterfaceMeshRendererInfo;
-
-// Class Niagara.NiagaraDataInterfaceNeighborGrid3D
-// 0x0008 (0x0108 - 0x0100)
-class UNiagaraDataInterfaceNeighborGrid3D final : public UNiagaraDataInterfaceGrid3D
-{
-public:
-	uint32                                        MaxNeighborsPerCell;                               // 0x0100(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_104[0x4];                                      // 0x0104(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("NiagaraDataInterfaceNeighborGrid3D")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"NiagaraDataInterfaceNeighborGrid3D")
-	}
-	static class UNiagaraDataInterfaceNeighborGrid3D* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UNiagaraDataInterfaceNeighborGrid3D>();
-	}
-};
-DUMPER7_ASSERTS_UNiagaraDataInterfaceNeighborGrid3D;
 
 // Class Niagara.NiagaraDataInterfaceOcclusion
 // 0x0000 (0x0038 - 0x0038)
@@ -1730,6 +1710,37 @@ public:
 };
 DUMPER7_ASSERTS_UNiagaraDataInterfacePlatformSet;
 
+// Class Niagara.NiagaraDataInterfaceRenderTarget2D
+// 0x00D0 (0x01A8 - 0x00D8)
+class UNiagaraDataInterfaceRenderTarget2D final : public UNiagaraDataInterfaceRWBase
+{
+public:
+	struct FIntPoint                              Size;                                              // 0x00D8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ENiagaraMipMapGeneration                      MipMapGeneration;                                  // 0x00E0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ETextureRenderTargetFormat                    OverrideRenderTargetFormat;                        // 0x00E1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bInheritUserParameterSettings : 1;                 // 0x00E2(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverrideFormat : 1;                               // 0x00E2(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_E3[0x5];                                       // 0x00E3(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FNiagaraUserParameterBinding           RenderTargetUserParameter;                         // 0x00E8(0x0020)(Edit, NativeAccessSpecifierPublic)
+	uint8                                         Pad_108[0x50];                                     // 0x0108(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<uint64, class UTextureRenderTarget2D*>   ManagedRenderTargets;                              // 0x0158(0x0050)(Transient, DuplicateTransient, Protected, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("NiagaraDataInterfaceRenderTarget2D")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"NiagaraDataInterfaceRenderTarget2D")
+	}
+	static class UNiagaraDataInterfaceRenderTarget2D* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UNiagaraDataInterfaceRenderTarget2D>();
+	}
+};
+DUMPER7_ASSERTS_UNiagaraDataInterfaceRenderTarget2D;
+
 // Class Niagara.NiagaraDataInterfaceRenderTarget2DArray
 // 0x0080 (0x0158 - 0x00D8)
 class UNiagaraDataInterfaceRenderTarget2DArray final : public UNiagaraDataInterfaceRWBase
@@ -1788,29 +1799,45 @@ public:
 };
 DUMPER7_ASSERTS_UNiagaraDataInterfaceRenderTargetVolume;
 
-// Class Niagara.NiagaraDataInterfaceSpline
-// 0x0028 (0x0060 - 0x0038)
-class UNiagaraDataInterfaceSpline final : public UNiagaraDataInterface
+// Class Niagara.NiagaraDataInterfaceSkeletalMesh
+// 0x0090 (0x00C8 - 0x0038)
+class UNiagaraDataInterfaceSkeletalMesh final : public UNiagaraDataInterface
 {
 public:
-	class AActor*                                 Source;                                            // 0x0038(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FNiagaraUserParameterBinding           SplineUserParameter;                               // 0x0040(0x0020)(Edit, NativeAccessSpecifierPublic)
+	ENDISkeletalMesh_SourceMode                   SourceMode;                                        // 0x0038(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 Source;                                            // 0x0040(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FNiagaraUserParameterBinding           MeshUserParameter;                                 // 0x0048(0x0020)(Edit, NativeAccessSpecifierPublic)
+	class USkeletalMeshComponent*                 SourceComponent;                                   // 0x0068(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ENDISkeletalMesh_SkinningMode                 SkinningMode;                                      // 0x0070(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_71[0x7];                                       // 0x0071(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FName>                           SamplingRegions;                                   // 0x0078(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         WholeMeshLOD;                                      // 0x0088(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8C[0x4];                                       // 0x008C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FName>                           FilteredBones;                                     // 0x0090(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class FName>                           FilteredSockets;                                   // 0x00A0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FName                                   ExcludeBoneName;                                   // 0x00B0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bExcludeBone : 1;                                  // 0x00B8(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_B9[0x3];                                       // 0x00B9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         UvSetIndex;                                        // 0x00BC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRequireCurrentFrameData;                          // 0x00C0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C1[0x7];                                       // 0x00C1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("NiagaraDataInterfaceSpline")
+		STATIC_CLASS_IMPL("NiagaraDataInterfaceSkeletalMesh")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"NiagaraDataInterfaceSpline")
+		STATIC_NAME_IMPL(L"NiagaraDataInterfaceSkeletalMesh")
 	}
-	static class UNiagaraDataInterfaceSpline* GetDefaultObj()
+	static class UNiagaraDataInterfaceSkeletalMesh* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UNiagaraDataInterfaceSpline>();
+		return GetDefaultObjImpl<UNiagaraDataInterfaceSkeletalMesh>();
 	}
 };
-DUMPER7_ASSERTS_UNiagaraDataInterfaceSpline;
+DUMPER7_ASSERTS_UNiagaraDataInterfaceSkeletalMesh;
 
 // Class Niagara.NiagaraDataInterfaceStaticMesh
 // 0x0050 (0x0088 - 0x0038)
@@ -2257,6 +2284,38 @@ public:
 };
 DUMPER7_ASSERTS_UNiagaraEventReceiverEmitterAction_SpawnParticles;
 
+// Class Niagara.NiagaraFunctionLibrary
+// 0x0000 (0x0028 - 0x0028)
+class UNiagaraFunctionLibrary final : public UBlueprintFunctionLibrary
+{
+public:
+	static class UNiagaraParameterCollectionInstance* GetNiagaraParameterCollection(class UObject* WorldContextObject, class UNiagaraParameterCollection* Collection);
+	static void OverrideSystemUserVariableSkeletalMeshComponent(class UNiagaraComponent* NiagaraSystem, const class FString& OverrideName, class USkeletalMeshComponent* SkeletalMeshComponent);
+	static void OverrideSystemUserVariableStaticMesh(class UNiagaraComponent* NiagaraSystem, const class FString& OverrideName, class UStaticMesh* StaticMesh);
+	static void OverrideSystemUserVariableStaticMeshComponent(class UNiagaraComponent* NiagaraSystem, const class FString& OverrideName, class UStaticMeshComponent* StaticMeshComponent);
+	static void SetSkeletalMeshDataInterfaceSamplingRegions(class UNiagaraComponent* NiagaraSystem, const class FString& OverrideName, const TArray<class FName>& SamplingRegions);
+	static void SetTexture2DArrayObject(class UNiagaraComponent* NiagaraSystem, const class FString& OverrideName, class UTexture2DArray* Texture);
+	static void SetTextureObject(class UNiagaraComponent* NiagaraSystem, const class FString& OverrideName, class UTexture* Texture);
+	static void SetVolumeTextureObject(class UNiagaraComponent* NiagaraSystem, const class FString& OverrideName, class UVolumeTexture* Texture);
+	static class UNiagaraComponent* SpawnSystemAtLocation(const class UObject* WorldContextObject, class UNiagaraSystem* SystemTemplate, const struct FVector& Location, const struct FRotator& Rotation, const struct FVector& Scale, bool bAutoDestroy, bool bAutoActivate, ENCPoolMethod PoolingMethod, bool bPreCullCheck);
+	static class UNiagaraComponent* SpawnSystemAttached(class UNiagaraSystem* SystemTemplate, class USceneComponent* AttachToComponent, class FName AttachPointName, const struct FVector& Location, const struct FRotator& Rotation, EAttachLocation LocationType, bool bAutoDestroy, bool bAutoActivate, ENCPoolMethod PoolingMethod, bool bPreCullCheck);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("NiagaraFunctionLibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"NiagaraFunctionLibrary")
+	}
+	static class UNiagaraFunctionLibrary* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UNiagaraFunctionLibrary>();
+	}
+};
+DUMPER7_ASSERTS_UNiagaraFunctionLibrary;
+
 // Class Niagara.NiagaraLightRendererProperties
 // 0x02B8 (0x0330 - 0x0078)
 class UNiagaraLightRendererProperties final : public UNiagaraRendererProperties
@@ -2480,65 +2539,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UNiagaraParameterDefinitionsBase;
-
-// Class Niagara.NiagaraBaselineController
-// 0x0040 (0x0068 - 0x0028)
-class UNiagaraBaselineController : public UObject
-{
-public:
-	float                                         TestDuration;                                      // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UNiagaraEffectType*                     EffectType;                                        // 0x0030(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ANiagaraPerfBaselineActor*              Owner;                                             // 0x0038(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class UNiagaraSystem>          System;                                            // 0x0040(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-
-public:
-	class UNiagaraSystem* GetSystem();
-	void OnBeginTest();
-	void OnEndTest(const struct FNiagaraPerfBaselineStats& stats);
-	void OnOwnerTick(float DeltaTime);
-	bool OnTickTest();
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("NiagaraBaselineController")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"NiagaraBaselineController")
-	}
-	static class UNiagaraBaselineController* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UNiagaraBaselineController>();
-	}
-};
-DUMPER7_ASSERTS_UNiagaraBaselineController;
-
-// Class Niagara.NiagaraBaselineController_Basic
-// 0x0018 (0x0080 - 0x0068)
-class UNiagaraBaselineController_Basic final : public UNiagaraBaselineController
-{
-public:
-	int32                                         NumInstances;                                      // 0x0068(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UNiagaraComponent*>              SpawnedComponents;                                 // 0x0070(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("NiagaraBaselineController_Basic")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"NiagaraBaselineController_Basic")
-	}
-	static class UNiagaraBaselineController_Basic* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UNiagaraBaselineController_Basic>();
-	}
-};
-DUMPER7_ASSERTS_UNiagaraBaselineController_Basic;
 
 // Class Niagara.NiagaraPerfBaselineActor
 // 0x0010 (0x0238 - 0x0228)

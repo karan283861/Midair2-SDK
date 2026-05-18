@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
-#include "Midair2_structs.hpp"
 #include "EGrenadeOptions_structs.hpp"
 #include "EPackOptions_structs.hpp"
+#include "Midair2_structs.hpp"
+#include "Engine_structs.hpp"
 #include "UMG_classes.hpp"
 
 
@@ -21,7 +21,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass WBP_LoadoutLabel.WBP_LoadoutLabel_C
-// 0x00F0 (0x0350 - 0x0260)
+// 0x00F8 (0x0358 - 0x0260)
 class UWBP_LoadoutLabel_C final : public UUserWidget
 {
 public:
@@ -35,8 +35,8 @@ public:
 	EGrenadeOptions                               GrenadeDefault;                                    // 0x028B(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EPackOptions                                  PackDefault;                                       // 0x028C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_28D[0x3];                                      // 0x028D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMALoadout                             SavedLoadout;                                      // 0x0290(0x00B8)(Edit, BlueprintVisible, ExposeOnSpawn)
-	int32                                         LoadoutIndex;                                      // 0x0348(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	struct FMALoadout                             SavedLoadout;                                      // 0x0290(0x00C0)(Edit, BlueprintVisible, ExposeOnSpawn)
+	int32                                         LoadoutIndex;                                      // 0x0350(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_WBP_LoadoutLabel(int32 EntryPoint);

@@ -10,18 +10,18 @@
 
 #include "Basic.hpp"
 
-#include "OnlineSubsystemUtils_structs.hpp"
 #include "Midair2_structs.hpp"
 #include "Midair2_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CommonGame_structs.hpp"
+#include "OnlineSubsystemUtils_structs.hpp"
 
 
 namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass W_ServerBrowser.W_ServerBrowser_C
-// 0x0200 (0x0528 - 0x0328)
+// 0x0208 (0x0530 - 0x0328)
 class UW_ServerBrowser_C final : public UMAServerBrowserScreen
 {
 public:
@@ -37,24 +37,26 @@ public:
 	class UCommonTextBlock*                       NoGamesMessage;                                    // 0x0370(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UW_Midair_MenuBtn_C*                    RefreshButton;                                     // 0x0378(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UCircularThrobber*                      RefreshThrobber;                                   // 0x0380(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UMAListView*                            ServersBox;                                        // 0x0388(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UMAGameInstance*                        GameInstance;                                      // 0x0390(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsRefreshing;                                      // 0x0398(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	EFindSessionsSortMethod                       CurrentSortMethod;                                 // 0x0399(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_39A[0x2];                                      // 0x039A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         LastRefreshTS;                                     // 0x039C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UW_ServerBrowserEntry_C*                SelectedServer;                                    // 0x03A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class UCommonSession_SearchResult*>    CurrentSessions;                                   // 0x03A8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TArray<struct FBlueprintSessionResult>        Results;                                           // 0x03B8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	class FText                                   Password;                                          // 0x03C8(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FBlueprintSessionResult                SelectedBPSession;                                 // 0x03E0(0x0128)(Edit, BlueprintVisible, DisableEditOnInstance)
-	bool                                          bHasSelection;                                     // 0x0508(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_509[0x7];                                      // 0x0509(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UW_ServerBrowserEntry_C*                CurrentServerEntry;                                // 0x0510(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<struct FBlueprintSessionResult>        EditorResults;                                     // 0x0518(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class UW_Midair_MenuBtn_C*                    ServerInfoBTN;                                     // 0x0388(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UMAListView*                            ServersBox;                                        // 0x0390(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UMAGameInstance*                        GameInstance;                                      // 0x0398(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsRefreshing;                                      // 0x03A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	EFindSessionsSortMethod                       CurrentSortMethod;                                 // 0x03A1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3A2[0x2];                                      // 0x03A2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         LastRefreshTS;                                     // 0x03A4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UW_ServerBrowserEntry_C*                SelectedServer;                                    // 0x03A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class UCommonSession_SearchResult*>    CurrentSessions;                                   // 0x03B0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<struct FBlueprintSessionResult>        Results;                                           // 0x03C0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class FText                                   Password;                                          // 0x03D0(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FBlueprintSessionResult                SelectedBPSession;                                 // 0x03E8(0x0128)(Edit, BlueprintVisible, DisableEditOnInstance)
+	bool                                          bHasSelection;                                     // 0x0510(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_511[0x7];                                      // 0x0511(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UW_ServerBrowserEntry_C*                CurrentServerEntry;                                // 0x0518(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<struct FBlueprintSessionResult>        EditorResults;                                     // 0x0520(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void ExecuteUbergraph_W_ServerBrowser(int32 EntryPoint);
+	void BndEvt__W_ServerBrowser_ServerInfoBTN_K2Node_ComponentBoundEvent_3_CommonButtonBaseClicked__DelegateSignature(class UCommonButtonBase* Button);
 	void BndEvt__W_ServerBrowser_JoinServerTN_K2Node_ComponentBoundEvent_4_CommonButtonBaseClicked__DelegateSignature(class UCommonButtonBase* Button);
 	void Join();
 	void SetPassword(const class FText& Password_0);
@@ -71,6 +73,8 @@ public:
 	void TryRefresh();
 	void On_Found_Sessions(const TArray<struct FBlueprintSessionResult>& Results_0);
 	void Construct();
+	void BeforePush_D93A66F24CDAA65875D3F2A0E672093F(class UCommonActivatableWidget* UserWidget);
+	void AfterPush_D93A66F24CDAA65875D3F2A0E672093F(class UCommonActivatableWidget* UserWidget);
 	void OnResult_E555FF234B45C714435190878E5BA440(ECommonMessagingResult Result);
 	void BeforePush_22F61AD9458EA259C2F72D86D8F3ED50(class UCommonActivatableWidget* UserWidget);
 	void AfterPush_22F61AD9458EA259C2F72D86D8F3ED50(class UCommonActivatableWidget* UserWidget);

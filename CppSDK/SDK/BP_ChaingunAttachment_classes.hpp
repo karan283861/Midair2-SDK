@@ -18,12 +18,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_ChaingunAttachment.BP_ChaingunAttachment_C
-// 0x0010 (0x05D0 - 0x05C0)
+// 0x0010 (0x05E8 - 0x05D8)
 class ABP_ChaingunAttachment_C final : public AMAWeaponAttachment
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x05C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UMaterialInstanceDynamic*               DynamicMat;                                        // 0x05C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x05D8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UMaterialInstanceDynamic*               DynamicMat;                                        // 0x05E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_ChaingunAttachment(int32 EntryPoint);

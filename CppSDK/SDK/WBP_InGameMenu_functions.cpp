@@ -37,6 +37,20 @@ void UWBP_InGameMenu_C::ExecuteUbergraph_WBP_InGameMenu(int32 EntryPoint)
 }
 
 
+// Function WBP_InGameMenu.WBP_InGameMenu_C.BP_OnActivated
+// (Event, Protected, BlueprintEvent)
+
+void UWBP_InGameMenu_C::BP_OnActivated()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_InGameMenu_C", "BP_OnActivated");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function WBP_InGameMenu.WBP_InGameMenu_C.CustomEvent
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -56,20 +70,6 @@ void UWBP_InGameMenu_C::CustomEvent(int32 Selection, const class FString& Displa
 	Parms.DisplayString = std::move(DisplayString);
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_InGameMenu.WBP_InGameMenu_C.BndEvt__WBP_InGameMenu_ExitToMainMenuButton_1_K2Node_ComponentBoundEvent_4_ButtonClicked__DelegateSignature
-// (BlueprintEvent)
-
-void UWBP_InGameMenu_C::BndEvt__WBP_InGameMenu_ExitToMainMenuButton_1_K2Node_ComponentBoundEvent_4_ButtonClicked__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InGameMenu_C", "BndEvt__WBP_InGameMenu_ExitToMainMenuButton_1_K2Node_ComponentBoundEvent_4_ButtonClicked__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -93,6 +93,20 @@ void UWBP_InGameMenu_C::BndEvt__DisableTournamentModeButton_K2Node_ComponentBoun
 }
 
 
+// Function WBP_InGameMenu.WBP_InGameMenu_C.BndEvt__WBP_InGameMenu_ExitToMainMenuButton_1_K2Node_ComponentBoundEvent_4_ButtonClicked__DelegateSignature
+// (BlueprintEvent)
+
+void UWBP_InGameMenu_C::BndEvt__WBP_InGameMenu_ExitToMainMenuButton_1_K2Node_ComponentBoundEvent_4_ButtonClicked__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_InGameMenu_C", "BndEvt__WBP_InGameMenu_ExitToMainMenuButton_1_K2Node_ComponentBoundEvent_4_ButtonClicked__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function WBP_InGameMenu.WBP_InGameMenu_C.ExitGame
 // (BlueprintCallable, BlueprintEvent)
 
@@ -102,6 +116,20 @@ void UWBP_InGameMenu_C::ExitGame()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("WBP_InGameMenu_C", "ExitGame");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_InGameMenu.WBP_InGameMenu_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UWBP_InGameMenu_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_InGameMenu_C", "Construct");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -129,20 +157,6 @@ void UWBP_InGameMenu_C::MidmatchVoteSelectionMade(int32 Selection, const class F
 }
 
 
-// Function WBP_InGameMenu.WBP_InGameMenu_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UWBP_InGameMenu_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InGameMenu_C", "Construct");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function WBP_InGameMenu.WBP_InGameMenu_C.CustomEvent_1
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -158,28 +172,6 @@ void UWBP_InGameMenu_C::CustomEvent_1(ESlateVisibility InVisibility)
 	Params::WBP_InGameMenu_C_CustomEvent_1 Parms{};
 
 	Parms.InVisibility = InVisibility;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_InGameMenu.WBP_InGameMenu_C.Tick
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-// Parameters:
-// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-// float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UWBP_InGameMenu_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InGameMenu_C", "Tick");
-
-	Params::WBP_InGameMenu_C_Tick Parms{};
-
-	Parms.MyGeometry = std::move(MyGeometry);
-	Parms.InDeltaTime = InDeltaTime;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -375,6 +367,28 @@ void UWBP_InGameMenu_C::BndEvt__ChangeTeamButton_K2Node_ComponentBoundEvent_12_B
 }
 
 
+// Function WBP_InGameMenu.WBP_InGameMenu_C.ModeToVoteSelected
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UWBP_ESC_Options_BTN_C*           ClickedBTN                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   OptionIndex                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWBP_InGameMenu_C::ModeToVoteSelected(class UWBP_ESC_Options_BTN_C* ClickedBTN, int32 OptionIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_InGameMenu_C", "ModeToVoteSelected");
+
+	Params::WBP_InGameMenu_C_ModeToVoteSelected Parms{};
+
+	Parms.ClickedBTN = ClickedBTN;
+	Parms.OptionIndex = OptionIndex;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function WBP_InGameMenu.WBP_InGameMenu_C.BndEvt__SpectateButton_K2Node_ComponentBoundEvent_14_ButtonClicked__DelegateSignature
 // (BlueprintEvent)
 
@@ -400,28 +414,6 @@ void UWBP_InGameMenu_C::BndEvt__PracticeButton_K2Node_ComponentBoundEvent_1_Butt
 		Func = Class->GetFunction("WBP_InGameMenu_C", "BndEvt__PracticeButton_K2Node_ComponentBoundEvent_1_ButtonClicked__DelegateSignature");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_InGameMenu.WBP_InGameMenu_C.ModeToVoteSelected
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UWBP_ESC_Options_BTN_C*           ClickedBTN                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   OptionIndex                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UWBP_InGameMenu_C::ModeToVoteSelected(class UWBP_ESC_Options_BTN_C* ClickedBTN, int32 OptionIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InGameMenu_C", "ModeToVoteSelected");
-
-	Params::WBP_InGameMenu_C_ModeToVoteSelected Parms{};
-
-	Parms.ClickedBTN = ClickedBTN;
-	Parms.OptionIndex = OptionIndex;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -1288,6 +1280,26 @@ void UWBP_InGameMenu_C::Populate_Options_Admin()
 		Func = Class->GetFunction("WBP_InGameMenu_C", "Populate Options Admin");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_InGameMenu.WBP_InGameMenu_C.GetIsMatchmadeGame
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// ESlateVisibility                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+ESlateVisibility UWBP_InGameMenu_C::GetIsMatchmadeGame()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_InGameMenu_C", "GetIsMatchmadeGame");
+
+	Params::WBP_InGameMenu_C_GetIsMatchmadeGame Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
 }
 
 

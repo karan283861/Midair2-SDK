@@ -65,34 +65,6 @@ void UW_Midair_MenuBtn_C::BP_OnDisabled()
 }
 
 
-// Function W_Midair_MenuBtn.W_Midair_MenuBtn_C.BP_OnDeselected
-// (Event, Protected, BlueprintEvent)
-
-void UW_Midair_MenuBtn_C::BP_OnDeselected()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_Midair_MenuBtn_C", "BP_OnDeselected");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function W_Midair_MenuBtn.W_Midair_MenuBtn_C.BP_OnSelected
-// (Event, Protected, BlueprintEvent)
-
-void UW_Midair_MenuBtn_C::BP_OnSelected()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_Midair_MenuBtn_C", "BP_OnSelected");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function W_Midair_MenuBtn.W_Midair_MenuBtn_C.BP_OnClicked
 // (Event, Protected, BlueprintEvent)
 

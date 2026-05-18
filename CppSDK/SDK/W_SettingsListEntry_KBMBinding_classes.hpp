@@ -24,6 +24,9 @@ public:
 	class USizeBox*                               EntryHeightSB;                                     // 0x0320(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
+	class UWidget* GetPrimaryGamepadFocusWidget();
+
+public:
 	static class UClass* StaticClass()
 	{
 		BP_STATIC_CLASS_IMPL("W_SettingsListEntry_KBMBinding_C")

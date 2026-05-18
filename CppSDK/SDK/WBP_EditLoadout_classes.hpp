@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Midair2_structs.hpp"
+#include "Engine_structs.hpp"
 #include "UMG_classes.hpp"
 
 
@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass WBP_EditLoadout.WBP_EditLoadout_C
-// 0x0238 (0x0498 - 0x0260)
+// 0x0240 (0x04A0 - 0x0260)
 class UWBP_EditLoadout_C final : public UUserWidget
 {
 public:
@@ -55,14 +55,14 @@ public:
 	TMulticastInlineDelegate<void()>              BackToLoadouts;                                    // 0x0378(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	int32                                         LoadoutIndex;                                      // 0x0388(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_38C[0x4];                                      // 0x038C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMALoadout                             LoadoutToEdit;                                     // 0x0390(0x00B8)(Edit, BlueprintVisible, ExposeOnSpawn)
-	TMulticastInlineDelegate<void(const class FString& SkinItemTitle, class UWBP_MenuButton_C* MenuBTN, class UClass* ItemObject, int32 LoadoutIndex, class ABP_TRFlagGoal_C* LevelFlagGoal, class ABP_SprayWall_C* LevelSprayWall)> EditSkin; // 0x0448(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	class UClass*                                 Weapon1Class;                                      // 0x0458(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UClass*                                 Weapon3Class;                                      // 0x0460(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UClass*                                 Weapon2Class;                                      // 0x0468(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FText                                   LoadoutName;                                       // 0x0470(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance)
-	class ABP_TRFlagGoal_C*                       LevelFlagGoal;                                     // 0x0488(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ABP_SprayWall_C*                        LevelSprayWall;                                    // 0x0490(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FMALoadout                             LoadoutToEdit;                                     // 0x0390(0x00C0)(Edit, BlueprintVisible, ExposeOnSpawn)
+	TMulticastInlineDelegate<void(const class FString& SkinItemTitle, class UWBP_MenuButton_C* MenuBTN, class UClass* ItemObject, int32 LoadoutIndex, class ABP_TRFlagGoal_C* LevelFlagGoal, class ABP_SprayWall_C* LevelSprayWall)> EditSkin; // 0x0450(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	class UClass*                                 Weapon1Class;                                      // 0x0460(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UClass*                                 Weapon3Class;                                      // 0x0468(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UClass*                                 Weapon2Class;                                      // 0x0470(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FText                                   LoadoutName;                                       // 0x0478(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class ABP_TRFlagGoal_C*                       LevelFlagGoal;                                     // 0x0490(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ABP_SprayWall_C*                        LevelSprayWall;                                    // 0x0498(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_WBP_EditLoadout(int32 EntryPoint);

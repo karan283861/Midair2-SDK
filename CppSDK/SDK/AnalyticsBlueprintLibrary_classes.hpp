@@ -34,7 +34,7 @@ public:
 	static void RecordEvent(const class FString& EventName);
 	static void RecordEventWithAttribute(const class FString& EventName, const class FString& AttributeName, const class FString& AttributeValue);
 	static void RecordEventWithAttributes(const class FString& EventName, const TArray<struct FAnalyticsEventAttr>& Attributes);
-	static void RecordItemPurchase(const class FString& ItemId, const class FString& Currency, int32 PerItemCost, int32 ItemQuantity);
+	static void RecordItemPurchase(const class FString& ItemId, const class FString& currency, int32 PerItemCost, int32 ItemQuantity);
 	static void RecordProgress(const class FString& ProgressType, const class FString& ProgressName);
 	static void RecordProgressWithAttributes(const class FString& ProgressType, const class FString& ProgressName, const TArray<struct FAnalyticsEventAttr>& Attributes);
 	static void RecordProgressWithFullHierarchyAndAttributes(const class FString& ProgressType, const TArray<class FString>& ProgressNames, const TArray<struct FAnalyticsEventAttr>& Attributes);

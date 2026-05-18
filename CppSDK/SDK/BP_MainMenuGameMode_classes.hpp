@@ -18,12 +18,13 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_MainMenuGameMode.BP_MainMenuGameMode_C
-// 0x0010 (0x0320 - 0x0310)
+// 0x0018 (0x0328 - 0x0310)
 class ABP_MainMenuGameMode_C final : public AGameMode
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0310(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0318(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class ABP_PartyScene_C*                       PartyScene;                                        // 0x0320(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_MainMenuGameMode(int32 EntryPoint);

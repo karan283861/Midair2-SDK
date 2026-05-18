@@ -44,9 +44,9 @@ public:
 
 public:
 	void ExecuteUbergraph_WBP_PointOfInterest_Map(int32 EntryPoint);
-	void OnDied();
-	void Construct();
 	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
+	void Construct();
+	void OnDied();
 
 public:
 	static class UClass* StaticClass()

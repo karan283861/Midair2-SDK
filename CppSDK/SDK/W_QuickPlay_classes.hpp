@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "Midair2_structs.hpp"
 #include "Midair2_classes.hpp"
 #include "Engine_structs.hpp"
 
@@ -18,7 +19,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass W_QuickPlay.W_QuickPlay_C
-// 0x0060 (0x0388 - 0x0328)
+// 0x0070 (0x0398 - 0x0328)
 class UW_QuickPlay_C final : public UMAServerBrowserScreen
 {
 public:
@@ -34,12 +35,18 @@ public:
 	class UW_Experience_C*                        RB;                                                // 0x0370(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UW_Midair_MenuBtn_C*                    W_Midair_MenuBtn;                                  // 0x0378(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	bool                                          NewVar_0;                                          // 0x0380(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_381[0x3];                                      // 0x0381(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMAQueueInfo                           CurrentQueueInfo;                                  // 0x0384(0x0014)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor)
 
 public:
-	void ExecuteUbergraph_W_QuickPlay(int32 EntryPoint);
-	void BndEvt__W_QuickPlay_W_Experience_111_K2Node_ComponentBoundEvent_6_ButtonClicked__DelegateSignature();
-	void BndEvt__W_QuickPlay_W_Experience_58_K2Node_ComponentBoundEvent_5_ButtonClicked__DelegateSignature();
+	void OnFail_8450BD184E4A521B71A2CF843A7DE057(const struct FMAQueueInfo& QueueInfo);
+	void OnSuccess_8450BD184E4A521B71A2CF843A7DE057(const struct FMAQueueInfo& QueueInfo);
 	void BndEvt__W_QuickPlay_CTF_K2Node_ComponentBoundEvent_3_ButtonClicked__DelegateSignature();
+	void BndEvt__W_QuickPlay_W_Experience_58_K2Node_ComponentBoundEvent_5_ButtonClicked__DelegateSignature();
+	void BndEvt__W_QuickPlay_W_Experience_111_K2Node_ComponentBoundEvent_6_ButtonClicked__DelegateSignature();
+	void PreConstruct(bool IsDesignTime);
+	void RefreshQueueInfo();
+	void ExecuteUbergraph_W_QuickPlay(int32 EntryPoint);
 
 	class UWidget* BP_GetDesiredFocusTarget() const;
 

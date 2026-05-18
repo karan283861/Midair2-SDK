@@ -27,6 +27,15 @@ public:
 };
 DUMPER7_ASSERTS_FClothCollisionPrim_Sphere;
 
+// ScriptStruct ClothingSystemRuntimeInterface.ClothCollisionPrim_SphereConnection
+// 0x0008 (0x0008 - 0x0000)
+struct FClothCollisionPrim_SphereConnection final
+{
+public:
+	int32                                         SphereIndices[0x2];                                // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FClothCollisionPrim_SphereConnection;
+
 // ScriptStruct ClothingSystemRuntimeInterface.ClothCollisionPrim_ConvexFace
 // 0x0020 (0x0020 - 0x0000)
 struct FClothCollisionPrim_ConvexFace final
@@ -48,15 +57,6 @@ public:
 	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FClothCollisionPrim_Convex;
-
-// ScriptStruct ClothingSystemRuntimeInterface.ClothCollisionPrim_SphereConnection
-// 0x0008 (0x0008 - 0x0000)
-struct FClothCollisionPrim_SphereConnection final
-{
-public:
-	int32                                         SphereIndices[0x2];                                // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FClothCollisionPrim_SphereConnection;
 
 // ScriptStruct ClothingSystemRuntimeInterface.ClothCollisionPrim_Box
 // 0x0030 (0x0030 - 0x0000)

@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass LootCrate_GoldRT.LootCrate_GoldRT_C
-// 0x0008 (0x0538 - 0x0530)
+// 0x0008 (0x0598 - 0x0590)
 class ALootCrate_GoldRT_C final : public ALootCrate_DefaultSetupRTT_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_LootCrate_GoldRT_C;                 // 0x0530(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame_LootCrate_GoldRT_C;                 // 0x0590(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_LootCrate_GoldRT(int32 EntryPoint);

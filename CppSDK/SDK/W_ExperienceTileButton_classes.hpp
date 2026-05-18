@@ -34,10 +34,10 @@ public:
 	class UTexture2D*                             Image;                                             // 0x0C38(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void UpdateTileText(const class FText& ExperienceTitle_0, const class FText& ExperienceDescription_0, const class FText& MapTitle_0, class UTexture2D* Image_0);
-	void BP_OnHovered();
-	void BP_OnUnhovered();
 	void ExecuteUbergraph_W_ExperienceTileButton(int32 EntryPoint);
+	void BP_OnUnhovered();
+	void BP_OnHovered();
+	void UpdateTileText(const class FText& ExperienceTitle_0, const class FText& ExperienceDescription_0, const class FText& MapTitle_0, class UTexture2D* Image_0);
 
 public:
 	static class UClass* StaticClass()

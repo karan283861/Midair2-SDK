@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass W_FriendsOverlay.W_FriendsOverlay_C
-// 0x0050 (0x0378 - 0x0328)
+// 0x0058 (0x0380 - 0x0328)
 class UW_FriendsOverlay_C final : public UMAActivatableWidget
 {
 public:
@@ -33,9 +33,12 @@ public:
 	class UWBP_FriendsOverlay_Button_C*           WBP_FriendsOverlay_Button_3;                       // 0x0368(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	int32                                         NumFriendsToDisplay;                               // 0x0370(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CurrentIndex;                                      // 0x0374(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FTimerHandle                           RefreshTimer;                                      // 0x0378(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_W_FriendsOverlay(int32 EntryPoint);
+	void Destruct();
+	void RefreshFriends();
 	void BndEvt__W_FriendsOverlay_Button_0_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
 	void Construct();
 	void BeforePush_A4F1FC54466EC49C9848FE8592A4D975(class UCommonActivatableWidget* UserWidget);

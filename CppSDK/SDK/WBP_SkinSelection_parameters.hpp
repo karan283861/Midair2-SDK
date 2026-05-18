@@ -12,10 +12,10 @@
 
 #include "SlateCore_structs.hpp"
 #include "UMG_structs.hpp"
-#include "ESkinStatus_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Midair2_structs.hpp"
 #include "Engine_structs.hpp"
+#include "ESkinStatus_structs.hpp"
 
 
 namespace SDK::Params
@@ -265,7 +265,7 @@ public:
 DUMPER7_ASSERTS_WBP_SkinSelection_C_SetEquippedSkin;
 
 // Function WBP_SkinSelection.WBP_SkinSelection_C.ResetCharacterView
-// 0x0198 (0x0198 - 0x0000)
+// 0x01A0 (0x01A0 - 0x0000)
 struct WBP_SkinSelection_C_ResetCharacterView final
 {
 public:
@@ -273,16 +273,16 @@ public:
 	class UPlayerLoadoutsSave*                    CallFunc_GetGlobalLoadoutsSave_ReturnValue;        // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Contains_ReturnValue;                     // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMALoadout                             CallFunc_GetLastSelectedLoadout_outLoadout;        // 0x0020(0x00B8)()
-	TArray<class ABP_TRFlagGoal_C*>               CallFunc_GetAllActorsOfClass_OutActors;            // 0x00D8(0x0010)(ReferenceParm)
-	class ABP_TRFlagGoal_C*                       CallFunc_Array_Get_Item;                           // 0x00E8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x00F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x00F1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_F2[0x6];                                       // 0x00F2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class ACameraActor*                           CallFunc_GetActorOfClass_ReturnValue;              // 0x00F8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0100(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ACosmeticConfiguration*                 CallFunc_UpdateLoadoutPreview_Internal_ReturnValue; // 0x0108(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHitResult                             CallFunc_K2_SetRelativeRotation_SweepHitResult;    // 0x0110(0x0088)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	struct FMALoadout                             CallFunc_GetLastSelectedLoadout_outLoadout;        // 0x0020(0x00C0)()
+	TArray<class ABP_TRFlagGoal_C*>               CallFunc_GetAllActorsOfClass_OutActors;            // 0x00E0(0x0010)(ReferenceParm)
+	class ABP_TRFlagGoal_C*                       CallFunc_Array_Get_Item;                           // 0x00F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x00F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x00F9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_FA[0x6];                                       // 0x00FA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class ACameraActor*                           CallFunc_GetActorOfClass_ReturnValue;              // 0x0100(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0108(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ACosmeticConfiguration*                 CallFunc_UpdateLoadoutPreview_Internal_ReturnValue; // 0x0110(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             CallFunc_K2_SetRelativeRotation_SweepHitResult;    // 0x0118(0x0088)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
 };
 DUMPER7_ASSERTS_WBP_SkinSelection_C_ResetCharacterView;
 

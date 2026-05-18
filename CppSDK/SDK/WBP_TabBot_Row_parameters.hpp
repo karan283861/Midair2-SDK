@@ -59,12 +59,12 @@ public:
 DUMPER7_ASSERTS_WBP_TabBot_Row_C_BP_OnItemExpansionChanged;
 
 // Function WBP_TabBot_Row.WBP_TabBot_Row_C.SetBot
-// 0x0268 (0x0268 - 0x0000)
+// 0x0270 (0x0270 - 0x0000)
 struct WBP_TabBot_Row_C_SetBot final
 {
 public:
-	struct FMABotConfig                           Bot_0;                                             // 0x0000(0x0168)(BlueprintVisible, BlueprintReadOnly, Parm)
-	struct FMARouteTrail                          NewLocalVar_0;                                     // 0x0168(0x0100)(Edit, BlueprintVisible)
+	struct FMABotConfig                           Bot_0;                                             // 0x0000(0x0170)(BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FMARouteTrail                          NewLocalVar_0;                                     // 0x0170(0x0100)(Edit, BlueprintVisible)
 };
 DUMPER7_ASSERTS_WBP_TabBot_Row_C_SetBot;
 

@@ -18,13 +18,13 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_PlayerController.BP_PlayerController_C
-// 0x0020 (0x0BF0 - 0x0BD0)
+// 0x0020 (0x0C28 - 0x0C08)
 class ABP_PlayerController_C final : public AMAPlayerController
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0BD0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UWBP_DeathEffects_C*                    DeathEffects;                                      // 0x0BD8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 CurrentLevelName;                                  // 0x0BE0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Transient, DisableEditOnInstance, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0C08(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UWBP_DeathEffects_C*                    DeathEffects;                                      // 0x0C10(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 CurrentLevelName;                                  // 0x0C18(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Transient, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_PlayerController(int32 EntryPoint);

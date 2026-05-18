@@ -13,13 +13,14 @@
 #include "Midair2_classes.hpp"
 #include "Engine_structs.hpp"
 #include "LootLockerSDK_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass WBP_Currency.WBP_Currency_C
-// 0x0140 (0x0468 - 0x0328)
+// 0x0188 (0x04B0 - 0x0328)
 class UWBP_Currency_C final : public UMAActivatableWidget
 {
 public:
@@ -53,41 +54,45 @@ public:
 	class ALootCrate_GoldRT_C*                    LootCrate;                                         // 0x0408(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class ACameraActor*                           MainCamera;                                        // 0x0410(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FLootLockerCurrencyDetails             CurrentPurchaseDetails;                            // 0x0418(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	uint8                                         Pad_468[0x8];                                      // 0x0468(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             LootCrateTrans;                                    // 0x0470(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          ShowingCrateAnim;                                  // 0x04A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void OnGetCurrencies(TArray<struct FLootLockerCurrencyDetails>& Response);
-	void CoinSplurgeFinished();
-	struct FEventReply OnMouseMove(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent);
-	void On_Finalize_Purchase(const struct FLootLockerResponse& Var);
-	void FinalizePurchase();
-	void OnQueryPurchaseResponse(const struct FLootLockerQuerySteamPurchaseRedemptionStatusResponse& Response);
-	void QueryPurchase();
-	void OnBeginSteamPurchase(const struct FLootLockerBeginSteamPurchaseRedemptionResponse& Response);
-	void MakePurchase(const struct FLootLockerCurrencyDetails& CurrencyDetails);
-	void Construct();
-	void CheckSteamPurchase();
-	void BndEvt__WBP_Currency_Button_128_K2Node_ComponentBoundEvent_1_OnButtonPressedEvent__DelegateSignature();
-	void BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_2_ButtonSelected__DelegateSignature(const struct FLootLockerCurrencyDetails& CurrencyDetails);
-	void BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature(const struct FLootLockerCurrencyDetails& CurrencyDetails);
-	void BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_0_ButtonSelected__DelegateSignature(const struct FLootLockerCurrencyDetails& CurrencyDetails);
-	void BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature(const struct FLootLockerCurrencyDetails& CurrencyDetails);
-	void BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_5_ButtonHovered__DelegateSignature();
-	void BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_6_ButtonUnhovered__DelegateSignature();
-	void BndEvt__WBP_Currency_WBP_Coin_58_K2Node_ComponentBoundEvent_7_CoinHovered__DelegateSignature();
-	void BndEvt__WBP_Currency_WBP_Coin_58_K2Node_ComponentBoundEvent_8_CoinUnhovered__DelegateSignature();
-	void BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_9_ButtonHovered__DelegateSignature();
-	void BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_10_ButtonUnhovered__DelegateSignature();
-	void BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_11_ButtonHovered__DelegateSignature();
-	void BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_12_ButtonUnhovered__DelegateSignature();
-	void BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_13_ButtonHovered__DelegateSignature();
-	void BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_14_ButtonUnhovered__DelegateSignature();
-	void BndEvt__WBP_Currency_TryAgainBtn_K2Node_ComponentBoundEvent_16_OnButtonClickedEvent__DelegateSignature();
-	void BndEvt__WBP_Currency_Button_1_K2Node_ComponentBoundEvent_18_OnButtonClickedEvent__DelegateSignature();
-	void BndEvt__WBP_Currency_Button_128_K2Node_ComponentBoundEvent_17_OnButtonClickedEvent__DelegateSignature();
-	void BP_OnActivated();
-	void BP_OnDeactivated();
 	void PreConstruct(bool IsDesignTime);
 	void ExecuteUbergraph_WBP_Currency(int32 EntryPoint);
+	void BP_OnDeactivated();
+	void BP_OnActivated();
+	void BndEvt__WBP_Currency_Button_128_K2Node_ComponentBoundEvent_17_OnButtonClickedEvent__DelegateSignature();
+	void BndEvt__WBP_Currency_Button_1_K2Node_ComponentBoundEvent_18_OnButtonClickedEvent__DelegateSignature();
+	void BndEvt__WBP_Currency_TryAgainBtn_K2Node_ComponentBoundEvent_16_OnButtonClickedEvent__DelegateSignature();
+	void BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_14_ButtonUnhovered__DelegateSignature();
+	void BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_13_ButtonHovered__DelegateSignature();
+	void BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_12_ButtonUnhovered__DelegateSignature();
+	void BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_11_ButtonHovered__DelegateSignature();
+	void BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_10_ButtonUnhovered__DelegateSignature();
+	void BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_9_ButtonHovered__DelegateSignature();
+	void BndEvt__WBP_Currency_WBP_Coin_58_K2Node_ComponentBoundEvent_8_CoinUnhovered__DelegateSignature();
+	void BndEvt__WBP_Currency_WBP_Coin_58_K2Node_ComponentBoundEvent_7_CoinHovered__DelegateSignature();
+	void BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_6_ButtonUnhovered__DelegateSignature();
+	void BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_5_ButtonHovered__DelegateSignature();
+	void BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature(const struct FLootLockerCurrencyDetails& CurrencyDetails);
+	void BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_0_ButtonSelected__DelegateSignature(const struct FLootLockerCurrencyDetails& CurrencyDetails);
+	void BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature(const struct FLootLockerCurrencyDetails& CurrencyDetails);
+	void BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_2_ButtonSelected__DelegateSignature(const struct FLootLockerCurrencyDetails& CurrencyDetails);
+	void BndEvt__WBP_Currency_Button_128_K2Node_ComponentBoundEvent_1_OnButtonPressedEvent__DelegateSignature();
+	void CheckSteamPurchase();
+	void Construct();
+	void MakePurchase(const struct FLootLockerCurrencyDetails& CurrencyDetails);
+	void OnBeginSteamPurchase(const struct FLootLockerBeginSteamPurchaseRedemptionResponse& Response);
+	void QueryPurchase();
+	void OnQueryPurchaseResponse(const struct FLootLockerQuerySteamPurchaseRedemptionStatusResponse& Response);
+	void FinalizePurchase();
+	void On_Finalize_Purchase(const struct FLootLockerResponse& Var);
+	struct FEventReply OnMouseMove(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent);
+	void CoinSplurgeFinished();
+	void OnGetCurrencies(TArray<struct FLootLockerCurrencyDetails>& Response);
+	void DeleteAndRespawnCrate();
 
 public:
 	static class UClass* StaticClass()

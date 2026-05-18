@@ -151,15 +151,6 @@ enum class ERigVMMemoryType : uint8
 	ERigVMMemoryType_MAX                     = 4,
 };
 
-// ScriptStruct RigVM.RigVMExecuteContext
-// 0x0058 (0x0058 - 0x0000)
-struct alignas(0x08) FRigVMExecuteContext
-{
-public:
-	uint8                                         Pad_0[0x58];                                       // 0x0000(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigVMExecuteContext;
-
 // ScriptStruct RigVM.RigVMByteCodeEntry
 // 0x000C (0x000C - 0x0000)
 struct FRigVMByteCodeEntry final
@@ -170,17 +161,50 @@ public:
 };
 DUMPER7_ASSERTS_FRigVMByteCodeEntry;
 
-// ScriptStruct RigVM.RigVMOperand
-// 0x0006 (0x0006 - 0x0000)
-struct FRigVMOperand final
+// ScriptStruct RigVM.RigVMByteCode
+// 0x0030 (0x0030 - 0x0000)
+struct FRigVMByteCode final
 {
 public:
-	ERigVMMemoryType                              MemoryType;                                        // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1[0x1];                                        // 0x0001(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	uint16                                        RegisterIndex;                                     // 0x0002(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint16                                        RegisterOffset;                                    // 0x0004(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TArray<uint8>                                 ByteCode;                                          // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	int32                                         NumInstructions;                                   // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FRigVMByteCodeEntry>            Entries;                                           // 0x0018(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FRigVMOperand;
+DUMPER7_ASSERTS_FRigVMByteCode;
+
+// ScriptStruct RigVM.RigVMRegister
+// 0x0024 (0x0024 - 0x0000)
+struct FRigVMRegister final
+{
+public:
+	ERigVMRegisterType                            Type;                                              // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint32                                        ByteIndex;                                         // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint16                                        ElementSize;                                       // 0x0008(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint16                                        ElementCount;                                      // 0x000A(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint16                                        SliceCount;                                        // 0x000C(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         AlignmentBytes;                                    // 0x000E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_F[0x1];                                        // 0x000F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint16                                        TrailingBytes;                                     // 0x0010(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_12[0x2];                                       // 0x0012(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   Name;                                              // 0x0014(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ScriptStructIndex;                                 // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsArray;                                          // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsDynamic;                                        // 0x0021(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_22[0x2];                                       // 0x0022(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigVMRegister;
+
+// ScriptStruct RigVM.RigVMExecuteContext
+// 0x0058 (0x0058 - 0x0000)
+struct alignas(0x08) FRigVMExecuteContext
+{
+public:
+	uint8                                         Pad_0[0x58];                                       // 0x0000(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigVMExecuteContext;
 
 // ScriptStruct RigVM.RigVMStruct
 // 0x0008 (0x0008 - 0x0000)
@@ -190,6 +214,15 @@ public:
 	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FRigVMStruct;
+
+// ScriptStruct RigVM.RigVMBaseOp
+// 0x0001 (0x0001 - 0x0000)
+struct FRigVMBaseOp
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigVMBaseOp;
 
 // ScriptStruct RigVM.RigVMParameter
 // 0x0030 (0x0030 - 0x0000)
@@ -205,19 +238,6 @@ public:
 	class FName                                   ScriptStructPath;                                  // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
 DUMPER7_ASSERTS_FRigVMParameter;
-
-// ScriptStruct RigVM.RigVMByteCode
-// 0x0030 (0x0030 - 0x0000)
-struct FRigVMByteCode final
-{
-public:
-	TArray<uint8>                                 ByteCode;                                          // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	int32                                         NumInstructions;                                   // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FRigVMByteCodeEntry>            Entries;                                           // 0x0018(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigVMByteCode;
 
 // ScriptStruct RigVM.RigVMInstruction
 // 0x0010 (0x0010 - 0x0000)
@@ -239,15 +259,6 @@ public:
 	TArray<struct FRigVMInstruction>              Instructions;                                      // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
 };
 DUMPER7_ASSERTS_FRigVMInstructionArray;
-
-// ScriptStruct RigVM.RigVMBaseOp
-// 0x0001 (0x0001 - 0x0000)
-struct FRigVMBaseOp
-{
-public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigVMBaseOp;
 
 // ScriptStruct RigVM.RigVMUnaryOp
 // 0x0007 (0x0008 - 0x0001)
@@ -330,29 +341,6 @@ public:
 };
 DUMPER7_ASSERTS_FRigVMSlice;
 
-// ScriptStruct RigVM.RigVMRegister
-// 0x0024 (0x0024 - 0x0000)
-struct FRigVMRegister final
-{
-public:
-	ERigVMRegisterType                            Type;                                              // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	uint32                                        ByteIndex;                                         // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint16                                        ElementSize;                                       // 0x0008(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint16                                        ElementCount;                                      // 0x000A(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint16                                        SliceCount;                                        // 0x000C(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         AlignmentBytes;                                    // 0x000E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_F[0x1];                                        // 0x000F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	uint16                                        TrailingBytes;                                     // 0x0010(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12[0x2];                                       // 0x0012(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   Name;                                              // 0x0014(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ScriptStructIndex;                                 // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsArray;                                          // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsDynamic;                                        // 0x0021(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_22[0x2];                                       // 0x0022(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigVMRegister;
-
 // ScriptStruct RigVM.RigVMRegisterOffset
 // 0x0048 (0x0048 - 0x0000)
 struct FRigVMRegisterOffset final
@@ -389,6 +377,18 @@ public:
 	uint8                                         Pad_99[0x7];                                       // 0x0099(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FRigVMMemoryContainer;
+
+// ScriptStruct RigVM.RigVMOperand
+// 0x0006 (0x0006 - 0x0000)
+struct FRigVMOperand final
+{
+public:
+	ERigVMMemoryType                              MemoryType;                                        // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_1[0x1];                                        // 0x0001(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint16                                        RegisterIndex;                                     // 0x0002(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint16                                        RegisterOffset;                                    // 0x0004(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+};
+DUMPER7_ASSERTS_FRigVMOperand;
 
 // ScriptStruct RigVM.RigVMMemoryStatistics
 // 0x000C (0x000C - 0x0000)

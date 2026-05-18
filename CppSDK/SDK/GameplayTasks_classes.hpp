@@ -18,43 +18,6 @@
 namespace SDK
 {
 
-// Class GameplayTasks.GameplayTasksComponent
-// 0x0070 (0x0120 - 0x00B0)
-class UGameplayTasksComponent : public UActorComponent
-{
-public:
-	uint8                                         Pad_B0[0xC];                                       // 0x00B0(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	uint8                                         BitPad_BC_0 : 1;                                   // 0x00BC(0x0001)(Fixing Bit-Field Size Between Bits [ Dumper-7 ])
-	uint8                                         bIsNetDirty : 1;                                   // 0x00BC(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_BD[0x3];                                       // 0x00BD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UGameplayTask*>                  SimulatedTasks;                                    // 0x00C0(0x0010)(Net, ZeroConstructor, RepNotify, Protected, NativeAccessSpecifierProtected)
-	TArray<class UGameplayTask*>                  TaskPriorityQueue;                                 // 0x00D0(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_E0[0x10];                                      // 0x00E0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UGameplayTask*>                  TickingTasks;                                      // 0x00F0(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	TArray<class UGameplayTask*>                  KnownTasks;                                        // 0x0100(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
-	TMulticastInlineDelegate<void(const struct FGameplayResourceSet& NewlyClaimed, const struct FGameplayResourceSet& FreshlyReleased)> OnClaimedResourcesChange; // 0x0110(0x0010)(BlueprintVisible, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-
-public:
-	static EGameplayTaskRunResult K2_RunGameplayTask(TScriptInterface<class IGameplayTaskOwnerInterface> TaskOwner, class UGameplayTask* Task, uint8 Priority, const TArray<TSubclassOf<class UGameplayTaskResource>>& AdditionalRequiredResources, const TArray<TSubclassOf<class UGameplayTaskResource>>& AdditionalClaimedResources);
-
-	void OnRep_SimulatedTasks();
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("GameplayTasksComponent")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"GameplayTasksComponent")
-	}
-	static class UGameplayTasksComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UGameplayTasksComponent>();
-	}
-};
-DUMPER7_ASSERTS_UGameplayTasksComponent;
-
 // Class GameplayTasks.GameplayTask
 // 0x0040 (0x0068 - 0x0028)
 class UGameplayTask : public UObject
@@ -111,6 +74,43 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UGameplayTask_TimeLimitedExecution;
+
+// Class GameplayTasks.GameplayTasksComponent
+// 0x0070 (0x0120 - 0x00B0)
+class UGameplayTasksComponent : public UActorComponent
+{
+public:
+	uint8                                         Pad_B0[0xC];                                       // 0x00B0(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         BitPad_BC_0 : 1;                                   // 0x00BC(0x0001)(Fixing Bit-Field Size Between Bits [ Dumper-7 ])
+	uint8                                         bIsNetDirty : 1;                                   // 0x00BC(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_BD[0x3];                                       // 0x00BD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UGameplayTask*>                  SimulatedTasks;                                    // 0x00C0(0x0010)(Net, ZeroConstructor, RepNotify, Protected, NativeAccessSpecifierProtected)
+	TArray<class UGameplayTask*>                  TaskPriorityQueue;                                 // 0x00D0(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_E0[0x10];                                      // 0x00E0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UGameplayTask*>                  TickingTasks;                                      // 0x00F0(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<class UGameplayTask*>                  KnownTasks;                                        // 0x0100(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
+	TMulticastInlineDelegate<void(const struct FGameplayResourceSet& NewlyClaimed, const struct FGameplayResourceSet& FreshlyReleased)> OnClaimedResourcesChange; // 0x0110(0x0010)(BlueprintVisible, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+
+public:
+	static EGameplayTaskRunResult K2_RunGameplayTask(TScriptInterface<class IGameplayTaskOwnerInterface> TaskOwner, class UGameplayTask* Task, uint8 Priority, const TArray<TSubclassOf<class UGameplayTaskResource>>& AdditionalRequiredResources, const TArray<TSubclassOf<class UGameplayTaskResource>>& AdditionalClaimedResources);
+
+	void OnRep_SimulatedTasks();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("GameplayTasksComponent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"GameplayTasksComponent")
+	}
+	static class UGameplayTasksComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UGameplayTasksComponent>();
+	}
+};
+DUMPER7_ASSERTS_UGameplayTasksComponent;
 
 // Class GameplayTasks.GameplayTask_ClaimResource
 // 0x0000 (0x0068 - 0x0068)

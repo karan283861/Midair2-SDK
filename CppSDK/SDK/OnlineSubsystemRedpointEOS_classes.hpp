@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "OnlineSubsystemRedpointEOS_structs.hpp"
-#include "OnlineSubsystemUtils_classes.hpp"
 #include "Engine_classes.hpp"
+#include "OnlineSubsystemRedpointEOS_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "OnlineSubsystemUtils_classes.hpp"
 
 
 namespace SDK

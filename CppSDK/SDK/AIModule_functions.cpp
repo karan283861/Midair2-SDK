@@ -17,272 +17,6 @@
 namespace SDK
 {
 
-// Function AIModule.AIPerceptionComponent.ForgetAll
-// (Final, Native, Public, BlueprintCallable)
-
-void UAIPerceptionComponent::ForgetAll()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIPerceptionComponent", "ForgetAll");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function AIModule.AIPerceptionComponent.GetActorsPerception
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FActorPerceptionBlueprintInfo*   Info                                                   (Parm, OutParm, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UAIPerceptionComponent::GetActorsPerception(class AActor* Actor, struct FActorPerceptionBlueprintInfo* Info)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIPerceptionComponent", "GetActorsPerception");
-
-	Params::AIPerceptionComponent_GetActorsPerception Parms{};
-
-	Parms.Actor = Actor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (Info != nullptr)
-		*Info = std::move(Parms.Info);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AIModule.AIPerceptionComponent.OnOwnerEndPlay
-// (Final, Native, Public)
-// Parameters:
-// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EEndPlayReason                          EndPlayReason                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAIPerceptionComponent::OnOwnerEndPlay(class AActor* Actor, EEndPlayReason EndPlayReason)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIPerceptionComponent", "OnOwnerEndPlay");
-
-	Params::AIPerceptionComponent_OnOwnerEndPlay Parms{};
-
-	Parms.Actor = Actor;
-	Parms.EndPlayReason = EndPlayReason;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function AIModule.AIPerceptionComponent.RequestStimuliListenerUpdate
-// (Final, Native, Public, BlueprintCallable)
-
-void UAIPerceptionComponent::RequestStimuliListenerUpdate()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIPerceptionComponent", "RequestStimuliListenerUpdate");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function AIModule.AIPerceptionComponent.SetSenseEnabled
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UAISense>             SenseClass                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const bool                              bEnable                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAIPerceptionComponent::SetSenseEnabled(TSubclassOf<class UAISense> SenseClass, const bool bEnable)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIPerceptionComponent", "SetSenseEnabled");
-
-	Params::AIPerceptionComponent_SetSenseEnabled Parms{};
-
-	Parms.SenseClass = SenseClass;
-	Parms.bEnable = bEnable;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function AIModule.AIPerceptionComponent.GetCurrentlyPerceivedActors
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TSubclassOf<class UAISense>             SenseToUse                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class AActor*>*                  OutActors                                              (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-
-void UAIPerceptionComponent::GetCurrentlyPerceivedActors(TSubclassOf<class UAISense> SenseToUse, TArray<class AActor*>* OutActors) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIPerceptionComponent", "GetCurrentlyPerceivedActors");
-
-	Params::AIPerceptionComponent_GetCurrentlyPerceivedActors Parms{};
-
-	Parms.SenseToUse = SenseToUse;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutActors != nullptr)
-		*OutActors = std::move(Parms.OutActors);
-}
-
-
-// Function AIModule.AIPerceptionComponent.GetKnownPerceivedActors
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TSubclassOf<class UAISense>             SenseToUse                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class AActor*>*                  OutActors                                              (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-
-void UAIPerceptionComponent::GetKnownPerceivedActors(TSubclassOf<class UAISense> SenseToUse, TArray<class AActor*>* OutActors) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIPerceptionComponent", "GetKnownPerceivedActors");
-
-	Params::AIPerceptionComponent_GetKnownPerceivedActors Parms{};
-
-	Parms.SenseToUse = SenseToUse;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutActors != nullptr)
-		*OutActors = std::move(Parms.OutActors);
-}
-
-
-// Function AIModule.AIPerceptionComponent.GetPerceivedActors
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TSubclassOf<class UAISense>             SenseToUse                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class AActor*>*                  OutActors                                              (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-
-void UAIPerceptionComponent::GetPerceivedActors(TSubclassOf<class UAISense> SenseToUse, TArray<class AActor*>* OutActors) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIPerceptionComponent", "GetPerceivedActors");
-
-	Params::AIPerceptionComponent_GetPerceivedActors Parms{};
-
-	Parms.SenseToUse = SenseToUse;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutActors != nullptr)
-		*OutActors = std::move(Parms.OutActors);
-}
-
-
-// Function AIModule.AIPerceptionComponent.GetPerceivedHostileActors
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TArray<class AActor*>*                  OutActors                                              (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-
-void UAIPerceptionComponent::GetPerceivedHostileActors(TArray<class AActor*>* OutActors) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIPerceptionComponent", "GetPerceivedHostileActors");
-
-	Params::AIPerceptionComponent_GetPerceivedHostileActors Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutActors != nullptr)
-		*OutActors = std::move(Parms.OutActors);
-}
-
-
-// Function AIModule.AIPerceptionComponent.GetPerceivedHostileActorsBySense
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const TSubclassOf<class UAISense>       SenseToUse                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class AActor*>*                  OutActors                                              (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-
-void UAIPerceptionComponent::GetPerceivedHostileActorsBySense(const TSubclassOf<class UAISense> SenseToUse, TArray<class AActor*>* OutActors) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIPerceptionComponent", "GetPerceivedHostileActorsBySense");
-
-	Params::AIPerceptionComponent_GetPerceivedHostileActorsBySense Parms{};
-
-	Parms.SenseToUse = SenseToUse;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutActors != nullptr)
-		*OutActors = std::move(Parms.OutActors);
-}
-
-
 // Function AIModule.AIController.ClaimTaskResource
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -849,10 +583,10 @@ bool AAIController::HasPartialPath() const
 // Function AIModule.AIAsyncTaskBlueprintProxy.OnMoveCompleted
 // (Final, Native, Public)
 // Parameters:
-// const struct FAIRequestID&              RequestID                                              (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAIRequestID&              RequestId                                              (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EPathFollowingResult                    MovementResult                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAIAsyncTaskBlueprintProxy::OnMoveCompleted(const struct FAIRequestID& RequestID, EPathFollowingResult MovementResult)
+void UAIAsyncTaskBlueprintProxy::OnMoveCompleted(const struct FAIRequestID& RequestId, EPathFollowingResult MovementResult)
 {
 	static class UFunction* Func = nullptr;
 
@@ -861,7 +595,7 @@ void UAIAsyncTaskBlueprintProxy::OnMoveCompleted(const struct FAIRequestID& Requ
 
 	Params::AIAsyncTaskBlueprintProxy_OnMoveCompleted Parms{};
 
-	Parms.RequestID = std::move(RequestID);
+	Parms.RequestId = std::move(RequestId);
 	Parms.MovementResult = MovementResult;
 
 	auto Flgs = Func->FunctionFlags;
@@ -1343,6 +1077,272 @@ void UAIBlueprintHelperLibrary::UnlockAIResourcesWithAnimation(class UAnimInstan
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AIModule.AIPerceptionComponent.ForgetAll
+// (Final, Native, Public, BlueprintCallable)
+
+void UAIPerceptionComponent::ForgetAll()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIPerceptionComponent", "ForgetAll");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AIModule.AIPerceptionComponent.GetActorsPerception
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FActorPerceptionBlueprintInfo*   Info                                                   (Parm, OutParm, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UAIPerceptionComponent::GetActorsPerception(class AActor* Actor, struct FActorPerceptionBlueprintInfo* Info)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIPerceptionComponent", "GetActorsPerception");
+
+	Params::AIPerceptionComponent_GetActorsPerception Parms{};
+
+	Parms.Actor = Actor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (Info != nullptr)
+		*Info = std::move(Parms.Info);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AIModule.AIPerceptionComponent.OnOwnerEndPlay
+// (Final, Native, Public)
+// Parameters:
+// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EEndPlayReason                          EndPlayReason                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAIPerceptionComponent::OnOwnerEndPlay(class AActor* Actor, EEndPlayReason EndPlayReason)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIPerceptionComponent", "OnOwnerEndPlay");
+
+	Params::AIPerceptionComponent_OnOwnerEndPlay Parms{};
+
+	Parms.Actor = Actor;
+	Parms.EndPlayReason = EndPlayReason;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AIModule.AIPerceptionComponent.RequestStimuliListenerUpdate
+// (Final, Native, Public, BlueprintCallable)
+
+void UAIPerceptionComponent::RequestStimuliListenerUpdate()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIPerceptionComponent", "RequestStimuliListenerUpdate");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AIModule.AIPerceptionComponent.SetSenseEnabled
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UAISense>             SenseClass                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bEnable                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAIPerceptionComponent::SetSenseEnabled(TSubclassOf<class UAISense> SenseClass, const bool bEnable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIPerceptionComponent", "SetSenseEnabled");
+
+	Params::AIPerceptionComponent_SetSenseEnabled Parms{};
+
+	Parms.SenseClass = SenseClass;
+	Parms.bEnable = bEnable;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AIModule.AIPerceptionComponent.GetCurrentlyPerceivedActors
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class UAISense>             SenseToUse                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class AActor*>*                  OutActors                                              (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UAIPerceptionComponent::GetCurrentlyPerceivedActors(TSubclassOf<class UAISense> SenseToUse, TArray<class AActor*>* OutActors) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIPerceptionComponent", "GetCurrentlyPerceivedActors");
+
+	Params::AIPerceptionComponent_GetCurrentlyPerceivedActors Parms{};
+
+	Parms.SenseToUse = SenseToUse;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutActors != nullptr)
+		*OutActors = std::move(Parms.OutActors);
+}
+
+
+// Function AIModule.AIPerceptionComponent.GetKnownPerceivedActors
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class UAISense>             SenseToUse                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class AActor*>*                  OutActors                                              (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UAIPerceptionComponent::GetKnownPerceivedActors(TSubclassOf<class UAISense> SenseToUse, TArray<class AActor*>* OutActors) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIPerceptionComponent", "GetKnownPerceivedActors");
+
+	Params::AIPerceptionComponent_GetKnownPerceivedActors Parms{};
+
+	Parms.SenseToUse = SenseToUse;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutActors != nullptr)
+		*OutActors = std::move(Parms.OutActors);
+}
+
+
+// Function AIModule.AIPerceptionComponent.GetPerceivedActors
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class UAISense>             SenseToUse                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class AActor*>*                  OutActors                                              (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UAIPerceptionComponent::GetPerceivedActors(TSubclassOf<class UAISense> SenseToUse, TArray<class AActor*>* OutActors) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIPerceptionComponent", "GetPerceivedActors");
+
+	Params::AIPerceptionComponent_GetPerceivedActors Parms{};
+
+	Parms.SenseToUse = SenseToUse;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutActors != nullptr)
+		*OutActors = std::move(Parms.OutActors);
+}
+
+
+// Function AIModule.AIPerceptionComponent.GetPerceivedHostileActors
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TArray<class AActor*>*                  OutActors                                              (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UAIPerceptionComponent::GetPerceivedHostileActors(TArray<class AActor*>* OutActors) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIPerceptionComponent", "GetPerceivedHostileActors");
+
+	Params::AIPerceptionComponent_GetPerceivedHostileActors Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutActors != nullptr)
+		*OutActors = std::move(Parms.OutActors);
+}
+
+
+// Function AIModule.AIPerceptionComponent.GetPerceivedHostileActorsBySense
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const TSubclassOf<class UAISense>       SenseToUse                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class AActor*>*                  OutActors                                              (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UAIPerceptionComponent::GetPerceivedHostileActorsBySense(const TSubclassOf<class UAISense> SenseToUse, TArray<class AActor*>* OutActors) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIPerceptionComponent", "GetPerceivedHostileActorsBySense");
+
+	Params::AIPerceptionComponent_GetPerceivedHostileActorsBySense Parms{};
+
+	Parms.SenseToUse = SenseToUse;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutActors != nullptr)
+		*OutActors = std::move(Parms.OutActors);
 }
 
 
@@ -2869,6 +2869,126 @@ bool UBlackboardComponent::IsVectorValueSet(const class FName& KeyName) const
 }
 
 
+// Function AIModule.PawnActionsComponent.K2_PerformAction
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class APawn*                            Pawn                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPawnAction*                      action                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EAIRequestPriority                      Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UPawnActionsComponent::K2_PerformAction(class APawn* Pawn, class UPawnAction* action, EAIRequestPriority Priority)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PawnActionsComponent", "K2_PerformAction");
+
+	Params::PawnActionsComponent_K2_PerformAction Parms{};
+
+	Parms.Pawn = Pawn;
+	Parms.action = action;
+	Parms.Priority = Priority;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AIModule.PawnActionsComponent.K2_AbortAction
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UPawnAction*                      ActionToAbort                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EPawnActionAbortState                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EPawnActionAbortState UPawnActionsComponent::K2_AbortAction(class UPawnAction* ActionToAbort)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PawnActionsComponent", "K2_AbortAction");
+
+	Params::PawnActionsComponent_K2_AbortAction Parms{};
+
+	Parms.ActionToAbort = ActionToAbort;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AIModule.PawnActionsComponent.K2_ForceAbortAction
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UPawnAction*                      ActionToAbort                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EPawnActionAbortState                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EPawnActionAbortState UPawnActionsComponent::K2_ForceAbortAction(class UPawnAction* ActionToAbort)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PawnActionsComponent", "K2_ForceAbortAction");
+
+	Params::PawnActionsComponent_K2_ForceAbortAction Parms{};
+
+	Parms.ActionToAbort = ActionToAbort;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AIModule.PawnActionsComponent.K2_PushAction
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UPawnAction*                      NewAction                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EAIRequestPriority                      Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                          Instigator                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UPawnActionsComponent::K2_PushAction(class UPawnAction* NewAction, EAIRequestPriority Priority, class UObject* Instigator)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PawnActionsComponent", "K2_PushAction");
+
+	Params::PawnActionsComponent_K2_PushAction Parms{};
+
+	Parms.NewAction = NewAction;
+	Parms.Priority = Priority;
+	Parms.Instigator = Instigator;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function AIModule.BTDecorator_BlueprintBase.PerformConditionCheck
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -3173,6 +3293,86 @@ bool UBTDecorator_BlueprintBase::IsDecoratorObserverActive() const
 		Func = Class->GetFunction("BTDecorator_BlueprintBase", "IsDecoratorObserverActive");
 
 	Params::BTDecorator_BlueprintBase_IsDecoratorObserverActive Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AIModule.PawnAction.CreateActionInstance
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UPawnAction>          ActionClass                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPawnAction*                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UPawnAction* UPawnAction::CreateActionInstance(class UObject* WorldContextObject, TSubclassOf<class UPawnAction> ActionClass)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PawnAction", "CreateActionInstance");
+
+	Params::PawnAction_CreateActionInstance Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.ActionClass = ActionClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AIModule.PawnAction.Finish
+// (Native, Protected, BlueprintCallable)
+// Parameters:
+// EPawnActionResult                       WithResult                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPawnAction::Finish(EPawnActionResult WithResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PawnAction", "Finish");
+
+	Params::PawnAction_Finish Parms{};
+
+	Parms.WithResult = WithResult;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AIModule.PawnAction.GetActionPriority
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// EAIRequestPriority                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EAIRequestPriority UPawnAction::GetActionPriority()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PawnAction", "GetActionPriority");
+
+	Params::PawnAction_GetActionPriority Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4367,9 +4567,9 @@ void UBTTask_BlueprintBase::SetFinishOnMessage(class FName MessageName)
 // (Final, Native, Protected, BlueprintCallable)
 // Parameters:
 // class FName                             MessageName                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   RequestID                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   RequestId                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBTTask_BlueprintBase::SetFinishOnMessageWithId(class FName MessageName, int32 RequestID)
+void UBTTask_BlueprintBase::SetFinishOnMessageWithId(class FName MessageName, int32 RequestId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4379,7 +4579,7 @@ void UBTTask_BlueprintBase::SetFinishOnMessageWithId(class FName MessageName, in
 	Params::BTTask_BlueprintBase_SetFinishOnMessageWithId Parms{};
 
 	Parms.MessageName = MessageName;
-	Parms.RequestID = RequestID;
+	Parms.RequestId = RequestId;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5338,86 +5538,6 @@ bool UNavLocalGridManager::SetLocalNavigationGridDensity(class UObject* WorldCon
 }
 
 
-// Function AIModule.PawnAction.CreateActionInstance
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UPawnAction>          ActionClass                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPawnAction*                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UPawnAction* UPawnAction::CreateActionInstance(class UObject* WorldContextObject, TSubclassOf<class UPawnAction> ActionClass)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PawnAction", "CreateActionInstance");
-
-	Params::PawnAction_CreateActionInstance Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.ActionClass = ActionClass;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AIModule.PawnAction.Finish
-// (Native, Protected, BlueprintCallable)
-// Parameters:
-// EPawnActionResult                       WithResult                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPawnAction::Finish(EPawnActionResult WithResult)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PawnAction", "Finish");
-
-	Params::PawnAction_Finish Parms{};
-
-	Parms.WithResult = WithResult;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function AIModule.PawnAction.GetActionPriority
-// (Final, Native, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// EAIRequestPriority                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EAIRequestPriority UPawnAction::GetActionPriority()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PawnAction", "GetActionPriority");
-
-	Params::PawnAction_GetActionPriority Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function AIModule.PawnAction_BlueprintBase.ActionFinished
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -5519,126 +5639,6 @@ void UPawnAction_BlueprintBase::ActionTick(class APawn* ControlledPawn, float De
 	Parms.DeltaSeconds = DeltaSeconds;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function AIModule.PawnActionsComponent.K2_PerformAction
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class APawn*                            Pawn                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPawnAction*                      action                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EAIRequestPriority                      Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UPawnActionsComponent::K2_PerformAction(class APawn* Pawn, class UPawnAction* action, EAIRequestPriority Priority)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PawnActionsComponent", "K2_PerformAction");
-
-	Params::PawnActionsComponent_K2_PerformAction Parms{};
-
-	Parms.Pawn = Pawn;
-	Parms.action = action;
-	Parms.Priority = Priority;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AIModule.PawnActionsComponent.K2_AbortAction
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UPawnAction*                      ActionToAbort                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EPawnActionAbortState                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EPawnActionAbortState UPawnActionsComponent::K2_AbortAction(class UPawnAction* ActionToAbort)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PawnActionsComponent", "K2_AbortAction");
-
-	Params::PawnActionsComponent_K2_AbortAction Parms{};
-
-	Parms.ActionToAbort = ActionToAbort;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AIModule.PawnActionsComponent.K2_ForceAbortAction
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UPawnAction*                      ActionToAbort                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EPawnActionAbortState                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EPawnActionAbortState UPawnActionsComponent::K2_ForceAbortAction(class UPawnAction* ActionToAbort)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PawnActionsComponent", "K2_ForceAbortAction");
-
-	Params::PawnActionsComponent_K2_ForceAbortAction Parms{};
-
-	Parms.ActionToAbort = ActionToAbort;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AIModule.PawnActionsComponent.K2_PushAction
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UPawnAction*                      NewAction                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EAIRequestPriority                      Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UObject*                          Instigator                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UPawnActionsComponent::K2_PushAction(class UPawnAction* NewAction, EAIRequestPriority Priority, class UObject* Instigator)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PawnActionsComponent", "K2_PushAction");
-
-	Params::PawnActionsComponent_K2_PushAction Parms{};
-
-	Parms.NewAction = NewAction;
-	Parms.Priority = Priority;
-	Parms.Instigator = Instigator;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 

@@ -30,12 +30,12 @@ public:
 DUMPER7_ASSERTS_WBP_FriendsOverlay_Button_C_GetVisibility_0;
 
 // Function WBP_FriendsOverlay_Button.WBP_FriendsOverlay_Button_C.SetPartyMember
-// 0x0090 (0x0090 - 0x0000)
+// 0x00A0 (0x00A0 - 0x0000)
 struct WBP_FriendsOverlay_Button_C_SetPartyMember final
 {
 public:
-	struct FPartyMemberView                       NewPartyMember;                                    // 0x0000(0x0078)(BlueprintVisible, BlueprintReadOnly, Parm)
-	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x0078(0x0018)()
+	struct FPartyMemberView                       NewPartyMember;                                    // 0x0000(0x0088)(BlueprintVisible, BlueprintReadOnly, Parm)
+	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x0088(0x0018)()
 };
 DUMPER7_ASSERTS_WBP_FriendsOverlay_Button_C_SetPartyMember;
 

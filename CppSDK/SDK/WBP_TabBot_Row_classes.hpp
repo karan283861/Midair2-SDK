@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass WBP_TabBot_Row.WBP_TabBot_Row_C
-// 0x01D0 (0x0430 - 0x0260)
+// 0x01D8 (0x0438 - 0x0260)
 class UWBP_TabBot_Row_C final : public UUserWidget
 {
 public:
@@ -29,11 +29,11 @@ public:
 	class UButton*                                Button_Load;                                       // 0x0278(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UWBP_Button_Action_C*                   WBP_Button_Action_Delete;                          // 0x0280(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UWBP_Button_Action_C*                   WBP_Button_Action_Edit;                            // 0x0288(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	struct FMABotConfig                           Bot;                                               // 0x0290(0x0168)(Edit, BlueprintVisible)
-	TMulticastInlineDelegate<void(const struct FMABotConfig& Bot)> Bot_Edit_Clicked;                 // 0x03F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	class UWBP_TabBot_C*                          ParentWidget;                                      // 0x0408(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TMulticastInlineDelegate<void(const struct FMABotConfig& Bot)> Bot_Delete_Clicked;               // 0x0410(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	TMulticastInlineDelegate<void(const struct FMABotConfig& Bot)> Bot_Load_Clicked;                 // 0x0420(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	struct FMABotConfig                           Bot;                                               // 0x0290(0x0170)(Edit, BlueprintVisible)
+	TMulticastInlineDelegate<void(const struct FMABotConfig& Bot)> Bot_Edit_Clicked;                 // 0x0400(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	class UWBP_TabBot_C*                          ParentWidget;                                      // 0x0410(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TMulticastInlineDelegate<void(const struct FMABotConfig& Bot)> Bot_Delete_Clicked;               // 0x0418(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMulticastInlineDelegate<void(const struct FMABotConfig& Bot)> Bot_Load_Clicked;                 // 0x0428(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 
 public:
 	void ExecuteUbergraph_WBP_TabBot_Row(int32 EntryPoint);

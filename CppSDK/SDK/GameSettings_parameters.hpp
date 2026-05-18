@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "GameplayTags_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "UMG_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK::Params
@@ -130,33 +130,6 @@ public:
 };
 DUMPER7_ASSERTS_GameSettingListEntrySetting_Dropdown_HandleSelectionChanged;
 
-// Function GameSettings.GameSettingValueDropdown.GetDiscreteOptionDefaultIndex
-// 0x0004 (0x0004 - 0x0000)
-struct GameSettingValueDropdown_GetDiscreteOptionDefaultIndex final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GameSettingValueDropdown_GetDiscreteOptionDefaultIndex;
-
-// Function GameSettings.GameSettingValueDropdown.GetDiscreteOptionIndex
-// 0x0004 (0x0004 - 0x0000)
-struct GameSettingValueDropdown_GetDiscreteOptionIndex final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GameSettingValueDropdown_GetDiscreteOptionIndex;
-
-// Function GameSettings.GameSettingValueDropdown.GetDiscreteOptions
-// 0x0010 (0x0010 - 0x0000)
-struct GameSettingValueDropdown_GetDiscreteOptions final
-{
-public:
-	TArray<class FText>                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GameSettingValueDropdown_GetDiscreteOptions;
-
 // Function GameSettings.GameSettingListEntrySetting_Scalar.HandleSliderValueChanged
 // 0x0004 (0x0004 - 0x0000)
 struct GameSettingListEntrySetting_Scalar_HandleSliderValueChanged final
@@ -183,6 +156,33 @@ public:
 	float                                         Value;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_GameSettingListEntrySetting_Scalar_OnValueChanged;
+
+// Function GameSettings.GameSettingValueDropdown.GetDiscreteOptionDefaultIndex
+// 0x0004 (0x0004 - 0x0000)
+struct GameSettingValueDropdown_GetDiscreteOptionDefaultIndex final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GameSettingValueDropdown_GetDiscreteOptionDefaultIndex;
+
+// Function GameSettings.GameSettingValueDropdown.GetDiscreteOptionIndex
+// 0x0004 (0x0004 - 0x0000)
+struct GameSettingValueDropdown_GetDiscreteOptionIndex final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GameSettingValueDropdown_GetDiscreteOptionIndex;
+
+// Function GameSettings.GameSettingValueDropdown.GetDiscreteOptions
+// 0x0010 (0x0010 - 0x0000)
+struct GameSettingValueDropdown_GetDiscreteOptions final
+{
+public:
+	TArray<class FText>                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GameSettingValueDropdown_GetDiscreteOptions;
 
 // Function GameSettings.GameSettingListEntrySetting_Action.OnSettingAssigned
 // 0x0018 (0x0018 - 0x0000)
@@ -221,6 +221,15 @@ public:
 	float                                         DefaultValue;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_GameSettingListEntrySetting_SpinBox_OnValueChanged;
+
+// Function GameSettings.GameSettingValueDropdownDynamic_Color.GetValue
+// 0x0010 (0x0010 - 0x0000)
+struct GameSettingValueDropdownDynamic_Color_GetValue final
+{
+public:
+	struct FLinearColor                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GameSettingValueDropdownDynamic_Color_GetValue;
 
 // Function GameSettings.GameSettingRotator.BP_OnDefaultOptionSpecified
 // 0x0004 (0x0004 - 0x0000)
@@ -315,6 +324,15 @@ public:
 };
 DUMPER7_ASSERTS_GameSettingValueDiscrete_GetDiscreteOptions;
 
+// Function GameSettings.GameSettingValueDiscreteDynamic_Color.GetValue
+// 0x0010 (0x0010 - 0x0000)
+struct GameSettingValueDiscreteDynamic_Color_GetValue final
+{
+public:
+	struct FLinearColor                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GameSettingValueDiscreteDynamic_Color_GetValue;
+
 // Function GameSettings.GameSettingActionInterface.ExecuteActionForSetting
 // 0x0018 (0x0018 - 0x0000)
 struct GameSettingActionInterface_ExecuteActionForSetting final
@@ -326,24 +344,6 @@ public:
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_GameSettingActionInterface_ExecuteActionForSetting;
-
-// Function GameSettings.GameSettingValueDiscreteDynamic_Color.GetValue
-// 0x0010 (0x0010 - 0x0000)
-struct GameSettingValueDiscreteDynamic_Color_GetValue final
-{
-public:
-	struct FLinearColor                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GameSettingValueDiscreteDynamic_Color_GetValue;
-
-// Function GameSettings.GameSettingValueDropdownDynamic_Color.GetValue
-// 0x0010 (0x0010 - 0x0000)
-struct GameSettingValueDropdownDynamic_Color_GetValue final
-{
-public:
-	struct FLinearColor                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GameSettingValueDropdownDynamic_Color_GetValue;
 
 }
 

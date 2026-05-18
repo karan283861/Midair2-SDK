@@ -307,81 +307,6 @@ void UGameSettingListEntrySetting_Dropdown::HandleSelectionChanged(const class F
 }
 
 
-// Function GameSettings.GameSettingValueDropdown.GetDiscreteOptionDefaultIndex
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UGameSettingValueDropdown::GetDiscreteOptionDefaultIndex() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameSettingValueDropdown", "GetDiscreteOptionDefaultIndex");
-
-	Params::GameSettingValueDropdown_GetDiscreteOptionDefaultIndex Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameSettings.GameSettingValueDropdown.GetDiscreteOptionIndex
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UGameSettingValueDropdown::GetDiscreteOptionIndex() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameSettingValueDropdown", "GetDiscreteOptionIndex");
-
-	Params::GameSettingValueDropdown_GetDiscreteOptionIndex Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameSettings.GameSettingValueDropdown.GetDiscreteOptions
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TArray<class FText>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<class FText> UGameSettingValueDropdown::GetDiscreteOptions() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameSettingValueDropdown", "GetDiscreteOptions");
-
-	Params::GameSettingValueDropdown_GetDiscreteOptions Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function GameSettings.GameSettingListEntrySetting_Scalar.HandleSliderCaptureEnded
 // (Final, Native, Protected)
 
@@ -463,6 +388,81 @@ void UGameSettingListEntrySetting_Scalar::OnValueChanged(float Value)
 	Parms.Value = Value;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameSettings.GameSettingValueDropdown.GetDiscreteOptionDefaultIndex
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UGameSettingValueDropdown::GetDiscreteOptionDefaultIndex() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GameSettingValueDropdown", "GetDiscreteOptionDefaultIndex");
+
+	Params::GameSettingValueDropdown_GetDiscreteOptionDefaultIndex Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameSettings.GameSettingValueDropdown.GetDiscreteOptionIndex
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UGameSettingValueDropdown::GetDiscreteOptionIndex() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GameSettingValueDropdown", "GetDiscreteOptionIndex");
+
+	Params::GameSettingValueDropdown_GetDiscreteOptionIndex Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameSettings.GameSettingValueDropdown.GetDiscreteOptions
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TArray<class FText>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class FText> UGameSettingValueDropdown::GetDiscreteOptions() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GameSettingValueDropdown", "GetDiscreteOptions");
+
+	Params::GameSettingValueDropdown_GetDiscreteOptions Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -550,6 +550,31 @@ void UGameSettingListEntrySetting_SpinBox::OnValueChanged(float DefaultValue)
 	Parms.DefaultValue = DefaultValue;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameSettings.GameSettingValueDropdownDynamic_Color.GetValue
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FLinearColor                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FLinearColor UGameSettingValueDropdownDynamic_Color::GetValue() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GameSettingValueDropdownDynamic_Color", "GetValue");
+
+	Params::GameSettingValueDropdownDynamic_Color_GetValue Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -843,36 +868,6 @@ TArray<class FText> UGameSettingValueDiscrete::GetDiscreteOptions() const
 }
 
 
-// Function GameSettings.GameSettingActionInterface.ExecuteActionForSetting
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FGameplayTag&              ActionTag                                              (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UGameSetting*                     InSetting                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool IGameSettingActionInterface::ExecuteActionForSetting(const struct FGameplayTag& ActionTag, class UGameSetting* InSetting)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("GameSettingActionInterface", "ExecuteActionForSetting");
-
-	Params::GameSettingActionInterface_ExecuteActionForSetting Parms{};
-
-	Parms.ActionTag = std::move(ActionTag);
-	Parms.InSetting = InSetting;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function GameSettings.GameSettingValueDiscreteDynamic_Color.GetValue
 // (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -898,24 +893,29 @@ struct FLinearColor UGameSettingValueDiscreteDynamic_Color::GetValue() const
 }
 
 
-// Function GameSettings.GameSettingValueDropdownDynamic_Color.GetValue
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Function GameSettings.GameSettingActionInterface.ExecuteActionForSetting
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FLinearColor                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              ActionTag                                              (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UGameSetting*                     InSetting                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FLinearColor UGameSettingValueDropdownDynamic_Color::GetValue() const
+bool IGameSettingActionInterface::ExecuteActionForSetting(const struct FGameplayTag& ActionTag, class UGameSetting* InSetting)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GameSettingValueDropdownDynamic_Color", "GetValue");
+		Func = AsUObject()->Class->GetFunction("GameSettingActionInterface", "ExecuteActionForSetting");
 
-	Params::GameSettingValueDropdownDynamic_Color_GetValue Parms{};
+	Params::GameSettingActionInterface_ExecuteActionForSetting Parms{};
+
+	Parms.ActionTag = std::move(ActionTag);
+	Parms.InSetting = InSetting;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 

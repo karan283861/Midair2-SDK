@@ -361,11 +361,11 @@ void UAnalyticsBlueprintLibrary::RecordEventWithAttributes(const class FString& 
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // const class FString&                    ItemId                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    Currency                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    currency                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   PerItemCost                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ItemQuantity                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAnalyticsBlueprintLibrary::RecordItemPurchase(const class FString& ItemId, const class FString& Currency, int32 PerItemCost, int32 ItemQuantity)
+void UAnalyticsBlueprintLibrary::RecordItemPurchase(const class FString& ItemId, const class FString& currency, int32 PerItemCost, int32 ItemQuantity)
 {
 	static class UFunction* Func = nullptr;
 
@@ -375,7 +375,7 @@ void UAnalyticsBlueprintLibrary::RecordItemPurchase(const class FString& ItemId,
 	Params::AnalyticsBlueprintLibrary_RecordItemPurchase Parms{};
 
 	Parms.ItemId = std::move(ItemId);
-	Parms.Currency = std::move(Currency);
+	Parms.currency = std::move(currency);
 	Parms.PerItemCost = PerItemCost;
 	Parms.ItemQuantity = ItemQuantity;
 

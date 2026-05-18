@@ -12,8 +12,8 @@
 
 #include "GameplayTags_structs.hpp"
 #include "CommonGame_structs.hpp"
-#include "CommonInput_structs.hpp"
 #include "InputCore_structs.hpp"
+#include "CommonInput_structs.hpp"
 
 
 namespace SDK::Params

@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
 #include "InteractiveToolsFramework_classes.hpp"
+#include "Engine_classes.hpp"
+#include "ModelingComponents_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "ModelingComponents_structs.hpp"
 
 
 namespace SDK

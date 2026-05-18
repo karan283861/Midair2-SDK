@@ -10,14 +10,14 @@
 
 #include "Basic.hpp"
 
-#include "GameSettings_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "UMG_structs.hpp"
 #include "UMG_classes.hpp"
-#include "GameplayTags_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "GameSettings_structs.hpp"
 #include "CommonUI_classes.hpp"
 #include "Engine_classes.hpp"
+#include "GameplayTags_structs.hpp"
 
 
 namespace SDK
@@ -349,51 +349,6 @@ public:
 };
 DUMPER7_ASSERTS_UGameSettingListEntrySetting_Dropdown;
 
-// Class GameSettings.GameSettingValue
-// 0x0000 (0x0168 - 0x0168)
-class UGameSettingValue : public UGameSetting
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("GameSettingValue")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"GameSettingValue")
-	}
-	static class UGameSettingValue* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UGameSettingValue>();
-	}
-};
-DUMPER7_ASSERTS_UGameSettingValue;
-
-// Class GameSettings.GameSettingValueDropdown
-// 0x0000 (0x0168 - 0x0168)
-class UGameSettingValueDropdown : public UGameSettingValue
-{
-public:
-	int32 GetDiscreteOptionDefaultIndex() const;
-	int32 GetDiscreteOptionIndex() const;
-	TArray<class FText> GetDiscreteOptions() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("GameSettingValueDropdown")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"GameSettingValueDropdown")
-	}
-	static class UGameSettingValueDropdown* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UGameSettingValueDropdown>();
-	}
-};
-DUMPER7_ASSERTS_UGameSettingValueDropdown;
-
 // Class GameSettings.GameSettingListEntrySetting_Color
 // 0x0030 (0x02F8 - 0x02C8)
 class UGameSettingListEntrySetting_Color final : public UGameSettingListEntry_Setting
@@ -455,6 +410,51 @@ public:
 };
 DUMPER7_ASSERTS_UGameSettingListEntrySetting_Scalar;
 
+// Class GameSettings.GameSettingValue
+// 0x0000 (0x0168 - 0x0168)
+class UGameSettingValue : public UGameSetting
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("GameSettingValue")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"GameSettingValue")
+	}
+	static class UGameSettingValue* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UGameSettingValue>();
+	}
+};
+DUMPER7_ASSERTS_UGameSettingValue;
+
+// Class GameSettings.GameSettingValueDropdown
+// 0x0000 (0x0168 - 0x0168)
+class UGameSettingValueDropdown : public UGameSettingValue
+{
+public:
+	int32 GetDiscreteOptionDefaultIndex() const;
+	int32 GetDiscreteOptionIndex() const;
+	TArray<class FText> GetDiscreteOptions() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("GameSettingValueDropdown")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"GameSettingValueDropdown")
+	}
+	static class UGameSettingValueDropdown* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UGameSettingValueDropdown>();
+	}
+};
+DUMPER7_ASSERTS_UGameSettingValueDropdown;
+
 // Class GameSettings.GameSettingValueDropdownDynamic
 // 0x0068 (0x01D0 - 0x0168)
 class UGameSettingValueDropdownDynamic : public UGameSettingValueDropdown
@@ -478,25 +478,25 @@ public:
 };
 DUMPER7_ASSERTS_UGameSettingValueDropdownDynamic;
 
-// Class GameSettings.GameSettingValueDropdownDynamic_Vector2D
+// Class GameSettings.GameSettingValueDropdownDynamic_Bool
 // 0x0000 (0x01D0 - 0x01D0)
-class UGameSettingValueDropdownDynamic_Vector2D final : public UGameSettingValueDropdownDynamic
+class UGameSettingValueDropdownDynamic_Bool final : public UGameSettingValueDropdownDynamic
 {
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("GameSettingValueDropdownDynamic_Vector2D")
+		STATIC_CLASS_IMPL("GameSettingValueDropdownDynamic_Bool")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"GameSettingValueDropdownDynamic_Vector2D")
+		STATIC_NAME_IMPL(L"GameSettingValueDropdownDynamic_Bool")
 	}
-	static class UGameSettingValueDropdownDynamic_Vector2D* GetDefaultObj()
+	static class UGameSettingValueDropdownDynamic_Bool* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UGameSettingValueDropdownDynamic_Vector2D>();
+		return GetDefaultObjImpl<UGameSettingValueDropdownDynamic_Bool>();
 	}
 };
-DUMPER7_ASSERTS_UGameSettingValueDropdownDynamic_Vector2D;
+DUMPER7_ASSERTS_UGameSettingValueDropdownDynamic_Bool;
 
 // Class GameSettings.GameSettingListEntrySetting_Action
 // 0x0010 (0x02D8 - 0x02C8)
@@ -552,6 +552,49 @@ public:
 };
 DUMPER7_ASSERTS_UGameSettingListEntrySetting_Navigation;
 
+// Class GameSettings.GameSettingValueScalar
+// 0x0000 (0x0168 - 0x0168)
+class UGameSettingValueScalar : public UGameSettingValue
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("GameSettingValueScalar")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"GameSettingValueScalar")
+	}
+	static class UGameSettingValueScalar* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UGameSettingValueScalar>();
+	}
+};
+DUMPER7_ASSERTS_UGameSettingValueScalar;
+
+// Class GameSettings.GameSettingValueScalarDynamic
+// 0x00C8 (0x0230 - 0x0168)
+class UGameSettingValueScalarDynamic : public UGameSettingValueScalar
+{
+public:
+	uint8                                         Pad_168[0xC8];                                     // 0x0168(0x00C8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("GameSettingValueScalarDynamic")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"GameSettingValueScalarDynamic")
+	}
+	static class UGameSettingValueScalarDynamic* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UGameSettingValueScalarDynamic>();
+	}
+};
+DUMPER7_ASSERTS_UGameSettingValueScalarDynamic;
+
 // Class GameSettings.GameSettingListEntrySetting_SpinBox
 // 0x0010 (0x02D8 - 0x02C8)
 class UGameSettingListEntrySetting_SpinBox : public UGameSettingListEntry_Setting
@@ -579,26 +622,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UGameSettingListEntrySetting_SpinBox;
-
-// Class GameSettings.GameSettingValueDropdownDynamic_Number
-// 0x0000 (0x01D0 - 0x01D0)
-class UGameSettingValueDropdownDynamic_Number final : public UGameSettingValueDropdownDynamic
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("GameSettingValueDropdownDynamic_Number")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"GameSettingValueDropdownDynamic_Number")
-	}
-	static class UGameSettingValueDropdownDynamic_Number* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UGameSettingValueDropdownDynamic_Number>();
-	}
-};
-DUMPER7_ASSERTS_UGameSettingValueDropdownDynamic_Number;
 
 // Class GameSettings.GameSettingListView
 // 0x0058 (0x03C0 - 0x0368)
@@ -657,6 +680,29 @@ public:
 };
 DUMPER7_ASSERTS_UGameSettingPanel;
 
+// Class GameSettings.GameSettingValueDropdownDynamic_Color
+// 0x0000 (0x01D0 - 0x01D0)
+class UGameSettingValueDropdownDynamic_Color final : public UGameSettingValueDropdownDynamic
+{
+public:
+	struct FLinearColor GetValue() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("GameSettingValueDropdownDynamic_Color")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"GameSettingValueDropdownDynamic_Color")
+	}
+	static class UGameSettingValueDropdownDynamic_Color* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UGameSettingValueDropdownDynamic_Color>();
+	}
+};
+DUMPER7_ASSERTS_UGameSettingValueDropdownDynamic_Color;
+
 // Class GameSettings.GameSettingPressAnyKey
 // 0x0048 (0x0368 - 0x0320)
 class UGameSettingPressAnyKey : public UCommonActivatableWidget
@@ -679,49 +725,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UGameSettingPressAnyKey;
-
-// Class GameSettings.GameSettingValueScalar
-// 0x0000 (0x0168 - 0x0168)
-class UGameSettingValueScalar : public UGameSettingValue
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("GameSettingValueScalar")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"GameSettingValueScalar")
-	}
-	static class UGameSettingValueScalar* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UGameSettingValueScalar>();
-	}
-};
-DUMPER7_ASSERTS_UGameSettingValueScalar;
-
-// Class GameSettings.GameSettingValueScalarDynamic
-// 0x00C8 (0x0230 - 0x0168)
-class UGameSettingValueScalarDynamic : public UGameSettingValueScalar
-{
-public:
-	uint8                                         Pad_168[0xC8];                                     // 0x0168(0x00C8)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("GameSettingValueScalarDynamic")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"GameSettingValueScalarDynamic")
-	}
-	static class UGameSettingValueScalarDynamic* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UGameSettingValueScalarDynamic>();
-	}
-};
-DUMPER7_ASSERTS_UGameSettingValueScalarDynamic;
 
 // Class GameSettings.GameSettingRegistry
 // 0x0088 (0x00B0 - 0x0028)
@@ -772,6 +775,32 @@ public:
 };
 DUMPER7_ASSERTS_UGameSettingRotator;
 
+// Class GameSettings.GameSettingVisualData
+// 0x0140 (0x0170 - 0x0030)
+class UGameSettingVisualData final : public UDataAsset
+{
+public:
+	TMap<TSubclassOf<class UGameSetting>, TSubclassOf<class UGameSettingListEntryBase>> EntryWidgetForClass; // 0x0030(0x0050)(Edit, DisableEditOnInstance, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
+	TMap<class FName, TSubclassOf<class UGameSettingListEntryBase>> EntryWidgetForName;              // 0x0080(0x0050)(Edit, DisableEditOnInstance, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
+	TMap<TSubclassOf<class UGameSetting>, struct FGameSettingClassExtensions> ExtensionsForClasses;  // 0x00D0(0x0050)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+	TMap<class FName, struct FGameSettingNameExtensions> ExtensionsForName;                          // 0x0120(0x0050)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("GameSettingVisualData")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"GameSettingVisualData")
+	}
+	static class UGameSettingVisualData* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UGameSettingVisualData>();
+	}
+};
+DUMPER7_ASSERTS_UGameSettingVisualData;
+
 // Class GameSettings.GameSettingScreen
 // 0x0070 (0x0390 - 0x0320)
 class UGameSettingScreen : public UCommonActivatableWidget
@@ -808,26 +837,6 @@ public:
 };
 DUMPER7_ASSERTS_UGameSettingScreen;
 
-// Class GameSettings.GameSettingValueDropdownDynamic_Enum
-// 0x0000 (0x01D0 - 0x01D0)
-class UGameSettingValueDropdownDynamic_Enum final : public UGameSettingValueDropdownDynamic
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("GameSettingValueDropdownDynamic_Enum")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"GameSettingValueDropdownDynamic_Enum")
-	}
-	static class UGameSettingValueDropdownDynamic_Enum* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UGameSettingValueDropdownDynamic_Enum>();
-	}
-};
-DUMPER7_ASSERTS_UGameSettingValueDropdownDynamic_Enum;
-
 // Class GameSettings.GameSettingValueDiscrete
 // 0x0000 (0x0168 - 0x0168)
 class UGameSettingValueDiscrete : public UGameSettingValue
@@ -853,38 +862,6 @@ public:
 };
 DUMPER7_ASSERTS_UGameSettingValueDiscrete;
 
-// Class GameSettings.GameSettingActionInterface
-// 0x0000 (0x0000 - 0x0000)
-class IGameSettingActionInterface final
-{
-public:
-	bool ExecuteActionForSetting(const struct FGameplayTag& ActionTag, class UGameSetting* InSetting);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("GameSettingActionInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"GameSettingActionInterface")
-	}
-	static class IGameSettingActionInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IGameSettingActionInterface>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IGameSettingActionInterface;
-
 // Class GameSettings.GameSettingValueDiscreteDynamic
 // 0x0068 (0x01D0 - 0x0168)
 class UGameSettingValueDiscreteDynamic : public UGameSettingValueDiscrete
@@ -907,6 +884,26 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UGameSettingValueDiscreteDynamic;
+
+// Class GameSettings.GameSettingValueDropdownDynamic_Vector2D
+// 0x0000 (0x01D0 - 0x01D0)
+class UGameSettingValueDropdownDynamic_Vector2D final : public UGameSettingValueDropdownDynamic
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("GameSettingValueDropdownDynamic_Vector2D")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"GameSettingValueDropdownDynamic_Vector2D")
+	}
+	static class UGameSettingValueDropdownDynamic_Vector2D* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UGameSettingValueDropdownDynamic_Vector2D>();
+	}
+};
+DUMPER7_ASSERTS_UGameSettingValueDropdownDynamic_Vector2D;
 
 // Class GameSettings.GameSettingValueDiscreteDynamic_Bool
 // 0x0000 (0x01D0 - 0x01D0)
@@ -1011,48 +1008,45 @@ public:
 };
 DUMPER7_ASSERTS_UGameSettingValueDiscreteDynamic_Vector2D;
 
-// Class GameSettings.GameSettingValueDropdownDynamic_Bool
+// Class GameSettings.GameSettingValueDropdownDynamic_Number
 // 0x0000 (0x01D0 - 0x01D0)
-class UGameSettingValueDropdownDynamic_Bool final : public UGameSettingValueDropdownDynamic
+class UGameSettingValueDropdownDynamic_Number final : public UGameSettingValueDropdownDynamic
 {
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("GameSettingValueDropdownDynamic_Bool")
+		STATIC_CLASS_IMPL("GameSettingValueDropdownDynamic_Number")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"GameSettingValueDropdownDynamic_Bool")
+		STATIC_NAME_IMPL(L"GameSettingValueDropdownDynamic_Number")
 	}
-	static class UGameSettingValueDropdownDynamic_Bool* GetDefaultObj()
+	static class UGameSettingValueDropdownDynamic_Number* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UGameSettingValueDropdownDynamic_Bool>();
+		return GetDefaultObjImpl<UGameSettingValueDropdownDynamic_Number>();
 	}
 };
-DUMPER7_ASSERTS_UGameSettingValueDropdownDynamic_Bool;
+DUMPER7_ASSERTS_UGameSettingValueDropdownDynamic_Number;
 
-// Class GameSettings.GameSettingValueDropdownDynamic_Color
+// Class GameSettings.GameSettingValueDropdownDynamic_Enum
 // 0x0000 (0x01D0 - 0x01D0)
-class UGameSettingValueDropdownDynamic_Color final : public UGameSettingValueDropdownDynamic
+class UGameSettingValueDropdownDynamic_Enum final : public UGameSettingValueDropdownDynamic
 {
-public:
-	struct FLinearColor GetValue() const;
-
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("GameSettingValueDropdownDynamic_Color")
+		STATIC_CLASS_IMPL("GameSettingValueDropdownDynamic_Enum")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"GameSettingValueDropdownDynamic_Color")
+		STATIC_NAME_IMPL(L"GameSettingValueDropdownDynamic_Enum")
 	}
-	static class UGameSettingValueDropdownDynamic_Color* GetDefaultObj()
+	static class UGameSettingValueDropdownDynamic_Enum* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UGameSettingValueDropdownDynamic_Color>();
+		return GetDefaultObjImpl<UGameSettingValueDropdownDynamic_Enum>();
 	}
 };
-DUMPER7_ASSERTS_UGameSettingValueDropdownDynamic_Color;
+DUMPER7_ASSERTS_UGameSettingValueDropdownDynamic_Enum;
 
 // Class GameSettings.GameSettingValueSpinBox
 // 0x0070 (0x01D8 - 0x0168)
@@ -1077,31 +1071,37 @@ public:
 };
 DUMPER7_ASSERTS_UGameSettingValueSpinBox;
 
-// Class GameSettings.GameSettingVisualData
-// 0x0140 (0x0170 - 0x0030)
-class UGameSettingVisualData final : public UDataAsset
+// Class GameSettings.GameSettingActionInterface
+// 0x0000 (0x0000 - 0x0000)
+class IGameSettingActionInterface final
 {
 public:
-	TMap<TSubclassOf<class UGameSetting>, TSubclassOf<class UGameSettingListEntryBase>> EntryWidgetForClass; // 0x0030(0x0050)(Edit, DisableEditOnInstance, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
-	TMap<class FName, TSubclassOf<class UGameSettingListEntryBase>> EntryWidgetForName;              // 0x0080(0x0050)(Edit, DisableEditOnInstance, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
-	TMap<TSubclassOf<class UGameSetting>, struct FGameSettingClassExtensions> ExtensionsForClasses;  // 0x00D0(0x0050)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
-	TMap<class FName, struct FGameSettingNameExtensions> ExtensionsForName;                          // 0x0120(0x0050)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+	bool ExecuteActionForSetting(const struct FGameplayTag& ActionTag, class UGameSetting* InSetting);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("GameSettingVisualData")
+		STATIC_CLASS_IMPL("GameSettingActionInterface")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"GameSettingVisualData")
+		STATIC_NAME_IMPL(L"GameSettingActionInterface")
 	}
-	static class UGameSettingVisualData* GetDefaultObj()
+	static class IGameSettingActionInterface* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UGameSettingVisualData>();
+		return GetDefaultObjImpl<IGameSettingActionInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
-DUMPER7_ASSERTS_UGameSettingVisualData;
+DUMPER7_ASSERTS_IGameSettingActionInterface;
 
 // Class GameSettings.KeyAlreadyBoundWarning
 // 0x0010 (0x0378 - 0x0368)

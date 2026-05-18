@@ -10,73 +10,52 @@
 
 #include "Basic.hpp"
 
-#include "OnlineSubsystemUtils_structs.hpp"
 #include "Engine_structs.hpp"
-#include "AIModule_structs.hpp"
 #include "Midair2_structs.hpp"
-#include "LootLockerSDK_structs.hpp"
+#include "OnlineSubsystemUtils_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "UMG_structs.hpp"
 #include "SlateCore_structs.hpp"
+#include "LootLockerSDK_structs.hpp"
 #include "InputCore_structs.hpp"
+#include "AIModule_structs.hpp"
+#include "PhysicsCore_structs.hpp"
 
 
 namespace SDK::Params
 {
 
-// Function Midair2.GetCurrentLadderPlayerAsyncTask.GetCurrentLadderPlayer
+// Function Midair2.DirectHotkey.HandleDirectNamedHotkey
+// 0x0018 (0x0018 - 0x0000)
+struct DirectHotkey_HandleDirectNamedHotkey final
+{
+public:
+	class FString                                 Hotkey;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_DirectHotkey_HandleDirectNamedHotkey;
+
+// Function Midair2.DirectHotkey.HandleNamedHotkeyWithInt
+// 0x0018 (0x0018 - 0x0000)
+struct DirectHotkey_HandleNamedHotkeyWithInt final
+{
+public:
+	class FString                                 Hotkey;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Int;                                               // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0014(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_DirectHotkey_HandleNamedHotkeyWithInt;
+
+// Function Midair2.ObjectLauncher_Spline.SpawnActorToLaunch
 // 0x0008 (0x0008 - 0x0000)
-struct GetCurrentLadderPlayerAsyncTask_GetCurrentLadderPlayer final
+struct ObjectLauncher_Spline_SpawnActorToLaunch final
 {
 public:
-	class UGetCurrentLadderPlayerAsyncTask*       ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_GetCurrentLadderPlayerAsyncTask_GetCurrentLadderPlayer;
-
-// Function Midair2.MACharacterMovement.MAClientAdjustEnergy
-// 0x0004 (0x0004 - 0x0000)
-struct MACharacterMovement_MAClientAdjustEnergy final
-{
-public:
-	float                                         Energy;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacterMovement_MAClientAdjustEnergy;
-
-// Function Midair2.MACharacterMovement.MAServerMove
-// 0x0038 (0x0038 - 0x0000)
-struct MACharacterMovement_MAServerMove final
-{
-public:
-	struct FMAPackedMoveBundle                    Bundle;                                            // 0x0000(0x0038)(ConstParm, Parm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacterMovement_MAServerMove;
-
-// Function Midair2.MACharacterMovement.IsSkatingOnGround
-// 0x0001 (0x0001 - 0x0000)
-struct MACharacterMovement_IsSkatingOnGround final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacterMovement_IsSkatingOnGround;
-
-// Function Midair2.MAPlatformEmulationSettings.GetKnownDeviceProfiles
-// 0x0010 (0x0010 - 0x0000)
-struct MAPlatformEmulationSettings_GetKnownDeviceProfiles final
-{
-public:
-	TArray<class FName>                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAPlatformEmulationSettings_GetKnownDeviceProfiles;
-
-// Function Midair2.MAPlatformEmulationSettings.GetKnownPlatformIds
-// 0x0010 (0x0010 - 0x0000)
-struct MAPlatformEmulationSettings_GetKnownPlatformIds final
-{
-public:
-	TArray<class FName>                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAPlatformEmulationSettings_GetKnownPlatformIds;
+DUMPER7_ASSERTS_ObjectLauncher_Spline_SpawnActorToLaunch;
 
 // Function Midair2.AIPlayerController.PlayRecordedCameraInput
 // 0x0008 (0x0008 - 0x0000)
@@ -105,6 +84,528 @@ public:
 	class AMACharacter*                           ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_AIPlayerController_GetControlledCharacter;
+
+// Function Midair2.DeletePracticeDrillAsyncTask.DeletePracticeDrill
+// 0x0130 (0x0130 - 0x0000)
+struct DeletePracticeDrillAsyncTask_DeletePracticeDrill final
+{
+public:
+	struct FMADrill                               DrillToDelete;                                     // 0x0000(0x0128)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class UDeletePracticeDrillAsyncTask*          ReturnValue;                                       // 0x0128(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_DeletePracticeDrillAsyncTask_DeletePracticeDrill;
+
+// Function Midair2.MADamageType.ComputeDamageSkillRating
+// 0x0028 (0x0028 - 0x0000)
+struct MADamageType_ComputeDamageSkillRating final
+{
+public:
+	float                                         PreviousSkillRating;                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 Instigator;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 Victim;                                            // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bMidairHit;                                        // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         RadialDamageScale;                                 // 0x001C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0020(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MADamageType_ComputeDamageSkillRating;
+
+// Function Midair2.MADamageType.ComputeMeleeDamageSkillRating
+// 0x0020 (0x0020 - 0x0000)
+struct MADamageType_ComputeMeleeDamageSkillRating final
+{
+public:
+	float                                         PreviousSkillRating;                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 Instigator;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 Victim;                                            // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bMidairHit;                                        // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ReturnValue;                                       // 0x001C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MADamageType_ComputeMeleeDamageSkillRating;
+
+// Function Midair2.MAPickup.ApplyImpulse_NM
+// 0x000C (0x000C - 0x0000)
+struct MAPickup_ApplyImpulse_NM final
+{
+public:
+	struct FVector                                Impulse;                                           // 0x0000(0x000C)(ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAPickup_ApplyImpulse_NM;
+
+// Function Midair2.MAPickup.OnBeginOverlap
+// 0x00A8 (0x00A8 - 0x0000)
+struct MAPickup_OnBeginOverlap final
+{
+public:
+	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFromSweep;                                        // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHitResult                             SweepResult;                                       // 0x0020(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAPickup_OnBeginOverlap;
+
+// Function Midair2.MAPickup.OnStop
+// 0x0088 (0x0088 - 0x0000)
+struct MAPickup_OnStop final
+{
+public:
+	struct FHitResult                             ImpactResult;                                      // 0x0000(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAPickup_OnStop;
+
+// Function Midair2.MAPickup.PlayPickupEffects
+// 0x0008 (0x0008 - 0x0000)
+struct MAPickup_PlayPickupEffects final
+{
+public:
+	class AMAPlayerController*                    Controller;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAPickup_PlayPickupEffects;
+
+// Function Midair2.MAGameMode.IsPracticeModeEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct MAGameMode_IsPracticeModeEnabled final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAGameMode_IsPracticeModeEnabled;
+
+// Function Midair2.MAGameMode.IsTournamentModeEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct MAGameMode_IsTournamentModeEnabled final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAGameMode_IsTournamentModeEnabled;
+
+// Function Midair2.MAGameMode.ReturnPrefix
+// 0x0010 (0x0010 - 0x0000)
+struct MAGameMode_ReturnPrefix final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAGameMode_ReturnPrefix;
+
+// Function Midair2.MAGameMode.TryAssignPlayerToVoiceTeamWhenReady
+// 0x0010 (0x0010 - 0x0000)
+struct MAGameMode_TryAssignPlayerToVoiceTeamWhenReady final
+{
+public:
+	class AMAPlayerState*                         PS;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AttemptsLeft;                                      // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MAGameMode_TryAssignPlayerToVoiceTeamWhenReady;
+
+// Function Midair2.MAGameMode.FilterDisallowedItems
+// 0x0020 (0x0020 - 0x0000)
+struct MAGameMode_FilterDisallowedItems final
+{
+public:
+	TArray<TSubclassOf<class UObjectInfo>>        ItemsIn;                                           // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
+	TArray<TSubclassOf<class UObjectInfo>>        ItemsOut;                                          // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAGameMode_FilterDisallowedItems;
+
+// Function Midair2.MAGameMode.IsBackpackAllowed
+// 0x0010 (0x0010 - 0x0000)
+struct MAGameMode_IsBackpackAllowed final
+{
+public:
+	TSubclassOf<class UBackpackInfo>              PackClass;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MAGameMode_IsBackpackAllowed;
+
+// Function Midair2.MAGameMode.IsDeployableAllowed
+// 0x0010 (0x0010 - 0x0000)
+struct MAGameMode_IsDeployableAllowed final
+{
+public:
+	TSubclassOf<class UDeployableInfo>            DeployableClass;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MAGameMode_IsDeployableAllowed;
+
+// Function Midair2.MAGameMode.IsThrowableAllowed
+// 0x0010 (0x0010 - 0x0000)
+struct MAGameMode_IsThrowableAllowed final
+{
+public:
+	TSubclassOf<class UThrowableInfo>             ThrowableClass;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MAGameMode_IsThrowableAllowed;
+
+// Function Midair2.MAGameMode.IsTournamentWeaponAllowed
+// 0x0010 (0x0010 - 0x0000)
+struct MAGameMode_IsTournamentWeaponAllowed final
+{
+public:
+	TSubclassOf<class UWeaponInfo>                WeaponClass;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MAGameMode_IsTournamentWeaponAllowed;
+
+// Function Midair2.MAGameMode.IsWeaponAllowed
+// 0x0010 (0x0010 - 0x0000)
+struct MAGameMode_IsWeaponAllowed final
+{
+public:
+	TSubclassOf<class UWeaponInfo>                WeaponClass;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MAGameMode_IsWeaponAllowed;
+
+// Function Midair2.PRGameMode.AdvanceTrackingToLesson
+// 0x0004 (0x0004 - 0x0000)
+struct PRGameMode_AdvanceTrackingToLesson final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PRGameMode_AdvanceTrackingToLesson;
+
+// Function Midair2.PRGameMode.OnTriggerBeginLesson
+// 0x0010 (0x0010 - 0x0000)
+struct PRGameMode_OnTriggerBeginLesson final
+{
+public:
+	class AActor*                                 OverlappedActor;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PRGameMode_OnTriggerBeginLesson;
+
+// Function Midair2.PRGameMode.OnTriggerEndLesson
+// 0x0010 (0x0010 - 0x0000)
+struct PRGameMode_OnTriggerEndLesson final
+{
+public:
+	class AActor*                                 OverlappedActor;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PRGameMode_OnTriggerEndLesson;
+
+// Function Midair2.PRGameMode.GetCurrentLesson
+// 0x00D0 (0x00D0 - 0x0000)
+struct PRGameMode_GetCurrentLesson final
+{
+public:
+	struct FPracticeLessonDetails                 ReturnValue;                                       // 0x0000(0x00D0)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PRGameMode_GetCurrentLesson;
+
+// Function Midair2.PRGameMode.GetCurrentLessonTag
+// 0x0008 (0x0008 - 0x0000)
+struct PRGameMode_GetCurrentLessonTag final
+{
+public:
+	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PRGameMode_GetCurrentLessonTag;
+
+// Function Midair2.AmmoPickup.SetupFromCharacter
+// 0x0008 (0x0008 - 0x0000)
+struct AmmoPickup_SetupFromCharacter final
+{
+public:
+	class AMACharacter*                           Character;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AmmoPickup_SetupFromCharacter;
+
+// Function Midair2.AmmoPickup.GetRelatedPlayer
+// 0x0008 (0x0008 - 0x0000)
+struct AmmoPickup_GetRelatedPlayer final
+{
+public:
+	class AMAPlayerState*                         ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AmmoPickup_GetRelatedPlayer;
+
+// Function Midair2.PartyMenuActor.LoadSkinFromClass
+// 0x0018 (0x0018 - 0x0000)
+struct PartyMenuActor_LoadSkinFromClass final
+{
+public:
+	TSubclassOf<class ASkinConfiguration>         SkinConfiguration;                                 // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 SkinConfigPath;                                    // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PartyMenuActor_LoadSkinFromClass;
+
+// Function Midair2.MAAsset.OnHealthChanged
+// 0x0001 (0x0001 - 0x0000)
+struct MAAsset_OnHealthChanged final
+{
+public:
+	bool                                          bFromDamage;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAAsset_OnHealthChanged;
+
+// Function Midair2.MAAsset.SetPowered
+// 0x0001 (0x0001 - 0x0000)
+struct MAAsset_SetPowered final
+{
+public:
+	bool                                          bInIsPowered;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAAsset_SetPowered;
+
+// Function Midair2.MAAsset.GetPlacementVisualRadius
+// 0x0004 (0x0004 - 0x0000)
+struct MAAsset_GetPlacementVisualRadius final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAAsset_GetPlacementVisualRadius;
+
+// Function Midair2.MAAsset.HasLowHealth
+// 0x0001 (0x0001 - 0x0000)
+struct MAAsset_HasLowHealth final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAAsset_HasLowHealth;
+
+// Function Midair2.MAAsset.IsAlive
+// 0x0001 (0x0001 - 0x0000)
+struct MAAsset_IsAlive final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAAsset_IsAlive;
+
+// Function Midair2.MAAsset.IsPowered
+// 0x0001 (0x0001 - 0x0000)
+struct MAAsset_IsPowered final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAAsset_IsPowered;
+
+// Function Midair2.MATurretAsset.OnPerceptionUpdated
+// 0x0010 (0x0010 - 0x0000)
+struct MATurretAsset_OnPerceptionUpdated final
+{
+public:
+	TArray<class AActor*>                         UpdatedActors;                                     // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MATurretAsset_OnPerceptionUpdated;
+
+// Function Midair2.MATurretAsset.OnTargetUpdated
+// 0x0048 (0x0048 - 0x0000)
+struct MATurretAsset_OnTargetUpdated final
+{
+public:
+	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAIStimulus                            Stimulus;                                          // 0x0008(0x003C)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MATurretAsset_OnTargetUpdated;
+
+// Function Midair2.MATurretAsset.TargetDroppedFromSensorChannel
+// 0x0010 (0x0010 - 0x0000)
+struct MATurretAsset_TargetDroppedFromSensorChannel final
+{
+public:
+	class UTargetComponent*                       Target;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Channel;                                           // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MATurretAsset_TargetDroppedFromSensorChannel;
+
+// Function Midair2.MATurretAsset.TryTargetLost
+// 0x0008 (0x0008 - 0x0000)
+struct MATurretAsset_TryTargetLost final
+{
+public:
+	class UTargetComponent*                       Target;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MATurretAsset_TryTargetLost;
+
+// Function Midair2.MAPlayerState.AdjustScore
+// 0x0004 (0x0004 - 0x0000)
+struct MAPlayerState_AdjustScore final
+{
+public:
+	int32                                         ScoreAdjustment;                                   // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAPlayerState_AdjustScore;
+
+// Function Midair2.MAPlayerState.Client_NotifyScoreApplied
+// 0x0008 (0x0008 - 0x0000)
+struct MAPlayerState_Client_NotifyScoreApplied final
+{
+public:
+	int32                                         ScoreID;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Value;                                             // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAPlayerState_Client_NotifyScoreApplied;
+
+// Function Midair2.MAPlayerState.GetMAPlayerController
+// 0x0008 (0x0008 - 0x0000)
+struct MAPlayerState_GetMAPlayerController final
+{
+public:
+	class AMAPlayerController*                    ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAPlayerState_GetMAPlayerController;
+
+// Function Midair2.MAPlayerState.GetUniqueIdAsString
+// 0x0010 (0x0010 - 0x0000)
+struct MAPlayerState_GetUniqueIdAsString final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAPlayerState_GetUniqueIdAsString;
+
+// Function Midair2.MAPlayerState.GetWeaponStats
+// 0x0050 (0x0050 - 0x0000)
+struct MAPlayerState_GetWeaponStats final
+{
+public:
+	TMap<class FString, struct FMatchWeaponStats> ReturnValue;                                       // 0x0000(0x0050)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAPlayerState_GetWeaponStats;
+
+// Function Midair2.MAPlayerState.IncrementAssists
+// 0x0010 (0x0010 - 0x0000)
+struct MAPlayerState_IncrementAssists final
+{
+public:
+	TSubclassOf<class UDamageType>                DamageType;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AMAPlayerState*                         Victim;                                            // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAPlayerState_IncrementAssists;
+
+// Function Midair2.MAPlayerState.IncrementDeaths
+// 0x0010 (0x0010 - 0x0000)
+struct MAPlayerState_IncrementDeaths final
+{
+public:
+	TSubclassOf<class UDamageType>                DamageType;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AMAPlayerState*                         Victim;                                            // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAPlayerState_IncrementDeaths;
+
+// Function Midair2.MAPlayerState.IncrementKills
+// 0x0010 (0x0010 - 0x0000)
+struct MAPlayerState_IncrementKills final
+{
+public:
+	TSubclassOf<class UDamageType>                DamageType;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AMAPlayerState*                         Victim;                                            // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAPlayerState_IncrementKills;
+
+// Function Midair2.MAPlayerState.ServerRequestChangeTeam
+// 0x0001 (0x0001 - 0x0000)
+struct MAPlayerState_ServerRequestChangeTeam final
+{
+public:
+	ETeamId                                       DesiredTeamId;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAPlayerState_ServerRequestChangeTeam;
+
+// Function Midair2.MAPlayerState.SetHoldingFlag
+// 0x0001 (0x0001 - 0x0000)
+struct MAPlayerState_SetHoldingFlag final
+{
+public:
+	bool                                          bIsHolding;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAPlayerState_SetHoldingFlag;
+
+// Function Midair2.MAPlayerState.UpdateMatchResult
+// 0x0098 (0x0098 - 0x0000)
+struct MAPlayerState_UpdateMatchResult final
+{
+public:
+	struct FMatchHistory                          MatchHistory;                                      // 0x0000(0x0098)(ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAPlayerState_UpdateMatchResult;
+
+// Function Midair2.MAPlayerState.GetPowerUp
+// 0x0008 (0x0008 - 0x0000)
+struct MAPlayerState_GetPowerUp final
+{
+public:
+	class AMAPowerup*                             ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAPlayerState_GetPowerUp;
+
+// Function Midair2.MAPlayerState.IsAlive
+// 0x0001 (0x0001 - 0x0000)
+struct MAPlayerState_IsAlive final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAPlayerState_IsAlive;
+
+// Function Midair2.GetCurrentUserStatsAsyncTask.GetCurrentUserStats
+// 0x0008 (0x0008 - 0x0000)
+struct GetCurrentUserStatsAsyncTask_GetCurrentUserStats final
+{
+public:
+	class UGetCurrentUserStatsAsyncTask*          ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GetCurrentUserStatsAsyncTask_GetCurrentUserStats;
+
+// Function Midair2.Augment_Art.SetActive
+// 0x0001 (0x0001 - 0x0000)
+struct Augment_Art_SetActive final
+{
+public:
+	bool                                          bActive;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Augment_Art_SetActive;
+
+// Function Midair2.Augment_Art.SetActive_Audio
+// 0x0001 (0x0001 - 0x0000)
+struct Augment_Art_SetActive_Audio final
+{
+public:
+	bool                                          bActive;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Augment_Art_SetActive_Audio;
+
+// Function Midair2.Augment_Art.SetActive_Visuals
+// 0x0001 (0x0001 - 0x0000)
+struct Augment_Art_SetActive_Visuals final
+{
+public:
+	bool                                          bActive;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Augment_Art_SetActive_Visuals;
+
+// Function Midair2.Augment_Art.Tick
+// 0x0004 (0x0004 - 0x0000)
+struct Augment_Art_Tick final
+{
+public:
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Augment_Art_Tick;
 
 // Function Midair2.MAPlayerControllerBase.ClientDoExpression
 // 0x0010 (0x0010 - 0x0000)
@@ -374,6 +875,15 @@ public:
 };
 DUMPER7_ASSERTS_MAPlayerController_ClientNotifyMapChange;
 
+// Function Midair2.MAPlayerController.ClientNotifyNetcodeMode
+// 0x0001 (0x0001 - 0x0000)
+struct MAPlayerController_ClientNotifyNetcodeMode final
+{
+public:
+	bool                                          bLegacy;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAPlayerController_ClientNotifyNetcodeMode;
+
 // Function Midair2.MAPlayerController.ClientPlayerKicked
 // 0x0018 (0x0018 - 0x0000)
 struct MAPlayerController_ClientPlayerKicked final
@@ -607,11 +1117,11 @@ public:
 DUMPER7_ASSERTS_MAPlayerController_RecievedActiveRespawnDelay;
 
 // Function Midair2.MAPlayerController.SelectCurrentLoadout
-// 0x00B8 (0x00B8 - 0x0000)
+// 0x00C0 (0x00C0 - 0x0000)
 struct MAPlayerController_SelectCurrentLoadout final
 {
 public:
-	struct FMALoadout                             loadout;                                           // 0x0000(0x00B8)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FMALoadout                             Loadout;                                           // 0x0000(0x00C0)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MAPlayerController_SelectCurrentLoadout;
 
@@ -765,11 +1275,11 @@ public:
 DUMPER7_ASSERTS_MAPlayerController_ServerSetDirectHitImpulseBonus;
 
 // Function Midair2.MAPlayerController.ServerSetLoadout
-// 0x00B8 (0x00B8 - 0x0000)
+// 0x00C0 (0x00C0 - 0x0000)
 struct MAPlayerController_ServerSetLoadout final
 {
 public:
-	struct FMALoadout                             loadout;                                           // 0x0000(0x00B8)(ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FMALoadout                             Loadout;                                           // 0x0000(0x00C0)(ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MAPlayerController_ServerSetLoadout;
 
@@ -1005,6 +1515,24 @@ public:
 };
 DUMPER7_ASSERTS_MAPlayerController_GetControlledCharacter;
 
+// Function Midair2.MAPlayerController.GetControlledPassengerPawn
+// 0x0008 (0x0008 - 0x0000)
+struct MAPlayerController_GetControlledPassengerPawn final
+{
+public:
+	class APassengerPawn*                         ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAPlayerController_GetControlledPassengerPawn;
+
+// Function Midair2.MAPlayerController.GetControlledVehicle
+// 0x0008 (0x0008 - 0x0000)
+struct MAPlayerController_GetControlledVehicle final
+{
+public:
+	class AVehiclePawn*                           ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAPlayerController_GetControlledVehicle;
+
 // Function Midair2.MAPlayerController.GetCurrentXPPool
 // 0x0004 (0x0004 - 0x0000)
 struct MAPlayerController_GetCurrentXPPool final
@@ -1023,6 +1551,15 @@ public:
 };
 DUMPER7_ASSERTS_MAPlayerController_GetLastControlledCharacter;
 
+// Function Midair2.MAPlayerController.GetPlayerSeat
+// 0x0008 (0x0008 - 0x0000)
+struct MAPlayerController_GetPlayerSeat final
+{
+public:
+	class UVehicleSeatComponent*                  ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAPlayerController_GetPlayerSeat;
+
 // Function Midair2.MAPlayerController.GetTimeDead
 // 0x0004 (0x0004 - 0x0000)
 struct MAPlayerController_GetTimeDead final
@@ -1040,626 +1577,6 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MAPlayerController_IsPawnRelatedInputEnabled;
-
-// Function Midair2.MAPickup.ApplyImpulse_NM
-// 0x000C (0x000C - 0x0000)
-struct MAPickup_ApplyImpulse_NM final
-{
-public:
-	struct FVector                                Impulse;                                           // 0x0000(0x000C)(ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAPickup_ApplyImpulse_NM;
-
-// Function Midair2.MAPickup.OnBeginOverlap
-// 0x00A8 (0x00A8 - 0x0000)
-struct MAPickup_OnBeginOverlap final
-{
-public:
-	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bFromSweep;                                        // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FHitResult                             SweepResult;                                       // 0x0020(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAPickup_OnBeginOverlap;
-
-// Function Midair2.MAPickup.OnStop
-// 0x0088 (0x0088 - 0x0000)
-struct MAPickup_OnStop final
-{
-public:
-	struct FHitResult                             ImpactResult;                                      // 0x0000(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAPickup_OnStop;
-
-// Function Midair2.MAPickup.PlayPickupEffects
-// 0x0008 (0x0008 - 0x0000)
-struct MAPickup_PlayPickupEffects final
-{
-public:
-	class AMAPlayerController*                    Controller;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAPickup_PlayPickupEffects;
-
-// Function Midair2.MAPlayerState.AdjustScore
-// 0x0004 (0x0004 - 0x0000)
-struct MAPlayerState_AdjustScore final
-{
-public:
-	int32                                         ScoreAdjustment;                                   // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAPlayerState_AdjustScore;
-
-// Function Midair2.MAPlayerState.Client_NotifyScoreApplied
-// 0x0008 (0x0008 - 0x0000)
-struct MAPlayerState_Client_NotifyScoreApplied final
-{
-public:
-	int32                                         ScoreID;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Value;                                             // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAPlayerState_Client_NotifyScoreApplied;
-
-// Function Midair2.MAPlayerState.GetMAPlayerController
-// 0x0008 (0x0008 - 0x0000)
-struct MAPlayerState_GetMAPlayerController final
-{
-public:
-	class AMAPlayerController*                    ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAPlayerState_GetMAPlayerController;
-
-// Function Midair2.MAPlayerState.GetUniqueIdAsString
-// 0x0010 (0x0010 - 0x0000)
-struct MAPlayerState_GetUniqueIdAsString final
-{
-public:
-	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAPlayerState_GetUniqueIdAsString;
-
-// Function Midair2.MAPlayerState.GetWeaponStats
-// 0x0050 (0x0050 - 0x0000)
-struct MAPlayerState_GetWeaponStats final
-{
-public:
-	TMap<class FString, struct FMatchWeaponStats> ReturnValue;                                       // 0x0000(0x0050)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAPlayerState_GetWeaponStats;
-
-// Function Midair2.MAPlayerState.IncrementAssists
-// 0x0010 (0x0010 - 0x0000)
-struct MAPlayerState_IncrementAssists final
-{
-public:
-	TSubclassOf<class UDamageType>                DamageType;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AMAPlayerState*                         Victim;                                            // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAPlayerState_IncrementAssists;
-
-// Function Midair2.MAPlayerState.IncrementDeaths
-// 0x0010 (0x0010 - 0x0000)
-struct MAPlayerState_IncrementDeaths final
-{
-public:
-	TSubclassOf<class UDamageType>                DamageType;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AMAPlayerState*                         Victim;                                            // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAPlayerState_IncrementDeaths;
-
-// Function Midair2.MAPlayerState.IncrementKills
-// 0x0010 (0x0010 - 0x0000)
-struct MAPlayerState_IncrementKills final
-{
-public:
-	TSubclassOf<class UDamageType>                DamageType;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AMAPlayerState*                         Victim;                                            // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAPlayerState_IncrementKills;
-
-// Function Midair2.MAPlayerState.ServerRequestChangeTeam
-// 0x0001 (0x0001 - 0x0000)
-struct MAPlayerState_ServerRequestChangeTeam final
-{
-public:
-	ETeamId                                       DesiredTeamId;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAPlayerState_ServerRequestChangeTeam;
-
-// Function Midair2.MAPlayerState.SetHoldingFlag
-// 0x0001 (0x0001 - 0x0000)
-struct MAPlayerState_SetHoldingFlag final
-{
-public:
-	bool                                          bIsHolding;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAPlayerState_SetHoldingFlag;
-
-// Function Midair2.MAPlayerState.UpdateMatchResult
-// 0x0098 (0x0098 - 0x0000)
-struct MAPlayerState_UpdateMatchResult final
-{
-public:
-	struct FMatchHistory                          MatchHistory;                                      // 0x0000(0x0098)(ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAPlayerState_UpdateMatchResult;
-
-// Function Midair2.MAPlayerState.GetPowerUp
-// 0x0008 (0x0008 - 0x0000)
-struct MAPlayerState_GetPowerUp final
-{
-public:
-	class AMAPowerup*                             ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAPlayerState_GetPowerUp;
-
-// Function Midair2.MAPlayerState.IsAlive
-// 0x0001 (0x0001 - 0x0000)
-struct MAPlayerState_IsAlive final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAPlayerState_IsAlive;
-
-// Function Midair2.AmmoPickup.SetupFromCharacter
-// 0x0008 (0x0008 - 0x0000)
-struct AmmoPickup_SetupFromCharacter final
-{
-public:
-	class AMACharacter*                           Character;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AmmoPickup_SetupFromCharacter;
-
-// Function Midair2.AmmoPickup.GetRelatedPlayer
-// 0x0008 (0x0008 - 0x0000)
-struct AmmoPickup_GetRelatedPlayer final
-{
-public:
-	class AMAPlayerState*                         ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AmmoPickup_GetRelatedPlayer;
-
-// Function Midair2.MAInventoryBPLibrary.GetRarityFromItem
-// 0x0010 (0x0010 - 0x0000)
-struct MAInventoryBPLibrary_GetRarityFromItem final
-{
-public:
-	class UClass*                                 Item;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERarityType                                   ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MAInventoryBPLibrary_GetRarityFromItem;
-
-// Function Midair2.MAGameMode.IsPracticeModeEnabled
-// 0x0001 (0x0001 - 0x0000)
-struct MAGameMode_IsPracticeModeEnabled final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAGameMode_IsPracticeModeEnabled;
-
-// Function Midair2.MAGameMode.IsTournamentModeEnabled
-// 0x0001 (0x0001 - 0x0000)
-struct MAGameMode_IsTournamentModeEnabled final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAGameMode_IsTournamentModeEnabled;
-
-// Function Midair2.MAGameMode.ReturnPrefix
-// 0x0010 (0x0010 - 0x0000)
-struct MAGameMode_ReturnPrefix final
-{
-public:
-	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAGameMode_ReturnPrefix;
-
-// Function Midair2.MAGameMode.TryAssignPlayerToVoiceTeamWhenReady
-// 0x0010 (0x0010 - 0x0000)
-struct MAGameMode_TryAssignPlayerToVoiceTeamWhenReady final
-{
-public:
-	class AMAPlayerState*                         PS;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         AttemptsLeft;                                      // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MAGameMode_TryAssignPlayerToVoiceTeamWhenReady;
-
-// Function Midair2.MAGameMode.FilterDisallowedItems
-// 0x0020 (0x0020 - 0x0000)
-struct MAGameMode_FilterDisallowedItems final
-{
-public:
-	TArray<TSubclassOf<class UObjectInfo>>        ItemsIn;                                           // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
-	TArray<TSubclassOf<class UObjectInfo>>        ItemsOut;                                          // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAGameMode_FilterDisallowedItems;
-
-// Function Midair2.MAGameMode.IsBackpackAllowed
-// 0x0010 (0x0010 - 0x0000)
-struct MAGameMode_IsBackpackAllowed final
-{
-public:
-	TSubclassOf<class UBackpackInfo>              PackClass;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MAGameMode_IsBackpackAllowed;
-
-// Function Midair2.MAGameMode.IsDeployableAllowed
-// 0x0010 (0x0010 - 0x0000)
-struct MAGameMode_IsDeployableAllowed final
-{
-public:
-	TSubclassOf<class UDeployableInfo>            DeployableClass;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MAGameMode_IsDeployableAllowed;
-
-// Function Midair2.MAGameMode.IsThrowableAllowed
-// 0x0010 (0x0010 - 0x0000)
-struct MAGameMode_IsThrowableAllowed final
-{
-public:
-	TSubclassOf<class UThrowableInfo>             ThrowableClass;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MAGameMode_IsThrowableAllowed;
-
-// Function Midair2.MAGameMode.IsTournamentWeaponAllowed
-// 0x0010 (0x0010 - 0x0000)
-struct MAGameMode_IsTournamentWeaponAllowed final
-{
-public:
-	TSubclassOf<class UWeaponInfo>                WeaponClass;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MAGameMode_IsTournamentWeaponAllowed;
-
-// Function Midair2.MAGameMode.IsWeaponAllowed
-// 0x0010 (0x0010 - 0x0000)
-struct MAGameMode_IsWeaponAllowed final
-{
-public:
-	TSubclassOf<class UWeaponInfo>                WeaponClass;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MAGameMode_IsWeaponAllowed;
-
-// Function Midair2.GetCurrentUserStatsAsyncTask.GetCurrentUserStats
-// 0x0008 (0x0008 - 0x0000)
-struct GetCurrentUserStatsAsyncTask_GetCurrentUserStats final
-{
-public:
-	class UGetCurrentUserStatsAsyncTask*          ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GetCurrentUserStatsAsyncTask_GetCurrentUserStats;
-
-// Function Midair2.MAGameState.BeginMapVote
-// 0x0001 (0x0001 - 0x0000)
-struct MAGameState_BeginMapVote final
-{
-public:
-	bool                                          bIsEndOfMatch;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAGameState_BeginMapVote;
-
-// Function Midair2.MAGameState.GenerateOptionsForMapVote
-// 0x0008 (0x0008 - 0x0000)
-struct MAGameState_GenerateOptionsForMapVote final
-{
-public:
-	EMapVoteStage                                 Stage;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         voteOptions;                                       // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAGameState_GenerateOptionsForMapVote;
-
-// Function Midair2.MAGameState.GetTeamStateById
-// 0x0010 (0x0010 - 0x0000)
-struct MAGameState_GetTeamStateById final
-{
-public:
-	ETeamId                                       TeamId;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class AMATeamState*                           ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAGameState_GetTeamStateById;
-
-// Function Midair2.MAGameState.GetVotesForOption
-// 0x0002 (0x0002 - 0x0000)
-struct MAGameState_GetVotesForOption final
-{
-public:
-	EMapVoteOption                                Option;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAGameState_GetVotesForOption;
-
-// Function Midair2.MAGameState.PredictWinner
-// 0x0001 (0x0001 - 0x0000)
-struct MAGameState_PredictWinner final
-{
-public:
-	EMapVoteOption                                ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAGameState_PredictWinner;
-
-// Function Midair2.MAGameState.ServerRequestEnablePracticeMode
-// 0x0001 (0x0001 - 0x0000)
-struct MAGameState_ServerRequestEnablePracticeMode final
-{
-public:
-	bool                                          bIsEnabled;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAGameState_ServerRequestEnablePracticeMode;
-
-// Function Midair2.MAGameState.ServerRequestEnableTournamentMode
-// 0x0001 (0x0001 - 0x0000)
-struct MAGameState_ServerRequestEnableTournamentMode final
-{
-public:
-	bool                                          bIsEnabled;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAGameState_ServerRequestEnableTournamentMode;
-
-// Function Midair2.MAGameState.SortPlayersByScore
-// 0x0010 (0x0010 - 0x0000)
-struct MAGameState_SortPlayersByScore final
-{
-public:
-	TArray<class APlayerState*>                   players;                                           // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAGameState_SortPlayersByScore;
-
-// Function Midair2.MAGameState.GetCurrentHolder
-// 0x0018 (0x0018 - 0x0000)
-struct MAGameState_GetCurrentHolder final
-{
-public:
-	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAGameState_GetCurrentHolder;
-
-// Function Midair2.MAGameState.GetCurrentJackpot
-// 0x0018 (0x0018 - 0x0000)
-struct MAGameState_GetCurrentJackpot final
-{
-public:
-	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAGameState_GetCurrentJackpot;
-
-// Function Midair2.MAGameState.GetFlagHolderTimer
-// 0x0018 (0x0018 - 0x0000)
-struct MAGameState_GetFlagHolderTimer final
-{
-public:
-	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAGameState_GetFlagHolderTimer;
-
-// Function Midair2.MAGameState.GetGameTime
-// 0x0010 (0x0010 - 0x0000)
-struct MAGameState_GetGameTime final
-{
-public:
-	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAGameState_GetGameTime;
-
-// Function Midair2.MAGameState.GetLivePlayersOnTeam
-// 0x0002 (0x0002 - 0x0000)
-struct MAGameState_GetLivePlayersOnTeam final
-{
-public:
-	uint8                                         TeamId;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAGameState_GetLivePlayersOnTeam;
-
-// Function Midair2.MAGameState.GetLivesLeftOnTeam
-// 0x0008 (0x0008 - 0x0000)
-struct MAGameState_GetLivesLeftOnTeam final
-{
-public:
-	uint8                                         TeamId;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAGameState_GetLivesLeftOnTeam;
-
-// Function Midair2.MAGameState.GetMAGameModeClass
-// 0x0008 (0x0008 - 0x0000)
-struct MAGameState_GetMAGameModeClass final
-{
-public:
-	TSubclassOf<class AMAGameMode>                ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAGameState_GetMAGameModeClass;
-
-// Function Midair2.MAGameState.GetMatchStatus
-// 0x0018 (0x0018 - 0x0000)
-struct MAGameState_GetMatchStatus final
-{
-public:
-	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAGameState_GetMatchStatus;
-
-// Function Midair2.MAGameState.GetRankedPlayerArray
-// 0x0010 (0x0010 - 0x0000)
-struct MAGameState_GetRankedPlayerArray final
-{
-public:
-	TArray<class AMAPlayerState*>                 RankedArray;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAGameState_GetRankedPlayerArray;
-
-// Function Midair2.MAGameState.GetRankedPlayerArrays
-// 0x0020 (0x0020 - 0x0000)
-struct MAGameState_GetRankedPlayerArrays final
-{
-public:
-	TArray<class AMAPlayerState*>                 Team1RankedArray;                                  // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class AMAPlayerState*>                 Team2RankedArray;                                  // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAGameState_GetRankedPlayerArrays;
-
-// Function Midair2.MAGameState.GetSpectatorsArray
-// 0x0010 (0x0010 - 0x0000)
-struct MAGameState_GetSpectatorsArray final
-{
-public:
-	TArray<class AMAPlayerState*>                 SpectatorsArray;                                   // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAGameState_GetSpectatorsArray;
-
-// Function Midair2.MAGameState.GetTeamMaxObjectCount
-// 0x0010 (0x0010 - 0x0000)
-struct MAGameState_GetTeamMaxObjectCount final
-{
-public:
-	TSubclassOf<class UObject>                    ObjectType;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MAGameState_GetTeamMaxObjectCount;
-
-// Function Midair2.MAGameState.GetTotalPlayersOnTeam
-// 0x0002 (0x0002 - 0x0000)
-struct MAGameState_GetTotalPlayersOnTeam final
-{
-public:
-	uint8                                         TeamId;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAGameState_GetTotalPlayersOnTeam;
-
-// Function Midair2.MAGameState.IsAnySimpleVoteInProgress
-// 0x0001 (0x0001 - 0x0000)
-struct MAGameState_IsAnySimpleVoteInProgress final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAGameState_IsAnySimpleVoteInProgress;
-
-// Function Midair2.MAGameState.OnSameTeam
-// 0x0018 (0x0018 - 0x0000)
-struct MAGameState_OnSameTeam final
-{
-public:
-	const class AActor*                           Actor1;                                            // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	const class AActor*                           Actor2;                                            // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MAGameState_OnSameTeam;
-
-// Function Midair2.TDMGameState.GetHoldingTeam
-// 0x0001 (0x0001 - 0x0000)
-struct TDMGameState_GetHoldingTeam final
-{
-public:
-	ETeamId                                       ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_TDMGameState_GetHoldingTeam;
-
-// Function Midair2.TDMGameState.GetIsFlagHolder
-// 0x0010 (0x0010 - 0x0000)
-struct TDMGameState_GetIsFlagHolder final
-{
-public:
-	class AMAPlayerState*                         PlayerState;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_TDMGameState_GetIsFlagHolder;
-
-// Function Midair2.TDMGameState.GetFlagBase
-// 0x0008 (0x0008 - 0x0000)
-struct TDMGameState_GetFlagBase final
-{
-public:
-	class ATDMFlagBase*                           ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_TDMGameState_GetFlagBase;
-
-// Function Midair2.TDMGameState.GetFlagStateName
-// 0x0008 (0x0008 - 0x0000)
-struct TDMGameState_GetFlagStateName final
-{
-public:
-	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_TDMGameState_GetFlagStateName;
-
-// Function Midair2.GetLocationBeaconsAsyncTask.GetLocationBeacons
-// 0x0008 (0x0008 - 0x0000)
-struct GetLocationBeaconsAsyncTask_GetLocationBeacons final
-{
-public:
-	class UGetLocationBeaconsAsyncTask*           ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GetLocationBeaconsAsyncTask_GetLocationBeacons;
-
-// Function Midair2.Augment_Art.SetActive
-// 0x0001 (0x0001 - 0x0000)
-struct Augment_Art_SetActive final
-{
-public:
-	bool                                          bActive;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Augment_Art_SetActive;
-
-// Function Midair2.Augment_Art.SetActive_Audio
-// 0x0001 (0x0001 - 0x0000)
-struct Augment_Art_SetActive_Audio final
-{
-public:
-	bool                                          bActive;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Augment_Art_SetActive_Audio;
-
-// Function Midair2.Augment_Art.SetActive_Visuals
-// 0x0001 (0x0001 - 0x0000)
-struct Augment_Art_SetActive_Visuals final
-{
-public:
-	bool                                          bActive;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Augment_Art_SetActive_Visuals;
-
-// Function Midair2.Augment_Art.Tick
-// 0x0004 (0x0004 - 0x0000)
-struct Augment_Art_Tick final
-{
-public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Augment_Art_Tick;
-
-// Function Midair2.AvatarDynBridge.OnDyn
-// 0x0030 (0x0030 - 0x0000)
-struct AvatarDynBridge_OnDyn final
-{
-public:
-	bool                                          bOK;                                               // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TSoftObjectPtr<class UTexture>                Tex;                                               // 0x0008(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AvatarDynBridge_OnDyn;
 
 // Function Midair2.Augment.GetArtObjectFor
 // 0x0010 (0x0010 - 0x0000)
@@ -1738,54 +1655,42 @@ public:
 };
 DUMPER7_ASSERTS_Augment_IsReady;
 
-// Function Midair2.MAPowerup.AssistCapsuleTouched
-// 0x00A8 (0x00A8 - 0x0000)
-struct MAPowerup_AssistCapsuleTouched final
+// Function Midair2.GetLocationBeaconsAsyncTask.GetLocationBeacons
+// 0x0008 (0x0008 - 0x0000)
+struct GetLocationBeaconsAsyncTask_GetLocationBeacons final
 {
 public:
-	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bFromSweep;                                        // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FHitResult                             SweepResult;                                       // 0x0020(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	class UGetLocationBeaconsAsyncTask*           ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_MAPowerup_AssistCapsuleTouched;
+DUMPER7_ASSERTS_GetLocationBeaconsAsyncTask_GetLocationBeacons;
 
-// Function Midair2.MAPowerup.CapsuleTouched
-// 0x00A8 (0x00A8 - 0x0000)
-struct MAPowerup_CapsuleTouched final
-{
-public:
-	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bFromSweep;                                        // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FHitResult                             SweepResult;                                       // 0x0020(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAPowerup_CapsuleTouched;
-
-// Function Midair2.MAPowerup.Tick
-// 0x0004 (0x0004 - 0x0000)
-struct MAPowerup_Tick final
-{
-public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAPowerup_Tick;
-
-// Function Midair2.GetMapPracticeTutorialsAsyncTask.GetPracticeTutorials
+// Function Midair2.GetMatchmakingTicketAsyncTask.GetMatchmakingTicket
 // 0x0018 (0x0018 - 0x0000)
-struct GetMapPracticeTutorialsAsyncTask_GetPracticeTutorials final
+struct GetMatchmakingTicketAsyncTask_GetMatchmakingTicket final
 {
 public:
-	class FString                                 mapName;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UGetMapPracticeTutorialsAsyncTask*      ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 TicketId;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UGetMatchmakingTicketAsyncTask*         ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_GetMapPracticeTutorialsAsyncTask_GetPracticeTutorials;
+DUMPER7_ASSERTS_GetMatchmakingTicketAsyncTask_GetMatchmakingTicket;
+
+// Function Midair2.Augment_Blink_Art.StartBlink
+// 0x000C (0x000C - 0x0000)
+struct Augment_Blink_Art_StartBlink final
+{
+public:
+	struct FVector                                Location;                                          // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Augment_Blink_Art_StartBlink;
+
+// Function Midair2.Augment_Blink_Art.StopBlink
+// 0x000C (0x000C - 0x0000)
+struct Augment_Blink_Art_StopBlink final
+{
+public:
+	struct FVector                                Location;                                          // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Augment_Blink_Art_StopBlink;
 
 // Function Midair2.MALocalMessage.GetText
 // 0x0058 (0x0058 - 0x0000)
@@ -1807,147 +1712,6 @@ public:
 };
 DUMPER7_ASSERTS_MALocalMessage_GetTextColor;
 
-// Function Midair2.Augment_Blink_Art.StartBlink
-// 0x000C (0x000C - 0x0000)
-struct Augment_Blink_Art_StartBlink final
-{
-public:
-	struct FVector                                Location;                                          // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Augment_Blink_Art_StartBlink;
-
-// Function Midair2.Augment_Blink_Art.StopBlink
-// 0x000C (0x000C - 0x0000)
-struct Augment_Blink_Art_StopBlink final
-{
-public:
-	struct FVector                                Location;                                          // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Augment_Blink_Art_StopBlink;
-
-// Function Midair2.CommonSession_SearchResult.GetCurrentPlayers
-// 0x0004 (0x0004 - 0x0000)
-struct CommonSession_SearchResult_GetCurrentPlayers final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonSession_SearchResult_GetCurrentPlayers;
-
-// Function Midair2.CommonSession_SearchResult.GetMapName
-// 0x0010 (0x0010 - 0x0000)
-struct CommonSession_SearchResult_GetMapName final
-{
-public:
-	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonSession_SearchResult_GetMapName;
-
-// Function Midair2.CommonSession_SearchResult.GetMaxPlayers
-// 0x0004 (0x0004 - 0x0000)
-struct CommonSession_SearchResult_GetMaxPlayers final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonSession_SearchResult_GetMaxPlayers;
-
-// Function Midair2.CommonSession_SearchResult.IsPasswordProtected
-// 0x0001 (0x0001 - 0x0000)
-struct CommonSession_SearchResult_IsPasswordProtected final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonSession_SearchResult_IsPasswordProtected;
-
-// Function Midair2.CommonSession_SearchResult.GetCustomServerName
-// 0x0010 (0x0010 - 0x0000)
-struct CommonSession_SearchResult_GetCustomServerName final
-{
-public:
-	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonSession_SearchResult_GetCustomServerName;
-
-// Function Midair2.CommonSession_SearchResult.GetDescription
-// 0x0010 (0x0010 - 0x0000)
-struct CommonSession_SearchResult_GetDescription final
-{
-public:
-	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonSession_SearchResult_GetDescription;
-
-// Function Midair2.CommonSession_SearchResult.GetIntSetting
-// 0x0010 (0x0010 - 0x0000)
-struct CommonSession_SearchResult_GetIntSetting final
-{
-public:
-	class FName                                   Key;                                               // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Value;                                             // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bFoundValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_CommonSession_SearchResult_GetIntSetting;
-
-// Function Midair2.CommonSession_SearchResult.GetMaxPublicConnections
-// 0x0004 (0x0004 - 0x0000)
-struct CommonSession_SearchResult_GetMaxPublicConnections final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonSession_SearchResult_GetMaxPublicConnections;
-
-// Function Midair2.CommonSession_SearchResult.GetNumOpenPrivateConnections
-// 0x0004 (0x0004 - 0x0000)
-struct CommonSession_SearchResult_GetNumOpenPrivateConnections final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonSession_SearchResult_GetNumOpenPrivateConnections;
-
-// Function Midair2.CommonSession_SearchResult.GetNumOpenPublicConnections
-// 0x0004 (0x0004 - 0x0000)
-struct CommonSession_SearchResult_GetNumOpenPublicConnections final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonSession_SearchResult_GetNumOpenPublicConnections;
-
-// Function Midair2.CommonSession_SearchResult.GetPingInMs
-// 0x0004 (0x0004 - 0x0000)
-struct CommonSession_SearchResult_GetPingInMs final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonSession_SearchResult_GetPingInMs;
-
-// Function Midair2.CommonSession_SearchResult.GetServerVersion
-// 0x0010 (0x0010 - 0x0000)
-struct CommonSession_SearchResult_GetServerVersion final
-{
-public:
-	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonSession_SearchResult_GetServerVersion;
-
-// Function Midair2.CommonSession_SearchResult.GetStringSetting
-// 0x0020 (0x0020 - 0x0000)
-struct CommonSession_SearchResult_GetStringSetting final
-{
-public:
-	class FName                                   Key;                                               // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Value;                                             // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bFoundValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_CommonSession_SearchResult_GetStringSetting;
-
 // Function Midair2.Augment_FlatShield.OwnerTookDamage
 // 0x0020 (0x0020 - 0x0000)
 struct Augment_FlatShield_OwnerTookDamage final
@@ -1956,6 +1720,224 @@ public:
 	struct FTakeHitInfo                           TakeHitInfo;                                       // 0x0000(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_Augment_FlatShield_OwnerTookDamage;
+
+// Function Midair2.AvatarDynBridge.OnDyn
+// 0x0030 (0x0030 - 0x0000)
+struct AvatarDynBridge_OnDyn final
+{
+public:
+	bool                                          bOK;                                               // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftObjectPtr<class UTexture>                Tex;                                               // 0x0008(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AvatarDynBridge_OnDyn;
+
+// Function Midair2.MAItem.ClientGivenTo
+// 0x0010 (0x0010 - 0x0000)
+struct MAItem_ClientGivenTo final
+{
+public:
+	class APawn*                                  NewInstigator;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAutoActivate;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MAItem_ClientGivenTo;
+
+// Function Midair2.MAItem.K2_GivenTo
+// 0x0010 (0x0010 - 0x0000)
+struct MAItem_K2_GivenTo final
+{
+public:
+	class APawn*                                  NewOwner;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAutoActivate;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MAItem_K2_GivenTo;
+
+// Function Midair2.MAWeapon.AddAmmo
+// 0x0008 (0x0008 - 0x0000)
+struct MAWeapon_AddAmmo final
+{
+public:
+	int32                                         Amount;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAWeapon_AddAmmo;
+
+// Function Midair2.MAWeapon.ClientAddAmmo
+// 0x0004 (0x0004 - 0x0000)
+struct MAWeapon_ClientAddAmmo final
+{
+public:
+	int32                                         Amount;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAWeapon_ClientAddAmmo;
+
+// Function Midair2.MAWeapon.K2_SetFireInterval
+// 0x0008 (0x0008 - 0x0000)
+struct MAWeapon_K2_SetFireInterval final
+{
+public:
+	float                                         From;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         To;                                                // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAWeapon_K2_SetFireInterval;
+
+// Function Midair2.MAWeapon.ResetAmmo
+// 0x0004 (0x0004 - 0x0000)
+struct MAWeapon_ResetAmmo final
+{
+public:
+	int32                                         NewTotal;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAWeapon_ResetAmmo;
+
+// Function Midair2.MAWeapon.BP_GetReloadCompletion
+// 0x0004 (0x0004 - 0x0000)
+struct MAWeapon_BP_GetReloadCompletion final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAWeapon_BP_GetReloadCompletion;
+
+// Function Midair2.MAWeapon.GetAdjustedFireLocationAndRotation
+// 0x0018 (0x0018 - 0x0000)
+struct MAWeapon_GetAdjustedFireLocationAndRotation final
+{
+public:
+	struct FVector                                FireLocation;                                      // 0x0000(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               FireRotation;                                      // 0x000C(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAWeapon_GetAdjustedFireLocationAndRotation;
+
+// Function Midair2.MAWeapon.K2_GetFireInterval
+// 0x0008 (0x0008 - 0x0000)
+struct MAWeapon_K2_GetFireInterval final
+{
+public:
+	float                                         From;                                              // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         To;                                                // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAWeapon_K2_GetFireInterval;
+
+// Function Midair2.CreateMatchmakingTicketAsyncTask.CreateMatchmakingTicket
+// 0x0028 (0x0028 - 0x0000)
+struct CreateMatchmakingTicketAsyncTask_CreateMatchmakingTicket final
+{
+public:
+	class FString                                 GameMode;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 TicketAttributes;                                  // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCreateMatchmakingTicketAsyncTask*      ReturnValue;                                       // 0x0020(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CreateMatchmakingTicketAsyncTask_CreateMatchmakingTicket;
+
+// Function Midair2.MAProjectile.Bounced
+// 0x0094 (0x0094 - 0x0000)
+struct MAProjectile_Bounced final
+{
+public:
+	struct FHitResult                             Hit;                                               // 0x0000(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	struct FVector                                ImpactVelocity;                                    // 0x0088(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAProjectile_Bounced;
+
+// Function Midair2.MAProjectile.CatchUp
+// 0x0004 (0x0004 - 0x0000)
+struct MAProjectile_CatchUp final
+{
+public:
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAProjectile_CatchUp;
+
+// Function Midair2.MAProjectile.DamageImpactedActor
+// 0x0028 (0x0028 - 0x0000)
+struct MAProjectile_DamageImpactedActor final
+{
+public:
+	class AActor*                                 OtherActor;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                    OtherComp;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                HitLocation;                                       // 0x0010(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                HitNormal;                                         // 0x001C(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAProjectile_DamageImpactedActor;
+
+// Function Midair2.MAProjectile.Explode
+// 0x0020 (0x0020 - 0x0000)
+struct MAProjectile_Explode final
+{
+public:
+	struct FVector                                HitLocation;                                       // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                HitNormal;                                         // 0x000C(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                    HitComponent;                                      // 0x0018(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAProjectile_Explode;
+
+// Function Midair2.MAProjectile.GetHomingTargetLocation
+// 0x0010 (0x0010 - 0x0000)
+struct MAProjectile_GetHomingTargetLocation final
+{
+public:
+	struct FVector                                TargetLocation;                                    // 0x0000(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MAProjectile_GetHomingTargetLocation;
+
+// Function Midair2.MAProjectile.ProcessHit
+// 0x0028 (0x0028 - 0x0000)
+struct MAProjectile_ProcessHit final
+{
+public:
+	class AActor*                                 OtherActor;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                    OtherComp;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                HitLocation;                                       // 0x0010(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                HitNormal;                                         // 0x001C(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAProjectile_ProcessHit;
+
+// Function Midair2.MAProjectile.SphereTouched
+// 0x00A8 (0x00A8 - 0x0000)
+struct MAProjectile_SphereTouched final
+{
+public:
+	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFromSweep;                                        // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHitResult                             SweepResult;                                       // 0x0020(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAProjectile_SphereTouched;
+
+// Function Midair2.MAProjectile.Stopped
+// 0x0088 (0x0088 - 0x0000)
+struct MAProjectile_Stopped final
+{
+public:
+	struct FHitResult                             Hit;                                               // 0x0000(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAProjectile_Stopped;
+
+// Function Midair2.BPFunctionLibrary.GetStringFromOSClipboard
+// 0x0010 (0x0010 - 0x0000)
+struct BPFunctionLibrary_GetStringFromOSClipboard final
+{
+public:
+	class FString                                 FromClipboard;                                     // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_BPFunctionLibrary_GetStringFromOSClipboard;
+
+// Function Midair2.BPFunctionLibrary.SaveStringToOSClipboard
+// 0x0010 (0x0010 - 0x0000)
+struct BPFunctionLibrary_SaveStringToOSClipboard final
+{
+public:
+	class FString                                 ToClipboard;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_BPFunctionLibrary_SaveStringToOSClipboard;
 
 // Function Midair2.MAGameInstance.CheckAndHandleNamedEvent
 // 0x000C (0x000C - 0x0000)
@@ -2206,6 +2188,17 @@ public:
 };
 DUMPER7_ASSERTS_MAGameInstance_GetSteamId64;
 
+// Function Midair2.MAGameInstance.GetSteamIdAsUniqueId
+// 0x0030 (0x0030 - 0x0000)
+struct MAGameInstance_GetSteamIdAsUniqueId final
+{
+public:
+	int32                                         LocalUserNumber;                                   // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FUniqueNetIdRepl                       ReturnValue;                                       // 0x0008(0x0028)(ConstParm, Parm, OutParm, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAGameInstance_GetSteamIdAsUniqueId;
+
 // Function Midair2.MAGameInstance.HandleInviteToast
 // 0x0050 (0x0050 - 0x0000)
 struct MAGameInstance_HandleInviteToast final
@@ -2259,6 +2252,15 @@ public:
 	class FString                                 ErrorString;                                       // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MAGameInstance_OnNetworkFailure;
+
+// Function Midair2.MAGameInstance.OpenOfflineMap
+// 0x0010 (0x0010 - 0x0000)
+struct MAGameInstance_OpenOfflineMap final
+{
+public:
+	class FString                                 mapName;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAGameInstance_OpenOfflineMap;
 
 // Function Midair2.MAGameInstance.SaveInputSettings
 // 0x0020 (0x0020 - 0x0000)
@@ -2371,135 +2373,6 @@ public:
 };
 DUMPER7_ASSERTS_MAGameInstance_GetWorldSettings;
 
-// Function Midair2.MAItem.ClientGivenTo
-// 0x0010 (0x0010 - 0x0000)
-struct MAItem_ClientGivenTo final
-{
-public:
-	class APawn*                                  NewInstigator;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAutoActivate;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MAItem_ClientGivenTo;
-
-// Function Midair2.MAItem.K2_GivenTo
-// 0x0010 (0x0010 - 0x0000)
-struct MAItem_K2_GivenTo final
-{
-public:
-	class APawn*                                  NewOwner;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAutoActivate;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MAItem_K2_GivenTo;
-
-// Function Midair2.MAHandGrenade.GetMaxAmmoCountFor
-// 0x0010 (0x0010 - 0x0000)
-struct MAHandGrenade_GetMaxAmmoCountFor final
-{
-public:
-	class AMACharacter*                           Character;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MAHandGrenade_GetMaxAmmoCountFor;
-
-// Function Midair2.LeaveCustomGameAsyncTask.LeaveCustomGame
-// 0x00B0 (0x00B0 - 0x0000)
-struct LeaveCustomGameAsyncTask_LeaveCustomGame final
-{
-public:
-	class APlayerController*                      InPlayerController;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMAHathoraServer                       ServerToLeave;                                     // 0x0008(0x00A0)(Parm, NativeAccessSpecifierPublic)
-	class ULeaveCustomGameAsyncTask*              ReturnValue;                                       // 0x00A8(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LeaveCustomGameAsyncTask_LeaveCustomGame;
-
-// Function Midair2.MAWeapon.AddAmmo
-// 0x0008 (0x0008 - 0x0000)
-struct MAWeapon_AddAmmo final
-{
-public:
-	int32                                         Amount;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAWeapon_AddAmmo;
-
-// Function Midair2.MAWeapon.ClientAddAmmo
-// 0x0004 (0x0004 - 0x0000)
-struct MAWeapon_ClientAddAmmo final
-{
-public:
-	int32                                         Amount;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAWeapon_ClientAddAmmo;
-
-// Function Midair2.MAWeapon.K2_SetFireInterval
-// 0x0008 (0x0008 - 0x0000)
-struct MAWeapon_K2_SetFireInterval final
-{
-public:
-	float                                         From;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         To;                                                // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAWeapon_K2_SetFireInterval;
-
-// Function Midair2.MAWeapon.ResetAmmo
-// 0x0004 (0x0004 - 0x0000)
-struct MAWeapon_ResetAmmo final
-{
-public:
-	int32                                         NewTotal;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAWeapon_ResetAmmo;
-
-// Function Midair2.MAWeapon.BP_GetReloadCompletion
-// 0x0004 (0x0004 - 0x0000)
-struct MAWeapon_BP_GetReloadCompletion final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAWeapon_BP_GetReloadCompletion;
-
-// Function Midair2.MAWeapon.GetAdjustedFireLocationAndRotation
-// 0x0018 (0x0018 - 0x0000)
-struct MAWeapon_GetAdjustedFireLocationAndRotation final
-{
-public:
-	struct FVector                                FireLocation;                                      // 0x0000(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               FireRotation;                                      // 0x000C(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAWeapon_GetAdjustedFireLocationAndRotation;
-
-// Function Midair2.MAWeapon.K2_GetFireInterval
-// 0x0008 (0x0008 - 0x0000)
-struct MAWeapon_K2_GetFireInterval final
-{
-public:
-	float                                         From;                                              // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         To;                                                // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAWeapon_K2_GetFireInterval;
-
-// Function Midair2.BPFunctionLibrary.GetStringFromOSClipboard
-// 0x0010 (0x0010 - 0x0000)
-struct BPFunctionLibrary_GetStringFromOSClipboard final
-{
-public:
-	class FString                                 FromClipboard;                                     // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_BPFunctionLibrary_GetStringFromOSClipboard;
-
-// Function Midair2.BPFunctionLibrary.SaveStringToOSClipboard
-// 0x0010 (0x0010 - 0x0000)
-struct BPFunctionLibrary_SaveStringToOSClipboard final
-{
-public:
-	class FString                                 ToClipboard;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_BPFunctionLibrary_SaveStringToOSClipboard;
-
 // Function Midair2.CHAGameMode.GetActiveZone
 // 0x0008 (0x0008 - 0x0000)
 struct CHAGameMode_GetActiveZone final
@@ -2527,6 +2400,16 @@ public:
 };
 DUMPER7_ASSERTS_CHAGameMode_HandleZoneStarted;
 
+// Function Midair2.CHAGameMode.SetActivePortal
+// 0x0010 (0x0010 - 0x0000)
+struct CHAGameMode_SetActivePortal final
+{
+public:
+	class ACHAPortal*                             Portal;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AMACharacter*                           MAChar;                                            // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CHAGameMode_SetActivePortal;
+
 // Function Midair2.CHAGameMode.StopAllOtherZones
 // 0x0008 (0x0008 - 0x0000)
 struct CHAGameMode_StopAllOtherZones final
@@ -2535,6 +2418,52 @@ public:
 	class ACHAShootingGalleryZone*                ExceptThis;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CHAGameMode_StopAllOtherZones;
+
+// Function Midair2.MAButtonBase.SetButtonText
+// 0x0018 (0x0018 - 0x0000)
+struct MAButtonBase_SetButtonText final
+{
+public:
+	class FText                                   InText;                                            // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAButtonBase_SetButtonText;
+
+// Function Midair2.MAButtonBase.UpdateButtonText
+// 0x0018 (0x0018 - 0x0000)
+struct MAButtonBase_UpdateButtonText final
+{
+public:
+	class FText                                   InText;                                            // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAButtonBase_UpdateButtonText;
+
+// Function Midair2.CHAPortal.OnBeginOverlap
+// 0x00A8 (0x00A8 - 0x0000)
+struct CHAPortal_OnBeginOverlap final
+{
+public:
+	class UPrimitiveComponent*                    Comp;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 Other;                                             // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         BodyIndex;                                         // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFromSweep;                                        // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHitResult                             Hit;                                               // 0x0020(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CHAPortal_OnBeginOverlap;
+
+// Function Midair2.CHAPortal.OnEndOverlap
+// 0x0020 (0x0020 - 0x0000)
+struct CHAPortal_OnEndOverlap final
+{
+public:
+	class UPrimitiveComponent*                    Comp;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 Other;                                             // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         BodyIndex;                                         // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CHAPortal_OnEndOverlap;
 
 // Function Midair2.CHARoundConsole.GetZone
 // 0x0008 (0x0008 - 0x0000)
@@ -2608,6 +2537,53 @@ public:
 	class ACharacter*                             InstigatingCharacter;                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CHARoundConsole_TryActivate;
+
+// Function Midair2.MAEOSPartyId.ToString
+// 0x0010 (0x0010 - 0x0000)
+struct MAEOSPartyId_ToString final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAEOSPartyId_ToString;
+
+// Function Midair2.CHAShootingGalleryZone.OnBeginOverlap
+// 0x0010 (0x0010 - 0x0000)
+struct CHAShootingGalleryZone_OnBeginOverlap final
+{
+public:
+	class AActor*                                 Overlapped;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 Other;                                             // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CHAShootingGalleryZone_OnBeginOverlap;
+
+// Function Midair2.CHAShootingGalleryZone.OnDroneDestroyed
+// 0x0008 (0x0008 - 0x0000)
+struct CHAShootingGalleryZone_OnDroneDestroyed final
+{
+public:
+	class AActor*                                 DestroyedActor;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CHAShootingGalleryZone_OnDroneDestroyed;
+
+// Function Midair2.CHAShootingGalleryZone.GetTimeRemaining
+// 0x0004 (0x0004 - 0x0000)
+struct CHAShootingGalleryZone_GetTimeRemaining final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CHAShootingGalleryZone_GetTimeRemaining;
+
+// Function Midair2.DeletePracticeTrailAsyncTask.DeletePracticeTrail
+// 0x0108 (0x0108 - 0x0000)
+struct DeletePracticeTrailAsyncTask_DeletePracticeTrail final
+{
+public:
+	struct FMARouteTrail                          TrailToDelete;                                     // 0x0000(0x0100)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class UDeletePracticeTrailAsyncTask*          ReturnValue;                                       // 0x0100(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_DeletePracticeTrailAsyncTask_DeletePracticeTrail;
 
 // Function Midair2.MACarriedObject.AssistCapsuleTouched
 // 0x00A8 (0x00A8 - 0x0000)
@@ -2704,72 +2680,51 @@ public:
 };
 DUMPER7_ASSERTS_MACarriedObject_IsInState;
 
-// Function Midair2.MALeagueFlag.OnBounce
-// 0x0094 (0x0094 - 0x0000)
-struct MALeagueFlag_OnBounce final
-{
-public:
-	struct FHitResult                             ImpactResult;                                      // 0x0000(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	struct FVector                                ImpactVelocity;                                    // 0x0088(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MALeagueFlag_OnBounce;
-
-// Function Midair2.MALeagueFlag.OnStop
-// 0x0088 (0x0088 - 0x0000)
-struct MALeagueFlag_OnStop final
-{
-public:
-	struct FHitResult                             ImpactResult;                                      // 0x0000(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MALeagueFlag_OnStop;
-
-// Function Midair2.CHAShootingGalleryZone.OnBeginOverlap
-// 0x0010 (0x0010 - 0x0000)
-struct CHAShootingGalleryZone_OnBeginOverlap final
-{
-public:
-	class AActor*                                 Overlapped;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 Other;                                             // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CHAShootingGalleryZone_OnBeginOverlap;
-
-// Function Midair2.CHAShootingGalleryZone.OnDroneDestroyed
+// Function Midair2.CHATutorialZone.GetObjectivePromptWidget
 // 0x0008 (0x0008 - 0x0000)
-struct CHAShootingGalleryZone_OnDroneDestroyed final
+struct CHATutorialZone_GetObjectivePromptWidget final
 {
 public:
-	class AActor*                                 DestroyedActor;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObjectivePrompt*                       ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_CHAShootingGalleryZone_OnDroneDestroyed;
+DUMPER7_ASSERTS_CHATutorialZone_GetObjectivePromptWidget;
 
-// Function Midair2.CHAShootingGalleryZone.GetTimeRemaining
-// 0x0004 (0x0004 - 0x0000)
-struct CHAShootingGalleryZone_GetTimeRemaining final
+// Function Midair2.CHATutorialZone.OnBoxBeginOverlap
+// 0x00A8 (0x00A8 - 0x0000)
+struct CHATutorialZone_OnBoxBeginOverlap final
 {
 public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                    OverlappedComp;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFromSweep;                                        // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHitResult                             SweepResult;                                       // 0x0020(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_CHAShootingGalleryZone_GetTimeRemaining;
+DUMPER7_ASSERTS_CHATutorialZone_OnBoxBeginOverlap;
 
-// Function Midair2.MAFrontendStateComponent.OnUserInitialized
+// Function Midair2.CHATutorialZone.OnBoxEndOverlap
 // 0x0020 (0x0020 - 0x0000)
-struct MAFrontendStateComponent_OnUserInitialized final
+struct CHATutorialZone_OnBoxEndOverlap final
 {
 public:
-	bool                                          bSuccess;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   Error;                                             // 0x0008(0x0018)(Parm, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                    OverlappedComp;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_MAFrontendStateComponent_OnUserInitialized;
+DUMPER7_ASSERTS_CHATutorialZone_OnBoxEndOverlap;
 
-// Function Midair2.MAFrontendStateComponent.SetGameInstance
+// Function Midair2.CHATutorialZone.ShowTutorialWidgetForPlayer
 // 0x0008 (0x0008 - 0x0000)
-struct MAFrontendStateComponent_SetGameInstance final
+struct CHATutorialZone_ShowTutorialWidgetForPlayer final
 {
 public:
-	class UMAGameInstance*                        GI;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class APlayerController*                      PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_MAFrontendStateComponent_SetGameInstance;
+DUMPER7_ASSERTS_CHATutorialZone_ShowTutorialWidgetForPlayer;
 
 // Function Midair2.ChatWidget.AddMessage
 // 0x0020 (0x0020 - 0x0000)
@@ -2853,447 +2808,6 @@ public:
 };
 DUMPER7_ASSERTS_CloseCustomGameAsyncTask_CloseCustomGame;
 
-// Function Midair2.EdgegapLatencySubsystem.StartLatencyTestForMultipleServers
-// 0x0020 (0x0020 - 0x0000)
-struct EdgegapLatencySubsystem_StartLatencyTestForMultipleServers final
-{
-public:
-	TArray<struct FIPPortInfo>                    ServerList;                                        // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	TDelegate<void(const TArray<struct FIPPortInfo>& SortedServers)> OnLatencyTestCompleted;         // 0x0010(0x0010)(Parm, ZeroConstructor, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_EdgegapLatencySubsystem_StartLatencyTestForMultipleServers;
-
-// Function Midair2.MACharacter.AddItem
-// 0x0010 (0x0010 - 0x0000)
-struct MACharacter_AddItem final
-{
-public:
-	class AMAItem*                                ItemToAdd;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAutoActivate;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0009(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MACharacter_AddItem;
-
-// Function Midair2.MACharacter.BP_UpdateForClientPerspective
-// 0x0001 (0x0001 - 0x0000)
-struct MACharacter_BP_UpdateForClientPerspective final
-{
-public:
-	bool                                          bFirstPerson;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_BP_UpdateForClientPerspective;
-
-// Function Midair2.MACharacter.Evacuate
-// 0x0001 (0x0001 - 0x0000)
-struct MACharacter_Evacuate final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_Evacuate;
-
-// Function Midair2.MACharacter.GetHeightAboveSurface
-// 0x0004 (0x0004 - 0x0000)
-struct MACharacter_GetHeightAboveSurface final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_GetHeightAboveSurface;
-
-// Function Midair2.MACharacter.K2_CreateItem
-// 0x0018 (0x0018 - 0x0000)
-struct MACharacter_K2_CreateItem final
-{
-public:
-	TSubclassOf<class AMAItem>                    NewItemClass;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAutoActivate;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class AMAItem*                                ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_K2_CreateItem;
-
-// Function Midair2.MACharacter.OnHealthChanged
-// 0x0001 (0x0001 - 0x0000)
-struct MACharacter_OnHealthChanged final
-{
-public:
-	bool                                          bFromDamage;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_OnHealthChanged;
-
-// Function Midair2.MACharacter.OnMeleeMontageEnded
-// 0x0010 (0x0010 - 0x0000)
-struct MACharacter_OnMeleeMontageEnded final
-{
-public:
-	class UAnimMontage*                           Montage;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInterrupted;                                      // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MACharacter_OnMeleeMontageEnded;
-
-// Function Midair2.MACharacter.OnTookDamage
-// 0x0020 (0x0020 - 0x0000)
-struct MACharacter_OnTookDamage final
-{
-public:
-	struct FTakeHitInfo                           TakeHitInfo;                                       // 0x0000(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_OnTookDamage;
-
-// Function Midair2.MACharacter.PlayCameraShake
-// 0x0020 (0x0020 - 0x0000)
-struct MACharacter_PlayCameraShake final
-{
-public:
-	TSubclassOf<class UCameraShakeBase>           Shake;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Scale;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPlayInUserSpace;                                  // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRotator                               UserSpaceRot;                                      // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MACharacter_PlayCameraShake;
-
-// Function Midair2.MACharacter.ProcessMeleeHit
-// 0x0018 (0x0018 - 0x0000)
-struct MACharacter_ProcessMeleeHit final
-{
-public:
-	struct FVector                                Start;                                             // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                End;                                               // 0x000C(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_ProcessMeleeHit;
-
-// Function Midair2.MACharacter.RemoveItem
-// 0x0008 (0x0008 - 0x0000)
-struct MACharacter_RemoveItem final
-{
-public:
-	class AMAItem*                                ItemToRemove;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_RemoveItem;
-
-// Function Midair2.MACharacter.ServerProcessMeleeHit
-// 0x0018 (0x0018 - 0x0000)
-struct MACharacter_ServerProcessMeleeHit final
-{
-public:
-	struct FVector                                Start;                                             // 0x0000(0x000C)(ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                End;                                               // 0x000C(0x000C)(ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_ServerProcessMeleeHit;
-
-// Function Midair2.MACharacter.ServerSetCameraMode
-// 0x0001 (0x0001 - 0x0000)
-struct MACharacter_ServerSetCameraMode final
-{
-public:
-	ECameraMode                                   InCameraMode;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_ServerSetCameraMode;
-
-// Function Midair2.MACharacter.ServerTossCarriedObject
-// 0x0004 (0x0004 - 0x0000)
-struct MACharacter_ServerTossCarriedObject final
-{
-public:
-	float                                         Strength;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_ServerTossCarriedObject;
-
-// Function Midair2.MACharacter.ServerTrySpecificPickup
-// 0x0008 (0x0008 - 0x0000)
-struct MACharacter_ServerTrySpecificPickup final
-{
-public:
-	class AMAPickup*                              Pickup;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_ServerTrySpecificPickup;
-
-// Function Midair2.MACharacter.SetCameraMode
-// 0x0001 (0x0001 - 0x0000)
-struct MACharacter_SetCameraMode final
-{
-public:
-	ECameraMode                                   InCameraMode;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_SetCameraMode;
-
-// Function Midair2.MACharacter.SetLoadout
-// 0x00C0 (0x00C0 - 0x0000)
-struct MACharacter_SetLoadout final
-{
-public:
-	struct FMALoadout                             loadout;                                           // 0x0000(0x00B8)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                          bSetMaxes;                                         // 0x00B8(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsBaseInventory;                                  // 0x00B9(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_BA[0x6];                                       // 0x00BA(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MACharacter_SetLoadout;
-
-// Function Midair2.MACharacter.SetOverrideMaterials
-// 0x0010 (0x0010 - 0x0000)
-struct MACharacter_SetOverrideMaterials final
-{
-public:
-	class UMaterialInterface*                     NewMaterial3P;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMaterialInterface*                     NewMaterial1P;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_SetOverrideMaterials;
-
-// Function Midair2.MACharacter.SetTrigger
-// 0x0002 (0x0002 - 0x0000)
-struct MACharacter_SetTrigger final
-{
-public:
-	uint8                                         FireMode;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSet;                                              // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_SetTrigger;
-
-// Function Midair2.MACharacter.StartInvulnerability
-// 0x0004 (0x0004 - 0x0000)
-struct MACharacter_StartInvulnerability final
-{
-public:
-	float                                         Length;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_StartInvulnerability;
-
-// Function Midair2.MACharacter.SwitchToNextWeapon
-// 0x0008 (0x0008 - 0x0000)
-struct MACharacter_SwitchToNextWeapon final
-{
-public:
-	int32                                         Direction;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MACharacter_SwitchToNextWeapon;
-
-// Function Midair2.MACharacter.SwitchToWeapon
-// 0x0010 (0x0010 - 0x0000)
-struct MACharacter_SwitchToWeapon final
-{
-public:
-	class AMAWeapon*                              NewWeapon;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MACharacter_SwitchToWeapon;
-
-// Function Midair2.MACharacter.SwitchToWeaponAtIndex
-// 0x0008 (0x0008 - 0x0000)
-struct MACharacter_SwitchToWeaponAtIndex final
-{
-public:
-	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MACharacter_SwitchToWeaponAtIndex;
-
-// Function Midair2.MACharacter.ToggleTrigger
-// 0x0001 (0x0001 - 0x0000)
-struct MACharacter_ToggleTrigger final
-{
-public:
-	uint8                                         FireMode;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_ToggleTrigger;
-
-// Function Midair2.MACharacter.TossCarriedObject
-// 0x0004 (0x0004 - 0x0000)
-struct MACharacter_TossCarriedObject final
-{
-public:
-	float                                         Strength;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_TossCarriedObject;
-
-// Function Midair2.MACharacter.TossFlag
-// 0x0004 (0x0004 - 0x0000)
-struct MACharacter_TossFlag final
-{
-public:
-	float                                         StrengthOverride;                                  // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_TossFlag;
-
-// Function Midair2.MACharacter.UpdateCameraDist
-// 0x0004 (0x0004 - 0x0000)
-struct MACharacter_UpdateCameraDist final
-{
-public:
-	float                                         CameraDistPct;                                     // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_UpdateCameraDist;
-
-// Function Midair2.MACharacter.Vocalize
-// 0x0008 (0x0008 - 0x0000)
-struct MACharacter_Vocalize final
-{
-public:
-	class USoundBase*                             Sound;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_Vocalize;
-
-// Function Midair2.MACharacter.BP_GetViewRotation
-// 0x000C (0x000C - 0x0000)
-struct MACharacter_BP_GetViewRotation final
-{
-public:
-	struct FRotator                               ReturnValue;                                       // 0x0000(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_BP_GetViewRotation;
-
-// Function Midair2.MACharacter.GetAccelerationYaw
-// 0x0004 (0x0004 - 0x0000)
-struct MACharacter_GetAccelerationYaw final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_GetAccelerationYaw;
-
-// Function Midair2.MACharacter.GetEnergy
-// 0x0004 (0x0004 - 0x0000)
-struct MACharacter_GetEnergy final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_GetEnergy;
-
-// Function Midair2.MACharacter.GetEnergyPct
-// 0x0004 (0x0004 - 0x0000)
-struct MACharacter_GetEnergyPct final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_GetEnergyPct;
-
-// Function Midair2.MACharacter.GetHealth
-// 0x0004 (0x0004 - 0x0000)
-struct MACharacter_GetHealth final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_GetHealth;
-
-// Function Midair2.MACharacter.GetHealthPct
-// 0x0004 (0x0004 - 0x0000)
-struct MACharacter_GetHealthPct final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_GetHealthPct;
-
-// Function Midair2.MACharacter.GetIsWarpingIn
-// 0x0001 (0x0001 - 0x0000)
-struct MACharacter_GetIsWarpingIn final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_GetIsWarpingIn;
-
-// Function Midair2.MACharacter.GetIsWarpingOut
-// 0x0001 (0x0001 - 0x0000)
-struct MACharacter_GetIsWarpingOut final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_GetIsWarpingOut;
-
-// Function Midair2.MACharacter.GetRemoteViewPitch
-// 0x0004 (0x0004 - 0x0000)
-struct MACharacter_GetRemoteViewPitch final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_GetRemoteViewPitch;
-
-// Function Midair2.MACharacter.GetTossStrength
-// 0x0004 (0x0004 - 0x0000)
-struct MACharacter_GetTossStrength final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_GetTossStrength;
-
-// Function Midair2.MACharacter.IsAccelerating
-// 0x0001 (0x0001 - 0x0000)
-struct MACharacter_IsAccelerating final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_IsAccelerating;
-
-// Function Midair2.MACharacter.IsDead
-// 0x0001 (0x0001 - 0x0000)
-struct MACharacter_IsDead final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_IsDead;
-
-// Function Midair2.MACharacter.IsInInventory
-// 0x0010 (0x0010 - 0x0000)
-struct MACharacter_IsInInventory final
-{
-public:
-	const class AMAItem*                          ItemToFind;                                        // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MACharacter_IsInInventory;
-
-// Function Midair2.MACharacter.IsTriggerSet
-// 0x0002 (0x0002 - 0x0000)
-struct MACharacter_IsTriggerSet final
-{
-public:
-	uint8                                         FireMode;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_IsTriggerSet;
-
-// Function Midair2.MACharacter.K2_FindItem
-// 0x0018 (0x0018 - 0x0000)
-struct MACharacter_K2_FindItem final
-{
-public:
-	TSubclassOf<class AMAItem>                    Type;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bExactClass;                                       // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class AMAItem*                                ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_K2_FindItem;
-
-// Function Midair2.MACharacter.K2_FindPack
-// 0x0018 (0x0018 - 0x0000)
-struct MACharacter_K2_FindPack final
-{
-public:
-	TSubclassOf<class AMAItem>                    Type;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bExactClass;                                       // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class AMAItem*                                ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACharacter_K2_FindPack;
-
 // Function Midair2.ComplexStatusBar.SetFillColorAndOpacity
 // 0x0010 (0x0010 - 0x0000)
 struct ComplexStatusBar_SetFillColorAndOpacity final
@@ -3348,6 +2862,31 @@ public:
 };
 DUMPER7_ASSERTS_ComplexStatusBar_SetValue2;
 
+// Function Midair2.EdgegapLatencySubsystem.StartLatencyTestForMultipleServers
+// 0x0020 (0x0020 - 0x0000)
+struct EdgegapLatencySubsystem_StartLatencyTestForMultipleServers final
+{
+public:
+	TArray<struct FIPPortInfo>                    ServerList;                                        // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const TArray<struct FIPPortInfo>& SortedServers)> OnLatencyTestCompleted;         // 0x0010(0x0010)(Parm, ZeroConstructor, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_EdgegapLatencySubsystem_StartLatencyTestForMultipleServers;
+
+// Function Midair2.MACarriedObjectOOBVolume.OnCarriedObjectOOB
+// 0x00A8 (0x00A8 - 0x0000)
+struct MACarriedObjectOOBVolume_OnCarriedObjectOOB final
+{
+public:
+	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         BodyIndex;                                         // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFromSweep;                                        // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHitResult                             SweepResult;                                       // 0x0020(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACarriedObjectOOBVolume_OnCarriedObjectOOB;
+
 // Function Midair2.OOBVolume.BP_PlayOOBEffects
 // 0x0020 (0x0020 - 0x0000)
 struct OOBVolume_BP_PlayOOBEffects final
@@ -3398,45 +2937,36 @@ public:
 };
 DUMPER7_ASSERTS_OOBVolume_PlayOOBEffects;
 
-// Function Midair2.GetCustomGameInfoAsyncTask.GetCustomGameInfo
-// 0x0018 (0x0018 - 0x0000)
-struct GetCustomGameInfoAsyncTask_GetCustomGameInfo final
+// Function Midair2.MAFrontendStateComponent.OnUserInitialized
+// 0x0020 (0x0020 - 0x0000)
+struct MAFrontendStateComponent_OnUserInitialized final
 {
 public:
-	class FString                                 RoomId;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UGetCustomGameInfoAsyncTask*            ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSuccess;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   Error;                                             // 0x0008(0x0018)(Parm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_GetCustomGameInfoAsyncTask_GetCustomGameInfo;
+DUMPER7_ASSERTS_MAFrontendStateComponent_OnUserInitialized;
 
-// Function Midair2.MACoreControllerInterface.PlayRecordedCameraInput
+// Function Midair2.MAFrontendStateComponent.SetGameInstance
 // 0x0008 (0x0008 - 0x0000)
-struct MACoreControllerInterface_PlayRecordedCameraInput final
+struct MAFrontendStateComponent_SetGameInstance final
 {
 public:
-	float                                         Pitch;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Yaw;                                               // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMAGameInstance*                        GI;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_MACoreControllerInterface_PlayRecordedCameraInput;
+DUMPER7_ASSERTS_MAFrontendStateComponent_SetGameInstance;
 
-// Function Midair2.MACoreControllerInterface.PlayRecordedInput
-// 0x0001 (0x0001 - 0x0000)
-struct MACoreControllerInterface_PlayRecordedInput final
-{
-public:
-	EPlayerRecordableInputTypes                   InputType;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MACoreControllerInterface_PlayRecordedInput;
-
-// Function Midair2.CreateMatchmakingTicketAsyncTask.CreateMatchmakingTicket
+// Function Midair2.CreateGroupMatchmakingTicketAsyncTask.CreateGroupMatchmakingTicket
 // 0x0028 (0x0028 - 0x0000)
-struct CreateMatchmakingTicketAsyncTask_CreateMatchmakingTicket final
+struct CreateGroupMatchmakingTicketAsyncTask_CreateGroupMatchmakingTicket final
 {
 public:
 	class FString                                 GameMode;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 TicketAttributes;                                  // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCreateMatchmakingTicketAsyncTask*      ReturnValue;                                       // 0x0020(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCreateGroupMatchmakingTicketAsyncTask* ReturnValue;                                       // 0x0020(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_CreateMatchmakingTicketAsyncTask_CreateMatchmakingTicket;
+DUMPER7_ASSERTS_CreateGroupMatchmakingTicketAsyncTask_CreateGroupMatchmakingTicket;
 
 // Function Midair2.CreatePracticeDrillAsyncTask.CreatePracticeDrill
 // 0x0130 (0x0130 - 0x0000)
@@ -3458,16 +2988,6 @@ public:
 };
 DUMPER7_ASSERTS_CreatePracticeTrailAsyncTask_CreatePracticeTrail;
 
-// Function Midair2.GetMapPracticeDataAsyncTask.GetMapPracticeData
-// 0x0018 (0x0018 - 0x0000)
-struct GetMapPracticeDataAsyncTask_GetMapPracticeData final
-{
-public:
-	class FString                                 mapName;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UGetMapPracticeDataAsyncTask*           ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GetMapPracticeDataAsyncTask_GetMapPracticeData;
-
 // Function Midair2.CreatePracticeTutorialAsyncTask.CreatePracticeTutorial
 // 0x0070 (0x0070 - 0x0000)
 struct CreatePracticeTutorialAsyncTask_CreatePracticeTutorial final
@@ -3477,36 +2997,6 @@ public:
 	class UCreatePracticeTutorialAsyncTask*       ReturnValue;                                       // 0x0068(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CreatePracticeTutorialAsyncTask_CreatePracticeTutorial;
-
-// Function Midair2.MALeagueFlagGoal.GetCurrentEffectsound
-// 0x0008 (0x0008 - 0x0000)
-struct MALeagueFlagGoal_GetCurrentEffectsound final
-{
-public:
-	class USoundBase*                             ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MALeagueFlagGoal_GetCurrentEffectsound;
-
-// Function Midair2.MALeagueFlagGoal.SetGoalEffectConfigurationFromInfo
-// 0x0008 (0x0008 - 0x0000)
-struct MALeagueFlagGoal_SetGoalEffectConfigurationFromInfo final
-{
-public:
-	TSubclassOf<class AGoalEffectParticleConfiguration> GoalEffectInfo;                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MALeagueFlagGoal_SetGoalEffectConfigurationFromInfo;
-
-// Function Midair2.GetDemoAsyncTask.PlayDemo
-// 0x0020 (0x0020 - 0x0000)
-struct GetDemoAsyncTask_PlayDemo final
-{
-public:
-	class FString                                 demoId;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          PlayDemo_0;                                        // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UGetDemoAsyncTask*                      ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GetDemoAsyncTask_PlayDemo;
 
 // Function Midair2.DeleteMatchmakingTicketAsyncTask.DeleteMatchmakingTicket
 // 0x0018 (0x0018 - 0x0000)
@@ -3518,39 +3008,6 @@ public:
 };
 DUMPER7_ASSERTS_DeleteMatchmakingTicketAsyncTask_DeleteMatchmakingTicket;
 
-// Function Midair2.GetMatchHistoryAsyncTask.GetMatchHistory
-// 0x0020 (0x0020 - 0x0000)
-struct GetMatchHistoryAsyncTask_GetMatchHistory final
-{
-public:
-	class APlayerController*                      PlayerController;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   GameMode;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Count;                                             // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UGetMatchHistoryAsyncTask*              ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GetMatchHistoryAsyncTask_GetMatchHistory;
-
-// Function Midair2.DeletePracticeDrillAsyncTask.DeletePracticeDrill
-// 0x0130 (0x0130 - 0x0000)
-struct DeletePracticeDrillAsyncTask_DeletePracticeDrill final
-{
-public:
-	struct FMADrill                               DrillToDelete;                                     // 0x0000(0x0128)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	class UDeletePracticeDrillAsyncTask*          ReturnValue;                                       // 0x0128(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_DeletePracticeDrillAsyncTask_DeletePracticeDrill;
-
-// Function Midair2.DeletePracticeTrailAsyncTask.DeletePracticeTrail
-// 0x0108 (0x0108 - 0x0000)
-struct DeletePracticeTrailAsyncTask_DeletePracticeTrail final
-{
-public:
-	struct FMARouteTrail                          TrailToDelete;                                     // 0x0000(0x0100)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	class UDeletePracticeTrailAsyncTask*          ReturnValue;                                       // 0x0100(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_DeletePracticeTrailAsyncTask_DeletePracticeTrail;
-
 // Function Midair2.DeletePracticeTutorialAsyncTask.DeletePracticeTutorial
 // 0x0070 (0x0070 - 0x0000)
 struct DeletePracticeTutorialAsyncTask_DeletePracticeTutorial final
@@ -3560,29 +3017,6 @@ public:
 	class UDeletePracticeTutorialAsyncTask*       ReturnValue;                                       // 0x0068(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_DeletePracticeTutorialAsyncTask_DeletePracticeTutorial;
-
-// Function Midair2.DirectHotkey.HandleDirectNamedHotkey
-// 0x0018 (0x0018 - 0x0000)
-struct DirectHotkey_HandleDirectNamedHotkey final
-{
-public:
-	class FString                                 Hotkey;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_DirectHotkey_HandleDirectNamedHotkey;
-
-// Function Midair2.DirectHotkey.HandleNamedHotkeyWithInt
-// 0x0018 (0x0018 - 0x0000)
-struct DirectHotkey_HandleNamedHotkeyWithInt final
-{
-public:
-	class FString                                 Hotkey;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Int;                                               // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0014(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_DirectHotkey_HandleNamedHotkeyWithInt;
 
 // Function Midair2.EnergyConduit.OnComponentOverlap
 // 0x00A8 (0x00A8 - 0x0000)
@@ -3612,6 +3046,37 @@ public:
 };
 DUMPER7_ASSERTS_EnergyConduit_OnComponentOverlapEnd;
 
+// Function Midair2.GetCurrentLadderPlayerAsyncTask.GetCurrentLadderPlayer
+// 0x0008 (0x0008 - 0x0000)
+struct GetCurrentLadderPlayerAsyncTask_GetCurrentLadderPlayer final
+{
+public:
+	class UGetCurrentLadderPlayerAsyncTask*       ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GetCurrentLadderPlayerAsyncTask_GetCurrentLadderPlayer;
+
+// Function Midair2.GetCustomGameInfoAsyncTask.GetCustomGameInfo
+// 0x0018 (0x0018 - 0x0000)
+struct GetCustomGameInfoAsyncTask_GetCustomGameInfo final
+{
+public:
+	class FString                                 RoomId;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UGetCustomGameInfoAsyncTask*            ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GetCustomGameInfoAsyncTask_GetCustomGameInfo;
+
+// Function Midair2.GetDemoAsyncTask.PlayDemo
+// 0x0020 (0x0020 - 0x0000)
+struct GetDemoAsyncTask_PlayDemo final
+{
+public:
+	class FString                                 demoId;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          PlayDemo_0;                                        // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGetDemoAsyncTask*                      ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GetDemoAsyncTask_PlayDemo;
+
 // Function Midair2.GetLeaderBoardEntriesAsyncTask.GetLeaderBoardEntries
 // 0x0028 (0x0028 - 0x0000)
 struct GetLeaderBoardEntriesAsyncTask_GetLeaderBoardEntries final
@@ -3626,6 +3091,16 @@ public:
 	class UGetLeaderBoardEntriesAsyncTask*        ReturnValue;                                       // 0x0020(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_GetLeaderBoardEntriesAsyncTask_GetLeaderBoardEntries;
+
+// Function Midair2.GetMapPracticeDataAsyncTask.GetMapPracticeData
+// 0x0018 (0x0018 - 0x0000)
+struct GetMapPracticeDataAsyncTask_GetMapPracticeData final
+{
+public:
+	class FString                                 mapName;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UGetMapPracticeDataAsyncTask*           ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GetMapPracticeDataAsyncTask_GetMapPracticeData;
 
 // Function Midair2.GetMapPracticeDrillsAsyncTask.GetPracticeDrills
 // 0x0018 (0x0018 - 0x0000)
@@ -3647,15 +3122,37 @@ public:
 };
 DUMPER7_ASSERTS_GetMapPracticeTrailsAsyncTask_GetPracticeTrails;
 
-// Function Midair2.GetMatchmakingTicketAsyncTask.GetMatchmakingTicket
+// Function Midair2.GetMapPracticeTutorialsAsyncTask.GetPracticeTutorials
 // 0x0018 (0x0018 - 0x0000)
-struct GetMatchmakingTicketAsyncTask_GetMatchmakingTicket final
+struct GetMapPracticeTutorialsAsyncTask_GetPracticeTutorials final
 {
 public:
-	class FString                                 TicketId;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UGetMatchmakingTicketAsyncTask*         ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 mapName;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UGetMapPracticeTutorialsAsyncTask*      ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_GetMatchmakingTicketAsyncTask_GetMatchmakingTicket;
+DUMPER7_ASSERTS_GetMapPracticeTutorialsAsyncTask_GetPracticeTutorials;
+
+// Function Midair2.GetMatchHistoryAsyncTask.GetMatchHistory
+// 0x0020 (0x0020 - 0x0000)
+struct GetMatchHistoryAsyncTask_GetMatchHistory final
+{
+public:
+	class APlayerController*                      PlayerController;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   GameMode;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Count;                                             // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGetMatchHistoryAsyncTask*              ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GetMatchHistoryAsyncTask_GetMatchHistory;
+
+// Function Midair2.GetMatchmakingQueueInfoAsyncTask.GetMatchmakingQueueInfo
+// 0x0008 (0x0008 - 0x0000)
+struct GetMatchmakingQueueInfoAsyncTask_GetMatchmakingQueueInfo final
+{
+public:
+	class UGetMatchmakingQueueInfoAsyncTask*      ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GetMatchmakingQueueInfoAsyncTask_GetMatchmakingQueueInfo;
 
 // Function Midair2.GetMyCustomGameInfoAsyncTask.GetMyCustomGameInfo
 // 0x0008 (0x0008 - 0x0000)
@@ -3707,6 +3204,17 @@ public:
 	class UJoinCustomGameAsyncTask*               ReturnValue;                                       // 0x00A8(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_JoinCustomGameAsyncTask_JoinCustomGame;
+
+// Function Midair2.LeaveCustomGameAsyncTask.LeaveCustomGame
+// 0x00B0 (0x00B0 - 0x0000)
+struct LeaveCustomGameAsyncTask_LeaveCustomGame final
+{
+public:
+	class APlayerController*                      InPlayerController;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMAHathoraServer                       ServerToLeave;                                     // 0x0008(0x00A0)(Parm, NativeAccessSpecifierPublic)
+	class ULeaveCustomGameAsyncTask*              ReturnValue;                                       // 0x00A8(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LeaveCustomGameAsyncTask_LeaveCustomGame;
 
 // Function Midair2.LikePracticeDrillAsyncTask.LikePracticeDrill
 // 0x0130 (0x0130 - 0x0000)
@@ -3843,6 +3351,52 @@ public:
 };
 DUMPER7_ASSERTS_LoadoutPreview_GetCharacterLookAtLocation;
 
+// Function Midair2.MAAbilityBlueprintLibrary.GetSelectedAbilityCooldownPercent
+// 0x0018 (0x0018 - 0x0000)
+struct MAAbilityBlueprintLibrary_GetSelectedAbilityCooldownPercent final
+{
+public:
+	class AMACharacter*                           Character;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TimeRemaining;                                     // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CooldownDuration;                                  // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MAAbilityBlueprintLibrary_GetSelectedAbilityCooldownPercent;
+
+// Function Midair2.MAAbilityBlueprintLibrary.IsSelectedAbilityActive
+// 0x0010 (0x0010 - 0x0000)
+struct MAAbilityBlueprintLibrary_IsSelectedAbilityActive final
+{
+public:
+	class AMACharacter*                           Character;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MAAbilityBlueprintLibrary_IsSelectedAbilityActive;
+
+// Function Midair2.MAAbilityBlueprintLibrary.IsSelectedAbilityOnCooldownOrActive
+// 0x0010 (0x0010 - 0x0000)
+struct MAAbilityBlueprintLibrary_IsSelectedAbilityOnCooldownOrActive final
+{
+public:
+	class AMACharacter*                           Character;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MAAbilityBlueprintLibrary_IsSelectedAbilityOnCooldownOrActive;
+
+// Function Midair2.MAAbilityPortal.TeleportActorToPortal
+// 0x0010 (0x0010 - 0x0000)
+struct MAAbilityPortal_TeleportActorToPortal final
+{
+public:
+	class AActor*                                 ActorToTeleport;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MAAbilityPortal_TeleportActorToPortal;
+
 // Function Midair2.MAAchievementsSubsystem.EndMatchAchievementTracking
 // 0x0010 (0x0010 - 0x0000)
 struct MAAchievementsSubsystem_EndMatchAchievementTracking final
@@ -3869,60 +3423,6 @@ public:
 	TArray<class UMAAchievementRules*>            ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MAAchievementsSubsystem_GetLoadedRules;
-
-// Function Midair2.MAAsset.OnHealthChanged
-// 0x0001 (0x0001 - 0x0000)
-struct MAAsset_OnHealthChanged final
-{
-public:
-	bool                                          bFromDamage;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAAsset_OnHealthChanged;
-
-// Function Midair2.MAAsset.SetPowered
-// 0x0001 (0x0001 - 0x0000)
-struct MAAsset_SetPowered final
-{
-public:
-	bool                                          bInIsPowered;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAAsset_SetPowered;
-
-// Function Midair2.MAAsset.GetPlacementVisualRadius
-// 0x0004 (0x0004 - 0x0000)
-struct MAAsset_GetPlacementVisualRadius final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAAsset_GetPlacementVisualRadius;
-
-// Function Midair2.MAAsset.HasLowHealth
-// 0x0001 (0x0001 - 0x0000)
-struct MAAsset_HasLowHealth final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAAsset_HasLowHealth;
-
-// Function Midair2.MAAsset.IsAlive
-// 0x0001 (0x0001 - 0x0000)
-struct MAAsset_IsAlive final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAAsset_IsAlive;
-
-// Function Midair2.MAAsset.IsPowered
-// 0x0001 (0x0001 - 0x0000)
-struct MAAsset_IsPowered final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAAsset_IsPowered;
 
 // Function Midair2.MABBPlayerController.ServerSetBBEuler
 // 0x000C (0x000C - 0x0000)
@@ -4077,95 +3577,6 @@ public:
 };
 DUMPER7_ASSERTS_MABeacon_TakeDamage;
 
-// Function Midair2.MAProjectile.Bounced
-// 0x0094 (0x0094 - 0x0000)
-struct MAProjectile_Bounced final
-{
-public:
-	struct FHitResult                             Hit;                                               // 0x0000(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	struct FVector                                ImpactVelocity;                                    // 0x0088(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAProjectile_Bounced;
-
-// Function Midair2.MAProjectile.CatchUp
-// 0x0004 (0x0004 - 0x0000)
-struct MAProjectile_CatchUp final
-{
-public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAProjectile_CatchUp;
-
-// Function Midair2.MAProjectile.DamageImpactedActor
-// 0x0028 (0x0028 - 0x0000)
-struct MAProjectile_DamageImpactedActor final
-{
-public:
-	class AActor*                                 OtherActor;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UPrimitiveComponent*                    OtherComp;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                HitLocation;                                       // 0x0010(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                HitNormal;                                         // 0x001C(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAProjectile_DamageImpactedActor;
-
-// Function Midair2.MAProjectile.Explode
-// 0x0020 (0x0020 - 0x0000)
-struct MAProjectile_Explode final
-{
-public:
-	struct FVector                                HitLocation;                                       // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                HitNormal;                                         // 0x000C(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UPrimitiveComponent*                    HitComponent;                                      // 0x0018(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAProjectile_Explode;
-
-// Function Midair2.MAProjectile.GetHomingTargetLocation
-// 0x0010 (0x0010 - 0x0000)
-struct MAProjectile_GetHomingTargetLocation final
-{
-public:
-	struct FVector                                TargetLocation;                                    // 0x0000(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MAProjectile_GetHomingTargetLocation;
-
-// Function Midair2.MAProjectile.ProcessHit
-// 0x0028 (0x0028 - 0x0000)
-struct MAProjectile_ProcessHit final
-{
-public:
-	class AActor*                                 OtherActor;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UPrimitiveComponent*                    OtherComp;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                HitLocation;                                       // 0x0010(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                HitNormal;                                         // 0x001C(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAProjectile_ProcessHit;
-
-// Function Midair2.MAProjectile.SphereTouched
-// 0x00A8 (0x00A8 - 0x0000)
-struct MAProjectile_SphereTouched final
-{
-public:
-	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bFromSweep;                                        // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FHitResult                             SweepResult;                                       // 0x0020(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAProjectile_SphereTouched;
-
-// Function Midair2.MAProjectile.Stopped
-// 0x0088 (0x0088 - 0x0000)
-struct MAProjectile_Stopped final
-{
-public:
-	struct FHitResult                             Hit;                                               // 0x0000(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAProjectile_Stopped;
-
 // Function Midair2.MABoostPad.OnBeginOverlap
 // 0x00A8 (0x00A8 - 0x0000)
 struct MABoostPad_OnBeginOverlap final
@@ -4270,38 +3681,585 @@ public:
 };
 DUMPER7_ASSERTS_MABotAIComponent_OnPawnSeen;
 
-// Function Midair2.MAButtonBase.SetButtonText
-// 0x0018 (0x0018 - 0x0000)
-struct MAButtonBase_SetButtonText final
+// Function Midair2.MACharacter.AddItem
+// 0x0010 (0x0010 - 0x0000)
+struct MACharacter_AddItem final
 {
 public:
-	class FText                                   InText;                                            // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class AMAItem*                                ItemToAdd;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAutoActivate;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0009(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_MAButtonBase_SetButtonText;
+DUMPER7_ASSERTS_MACharacter_AddItem;
 
-// Function Midair2.MAButtonBase.UpdateButtonText
-// 0x0018 (0x0018 - 0x0000)
-struct MAButtonBase_UpdateButtonText final
+// Function Midair2.MACharacter.BP_OnGrappleAttached
+// 0x000C (0x000C - 0x0000)
+struct MACharacter_BP_OnGrappleAttached final
 {
 public:
-	class FText                                   InText;                                            // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FVector                                HitLocation;                                       // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_MAButtonBase_UpdateButtonText;
+DUMPER7_ASSERTS_MACharacter_BP_OnGrappleAttached;
 
-// Function Midair2.MACarriedObjectOOBVolume.OnCarriedObjectOOB
-// 0x00A8 (0x00A8 - 0x0000)
-struct MACarriedObjectOOBVolume_OnCarriedObjectOOB final
+// Function Midair2.MACharacter.BP_UpdateForClientPerspective
+// 0x0001 (0x0001 - 0x0000)
+struct MACharacter_BP_UpdateForClientPerspective final
 {
 public:
-	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         BodyIndex;                                         // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bFromSweep;                                        // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FHitResult                             SweepResult;                                       // 0x0020(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	bool                                          bFirstPerson;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_MACarriedObjectOOBVolume_OnCarriedObjectOOB;
+DUMPER7_ASSERTS_MACharacter_BP_UpdateForClientPerspective;
+
+// Function Midair2.MACharacter.Evacuate
+// 0x0001 (0x0001 - 0x0000)
+struct MACharacter_Evacuate final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_Evacuate;
+
+// Function Midair2.MACharacter.GetHeightAboveSurface
+// 0x0004 (0x0004 - 0x0000)
+struct MACharacter_GetHeightAboveSurface final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_GetHeightAboveSurface;
+
+// Function Midair2.MACharacter.K2_CreateItem
+// 0x0018 (0x0018 - 0x0000)
+struct MACharacter_K2_CreateItem final
+{
+public:
+	TSubclassOf<class AMAItem>                    NewItemClass;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAutoActivate;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AMAItem*                                ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_K2_CreateItem;
+
+// Function Midair2.MACharacter.MulticastOnGrappleAttached
+// 0x000C (0x000C - 0x0000)
+struct MACharacter_MulticastOnGrappleAttached final
+{
+public:
+	struct FVector                                HitLocation;                                       // 0x0000(0x000C)(ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_MulticastOnGrappleAttached;
+
+// Function Midair2.MACharacter.OnHealthChanged
+// 0x0001 (0x0001 - 0x0000)
+struct MACharacter_OnHealthChanged final
+{
+public:
+	bool                                          bFromDamage;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_OnHealthChanged;
+
+// Function Midair2.MACharacter.OnMeleeMontageEnded
+// 0x0010 (0x0010 - 0x0000)
+struct MACharacter_OnMeleeMontageEnded final
+{
+public:
+	class UAnimMontage*                           Montage;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInterrupted;                                      // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MACharacter_OnMeleeMontageEnded;
+
+// Function Midair2.MACharacter.OnPurchasedVehicleSpawned
+// 0x0008 (0x0008 - 0x0000)
+struct MACharacter_OnPurchasedVehicleSpawned final
+{
+public:
+	class AVehiclePawn*                           Vehicle;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_OnPurchasedVehicleSpawned;
+
+// Function Midair2.MACharacter.OnTookDamage
+// 0x0020 (0x0020 - 0x0000)
+struct MACharacter_OnTookDamage final
+{
+public:
+	struct FTakeHitInfo                           TakeHitInfo;                                       // 0x0000(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_OnTookDamage;
+
+// Function Midair2.MACharacter.PlayCameraShake
+// 0x0020 (0x0020 - 0x0000)
+struct MACharacter_PlayCameraShake final
+{
+public:
+	TSubclassOf<class UCameraShakeBase>           Shake;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Scale;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPlayInUserSpace;                                  // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRotator                               UserSpaceRot;                                      // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MACharacter_PlayCameraShake;
+
+// Function Midair2.MACharacter.ProcessMeleeHit
+// 0x0018 (0x0018 - 0x0000)
+struct MACharacter_ProcessMeleeHit final
+{
+public:
+	struct FVector                                Start;                                             // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                End;                                               // 0x000C(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_ProcessMeleeHit;
+
+// Function Midair2.MACharacter.RemoveItem
+// 0x0008 (0x0008 - 0x0000)
+struct MACharacter_RemoveItem final
+{
+public:
+	class AMAItem*                                ItemToRemove;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_RemoveItem;
+
+// Function Midair2.MACharacter.ServerProcessMeleeHit
+// 0x0018 (0x0018 - 0x0000)
+struct MACharacter_ServerProcessMeleeHit final
+{
+public:
+	struct FVector                                Start;                                             // 0x0000(0x000C)(ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                End;                                               // 0x000C(0x000C)(ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_ServerProcessMeleeHit;
+
+// Function Midair2.MACharacter.ServerSetCameraMode
+// 0x0001 (0x0001 - 0x0000)
+struct MACharacter_ServerSetCameraMode final
+{
+public:
+	ECameraMode                                   InCameraMode;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_ServerSetCameraMode;
+
+// Function Midair2.MACharacter.ServerSetSelectedAbilityClass
+// 0x0008 (0x0008 - 0x0000)
+struct MACharacter_ServerSetSelectedAbilityClass final
+{
+public:
+	TSubclassOf<class UGameplayAbility>           NewAbilityClass;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_ServerSetSelectedAbilityClass;
+
+// Function Midair2.MACharacter.ServerStartGrapple
+// 0x0018 (0x0018 - 0x0000)
+struct MACharacter_ServerStartGrapple final
+{
+public:
+	struct FVector                                HitLocation;                                       // 0x0000(0x000C)(ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                HitNormal;                                         // 0x000C(0x000C)(ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_ServerStartGrapple;
+
+// Function Midair2.MACharacter.ServerTossCarriedObject
+// 0x0004 (0x0004 - 0x0000)
+struct MACharacter_ServerTossCarriedObject final
+{
+public:
+	float                                         Strength;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_ServerTossCarriedObject;
+
+// Function Midair2.MACharacter.ServerTryEnterVehicle
+// 0x0008 (0x0008 - 0x0000)
+struct MACharacter_ServerTryEnterVehicle final
+{
+public:
+	class AVehiclePawn*                           Vehicle;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_ServerTryEnterVehicle;
+
+// Function Midair2.MACharacter.ServerTryPurchaseVehicleAtIndex
+// 0x0010 (0x0010 - 0x0000)
+struct MACharacter_ServerTryPurchaseVehicleAtIndex final
+{
+public:
+	class AVehicleSpawnConsole*                   SpawnConsole;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Index_0;                                           // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MACharacter_ServerTryPurchaseVehicleAtIndex;
+
+// Function Midair2.MACharacter.ServerTrySpecificPickup
+// 0x0008 (0x0008 - 0x0000)
+struct MACharacter_ServerTrySpecificPickup final
+{
+public:
+	class AMAPickup*                              Pickup;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_ServerTrySpecificPickup;
+
+// Function Midair2.MACharacter.SetCameraMode
+// 0x0001 (0x0001 - 0x0000)
+struct MACharacter_SetCameraMode final
+{
+public:
+	ECameraMode                                   InCameraMode;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_SetCameraMode;
+
+// Function Midair2.MACharacter.SetLoadout
+// 0x00C8 (0x00C8 - 0x0000)
+struct MACharacter_SetLoadout final
+{
+public:
+	struct FMALoadout                             Loadout;                                           // 0x0000(0x00C0)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          bSetMaxes;                                         // 0x00C0(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsBaseInventory;                                  // 0x00C1(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C2[0x6];                                       // 0x00C2(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MACharacter_SetLoadout;
+
+// Function Midair2.MACharacter.SetOverrideMaterials
+// 0x0010 (0x0010 - 0x0000)
+struct MACharacter_SetOverrideMaterials final
+{
+public:
+	class UMaterialInterface*                     NewMaterial3P;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMaterialInterface*                     NewMaterial1P;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_SetOverrideMaterials;
+
+// Function Midair2.MACharacter.SetSelectedAbilityClass
+// 0x0008 (0x0008 - 0x0000)
+struct MACharacter_SetSelectedAbilityClass final
+{
+public:
+	TSubclassOf<class UGameplayAbility>           NewAbilityClass;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_SetSelectedAbilityClass;
+
+// Function Midair2.MACharacter.SetTrigger
+// 0x0002 (0x0002 - 0x0000)
+struct MACharacter_SetTrigger final
+{
+public:
+	uint8                                         FireMode;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSet;                                              // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_SetTrigger;
+
+// Function Midair2.MACharacter.StartInvulnerability
+// 0x0004 (0x0004 - 0x0000)
+struct MACharacter_StartInvulnerability final
+{
+public:
+	float                                         Length;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_StartInvulnerability;
+
+// Function Midair2.MACharacter.SwitchToNextWeapon
+// 0x0008 (0x0008 - 0x0000)
+struct MACharacter_SwitchToNextWeapon final
+{
+public:
+	int32                                         Direction;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MACharacter_SwitchToNextWeapon;
+
+// Function Midair2.MACharacter.SwitchToWeapon
+// 0x0010 (0x0010 - 0x0000)
+struct MACharacter_SwitchToWeapon final
+{
+public:
+	class AMAWeapon*                              NewWeapon;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MACharacter_SwitchToWeapon;
+
+// Function Midair2.MACharacter.SwitchToWeaponAtIndex
+// 0x0008 (0x0008 - 0x0000)
+struct MACharacter_SwitchToWeaponAtIndex final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MACharacter_SwitchToWeaponAtIndex;
+
+// Function Midair2.MACharacter.ToggleTrigger
+// 0x0001 (0x0001 - 0x0000)
+struct MACharacter_ToggleTrigger final
+{
+public:
+	uint8                                         FireMode;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_ToggleTrigger;
+
+// Function Midair2.MACharacter.TossCarriedObject
+// 0x0004 (0x0004 - 0x0000)
+struct MACharacter_TossCarriedObject final
+{
+public:
+	float                                         Strength;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_TossCarriedObject;
+
+// Function Midair2.MACharacter.TossFlag
+// 0x0004 (0x0004 - 0x0000)
+struct MACharacter_TossFlag final
+{
+public:
+	float                                         StrengthOverride;                                  // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_TossFlag;
+
+// Function Midair2.MACharacter.TryEnterVehicle
+// 0x0008 (0x0008 - 0x0000)
+struct MACharacter_TryEnterVehicle final
+{
+public:
+	class AVehiclePawn*                           Vehicle;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_TryEnterVehicle;
+
+// Function Midair2.MACharacter.TryPurchaseVehicleAtIndex
+// 0x0010 (0x0010 - 0x0000)
+struct MACharacter_TryPurchaseVehicleAtIndex final
+{
+public:
+	class AVehicleSpawnConsole*                   SpawnConsole;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Index_0;                                           // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MACharacter_TryPurchaseVehicleAtIndex;
+
+// Function Midair2.MACharacter.UpdateCameraDist
+// 0x0004 (0x0004 - 0x0000)
+struct MACharacter_UpdateCameraDist final
+{
+public:
+	float                                         CameraDistPct;                                     // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_UpdateCameraDist;
+
+// Function Midair2.MACharacter.Vocalize
+// 0x0008 (0x0008 - 0x0000)
+struct MACharacter_Vocalize final
+{
+public:
+	class USoundBase*                             Sound;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_Vocalize;
+
+// Function Midair2.MACharacter.BP_GetViewRotation
+// 0x000C (0x000C - 0x0000)
+struct MACharacter_BP_GetViewRotation final
+{
+public:
+	struct FRotator                               ReturnValue;                                       // 0x0000(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_BP_GetViewRotation;
+
+// Function Midair2.MACharacter.GetAccelerationYaw
+// 0x0004 (0x0004 - 0x0000)
+struct MACharacter_GetAccelerationYaw final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_GetAccelerationYaw;
+
+// Function Midair2.MACharacter.GetEnergy
+// 0x0004 (0x0004 - 0x0000)
+struct MACharacter_GetEnergy final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_GetEnergy;
+
+// Function Midair2.MACharacter.GetEnergyPct
+// 0x0004 (0x0004 - 0x0000)
+struct MACharacter_GetEnergyPct final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_GetEnergyPct;
+
+// Function Midair2.MACharacter.GetGrappleHitLocation
+// 0x000C (0x000C - 0x0000)
+struct MACharacter_GetGrappleHitLocation final
+{
+public:
+	struct FVector                                ReturnValue;                                       // 0x0000(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_GetGrappleHitLocation;
+
+// Function Midair2.MACharacter.GetHealth
+// 0x0004 (0x0004 - 0x0000)
+struct MACharacter_GetHealth final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_GetHealth;
+
+// Function Midair2.MACharacter.GetHealthPct
+// 0x0004 (0x0004 - 0x0000)
+struct MACharacter_GetHealthPct final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_GetHealthPct;
+
+// Function Midair2.MACharacter.GetIsWarpingIn
+// 0x0001 (0x0001 - 0x0000)
+struct MACharacter_GetIsWarpingIn final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_GetIsWarpingIn;
+
+// Function Midair2.MACharacter.GetIsWarpingOut
+// 0x0001 (0x0001 - 0x0000)
+struct MACharacter_GetIsWarpingOut final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_GetIsWarpingOut;
+
+// Function Midair2.MACharacter.GetRemoteViewPitch
+// 0x0004 (0x0004 - 0x0000)
+struct MACharacter_GetRemoteViewPitch final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_GetRemoteViewPitch;
+
+// Function Midair2.MACharacter.GetTossStrength
+// 0x0004 (0x0004 - 0x0000)
+struct MACharacter_GetTossStrength final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_GetTossStrength;
+
+// Function Midair2.MACharacter.IsAccelerating
+// 0x0001 (0x0001 - 0x0000)
+struct MACharacter_IsAccelerating final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_IsAccelerating;
+
+// Function Midair2.MACharacter.IsDead
+// 0x0001 (0x0001 - 0x0000)
+struct MACharacter_IsDead final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_IsDead;
+
+// Function Midair2.MACharacter.IsGrappling
+// 0x0001 (0x0001 - 0x0000)
+struct MACharacter_IsGrappling final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_IsGrappling;
+
+// Function Midair2.MACharacter.IsInInventory
+// 0x0010 (0x0010 - 0x0000)
+struct MACharacter_IsInInventory final
+{
+public:
+	const class AMAItem*                          ItemToFind;                                        // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MACharacter_IsInInventory;
+
+// Function Midair2.MACharacter.IsTriggerSet
+// 0x0002 (0x0002 - 0x0000)
+struct MACharacter_IsTriggerSet final
+{
+public:
+	uint8                                         FireMode;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_IsTriggerSet;
+
+// Function Midair2.MACharacter.IsWinching
+// 0x0001 (0x0001 - 0x0000)
+struct MACharacter_IsWinching final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_IsWinching;
+
+// Function Midair2.MACharacter.K2_FindItem
+// 0x0018 (0x0018 - 0x0000)
+struct MACharacter_K2_FindItem final
+{
+public:
+	TSubclassOf<class AMAItem>                    Type;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bExactClass;                                       // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AMAItem*                                ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_K2_FindItem;
+
+// Function Midair2.MACharacter.K2_FindPack
+// 0x0018 (0x0018 - 0x0000)
+struct MACharacter_K2_FindPack final
+{
+public:
+	TSubclassOf<class AMAItem>                    Type;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bExactClass;                                       // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AMAItem*                                ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacter_K2_FindPack;
+
+// Function Midair2.MACharacterMovement.MAClientAdjustEnergy
+// 0x0004 (0x0004 - 0x0000)
+struct MACharacterMovement_MAClientAdjustEnergy final
+{
+public:
+	float                                         Energy;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacterMovement_MAClientAdjustEnergy;
+
+// Function Midair2.MACharacterMovement.MAServerMove
+// 0x0038 (0x0038 - 0x0000)
+struct MACharacterMovement_MAServerMove final
+{
+public:
+	struct FMAPackedMoveBundle                    Bundle;                                            // 0x0000(0x0038)(ConstParm, Parm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacterMovement_MAServerMove;
+
+// Function Midair2.MACharacterMovement.IsSkatingOnGround
+// 0x0001 (0x0001 - 0x0000)
+struct MACharacterMovement_IsSkatingOnGround final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACharacterMovement_IsSkatingOnGround;
 
 // Function Midair2.MAConfirmationScreen.HandleTapToCloseZoneMouseButtonDown
 // 0x0160 (0x0160 - 0x0000)
@@ -4313,6 +4271,25 @@ public:
 	struct FEventReply                            ReturnValue;                                       // 0x00A8(0x00B8)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MAConfirmationScreen_HandleTapToCloseZoneMouseButtonDown;
+
+// Function Midair2.MACoreControllerInterface.PlayRecordedCameraInput
+// 0x0008 (0x0008 - 0x0000)
+struct MACoreControllerInterface_PlayRecordedCameraInput final
+{
+public:
+	float                                         Pitch;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Yaw;                                               // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACoreControllerInterface_PlayRecordedCameraInput;
+
+// Function Midair2.MACoreControllerInterface.PlayRecordedInput
+// 0x0001 (0x0001 - 0x0000)
+struct MACoreControllerInterface_PlayRecordedInput final
+{
+public:
+	EPlayerRecordableInputTypes                   InputType;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MACoreControllerInterface_PlayRecordedInput;
 
 // Function Midair2.MACTFFlag.ClientUpdateFlagPositionHack
 // 0x0028 (0x0028 - 0x0000)
@@ -4341,6 +4318,228 @@ public:
 	struct FHitResult                             ImpactResult;                                      // 0x0000(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MACTFFlag_OnStop;
+
+// Function Midair2.MAGameState.BeginMapVote
+// 0x0001 (0x0001 - 0x0000)
+struct MAGameState_BeginMapVote final
+{
+public:
+	bool                                          bIsEndOfMatch;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAGameState_BeginMapVote;
+
+// Function Midair2.MAGameState.GenerateOptionsForMapVote
+// 0x0008 (0x0008 - 0x0000)
+struct MAGameState_GenerateOptionsForMapVote final
+{
+public:
+	EMapVoteStage                                 Stage;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         voteOptions;                                       // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAGameState_GenerateOptionsForMapVote;
+
+// Function Midair2.MAGameState.GetTeamStateById
+// 0x0010 (0x0010 - 0x0000)
+struct MAGameState_GetTeamStateById final
+{
+public:
+	ETeamId                                       TeamId;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AMATeamState*                           ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAGameState_GetTeamStateById;
+
+// Function Midair2.MAGameState.GetVotesForOption
+// 0x0002 (0x0002 - 0x0000)
+struct MAGameState_GetVotesForOption final
+{
+public:
+	EMapVoteOption                                Option;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAGameState_GetVotesForOption;
+
+// Function Midair2.MAGameState.PredictWinner
+// 0x0001 (0x0001 - 0x0000)
+struct MAGameState_PredictWinner final
+{
+public:
+	EMapVoteOption                                ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAGameState_PredictWinner;
+
+// Function Midair2.MAGameState.ServerRequestEnablePracticeMode
+// 0x0001 (0x0001 - 0x0000)
+struct MAGameState_ServerRequestEnablePracticeMode final
+{
+public:
+	bool                                          bIsEnabled;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAGameState_ServerRequestEnablePracticeMode;
+
+// Function Midair2.MAGameState.ServerRequestEnableTournamentMode
+// 0x0001 (0x0001 - 0x0000)
+struct MAGameState_ServerRequestEnableTournamentMode final
+{
+public:
+	bool                                          bIsEnabled;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAGameState_ServerRequestEnableTournamentMode;
+
+// Function Midair2.MAGameState.SortPlayersByScore
+// 0x0010 (0x0010 - 0x0000)
+struct MAGameState_SortPlayersByScore final
+{
+public:
+	TArray<class APlayerState*>                   players;                                           // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAGameState_SortPlayersByScore;
+
+// Function Midair2.MAGameState.GetCurrentHolder
+// 0x0018 (0x0018 - 0x0000)
+struct MAGameState_GetCurrentHolder final
+{
+public:
+	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAGameState_GetCurrentHolder;
+
+// Function Midair2.MAGameState.GetCurrentJackpot
+// 0x0018 (0x0018 - 0x0000)
+struct MAGameState_GetCurrentJackpot final
+{
+public:
+	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAGameState_GetCurrentJackpot;
+
+// Function Midair2.MAGameState.GetFlagHolderTimer
+// 0x0018 (0x0018 - 0x0000)
+struct MAGameState_GetFlagHolderTimer final
+{
+public:
+	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAGameState_GetFlagHolderTimer;
+
+// Function Midair2.MAGameState.GetGameTime
+// 0x0010 (0x0010 - 0x0000)
+struct MAGameState_GetGameTime final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAGameState_GetGameTime;
+
+// Function Midair2.MAGameState.GetLivePlayersOnTeam
+// 0x0002 (0x0002 - 0x0000)
+struct MAGameState_GetLivePlayersOnTeam final
+{
+public:
+	uint8                                         TeamId;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAGameState_GetLivePlayersOnTeam;
+
+// Function Midair2.MAGameState.GetLivesLeftOnTeam
+// 0x0008 (0x0008 - 0x0000)
+struct MAGameState_GetLivesLeftOnTeam final
+{
+public:
+	uint8                                         TeamId;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAGameState_GetLivesLeftOnTeam;
+
+// Function Midair2.MAGameState.GetMAGameModeClass
+// 0x0008 (0x0008 - 0x0000)
+struct MAGameState_GetMAGameModeClass final
+{
+public:
+	TSubclassOf<class AMAGameMode>                ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAGameState_GetMAGameModeClass;
+
+// Function Midair2.MAGameState.GetMatchStatus
+// 0x0018 (0x0018 - 0x0000)
+struct MAGameState_GetMatchStatus final
+{
+public:
+	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAGameState_GetMatchStatus;
+
+// Function Midair2.MAGameState.GetRankedPlayerArray
+// 0x0010 (0x0010 - 0x0000)
+struct MAGameState_GetRankedPlayerArray final
+{
+public:
+	TArray<class AMAPlayerState*>                 RankedArray;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAGameState_GetRankedPlayerArray;
+
+// Function Midair2.MAGameState.GetRankedPlayerArrays
+// 0x0020 (0x0020 - 0x0000)
+struct MAGameState_GetRankedPlayerArrays final
+{
+public:
+	TArray<class AMAPlayerState*>                 Team1RankedArray;                                  // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class AMAPlayerState*>                 Team2RankedArray;                                  // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAGameState_GetRankedPlayerArrays;
+
+// Function Midair2.MAGameState.GetSpectatorsArray
+// 0x0010 (0x0010 - 0x0000)
+struct MAGameState_GetSpectatorsArray final
+{
+public:
+	TArray<class AMAPlayerState*>                 SpectatorsArray;                                   // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAGameState_GetSpectatorsArray;
+
+// Function Midair2.MAGameState.GetTeamMaxObjectCount
+// 0x0010 (0x0010 - 0x0000)
+struct MAGameState_GetTeamMaxObjectCount final
+{
+public:
+	TSubclassOf<class UObject>                    ObjectType;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MAGameState_GetTeamMaxObjectCount;
+
+// Function Midair2.MAGameState.GetTotalPlayersOnTeam
+// 0x0002 (0x0002 - 0x0000)
+struct MAGameState_GetTotalPlayersOnTeam final
+{
+public:
+	uint8                                         TeamId;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAGameState_GetTotalPlayersOnTeam;
+
+// Function Midair2.MAGameState.IsAnySimpleVoteInProgress
+// 0x0001 (0x0001 - 0x0000)
+struct MAGameState_IsAnySimpleVoteInProgress final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAGameState_IsAnySimpleVoteInProgress;
+
+// Function Midair2.MAGameState.OnSameTeam
+// 0x0018 (0x0018 - 0x0000)
+struct MAGameState_OnSameTeam final
+{
+public:
+	const class AActor*                           Actor1;                                            // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	const class AActor*                           Actor2;                                            // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MAGameState_OnSameTeam;
 
 // Function Midair2.MACTFGameState.GetIsFlagHolder
 // 0x0010 (0x0010 - 0x0000)
@@ -4405,23 +4604,6 @@ public:
 	class AMAPlayerState*                         Victim;                                            // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MACTFPlayerState_IncrementMidairCarrierKills;
-
-// Function Midair2.MADamageType.ComputeDamageSkillRating
-// 0x0028 (0x0028 - 0x0000)
-struct MADamageType_ComputeDamageSkillRating final
-{
-public:
-	float                                         PreviousSkillRating;                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 Instigator;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 Victim;                                            // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bMidairHit;                                        // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         RadialDamageScale;                                 // 0x001C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x0020(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MADamageType_ComputeDamageSkillRating;
 
 // Function Midair2.MADuelPlayerState.CheckIsDuelDisabled
 // 0x0001 (0x0001 - 0x0000)
@@ -4653,6 +4835,15 @@ public:
 };
 DUMPER7_ASSERTS_MAFriend_GetSteamDisplayName;
 
+// Function Midair2.MAFriend.GetSteamId
+// 0x0010 (0x0010 - 0x0000)
+struct MAFriend_GetSteamId final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAFriend_GetSteamId;
+
 // Function Midair2.MAFriend.GetUserId
 // 0x0028 (0x0028 - 0x0000)
 struct MAFriend_GetUserId final
@@ -4742,15 +4933,6 @@ public:
 	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MAFriend_ToString;
-
-// Function Midair2.MAEOSPartyId.ToString
-// 0x0010 (0x0010 - 0x0000)
-struct MAEOSPartyId_ToString final
-{
-public:
-	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAEOSPartyId_ToString;
 
 // Function Midair2.MAPartyMemberId.ToString
 // 0x0010 (0x0010 - 0x0000)
@@ -5047,6 +5229,15 @@ public:
 };
 DUMPER7_ASSERTS_MAEOSSubsystem_LogoutOfVoice;
 
+// Function Midair2.MAEOSSubsystem.OnFriendsReadInternalComplete
+// 0x0001 (0x0001 - 0x0000)
+struct MAEOSSubsystem_OnFriendsReadInternalComplete final
+{
+public:
+	bool                                          bSuccess;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAEOSSubsystem_OnFriendsReadInternalComplete;
+
 // Function Midair2.MAEOSSubsystem.PartyMemberIsLeader
 // 0x0010 (0x0010 - 0x0000)
 struct MAEOSSubsystem_PartyMemberIsLeader final
@@ -5140,18 +5331,6 @@ public:
 	TDelegate<void(bool WasSuccessful)>           OnDone;                                            // 0x0030(0x0010)(Parm, ZeroConstructor, NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MAEOSSubsystem_StartDeleteFriendAlias;
-
-// Function Midair2.MAEOSSubsystem.StartInviteFriend
-// 0x0028 (0x0028 - 0x0000)
-struct MAEOSSubsystem_StartInviteFriend final
-{
-public:
-	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMAEOSPartyId*                          PartyId;                                           // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMAFriend*                              Friend;                                            // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(bool WasSuccessful)>           OnDone;                                            // 0x0018(0x0010)(Parm, ZeroConstructor, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAEOSSubsystem_StartInviteFriend;
 
 // Function Midair2.MAEOSSubsystem.StartInviteFriendById
 // 0x0048 (0x0048 - 0x0000)
@@ -5282,15 +5461,6 @@ public:
 	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_MAEOSSubsystem_SetPartyPresence;
-
-// Function Midair2.MAEOSSubsystem.SetPresence
-// 0x0001 (0x0001 - 0x0000)
-struct MAEOSSubsystem_SetPresence final
-{
-public:
-	EPresenceTypes                                PresenceStatus;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAEOSSubsystem_SetPresence;
 
 // Function Midair2.MAVoiceChatServices.BP_GetJoinedChannels
 // 0x0010 (0x0010 - 0x0000)
@@ -5568,6 +5738,294 @@ public:
 	TArray<struct FPartyMemberView>               members;                                           // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MAFriendsWidget_HandlePartyUpdated;
+
+// Function Midair2.VehiclePawn.CanReseatCharacter
+// 0x0018 (0x0018 - 0x0000)
+struct VehiclePawn_CanReseatCharacter final
+{
+public:
+	class AMACharacter*                           Character;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         NewSeatPosition;                                   // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UVehicleSeatComponent*                  ReturnValue;                                       // 0x0010(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehiclePawn_CanReseatCharacter;
+
+// Function Midair2.VehiclePawn.FindAvailableSeat
+// 0x0010 (0x0010 - 0x0000)
+struct VehiclePawn_FindAvailableSeat final
+{
+public:
+	class AMACharacter*                           Character;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UVehicleSeatComponent*                  ReturnValue;                                       // 0x0008(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehiclePawn_FindAvailableSeat;
+
+// Function Midair2.VehiclePawn.FindOccupiedSeat
+// 0x0010 (0x0010 - 0x0000)
+struct VehiclePawn_FindOccupiedSeat final
+{
+public:
+	class AMACharacter*                           Character;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UVehicleSeatComponent*                  ReturnValue;                                       // 0x0008(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehiclePawn_FindOccupiedSeat;
+
+// Function Midair2.VehiclePawn.GetSeatForWeapon
+// 0x0010 (0x0010 - 0x0000)
+struct VehiclePawn_GetSeatForWeapon final
+{
+public:
+	class UVehicleWeaponComponent*                Weapon;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UVehicleSeatComponent*                  ReturnValue;                                       // 0x0008(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehiclePawn_GetSeatForWeapon;
+
+// Function Midair2.VehiclePawn.HasAnyOccupiedSeat
+// 0x0001 (0x0001 - 0x0000)
+struct VehiclePawn_HasAnyOccupiedSeat final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehiclePawn_HasAnyOccupiedSeat;
+
+// Function Midair2.VehiclePawn.HasRoomForCharacter
+// 0x0010 (0x0010 - 0x0000)
+struct VehiclePawn_HasRoomForCharacter final
+{
+public:
+	class AMACharacter*                           Character;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_VehiclePawn_HasRoomForCharacter;
+
+// Function Midair2.VehiclePawn.NetMulticast_FireWeaponComponent
+// 0x0010 (0x0010 - 0x0000)
+struct VehiclePawn_NetMulticast_FireWeaponComponent final
+{
+public:
+	class UVehicleWeaponComponent*                WeaponComponent;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         FireIndex;                                         // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_VehiclePawn_NetMulticast_FireWeaponComponent;
+
+// Function Midair2.VehiclePawn.OnHit
+// 0x00B0 (0x00B0 - 0x0000)
+struct VehiclePawn_OnHit final
+{
+public:
+	class UPrimitiveComponent*                    HitComp;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                NormalImpulse;                                     // 0x0018(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FHitResult                             Hit;                                               // 0x0024(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	uint8                                         Pad_AC[0x4];                                       // 0x00AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_VehiclePawn_OnHit;
+
+// Function Midair2.VehiclePawn.RemoveCharacter
+// 0x0010 (0x0010 - 0x0000)
+struct VehiclePawn_RemoveCharacter final
+{
+public:
+	class AMACharacter*                           Character;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_VehiclePawn_RemoveCharacter;
+
+// Function Midair2.VehiclePawn.Server_SetCameraMode
+// 0x0001 (0x0001 - 0x0000)
+struct VehiclePawn_Server_SetCameraMode final
+{
+public:
+	ECameraMode                                   NewCameraMode;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehiclePawn_Server_SetCameraMode;
+
+// Function Midair2.VehiclePawn.ServerSetRelativeControlRotation
+// 0x0004 (0x0004 - 0x0000)
+struct VehiclePawn_ServerSetRelativeControlRotation final
+{
+public:
+	uint32                                        NewControlPitchYaw;                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehiclePawn_ServerSetRelativeControlRotation;
+
+// Function Midair2.VehiclePawn.TryReseatCharacter
+// 0x0010 (0x0010 - 0x0000)
+struct VehiclePawn_TryReseatCharacter final
+{
+public:
+	class AMACharacter*                           Character;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         NewSeatPosition;                                   // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_VehiclePawn_TryReseatCharacter;
+
+// Function Midair2.VehiclePawn.TrySeatCharacter
+// 0x0010 (0x0010 - 0x0000)
+struct VehiclePawn_TrySeatCharacter final
+{
+public:
+	class AMACharacter*                           Character;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_VehiclePawn_TrySeatCharacter;
+
+// Function Midair2.VehiclePawn.GetAllPossibleWeaponsForSeat
+// 0x0018 (0x0018 - 0x0000)
+struct VehiclePawn_GetAllPossibleWeaponsForSeat final
+{
+public:
+	const class UVehicleSeatComponent*            Seat;                                              // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class UVehicleWeaponComponent*>        ReturnValue;                                       // 0x0008(0x0010)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehiclePawn_GetAllPossibleWeaponsForSeat;
+
+// Function Midair2.VehiclePawn.GetSeats
+// 0x0010 (0x0010 - 0x0000)
+struct VehiclePawn_GetSeats final
+{
+public:
+	TArray<class UVehicleSeatComponent*>          ReturnValue;                                       // 0x0000(0x0010)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehiclePawn_GetSeats;
+
+// Function Midair2.StormLordVehicle.EnterNewTankMode
+// 0x0001 (0x0001 - 0x0000)
+struct StormLordVehicle_EnterNewTankMode final
+{
+public:
+	ETankMode                                     NewMode;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_StormLordVehicle_EnterNewTankMode;
+
+// Function Midair2.StormLordVehicle.ServerSetActiveSiege
+// 0x0001 (0x0001 - 0x0000)
+struct StormLordVehicle_ServerSetActiveSiege final
+{
+public:
+	bool                                          bActive;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_StormLordVehicle_ServerSetActiveSiege;
+
+// Function Midair2.MAGameplayAbility_Portal.ServerTeleportToPortal
+// 0x0008 (0x0008 - 0x0000)
+struct MAGameplayAbility_Portal_ServerTeleportToPortal final
+{
+public:
+	class AActor*                                 AvatarActor;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAGameplayAbility_Portal_ServerTeleportToPortal;
+
+// Function Midair2.MAVoiceChatSubsystem.BlockPlayerFromTalking
+// 0x0010 (0x0010 - 0x0000)
+struct MAVoiceChatSubsystem_BlockPlayerFromTalking final
+{
+public:
+	class FString                                 PlayerId;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAVoiceChatSubsystem_BlockPlayerFromTalking;
+
+// Function Midair2.MAVoiceChatSubsystem.IsPlayerTalking
+// 0x0018 (0x0018 - 0x0000)
+struct MAVoiceChatSubsystem_IsPlayerTalking final
+{
+public:
+	class FString                                 PlayerName;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MAVoiceChatSubsystem_IsPlayerTalking;
+
+// Function Midair2.MAVoiceChatSubsystem.Logout
+// 0x0010 (0x0010 - 0x0000)
+struct MAVoiceChatSubsystem_Logout final
+{
+public:
+	class FString                                 Reason;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAVoiceChatSubsystem_Logout;
+
+// Function Midair2.MAVoiceChatSubsystem.RegisterVoiceHUD
+// 0x0008 (0x0008 - 0x0000)
+struct MAVoiceChatSubsystem_RegisterVoiceHUD final
+{
+public:
+	class UMAVoiceHUD*                            InHUD;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAVoiceChatSubsystem_RegisterVoiceHUD;
+
+// Function Midair2.MAVoiceChatSubsystem.SetActiveTransmitChannel
+// 0x0010 (0x0010 - 0x0000)
+struct MAVoiceChatSubsystem_SetActiveTransmitChannel final
+{
+public:
+	class FString                                 ChannelName;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAVoiceChatSubsystem_SetActiveTransmitChannel;
+
+// Function Midair2.MAVoiceChatSubsystem.SetInputMuted
+// 0x0001 (0x0001 - 0x0000)
+struct MAVoiceChatSubsystem_SetInputMuted final
+{
+public:
+	bool                                          bMuted;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAVoiceChatSubsystem_SetInputMuted;
+
+// Function Midair2.MAVoiceChatSubsystem.SetTransmitMode
+// 0x0001 (0x0001 - 0x0000)
+struct MAVoiceChatSubsystem_SetTransmitMode final
+{
+public:
+	EVoiceChatTransmitModeMA                      TransmitMode;                                      // 0x0000(0x0001)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAVoiceChatSubsystem_SetTransmitMode;
+
+// Function Midair2.MAVoiceChatSubsystem.UnblockPlayerFromTalking
+// 0x0010 (0x0010 - 0x0000)
+struct MAVoiceChatSubsystem_UnblockPlayerFromTalking final
+{
+public:
+	class FString                                 PlayerId;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAVoiceChatSubsystem_UnblockPlayerFromTalking;
+
+// Function Midair2.MAVoiceChatSubsystem.UnregisterVoiceHUD
+// 0x0008 (0x0008 - 0x0000)
+struct MAVoiceChatSubsystem_UnregisterVoiceHUD final
+{
+public:
+	class UMAVoiceHUD*                            InHUD;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAVoiceChatSubsystem_UnregisterVoiceHUD;
+
+// Function Midair2.MAVoiceChatSubsystem.IsLoggedIn
+// 0x0001 (0x0001 - 0x0000)
+struct MAVoiceChatSubsystem_IsLoggedIn final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAVoiceChatSubsystem_IsLoggedIn;
+
+// Function Midair2.MAVoiceChatSubsystem.IsPlayerBlocked
+// 0x0018 (0x0018 - 0x0000)
+struct MAVoiceChatSubsystem_IsPlayerBlocked final
+{
+public:
+	class FString                                 ID;                                                // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MAVoiceChatSubsystem_IsPlayerBlocked;
 
 // Function Midair2.MAGameplayStatics.CheckAreaForSpecificActorClass
 // 0x0038 (0x0038 - 0x0000)
@@ -6277,6 +6735,129 @@ public:
 };
 DUMPER7_ASSERTS_MAGameplayStatics_TryUpdateAudioComponentPerspective;
 
+// Function Midair2.CommonSession_SearchResult.GetCurrentPlayers
+// 0x0004 (0x0004 - 0x0000)
+struct CommonSession_SearchResult_GetCurrentPlayers final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonSession_SearchResult_GetCurrentPlayers;
+
+// Function Midair2.CommonSession_SearchResult.GetMapName
+// 0x0010 (0x0010 - 0x0000)
+struct CommonSession_SearchResult_GetMapName final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonSession_SearchResult_GetMapName;
+
+// Function Midair2.CommonSession_SearchResult.GetMaxPlayers
+// 0x0004 (0x0004 - 0x0000)
+struct CommonSession_SearchResult_GetMaxPlayers final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonSession_SearchResult_GetMaxPlayers;
+
+// Function Midair2.CommonSession_SearchResult.IsPasswordProtected
+// 0x0001 (0x0001 - 0x0000)
+struct CommonSession_SearchResult_IsPasswordProtected final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonSession_SearchResult_IsPasswordProtected;
+
+// Function Midair2.CommonSession_SearchResult.GetCustomServerName
+// 0x0010 (0x0010 - 0x0000)
+struct CommonSession_SearchResult_GetCustomServerName final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonSession_SearchResult_GetCustomServerName;
+
+// Function Midair2.CommonSession_SearchResult.GetDescription
+// 0x0010 (0x0010 - 0x0000)
+struct CommonSession_SearchResult_GetDescription final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonSession_SearchResult_GetDescription;
+
+// Function Midair2.CommonSession_SearchResult.GetIntSetting
+// 0x0010 (0x0010 - 0x0000)
+struct CommonSession_SearchResult_GetIntSetting final
+{
+public:
+	class FName                                   Key;                                               // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Value;                                             // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFoundValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CommonSession_SearchResult_GetIntSetting;
+
+// Function Midair2.CommonSession_SearchResult.GetMaxPublicConnections
+// 0x0004 (0x0004 - 0x0000)
+struct CommonSession_SearchResult_GetMaxPublicConnections final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonSession_SearchResult_GetMaxPublicConnections;
+
+// Function Midair2.CommonSession_SearchResult.GetNumOpenPrivateConnections
+// 0x0004 (0x0004 - 0x0000)
+struct CommonSession_SearchResult_GetNumOpenPrivateConnections final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonSession_SearchResult_GetNumOpenPrivateConnections;
+
+// Function Midair2.CommonSession_SearchResult.GetNumOpenPublicConnections
+// 0x0004 (0x0004 - 0x0000)
+struct CommonSession_SearchResult_GetNumOpenPublicConnections final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonSession_SearchResult_GetNumOpenPublicConnections;
+
+// Function Midair2.CommonSession_SearchResult.GetPingInMs
+// 0x0004 (0x0004 - 0x0000)
+struct CommonSession_SearchResult_GetPingInMs final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonSession_SearchResult_GetPingInMs;
+
+// Function Midair2.CommonSession_SearchResult.GetServerVersion
+// 0x0010 (0x0010 - 0x0000)
+struct CommonSession_SearchResult_GetServerVersion final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonSession_SearchResult_GetServerVersion;
+
+// Function Midair2.CommonSession_SearchResult.GetStringSetting
+// 0x0020 (0x0020 - 0x0000)
+struct CommonSession_SearchResult_GetStringSetting final
+{
+public:
+	class FName                                   Key;                                               // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Value;                                             // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFoundValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CommonSession_SearchResult_GetStringSetting;
+
 // Function Midair2.MAGameUserSettings.GetFOVMax
 // 0x0004 (0x0004 - 0x0000)
 struct MAGameUserSettings_GetFOVMax final
@@ -6646,6 +7227,28 @@ public:
 };
 DUMPER7_ASSERTS_MAGameUserSettings_GetUserFOV;
 
+// Function Midair2.MAWinnersPodiumNamePlate.SetPlayerInfo
+// 0x0018 (0x0018 - 0x0000)
+struct MAWinnersPodiumNamePlate_SetPlayerInfo final
+{
+public:
+	class FString                                 PlayerName;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Placement;                                         // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         score;                                             // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAWinnersPodiumNamePlate_SetPlayerInfo;
+
+// Function Midair2.MAHandGrenade.GetMaxAmmoCountFor
+// 0x0010 (0x0010 - 0x0000)
+struct MAHandGrenade_GetMaxAmmoCountFor final
+{
+public:
+	class AMACharacter*                           Character;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MAHandGrenade_GetMaxAmmoCountFor;
+
 // Function Midair2.MAHUD.BP_OnScoreApplied
 // 0x0020 (0x0020 - 0x0000)
 struct MAHUD_BP_OnScoreApplied final
@@ -6830,6 +7433,47 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MAHUD_IsScoreboardVisible;
+
+// Function Midair2.MAVoiceHUD.UpdateParticipant
+// 0x0030 (0x0030 - 0x0000)
+struct MAVoiceHUD_UpdateParticipant final
+{
+public:
+	class FString                                 ID;                                                // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   Name_0;                                            // 0x0010(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          bSpeaking;                                         // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MAVoiceHUD_UpdateParticipant;
+
+// Function Midair2.MATutorialZoneWidget.Close
+// 0x0001 (0x0001 - 0x0000)
+struct MATutorialZoneWidget_Close final
+{
+public:
+	bool                                          bIgnoreEvents;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MATutorialZoneWidget_Close;
+
+// Function Midair2.MATutorialZoneWidget.Setup
+// 0x0030 (0x0030 - 0x0000)
+struct MATutorialZoneWidget_Setup final
+{
+public:
+	class FText                                   Title;                                             // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class FText                                   Body;                                              // 0x0018(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MATutorialZoneWidget_Setup;
+
+// Function Midair2.MAWidgetFactory.FindWidgetClassForData
+// 0x0010 (0x0010 - 0x0000)
+struct MAWidgetFactory_FindWidgetClassForData final
+{
+public:
+	const class UObject*                          Data;                                              // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UUserWidget>                ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAWidgetFactory_FindWidgetClassForData;
 
 // Function Midair2.MAInputSettings.GetActionKeyMappingDisplayName
 // 0x0040 (0x0040 - 0x0000)
@@ -7116,6 +7760,96 @@ public:
 };
 DUMPER7_ASSERTS_MAInviteToastWidget_Setup;
 
+// Function Midair2.ObjectInfo.ConvertObjectArrayToItemArray
+// 0x0020 (0x0020 - 0x0000)
+struct ObjectInfo_ConvertObjectArrayToItemArray final
+{
+public:
+	TArray<TSubclassOf<class UObjectInfo>>        objects;                                           // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
+	TArray<TSubclassOf<class UItemInfo>>          OutItems;                                          // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ObjectInfo_ConvertObjectArrayToItemArray;
+
+// Function Midair2.ObjectInfo.FilterObjectInfoArray
+// 0x0038 (0x0038 - 0x0000)
+struct ObjectInfo_FilterObjectInfoArray final
+{
+public:
+	TArray<TSubclassOf<class UObjectInfo>>        Base;                                              // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
+	TArray<TSubclassOf<class UObjectInfo>>        AppliedFilter;                                     // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
+	TArray<TSubclassOf<class UObjectInfo>>        OutResult;                                         // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	bool                                          bReturnInBoth;                                     // 0x0030(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_ObjectInfo_FilterObjectInfoArray;
+
+// Function Midair2.ObjectInfo.GetObjectInfo
+// 0x0010 (0x0010 - 0x0000)
+struct ObjectInfo_GetObjectInfo final
+{
+public:
+	class UObject*                                InObject;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObjectInfo*                            ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ObjectInfo_GetObjectInfo;
+
+// Function Midair2.ObjectInfo.GetObjectInfoFromClass
+// 0x0010 (0x0010 - 0x0000)
+struct ObjectInfo_GetObjectInfoFromClass final
+{
+public:
+	class UClass*                                 InObjectClass;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObjectInfo*                            ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ObjectInfo_GetObjectInfoFromClass;
+
+// Function Midair2.ObjectInfo.GetActionText
+// 0x0020 (0x0020 - 0x0000)
+struct ObjectInfo_GetActionText final
+{
+public:
+	const class AActor*                           Actor;                                             // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   ReturnValue;                                       // 0x0008(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ObjectInfo_GetActionText;
+
+// Function Midair2.MALeagueFlag.OnBounce
+// 0x0094 (0x0094 - 0x0000)
+struct MALeagueFlag_OnBounce final
+{
+public:
+	struct FHitResult                             ImpactResult;                                      // 0x0000(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	struct FVector                                ImpactVelocity;                                    // 0x0088(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MALeagueFlag_OnBounce;
+
+// Function Midair2.MALeagueFlag.OnStop
+// 0x0088 (0x0088 - 0x0000)
+struct MALeagueFlag_OnStop final
+{
+public:
+	struct FHitResult                             ImpactResult;                                      // 0x0000(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MALeagueFlag_OnStop;
+
+// Function Midair2.MALeagueFlagGoal.GetCurrentEffectsound
+// 0x0008 (0x0008 - 0x0000)
+struct MALeagueFlagGoal_GetCurrentEffectsound final
+{
+public:
+	class USoundBase*                             ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MALeagueFlagGoal_GetCurrentEffectsound;
+
+// Function Midair2.MALeagueFlagGoal.SetGoalEffectConfigurationFromInfo
+// 0x0008 (0x0008 - 0x0000)
+struct MALeagueFlagGoal_SetGoalEffectConfigurationFromInfo final
+{
+public:
+	TSubclassOf<class AGoalEffectParticleConfiguration> GoalEffectInfo;                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MALeagueFlagGoal_SetGoalEffectConfigurationFromInfo;
+
 // Function Midair2.MALeagueGameMode.GetHotPotatoLength
 // 0x0004 (0x0004 - 0x0000)
 struct MALeagueGameMode_GetHotPotatoLength final
@@ -7124,6 +7858,70 @@ public:
 	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MALeagueGameMode_GetHotPotatoLength;
+
+// Function Midair2.MAWeaponAttachment.DetachFirstAmmoActor
+// 0x0001 (0x0001 - 0x0000)
+struct MAWeaponAttachment_DetachFirstAmmoActor final
+{
+public:
+	bool                                          bInFirstPerson;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAWeaponAttachment_DetachFirstAmmoActor;
+
+// Function Midair2.MAWeaponAttachment.GetHeat
+// 0x0004 (0x0004 - 0x0000)
+struct MAWeaponAttachment_GetHeat final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAWeaponAttachment_GetHeat;
+
+// Function Midair2.MAWeaponAttachment.K2_UpdateForClientPerspective
+// 0x0001 (0x0001 - 0x0000)
+struct MAWeaponAttachment_K2_UpdateForClientPerspective final
+{
+public:
+	bool                                          bInFirstPerson;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAWeaponAttachment_K2_UpdateForClientPerspective;
+
+// Function Midair2.MAWeaponAttachment.OnCharacterAttachAmmo
+// 0x0001 (0x0001 - 0x0000)
+struct MAWeaponAttachment_OnCharacterAttachAmmo final
+{
+public:
+	bool                                          bInFirstPerson;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAWeaponAttachment_OnCharacterAttachAmmo;
+
+// Function Midair2.MAWeaponAttachment.OnCharacterGrabAmmo
+// 0x0001 (0x0001 - 0x0000)
+struct MAWeaponAttachment_OnCharacterGrabAmmo final
+{
+public:
+	bool                                          bInFirstPerson;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAWeaponAttachment_OnCharacterGrabAmmo;
+
+// Function Midair2.MAWeaponAttachment.SetChargeIndicator
+// 0x0004 (0x0004 - 0x0000)
+struct MAWeaponAttachment_SetChargeIndicator final
+{
+public:
+	float                                         Intensity;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAWeaponAttachment_SetChargeIndicator;
+
+// Function Midair2.MAWeaponAttachment.SetOverrideMaterials
+// 0x0010 (0x0010 - 0x0000)
+struct MAWeaponAttachment_SetOverrideMaterials final
+{
+public:
+	class UMaterialInterface*                     NewMaterial3P;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMaterialInterface*                     NewMaterial1P;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAWeaponAttachment_SetOverrideMaterials;
 
 // Function Midair2.MALeagueGameState.GetIsFlagHolder
 // 0x0010 (0x0010 - 0x0000)
@@ -7227,6 +8025,15 @@ public:
 };
 DUMPER7_ASSERTS_MALoadoutEquipButton_UpdateButtonText;
 
+// Function Midair2.MALoadoutItemButton.GetAbilityInfo
+// 0x0008 (0x0008 - 0x0000)
+struct MALoadoutItemButton_GetAbilityInfo final
+{
+public:
+	TSubclassOf<class UAbilityInfo>               ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MALoadoutItemButton_GetAbilityInfo;
+
 // Function Midair2.MALoadoutItemButton.GetItemInfo
 // 0x0008 (0x0008 - 0x0000)
 struct MALoadoutItemButton_GetItemInfo final
@@ -7253,6 +8060,18 @@ public:
 	TSubclassOf<class UWeaponInfo>                ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MALoadoutItemButton_GetWeaponInfo;
+
+// Function Midair2.MALoadoutItemButton.SetAbilityItem
+// 0x0018 (0x0018 - 0x0000)
+struct MALoadoutItemButton_SetAbilityItem final
+{
+public:
+	class UObjectInfo*                            Info;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UAbilityInfo>               NewAbilityInfo;                                    // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ItemNumber;                                        // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MALoadoutItemButton_SetAbilityItem;
 
 // Function Midair2.MALoadoutItemButton.SetCosmeticItem
 // 0x0008 (0x0008 - 0x0000)
@@ -7350,6 +8169,15 @@ public:
 };
 DUMPER7_ASSERTS_MAMALoadoutScreen_HandleItemButtonClicked;
 
+// Function Midair2.MAMALoadoutScreen.HandleNewAbilityClicked
+// 0x0008 (0x0008 - 0x0000)
+struct MAMALoadoutScreen_HandleNewAbilityClicked final
+{
+public:
+	class UMALoadoutItemButton*                   Button;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAMALoadoutScreen_HandleNewAbilityClicked;
+
 // Function Midair2.MAMALoadoutScreen.HandleNewWeaponClicked
 // 0x0008 (0x0008 - 0x0000)
 struct MAMALoadoutScreen_HandleNewWeaponClicked final
@@ -7421,53 +8249,6 @@ public:
 	class FText                                   NewText;                                           // 0x0000(0x0018)(Parm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MALoadoutSkinButton_UpdateText;
-
-// Function Midair2.PRGameMode.AdvanceTrackingToLesson
-// 0x0004 (0x0004 - 0x0000)
-struct PRGameMode_AdvanceTrackingToLesson final
-{
-public:
-	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PRGameMode_AdvanceTrackingToLesson;
-
-// Function Midair2.PRGameMode.OnTriggerBeginLesson
-// 0x0010 (0x0010 - 0x0000)
-struct PRGameMode_OnTriggerBeginLesson final
-{
-public:
-	class AActor*                                 OverlappedActor;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PRGameMode_OnTriggerBeginLesson;
-
-// Function Midair2.PRGameMode.OnTriggerEndLesson
-// 0x0010 (0x0010 - 0x0000)
-struct PRGameMode_OnTriggerEndLesson final
-{
-public:
-	class AActor*                                 OverlappedActor;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PRGameMode_OnTriggerEndLesson;
-
-// Function Midair2.PRGameMode.GetCurrentLesson
-// 0x00D0 (0x00D0 - 0x0000)
-struct PRGameMode_GetCurrentLesson final
-{
-public:
-	struct FPracticeLessonDetails                 ReturnValue;                                       // 0x0000(0x00D0)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PRGameMode_GetCurrentLesson;
-
-// Function Midair2.PRGameMode.GetCurrentLessonTag
-// 0x0008 (0x0008 - 0x0000)
-struct PRGameMode_GetCurrentLessonTag final
-{
-public:
-	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PRGameMode_GetCurrentLessonTag;
 
 // Function Midair2.MALoadoutSkinSelection.BP_SetIsActive
 // 0x0001 (0x0001 - 0x0000)
@@ -7669,32 +8450,23 @@ public:
 };
 DUMPER7_ASSERTS_MALobbyManager_GetTeamAssignmentsFromLobby;
 
-// Function Midair2.GoalEffectParticleConfiguration.SetParticlesOnActor
+// Function Midair2.ParticleConfiguration.SetParticlesOnActor
 // 0x0008 (0x0008 - 0x0000)
-struct GoalEffectParticleConfiguration_SetParticlesOnActor final
+struct ParticleConfiguration_SetParticlesOnActor final
 {
 public:
 	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_GoalEffectParticleConfiguration_SetParticlesOnActor;
+DUMPER7_ASSERTS_ParticleConfiguration_SetParticlesOnActor;
 
-// Function Midair2.GoalEffectParticleConfiguration.SetParticlesOnComponent
+// Function Midair2.ParticleConfiguration.SetParticlesOnComponent
 // 0x0008 (0x0008 - 0x0000)
-struct GoalEffectParticleConfiguration_SetParticlesOnComponent final
+struct ParticleConfiguration_SetParticlesOnComponent final
 {
 public:
 	class UParticleSystemComponent*               Component;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_GoalEffectParticleConfiguration_SetParticlesOnComponent;
-
-// Function Midair2.GoalEffectParticleConfiguration.GetAssociatedAudioClass
-// 0x0008 (0x0008 - 0x0000)
-struct GoalEffectParticleConfiguration_GetAssociatedAudioClass final
-{
-public:
-	class USoundBase*                             ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GoalEffectParticleConfiguration_GetAssociatedAudioClass;
+DUMPER7_ASSERTS_ParticleConfiguration_SetParticlesOnComponent;
 
 // Function Midair2.MALocalMessagesWidget.AddMessage
 // 0x0048 (0x0048 - 0x0000)
@@ -7760,35 +8532,23 @@ public:
 };
 DUMPER7_ASSERTS_MALocalPlayer_GetSharedSettings;
 
-// Function Midair2.ObjectivePrompt.ClearPrompt
-// 0x0001 (0x0001 - 0x0000)
-struct ObjectivePrompt_ClearPrompt final
+// Function Midair2.MAMainMenuScreen.GetBroadcasts
+// 0x0010 (0x0010 - 0x0000)
+struct MAMainMenuScreen_GetBroadcasts final
 {
 public:
-	bool                                          bCompleted;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FMABroadcast>                   ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_ObjectivePrompt_ClearPrompt;
+DUMPER7_ASSERTS_MAMainMenuScreen_GetBroadcasts;
 
-// Function Midair2.ObjectivePrompt.SetPrompt
-// 0x0078 (0x0078 - 0x0000)
-struct ObjectivePrompt_SetPrompt final
+// Function Midair2.MAMainMenuScreen.GetBroadcastsSortedByDate
+// 0x0010 (0x0010 - 0x0000)
+struct MAMainMenuScreen_GetBroadcastsSortedByDate final
 {
 public:
-	struct FMidairObjectiveInfo                   NewObjectiveInfo;                                  // 0x0000(0x0078)(Parm, OutParm, NativeAccessSpecifierPublic)
+	TArray<struct FMABroadcast>                   ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_ObjectivePrompt_SetPrompt;
-
-// Function Midair2.ObjectivePrompt.UpdateExistingPrompt
-// 0x0080 (0x0080 - 0x0000)
-struct ObjectivePrompt_UpdateExistingPrompt final
-{
-public:
-	struct FMidairObjectiveInfo                   DeltaObjectiveInfo;                                // 0x0000(0x0078)(Parm, OutParm, NativeAccessSpecifierPublic)
-	EObjectiveUpdateType                          UpdateType;                                        // 0x0078(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bWantsUpdate;                                      // 0x0079(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_7A[0x6];                                       // 0x007A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_ObjectivePrompt_UpdateExistingPrompt;
+DUMPER7_ASSERTS_MAMainMenuScreen_GetBroadcastsSortedByDate;
 
 // Function Midair2.MAMainMenuScreen.HandleButtonClicked
 // 0x0010 (0x0010 - 0x0000)
@@ -7810,24 +8570,14 @@ public:
 };
 DUMPER7_ASSERTS_MAMainMenuScreen_HandleMatchmakingQueue;
 
-// Function Midair2.TutorialDialougeManager.NewDialougeManager
+// Function Midair2.MAMainMenuScreen.RemoveBroadcast
 // 0x0010 (0x0010 - 0x0000)
-struct TutorialDialougeManager_NewDialougeManager final
+struct MAMainMenuScreen_RemoveBroadcast final
 {
 public:
-	class UObject*                                Owner;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTutorialDialougeManager*               ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 BroadcastId;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_TutorialDialougeManager_NewDialougeManager;
-
-// Function Midair2.TutorialDialougeManager.TryAddSound
-// 0x0018 (0x0018 - 0x0000)
-struct TutorialDialougeManager_TryAddSound final
-{
-public:
-	struct FTutorialDialougeDetails               NewSound;                                          // 0x0000(0x0018)(Parm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_TutorialDialougeManager_TryAddSound;
+DUMPER7_ASSERTS_MAMainMenuScreen_RemoveBroadcast;
 
 // Function Midair2.MAMatchMakerSubsystem.CreateTicket
 // 0x0010 (0x0010 - 0x0000)
@@ -7838,6 +8588,15 @@ public:
 };
 DUMPER7_ASSERTS_MAMatchMakerSubsystem_CreateTicket;
 
+// Function Midair2.MAMatchMakerSubsystem.GetCurrentGameMode
+// 0x0010 (0x0010 - 0x0000)
+struct MAMatchMakerSubsystem_GetCurrentGameMode final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAMatchMakerSubsystem_GetCurrentGameMode;
+
 // Function Midair2.MAMatchMakerSubsystem.GetCurrentStatus
 // 0x0001 (0x0001 - 0x0000)
 struct MAMatchMakerSubsystem_GetCurrentStatus final
@@ -7846,6 +8605,15 @@ public:
 	EMAMatchmakingStatus                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MAMatchMakerSubsystem_GetCurrentStatus;
+
+// Function Midair2.MAMatchMakerSubsystem.IsInMatchmadeGame
+// 0x0001 (0x0001 - 0x0000)
+struct MAMatchMakerSubsystem_IsInMatchmadeGame final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAMatchMakerSubsystem_IsInMatchmadeGame;
 
 // Function Midair2.MAMatchMakerSubsystem.IsSearchInProgress
 // 0x0001 (0x0001 - 0x0000)
@@ -7865,6 +8633,78 @@ public:
 };
 DUMPER7_ASSERTS_MAMatchMakerSubsystem_OnLatencyTestComplete;
 
+// Function Midair2.MAMatchMakerSubsystem.OnPartyJoinLatencyTestComplete
+// 0x0010 (0x0010 - 0x0000)
+struct MAMatchMakerSubsystem_OnPartyJoinLatencyTestComplete final
+{
+public:
+	TArray<struct FIPPortInfo>                    SortedServers;                                     // 0x0000(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAMatchMakerSubsystem_OnPartyJoinLatencyTestComplete;
+
+// Function Midair2.MAMatchMakerSubsystem.OnQueueError
+// 0x0010 (0x0010 - 0x0000)
+struct MAMatchMakerSubsystem_OnQueueError final
+{
+public:
+	class FString                                 ErrorMsg;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAMatchMakerSubsystem_OnQueueError;
+
+// Function Midair2.MAMatchMakerSubsystem.OnQueueJoined
+// 0x0010 (0x0010 - 0x0000)
+struct MAMatchMakerSubsystem_OnQueueJoined final
+{
+public:
+	class FString                                 TicketId;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAMatchMakerSubsystem_OnQueueJoined;
+
+// Function Midair2.MAMatchMakerSubsystem.OnQueueReady
+// 0x0010 (0x0010 - 0x0000)
+struct MAMatchMakerSubsystem_OnQueueReady final
+{
+public:
+	class FString                                 JoinString;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAMatchMakerSubsystem_OnQueueReady;
+
+// Function Midair2.MAMatchMakerSubsystem.OnQueueUpdated
+// 0x0010 (0x0010 - 0x0000)
+struct MAMatchMakerSubsystem_OnQueueUpdated final
+{
+public:
+	class FString                                 Status;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAMatchMakerSubsystem_OnQueueUpdated;
+
+// Function Midair2.MAMatchMakerSubsystem.SetCurrentStatus
+// 0x0001 (0x0001 - 0x0000)
+struct MAMatchMakerSubsystem_SetCurrentStatus final
+{
+public:
+	EMAMatchmakingStatus                          NewStatus;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAMatchMakerSubsystem_SetCurrentStatus;
+
+// Function Midair2.MAMatchMakerSubsystem.SetIsInMatchmadeGame
+// 0x0001 (0x0001 - 0x0000)
+struct MAMatchMakerSubsystem_SetIsInMatchmadeGame final
+{
+public:
+	bool                                          bIsInGame;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAMatchMakerSubsystem_SetIsInMatchmadeGame;
+
+// Function Midair2.MAMatchMakerSubsystem.StartRequeueCountdown
+// 0x0004 (0x0004 - 0x0000)
+struct MAMatchMakerSubsystem_StartRequeueCountdown final
+{
+public:
+	int32                                         Seconds;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAMatchMakerSubsystem_StartRequeueCountdown;
+
 // Function Midair2.MAMatchMakerSubsystem.ToggleMatchmaking
 // 0x0010 (0x0010 - 0x0000)
 struct MAMatchMakerSubsystem_ToggleMatchmaking final
@@ -7874,17 +8714,32 @@ public:
 };
 DUMPER7_ASSERTS_MAMatchMakerSubsystem_ToggleMatchmaking;
 
-// Function Midair2.SetUserBanStatusAsyncTask.BanUser
-// 0x0018 (0x0018 - 0x0000)
-struct SetUserBanStatusAsyncTask_BanUser final
+// Function Midair2.MAMatchMakerSubsystem.UpdatedQueueInfo
+// 0x0014 (0x0014 - 0x0000)
+struct MAMatchMakerSubsystem_UpdatedQueueInfo final
 {
 public:
-	class APlayerState*                           PlayerState;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsBanned;                                         // 0x0008(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class USetUserBanStatusAsyncTask*             ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMMQueueInfo                           QueueInfo;                                         // 0x0000(0x0014)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_SetUserBanStatusAsyncTask_BanUser;
+DUMPER7_ASSERTS_MAMatchMakerSubsystem_UpdatedQueueInfo;
+
+// Function Midair2.MAMatchMakerSubsystem.GetRequeueSecondsRemaining
+// 0x0004 (0x0004 - 0x0000)
+struct MAMatchMakerSubsystem_GetRequeueSecondsRemaining final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAMatchMakerSubsystem_GetRequeueSecondsRemaining;
+
+// Function Midair2.MAMenuPartyMember.PartyMemberChanged
+// 0x0120 (0x0120 - 0x0000)
+struct MAMenuPartyMember_PartyMemberChanged final
+{
+public:
+	struct FMidairPartyMemberInfo                 PartyMember;                                       // 0x0000(0x0120)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAMenuPartyMember_PartyMemberChanged;
 
 // Function Midair2.MAMultipleOptions_Discrete.PopulateTextLabels
 // 0x0010 (0x0010 - 0x0000)
@@ -7937,6 +8792,33 @@ public:
 };
 DUMPER7_ASSERTS_FlagReturnPainVolume_OnCarriedIntoVolume;
 
+// Function Midair2.PointOfInterestComponent.GetOwnerVitals
+// 0x0008 (0x0008 - 0x0000)
+struct PointOfInterestComponent_GetOwnerVitals final
+{
+public:
+	class UMAVitalsComponent*                     ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PointOfInterestComponent_GetOwnerVitals;
+
+// Function Midair2.PointOfInterestComponent.GetTargetComponent
+// 0x0008 (0x0008 - 0x0000)
+struct PointOfInterestComponent_GetTargetComponent final
+{
+public:
+	class UTargetComponent*                       ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PointOfInterestComponent_GetTargetComponent;
+
+// Function Midair2.PointOfInterestComponent.GetTargetCompState
+// 0x0008 (0x0008 - 0x0000)
+struct PointOfInterestComponent_GetTargetCompState final
+{
+public:
+	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PointOfInterestComponent_GetTargetCompState;
+
 // Function Midair2.MAPartyAvatarProxy.HandleAvatarComplete
 // 0x0030 (0x0030 - 0x0000)
 struct MAPartyAvatarProxy_HandleAvatarComplete final
@@ -7966,6 +8848,16 @@ public:
 };
 DUMPER7_ASSERTS_MAPartySubsystem_DeclineInvite;
 
+// Function Midair2.MAPartySubsystem.GetCachedAvatar
+// 0x0030 (0x0030 - 0x0000)
+struct MAPartySubsystem_GetCachedAvatar final
+{
+public:
+	struct FUniqueNetIdRepl                       UserId;                                            // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture2D*                             ReturnValue;                                       // 0x0028(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAPartySubsystem_GetCachedAvatar;
+
 // Function Midair2.MAPartySubsystem.HandlePartyMemberDataReceived
 // 0x0028 (0x0028 - 0x0000)
 struct MAPartySubsystem_HandlePartyMemberDataReceived final
@@ -7993,38 +8885,18 @@ public:
 };
 DUMPER7_ASSERTS_MAPartySubsystem_HandlePartyMemberLeft;
 
-// Function Midair2.MAPartySubsystem.OnAvatarCompleteProxy
-// 0x0058 (0x0058 - 0x0000)
-struct MAPartySubsystem_OnAvatarCompleteProxy final
-{
-public:
-	bool                                          bOK;                                               // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TSoftObjectPtr<class UTexture>                Tex;                                               // 0x0008(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FUniqueNetIdRepl                       UserId;                                            // 0x0030(0x0028)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAPartySubsystem_OnAvatarCompleteProxy;
-
 // Function Midair2.MAPartySubsystem.OnAvatarForUser
-// 0x0058 (0x0058 - 0x0000)
+// 0x0080 (0x0080 - 0x0000)
 struct MAPartySubsystem_OnAvatarForUser final
 {
 public:
 	bool                                          bOK;                                               // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TSoftObjectPtr<class UTexture>                Tex;                                               // 0x0008(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FUniqueNetIdRepl                       UserId;                                            // 0x0030(0x0028)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FUniqueNetIdRepl                       steamID;                                           // 0x0030(0x0028)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FUniqueNetIdRepl                       EOSId;                                             // 0x0058(0x0028)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MAPartySubsystem_OnAvatarForUser;
-
-// Function Midair2.MAPartySubsystem.OnFriendsReadComplete
-// 0x0001 (0x0001 - 0x0000)
-struct MAPartySubsystem_OnFriendsReadComplete final
-{
-public:
-	bool                                          bWasSuccessful;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAPartySubsystem_OnFriendsReadComplete;
 
 // Function Midair2.MAPartySubsystem.SendPartyInvite
 // 0x0028 (0x0028 - 0x0000)
@@ -8053,17 +8925,36 @@ public:
 };
 DUMPER7_ASSERTS_MAPartySubsystem_GetPartyMembers;
 
-// Function Midair2.ServerBrowserSupport.DoUDPPing
-// 0x0028 (0x0028 - 0x0000)
-struct ServerBrowserSupport_DoUDPPing final
+// Function Midair2.ServiceBlueprintLibrary.GetDemoProgress
+// 0x0004 (0x0004 - 0x0000)
+struct ServiceBlueprintLibrary_GetDemoProgress final
 {
 public:
-	class FString                                 Address;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Timeout;                                           // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(bool got_reply, float latency)> Callback;                                         // 0x0014(0x0010)(Parm, ZeroConstructor, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_ServerBrowserSupport_DoUDPPing;
+DUMPER7_ASSERTS_ServiceBlueprintLibrary_GetDemoProgress;
+
+// Function Midair2.ServiceBlueprintLibrary.IsDownloadedDemo
+// 0x0018 (0x0018 - 0x0000)
+struct ServiceBlueprintLibrary_IsDownloadedDemo final
+{
+public:
+	class FString                                 demoId;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_ServiceBlueprintLibrary_IsDownloadedDemo;
+
+// Function Midair2.ServiceBlueprintLibrary.IsSameDemoVersion
+// 0x0018 (0x0018 - 0x0000)
+struct ServiceBlueprintLibrary_IsSameDemoVersion final
+{
+public:
+	class FString                                 DemoVersion;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_ServiceBlueprintLibrary_IsSameDemoVersion;
 
 // Function Midair2.MAPerformanceStatSubsystem.GetCachedStat
 // 0x0008 (0x0008 - 0x0000)
@@ -8075,6 +8966,406 @@ public:
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MAPerformanceStatSubsystem_GetCachedStat;
+
+// Function Midair2.PlayerLoadoutsSave.GetCustomLoadoutsSave
+// 0x0010 (0x0010 - 0x0000)
+struct PlayerLoadoutsSave_GetCustomLoadoutsSave final
+{
+public:
+	bool                                          bForceNew;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPlayerLoadoutsSave*                    ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_GetCustomLoadoutsSave;
+
+// Function Midair2.PlayerLoadoutsSave.GetGlobalLoadoutsSave
+// 0x0010 (0x0010 - 0x0000)
+struct PlayerLoadoutsSave_GetGlobalLoadoutsSave final
+{
+public:
+	bool                                          bForceNew;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPlayerLoadoutsSave*                    ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_GetGlobalLoadoutsSave;
+
+// Function Midair2.PlayerLoadoutsSave.GetLoadoutBackpack
+// 0x0008 (0x0008 - 0x0000)
+struct PlayerLoadoutsSave_GetLoadoutBackpack final
+{
+public:
+	TSubclassOf<class UBackpackInfo>              OutBackpack;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_GetLoadoutBackpack;
+
+// Function Midair2.PlayerLoadoutsSave.GetLoadoutBackpackInfo
+// 0x0008 (0x0008 - 0x0000)
+struct PlayerLoadoutsSave_GetLoadoutBackpackInfo final
+{
+public:
+	class UBackpackInfo*                          ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_GetLoadoutBackpackInfo;
+
+// Function Midair2.PlayerLoadoutsSave.GetLoadoutCharacter
+// 0x0008 (0x0008 - 0x0000)
+struct PlayerLoadoutsSave_GetLoadoutCharacter final
+{
+public:
+	TSubclassOf<class UCharacterInfo>             OutCharacter;                                      // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_GetLoadoutCharacter;
+
+// Function Midair2.PlayerLoadoutsSave.GetLoadoutCharacterInfo
+// 0x0008 (0x0008 - 0x0000)
+struct PlayerLoadoutsSave_GetLoadoutCharacterInfo final
+{
+public:
+	class UCharacterInfo*                         ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_GetLoadoutCharacterInfo;
+
+// Function Midair2.PlayerLoadoutsSave.GetLoadoutThrowables
+// 0x0010 (0x0010 - 0x0000)
+struct PlayerLoadoutsSave_GetLoadoutThrowables final
+{
+public:
+	TArray<TSubclassOf<class UThrowableInfo>>     OutThrowables;                                     // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_GetLoadoutThrowables;
+
+// Function Midair2.PlayerLoadoutsSave.GetLoadoutWeapons
+// 0x0010 (0x0010 - 0x0000)
+struct PlayerLoadoutsSave_GetLoadoutWeapons final
+{
+public:
+	TArray<TSubclassOf<class UWeaponInfo>>        OutWeapons;                                        // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_GetLoadoutWeapons;
+
+// Function Midair2.PlayerLoadoutsSave.GetSprayIdent
+// 0x0008 (0x0008 - 0x0000)
+struct PlayerLoadoutsSave_GetSprayIdent final
+{
+public:
+	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_GetSprayIdent;
+
+// Function Midair2.PlayerLoadoutsSave.GetVoiceIdent
+// 0x0008 (0x0008 - 0x0000)
+struct PlayerLoadoutsSave_GetVoiceIdent final
+{
+public:
+	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_GetVoiceIdent;
+
+// Function Midair2.PlayerLoadoutsSave.ChangeSelectedLoadout
+// 0x00C0 (0x00C0 - 0x0000)
+struct PlayerLoadoutsSave_ChangeSelectedLoadout final
+{
+public:
+	struct FMALoadout                             Loadout;                                           // 0x0000(0x00C0)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_ChangeSelectedLoadout;
+
+// Function Midair2.PlayerLoadoutsSave.CheckCharacterForCurrentLoadout
+// 0x0018 (0x0018 - 0x0000)
+struct PlayerLoadoutsSave_CheckCharacterForCurrentLoadout final
+{
+public:
+	TSubclassOf<class UCharacterInfo>             DesiredCharacter;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FText>                           ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_CheckCharacterForCurrentLoadout;
+
+// Function Midair2.PlayerLoadoutsSave.CheckCharacterForLoadout
+// 0x00D8 (0x00D8 - 0x0000)
+struct PlayerLoadoutsSave_CheckCharacterForLoadout final
+{
+public:
+	TSubclassOf<class UCharacterInfo>             DesiredCharacter;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMALoadout                             UseLoadout;                                        // 0x0008(0x00C0)(Parm, NativeAccessSpecifierPublic)
+	TArray<class FText>                           ReturnValue;                                       // 0x00C8(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_CheckCharacterForLoadout;
+
+// Function Midair2.PlayerLoadoutsSave.CheckPackForCurrentLoadout
+// 0x0020 (0x0020 - 0x0000)
+struct PlayerLoadoutsSave_CheckPackForCurrentLoadout final
+{
+public:
+	TSubclassOf<class UBackpackInfo>              DesiredBackpack;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UCharacterInfo>             OverrideComparisonCharacter;                       // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FText>                           ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_CheckPackForCurrentLoadout;
+
+// Function Midair2.PlayerLoadoutsSave.CheckPackForLoadout
+// 0x00E0 (0x00E0 - 0x0000)
+struct PlayerLoadoutsSave_CheckPackForLoadout final
+{
+public:
+	TSubclassOf<class UBackpackInfo>              DesiredBackpack;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMALoadout                             UseLoadout;                                        // 0x0008(0x00C0)(Parm, NativeAccessSpecifierPublic)
+	TSubclassOf<class UCharacterInfo>             OverrideComparisonCharacter;                       // 0x00C8(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FText>                           ReturnValue;                                       // 0x00D0(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_CheckPackForLoadout;
+
+// Function Midair2.PlayerLoadoutsSave.CheckThrowableForCurrentLoadout
+// 0x0020 (0x0020 - 0x0000)
+struct PlayerLoadoutsSave_CheckThrowableForCurrentLoadout final
+{
+public:
+	int32                                         IndexAt;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UThrowableInfo>             DesiredThrowable;                                  // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FText>                           ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_CheckThrowableForCurrentLoadout;
+
+// Function Midair2.PlayerLoadoutsSave.CheckThrowableForLoadout
+// 0x00E0 (0x00E0 - 0x0000)
+struct PlayerLoadoutsSave_CheckThrowableForLoadout final
+{
+public:
+	int32                                         IndexAt;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UThrowableInfo>             DesiredThrowable;                                  // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMALoadout                             UseLoadout;                                        // 0x0010(0x00C0)(Parm, NativeAccessSpecifierPublic)
+	TArray<class FText>                           ReturnValue;                                       // 0x00D0(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_CheckThrowableForLoadout;
+
+// Function Midair2.PlayerLoadoutsSave.CheckWeaponForCurrentLoadout
+// 0x0020 (0x0020 - 0x0000)
+struct PlayerLoadoutsSave_CheckWeaponForCurrentLoadout final
+{
+public:
+	int32                                         IndexAt;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UWeaponInfo>                DesiredWeapon;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FText>                           ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_CheckWeaponForCurrentLoadout;
+
+// Function Midair2.PlayerLoadoutsSave.CheckWeaponForLoadout
+// 0x00E0 (0x00E0 - 0x0000)
+struct PlayerLoadoutsSave_CheckWeaponForLoadout final
+{
+public:
+	int32                                         IndexAt;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UWeaponInfo>                DesiredWeapon;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMALoadout                             UseLoadout;                                        // 0x0010(0x00C0)(Parm, NativeAccessSpecifierPublic)
+	TArray<class FText>                           ReturnValue;                                       // 0x00D0(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_CheckWeaponForLoadout;
+
+// Function Midair2.PlayerLoadoutsSave.GetLastSelectedLoadout
+// 0x00C0 (0x00C0 - 0x0000)
+struct PlayerLoadoutsSave_GetLastSelectedLoadout final
+{
+public:
+	struct FMALoadout                             outLoadout;                                        // 0x0000(0x00C0)(Parm, OutParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_GetLastSelectedLoadout;
+
+// Function Midair2.PlayerLoadoutsSave.GetLoadoutsForGamemode
+// 0x0010 (0x0010 - 0x0000)
+struct PlayerLoadoutsSave_GetLoadoutsForGamemode final
+{
+public:
+	TArray<struct FMALoadout>                     ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_GetLoadoutsForGamemode;
+
+// Function Midair2.PlayerLoadoutsSave.GetNamedCosmeticSelection
+// 0x0010 (0x0010 - 0x0000)
+struct PlayerLoadoutsSave_GetNamedCosmeticSelection final
+{
+public:
+	class FName                                   Name_0;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UClass*                                 ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_GetNamedCosmeticSelection;
+
+// Function Midair2.PlayerLoadoutsSave.ModifyNamedCosmeticSelection
+// 0x0010 (0x0010 - 0x0000)
+struct PlayerLoadoutsSave_ModifyNamedCosmeticSelection final
+{
+public:
+	class FName                                   Name_0;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UClass*                                 Cosmetic;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_ModifyNamedCosmeticSelection;
+
+// Function Midair2.PlayerLoadoutsSave.ModifySelectedLoadout_Ability
+// 0x0010 (0x0010 - 0x0000)
+struct PlayerLoadoutsSave_ModifySelectedLoadout_Ability final
+{
+public:
+	TSubclassOf<class UAbilityInfo>               DesiredAbility;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_ModifySelectedLoadout_Ability;
+
+// Function Midair2.PlayerLoadoutsSave.ModifySelectedLoadout_Character
+// 0x0010 (0x0010 - 0x0000)
+struct PlayerLoadoutsSave_ModifySelectedLoadout_Character final
+{
+public:
+	TSubclassOf<class UCharacterInfo>             DesiredCharacter;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDoCheck;                                          // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0009(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_ModifySelectedLoadout_Character;
+
+// Function Midair2.PlayerLoadoutsSave.ModifySelectedLoadout_Name
+// 0x0010 (0x0010 - 0x0000)
+struct PlayerLoadoutsSave_ModifySelectedLoadout_Name final
+{
+public:
+	class FString                                 DesiredName;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_ModifySelectedLoadout_Name;
+
+// Function Midair2.PlayerLoadoutsSave.ModifySelectedLoadout_ObjectSkin
+// 0x0018 (0x0018 - 0x0000)
+struct PlayerLoadoutsSave_ModifySelectedLoadout_ObjectSkin final
+{
+public:
+	TSubclassOf<class UObjectInfo>                ObjectInfoClass;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class ACosmeticConfiguration>     DesiredSkin;                                       // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_ModifySelectedLoadout_ObjectSkin;
+
+// Function Midair2.PlayerLoadoutsSave.ModifySelectedLoadout_Pack
+// 0x0010 (0x0010 - 0x0000)
+struct PlayerLoadoutsSave_ModifySelectedLoadout_Pack final
+{
+public:
+	TSubclassOf<class UBackpackInfo>              DesiredBackpack;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDoCheck;                                          // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0009(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_ModifySelectedLoadout_Pack;
+
+// Function Midair2.PlayerLoadoutsSave.ModifySelectedLoadout_Throwable
+// 0x0018 (0x0018 - 0x0000)
+struct PlayerLoadoutsSave_ModifySelectedLoadout_Throwable final
+{
+public:
+	int32                                         IndexAt;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UThrowableInfo>             DesiredThrowable;                                  // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDoCheck;                                          // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0011(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_ModifySelectedLoadout_Throwable;
+
+// Function Midair2.PlayerLoadoutsSave.ModifySelectedLoadout_VoiceSet
+// 0x0010 (0x0010 - 0x0000)
+struct PlayerLoadoutsSave_ModifySelectedLoadout_VoiceSet final
+{
+public:
+	TSubclassOf<class UVoiceSetInfo>              DesiredVoiceSet;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_ModifySelectedLoadout_VoiceSet;
+
+// Function Midair2.PlayerLoadoutsSave.ModifySelectedLoadout_Weapon
+// 0x0020 (0x0020 - 0x0000)
+struct PlayerLoadoutsSave_ModifySelectedLoadout_Weapon final
+{
+public:
+	int32                                         IndexAt;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UWeaponInfo>                DesiredWeapon;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class AWeaponSkinConfiguration>   DesiredSkin;                                       // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDoCheck;                                          // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0019(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1A[0x6];                                       // 0x001A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_ModifySelectedLoadout_Weapon;
+
+// Function Midair2.PlayerLoadoutsSave.SetLastSelectedIndex
+// 0x0004 (0x0004 - 0x0000)
+struct PlayerLoadoutsSave_SetLastSelectedIndex final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_SetLastSelectedIndex;
+
+// Function Midair2.PlayerLoadoutsSave.CheckLoadoutNameUnique
+// 0x0018 (0x0018 - 0x0000)
+struct PlayerLoadoutsSave_CheckLoadoutNameUnique final
+{
+public:
+	class FString                                 DesiredName;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_CheckLoadoutNameUnique;
+
+// Function Midair2.PlayerLoadoutsSave.GetLastSelectedIndex
+// 0x0004 (0x0004 - 0x0000)
+struct PlayerLoadoutsSave_GetLastSelectedIndex final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_GetLastSelectedIndex;
+
+// Function Midair2.PlayerLoadoutsSave.GetLoadoutIndex
+// 0x00C8 (0x00C8 - 0x0000)
+struct PlayerLoadoutsSave_GetLoadoutIndex final
+{
+public:
+	struct FMALoadout                             Loadout;                                           // 0x0000(0x00C0)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x00C0(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C4[0x4];                                       // 0x00C4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_PlayerLoadoutsSave_GetLoadoutIndex;
+
+// Function Midair2.SensorNetworkComponent.SetSensorChannel
+// 0x0001 (0x0001 - 0x0000)
+struct SensorNetworkComponent_SetSensorChannel final
+{
+public:
+	uint8                                         NewChannel;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SensorNetworkComponent_SetSensorChannel;
+
+// Function Midair2.SensorNetworkComponent.GetSensorChannel
+// 0x0001 (0x0001 - 0x0000)
+struct SensorNetworkComponent_GetSensorChannel final
+{
+public:
+	uint8                                         ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SensorNetworkComponent_GetSensorChannel;
+
+// Function Midair2.SensorNetworkComponent.HasDetectedTarget
+// 0x0010 (0x0010 - 0x0000)
+struct SensorNetworkComponent_HasDetectedTarget final
+{
+public:
+	class UTargetComponent*                       TargetComponent;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_SensorNetworkComponent_HasDetectedTarget;
 
 // Function Midair2.MAPerfStatWidgetBase.FetchStatValue
 // 0x0004 (0x0004 - 0x0000)
@@ -8103,6 +9394,72 @@ public:
 };
 DUMPER7_ASSERTS_MAPerfStatWidgetBase_GetStatToDisplay;
 
+// Function Midair2.TargetComponent.PopSensorModifiers
+// 0x0008 (0x0008 - 0x0000)
+struct TargetComponent_PopSensorModifiers final
+{
+public:
+	struct FSensorTargetModifiers                 Modifiers;                                         // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_TargetComponent_PopSensorModifiers;
+
+// Function Midair2.TargetComponent.PushSensorModifiers
+// 0x0008 (0x0008 - 0x0000)
+struct TargetComponent_PushSensorModifiers final
+{
+public:
+	struct FSensorTargetModifiers                 Modifiers;                                         // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_TargetComponent_PushSensorModifiers;
+
+// Function Midair2.TargetComponent.SetSensorResolutionStrengthTime
+// 0x0008 (0x0008 - 0x0000)
+struct TargetComponent_SetSensorResolutionStrengthTime final
+{
+public:
+	ESensorResolutionStrength                     Strength;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Time;                                              // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_TargetComponent_SetSensorResolutionStrengthTime;
+
+// Function Midair2.TargetComponent.GetHighestDetectedState
+// 0x0001 (0x0001 - 0x0000)
+struct TargetComponent_GetHighestDetectedState final
+{
+public:
+	EDetectedState                                ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_TargetComponent_GetHighestDetectedState;
+
+// Function Midair2.TargetComponent.IsDetectedByChannel
+// 0x0002 (0x0002 - 0x0000)
+struct TargetComponent_IsDetectedByChannel final
+{
+public:
+	uint8                                         InChannel;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_TargetComponent_IsDetectedByChannel;
+
+// Function Midair2.MAPlatformEmulationSettings.GetKnownDeviceProfiles
+// 0x0010 (0x0010 - 0x0000)
+struct MAPlatformEmulationSettings_GetKnownDeviceProfiles final
+{
+public:
+	TArray<class FName>                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAPlatformEmulationSettings_GetKnownDeviceProfiles;
+
+// Function Midair2.MAPlatformEmulationSettings.GetKnownPlatformIds
+// 0x0010 (0x0010 - 0x0000)
+struct MAPlatformEmulationSettings_GetKnownPlatformIds final
+{
+public:
+	TArray<class FName>                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAPlatformEmulationSettings_GetKnownPlatformIds;
+
 // Function Midair2.MAPlaybackComponent.K2_CreateAndAddEvent
 // 0x0010 (0x0010 - 0x0000)
 struct MAPlaybackComponent_K2_CreateAndAddEvent final
@@ -8112,6 +9469,17 @@ public:
 	class UMAPlaybackEvent*                       ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MAPlaybackComponent_K2_CreateAndAddEvent;
+
+// Function Midair2.MAInventoryBPLibrary.GetRarityFromItem
+// 0x0010 (0x0010 - 0x0000)
+struct MAInventoryBPLibrary_GetRarityFromItem final
+{
+public:
+	class UClass*                                 Item;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERarityType                                   ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MAInventoryBPLibrary_GetRarityFromItem;
 
 // Function Midair2.MAPlayerStatsScreen.BP_CreateStat
 // 0x0020 (0x0020 - 0x0000)
@@ -8125,6 +9493,64 @@ public:
 	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_MAPlayerStatsScreen_BP_CreateStat;
+
+// Function Midair2.MAPowerup.AssistCapsuleTouched
+// 0x00A8 (0x00A8 - 0x0000)
+struct MAPowerup_AssistCapsuleTouched final
+{
+public:
+	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFromSweep;                                        // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHitResult                             SweepResult;                                       // 0x0020(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAPowerup_AssistCapsuleTouched;
+
+// Function Midair2.MAPowerup.CapsuleTouched
+// 0x00A8 (0x00A8 - 0x0000)
+struct MAPowerup_CapsuleTouched final
+{
+public:
+	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFromSweep;                                        // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHitResult                             SweepResult;                                       // 0x0020(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAPowerup_CapsuleTouched;
+
+// Function Midair2.MAPowerup.Tick
+// 0x0004 (0x0004 - 0x0000)
+struct MAPowerup_Tick final
+{
+public:
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MAPowerup_Tick;
+
+// Function Midair2.TDMFlag.OnBounce
+// 0x0094 (0x0094 - 0x0000)
+struct TDMFlag_OnBounce final
+{
+public:
+	struct FHitResult                             ImpactResult;                                      // 0x0000(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	struct FVector                                ImpactVelocity;                                    // 0x0088(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_TDMFlag_OnBounce;
+
+// Function Midair2.TDMFlag.OnStop
+// 0x0088 (0x0088 - 0x0000)
+struct TDMFlag_OnStop final
+{
+public:
+	struct FHitResult                             ImpactResult;                                      // 0x0000(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_TDMFlag_OnStop;
 
 // Function Midair2.MAPracticeComponent.AddBotToDrill
 // 0x0010 (0x0010 - 0x0000)
@@ -8582,7 +10008,7 @@ struct MAPracticeComponent_SaveSelectedTutorial final
 public:
 	class FString                                 Name_0;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 Description;                                       // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Author;                                            // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 author;                                            // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MAPracticeComponent_SaveSelectedTutorial;
 
@@ -8639,34 +10065,34 @@ public:
 DUMPER7_ASSERTS_MAPracticeComponent_ServerSetPubStarterNumTargetPlayers;
 
 // Function Midair2.MAPracticeComponent.ServerSpawnBot
-// 0x0168 (0x0168 - 0x0000)
+// 0x0170 (0x0170 - 0x0000)
 struct MAPracticeComponent_ServerSpawnBot final
 {
 public:
-	struct FMABotConfig                           BotConfig;                                         // 0x0000(0x0168)(Parm, NativeAccessSpecifierPublic)
+	struct FMABotConfig                           BotConfig;                                         // 0x0000(0x0170)(Parm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MAPracticeComponent_ServerSpawnBot;
 
 // Function Midair2.MAPracticeComponent.ServerSpawnBotOnTeam
-// 0x0170 (0x0170 - 0x0000)
+// 0x0178 (0x0178 - 0x0000)
 struct MAPracticeComponent_ServerSpawnBotOnTeam final
 {
 public:
-	struct FMABotConfig                           BotConfig;                                         // 0x0000(0x0168)(Parm, NativeAccessSpecifierPublic)
-	ETeamId                                       TeamId;                                            // 0x0168(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_169[0x7];                                      // 0x0169(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FMABotConfig                           BotConfig;                                         // 0x0000(0x0170)(Parm, NativeAccessSpecifierPublic)
+	ETeamId                                       TeamId;                                            // 0x0170(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_171[0x7];                                      // 0x0171(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_MAPracticeComponent_ServerSpawnBotOnTeam;
 
 // Function Midair2.MAPracticeComponent.ServerSpawnBotOnTeamForce
-// 0x0170 (0x0170 - 0x0000)
+// 0x0178 (0x0178 - 0x0000)
 struct MAPracticeComponent_ServerSpawnBotOnTeamForce final
 {
 public:
-	struct FMABotConfig                           BotConfig;                                         // 0x0000(0x0168)(Parm, NativeAccessSpecifierPublic)
-	ETeamId                                       TeamId;                                            // 0x0168(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          OverridePracticeMode;                              // 0x0169(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16A[0x6];                                      // 0x016A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FMABotConfig                           BotConfig;                                         // 0x0000(0x0170)(Parm, NativeAccessSpecifierPublic)
+	ETeamId                                       TeamId;                                            // 0x0170(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          OverridePracticeMode;                              // 0x0171(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_172[0x6];                                      // 0x0172(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_MAPracticeComponent_ServerSpawnBotOnTeamForce;
 
@@ -8800,6 +10226,113 @@ public:
 };
 DUMPER7_ASSERTS_MAPracticeComponent_GetControlledCharacter;
 
+// Function Midair2.VehicleSpawnConsole.OnBeginOverlap
+// 0x00A8 (0x00A8 - 0x0000)
+struct VehicleSpawnConsole_OnBeginOverlap final
+{
+public:
+	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFromSweep;                                        // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHitResult                             SweepResult;                                       // 0x0020(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleSpawnConsole_OnBeginOverlap;
+
+// Function Midair2.VehicleSpawnConsole.OnBeginUseBoxOverlap
+// 0x00A8 (0x00A8 - 0x0000)
+struct VehicleSpawnConsole_OnBeginUseBoxOverlap final
+{
+public:
+	class UPrimitiveComponent*                    Comp;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 Other;                                             // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         BodyIndex;                                         // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFromSweep;                                        // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHitResult                             Hit;                                               // 0x0020(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleSpawnConsole_OnBeginUseBoxOverlap;
+
+// Function Midair2.VehicleSpawnConsole.OnEndOverlap
+// 0x0020 (0x0020 - 0x0000)
+struct VehicleSpawnConsole_OnEndOverlap final
+{
+public:
+	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_VehicleSpawnConsole_OnEndOverlap;
+
+// Function Midair2.VehicleSpawnConsole.OnEndUseBoxOverlap
+// 0x0020 (0x0020 - 0x0000)
+struct VehicleSpawnConsole_OnEndUseBoxOverlap final
+{
+public:
+	class UPrimitiveComponent*                    Comp;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 Other;                                             // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         BodyIndex;                                         // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_VehicleSpawnConsole_OnEndUseBoxOverlap;
+
+// Function Midair2.VehicleSpawnConsole.OnVehicleDied
+// 0x0008 (0x0008 - 0x0000)
+struct VehicleSpawnConsole_OnVehicleDied final
+{
+public:
+	class AVehiclePawn*                           Vehicle;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleSpawnConsole_OnVehicleDied;
+
+// Function Midair2.VehicleSpawnConsole.CanSpawnClass
+// 0x0010 (0x0010 - 0x0000)
+struct VehicleSpawnConsole_CanSpawnClass final
+{
+public:
+	TSubclassOf<class AVehiclePawn>               VehicleClass;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_VehicleSpawnConsole_CanSpawnClass;
+
+// Function Midair2.VehicleSpawnConsole.GetConsoleState
+// 0x0001 (0x0001 - 0x0000)
+struct VehicleSpawnConsole_GetConsoleState final
+{
+public:
+	EVehicleSpawnState                            ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleSpawnConsole_GetConsoleState;
+
+// Function Midair2.VehicleSpawnConsole.GetMaxVehicleCount
+// 0x0010 (0x0010 - 0x0000)
+struct VehicleSpawnConsole_GetMaxVehicleCount final
+{
+public:
+	TSubclassOf<class AVehiclePawn>               VehicleClass;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_VehicleSpawnConsole_GetMaxVehicleCount;
+
+// Function Midair2.VehicleSpawnConsole.GetVehicleCount
+// 0x0010 (0x0010 - 0x0000)
+struct VehicleSpawnConsole_GetVehicleCount final
+{
+public:
+	TSubclassOf<class AVehiclePawn>               VehicleClass;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_VehicleSpawnConsole_GetVehicleCount;
+
 // Function Midair2.StagedMissileMovement.StartNewStage
 // 0x0004 (0x0004 - 0x0000)
 struct StagedMissileMovement_StartNewStage final
@@ -8808,6 +10341,263 @@ public:
 	float                                         InStageLength;                                     // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_StagedMissileMovement_StartNewStage;
+
+// Function Midair2.VehicleMoveComponent.AddFixedAngularImpulse
+// 0x0010 (0x0010 - 0x0000)
+struct VehicleMoveComponent_AddFixedAngularImpulse final
+{
+public:
+	struct FVector                                Impulse;                                           // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bVelChange;                                        // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_VehicleMoveComponent_AddFixedAngularImpulse;
+
+// Function Midair2.VehicleMoveComponent.AddFixedForce
+// 0x000C (0x000C - 0x0000)
+struct VehicleMoveComponent_AddFixedForce final
+{
+public:
+	struct FVector                                Force;                                             // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleMoveComponent_AddFixedForce;
+
+// Function Midair2.VehicleMoveComponent.AddFixedForceAtLocation
+// 0x0018 (0x0018 - 0x0000)
+struct VehicleMoveComponent_AddFixedForceAtLocation final
+{
+public:
+	struct FVector                                Force;                                             // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Location;                                          // 0x000C(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleMoveComponent_AddFixedForceAtLocation;
+
+// Function Midair2.VehicleMoveComponent.AddFixedForceNonVelChange
+// 0x000C (0x000C - 0x0000)
+struct VehicleMoveComponent_AddFixedForceNonVelChange final
+{
+public:
+	struct FVector                                Force;                                             // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleMoveComponent_AddFixedForceNonVelChange;
+
+// Function Midair2.VehicleMoveComponent.AddFixedImpulse
+// 0x000C (0x000C - 0x0000)
+struct VehicleMoveComponent_AddFixedImpulse final
+{
+public:
+	struct FVector                                Impulse;                                           // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleMoveComponent_AddFixedImpulse;
+
+// Function Midair2.VehicleMoveComponent.AddFixedImpulseAtLocation
+// 0x0018 (0x0018 - 0x0000)
+struct VehicleMoveComponent_AddFixedImpulseAtLocation final
+{
+public:
+	struct FVector                                Impulse;                                           // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Location;                                          // 0x000C(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleMoveComponent_AddFixedImpulseAtLocation;
+
+// Function Midair2.VehicleMoveComponent.AddFixedTorque
+// 0x000C (0x000C - 0x0000)
+struct VehicleMoveComponent_AddFixedTorque final
+{
+public:
+	struct FVector                                Torque;                                            // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleMoveComponent_AddFixedTorque;
+
+// Function Midair2.VehicleMoveComponent.AddFixedTorqueNonVelChange
+// 0x000C (0x000C - 0x0000)
+struct VehicleMoveComponent_AddFixedTorqueNonVelChange final
+{
+public:
+	struct FVector                                Torque;                                            // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleMoveComponent_AddFixedTorqueNonVelChange;
+
+// Function Midair2.VehicleMoveComponent.GetSocketWorldLocation
+// 0x0014 (0x0014 - 0x0000)
+struct VehicleMoveComponent_GetSocketWorldLocation final
+{
+public:
+	class FName                                   InSocketName;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                ReturnValue;                                       // 0x0008(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleMoveComponent_GetSocketWorldLocation;
+
+// Function Midair2.VehicleMoveComponent.GetSocketWorldRotation
+// 0x0020 (0x0020 - 0x0000)
+struct VehicleMoveComponent_GetSocketWorldRotation final
+{
+public:
+	class FName                                   InSocketName;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FQuat                                  ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleMoveComponent_GetSocketWorldRotation;
+
+// Function Midair2.VehicleMoveComponent.HoverFactorForSurface
+// 0x0008 (0x0008 - 0x0000)
+struct VehicleMoveComponent_HoverFactorForSurface final
+{
+public:
+	EPhysicalSurface                              Surface;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleMoveComponent_HoverFactorForSurface;
+
+// Function Midair2.VehicleMoveComponent.ServerUpdateState
+// 0x0024 (0x0024 - 0x0000)
+struct VehicleMoveComponent_ServerUpdateState final
+{
+public:
+	struct FRepStickInput                         StickInput;                                        // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRepThrustInput                        ThrustInput;                                       // 0x0010(0x0014)(ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleMoveComponent_ServerUpdateState;
+
+// Function Midair2.VehicleMoveComponent.SetAutoRoll
+// 0x0001 (0x0001 - 0x0000)
+struct VehicleMoveComponent_SetAutoRoll final
+{
+public:
+	bool                                          bNewAutoRoll;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleMoveComponent_SetAutoRoll;
+
+// Function Midair2.VehicleMoveComponent.GetFixedForwardVector
+// 0x000C (0x000C - 0x0000)
+struct VehicleMoveComponent_GetFixedForwardVector final
+{
+public:
+	struct FVector                                ReturnValue;                                       // 0x0000(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleMoveComponent_GetFixedForwardVector;
+
+// Function Midair2.VehicleMoveComponent.GetOrientationInfo
+// 0x0020 (0x0020 - 0x0000)
+struct VehicleMoveComponent_GetOrientationInfo final
+{
+public:
+	struct FQuat                                  OutOrientationRotation;                            // 0x0000(0x0010)(Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         OutProgradeDot;                                    // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0xC];                                       // 0x0014(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_VehicleMoveComponent_GetOrientationInfo;
+
+// Function Midair2.VehicleMoveComponent.GetSocketTransform
+// 0x0040 (0x0040 - 0x0000)
+struct VehicleMoveComponent_GetSocketTransform final
+{
+public:
+	class FName                                   InSocketName;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERelativeTransformSpace                       TransformSpace;                                    // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             ReturnValue;                                       // 0x0010(0x0030)(Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleMoveComponent_GetSocketTransform;
+
+// Function Midair2.VehicleMoveComponent.IsUsingAfterburner
+// 0x0001 (0x0001 - 0x0000)
+struct VehicleMoveComponent_IsUsingAfterburner final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleMoveComponent_IsUsingAfterburner;
+
+// Function Midair2.MASettingKeyboardInput.HandleBindingChanged
+// 0x00A8 (0x00A8 - 0x0000)
+struct MASettingKeyboardInput_HandleBindingChanged final
+{
+public:
+	class FName                                   Category;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMidairInputMapping                    ChangedMapping;                                    // 0x0008(0x00A0)(Parm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MASettingKeyboardInput_HandleBindingChanged;
+
+// Function Midair2.VehicleSpawnPad.OnBeginOverlap
+// 0x00A8 (0x00A8 - 0x0000)
+struct VehicleSpawnPad_OnBeginOverlap final
+{
+public:
+	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFromSweep;                                        // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHitResult                             SweepResult;                                       // 0x0020(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleSpawnPad_OnBeginOverlap;
+
+// Function Midair2.VehicleSpawnPad.OnEndOverlap
+// 0x0020 (0x0020 - 0x0000)
+struct VehicleSpawnPad_OnEndOverlap final
+{
+public:
+	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_VehicleSpawnPad_OnEndOverlap;
+
+// Function Midair2.VehicleSpawnPad.OnVehicleDied
+// 0x0008 (0x0008 - 0x0000)
+struct VehicleSpawnPad_OnVehicleDied final
+{
+public:
+	class AVehiclePawn*                           Vehicle;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleSpawnPad_OnVehicleDied;
+
+// Function Midair2.VehicleSpawnPad.CanSpawnClass
+// 0x0010 (0x0010 - 0x0000)
+struct VehicleSpawnPad_CanSpawnClass final
+{
+public:
+	TSubclassOf<class AVehiclePawn>               VehicleClass;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_VehicleSpawnPad_CanSpawnClass;
+
+// Function Midair2.VehicleSpawnPad.GetMaxVehicleCount
+// 0x0010 (0x0010 - 0x0000)
+struct VehicleSpawnPad_GetMaxVehicleCount final
+{
+public:
+	TSubclassOf<class AVehiclePawn>               VehicleClass;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_VehicleSpawnPad_GetMaxVehicleCount;
+
+// Function Midair2.VehicleSpawnPad.GetPadState
+// 0x0001 (0x0001 - 0x0000)
+struct VehicleSpawnPad_GetPadState final
+{
+public:
+	EVehicleSpawnState                            ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleSpawnPad_GetPadState;
+
+// Function Midair2.VehicleSpawnPad.GetVehicleCount
+// 0x0010 (0x0010 - 0x0000)
+struct VehicleSpawnPad_GetVehicleCount final
+{
+public:
+	TSubclassOf<class AVehiclePawn>               VehicleClass;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_VehicleSpawnPad_GetVehicleCount;
 
 // Function Midair2.MASettingsListEntrySetting_KeyboardInput.OnConflict
 // 0x0020 (0x0020 - 0x0000)
@@ -10777,6 +12567,24 @@ public:
 };
 DUMPER7_ASSERTS_MASettingsShared_GetTriggerPullUsesHapticThreshold;
 
+// Function Midair2.ViperVehicle.ApplyCustomLift
+// 0x0004 (0x0004 - 0x0000)
+struct ViperVehicle_ApplyCustomLift final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ViperVehicle_ApplyCustomLift;
+
+// Function Midair2.ViperVehicle.BP_LookRight
+// 0x0004 (0x0004 - 0x0000)
+struct ViperVehicle_BP_LookRight final
+{
+public:
+	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ViperVehicle_BP_LookRight;
+
 // Function Midair2.MAStatsSubsystem.AddStat
 // 0x000C (0x000C - 0x0000)
 struct MAStatsSubsystem_AddStat final
@@ -11247,15 +13055,6 @@ public:
 };
 DUMPER7_ASSERTS_MACountdownWidget_SetCountdownText;
 
-// Function Midair2.TargetDummy.GetTeamID
-// 0x0001 (0x0001 - 0x0000)
-struct TargetDummy_GetTeamID final
-{
-public:
-	ETeamId                                       ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_TargetDummy_GetTeamID;
-
 // Function Midair2.MATrackDirectionArrow.ApplyLocalVisibility
 // 0x0001 (0x0001 - 0x0000)
 struct MATrackDirectionArrow_ApplyLocalVisibility final
@@ -11354,61 +13153,6 @@ public:
 	int32                                         NewPB;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MATrackPlayerState_SetPeronsalBest;
-
-// Function Midair2.MATurretAsset.OnPerceptionUpdated
-// 0x0010 (0x0010 - 0x0000)
-struct MATurretAsset_OnPerceptionUpdated final
-{
-public:
-	TArray<class AActor*>                         UpdatedActors;                                     // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MATurretAsset_OnPerceptionUpdated;
-
-// Function Midair2.MATurretAsset.OnTargetUpdated
-// 0x0048 (0x0048 - 0x0000)
-struct MATurretAsset_OnTargetUpdated final
-{
-public:
-	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FAIStimulus                            Stimulus;                                          // 0x0008(0x003C)(Parm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MATurretAsset_OnTargetUpdated;
-
-// Function Midair2.MATurretAsset.TargetDroppedFromSensorChannel
-// 0x0010 (0x0010 - 0x0000)
-struct MATurretAsset_TargetDroppedFromSensorChannel final
-{
-public:
-	class UTargetComponent*                       Target;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Channel;                                           // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MATurretAsset_TargetDroppedFromSensorChannel;
-
-// Function Midair2.MATurretAsset.TryTargetLost
-// 0x0008 (0x0008 - 0x0000)
-struct MATurretAsset_TryTargetLost final
-{
-public:
-	class UTargetComponent*                       Target;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MATurretAsset_TryTargetLost;
-
-// Function Midair2.SubmitUserReportAsyncTask.SubmitUserReport
-// 0x0050 (0x0050 - 0x0000)
-struct SubmitUserReportAsyncTask_SubmitUserReport final
-{
-public:
-	class FString                                 steamID;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 summary;                                           // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Description;                                       // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Reproduce;                                         // 0x0030(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Severity;                                          // 0x0040(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class USubmitUserReportAsyncTask*             ReturnValue;                                       // 0x0048(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SubmitUserReportAsyncTask_SubmitUserReport;
 
 // Function Midair2.MAVitalsComponent.ClientDisableEnergyRegen
 // 0x0004 (0x0004 - 0x0000)
@@ -11529,109 +13273,6 @@ public:
 };
 DUMPER7_ASSERTS_MAVitalsComponent_IsDead;
 
-// Function Midair2.MAVoiceChatSubsystem.BlockPlayerFromTalking
-// 0x0010 (0x0010 - 0x0000)
-struct MAVoiceChatSubsystem_BlockPlayerFromTalking final
-{
-public:
-	class FString                                 PlayerId;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAVoiceChatSubsystem_BlockPlayerFromTalking;
-
-// Function Midair2.MAVoiceChatSubsystem.IsPlayerTalking
-// 0x0018 (0x0018 - 0x0000)
-struct MAVoiceChatSubsystem_IsPlayerTalking final
-{
-public:
-	class FString                                 PlayerName;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MAVoiceChatSubsystem_IsPlayerTalking;
-
-// Function Midair2.MAVoiceChatSubsystem.Logout
-// 0x0010 (0x0010 - 0x0000)
-struct MAVoiceChatSubsystem_Logout final
-{
-public:
-	class FString                                 Reason;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAVoiceChatSubsystem_Logout;
-
-// Function Midair2.MAVoiceChatSubsystem.RegisterVoiceHUD
-// 0x0008 (0x0008 - 0x0000)
-struct MAVoiceChatSubsystem_RegisterVoiceHUD final
-{
-public:
-	class UMAVoiceHUD*                            InHUD;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAVoiceChatSubsystem_RegisterVoiceHUD;
-
-// Function Midair2.MAVoiceChatSubsystem.SetActiveTransmitChannel
-// 0x0010 (0x0010 - 0x0000)
-struct MAVoiceChatSubsystem_SetActiveTransmitChannel final
-{
-public:
-	class FString                                 ChannelName;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAVoiceChatSubsystem_SetActiveTransmitChannel;
-
-// Function Midair2.MAVoiceChatSubsystem.SetInputMuted
-// 0x0001 (0x0001 - 0x0000)
-struct MAVoiceChatSubsystem_SetInputMuted final
-{
-public:
-	bool                                          bMuted;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAVoiceChatSubsystem_SetInputMuted;
-
-// Function Midair2.MAVoiceChatSubsystem.SetTransmitMode
-// 0x0001 (0x0001 - 0x0000)
-struct MAVoiceChatSubsystem_SetTransmitMode final
-{
-public:
-	EVoiceChatTransmitModeMA                      TransmitMode;                                      // 0x0000(0x0001)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAVoiceChatSubsystem_SetTransmitMode;
-
-// Function Midair2.MAVoiceChatSubsystem.UnblockPlayerFromTalking
-// 0x0010 (0x0010 - 0x0000)
-struct MAVoiceChatSubsystem_UnblockPlayerFromTalking final
-{
-public:
-	class FString                                 PlayerId;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAVoiceChatSubsystem_UnblockPlayerFromTalking;
-
-// Function Midair2.MAVoiceChatSubsystem.UnregisterVoiceHUD
-// 0x0008 (0x0008 - 0x0000)
-struct MAVoiceChatSubsystem_UnregisterVoiceHUD final
-{
-public:
-	class UMAVoiceHUD*                            InHUD;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAVoiceChatSubsystem_UnregisterVoiceHUD;
-
-// Function Midair2.MAVoiceChatSubsystem.IsLoggedIn
-// 0x0001 (0x0001 - 0x0000)
-struct MAVoiceChatSubsystem_IsLoggedIn final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAVoiceChatSubsystem_IsLoggedIn;
-
-// Function Midair2.MAVoiceChatSubsystem.IsPlayerBlocked
-// 0x0018 (0x0018 - 0x0000)
-struct MAVoiceChatSubsystem_IsPlayerBlocked final
-{
-public:
-	class FString                                 ID;                                                // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MAVoiceChatSubsystem_IsPlayerBlocked;
-
 // Function Midair2.MAVoiceTileWidget.SetDisplayName
 // 0x0018 (0x0018 - 0x0000)
 struct MAVoiceTileWidget_SetDisplayName final
@@ -11649,18 +13290,6 @@ public:
 	bool                                          bActive;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MAVoiceTileWidget_SetMicActive;
-
-// Function Midair2.MAVoiceHUD.UpdateParticipant
-// 0x0030 (0x0030 - 0x0000)
-struct MAVoiceHUD_UpdateParticipant final
-{
-public:
-	class FString                                 ID;                                                // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FText                                   Name_0;                                            // 0x0010(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                          bSpeaking;                                         // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MAVoiceHUD_UpdateParticipant;
 
 // Function Midair2.MAVoteComponent.BeginEndMatchVote
 // 0x0001 (0x0001 - 0x0000)
@@ -11742,132 +13371,23 @@ public:
 };
 DUMPER7_ASSERTS_MAVoteComponent_VotePunishPlayer;
 
-// Function Midair2.MAWeaponAttachment.DetachFirstAmmoActor
+// Function Midair2.VehicleInfo.GetMaxSeatableArmorSize
 // 0x0001 (0x0001 - 0x0000)
-struct MAWeaponAttachment_DetachFirstAmmoActor final
+struct VehicleInfo_GetMaxSeatableArmorSize final
 {
 public:
-	bool                                          bInFirstPerson;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EArmorSize                                    ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_MAWeaponAttachment_DetachFirstAmmoActor;
+DUMPER7_ASSERTS_VehicleInfo_GetMaxSeatableArmorSize;
 
-// Function Midair2.MAWeaponAttachment.GetHeat
-// 0x0004 (0x0004 - 0x0000)
-struct MAWeaponAttachment_GetHeat final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAWeaponAttachment_GetHeat;
-
-// Function Midair2.MAWeaponAttachment.K2_UpdateForClientPerspective
+// Function Midair2.VehicleInfo.GetSeatCount
 // 0x0001 (0x0001 - 0x0000)
-struct MAWeaponAttachment_K2_UpdateForClientPerspective final
+struct VehicleInfo_GetSeatCount final
 {
 public:
-	bool                                          bInFirstPerson;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_MAWeaponAttachment_K2_UpdateForClientPerspective;
-
-// Function Midair2.MAWeaponAttachment.OnCharacterAttachAmmo
-// 0x0001 (0x0001 - 0x0000)
-struct MAWeaponAttachment_OnCharacterAttachAmmo final
-{
-public:
-	bool                                          bInFirstPerson;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAWeaponAttachment_OnCharacterAttachAmmo;
-
-// Function Midair2.MAWeaponAttachment.OnCharacterGrabAmmo
-// 0x0001 (0x0001 - 0x0000)
-struct MAWeaponAttachment_OnCharacterGrabAmmo final
-{
-public:
-	bool                                          bInFirstPerson;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAWeaponAttachment_OnCharacterGrabAmmo;
-
-// Function Midair2.MAWeaponAttachment.SetChargeIndicator
-// 0x0004 (0x0004 - 0x0000)
-struct MAWeaponAttachment_SetChargeIndicator final
-{
-public:
-	float                                         Intensity;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAWeaponAttachment_SetChargeIndicator;
-
-// Function Midair2.MAWeaponAttachment.SetOverrideMaterials
-// 0x0010 (0x0010 - 0x0000)
-struct MAWeaponAttachment_SetOverrideMaterials final
-{
-public:
-	class UMaterialInterface*                     NewMaterial3P;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMaterialInterface*                     NewMaterial1P;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAWeaponAttachment_SetOverrideMaterials;
-
-// Function Midair2.MAWidgetFactory.FindWidgetClassForData
-// 0x0010 (0x0010 - 0x0000)
-struct MAWidgetFactory_FindWidgetClassForData final
-{
-public:
-	const class UObject*                          Data;                                              // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UUserWidget>                ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MAWidgetFactory_FindWidgetClassForData;
-
-// Function Midair2.ObjectInfo.ConvertObjectArrayToItemArray
-// 0x0020 (0x0020 - 0x0000)
-struct ObjectInfo_ConvertObjectArrayToItemArray final
-{
-public:
-	TArray<TSubclassOf<class UObjectInfo>>        objects;                                           // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
-	TArray<TSubclassOf<class UItemInfo>>          OutItems;                                          // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ObjectInfo_ConvertObjectArrayToItemArray;
-
-// Function Midair2.ObjectInfo.FilterObjectInfoArray
-// 0x0038 (0x0038 - 0x0000)
-struct ObjectInfo_FilterObjectInfoArray final
-{
-public:
-	TArray<TSubclassOf<class UObjectInfo>>        Base;                                              // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
-	TArray<TSubclassOf<class UObjectInfo>>        AppliedFilter;                                     // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
-	TArray<TSubclassOf<class UObjectInfo>>        OutResult;                                         // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-	bool                                          bReturnInBoth;                                     // 0x0030(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_ObjectInfo_FilterObjectInfoArray;
-
-// Function Midair2.ObjectInfo.GetObjectInfo
-// 0x0010 (0x0010 - 0x0000)
-struct ObjectInfo_GetObjectInfo final
-{
-public:
-	class UObject*                                InObject;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UObjectInfo*                            ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ObjectInfo_GetObjectInfo;
-
-// Function Midair2.ObjectInfo.GetObjectInfoFromClass
-// 0x0010 (0x0010 - 0x0000)
-struct ObjectInfo_GetObjectInfoFromClass final
-{
-public:
-	class UClass*                                 InObjectClass;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UObjectInfo*                            ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ObjectInfo_GetObjectInfoFromClass;
-
-// Function Midair2.ObjectInfo.GetActionText
-// 0x0020 (0x0020 - 0x0000)
-struct ObjectInfo_GetActionText final
-{
-public:
-	const class AActor*                           Actor;                                             // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FText                                   ReturnValue;                                       // 0x0008(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ObjectInfo_GetActionText;
+DUMPER7_ASSERTS_VehicleInfo_GetSeatCount;
 
 // Function Midair2.WeaponInfo.GetStats
 // 0x0010 (0x0010 - 0x0000)
@@ -11906,6 +13426,15 @@ public:
 	TArray<TSubclassOf<class UAugmentInfo>>       ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_BackpackInfo_GetAvailableSecondaryAugments;
+
+// Function Midair2.CharacterInfo.GetAvailableAbilities
+// 0x0010 (0x0010 - 0x0000)
+struct CharacterInfo_GetAvailableAbilities final
+{
+public:
+	TArray<TSubclassOf<class UAbilityInfo>>       ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CharacterInfo_GetAvailableAbilities;
 
 // Function Midair2.CharacterInfo.GetAvailableBackpacks
 // 0x0010 (0x0010 - 0x0000)
@@ -12014,6 +13543,36 @@ public:
 };
 DUMPER7_ASSERTS_CharacterInfo_IsWeaponAvailable;
 
+// Function Midair2.ObjectivePrompt.ClearPrompt
+// 0x0001 (0x0001 - 0x0000)
+struct ObjectivePrompt_ClearPrompt final
+{
+public:
+	bool                                          bCompleted;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ObjectivePrompt_ClearPrompt;
+
+// Function Midair2.ObjectivePrompt.SetPrompt
+// 0x0078 (0x0078 - 0x0000)
+struct ObjectivePrompt_SetPrompt final
+{
+public:
+	struct FMidairObjectiveInfo                   NewObjectiveInfo;                                  // 0x0000(0x0078)(Parm, OutParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ObjectivePrompt_SetPrompt;
+
+// Function Midair2.ObjectivePrompt.UpdateExistingPrompt
+// 0x0080 (0x0080 - 0x0000)
+struct ObjectivePrompt_UpdateExistingPrompt final
+{
+public:
+	struct FMidairObjectiveInfo                   DeltaObjectiveInfo;                                // 0x0000(0x0078)(Parm, OutParm, NativeAccessSpecifierPublic)
+	EObjectiveUpdateType                          UpdateType;                                        // 0x0078(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bWantsUpdate;                                      // 0x0079(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_7A[0x6];                                       // 0x007A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_ObjectivePrompt_UpdateExistingPrompt;
+
 // Function Midair2.ObjectiveVolume.EndOverlap
 // 0x0020 (0x0020 - 0x0000)
 struct ObjectiveVolume_EndOverlap final
@@ -12042,546 +13601,331 @@ public:
 };
 DUMPER7_ASSERTS_ObjectiveVolume_OnOverlap;
 
-// Function Midair2.ObjectLauncher_Spline.SpawnActorToLaunch
+// Function Midair2.GoalEffectParticleConfiguration.SetParticlesOnActor
 // 0x0008 (0x0008 - 0x0000)
-struct ObjectLauncher_Spline_SpawnActorToLaunch final
-{
-public:
-	class AActor*                                 ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ObjectLauncher_Spline_SpawnActorToLaunch;
-
-// Function Midair2.ParticleConfiguration.SetParticlesOnActor
-// 0x0008 (0x0008 - 0x0000)
-struct ParticleConfiguration_SetParticlesOnActor final
+struct GoalEffectParticleConfiguration_SetParticlesOnActor final
 {
 public:
 	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_ParticleConfiguration_SetParticlesOnActor;
+DUMPER7_ASSERTS_GoalEffectParticleConfiguration_SetParticlesOnActor;
 
-// Function Midair2.ParticleConfiguration.SetParticlesOnComponent
+// Function Midair2.GoalEffectParticleConfiguration.SetParticlesOnComponent
 // 0x0008 (0x0008 - 0x0000)
-struct ParticleConfiguration_SetParticlesOnComponent final
+struct GoalEffectParticleConfiguration_SetParticlesOnComponent final
 {
 public:
 	class UParticleSystemComponent*               Component;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_ParticleConfiguration_SetParticlesOnComponent;
+DUMPER7_ASSERTS_GoalEffectParticleConfiguration_SetParticlesOnComponent;
 
-// Function Midair2.PlayerLoadoutsSave.GetCustomLoadoutsSave
+// Function Midair2.GoalEffectParticleConfiguration.GetAssociatedAudioClass
+// 0x0008 (0x0008 - 0x0000)
+struct GoalEffectParticleConfiguration_GetAssociatedAudioClass final
+{
+public:
+	class USoundBase*                             ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GoalEffectParticleConfiguration_GetAssociatedAudioClass;
+
+// Function Midair2.PassengerPawn.Server_SetActiveFirstAbility
+// 0x0001 (0x0001 - 0x0000)
+struct PassengerPawn_Server_SetActiveFirstAbility final
+{
+public:
+	bool                                          bActive;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PassengerPawn_Server_SetActiveFirstAbility;
+
+// Function Midair2.PassengerPawn.Server_SetActiveSecondAbility
+// 0x0001 (0x0001 - 0x0000)
+struct PassengerPawn_Server_SetActiveSecondAbility final
+{
+public:
+	bool                                          bActive;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PassengerPawn_Server_SetActiveSecondAbility;
+
+// Function Midair2.PassengerPawn.Server_SetActiveThirdAbility
+// 0x0001 (0x0001 - 0x0000)
+struct PassengerPawn_Server_SetActiveThirdAbility final
+{
+public:
+	bool                                          bActive;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PassengerPawn_Server_SetActiveThirdAbility;
+
+// Function Midair2.PassengerPawn.Server_SetCameraMode
+// 0x0001 (0x0001 - 0x0000)
+struct PassengerPawn_Server_SetCameraMode final
+{
+public:
+	ECameraMode                                   NewCameraMode;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PassengerPawn_Server_SetCameraMode;
+
+// Function Midair2.PassengerPawn.ServerReseatCharacter
+// 0x0001 (0x0001 - 0x0000)
+struct PassengerPawn_ServerReseatCharacter final
+{
+public:
+	uint8                                         NewSeatPosition;                                   // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PassengerPawn_ServerReseatCharacter;
+
+// Function Midair2.PassengerPawn.ServerSetRelativeControlRotation
+// 0x0004 (0x0004 - 0x0000)
+struct PassengerPawn_ServerSetRelativeControlRotation final
+{
+public:
+	uint32                                        NewControlPitchYaw;                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PassengerPawn_ServerSetRelativeControlRotation;
+
+// Function Midair2.TutorialDialougeManager.NewDialougeManager
 // 0x0010 (0x0010 - 0x0000)
-struct PlayerLoadoutsSave_GetCustomLoadoutsSave final
+struct TutorialDialougeManager_NewDialougeManager final
 {
 public:
-	bool                                          bForceNew;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPlayerLoadoutsSave*                    ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                Owner;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTutorialDialougeManager*               ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PlayerLoadoutsSave_GetCustomLoadoutsSave;
+DUMPER7_ASSERTS_TutorialDialougeManager_NewDialougeManager;
 
-// Function Midair2.PlayerLoadoutsSave.GetGlobalLoadoutsSave
-// 0x0010 (0x0010 - 0x0000)
-struct PlayerLoadoutsSave_GetGlobalLoadoutsSave final
-{
-public:
-	bool                                          bForceNew;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPlayerLoadoutsSave*                    ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlayerLoadoutsSave_GetGlobalLoadoutsSave;
-
-// Function Midair2.PlayerLoadoutsSave.GetLoadoutBackpack
-// 0x0008 (0x0008 - 0x0000)
-struct PlayerLoadoutsSave_GetLoadoutBackpack final
-{
-public:
-	TSubclassOf<class UBackpackInfo>              OutBackpack;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlayerLoadoutsSave_GetLoadoutBackpack;
-
-// Function Midair2.PlayerLoadoutsSave.GetLoadoutBackpackInfo
-// 0x0008 (0x0008 - 0x0000)
-struct PlayerLoadoutsSave_GetLoadoutBackpackInfo final
-{
-public:
-	class UBackpackInfo*                          ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlayerLoadoutsSave_GetLoadoutBackpackInfo;
-
-// Function Midair2.PlayerLoadoutsSave.GetLoadoutCharacter
-// 0x0008 (0x0008 - 0x0000)
-struct PlayerLoadoutsSave_GetLoadoutCharacter final
-{
-public:
-	TSubclassOf<class UCharacterInfo>             OutCharacter;                                      // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlayerLoadoutsSave_GetLoadoutCharacter;
-
-// Function Midair2.PlayerLoadoutsSave.GetLoadoutCharacterInfo
-// 0x0008 (0x0008 - 0x0000)
-struct PlayerLoadoutsSave_GetLoadoutCharacterInfo final
-{
-public:
-	class UCharacterInfo*                         ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlayerLoadoutsSave_GetLoadoutCharacterInfo;
-
-// Function Midair2.PlayerLoadoutsSave.GetLoadoutThrowables
-// 0x0010 (0x0010 - 0x0000)
-struct PlayerLoadoutsSave_GetLoadoutThrowables final
-{
-public:
-	TArray<TSubclassOf<class UThrowableInfo>>     OutThrowables;                                     // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlayerLoadoutsSave_GetLoadoutThrowables;
-
-// Function Midair2.PlayerLoadoutsSave.GetLoadoutWeapons
-// 0x0010 (0x0010 - 0x0000)
-struct PlayerLoadoutsSave_GetLoadoutWeapons final
-{
-public:
-	TArray<TSubclassOf<class UWeaponInfo>>        OutWeapons;                                        // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlayerLoadoutsSave_GetLoadoutWeapons;
-
-// Function Midair2.PlayerLoadoutsSave.GetSprayIdent
-// 0x0008 (0x0008 - 0x0000)
-struct PlayerLoadoutsSave_GetSprayIdent final
-{
-public:
-	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlayerLoadoutsSave_GetSprayIdent;
-
-// Function Midair2.PlayerLoadoutsSave.GetVoiceIdent
-// 0x0008 (0x0008 - 0x0000)
-struct PlayerLoadoutsSave_GetVoiceIdent final
-{
-public:
-	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlayerLoadoutsSave_GetVoiceIdent;
-
-// Function Midair2.PlayerLoadoutsSave.ChangeSelectedLoadout
-// 0x00B8 (0x00B8 - 0x0000)
-struct PlayerLoadoutsSave_ChangeSelectedLoadout final
-{
-public:
-	struct FMALoadout                             loadout;                                           // 0x0000(0x00B8)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlayerLoadoutsSave_ChangeSelectedLoadout;
-
-// Function Midair2.PlayerLoadoutsSave.CheckCharacterForCurrentLoadout
+// Function Midair2.TutorialDialougeManager.TryAddSound
 // 0x0018 (0x0018 - 0x0000)
-struct PlayerLoadoutsSave_CheckCharacterForCurrentLoadout final
+struct TutorialDialougeManager_TryAddSound final
 {
 public:
-	TSubclassOf<class UCharacterInfo>             DesiredCharacter;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class FText>                           ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+	struct FTutorialDialougeDetails               NewSound;                                          // 0x0000(0x0018)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PlayerLoadoutsSave_CheckCharacterForCurrentLoadout;
+DUMPER7_ASSERTS_TutorialDialougeManager_TryAddSound;
 
-// Function Midair2.PlayerLoadoutsSave.CheckCharacterForLoadout
-// 0x00D0 (0x00D0 - 0x0000)
-struct PlayerLoadoutsSave_CheckCharacterForLoadout final
+// Function Midair2.ServerBrowserSupport.DoUDPPing
+// 0x0028 (0x0028 - 0x0000)
+struct ServerBrowserSupport_DoUDPPing final
 {
 public:
-	TSubclassOf<class UCharacterInfo>             DesiredCharacter;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMALoadout                             UseLoadout;                                        // 0x0008(0x00B8)(Parm, NativeAccessSpecifierPublic)
-	TArray<class FText>                           ReturnValue;                                       // 0x00C0(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+	class FString                                 Address;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Timeout;                                           // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(bool got_reply, float latency)> Callback;                                         // 0x0014(0x0010)(Parm, ZeroConstructor, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_PlayerLoadoutsSave_CheckCharacterForLoadout;
+DUMPER7_ASSERTS_ServerBrowserSupport_DoUDPPing;
 
-// Function Midair2.PlayerLoadoutsSave.CheckPackForCurrentLoadout
-// 0x0020 (0x0020 - 0x0000)
-struct PlayerLoadoutsSave_CheckPackForCurrentLoadout final
-{
-public:
-	TSubclassOf<class UBackpackInfo>              DesiredBackpack;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UCharacterInfo>             OverrideComparisonCharacter;                       // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class FText>                           ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlayerLoadoutsSave_CheckPackForCurrentLoadout;
-
-// Function Midair2.PlayerLoadoutsSave.CheckPackForLoadout
-// 0x00D8 (0x00D8 - 0x0000)
-struct PlayerLoadoutsSave_CheckPackForLoadout final
-{
-public:
-	TSubclassOf<class UBackpackInfo>              DesiredBackpack;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMALoadout                             UseLoadout;                                        // 0x0008(0x00B8)(Parm, NativeAccessSpecifierPublic)
-	TSubclassOf<class UCharacterInfo>             OverrideComparisonCharacter;                       // 0x00C0(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class FText>                           ReturnValue;                                       // 0x00C8(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlayerLoadoutsSave_CheckPackForLoadout;
-
-// Function Midair2.PlayerLoadoutsSave.CheckThrowableForCurrentLoadout
-// 0x0020 (0x0020 - 0x0000)
-struct PlayerLoadoutsSave_CheckThrowableForCurrentLoadout final
-{
-public:
-	int32                                         IndexAt;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UThrowableInfo>             DesiredThrowable;                                  // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class FText>                           ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlayerLoadoutsSave_CheckThrowableForCurrentLoadout;
-
-// Function Midair2.PlayerLoadoutsSave.CheckThrowableForLoadout
-// 0x00D8 (0x00D8 - 0x0000)
-struct PlayerLoadoutsSave_CheckThrowableForLoadout final
-{
-public:
-	int32                                         IndexAt;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UThrowableInfo>             DesiredThrowable;                                  // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMALoadout                             UseLoadout;                                        // 0x0010(0x00B8)(Parm, NativeAccessSpecifierPublic)
-	TArray<class FText>                           ReturnValue;                                       // 0x00C8(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlayerLoadoutsSave_CheckThrowableForLoadout;
-
-// Function Midair2.PlayerLoadoutsSave.CheckWeaponForCurrentLoadout
-// 0x0020 (0x0020 - 0x0000)
-struct PlayerLoadoutsSave_CheckWeaponForCurrentLoadout final
-{
-public:
-	int32                                         IndexAt;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UWeaponInfo>                DesiredWeapon;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class FText>                           ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlayerLoadoutsSave_CheckWeaponForCurrentLoadout;
-
-// Function Midair2.PlayerLoadoutsSave.CheckWeaponForLoadout
-// 0x00D8 (0x00D8 - 0x0000)
-struct PlayerLoadoutsSave_CheckWeaponForLoadout final
-{
-public:
-	int32                                         IndexAt;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UWeaponInfo>                DesiredWeapon;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMALoadout                             UseLoadout;                                        // 0x0010(0x00B8)(Parm, NativeAccessSpecifierPublic)
-	TArray<class FText>                           ReturnValue;                                       // 0x00C8(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlayerLoadoutsSave_CheckWeaponForLoadout;
-
-// Function Midair2.PlayerLoadoutsSave.GetLastSelectedLoadout
-// 0x00B8 (0x00B8 - 0x0000)
-struct PlayerLoadoutsSave_GetLastSelectedLoadout final
-{
-public:
-	struct FMALoadout                             outLoadout;                                        // 0x0000(0x00B8)(Parm, OutParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlayerLoadoutsSave_GetLastSelectedLoadout;
-
-// Function Midair2.PlayerLoadoutsSave.GetLoadoutsForGamemode
-// 0x0010 (0x0010 - 0x0000)
-struct PlayerLoadoutsSave_GetLoadoutsForGamemode final
-{
-public:
-	TArray<struct FMALoadout>                     ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlayerLoadoutsSave_GetLoadoutsForGamemode;
-
-// Function Midair2.PlayerLoadoutsSave.GetNamedCosmeticSelection
-// 0x0010 (0x0010 - 0x0000)
-struct PlayerLoadoutsSave_GetNamedCosmeticSelection final
-{
-public:
-	class FName                                   Name_0;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UClass*                                 ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlayerLoadoutsSave_GetNamedCosmeticSelection;
-
-// Function Midair2.PlayerLoadoutsSave.ModifyNamedCosmeticSelection
-// 0x0010 (0x0010 - 0x0000)
-struct PlayerLoadoutsSave_ModifyNamedCosmeticSelection final
-{
-public:
-	class FName                                   Name_0;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UClass*                                 Cosmetic;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlayerLoadoutsSave_ModifyNamedCosmeticSelection;
-
-// Function Midair2.PlayerLoadoutsSave.ModifySelectedLoadout_Character
-// 0x0010 (0x0010 - 0x0000)
-struct PlayerLoadoutsSave_ModifySelectedLoadout_Character final
-{
-public:
-	TSubclassOf<class UCharacterInfo>             DesiredCharacter;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bDoCheck;                                          // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0009(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_PlayerLoadoutsSave_ModifySelectedLoadout_Character;
-
-// Function Midair2.PlayerLoadoutsSave.ModifySelectedLoadout_Name
-// 0x0010 (0x0010 - 0x0000)
-struct PlayerLoadoutsSave_ModifySelectedLoadout_Name final
-{
-public:
-	class FString                                 DesiredName;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlayerLoadoutsSave_ModifySelectedLoadout_Name;
-
-// Function Midair2.PlayerLoadoutsSave.ModifySelectedLoadout_ObjectSkin
+// Function Midair2.SetUserBanStatusAsyncTask.BanUser
 // 0x0018 (0x0018 - 0x0000)
-struct PlayerLoadoutsSave_ModifySelectedLoadout_ObjectSkin final
+struct SetUserBanStatusAsyncTask_BanUser final
 {
 public:
-	TSubclassOf<class UObjectInfo>                ObjectInfoClass;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class ACosmeticConfiguration>     DesiredSkin;                                       // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class APlayerState*                           PlayerState;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsBanned;                                         // 0x0008(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class USetUserBanStatusAsyncTask*             ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PlayerLoadoutsSave_ModifySelectedLoadout_ObjectSkin;
+DUMPER7_ASSERTS_SetUserBanStatusAsyncTask_BanUser;
 
-// Function Midair2.PlayerLoadoutsSave.ModifySelectedLoadout_Pack
+// Function Midair2.SubmitUserReportAsyncTask.SubmitUserReport
+// 0x0050 (0x0050 - 0x0000)
+struct SubmitUserReportAsyncTask_SubmitUserReport final
+{
+public:
+	class FString                                 steamID;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 summary;                                           // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Description;                                       // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Reproduce;                                         // 0x0030(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Severity;                                          // 0x0040(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class USubmitUserReportAsyncTask*             ReturnValue;                                       // 0x0048(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SubmitUserReportAsyncTask_SubmitUserReport;
+
+// Function Midair2.TargetDummy.GetTeamID
+// 0x0001 (0x0001 - 0x0000)
+struct TargetDummy_GetTeamID final
+{
+public:
+	ETeamId                                       ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_TargetDummy_GetTeamID;
+
+// Function Midair2.TDMGameState.GetHoldingTeam
+// 0x0001 (0x0001 - 0x0000)
+struct TDMGameState_GetHoldingTeam final
+{
+public:
+	ETeamId                                       ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_TDMGameState_GetHoldingTeam;
+
+// Function Midair2.TDMGameState.GetIsFlagHolder
 // 0x0010 (0x0010 - 0x0000)
-struct PlayerLoadoutsSave_ModifySelectedLoadout_Pack final
+struct TDMGameState_GetIsFlagHolder final
 {
 public:
-	TSubclassOf<class UBackpackInfo>              DesiredBackpack;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bDoCheck;                                          // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0009(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_PlayerLoadoutsSave_ModifySelectedLoadout_Pack;
-
-// Function Midair2.PlayerLoadoutsSave.ModifySelectedLoadout_Throwable
-// 0x0018 (0x0018 - 0x0000)
-struct PlayerLoadoutsSave_ModifySelectedLoadout_Throwable final
-{
-public:
-	int32                                         IndexAt;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UThrowableInfo>             DesiredThrowable;                                  // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bDoCheck;                                          // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0011(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_PlayerLoadoutsSave_ModifySelectedLoadout_Throwable;
-
-// Function Midair2.PlayerLoadoutsSave.ModifySelectedLoadout_VoiceSet
-// 0x0010 (0x0010 - 0x0000)
-struct PlayerLoadoutsSave_ModifySelectedLoadout_VoiceSet final
-{
-public:
-	TSubclassOf<class UVoiceSetInfo>              DesiredVoiceSet;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AMAPlayerState*                         PlayerState;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_PlayerLoadoutsSave_ModifySelectedLoadout_VoiceSet;
+DUMPER7_ASSERTS_TDMGameState_GetIsFlagHolder;
 
-// Function Midair2.PlayerLoadoutsSave.ModifySelectedLoadout_Weapon
-// 0x0020 (0x0020 - 0x0000)
-struct PlayerLoadoutsSave_ModifySelectedLoadout_Weapon final
-{
-public:
-	int32                                         IndexAt;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UWeaponInfo>                DesiredWeapon;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class AWeaponSkinConfiguration>   DesiredSkin;                                       // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bDoCheck;                                          // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0019(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A[0x6];                                       // 0x001A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_PlayerLoadoutsSave_ModifySelectedLoadout_Weapon;
-
-// Function Midair2.PlayerLoadoutsSave.SetLastSelectedIndex
-// 0x0004 (0x0004 - 0x0000)
-struct PlayerLoadoutsSave_SetLastSelectedIndex final
-{
-public:
-	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlayerLoadoutsSave_SetLastSelectedIndex;
-
-// Function Midair2.PlayerLoadoutsSave.CheckLoadoutNameUnique
-// 0x0018 (0x0018 - 0x0000)
-struct PlayerLoadoutsSave_CheckLoadoutNameUnique final
-{
-public:
-	class FString                                 DesiredName;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_PlayerLoadoutsSave_CheckLoadoutNameUnique;
-
-// Function Midair2.PlayerLoadoutsSave.GetLastSelectedIndex
-// 0x0004 (0x0004 - 0x0000)
-struct PlayerLoadoutsSave_GetLastSelectedIndex final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlayerLoadoutsSave_GetLastSelectedIndex;
-
-// Function Midair2.PlayerLoadoutsSave.GetLoadoutIndex
-// 0x00C0 (0x00C0 - 0x0000)
-struct PlayerLoadoutsSave_GetLoadoutIndex final
-{
-public:
-	struct FMALoadout                             loadout;                                           // 0x0000(0x00B8)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	int32                                         ReturnValue;                                       // 0x00B8(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_BC[0x4];                                       // 0x00BC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_PlayerLoadoutsSave_GetLoadoutIndex;
-
-// Function Midair2.PointOfInterestComponent.GetOwnerVitals
+// Function Midair2.TDMGameState.GetFlagBase
 // 0x0008 (0x0008 - 0x0000)
-struct PointOfInterestComponent_GetOwnerVitals final
+struct TDMGameState_GetFlagBase final
 {
 public:
-	class UMAVitalsComponent*                     ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ATDMFlagBase*                           ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PointOfInterestComponent_GetOwnerVitals;
+DUMPER7_ASSERTS_TDMGameState_GetFlagBase;
 
-// Function Midair2.PointOfInterestComponent.GetTargetComponent
+// Function Midair2.TDMGameState.GetFlagStateName
 // 0x0008 (0x0008 - 0x0000)
-struct PointOfInterestComponent_GetTargetComponent final
-{
-public:
-	class UTargetComponent*                       ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PointOfInterestComponent_GetTargetComponent;
-
-// Function Midair2.PointOfInterestComponent.GetTargetCompState
-// 0x0008 (0x0008 - 0x0000)
-struct PointOfInterestComponent_GetTargetCompState final
+struct TDMGameState_GetFlagStateName final
 {
 public:
 	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PointOfInterestComponent_GetTargetCompState;
+DUMPER7_ASSERTS_TDMGameState_GetFlagStateName;
 
-// Function Midair2.SensorNetworkComponent.SetSensorChannel
-// 0x0001 (0x0001 - 0x0000)
-struct SensorNetworkComponent_SetSensorChannel final
-{
-public:
-	uint8                                         NewChannel;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SensorNetworkComponent_SetSensorChannel;
-
-// Function Midair2.SensorNetworkComponent.GetSensorChannel
-// 0x0001 (0x0001 - 0x0000)
-struct SensorNetworkComponent_GetSensorChannel final
-{
-public:
-	uint8                                         ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SensorNetworkComponent_GetSensorChannel;
-
-// Function Midair2.SensorNetworkComponent.HasDetectedTarget
+// Function Midair2.VehicleSeatComponent.CanSit
 // 0x0010 (0x0010 - 0x0000)
-struct SensorNetworkComponent_HasDetectedTarget final
+struct VehicleSeatComponent_CanSit final
 {
 public:
-	class UTargetComponent*                       TargetComponent;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AMACharacter*                           Character;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_SensorNetworkComponent_HasDetectedTarget;
+DUMPER7_ASSERTS_VehicleSeatComponent_CanSit;
 
-// Function Midair2.ServiceBlueprintLibrary.GetDemoProgress
+// Function Midair2.VehicleSeatComponent.GetSeatedPlayer
+// 0x0008 (0x0008 - 0x0000)
+struct VehicleSeatComponent_GetSeatedPlayer final
+{
+public:
+	class AMAPlayerState*                         ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleSeatComponent_GetSeatedPlayer;
+
+// Function Midair2.VehicleSeatComponent.RemoveCharacter
+// 0x0002 (0x0002 - 0x0000)
+struct VehicleSeatComponent_RemoveCharacter final
+{
+public:
+	bool                                          bEject;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleSeatComponent_RemoveCharacter;
+
+// Function Midair2.VehicleSeatComponent.SeatCharacter
+// 0x0010 (0x0010 - 0x0000)
+struct VehicleSeatComponent_SeatCharacter final
+{
+public:
+	class AMACharacter*                           Character;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_VehicleSeatComponent_SeatCharacter;
+
+// Function Midair2.VehicleSeatComponent.ServerReseatCharacter
+// 0x0001 (0x0001 - 0x0000)
+struct VehicleSeatComponent_ServerReseatCharacter final
+{
+public:
+	uint8                                         NewSeatPosition;                                   // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleSeatComponent_ServerReseatCharacter;
+
+// Function Midair2.VehicleSeatComponent.ServerSeatCharacter
+// 0x0008 (0x0008 - 0x0000)
+struct VehicleSeatComponent_ServerSeatCharacter final
+{
+public:
+	class AMACharacter*                           Character;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleSeatComponent_ServerSeatCharacter;
+
+// Function Midair2.VehicleSeatComponent.SetTrigger
+// 0x0001 (0x0001 - 0x0000)
+struct VehicleSeatComponent_SetTrigger final
+{
+public:
+	bool                                          bActive;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleSeatComponent_SetTrigger;
+
+// Function Midair2.VehicleSeatComponent.GetSecondaryWeapons
+// 0x0010 (0x0010 - 0x0000)
+struct VehicleSeatComponent_GetSecondaryWeapons final
+{
+public:
+	TArray<class UVehicleWeaponComponent*>        ReturnValue;                                       // 0x0000(0x0010)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleSeatComponent_GetSecondaryWeapons;
+
+// Function Midair2.VehicleSeatComponent.GetVehicleStateText
+// 0x0018 (0x0018 - 0x0000)
+struct VehicleSeatComponent_GetVehicleStateText final
+{
+public:
+	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleSeatComponent_GetVehicleStateText;
+
+// Function Midair2.VehicleSeatComponent.IsEmpty
+// 0x0001 (0x0001 - 0x0000)
+struct VehicleSeatComponent_IsEmpty final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleSeatComponent_IsEmpty;
+
+// Function Midair2.VehicleWeaponComponent.ServerFireProjectiles
+// 0x0001 (0x0001 - 0x0000)
+struct VehicleWeaponComponent_ServerFireProjectiles final
+{
+public:
+	uint8                                         FireIndex;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleWeaponComponent_ServerFireProjectiles;
+
+// Function Midair2.VehicleWeaponComponent.ServerSetTrigger
+// 0x0001 (0x0001 - 0x0000)
+struct VehicleWeaponComponent_ServerSetTrigger final
+{
+public:
+	bool                                          bSet;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleWeaponComponent_ServerSetTrigger;
+
+// Function Midair2.VehicleWeaponComponent.TryFire
+// 0x0001 (0x0001 - 0x0000)
+struct VehicleWeaponComponent_TryFire final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleWeaponComponent_TryFire;
+
+// Function Midair2.VehicleWeaponComponent.CanFire
+// 0x0001 (0x0001 - 0x0000)
+struct VehicleWeaponComponent_CanFire final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleWeaponComponent_CanFire;
+
+// Function Midair2.VehicleWeaponComponent.GetRemainingReload
 // 0x0004 (0x0004 - 0x0000)
-struct ServiceBlueprintLibrary_GetDemoProgress final
+struct VehicleWeaponComponent_GetRemainingReload final
 {
 public:
 	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_ServiceBlueprintLibrary_GetDemoProgress;
-
-// Function Midair2.ServiceBlueprintLibrary.IsDownloadedDemo
-// 0x0018 (0x0018 - 0x0000)
-struct ServiceBlueprintLibrary_IsDownloadedDemo final
-{
-public:
-	class FString                                 demoId;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_ServiceBlueprintLibrary_IsDownloadedDemo;
-
-// Function Midair2.ServiceBlueprintLibrary.IsSameDemoVersion
-// 0x0018 (0x0018 - 0x0000)
-struct ServiceBlueprintLibrary_IsSameDemoVersion final
-{
-public:
-	class FString                                 DemoVersion;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_ServiceBlueprintLibrary_IsSameDemoVersion;
-
-// Function Midair2.TargetComponent.PopSensorModifiers
-// 0x0008 (0x0008 - 0x0000)
-struct TargetComponent_PopSensorModifiers final
-{
-public:
-	struct FSensorTargetModifiers                 Modifiers;                                         // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_TargetComponent_PopSensorModifiers;
-
-// Function Midair2.TargetComponent.PushSensorModifiers
-// 0x0008 (0x0008 - 0x0000)
-struct TargetComponent_PushSensorModifiers final
-{
-public:
-	struct FSensorTargetModifiers                 Modifiers;                                         // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_TargetComponent_PushSensorModifiers;
-
-// Function Midair2.TargetComponent.SetSensorResolutionStrengthTime
-// 0x0008 (0x0008 - 0x0000)
-struct TargetComponent_SetSensorResolutionStrengthTime final
-{
-public:
-	ESensorResolutionStrength                     Strength;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Time;                                              // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_TargetComponent_SetSensorResolutionStrengthTime;
-
-// Function Midair2.TargetComponent.GetHighestDetectedState
-// 0x0001 (0x0001 - 0x0000)
-struct TargetComponent_GetHighestDetectedState final
-{
-public:
-	EDetectedState                                ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_TargetComponent_GetHighestDetectedState;
-
-// Function Midair2.TargetComponent.IsDetectedByChannel
-// 0x0002 (0x0002 - 0x0000)
-struct TargetComponent_IsDetectedByChannel final
-{
-public:
-	uint8                                         InChannel;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_TargetComponent_IsDetectedByChannel;
-
-// Function Midair2.TDMFlag.OnBounce
-// 0x0094 (0x0094 - 0x0000)
-struct TDMFlag_OnBounce final
-{
-public:
-	struct FHitResult                             ImpactResult;                                      // 0x0000(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	struct FVector                                ImpactVelocity;                                    // 0x0088(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_TDMFlag_OnBounce;
-
-// Function Midair2.TDMFlag.OnStop
-// 0x0088 (0x0088 - 0x0000)
-struct TDMFlag_OnStop final
-{
-public:
-	struct FHitResult                             ImpactResult;                                      // 0x0000(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_TDMFlag_OnStop;
+DUMPER7_ASSERTS_VehicleWeaponComponent_GetRemainingReload;
 
 // Function Midair2.WeaponAmmoArt.OnComponentHit
 // 0x00B0 (0x00B0 - 0x0000)

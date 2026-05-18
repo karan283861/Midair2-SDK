@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_PlayerController_Bot.BP_PlayerController_Bot_C
-// 0x0008 (0x0630 - 0x0628)
+// 0x0008 (0x0640 - 0x0638)
 class ABP_PlayerController_Bot_C final : public AAIPlayerController
 {
 public:
-	class UWBP_DeathEffects_C*                    DeathEffects;                                      // 0x0628(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UWBP_DeathEffects_C*                    DeathEffects;                                      // 0x0638(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

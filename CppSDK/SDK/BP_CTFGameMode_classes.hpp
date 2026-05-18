@@ -18,12 +18,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_CTFGameMode.BP_CTFGameMode_C
-// 0x0010 (0x0E18 - 0x0E08)
+// 0x0010 (0x1190 - 0x1180)
 class ABP_CTFGameMode_C final : public AMACTFGameMode
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0E08(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0E10(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1180(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x1188(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_CTFGameMode(int32 EntryPoint);

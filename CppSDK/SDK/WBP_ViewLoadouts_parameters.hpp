@@ -17,28 +17,28 @@ namespace SDK::Params
 {
 
 // Function WBP_ViewLoadouts.WBP_ViewLoadouts_C.ExecuteUbergraph_WBP_ViewLoadouts
-// 0x0190 (0x0190 - 0x0000)
+// 0x01A0 (0x01A0 - 0x0000)
 struct WBP_ViewLoadouts_C_ExecuteUbergraph_WBP_ViewLoadouts final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UPlayerLoadoutsSave*                    CallFunc_GetGlobalLoadoutsSave_ReturnValue;        // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FMALoadout                             CallFunc_GetLastSelectedLoadout_outLoadout;        // 0x0010(0x00B8)()
-	bool                                          K2Node_Event_IsDesignTime;                         // 0x00C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_C9[0x7];                                       // 0x00C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMALoadout                             K2Node_CustomEvent_LoadoutToEdit;                  // 0x00D0(0x00B8)()
-	int32                                         K2Node_CustomEvent_LoadoutIndex;                   // 0x0188(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FMALoadout                             CallFunc_GetLastSelectedLoadout_outLoadout;        // 0x0010(0x00C0)()
+	bool                                          K2Node_Event_IsDesignTime;                         // 0x00D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_D1[0x7];                                       // 0x00D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMALoadout                             K2Node_CustomEvent_LoadoutToEdit;                  // 0x00D8(0x00C0)()
+	int32                                         K2Node_CustomEvent_LoadoutIndex;                   // 0x0198(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_ViewLoadouts_C_ExecuteUbergraph_WBP_ViewLoadouts;
 
 // Function WBP_ViewLoadouts.WBP_ViewLoadouts_C.EditClicked
-// 0x00C0 (0x00C0 - 0x0000)
+// 0x00C8 (0x00C8 - 0x0000)
 struct WBP_ViewLoadouts_C_EditClicked final
 {
 public:
-	struct FMALoadout                             LoadoutToEdit;                                     // 0x0000(0x00B8)(BlueprintVisible, BlueprintReadOnly, Parm)
-	int32                                         LoadoutIndex;                                      // 0x00B8(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FMALoadout                             LoadoutToEdit;                                     // 0x0000(0x00C0)(BlueprintVisible, BlueprintReadOnly, Parm)
+	int32                                         LoadoutIndex;                                      // 0x00C0(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_ViewLoadouts_C_EditClicked;
 
@@ -52,7 +52,7 @@ public:
 DUMPER7_ASSERTS_WBP_ViewLoadouts_C_PreConstruct;
 
 // Function WBP_ViewLoadouts.WBP_ViewLoadouts_C.CreateLoadoutOptions
-// 0x0128 (0x0128 - 0x0000)
+// 0x0130 (0x0130 - 0x0000)
 struct WBP_ViewLoadouts_C_CreateLoadoutOptions final
 {
 public:
@@ -63,17 +63,17 @@ public:
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMALoadout                             CallFunc_Array_Get_Item;                           // 0x0020(0x00B8)()
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x00D8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_DC[0x4];                                       // 0x00DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPlayerLoadoutsSave*                    CallFunc_GetGlobalLoadoutsSave_ReturnValue;        // 0x00E0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x00E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_E9[0x7];                                       // 0x00E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FMALoadout>                     CallFunc_GetLoadoutsForGamemode_ReturnValue;       // 0x00F0(0x0010)(ReferenceParm)
-	TDelegate<void(const struct FMALoadout& LoadoutToEdit, int32 LoadoutIndex)> K2Node_CreateDelegate_OutputDelegate; // 0x0100(0x0010)(ZeroConstructor, NoDestructor)
-	class UPanelSlot*                             CallFunc_AddChild_ReturnValue;                     // 0x0110(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class APlayerController*                      CallFunc_GetOwningPlayer_ReturnValue;              // 0x0118(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UWBP_LoadoutLabel_C*                    CallFunc_Create_ReturnValue;                       // 0x0120(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FMALoadout                             CallFunc_Array_Get_Item;                           // 0x0020(0x00C0)()
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x00E0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_E4[0x4];                                       // 0x00E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPlayerLoadoutsSave*                    CallFunc_GetGlobalLoadoutsSave_ReturnValue;        // 0x00E8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x00F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_F1[0x7];                                       // 0x00F1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FMALoadout>                     CallFunc_GetLoadoutsForGamemode_ReturnValue;       // 0x00F8(0x0010)(ReferenceParm)
+	TDelegate<void(const struct FMALoadout& LoadoutToEdit, int32 LoadoutIndex)> K2Node_CreateDelegate_OutputDelegate; // 0x0108(0x0010)(ZeroConstructor, NoDestructor)
+	class UPanelSlot*                             CallFunc_AddChild_ReturnValue;                     // 0x0118(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class APlayerController*                      CallFunc_GetOwningPlayer_ReturnValue;              // 0x0120(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UWBP_LoadoutLabel_C*                    CallFunc_Create_ReturnValue;                       // 0x0128(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_ViewLoadouts_C_CreateLoadoutOptions;
 

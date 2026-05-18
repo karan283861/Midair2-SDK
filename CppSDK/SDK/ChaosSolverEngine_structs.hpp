@@ -29,6 +29,16 @@ enum class EClusterConnectionTypeEnum : uint8
 	Chaos_MAX                                = 6,
 };
 
+// ScriptStruct ChaosSolverEngine.ChaosHandlerSet
+// 0x0058 (0x0058 - 0x0000)
+struct FChaosHandlerSet final
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TSet<class UObject*>                          ChaosHandlers;                                     // 0x0008(0x0050)(NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FChaosHandlerSet;
+
 // ScriptStruct ChaosSolverEngine.ChaosPhysicsCollisionInfo
 // 0x0070 (0x0070 - 0x0000)
 struct FChaosPhysicsCollisionInfo final
@@ -61,16 +71,6 @@ public:
 	float                                         Mass;                                              // 0x002C(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FChaosBreakEvent;
-
-// ScriptStruct ChaosSolverEngine.ChaosHandlerSet
-// 0x0058 (0x0058 - 0x0000)
-struct FChaosHandlerSet final
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TSet<class UObject*>                          ChaosHandlers;                                     // 0x0008(0x0050)(NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FChaosHandlerSet;
 
 // ScriptStruct ChaosSolverEngine.BreakEventCallbackWrapper
 // 0x0040 (0x0040 - 0x0000)

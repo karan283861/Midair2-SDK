@@ -101,5 +101,19 @@ void UWBP_ObjectivePrompt_C::UpdateDisplay()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
+
+// Function WBP_ObjectivePrompt.WBP_ObjectivePrompt_C.BP_Update
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UWBP_ObjectivePrompt_C::BP_Update()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_ObjectivePrompt_C", "BP_Update");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
 }
 

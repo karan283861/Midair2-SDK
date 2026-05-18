@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "PhysicsCore_structs.hpp"
@@ -43,7 +43,7 @@ enum class EVoiceChatResultMA : uint8
 };
 
 // Enum Midair2.EMAMatchmakingStatus
-// NumValues: 0x0009
+// NumValues: 0x000A
 enum class EMAMatchmakingStatus : uint8
 {
 	Started                                  = 0,
@@ -54,7 +54,8 @@ enum class EMAMatchmakingStatus : uint8
 	Cancelled                                = 5,
 	Errored                                  = 6,
 	NotStarted                               = 7,
-	EMAMatchmakingStatus_MAX                 = 8,
+	CalculatingPing                          = 8,
+	EMAMatchmakingStatus_MAX                 = 9,
 };
 
 // Enum Midair2.EMAMidairBranch
@@ -208,6 +209,24 @@ enum class EAugmentType : uint8
 	EAugmentType_MAX                         = 3,
 };
 
+// Enum Midair2.ESteamDisplayPresenceTypes
+// NumValues: 0x000C
+enum class ESteamDisplayPresenceTypes : uint8
+{
+	StatusWithoutScore                       = 0,
+	StatusWithScore                          = 1,
+	Status_AtMainMenu                        = 2,
+	Status_WaitingForMatch                   = 3,
+	Status_Winning                           = 4,
+	Status_Losing                            = 5,
+	Status_Tied                              = 6,
+	Status_Party                             = 7,
+	Status_Spectating                        = 8,
+	Status_Playing                           = 9,
+	Status_MapWithScoreAndTime               = 10,
+	ESteamDisplayPresenceTypes_MAX           = 11,
+};
+
 // Enum Midair2.EPresenceTypes
 // NumValues: 0x0004
 enum class EPresenceTypes : uint8
@@ -292,7 +311,7 @@ enum class EPRMessage : uint8
 };
 
 // Enum Midair2.ERBMessage
-// NumValues: 0x0006
+// NumValues: 0x0007
 enum class ERBMessage : uint8
 {
 	CarrotDropped                            = 0,
@@ -300,7 +319,8 @@ enum class ERBMessage : uint8
 	CarrotTaken                              = 2,
 	RabbitKilled                             = 3,
 	SelfPassTimeout                          = 4,
-	ERBMessage_MAX                           = 5,
+	TenFromWin                               = 5,
+	ERBMessage_MAX                           = 6,
 };
 
 // Enum Midair2.EPowerupMessage
@@ -425,13 +445,14 @@ enum class EMappingConflictResolution : uint8
 };
 
 // Enum Midair2.FLoadoutItemButtonType
-// NumValues: 0x0004
+// NumValues: 0x0005
 enum class EFLoadoutItemButtonType : uint8
 {
 	none                                     = 0,
 	weapon                                   = 1,
 	grenade                                  = 2,
-	FLoadoutItemButtonType_MAX               = 3,
+	ability                                  = 3,
+	FLoadoutItemButtonType_MAX               = 4,
 };
 
 // Enum Midair2.FCosmeticConfigClass
@@ -456,6 +477,17 @@ enum class EMALobbyMatchStatus : uint8
 	Started                                  = 3,
 	Completed                                = 4,
 	EMALobbyMatchStatus_MAX                  = 5,
+};
+
+// Enum Midair2.EMidairPartyAttributeType
+// NumValues: 0x0005
+enum class EMidairPartyAttributeType : uint8
+{
+	String                                   = 0,
+	Int64                                    = 1,
+	Double                                   = 2,
+	Bool                                     = 3,
+	EMidairPartyAttributeType_MAX            = 4,
 };
 
 // Enum Midair2.EMAFramePacingMode
@@ -1127,6 +1159,17 @@ enum class EStatsType : uint8
 	EStatsType_MAX                           = 2,
 };
 
+// Enum Midair2.ETankMode
+// NumValues: 0x0005
+enum class ETankMode : uint8
+{
+	HoverMode                                = 0,
+	TransitionToHover                        = 1,
+	TransitionToSiege                        = 2,
+	SiegeMode                                = 3,
+	ETankMode_MAX                            = 4,
+};
+
 // Enum Midair2.EEdgeLockBehavior
 // NumValues: 0x0004
 enum class EEdgeLockBehavior : uint8
@@ -1147,6 +1190,51 @@ enum class ETargetPlacement : uint8
 	ETargetPlacement_MAX                     = 3,
 };
 
+// Enum Midair2.ESeatType
+// NumValues: 0x0004
+enum class ESeatType : uint8
+{
+	Passenger                                = 0,
+	Gunner                                   = 1,
+	Pilot                                    = 2,
+	ESeatType_MAX                            = 3,
+};
+
+// Enum Midair2.EVehicleSpawnState
+// NumValues: 0x0006
+enum class EVehicleSpawnState : uint8
+{
+	Selecting                                = 0,
+	Charging                                 = 1,
+	Spawned                                  = 2,
+	Resetting                                = 3,
+	Unpowered                                = 4,
+	EVehicleSpawnState_MAX                   = 5,
+};
+
+// Enum Midair2.EVWC_InterpType
+// NumValues: 0x0006
+enum class EVWC_InterpType : uint8
+{
+	None                                     = 0,
+	Determined                               = 1,
+	TurretOnly                               = 2,
+	ScreenOnly                               = 3,
+	Both                                     = 4,
+	EVWC_MAX                                 = 5,
+};
+
+// Enum Midair2.EVWC_MeshHandling
+// NumValues: 0x0005
+enum class EVWC_MeshHandling : uint8
+{
+	None                                     = 0,
+	Distinct                                 = 1,
+	FixedP                                   = 2,
+	FixedY                                   = 3,
+	EVWC_MAX                                 = 4,
+};
+
 // Enum Midair2.EAttachPerspective
 // NumValues: 0x0004
 enum class EAttachPerspective : uint8
@@ -1156,61 +1244,6 @@ enum class EAttachPerspective : uint8
 	ThirdPerson                              = 2,
 	EAttachPerspective_MAX                   = 3,
 };
-
-// ScriptStruct Midair2.MA_PortStruct
-// 0x0018 (0x0018 - 0x0000)
-struct FMA_PortStruct final
-{
-public:
-	int32                                         InternalPort;                                      // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ExternalPort;                                      // 0x0004(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 protocol;                                          // 0x0008(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMA_PortStruct;
-
-// ScriptStruct Midair2.MA_LocationStruct
-// 0x0050 (0x0050 - 0x0000)
-struct FMA_LocationStruct final
-{
-public:
-	class FString                                 City;                                              // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Country;                                           // 0x0010(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Continent;                                         // 0x0020(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 AdministrativeDivision;                            // 0x0030(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Timezone;                                          // 0x0040(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMA_LocationStruct;
-
-// ScriptStruct Midair2.MA_AssignmentStruct
-// 0x00C0 (0x00C0 - 0x0000)
-struct FMA_AssignmentStruct final
-{
-public:
-	bool                                          bIsNullOrEmpty;                                    // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 FQDN;                                              // 0x0008(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 PublicIP;                                          // 0x0018(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMA_PortStruct                         GamePort;                                          // 0x0028(0x0018)(BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FMA_PortStruct                         QueryPort;                                         // 0x0040(0x0018)(BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FMA_PortStruct                         SteamPort;                                         // 0x0058(0x0018)(BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FMA_LocationStruct                     Location;                                          // 0x0070(0x0050)(BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMA_AssignmentStruct;
-
-// ScriptStruct Midair2.HitMarkerInfo
-// 0x0018 (0x0018 - 0x0000)
-struct FHitMarkerInfo final
-{
-public:
-	float                                         Time;                                              // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Damage;                                            // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bCriticalHit : 1;                                  // 0x0008(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bTeamHit : 1;                                      // 0x0008(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bAlive : 1;                                        // 0x0008(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterialInstanceDynamic*               MaterialInstance;                                  // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FHitMarkerInfo;
 
 // ScriptStruct Midair2.TakeHitInfo
 // 0x0020 (0x0020 - 0x0000)
@@ -1231,44 +1264,196 @@ public:
 };
 DUMPER7_ASSERTS_FTakeHitInfo;
 
-// ScriptStruct Midair2.MAHathoraServerPort
-// 0x0038 (0x0038 - 0x0000)
-struct FMAHathoraServerPort final
+// ScriptStruct Midair2.PartyMessage
+// 0x0080 (0x0080 - 0x0000)
+struct FPartyMessage final
 {
 public:
-	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 TransportType;                                     // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Host;                                              // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Port;                                              // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         TimeSent;                                          // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 SenderName;                                        // 0x0008(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FUniqueNetIdRepl                       SenderId;                                          // 0x0018(0x0028)(BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Message;                                           // 0x0040(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EPartyChatType                                ChatType;                                          // 0x0050(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FUniqueNetIdRepl                       ReceiverId;                                        // 0x0058(0x0028)(BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FMAHathoraServerPort;
+DUMPER7_ASSERTS_FPartyMessage;
 
-// ScriptStruct Midair2.MAHathoraServerConfig
-// 0x0030 (0x0030 - 0x0000)
-struct FMAHathoraServerConfig final
+// ScriptStruct Midair2.LoadingScreenMapData
+// 0x0068 (0x0068 - 0x0000)
+struct FLoadingScreenMapData final
 {
 public:
-	class FString                                 GameMode;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Map;                                               // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Admin;                                             // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture2D*                             Background;                                        // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USoundBase*                             LoadingMusic;                                      // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 mapName;                                           // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   Lore;                                              // 0x0020(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FText                                   authors;                                           // 0x0038(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FText                                   Objectives;                                        // 0x0050(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FMAHathoraServerConfig;
+DUMPER7_ASSERTS_FLoadingScreenMapData;
 
-// ScriptStruct Midair2.MAHathoraServer
+// ScriptStruct Midair2.ServerPlayer
+// 0x0020 (0x0020 - 0x0000)
+struct FServerPlayer final
+{
+public:
+	int32                                         score;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 PlayerName;                                        // 0x0008(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Ping;                                              // 0x0018(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FServerPlayer;
+
+// ScriptStruct Midair2.CauseHitInfo
+// 0x0014 (0x0014 - 0x0000)
+struct FCauseHitInfo final
+{
+public:
+	float                                         Damage;                                            // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HitLocationX;                                      // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HitLocationY;                                      // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HitLocationZ;                                      // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bCriticalHit : 1;                                  // 0x0010(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bMidairHit : 1;                                    // 0x0010(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bKill : 1;                                         // 0x0010(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bTeamHit : 1;                                      // 0x0010(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Rating;                                            // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         EnsureReplicationByte;                             // 0x0012(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_13[0x1];                                       // 0x0013(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCauseHitInfo;
+
+// ScriptStruct Midair2.SensorTargetModifiers
+// 0x0008 (0x0008 - 0x0000)
+struct FSensorTargetModifiers final
+{
+public:
+	float                                         MotionSensorRangeModifier;                         // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RadarSensorRangeModifier;                          // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSensorTargetModifiers;
+
+// ScriptStruct Midair2.MAAudioSubmixEffectsChain
+// 0x0018 (0x0018 - 0x0000)
+struct FMAAudioSubmixEffectsChain final
+{
+public:
+	class USoundSubmix*                           Submix;                                            // 0x0000(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class USoundEffectSubmixPreset*>       SubmixEffectChain;                                 // 0x0008(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMAAudioSubmixEffectsChain;
+
+// ScriptStruct Midair2.MidairInputMapping
 // 0x00A0 (0x00A0 - 0x0000)
-struct FMAHathoraServer final
+struct FMidairInputMapping final
 {
 public:
-	class FString                                 RoomId;                                            // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EMAMidairBranch                               Branch;                                            // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ProcessId;                                         // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Status;                                            // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMAHathoraServerPort                   ExposedPort;                                       // 0x0038(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	struct FMAHathoraServerConfig                 config;                                            // 0x0070(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	class FName                                   BindName;                                          // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   DisplayName;                                       // 0x0008(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FText                                   ToolTipText;                                       // 0x0020(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FName                                   Category;                                          // 0x0038(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FInputActionKeyMapping                 PrimaryKey;                                        // 0x0040(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FInputActionKeyMapping                 SecondaryKey;                                      // 0x0068(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	float                                         AxisValue;                                         // 0x0090(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint32                                        ConflictChannels;                                  // 0x0094(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCannotClear;                                      // 0x0098(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_99[0x7];                                       // 0x0099(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FMAHathoraServer;
+DUMPER7_ASSERTS_FMidairInputMapping;
+
+// ScriptStruct Midair2.MA_LocationStruct
+// 0x0050 (0x0050 - 0x0000)
+struct FMA_LocationStruct final
+{
+public:
+	class FString                                 City;                                              // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Country;                                           // 0x0010(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Continent;                                         // 0x0020(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 AdministrativeDivision;                            // 0x0030(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Timezone;                                          // 0x0040(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMA_LocationStruct;
+
+// ScriptStruct Midair2.MMQueueInfo
+// 0x0014 (0x0014 - 0x0000)
+struct FMMQueueInfo final
+{
+public:
+	int32                                         CTF;                                               // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Duel;                                              // 0x0004(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         League;                                            // 0x0008(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         RB;                                                // 0x000C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Total;                                             // 0x0010(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMMQueueInfo;
+
+// ScriptStruct Midair2.VoiceChatResultMA
+// 0x0040 (0x0040 - 0x0000)
+struct FVoiceChatResultMA final
+{
+public:
+	class FString                                 PlayerName;                                        // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bWasSuccessful;                                    // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EVoiceChatResultMA                            VoiceChatResult;                                   // 0x0011(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ErrorCode;                                         // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ErrorNum;                                          // 0x0028(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ErrorDescription;                                  // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FVoiceChatResultMA;
+
+// ScriptStruct Midair2.MMRating
+// 0x0008 (0x0008 - 0x0000)
+struct FMMRating final
+{
+public:
+	float                                         mu;                                                // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         sigma;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMMRating;
+
+// ScriptStruct Midair2.MMPlayer
+// 0x0088 (0x0088 - 0x0000)
+struct FMMPlayer final
+{
+public:
+	class FString                                 player_id;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMMRating                              Rating;                                            // 0x0010(0x0008)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	TMap<class FString, int32>                    latency;                                           // 0x0018(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FString                                 Platform;                                          // 0x0068(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         input_methods;                                     // 0x0078(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMMPlayer;
+
+// ScriptStruct Midair2.PartyMemberView
+// 0x0088 (0x0088 - 0x0000)
+struct FPartyMemberView final
+{
+public:
+	struct FUniqueNetIdRepl                       UserId;                                            // 0x0000(0x0028)(BlueprintVisible, BlueprintReadOnly, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 UserIdString;                                      // 0x0028(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 DisplayName;                                       // 0x0038(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsLeader;                                         // 0x0048(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsSelf;                                           // 0x0049(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4A[0x6];                                       // 0x004A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftObjectPtr<class UTexture2D>              Avatar;                                            // 0x0050(0x0028)(BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Status;                                            // 0x0078(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FPartyMemberView;
+
+// ScriptStruct Midair2.MatchResults_Team
+// 0x0008 (0x0008 - 0x0000)
+struct FMatchResults_Team final
+{
+public:
+	int32                                         score;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TeamId;                                            // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMatchResults_Team;
 
 // ScriptStruct Midair2.MatchWeaponStats
 // 0x0014 (0x0014 - 0x0000)
@@ -1333,24 +1518,216 @@ public:
 };
 DUMPER7_ASSERTS_FMatchResults_Player;
 
-// ScriptStruct Midair2.CauseHitInfo
-// 0x0014 (0x0014 - 0x0000)
-struct FCauseHitInfo final
+// ScriptStruct Midair2.MatchResults
+// 0x0070 (0x0070 - 0x0000)
+struct FMatchResults final
 {
 public:
-	float                                         Damage;                                            // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         HitLocationX;                                      // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         HitLocationY;                                      // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         HitLocationZ;                                      // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bCriticalHit : 1;                                  // 0x0010(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bMidairHit : 1;                                    // 0x0010(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bKill : 1;                                         // 0x0010(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bTeamHit : 1;                                      // 0x0010(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Rating;                                            // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         EnsureReplicationByte;                             // 0x0012(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_13[0x1];                                       // 0x0013(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 mapName;                                           // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 GameMode;                                          // 0x0010(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 demoId;                                            // 0x0020(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 GameVersion;                                       // 0x0030(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Time;                                              // 0x0040(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FMatchResults_Team>             teams;                                             // 0x0048(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
+	TArray<struct FMatchResults_Player>           players;                                           // 0x0058(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
+	struct FDateTime                              CreatedAt;                                         // 0x0068(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCauseHitInfo;
+DUMPER7_ASSERTS_FMatchResults;
+
+// ScriptStruct Midair2.PlayerExpressionData
+// 0x00C0 (0x00C8 - 0x0008)
+struct FPlayerExpressionData final : public FTableRowBase
+{
+public:
+	class FText                                   Category;                                          // 0x0008(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FText                                   LeaderKey;                                         // 0x0020(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FText                                   LeaderKeyConsole;                                  // 0x0038(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FText                                   LeaderKeyConsoleText;                              // 0x0050(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FText                                   MenuText;                                          // 0x0068(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FText                                   ChatText;                                          // 0x0080(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FText                                   CueName;                                           // 0x0098(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	bool                                          TeamOnly;                                          // 0x00B0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B1[0x17];                                      // 0x00B1(0x0017)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FPlayerExpressionData;
+
+// ScriptStruct Midair2.PunishVote
+// 0x0018 (0x0018 - 0x0000)
+struct FPunishVote final
+{
+public:
+	class AMAPlayerState*                         Instigator;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AMAPlayerState*                         Target;                                            // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EPunishType                                   Type;                                              // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FPunishVote;
+
+// ScriptStruct Midair2.MASteamId
+// 0x0008 (0x0008 - 0x0000)
+struct alignas(0x08) FMASteamId final
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMASteamId;
+
+// ScriptStruct Midair2.MA_PortStruct
+// 0x0018 (0x0018 - 0x0000)
+struct FMA_PortStruct final
+{
+public:
+	int32                                         InternalPort;                                      // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ExternalPort;                                      // 0x0004(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 protocol;                                          // 0x0008(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMA_PortStruct;
+
+// ScriptStruct Midair2.MA_AssignmentStruct
+// 0x00C0 (0x00C0 - 0x0000)
+struct FMA_AssignmentStruct final
+{
+public:
+	bool                                          bIsNullOrEmpty;                                    // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 FQDN;                                              // 0x0008(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PublicIP;                                          // 0x0018(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMA_PortStruct                         GamePort;                                          // 0x0028(0x0018)(BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FMA_PortStruct                         QueryPort;                                         // 0x0040(0x0018)(BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FMA_PortStruct                         SteamPort;                                         // 0x0058(0x0018)(BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FMA_LocationStruct                     Location;                                          // 0x0070(0x0050)(BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMA_AssignmentStruct;
+
+// ScriptStruct Midair2.GameViewportInputState
+// 0x0018 (0x0018 - 0x0000)
+struct alignas(0x08) FGameViewportInputState final
+{
+public:
+	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FGameViewportInputState;
+
+// ScriptStruct Midair2.PredictionSmoothing
+// 0x0070 (0x0070 - 0x0000)
+struct FPredictionSmoothing final
+{
+public:
+	class USceneComponent*                        TargetComponent;                                   // 0x0000(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                BaseLocationOffset;                                // 0x0008(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0xC];                                       // 0x0014(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FQuat                                  BaseRotationOffset;                                // 0x0020(0x0010)(IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector                                LocationOffset;                                    // 0x0030(0x000C)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FQuat                                  RotationOffset;                                    // 0x0040(0x0010)(Transient, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         SmoothLocationTime;                                // 0x0050(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SmoothRotationTime;                                // 0x0054(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxSmoothUpdateDist;                               // 0x0058(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NoSmoothUpdateDist;                                // 0x005C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableSmoothing;                                  // 0x0060(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_61[0xF];                                       // 0x0061(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FPredictionSmoothing;
+
+// ScriptStruct Midair2.LeaderboardPlayer
+// 0x0018 (0x0018 - 0x0000)
+struct FLeaderboardPlayer final
+{
+public:
+	class FString                                 PlayerName;                                        // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         rank;                                              // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         score;                                             // 0x0014(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLeaderboardPlayer;
+
+// ScriptStruct Midair2.RacerPosition
+// 0x0028 (0x0028 - 0x0000)
+struct FRacerPosition final
+{
+public:
+	class AMATrackPlayerState*                    Player;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Lap;                                               // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Checkpoint;                                        // 0x000C(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TotalTime;                                         // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TimeMs;                                            // 0x0014(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 TimeAsString;                                      // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRacerPosition;
+
+// ScriptStruct Midair2.MAAchievement
+// 0x0048 (0x0048 - 0x0000)
+struct FMAAchievement final
+{
+public:
+	class FString                                 ID;                                                // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   DisplayName;                                       // 0x0010(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NativeAccessSpecifierPublic)
+	class FText                                   Description;                                       // 0x0028(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NativeAccessSpecifierPublic)
+	bool                                          bUnlocked;                                         // 0x0040(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_41[0x3];                                       // 0x0041(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Progress;                                          // 0x0044(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMAAchievement;
+
+// ScriptStruct Midair2.MAStat
+// 0x0018 (0x0018 - 0x0000)
+struct FMAStat final
+{
+public:
+	class FString                                 ID;                                                // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CurrentValue;                                      // 0x0010(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMAStat;
+
+// ScriptStruct Midair2.StatValue
+// 0x0008 (0x0008 - 0x0000)
+struct FStatValue final
+{
+public:
+	int32                                         Total;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Best;                                              // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FStatValue;
+
+// ScriptStruct Midair2.MADamageProfileEntry
+// 0x0018 (0x0018 - 0x0000)
+struct FMADamageProfileEntry final
+{
+public:
+	TSubclassOf<class UDamageType>                DamageTypeClass;                                   // 0x0000(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DamageModifier;                                    // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ShieldDamageModifier;                              // 0x000C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         EnergyDamageModifier;                              // 0x0010(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMADamageProfileEntry;
+
+// ScriptStruct Midair2.FriendView
+// 0x0078 (0x0078 - 0x0000)
+struct FFriendView final
+{
+public:
+	struct FUniqueNetIdRepl                       UserId;                                            // 0x0000(0x0028)(BlueprintVisible, BlueprintReadOnly, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 DisplayName;                                       // 0x0028(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsOnline;                                         // 0x0038(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInGame;                                           // 0x0039(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3A[0x6];                                       // 0x003A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 PresenceStatus;                                    // 0x0040(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UTexture2D>              Avatar;                                            // 0x0050(0x0028)(BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FFriendView;
+
+// ScriptStruct Midair2.MA_ErrorStruct
+// 0x0018 (0x0018 - 0x0000)
+struct FMA_ErrorStruct final
+{
+public:
+	int32                                         ErrorCode;                                         // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ErrorMessage;                                      // 0x0008(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMA_ErrorStruct;
 
 // ScriptStruct Midair2.MA_MatchmakingResponse
 // 0x0148 (0x0148 - 0x0000)
@@ -1370,93 +1747,63 @@ public:
 };
 DUMPER7_ASSERTS_FMA_MatchmakingResponse;
 
-// ScriptStruct Midair2.MADamageProfileEntry
-// 0x0018 (0x0018 - 0x0000)
-struct FMADamageProfileEntry final
+// ScriptStruct Midair2.WeaponStatDetails
+// 0x0010 (0x0010 - 0x0000)
+struct FWeaponStatDetails final
 {
 public:
-	TSubclassOf<class UDamageType>                DamageTypeClass;                                   // 0x0000(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DamageModifier;                                    // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ShieldDamageModifier;                              // 0x000C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         EnergyDamageModifier;                              // 0x0010(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         RelativeDamagePct;                                 // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RelativeRadiusPct;                                 // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RelativeFireRatePct;                               // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RelativeClipSizePct;                               // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FMADamageProfileEntry;
+DUMPER7_ASSERTS_FWeaponStatDetails;
 
-// ScriptStruct Midair2.VoiceChatResultMA
-// 0x0040 (0x0040 - 0x0000)
-struct FVoiceChatResultMA final
+// ScriptStruct Midair2.FlatShieldVars
+// 0x0014 (0x0014 - 0x0000)
+struct FFlatShieldVars final
 {
 public:
-	class FString                                 PlayerName;                                        // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bWasSuccessful;                                    // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EVoiceChatResultMA                            VoiceChatResult;                                   // 0x0011(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ErrorCode;                                         // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ErrorNum;                                          // 0x0028(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ErrorDescription;                                  // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ShieldHealthMaxPool;                               // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ShieldRechargeRate;                                // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ShieldRechargeDelay;                               // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ShieldRechargeConversionFactor;                    // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ShieldFlashDuration;                               // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FVoiceChatResultMA;
+DUMPER7_ASSERTS_FFlatShieldVars;
 
-// ScriptStruct Midair2.MAStat
-// 0x0018 (0x0018 - 0x0000)
-struct FMAStat final
+// ScriptStruct Midair2.MidairPartyAttributeValue
+// 0x0028 (0x0028 - 0x0000)
+struct FMidairPartyAttributeValue final
 {
 public:
-	class FString                                 ID;                                                // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         CurrentValue;                                      // 0x0010(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	EMidairPartyAttributeType                     Type;                                              // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 String;                                            // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         Int64;                                             // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Double;                                            // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Bool;                                              // 0x0024(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FMAStat;
+DUMPER7_ASSERTS_FMidairPartyAttributeValue;
 
-// ScriptStruct Midair2.MidairInputMapping
-// 0x00A0 (0x00A0 - 0x0000)
-struct FMidairInputMapping final
+// ScriptStruct Midair2.MidairPartyMemberInfo
+// 0x0120 (0x0120 - 0x0000)
+struct FMidairPartyMemberInfo final
 {
 public:
-	class FName                                   BindName;                                          // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FText                                   DisplayName;                                       // 0x0008(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FText                                   ToolTipText;                                       // 0x0020(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FName                                   Category;                                          // 0x0038(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FInputActionKeyMapping                 PrimaryKey;                                        // 0x0040(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FInputActionKeyMapping                 SecondaryKey;                                      // 0x0068(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	float                                         AxisValue;                                         // 0x0090(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint32                                        ConflictChannels;                                  // 0x0094(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCannotClear;                                      // 0x0098(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_99[0x7];                                       // 0x0099(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bHasPartyMember;                                   // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FUniqueNetIdRepl                       UserId;                                            // 0x0008(0x0028)(BlueprintVisible, BlueprintReadOnly, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerName;                                        // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<class FString, class FString>            PlayerUserAttributes;                              // 0x0040(0x0050)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	TMap<class FString, struct FMidairPartyAttributeValue> PartyMemberAttributes;                    // 0x0090(0x0050)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	bool                                          bIsPartyLeader;                                    // 0x00E0(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E1[0x7];                                       // 0x00E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 SkinClassPath;                                     // 0x00E8(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftClassPtr<class UClass>                   SkinClass;                                         // 0x00F8(0x0028)(BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FMidairInputMapping;
-
-// ScriptStruct Midair2.MAPackedMove
-// 0x0030 (0x0030 - 0x0000)
-struct FMAPackedMove final
-{
-public:
-	float                                         Timestamp;                                         // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DeltaTime;                                         // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint32                                        CompressedFlags;                                   // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               ViewRotator;                                       // 0x000C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector                                LocalAccel;                                        // 0x0018(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AMAWeapon*                              PendingWeapon;                                     // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMAPackedMove;
-
-// ScriptStruct Midair2.MAPackedMoveBundle
-// 0x0038 (0x0038 - 0x0000)
-struct FMAPackedMoveBundle final
-{
-public:
-	TArray<struct FMAPackedMove>                  Moves;                                             // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FVector_NetQuantize                    ClientLoc;                                         // 0x0010(0x000C)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPrimitiveComponent*                    ClientMovementBase;                                // 0x0020(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   ClientBaseBoneName;                                // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         ClientMovementMode;                                // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMAPackedMoveBundle;
+DUMPER7_ASSERTS_FMidairPartyMemberInfo;
 
 // ScriptStruct Midair2.MATeam
 // 0x0050 (0x0050 - 0x0000)
@@ -1483,50 +1830,6 @@ public:
 	TArray<struct FMATeam>                        teams;                                             // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FMALadderPlayer;
-
-// ScriptStruct Midair2.ServerPlayer
-// 0x0018 (0x0018 - 0x0000)
-struct FServerPlayer final
-{
-public:
-	int32                                         score;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 PlayerName;                                        // 0x0008(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FServerPlayer;
-
-// ScriptStruct Midair2.SurfaceTypeSounds
-// 0x0078 (0x0078 - 0x0000)
-struct FSurfaceTypeSounds final
-{
-public:
-	class USoundBase*                             Default;                                           // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USoundBase*                             Flesh;                                             // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USoundBase*                             Shields;                                           // 0x0010(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USoundBase*                             Dirt;                                              // 0x0018(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USoundBase*                             Grass;                                             // 0x0020(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USoundBase*                             Sand;                                              // 0x0028(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USoundBase*                             Rock;                                              // 0x0030(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USoundBase*                             Snow;                                              // 0x0038(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USoundBase*                             Ice;                                               // 0x0040(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USoundBase*                             Wood;                                              // 0x0048(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USoundBase*                             Concrete;                                          // 0x0050(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USoundBase*                             Metal;                                             // 0x0058(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USoundBase*                             Glass;                                             // 0x0060(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USoundBase*                             Water;                                             // 0x0068(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USoundBase*                             Lava;                                              // 0x0070(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSurfaceTypeSounds;
-
-// ScriptStruct Midair2.MASubmixEffectChainMap
-// 0x0038 (0x0038 - 0x0000)
-struct FMASubmixEffectChainMap final
-{
-public:
-	TSoftObjectPtr<class USoundSubmix>            Submix;                                            // 0x0000(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<TSoftObjectPtr<class USoundEffectSubmixPreset>> SubmixEffectChain;                        // 0x0028(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMASubmixEffectChainMap;
 
 // ScriptStruct Midair2.PlayerStats
 // 0x0140 (0x0140 - 0x0000)
@@ -1580,59 +1883,179 @@ public:
 };
 DUMPER7_ASSERTS_FPlayerStats;
 
-// ScriptStruct Midair2.DeathMessageData
-// 0x0028 (0x0028 - 0x0000)
-struct FDeathMessageData final
+// ScriptStruct Midair2.MAHathoraServerPort
+// 0x0038 (0x0038 - 0x0000)
+struct FMAHathoraServerPort final
 {
 public:
-	class AMAPlayerState*                         Killer;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AMAPlayerState*                         Victim;                                            // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AMAPlayerState*                         Assist;                                            // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UMADamageType>              DamageTypeClass;                                   // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         SkillRating;                                       // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 TransportType;                                     // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Host;                                              // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Port;                                              // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FDeathMessageData;
+DUMPER7_ASSERTS_FMAHathoraServerPort;
 
-// ScriptStruct Midair2.RepMAMovement
-// 0x0028 (0x0028 - 0x0000)
-struct FRepMAMovement final
+// ScriptStruct Midair2.MAHathoraServerConfig
+// 0x0030 (0x0030 - 0x0000)
+struct FMAHathoraServerConfig final
 {
 public:
-	struct FVector_NetQuantize                    LinearVelocity;                                    // 0x0000(0x000C)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector_NetQuantize                    Location;                                          // 0x000C(0x000C)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               Rotation;                                          // 0x0018(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         EnsureReplicationByte;                             // 0x0024(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 GameMode;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Map;                                               // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Admin;                                             // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRepMAMovement;
+DUMPER7_ASSERTS_FMAHathoraServerConfig;
 
-// ScriptStruct Midair2.MatchResults_Team
+// ScriptStruct Midair2.MAHathoraServer
+// 0x00A0 (0x00A0 - 0x0000)
+struct FMAHathoraServer final
+{
+public:
+	class FString                                 RoomId;                                            // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EMAMidairBranch                               Branch;                                            // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ProcessId;                                         // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Status;                                            // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMAHathoraServerPort                   ExposedPort;                                       // 0x0038(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	struct FMAHathoraServerConfig                 config;                                            // 0x0070(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMAHathoraServer;
+
+// ScriptStruct Midair2.TeamTintMaterialEntry
+// 0x0018 (0x0018 - 0x0000)
+struct FTeamTintMaterialEntry final
+{
+public:
+	TWeakObjectPtr<class UStaticMeshComponent>    Mesh;                                              // 0x0000(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaterialIndex;                                     // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInstanceDynamic*               Mid;                                               // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FTeamTintMaterialEntry;
+
+// ScriptStruct Midair2.TeamTintActorEntry
+// 0x0020 (0x0020 - 0x0000)
+struct FTeamTintActorEntry final
+{
+public:
+	TWeakObjectPtr<class AActor>                  Actor;                                             // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ActorTeamId;                                       // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FTeamTintMaterialEntry>         Materials;                                         // 0x0010(0x0010)(ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FTeamTintActorEntry;
+
+// ScriptStruct Midair2.ProgressionLevelData
+// 0x0010 (0x0018 - 0x0008)
+struct FProgressionLevelData final : public FTableRowBase
+{
+public:
+	int32                                         NewXPRequired;                                     // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TotalXPRequired;                                   // 0x000C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ManaShardsGranted;                                 // 0x0010(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FProgressionLevelData;
+
+// ScriptStruct Midair2.SurfaceTypeParticles
+// 0x0078 (0x0078 - 0x0000)
+struct FSurfaceTypeParticles final
+{
+public:
+	class UParticleSystem*                        Default;                                           // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UParticleSystem*                        Flesh;                                             // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UParticleSystem*                        Shields;                                           // 0x0010(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UParticleSystem*                        Dirt;                                              // 0x0018(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UParticleSystem*                        Grass;                                             // 0x0020(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UParticleSystem*                        Sand;                                              // 0x0028(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UParticleSystem*                        Rock;                                              // 0x0030(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UParticleSystem*                        Snow;                                              // 0x0038(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UParticleSystem*                        Ice;                                               // 0x0040(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UParticleSystem*                        Wood;                                              // 0x0048(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UParticleSystem*                        Concrete;                                          // 0x0050(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UParticleSystem*                        Metal;                                             // 0x0058(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UParticleSystem*                        Glass;                                             // 0x0060(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UParticleSystem*                        Water;                                             // 0x0068(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UParticleSystem*                        Lava;                                              // 0x0070(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSurfaceTypeParticles;
+
+// ScriptStruct Midair2.SurfaceTypeSounds
+// 0x0078 (0x0078 - 0x0000)
+struct FSurfaceTypeSounds final
+{
+public:
+	class USoundBase*                             Default;                                           // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USoundBase*                             Flesh;                                             // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USoundBase*                             Shields;                                           // 0x0010(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USoundBase*                             Dirt;                                              // 0x0018(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USoundBase*                             Grass;                                             // 0x0020(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USoundBase*                             Sand;                                              // 0x0028(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USoundBase*                             Rock;                                              // 0x0030(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USoundBase*                             Snow;                                              // 0x0038(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USoundBase*                             Ice;                                               // 0x0040(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USoundBase*                             Wood;                                              // 0x0048(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USoundBase*                             Concrete;                                          // 0x0050(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USoundBase*                             Metal;                                             // 0x0058(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USoundBase*                             Glass;                                             // 0x0060(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USoundBase*                             Water;                                             // 0x0068(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USoundBase*                             Lava;                                              // 0x0070(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSurfaceTypeSounds;
+
+// ScriptStruct Midair2.ImpactEffect
+// 0x0108 (0x0108 - 0x0000)
+struct FImpactEffect final
+{
+public:
+	struct FSurfaceTypeParticles                  Particles;                                         // 0x0000(0x0078)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSurfaceTypeSounds                     Sounds;                                            // 0x0078(0x0078)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	class UMaterialInterface*                     DecalMaterial;                                     // 0x00F0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              DecalSize;                                         // 0x00F8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DecalLifeSpan;                                     // 0x0100(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_104[0x4];                                      // 0x0104(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FImpactEffect;
+
+// ScriptStruct Midair2.MA_LatitudeLongitudeStruct
 // 0x0008 (0x0008 - 0x0000)
-struct FMatchResults_Team final
+struct FMA_LatitudeLongitudeStruct final
 {
 public:
-	int32                                         score;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TeamId;                                            // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Latitude;                                          // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Longitude;                                         // 0x0004(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FMatchResults_Team;
+DUMPER7_ASSERTS_FMA_LatitudeLongitudeStruct;
 
-// ScriptStruct Midair2.MatchResults
-// 0x0070 (0x0070 - 0x0000)
-struct FMatchResults final
+// ScriptStruct Midair2.MA_ListLocationBeaconsResponse
+// 0x0080 (0x0080 - 0x0000)
+struct FMA_ListLocationBeaconsResponse final
 {
 public:
-	class FString                                 mapName;                                           // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 GameMode;                                          // 0x0010(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 demoId;                                            // 0x0020(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 GameVersion;                                       // 0x0030(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Time;                                              // 0x0040(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FMatchResults_Team>             teams;                                             // 0x0048(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
-	TArray<struct FMatchResults_Player>           players;                                           // 0x0058(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
-	struct FDateTime                              CreatedAt;                                         // 0x0068(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Host;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 FQDN;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         UdpPort;                                           // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TcpPort;                                           // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMA_LocationStruct                     Location;                                          // 0x0028(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FMA_LatitudeLongitudeStruct            LatitudeLongitude;                                 // 0x0078(0x0008)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FMatchResults;
+DUMPER7_ASSERTS_FMA_ListLocationBeaconsResponse;
+
+// ScriptStruct Midair2.MAPackedMove
+// 0x0030 (0x0030 - 0x0000)
+struct FMAPackedMove final
+{
+public:
+	float                                         Timestamp;                                         // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DeltaTime;                                         // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint32                                        CompressedFlags;                                   // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               ViewRotator;                                       // 0x000C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector                                LocalAccel;                                        // 0x0018(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AMAWeapon*                              PendingWeapon;                                     // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMAPackedMove;
 
 // ScriptStruct Midair2.PlayerLocationAndState
 // 0x002C (0x002C - 0x0000)
@@ -1698,101 +2121,6 @@ public:
 };
 DUMPER7_ASSERTS_FMADrill;
 
-// ScriptStruct Midair2.MAMapPracticeDrills
-// 0x0010 (0x0010 - 0x0000)
-struct FMAMapPracticeDrills final
-{
-public:
-	TArray<struct FMADrill>                       RouteDrills;                                       // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMAMapPracticeDrills;
-
-// ScriptStruct Midair2.MATutorialStep
-// 0x0070 (0x0070 - 0x0000)
-struct FMATutorialStep final
-{
-public:
-	class FString                                 Name;                                              // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Description;                                       // 0x0010(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Category;                                          // 0x0020(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Author;                                            // 0x0030(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         StepIndex;                                         // 0x0040(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 DrillName;                                         // 0x0048(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 SeeItDoneRouteTrailName;                           // 0x0058(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShowVisibleRouteTrail;                            // 0x0068(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMATutorialStep;
-
-// ScriptStruct Midair2.MATutorial
-// 0x0068 (0x0068 - 0x0000)
-struct FMATutorial final
-{
-public:
-	class FString                                 ID;                                                // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsOwner;                                           // 0x0010(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Name;                                              // 0x0018(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Description;                                       // 0x0028(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Author;                                            // 0x0038(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 SuggestedNextTutorial;                             // 0x0048(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FMATutorialStep>                TutorialSteps;                                     // 0x0058(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMATutorial;
-
-// ScriptStruct Midair2.OldCameraShakeInfo
-// 0x0010 (0x0010 - 0x0000)
-struct FOldCameraShakeInfo final
-{
-public:
-	TSubclassOf<class UCameraShakeBase>           CameraShakeClass;                                  // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Scale;                                             // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         UserSpacePitch;                                    // 0x0009(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         UserSpaceYaw;                                      // 0x000A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bPlayInUserSpace : 1;                              // 0x000B(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         EnsureReplicationByte;                             // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FOldCameraShakeInfo;
-
-// ScriptStruct Midair2.LeaderboardPlayer
-// 0x0018 (0x0018 - 0x0000)
-struct FLeaderboardPlayer final
-{
-public:
-	class FString                                 PlayerName;                                        // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         rank;                                              // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         score;                                             // 0x0014(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLeaderboardPlayer;
-
-// ScriptStruct Midair2.MATabDescriptor
-// 0x00C8 (0x00C8 - 0x0000)
-struct FMATabDescriptor final
-{
-public:
-	class FName                                   TabId;                                             // 0x0000(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FText                                   TabText;                                           // 0x0008(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            IconBrush;                                         // 0x0020(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	bool                                          bHidden;                                           // 0x00A8(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A9[0x7];                                       // 0x00A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UCommonButtonBase>          TabButtonType;                                     // 0x00B0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UCommonUserWidget>          TabContentType;                                    // 0x00B8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UWidget*                                CreatedTabContentWidget;                           // 0x00C0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMATabDescriptor;
-
-// ScriptStruct Midair2.PartyInfo
-// 0x0038 (0x0038 - 0x0000)
-struct FPartyInfo final
-{
-public:
-	struct FUniqueNetIdRepl                       PartyLeaderID;                                     // 0x0000(0x0028)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class APlayerState*>                   members;                                           // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FPartyInfo;
-
 // ScriptStruct Midair2.PlayerRecordableInput
 // 0x0014 (0x0014 - 0x0000)
 struct FPlayerRecordableInput final
@@ -1815,7 +2143,7 @@ public:
 	class FString                                 ID;                                                // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsOwner;                                           // 0x0010(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Author;                                            // 0x0018(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 author;                                            // 0x0018(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 mapName;                                           // 0x0028(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 RouteName;                                         // 0x0038(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 RouteDescription;                                  // 0x0048(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1841,6 +2169,40 @@ public:
 };
 DUMPER7_ASSERTS_FMARouteTrail;
 
+// ScriptStruct Midair2.MATutorialStep
+// 0x0070 (0x0070 - 0x0000)
+struct FMATutorialStep final
+{
+public:
+	class FString                                 Name;                                              // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Description;                                       // 0x0010(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Category;                                          // 0x0020(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 author;                                            // 0x0030(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         StepIndex;                                         // 0x0040(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 DrillName;                                         // 0x0048(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 SeeItDoneRouteTrailName;                           // 0x0058(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShowVisibleRouteTrail;                            // 0x0068(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMATutorialStep;
+
+// ScriptStruct Midair2.MATutorial
+// 0x0068 (0x0068 - 0x0000)
+struct FMATutorial final
+{
+public:
+	class FString                                 ID;                                                // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsOwner;                                           // 0x0010(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Name;                                              // 0x0018(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Description;                                       // 0x0028(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 author;                                            // 0x0038(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 SuggestedNextTutorial;                             // 0x0048(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FMATutorialStep>                TutorialSteps;                                     // 0x0058(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMATutorial;
+
 // ScriptStruct Midair2.PracticeData
 // 0x0038 (0x0038 - 0x0000)
 struct FPracticeData final
@@ -1854,205 +2216,6 @@ public:
 };
 DUMPER7_ASSERTS_FPracticeData;
 
-// ScriptStruct Midair2.MASimpleUser
-// 0x0020 (0x0020 - 0x0000)
-struct FMASimpleUser final
-{
-public:
-	class FString                                 UserId;                                            // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 DisplayName;                                       // 0x0010(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMASimpleUser;
-
-// ScriptStruct Midair2.RacerPosition
-// 0x0028 (0x0028 - 0x0000)
-struct FRacerPosition final
-{
-public:
-	class AMATrackPlayerState*                    Player;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Lap;                                               // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Checkpoint;                                        // 0x000C(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TotalTime;                                         // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TimeMs;                                            // 0x0014(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 TimeAsString;                                      // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRacerPosition;
-
-// ScriptStruct Midair2.KillAssistInfo
-// 0x0010 (0x0010 - 0x0000)
-struct FKillAssistInfo final
-{
-public:
-	class AMAPlayerState*                         PlayerState;                                       // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Damage;                                            // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LastDamageTime;                                    // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FKillAssistInfo;
-
-// ScriptStruct Midair2.MAAchievement
-// 0x0048 (0x0048 - 0x0000)
-struct FMAAchievement final
-{
-public:
-	class FString                                 ID;                                                // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FText                                   DisplayName;                                       // 0x0010(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NativeAccessSpecifierPublic)
-	class FText                                   Description;                                       // 0x0028(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NativeAccessSpecifierPublic)
-	bool                                          bUnlocked;                                         // 0x0040(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_41[0x3];                                       // 0x0041(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Progress;                                          // 0x0044(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMAAchievement;
-
-// ScriptStruct Midair2.MA_LatitudeLongitudeStruct
-// 0x0008 (0x0008 - 0x0000)
-struct FMA_LatitudeLongitudeStruct final
-{
-public:
-	int32                                         Latitude;                                          // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Longitude;                                         // 0x0004(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMA_LatitudeLongitudeStruct;
-
-// ScriptStruct Midair2.MAMapPracticeTrails
-// 0x0010 (0x0010 - 0x0000)
-struct FMAMapPracticeTrails final
-{
-public:
-	TArray<struct FMARouteTrail>                  RouteTrails;                                       // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMAMapPracticeTrails;
-
-// ScriptStruct Midair2.FriendView
-// 0x0078 (0x0078 - 0x0000)
-struct FFriendView final
-{
-public:
-	struct FUniqueNetIdRepl                       UserId;                                            // 0x0000(0x0028)(BlueprintVisible, BlueprintReadOnly, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 DisplayName;                                       // 0x0028(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsOnline;                                         // 0x0038(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInGame;                                           // 0x0039(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3A[0x6];                                       // 0x003A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 PresenceStatus;                                    // 0x0040(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class UTexture2D>              Avatar;                                            // 0x0050(0x0028)(BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FFriendView;
-
-// ScriptStruct Midair2.SensorTargetModifiers
-// 0x0008 (0x0008 - 0x0000)
-struct FSensorTargetModifiers final
-{
-public:
-	float                                         MotionSensorRangeModifier;                         // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RadarSensorRangeModifier;                          // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSensorTargetModifiers;
-
-// ScriptStruct Midair2.MAMapPracticeTutorials
-// 0x0010 (0x0010 - 0x0000)
-struct FMAMapPracticeTutorials final
-{
-public:
-	TArray<struct FMATutorial>                    RouteTutorials;                                    // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMAMapPracticeTutorials;
-
-// ScriptStruct Midair2.MAStatDelta
-// 0x0010 (0x0010 - 0x0000)
-struct FMAStatDelta final
-{
-public:
-	class FName                                   StatId;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int64                                         Delta;                                             // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMAStatDelta;
-
-// ScriptStruct Midair2.PartyMemberView
-// 0x0078 (0x0078 - 0x0000)
-struct FPartyMemberView final
-{
-public:
-	struct FUniqueNetIdRepl                       UserId;                                            // 0x0000(0x0028)(BlueprintVisible, BlueprintReadOnly, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 UserIdString;                                      // 0x0028(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 DisplayName;                                       // 0x0038(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsLeader;                                         // 0x0048(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsSelf;                                           // 0x0049(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4A[0x6];                                       // 0x004A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TSoftObjectPtr<class UTexture2D>              Avatar;                                            // 0x0050(0x0028)(BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FPartyMemberView;
-
-// ScriptStruct Midair2.IPPortInfo
-// 0x0030 (0x0030 - 0x0000)
-struct FIPPortInfo final
-{
-public:
-	class FString                                 IPAddress;                                         // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Port;                                              // 0x0010(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 LocationName;                                      // 0x0018(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         latency;                                           // 0x0028(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FIPPortInfo;
-
-// ScriptStruct Midair2.MA_ErrorStruct
-// 0x0018 (0x0018 - 0x0000)
-struct FMA_ErrorStruct final
-{
-public:
-	int32                                         ErrorCode;                                         // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ErrorMessage;                                      // 0x0008(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMA_ErrorStruct;
-
-// ScriptStruct Midair2.MABuildableObject
-// 0x0030 (0x0030 - 0x0000)
-struct FMABuildableObject final
-{
-public:
-	class FString                                 Name;                                              // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UStaticMesh*                            ObjectCollisionMesh;                               // 0x0010(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UStaticMesh*                            ObjectRenderMesh;                                  // 0x0018(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UClass*                                 ObjectActorClass;                                  // 0x0020(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMaterialInstance*                      ObjectMaterial;                                    // 0x0028(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMABuildableObject;
-
-// ScriptStruct Midair2.MAAudioSubmixEffectsChain
-// 0x0018 (0x0018 - 0x0000)
-struct FMAAudioSubmixEffectsChain final
-{
-public:
-	class USoundSubmix*                           Submix;                                            // 0x0000(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class USoundEffectSubmixPreset*>       SubmixEffectChain;                                 // 0x0008(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMAAudioSubmixEffectsChain;
-
-// ScriptStruct Midair2.StatValue
-// 0x0008 (0x0008 - 0x0000)
-struct FStatValue final
-{
-public:
-	int32                                         Total;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Best;                                              // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FStatValue;
-
-// ScriptStruct Midair2.MA_ListLocationBeaconsResponse
-// 0x0080 (0x0080 - 0x0000)
-struct FMA_ListLocationBeaconsResponse final
-{
-public:
-	class FString                                 Host;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 FQDN;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         UdpPort;                                           // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TcpPort;                                           // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMA_LocationStruct                     Location;                                          // 0x0028(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FMA_LatitudeLongitudeStruct            LatitudeLongitude;                                 // 0x0078(0x0008)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMA_ListLocationBeaconsResponse;
-
 // ScriptStruct Midair2.RepMACharMovement
 // 0x0024 (0x0024 - 0x0000)
 struct FRepMACharMovement final
@@ -2064,21 +2227,94 @@ public:
 };
 DUMPER7_ASSERTS_FRepMACharMovement;
 
-// ScriptStruct Midair2.APIListResponse
-// 0x0010 (0x0010 - 0x0000)
-struct FAPIListResponse
+// ScriptStruct Midair2.MATabDescriptor
+// 0x00C8 (0x00C8 - 0x0000)
+struct FMATabDescriptor final
 {
 public:
-	bool                                          success;                                           // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         totalPages;                                        // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         currentPage;                                       // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Total;                                             // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   TabId;                                             // 0x0000(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   TabText;                                           // 0x0008(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            IconBrush;                                         // 0x0020(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	bool                                          bHidden;                                           // 0x00A8(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A9[0x7];                                       // 0x00A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UCommonButtonBase>          TabButtonType;                                     // 0x00B0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UCommonUserWidget>          TabContentType;                                    // 0x00B8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UWidget*                                CreatedTabContentWidget;                           // 0x00C0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FAPIListResponse;
+DUMPER7_ASSERTS_FMATabDescriptor;
+
+// ScriptStruct Midair2.DeathMessageData
+// 0x0028 (0x0028 - 0x0000)
+struct FDeathMessageData final
+{
+public:
+	class AMAPlayerState*                         Killer;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AMAPlayerState*                         Victim;                                            // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AMAPlayerState*                         Assist;                                            // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UMADamageType>              DamageTypeClass;                                   // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         SkillRating;                                       // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FDeathMessageData;
+
+// ScriptStruct Midair2.MAAchievementProgressDelta
+// 0x0058 (0x0058 - 0x0000)
+struct FMAAchievementProgressDelta final
+{
+public:
+	class FName                                   AchievementId;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   DisplayName;                                       // 0x0008(0x0018)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	class FText                                   DisplayDescription;                                // 0x0020(0x0018)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	class UTexture2D*                             LockedIcon;                                        // 0x0038(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture2D*                             UnlockedIcon;                                      // 0x0040(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         StatValue;                                         // 0x0048(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StartPercent;                                      // 0x004C(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         EndPercent;                                        // 0x0050(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUnlockedNow;                                      // 0x0054(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsUnlocked;                                       // 0x0055(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_56[0x2];                                       // 0x0056(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMAAchievementProgressDelta;
+
+// ScriptStruct Midair2.CarriedObjectProperties
+// 0x0014 (0x0014 - 0x0000)
+struct FCarriedObjectProperties final
+{
+public:
+	float                                         PickUpIgnoreTime;                                  // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSendHomeOnTeamTouch;                              // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         TossSpeed;                                         // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AutoReturnTime;                                    // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AutoDropTime;                                      // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCarriedObjectProperties;
+
+// ScriptStruct Midair2.MAQueueInfo
+// 0x0014 (0x0014 - 0x0000)
+struct FMAQueueInfo final
+{
+public:
+	int32                                         CTF;                                               // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Duel;                                              // 0x0004(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         League;                                            // 0x0008(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         RB;                                                // 0x000C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Total;                                             // 0x0010(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMAQueueInfo;
+
+// ScriptStruct Midair2.MASubmixEffectChainMap
+// 0x0038 (0x0038 - 0x0000)
+struct FMASubmixEffectChainMap final
+{
+public:
+	TSoftObjectPtr<class USoundSubmix>            Submix;                                            // 0x0000(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<TSoftObjectPtr<class USoundEffectSubmixPreset>> SubmixEffectChain;                        // 0x0028(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMASubmixEffectChainMap;
 
 // ScriptStruct Midair2.MALoadout
-// 0x00B0 (0x00B8 - 0x0008)
+// 0x00B8 (0x00C0 - 0x0008)
 struct FMALoadout final : public FTableRowBase
 {
 public:
@@ -2095,14 +2331,15 @@ public:
 	TSubclassOf<class UBackpackInfo>              Backpack;                                          // 0x0080(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<TSubclassOf<class UAugmentInfo>>       Augments;                                          // 0x0088(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 	TSubclassOf<class UVoiceSetInfo>              VoiceSet;                                          // 0x0098(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<uint8>                                 SteamSerializedItems;                              // 0x00A0(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
-	bool                                          bSteamSerializesSkins;                             // 0x00B0(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B1[0x7];                                       // 0x00B1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UAbilityInfo>               Ability;                                           // 0x00A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<uint8>                                 SteamSerializedItems;                              // 0x00A8(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+	bool                                          bSteamSerializesSkins;                             // 0x00B8(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B9[0x7];                                       // 0x00B9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FMALoadout;
 
 // ScriptStruct Midair2.MABotConfig
-// 0x0168 (0x0168 - 0x0000)
+// 0x0170 (0x0170 - 0x0000)
 struct FMABotConfig final
 {
 public:
@@ -2110,27 +2347,27 @@ public:
 	bool                                          bRandomName;                                       // 0x0010(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Description;                                       // 0x0018(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMALoadout                             loadout;                                           // 0x0028(0x00B8)(BlueprintVisible, NativeAccessSpecifierPublic)
-	EBotAccuracyLevels                            AccuracyLevel;                                     // 0x00E0(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EBotTypes                                     BotType;                                           // 0x00E1(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_E2[0x6];                                       // 0x00E2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class FString>                         RouteTrailNames;                                   // 0x00E8(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          bBotShoots;                                        // 0x00F8(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bBotTakesDamage;                                   // 0x00F9(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bBotAlwaysFollowPath;                              // 0x00FA(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bBotLoopsIfAlive;                                  // 0x00FB(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bBotRespawns;                                      // 0x00FC(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EDrillBotSpawnType                            BotSpawnType;                                      // 0x00FD(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_FE[0x2];                                       // 0x00FE(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         SpawnDelay;                                        // 0x0100(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_104[0x4];                                      // 0x0104(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMANamedLocation                       InitialBotLocation;                                // 0x0108(0x0058)(BlueprintVisible, NativeAccessSpecifierPublic)
-	bool                                          SpawnOnPlayersTeam;                                // 0x0160(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRandomlyDelaySpawn;                               // 0x0161(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bNoChaingun;                                       // 0x0162(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bNoDisc;                                           // 0x0163(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bNoGrenadeLauncher;                                // 0x0164(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_165[0x3];                                      // 0x0165(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FMALoadout                             Loadout;                                           // 0x0028(0x00C0)(BlueprintVisible, NativeAccessSpecifierPublic)
+	EBotAccuracyLevels                            AccuracyLevel;                                     // 0x00E8(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EBotTypes                                     BotType;                                           // 0x00E9(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_EA[0x6];                                       // 0x00EA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FString>                         RouteTrailNames;                                   // 0x00F0(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          bBotShoots;                                        // 0x0100(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bBotTakesDamage;                                   // 0x0101(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bBotAlwaysFollowPath;                              // 0x0102(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bBotLoopsIfAlive;                                  // 0x0103(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bBotRespawns;                                      // 0x0104(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EDrillBotSpawnType                            BotSpawnType;                                      // 0x0105(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_106[0x2];                                      // 0x0106(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         SpawnDelay;                                        // 0x0108(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_10C[0x4];                                      // 0x010C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMANamedLocation                       InitialBotLocation;                                // 0x0110(0x0058)(BlueprintVisible, NativeAccessSpecifierPublic)
+	bool                                          SpawnOnPlayersTeam;                                // 0x0168(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRandomlyDelaySpawn;                               // 0x0169(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNoChaingun;                                       // 0x016A(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNoDisc;                                           // 0x016B(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNoGrenadeLauncher;                                // 0x016C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_16D[0x3];                                      // 0x016D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FMABotConfig;
 
@@ -2140,7 +2377,7 @@ struct FMAMapPracticeData final
 {
 public:
 	class FString                                 mapName;                                           // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Author;                                            // 0x0010(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 author;                                            // 0x0010(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FMARouteTrail>                  RouteTrails;                                       // 0x0020(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<struct FMADrill>                       Drills;                                            // 0x0030(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<struct FMABotConfig>                   Bots;                                              // 0x0040(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
@@ -2148,6 +2385,81 @@ public:
 	TArray<struct FMATutorial>                    Tutorials;                                         // 0x0060(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FMAMapPracticeData;
+
+// ScriptStruct Midair2.GameModeSimpleScore
+// 0x000C (0x000C - 0x0000)
+struct FGameModeSimpleScore final
+{
+public:
+	int32                                         ID;                                                // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         Value;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         Cooldown;                                          // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+};
+DUMPER7_ASSERTS_FGameModeSimpleScore;
+
+// ScriptStruct Midair2.MAMapPracticeDrills
+// 0x0010 (0x0010 - 0x0000)
+struct FMAMapPracticeDrills final
+{
+public:
+	TArray<struct FMADrill>                       RouteDrills;                                       // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMAMapPracticeDrills;
+
+// ScriptStruct Midair2.MAMapPracticeTrails
+// 0x0010 (0x0010 - 0x0000)
+struct FMAMapPracticeTrails final
+{
+public:
+	TArray<struct FMARouteTrail>                  RouteTrails;                                       // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMAMapPracticeTrails;
+
+// ScriptStruct Midair2.PodiumPlayerInfo
+// 0x0028 (0x0028 - 0x0000)
+struct FPodiumPlayerInfo final
+{
+public:
+	TSubclassOf<class ASkinConfiguration>         SkinClass;                                         // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         TeamId;                                            // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 PlayerName;                                        // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         score;                                             // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FPodiumPlayerInfo;
+
+// ScriptStruct Midair2.MAMapPracticeTutorials
+// 0x0010 (0x0010 - 0x0000)
+struct FMAMapPracticeTutorials final
+{
+public:
+	TArray<struct FMATutorial>                    RouteTutorials;                                    // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMAMapPracticeTutorials;
+
+// ScriptStruct Midair2.IPPortInfo
+// 0x0030 (0x0030 - 0x0000)
+struct FIPPortInfo final
+{
+public:
+	class FString                                 IPAddress;                                         // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Port;                                              // 0x0010(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 LocationName;                                      // 0x0018(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         latency;                                           // 0x0028(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FIPPortInfo;
+
+// ScriptStruct Midair2.LoadingScreenTipData
+// 0x0018 (0x0020 - 0x0008)
+struct FLoadingScreenTipData final : public FTableRowBase
+{
+public:
+	class FText                                   Tip;                                               // 0x0008(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLoadingScreenTipData;
 
 // ScriptStruct Midair2.MAAchievementCondition
 // 0x0018 (0x0018 - 0x0000)
@@ -2183,96 +2495,39 @@ public:
 };
 DUMPER7_ASSERTS_FMAAchievementRule;
 
-// ScriptStruct Midair2.BaseProgressionData
-// 0x000C (0x000C - 0x0000)
-struct FBaseProgressionData final
-{
-public:
-	int32                                         XP;                                                // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Level;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ManaShards;                                        // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FBaseProgressionData;
-
-// ScriptStruct Midair2.FlatShieldVars
+// ScriptStruct Midair2.RepThrustInput
 // 0x0014 (0x0014 - 0x0000)
-struct FFlatShieldVars final
+struct FRepThrustInput final
 {
 public:
-	float                                         ShieldHealthMaxPool;                               // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ShieldRechargeRate;                                // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ShieldRechargeDelay;                               // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ShieldRechargeConversionFactor;                    // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ShieldFlashDuration;                               // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ThrottleInput;                                     // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BreakInput;                                        // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HorizontalThrustInput;                             // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         VerticalThrustInput;                               // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          AfterBurnerInput;                                  // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x1];                                       // 0x0011(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint16                                        Frame;                                             // 0x0012(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FFlatShieldVars;
+DUMPER7_ASSERTS_FRepThrustInput;
 
-// ScriptStruct Midair2.PartyMessage
-// 0x0080 (0x0080 - 0x0000)
-struct FPartyMessage final
+// ScriptStruct Midair2.APIResponse
+// 0x0001 (0x0001 - 0x0000)
+struct FAPIResponse
 {
 public:
-	float                                         TimeSent;                                          // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 SenderName;                                        // 0x0008(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FUniqueNetIdRepl                       SenderId;                                          // 0x0018(0x0028)(BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Message;                                           // 0x0040(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EPartyChatType                                ChatType;                                          // 0x0050(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FUniqueNetIdRepl                       ReceiverId;                                        // 0x0058(0x0028)(BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          success;                                           // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FPartyMessage;
+DUMPER7_ASSERTS_FAPIResponse;
 
-// ScriptStruct Midair2.GameViewportInputState
-// 0x0018 (0x0018 - 0x0000)
-struct alignas(0x08) FGameViewportInputState final
+// ScriptStruct Midair2.PlayerStatsResponse
+// 0x0147 (0x0148 - 0x0001)
+struct FPlayerStatsResponse final : public FAPIResponse
 {
 public:
-	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPlayerStats                           stats;                                             // 0x0008(0x0140)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FGameViewportInputState;
-
-// ScriptStruct Midair2.LoadingScreenTipData
-// 0x0018 (0x0020 - 0x0008)
-struct FLoadingScreenTipData final : public FTableRowBase
-{
-public:
-	class FText                                   Tip;                                               // 0x0008(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLoadingScreenTipData;
-
-// ScriptStruct Midair2.LoadingScreenMapData
-// 0x0068 (0x0068 - 0x0000)
-struct FLoadingScreenMapData final
-{
-public:
-	class UTexture2D*                             Background;                                        // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USoundBase*                             LoadingMusic;                                      // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 mapName;                                           // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FText                                   Lore;                                              // 0x0020(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FText                                   Authors;                                           // 0x0038(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FText                                   Objectives;                                        // 0x0050(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLoadingScreenMapData;
-
-// ScriptStruct Midair2.MAAchievementProgressDelta
-// 0x0058 (0x0058 - 0x0000)
-struct FMAAchievementProgressDelta final
-{
-public:
-	class FName                                   AchievementId;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FText                                   DisplayName;                                       // 0x0008(0x0018)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	class FText                                   DisplayDescription;                                // 0x0020(0x0018)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	class UTexture2D*                             LockedIcon;                                        // 0x0038(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture2D*                             UnlockedIcon;                                      // 0x0040(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         StatValue;                                         // 0x0048(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StartPercent;                                      // 0x004C(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         EndPercent;                                        // 0x0050(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUnlockedNow;                                      // 0x0054(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsUnlocked;                                       // 0x0055(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_56[0x2];                                       // 0x0056(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMAAchievementProgressDelta;
+DUMPER7_ASSERTS_FPlayerStatsResponse;
 
 // ScriptStruct Midair2.BackpackArt
 // 0x0020 (0x0020 - 0x0000)
@@ -2287,19 +2542,63 @@ public:
 };
 DUMPER7_ASSERTS_FBackpackArt;
 
-// ScriptStruct Midair2.CarriedObjectProperties
-// 0x0014 (0x0014 - 0x0000)
-struct FCarriedObjectProperties final
+// ScriptStruct Midair2.MABuildableObject
+// 0x0030 (0x0030 - 0x0000)
+struct FMABuildableObject final
 {
 public:
-	float                                         PickUpIgnoreTime;                                  // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSendHomeOnTeamTouch;                              // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         TossSpeed;                                         // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         AutoReturnTime;                                    // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         AutoDropTime;                                      // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UStaticMesh*                            ObjectCollisionMesh;                               // 0x0010(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UStaticMesh*                            ObjectRenderMesh;                                  // 0x0018(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UClass*                                 ObjectActorClass;                                  // 0x0020(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMaterialInstance*                      ObjectMaterial;                                    // 0x0028(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCarriedObjectProperties;
+DUMPER7_ASSERTS_FMABuildableObject;
+
+// ScriptStruct Midair2.MAUser
+// 0x00E0 (0x00E0 - 0x0000)
+struct FMAUser final
+{
+public:
+	class FString                                 _id;                                               // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 DisplayName;                                       // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 steamID;                                           // 0x0020(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         credits;                                           // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         XP;                                                // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Level;                                             // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EMAUserRole                                   Role;                                              // 0x003C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          isBanned;                                          // 0x003D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          isInClan;                                          // 0x003E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          isPatreonMember;                                   // 0x003F(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          showPatreonBadge;                                  // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_41[0x9F];                                      // 0x0041(0x009F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMAUser;
+
+// ScriptStruct Midair2.MAPackedMoveBundle
+// 0x0038 (0x0038 - 0x0000)
+struct FMAPackedMoveBundle final
+{
+public:
+	TArray<struct FMAPackedMove>                  Moves;                                             // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FVector_NetQuantize                    ClientLoc;                                         // 0x0010(0x000C)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPrimitiveComponent*                    ClientMovementBase;                                // 0x0020(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ClientBaseBoneName;                                // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         ClientMovementMode;                                // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMAPackedMoveBundle;
+
+// ScriptStruct Midair2.MASimpleUser
+// 0x0020 (0x0020 - 0x0000)
+struct FMASimpleUser final
+{
+public:
+	class FString                                 UserId;                                            // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 DisplayName;                                       // 0x0010(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMASimpleUser;
 
 // ScriptStruct Midair2.MAEOSFriend
 // 0x0028 (0x0028 - 0x0000)
@@ -2321,6 +2620,16 @@ public:
 };
 DUMPER7_ASSERTS_FVoiceChatChannel3dPropertiesMA;
 
+// ScriptStruct Midair2.PartyInfo
+// 0x0038 (0x0038 - 0x0000)
+struct FPartyInfo final
+{
+public:
+	struct FUniqueNetIdRepl                       PartyLeaderID;                                     // 0x0000(0x0028)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class APlayerState*>                   members;                                           // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FPartyInfo;
+
 // ScriptStruct Midair2.SimplePlayerStats
 // 0x0008 (0x0008 - 0x0000)
 struct FSimplePlayerStats final
@@ -2331,18 +2640,6 @@ public:
 };
 DUMPER7_ASSERTS_FSimplePlayerStats;
 
-// ScriptStruct Midair2.ProgressionLevelData
-// 0x0010 (0x0018 - 0x0008)
-struct FProgressionLevelData final : public FTableRowBase
-{
-public:
-	int32                                         NewXPRequired;                                     // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TotalXPRequired;                                   // 0x000C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ManaShardsGranted;                                 // 0x0010(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FProgressionLevelData;
-
 // ScriptStruct Midair2.PlayerLatencies
 // 0x0010 (0x0010 - 0x0000)
 struct FPlayerLatencies final
@@ -2351,17 +2648,6 @@ public:
 	TArray<float>                                 Entries;                                           // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FPlayerLatencies;
-
-// ScriptStruct Midair2.GameModeSimpleScore
-// 0x000C (0x000C - 0x0000)
-struct FGameModeSimpleScore final
-{
-public:
-	int32                                         ID;                                                // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         Value;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         Cooldown;                                          // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-};
-DUMPER7_ASSERTS_FGameModeSimpleScore;
 
 // ScriptStruct Midair2.GameModeComplexScore
 // 0x0018 (0x0018 - 0x0000)
@@ -2382,6 +2668,17 @@ public:
 	struct FLinearColor                           Color;                                             // 0x0018(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FTeamConfigEntry;
+
+// ScriptStruct Midair2.ActiveBackfillInfo
+// 0x0018 (0x0018 - 0x0000)
+struct FActiveBackfillInfo final
+{
+public:
+	class FString                                 BackfillId;                                        // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CreatedAtSeconds;                                  // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FActiveBackfillInfo;
 
 // ScriptStruct Midair2.MADynamicCrosshair
 // 0x008C (0x008C - 0x0000)
@@ -2452,6 +2749,21 @@ public:
 	class UMaterialInstanceDynamic*               MaterialInstance;                                  // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FDamageMarkerInfo;
+
+// ScriptStruct Midair2.HitMarkerInfo
+// 0x0018 (0x0018 - 0x0000)
+struct FHitMarkerInfo final
+{
+public:
+	float                                         Time;                                              // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Damage;                                            // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bCriticalHit : 1;                                  // 0x0008(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bTeamHit : 1;                                      // 0x0008(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bAlive : 1;                                        // 0x0008(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInstanceDynamic*               MaterialInstance;                                  // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FHitMarkerInfo;
 
 // ScriptStruct Midair2.MidairInputConflict
 // 0x0048 (0x0048 - 0x0000)
@@ -2555,6 +2867,24 @@ public:
 };
 DUMPER7_ASSERTS_FLocalMessageData;
 
+// ScriptStruct Midair2.MABroadcast
+// 0x0080 (0x0080 - 0x0000)
+struct FMABroadcast final
+{
+public:
+	class FString                                 BroadcastId;                                       // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   Title;                                             // 0x0010(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FText                                   Body;                                              // 0x0028(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FDateTime                              CreatedAtUtc;                                      // 0x0040(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 CreatedAtDisplay;                                  // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ImageURL;                                          // 0x0058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 DeepLinkURL;                                       // 0x0068(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsNew;                                            // 0x0078(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHasBeenDeleted;                                   // 0x0079(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_7A[0x6];                                       // 0x007A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMABroadcast;
+
 // ScriptStruct Midair2.MMTicketAttributes
 // 0x0078 (0x0078 - 0x0000)
 struct FMMTicketAttributes final
@@ -2569,12 +2899,13 @@ public:
 DUMPER7_ASSERTS_FMMTicketAttributes;
 
 // ScriptStruct Midair2.MMTicket
-// 0x0088 (0x0088 - 0x0000)
+// 0x0098 (0x0098 - 0x0000)
 struct FMMTicket final
 {
 public:
 	class FString                                 player_ip;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FMMTicketAttributes                    Attributes;                                        // 0x0010(0x0078)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FString                                 steamID;                                           // 0x0088(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FMMTicket;
 
@@ -2586,29 +2917,6 @@ public:
 	TArray<struct FMMTicket>                      player_tickets;                                    // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FMMGroupTicket;
-
-// ScriptStruct Midair2.MMRating
-// 0x0008 (0x0008 - 0x0000)
-struct FMMRating final
-{
-public:
-	float                                         mu;                                                // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         sigma;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMMRating;
-
-// ScriptStruct Midair2.MMPlayer
-// 0x0088 (0x0088 - 0x0000)
-struct FMMPlayer final
-{
-public:
-	class FString                                 player_id;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMMRating                              Rating;                                            // 0x0010(0x0008)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	TMap<class FString, int32>                    latency;                                           // 0x0018(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FString                                 Platform;                                          // 0x0068(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class FString>                         input_methods;                                     // 0x0078(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMMPlayer;
 
 // ScriptStruct Midair2.MAPerformanceStatGroup
 // 0x0098 (0x0098 - 0x0000)
@@ -2631,6 +2939,16 @@ public:
 	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FMAQualityDeviceProfileVariant;
+
+// ScriptStruct Midair2.MAStatDelta
+// 0x0010 (0x0010 - 0x0000)
+struct FMAStatDelta final
+{
+public:
+	class FName                                   StatId;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         Delta;                                             // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMAStatDelta;
 
 // ScriptStruct Midair2.MatchXPConversion
 // 0x0028 (0x0028 - 0x0000)
@@ -2670,26 +2988,17 @@ public:
 };
 DUMPER7_ASSERTS_FReplicatedDemoMessage;
 
-// ScriptStruct Midair2.PredictionSmoothing
-// 0x0070 (0x0070 - 0x0000)
-struct FPredictionSmoothing final
+// ScriptStruct Midair2.ReplicatedMatchPresence
+// 0x0028 (0x0028 - 0x0000)
+struct FReplicatedMatchPresence final
 {
 public:
-	class USceneComponent*                        TargetComponent;                                   // 0x0000(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                BaseLocationOffset;                                // 0x0008(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0xC];                                       // 0x0014(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FQuat                                  BaseRotationOffset;                                // 0x0020(0x0010)(IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector                                LocationOffset;                                    // 0x0030(0x000C)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FQuat                                  RotationOffset;                                    // 0x0040(0x0010)(Transient, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	float                                         SmoothLocationTime;                                // 0x0050(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SmoothRotationTime;                                // 0x0054(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxSmoothUpdateDist;                               // 0x0058(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NoSmoothUpdateDist;                                // 0x005C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnableSmoothing;                                  // 0x0060(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_61[0xF];                                       // 0x0061(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	ESteamDisplayPresenceTypes                    Status;                                            // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Map;                                               // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 score;                                             // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FPredictionSmoothing;
+DUMPER7_ASSERTS_FReplicatedMatchPresence;
 
 // ScriptStruct Midair2.RepStage
 // 0x0008 (0x0008 - 0x0000)
@@ -2701,6 +3010,19 @@ public:
 	float                                         StageTime;                                         // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRepStage;
+
+// ScriptStruct Midair2.APIListResponse
+// 0x0010 (0x0010 - 0x0000)
+struct FAPIListResponse
+{
+public:
+	bool                                          success;                                           // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         totalPages;                                        // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         currentPage;                                       // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Total;                                             // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAPIListResponse;
 
 // ScriptStruct Midair2.MatchListResponse
 // 0x0010 (0x0020 - 0x0010)
@@ -2748,25 +3070,6 @@ public:
 };
 DUMPER7_ASSERTS_FMatchHistory;
 
-// ScriptStruct Midair2.APIResponse
-// 0x0001 (0x0001 - 0x0000)
-struct FAPIResponse
-{
-public:
-	bool                                          success;                                           // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAPIResponse;
-
-// ScriptStruct Midair2.PlayerStatsResponse
-// 0x0147 (0x0148 - 0x0001)
-struct FPlayerStatsResponse final : public FAPIResponse
-{
-public:
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPlayerStats                           stats;                                             // 0x0008(0x0140)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FPlayerStatsResponse;
-
 // ScriptStruct Midair2.MatchWeaponStatsTotals
 // 0x0014 (0x0014 - 0x0000)
 struct FMatchWeaponStatsTotals final
@@ -2794,26 +3097,6 @@ public:
 	class FString                                 ClientVersion;                                     // 0x0048(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FUserReport;
-
-// ScriptStruct Midair2.MAUser
-// 0x00E0 (0x00E0 - 0x0000)
-struct FMAUser final
-{
-public:
-	class FString                                 _id;                                               // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 DisplayName;                                       // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 steamID;                                           // 0x0020(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         credits;                                           // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         XP;                                                // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Level;                                             // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EMAUserRole                                   Role;                                              // 0x003C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          isBanned;                                          // 0x003D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          isInClan;                                          // 0x003E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          isPatreonMember;                                   // 0x003F(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          showPatreonBadge;                                  // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_41[0x9F];                                      // 0x0041(0x009F)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMAUser;
 
 // ScriptStruct Midair2.MAUserResponse
 // 0x00E7 (0x00E8 - 0x0001)
@@ -2881,6 +3164,35 @@ public:
 	int32                                         Row;                                               // 0x0044(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FStoreItemLayoutDataBase;
+
+// ScriptStruct Midair2.TargetDroneSettings
+// 0x0050 (0x0050 - 0x0000)
+struct FTargetDroneSettings final
+{
+public:
+	bool                                          bCanFire;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EDroneMoveMode                                MoveMode;                                          // 0x0001(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         VertTolerance;                                     // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CruiseSpeed;                                       // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TurnRateDegPerSec;                                 // 0x000C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TargetRadius;                                      // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              RetargetIntervalRange;                             // 0x0014(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HoverAmplitude;                                    // 0x001C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TakeoffHeight;                                     // 0x0020(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TakeoffSpeed;                                      // 0x0024(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TakeoffStopTolerance;                              // 0x0028(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HoverTargetZ;                                      // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HoverAutoOffset;                                   // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HoverZTolerance;                                   // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHoverUseABMidpointXY;                             // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_39[0x3];                                       // 0x0039(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         HoverDriftRadius;                                  // 0x003C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HoverBobAmplitude;                                 // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HoverBobFrequency;                                 // 0x0044(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class AMAWeapon>                  WeaponTemplate;                                    // 0x0048(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FTargetDroneSettings;
 
 // ScriptStruct Midair2.DroneMaterialOverride
 // 0x0010 (0x0010 - 0x0000)
@@ -3029,6 +3341,19 @@ public:
 };
 DUMPER7_ASSERTS_FLootboxInfo;
 
+// ScriptStruct Midair2.RepMAMovement
+// 0x0028 (0x0028 - 0x0000)
+struct FRepMAMovement final
+{
+public:
+	struct FVector_NetQuantize                    LinearVelocity;                                    // 0x0000(0x000C)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector_NetQuantize                    Location;                                          // 0x000C(0x000C)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               Rotation;                                          // 0x0018(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         EnsureReplicationByte;                             // 0x0024(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRepMAMovement;
+
 // ScriptStruct Midair2.RepWeaponSpecial
 // 0x0003 (0x0003 - 0x0000)
 struct FRepWeaponSpecial final
@@ -3065,6 +3390,21 @@ public:
 };
 DUMPER7_ASSERTS_FZoomInfo;
 
+// ScriptStruct Midair2.OldCameraShakeInfo
+// 0x0010 (0x0010 - 0x0000)
+struct FOldCameraShakeInfo final
+{
+public:
+	TSubclassOf<class UCameraShakeBase>           CameraShakeClass;                                  // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Scale;                                             // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         UserSpacePitch;                                    // 0x0009(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         UserSpaceYaw;                                      // 0x000A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bPlayInUserSpace : 1;                              // 0x000B(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         EnsureReplicationByte;                             // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FOldCameraShakeInfo;
+
 // ScriptStruct Midair2.SurfaceImpactInfo
 // 0x0030 (0x0030 - 0x0000)
 struct FSurfaceImpactInfo final
@@ -3081,6 +3421,17 @@ public:
 };
 DUMPER7_ASSERTS_FSurfaceImpactInfo;
 
+// ScriptStruct Midair2.KillAssistInfo
+// 0x0010 (0x0010 - 0x0000)
+struct FKillAssistInfo final
+{
+public:
+	class AMAPlayerState*                         PlayerState;                                       // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Damage;                                            // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LastDamageTime;                                    // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FKillAssistInfo;
+
 // ScriptStruct Midair2.WorldCameraShakeParams
 // 0x0014 (0x0014 - 0x0000)
 struct FWorldCameraShakeParams final
@@ -3094,43 +3445,6 @@ public:
 	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FWorldCameraShakeParams;
-
-// ScriptStruct Midair2.SurfaceTypeParticles
-// 0x0078 (0x0078 - 0x0000)
-struct FSurfaceTypeParticles final
-{
-public:
-	class UParticleSystem*                        Default;                                           // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UParticleSystem*                        Flesh;                                             // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UParticleSystem*                        Shields;                                           // 0x0010(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UParticleSystem*                        Dirt;                                              // 0x0018(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UParticleSystem*                        Grass;                                             // 0x0020(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UParticleSystem*                        Sand;                                              // 0x0028(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UParticleSystem*                        Rock;                                              // 0x0030(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UParticleSystem*                        Snow;                                              // 0x0038(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UParticleSystem*                        Ice;                                               // 0x0040(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UParticleSystem*                        Wood;                                              // 0x0048(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UParticleSystem*                        Concrete;                                          // 0x0050(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UParticleSystem*                        Metal;                                             // 0x0058(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UParticleSystem*                        Glass;                                             // 0x0060(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UParticleSystem*                        Water;                                             // 0x0068(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UParticleSystem*                        Lava;                                              // 0x0070(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSurfaceTypeParticles;
-
-// ScriptStruct Midair2.ImpactEffect
-// 0x0108 (0x0108 - 0x0000)
-struct FImpactEffect final
-{
-public:
-	struct FSurfaceTypeParticles                  Particles;                                         // 0x0000(0x0078)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSurfaceTypeSounds                     Sounds;                                            // 0x0078(0x0078)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	class UMaterialInterface*                     DecalMaterial;                                     // 0x00F0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              DecalSize;                                         // 0x00F8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DecalLifeSpan;                                     // 0x0100(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_104[0x4];                                      // 0x0104(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FImpactEffect;
 
 // ScriptStruct Midair2.CharacterItemAnims
 // 0x0018 (0x0018 - 0x0000)
@@ -3201,6 +3515,17 @@ public:
 };
 DUMPER7_ASSERTS_FMidairObjectiveInfo;
 
+// ScriptStruct Midair2.BaseProgressionData
+// 0x000C (0x000C - 0x0000)
+struct FBaseProgressionData final
+{
+public:
+	int32                                         XP;                                                // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Level;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ManaShards;                                        // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FBaseProgressionData;
+
 // ScriptStruct Midair2.IntRange
 // 0x0008 (0x0008 - 0x0000)
 struct FIntRange final
@@ -3210,18 +3535,6 @@ public:
 	int32                                         Max;                                               // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FIntRange;
-
-// ScriptStruct Midair2.PunishVote
-// 0x0018 (0x0018 - 0x0000)
-struct FPunishVote final
-{
-public:
-	class AMAPlayerState*                         Instigator;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AMAPlayerState*                         Target;                                            // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EPunishType                                   Type;                                              // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FPunishVote;
 
 // ScriptStruct Midair2.MAPlayerProgression
 // 0x000C (0x000C - 0x0000)
@@ -3255,17 +3568,14 @@ public:
 };
 DUMPER7_ASSERTS_FCharacterStatDetails;
 
-// ScriptStruct Midair2.WeaponStatDetails
-// 0x0010 (0x0010 - 0x0000)
-struct FWeaponStatDetails final
+// ScriptStruct Midair2.PostRepPassengerInput
+// 0x0003 (0x0003 - 0x0000)
+struct FPostRepPassengerInput final
 {
 public:
-	float                                         RelativeDamagePct;                                 // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RelativeRadiusPct;                                 // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RelativeFireRatePct;                               // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RelativeClipSizePct;                               // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_0[0x3];                                        // 0x0000(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FWeaponStatDetails;
+DUMPER7_ASSERTS_FPostRepPassengerInput;
 
 // ScriptStruct Midair2.AnnouncerSetData
 // 0x0008 (0x0010 - 0x0008)
@@ -3284,23 +3594,6 @@ public:
 	class USoundCue*                              SoundCue;                                          // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FVoiceSetData;
-
-// ScriptStruct Midair2.PlayerExpressionData
-// 0x00C0 (0x00C8 - 0x0008)
-struct FPlayerExpressionData final : public FTableRowBase
-{
-public:
-	class FText                                   Category;                                          // 0x0008(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FText                                   LeaderKey;                                         // 0x0020(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FText                                   LeaderKeyConsole;                                  // 0x0038(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FText                                   LeaderKeyConsoleText;                              // 0x0050(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FText                                   MenuText;                                          // 0x0068(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FText                                   ChatText;                                          // 0x0080(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FText                                   CueName;                                           // 0x0098(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	bool                                          TeamOnly;                                          // 0x00B0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B1[0x17];                                      // 0x00B1(0x0017)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FPlayerExpressionData;
 
 // ScriptStruct Midair2.PracticeLessonDetails
 // 0x00D0 (0x00D0 - 0x0000)
@@ -3360,15 +3653,6 @@ public:
 };
 DUMPER7_ASSERTS_FReplicatedSpawnedSpray;
 
-// ScriptStruct Midair2.MASteamId
-// 0x0008 (0x0008 - 0x0000)
-struct alignas(0x08) FMASteamId final
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMASteamId;
-
 // ScriptStruct Midair2.SteamStats
 // 0x0014 (0x0014 - 0x0000)
 struct FSteamStats final
@@ -3391,6 +3675,71 @@ public:
 	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FDetectionCache;
+
+// ScriptStruct Midair2.RepVehiclePhysics
+// 0x0034 (0x0034 - 0x0000)
+struct FRepVehiclePhysics final
+{
+public:
+	struct FVector_NetQuantize10                  Location;                                          // 0x0000(0x000C)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               Rotation;                                          // 0x000C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector_NetQuantize10                  LinearVel;                                         // 0x0018(0x000C)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector_NetQuantize10                  AngularVel;                                        // 0x0024(0x000C)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint16                                        Frame;                                             // 0x0030(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_32[0x2];                                       // 0x0032(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRepVehiclePhysics;
+
+// ScriptStruct Midair2.RepStickInput
+// 0x0010 (0x0010 - 0x0000)
+struct FRepStickInput final
+{
+public:
+	float                                         RollInput;                                         // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PitchInput;                                        // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         YawInput;                                          // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint16                                        Frame;                                             // 0x000C(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E[0x2];                                        // 0x000E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRepStickInput;
+
+// ScriptStruct Midair2.VehicleInputFloatRate
+// 0x0008 (0x0008 - 0x0000)
+struct FVehicleInputFloatRate final
+{
+public:
+	float                                         RiseRate;                                          // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FallRate;                                          // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FVehicleInputFloatRate;
+
+// ScriptStruct Midair2.VariationAdjustedProperty
+// 0x001C (0x001C - 0x0000)
+struct FVariationAdjustedProperty final
+{
+public:
+	struct FVehicleInputFloatRate                 AdjustmentRate;                                    // 0x0000(0x0008)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         MaxValue;                                          // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MinValue;                                          // 0x000C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Value;                                             // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxIdealVariation;                                 // 0x0014(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFallWhenVariationAboveIdeal;                      // 0x0018(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FVariationAdjustedProperty;
+
+// ScriptStruct Midair2.VehicleDragCharacteristics
+// 0x0014 (0x0014 - 0x0000)
+struct FVehicleDragCharacteristics final
+{
+public:
+	float                                         SideArea;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FrontArea;                                         // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TopArea;                                           // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Cd;                                                // 0x000C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         VerticalDragFactor;                                // 0x0010(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FVehicleDragCharacteristics;
 
 }
 

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Midair2_structs.hpp"
+#include "Engine_structs.hpp"
 #include "UMG_classes.hpp"
 #include "SlateCore_structs.hpp"
 #include "Slate_structs.hpp"
@@ -21,7 +21,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass WBP_ESC_Loadout_BTN.WBP_ESC_Loadout_BTN_C
-// 0x0190 (0x03F0 - 0x0260)
+// 0x0198 (0x03F8 - 0x0260)
 class UWBP_ESC_Loadout_BTN_C final : public UUserWidget
 {
 public:
@@ -45,8 +45,8 @@ public:
 	struct FSlateColor                            Text_Color;                                        // 0x02F8(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
 	int32                                         OptionIndex;                                       // 0x0320(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 	uint8                                         Pad_324[0x4];                                      // 0x0324(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMALoadout                             loadout;                                           // 0x0328(0x00B8)(Edit, BlueprintVisible, ExposeOnSpawn)
-	TArray<class UWBP_ESC_Loadout_BTN_C*>         AllButtons;                                        // 0x03E0(0x0010)(Edit, BlueprintVisible, Transient, ContainsInstancedReference)
+	struct FMALoadout                             Loadout;                                           // 0x0328(0x00C0)(Edit, BlueprintVisible, ExposeOnSpawn)
+	TArray<class UWBP_ESC_Loadout_BTN_C*>         AllButtons;                                        // 0x03E8(0x0010)(Edit, BlueprintVisible, Transient, ContainsInstancedReference)
 
 public:
 	void ExecuteUbergraph_WBP_ESC_Loadout_BTN(int32 EntryPoint);

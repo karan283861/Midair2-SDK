@@ -31,6 +31,7 @@ public:
 	class UTexture2D*                             Image;                                             // 0x02F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void UpdateTitle(const class FText& NewTitle);
 	void PreConstruct(bool IsDesignTime);
 	void Construct();
 	void BndEvt__W_Experience_W_ExperienceTileButton_K2Node_ComponentBoundEvent_0_CommonButtonBaseClicked__DelegateSignature(class UCommonButtonBase* Button);

@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "MagicLeapARPin_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "MagicLeapARPin_structs.hpp"
 #include "Engine_classes.hpp"
 
 
@@ -144,6 +144,30 @@ public:
 };
 DUMPER7_ASSERTS_AMagicLeapARPinInfoActorBase;
 
+// Class MagicLeapARPin.MagicLeapARPinSettings
+// 0x0018 (0x0040 - 0x0028)
+class UMagicLeapARPinSettings final : public UObject
+{
+public:
+	float                                         UpdateCheckFrequency;                              // 0x0028(0x0004)(Edit, ZeroConstructor, Config, GlobalConfig, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMagicLeapARPinState                   OnUpdatedEventTriggerDelta;                        // 0x002C(0x0014)(Edit, Config, GlobalConfig, NoDestructor, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MagicLeapARPinSettings")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MagicLeapARPinSettings")
+	}
+	static class UMagicLeapARPinSettings* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMagicLeapARPinSettings>();
+	}
+};
+DUMPER7_ASSERTS_UMagicLeapARPinSettings;
+
 // Class MagicLeapARPin.MagicLeapARPinRenderer
 // 0x0068 (0x0290 - 0x0228)
 class AMagicLeapARPinRenderer final : public AActor
@@ -173,30 +197,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_AMagicLeapARPinRenderer;
-
-// Class MagicLeapARPin.MagicLeapARPinSettings
-// 0x0018 (0x0040 - 0x0028)
-class UMagicLeapARPinSettings final : public UObject
-{
-public:
-	float                                         UpdateCheckFrequency;                              // 0x0028(0x0004)(Edit, ZeroConstructor, Config, GlobalConfig, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMagicLeapARPinState                   OnUpdatedEventTriggerDelta;                        // 0x002C(0x0014)(Edit, Config, GlobalConfig, NoDestructor, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MagicLeapARPinSettings")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MagicLeapARPinSettings")
-	}
-	static class UMagicLeapARPinSettings* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMagicLeapARPinSettings>();
-	}
-};
-DUMPER7_ASSERTS_UMagicLeapARPinSettings;
 
 // Class MagicLeapARPin.MagicLeapARPinSaveGame
 // 0x0088 (0x00B0 - 0x0028)

@@ -17,6 +17,54 @@
 namespace SDK
 {
 
+// Function W_ExperienceTileButton.W_ExperienceTileButton_C.ExecuteUbergraph_W_ExperienceTileButton
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_ExperienceTileButton_C::ExecuteUbergraph_W_ExperienceTileButton(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_ExperienceTileButton_C", "ExecuteUbergraph_W_ExperienceTileButton");
+
+	Params::W_ExperienceTileButton_C_ExecuteUbergraph_W_ExperienceTileButton Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_ExperienceTileButton.W_ExperienceTileButton_C.BP_OnUnhovered
+// (Event, Protected, BlueprintEvent)
+
+void UW_ExperienceTileButton_C::BP_OnUnhovered()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_ExperienceTileButton_C", "BP_OnUnhovered");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_ExperienceTileButton.W_ExperienceTileButton_C.BP_OnHovered
+// (Event, Protected, BlueprintEvent)
+
+void UW_ExperienceTileButton_C::BP_OnHovered()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_ExperienceTileButton_C", "BP_OnHovered");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_ExperienceTileButton.W_ExperienceTileButton_C.UpdateTileText
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -38,54 +86,6 @@ void UW_ExperienceTileButton_C::UpdateTileText(const class FText& ExperienceTitl
 	Parms.ExperienceDescription_0 = std::move(ExperienceDescription_0);
 	Parms.MapTitle_0 = std::move(MapTitle_0);
 	Parms.Image_0 = Image_0;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function W_ExperienceTileButton.W_ExperienceTileButton_C.BP_OnHovered
-// (Event, Protected, BlueprintEvent)
-
-void UW_ExperienceTileButton_C::BP_OnHovered()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_ExperienceTileButton_C", "BP_OnHovered");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function W_ExperienceTileButton.W_ExperienceTileButton_C.BP_OnUnhovered
-// (Event, Protected, BlueprintEvent)
-
-void UW_ExperienceTileButton_C::BP_OnUnhovered()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_ExperienceTileButton_C", "BP_OnUnhovered");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function W_ExperienceTileButton.W_ExperienceTileButton_C.ExecuteUbergraph_W_ExperienceTileButton
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UW_ExperienceTileButton_C::ExecuteUbergraph_W_ExperienceTileButton(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_ExperienceTileButton_C", "ExecuteUbergraph_W_ExperienceTileButton");
-
-	Params::W_ExperienceTileButton_C_ExecuteUbergraph_W_ExperienceTileButton Parms{};
-
-	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

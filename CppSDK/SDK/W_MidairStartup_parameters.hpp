@@ -92,5 +92,14 @@ public:
 };
 DUMPER7_ASSERTS_W_MidairStartup_C_OnPreviewMouseButtonDown;
 
+// Function W_MidairStartup.W_MidairStartup_C.BP_GetDesiredFocusTarget
+// 0x0008 (0x0008 - 0x0000)
+struct W_MidairStartup_C_BP_GetDesiredFocusTarget final
+{
+public:
+	class UWidget*                                ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_W_MidairStartup_C_BP_GetDesiredFocusTarget;
+
 }
 

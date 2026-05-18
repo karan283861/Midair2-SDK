@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Engine_classes.hpp"
 #include "OnlineSubsystemUtils_structs.hpp"
 #include "OnlineSubsystemUtils_classes.hpp"
-#include "Engine_classes.hpp"
 
 
 namespace SDK

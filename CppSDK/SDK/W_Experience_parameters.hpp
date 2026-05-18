@@ -14,6 +14,15 @@
 namespace SDK::Params
 {
 
+// Function W_Experience.W_Experience_C.UpdateTitle
+// 0x0018 (0x0018 - 0x0000)
+struct W_Experience_C_UpdateTitle final
+{
+public:
+	class FText                                   NewTitle;                                          // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm)
+};
+DUMPER7_ASSERTS_W_Experience_C_UpdateTitle;
+
 // Function W_Experience.W_Experience_C.PreConstruct
 // 0x0001 (0x0001 - 0x0000)
 struct W_Experience_C_PreConstruct final

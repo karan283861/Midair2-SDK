@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass DmgType_Blaster.DmgType_Blaster_C
-// 0x0000 (0x00A0 - 0x00A0)
+// 0x0000 (0x00B0 - 0x00B0)
 class UDmgType_Blaster_C final : public UMADamageType
 {
 public:

@@ -50,6 +50,8 @@ public:
 	struct FEventReply OnKeyDown(const struct FGeometry& MyGeometry, const struct FKeyEvent& InKeyEvent);
 	struct FEventReply OnPreviewMouseButtonDown(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent);
 
+	class UWidget* BP_GetDesiredFocusTarget() const;
+
 public:
 	static class UClass* StaticClass()
 	{

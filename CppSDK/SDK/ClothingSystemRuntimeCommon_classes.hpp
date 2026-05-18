@@ -19,6 +19,46 @@
 namespace SDK
 {
 
+// Class ClothingSystemRuntimeCommon.ClothingAssetCustomData
+// 0x0000 (0x0028 - 0x0028)
+class UClothingAssetCustomData final : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("ClothingAssetCustomData")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"ClothingAssetCustomData")
+	}
+	static class UClothingAssetCustomData* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UClothingAssetCustomData>();
+	}
+};
+DUMPER7_ASSERTS_UClothingAssetCustomData;
+
+// Class ClothingSystemRuntimeCommon.ClothConfigCommon
+// 0x0000 (0x0028 - 0x0028)
+class UClothConfigCommon : public UClothConfigBase
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("ClothConfigCommon")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"ClothConfigCommon")
+	}
+	static class UClothConfigCommon* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UClothConfigCommon>();
+	}
+};
+DUMPER7_ASSERTS_UClothConfigCommon;
+
 // Class ClothingSystemRuntimeCommon.ClothingAssetCommon
 // 0x00A8 (0x00F0 - 0x0048)
 class UClothingAssetCommon final : public UClothingAssetBase
@@ -50,26 +90,6 @@ public:
 };
 DUMPER7_ASSERTS_UClothingAssetCommon;
 
-// Class ClothingSystemRuntimeCommon.ClothConfigCommon
-// 0x0000 (0x0028 - 0x0028)
-class UClothConfigCommon : public UClothConfigBase
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("ClothConfigCommon")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"ClothConfigCommon")
-	}
-	static class UClothConfigCommon* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UClothConfigCommon>();
-	}
-};
-DUMPER7_ASSERTS_UClothConfigCommon;
-
 // Class ClothingSystemRuntimeCommon.ClothSharedConfigCommon
 // 0x0000 (0x0028 - 0x0028)
 class UClothSharedConfigCommon : public UClothConfigCommon
@@ -89,26 +109,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UClothSharedConfigCommon;
-
-// Class ClothingSystemRuntimeCommon.ClothingAssetCustomData
-// 0x0000 (0x0028 - 0x0028)
-class UClothingAssetCustomData final : public UObject
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("ClothingAssetCustomData")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"ClothingAssetCustomData")
-	}
-	static class UClothingAssetCustomData* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UClothingAssetCustomData>();
-	}
-};
-DUMPER7_ASSERTS_UClothingAssetCustomData;
 
 // Class ClothingSystemRuntimeCommon.ClothLODDataCommon_Legacy
 // 0x0160 (0x0188 - 0x0028)

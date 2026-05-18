@@ -20,37 +20,162 @@
 namespace SDK::Params
 {
 
-// Function WBP_Currency.WBP_Currency_C.OnGetCurrencies
-// 0x0098 (0x0098 - 0x0000)
-struct WBP_Currency_C_OnGetCurrencies final
+// Function WBP_Currency.WBP_Currency_C.PreConstruct
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_Currency_C_PreConstruct final
 {
 public:
-	TArray<struct FLootLockerCurrencyDetails>     Response;                                          // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	int32                                         Temp_int_Array_Index_Variable;                     // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLootLockerCurrencyDetails             CallFunc_Array_Get_Item;                           // 0x0018(0x0050)()
-	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0068(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x006C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Greater_IntInt_ReturnValue;               // 0x0070(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0071(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_72[0x2];                                       // 0x0072(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0074(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UUMGSequencePlayer*                     CallFunc_PlayAnimationForward_ReturnValue;         // 0x0078(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UWidget*                                CallFunc_GetChildAt_ReturnValue;                   // 0x0080(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UWBP_CurrencyItem_C*                    K2Node_DynamicCast_AsWBP_Currency_Item;            // 0x0088(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0090(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-DUMPER7_ASSERTS_WBP_Currency_C_OnGetCurrencies;
+DUMPER7_ASSERTS_WBP_Currency_C_PreConstruct;
 
-// Function WBP_Currency.WBP_Currency_C.CoinSplurgeFinished
-// 0x0010 (0x0010 - 0x0000)
-struct WBP_Currency_C_CoinSplurgeFinished final
+// Function WBP_Currency.WBP_Currency_C.ExecuteUbergraph_WBP_Currency
+// 0x0218 (0x0218 - 0x0000)
+struct WBP_Currency_C_ExecuteUbergraph_WBP_Currency final
 {
 public:
-	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UUMGSequencePlayer*                     CallFunc_PlayAnimationForward_ReturnValue;         // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLootLockerCurrencyDetails             K2Node_ComponentBoundEvent_CurrencyDetails_3;      // 0x0008(0x0050)()
+	struct FLootLockerCurrencyDetails             K2Node_ComponentBoundEvent_CurrencyDetails_2;      // 0x0058(0x0050)()
+	struct FLootLockerCurrencyDetails             K2Node_ComponentBoundEvent_CurrencyDetails_1;      // 0x00A8(0x0050)()
+	struct FLootLockerCurrencyDetails             K2Node_ComponentBoundEvent_CurrencyDetails;        // 0x00F8(0x0050)()
+	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0148(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AMAPlayerControllerBase*                K2Node_DynamicCast_AsMAPlayer_Controller_Base;     // 0x0150(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0158(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_159[0x7];                                      // 0x0159(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMALocalPlayer*                         CallFunc_GetMALocalPlayer_ReturnValue;             // 0x0160(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ABP_CoinPreview_C*                      CallFunc_GetActorOfClass_ReturnValue;              // 0x0168(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsSteamOverlayAvailable_ReturnValue;      // 0x0170(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_171[0x3];                                      // 0x0171(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x0174(0x0010)(ZeroConstructor, NoDestructor)
+	uint8                                         Pad_184[0x4];                                      // 0x0184(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class ACameraActor*>                   CallFunc_GetAllActorsOfClassWithTag_OutActors;     // 0x0188(0x0010)(ReferenceParm)
+	class ACameraActor*                           CallFunc_Array_Get_Item;                           // 0x0198(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x01A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMAGameInstance*                        K2Node_DynamicCast_AsMAGame_Instance;              // 0x01A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x01B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_GetIsEditor_ReturnValue;                  // 0x01B1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1B2[0x6];                                      // 0x01B2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FLootLockerCurrencyDetails>     CallFunc_GetLootlockerCurrencyDetails_ReturnValue; // 0x01B8(0x0010)(ReferenceParm)
+	class UUMGSequencePlayer*                     CallFunc_PlayAnimationReverse_ReturnValue;         // 0x01C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue_1;        // 0x01D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_Event_IsDesignTime;                         // 0x01D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1D9[0x7];                                      // 0x01D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue_1;            // 0x01E0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMAGameInstance*                        K2Node_DynamicCast_AsMAGame_Instance_1;            // 0x01E8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_2;                     // 0x01F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1F1[0x7];                                      // 0x01F1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FLootLockerCurrencyDetails>     CallFunc_GetLootlockerCurrencyDetails_ReturnValue_1; // 0x01F8(0x0010)(ReferenceParm)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_1;            // 0x0208(0x0010)(ZeroConstructor, NoDestructor)
 };
-DUMPER7_ASSERTS_WBP_Currency_C_CoinSplurgeFinished;
+DUMPER7_ASSERTS_WBP_Currency_C_ExecuteUbergraph_WBP_Currency;
+
+// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature
+// 0x0050 (0x0050 - 0x0000)
+struct WBP_Currency_C_BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature final
+{
+public:
+	struct FLootLockerCurrencyDetails             CurrencyDetails;                                   // 0x0000(0x0050)(BlueprintVisible, BlueprintReadOnly, Parm)
+};
+DUMPER7_ASSERTS_WBP_Currency_C_BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature;
+
+// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_0_ButtonSelected__DelegateSignature
+// 0x0050 (0x0050 - 0x0000)
+struct WBP_Currency_C_BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_0_ButtonSelected__DelegateSignature final
+{
+public:
+	struct FLootLockerCurrencyDetails             CurrencyDetails;                                   // 0x0000(0x0050)(BlueprintVisible, BlueprintReadOnly, Parm)
+};
+DUMPER7_ASSERTS_WBP_Currency_C_BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_0_ButtonSelected__DelegateSignature;
+
+// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature
+// 0x0050 (0x0050 - 0x0000)
+struct WBP_Currency_C_BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature final
+{
+public:
+	struct FLootLockerCurrencyDetails             CurrencyDetails;                                   // 0x0000(0x0050)(BlueprintVisible, BlueprintReadOnly, Parm)
+};
+DUMPER7_ASSERTS_WBP_Currency_C_BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature;
+
+// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_2_ButtonSelected__DelegateSignature
+// 0x0050 (0x0050 - 0x0000)
+struct WBP_Currency_C_BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_2_ButtonSelected__DelegateSignature final
+{
+public:
+	struct FLootLockerCurrencyDetails             CurrencyDetails;                                   // 0x0000(0x0050)(BlueprintVisible, BlueprintReadOnly, Parm)
+};
+DUMPER7_ASSERTS_WBP_Currency_C_BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_2_ButtonSelected__DelegateSignature;
+
+// Function WBP_Currency.WBP_Currency_C.MakePurchase
+// 0x0098 (0x0098 - 0x0000)
+struct WBP_Currency_C_MakePurchase final
+{
+public:
+	struct FLootLockerCurrencyDetails             CurrencyDetails;                                   // 0x0000(0x0050)(BlueprintVisible, BlueprintReadOnly, Parm)
+	TDelegate<void(const struct FLootLockerBeginSteamPurchaseRedemptionResponse& Response)> K2Node_CreateDelegate_OutputDelegate; // 0x0050(0x0010)(ZeroConstructor, NoDestructor)
+	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMAGameInstance*                        K2Node_DynamicCast_AsMAGame_Instance;              // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0070(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_71[0x7];                                       // 0x0071(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetSteamId64_ReturnValue;                 // 0x0078(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_BeginSteamPurchaseRedemption_ReturnValue; // 0x0088(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_Currency_C_MakePurchase;
+
+// Function WBP_Currency.WBP_Currency_C.OnBeginSteamPurchase
+// 0x00F8 (0x00F8 - 0x0000)
+struct WBP_Currency_C_OnBeginSteamPurchase final
+{
+public:
+	struct FLootLockerBeginSteamPurchaseRedemptionResponse Response;                                 // 0x0000(0x00E8)(BlueprintVisible, BlueprintReadOnly, Parm)
+	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x00E8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UUMGSequencePlayer*                     CallFunc_PlayAnimationReverse_ReturnValue;         // 0x00F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_Currency_C_OnBeginSteamPurchase;
+
+// Function WBP_Currency.WBP_Currency_C.QueryPurchase
+// 0x0020 (0x0020 - 0x0000)
+struct WBP_Currency_C_QueryPurchase final
+{
+public:
+	TDelegate<void(const struct FLootLockerQuerySteamPurchaseRedemptionStatusResponse& Response)> K2Node_CreateDelegate_OutputDelegate; // 0x0000(0x0010)(ZeroConstructor, NoDestructor)
+	class FString                                 CallFunc_QuerySteamPurchaseRedemptionStatus_ReturnValue; // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_Currency_C_QueryPurchase;
+
+// Function WBP_Currency.WBP_Currency_C.OnQueryPurchaseResponse
+// 0x00F0 (0x00F0 - 0x0000)
+struct WBP_Currency_C_OnQueryPurchaseResponse final
+{
+public:
+	struct FLootLockerQuerySteamPurchaseRedemptionStatusResponse Response;                           // 0x0000(0x00D8)(BlueprintVisible, BlueprintReadOnly, Parm)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x00D8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x00E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_WBP_Currency_C_OnQueryPurchaseResponse;
+
+// Function WBP_Currency.WBP_Currency_C.FinalizePurchase
+// 0x0020 (0x0020 - 0x0000)
+struct WBP_Currency_C_FinalizePurchase final
+{
+public:
+	TDelegate<void(const struct FLootLockerResponse& Var)> K2Node_CreateDelegate_OutputDelegate;     // 0x0000(0x0010)(ZeroConstructor, NoDestructor)
+	class FString                                 CallFunc_FinalizeSteamPurchaseRedemption_ReturnValue; // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_Currency_C_FinalizePurchase;
+
+// Function WBP_Currency.WBP_Currency_C.On Finalize Purchase
+// 0x0108 (0x0108 - 0x0000)
+struct WBP_Currency_C_On_Finalize_Purchase final
+{
+public:
+	struct FLootLockerResponse                    Var;                                               // 0x0000(0x00D0)(BlueprintVisible, BlueprintReadOnly, Parm)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x00D0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x00E0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x00F0(0x0018)()
+};
+DUMPER7_ASSERTS_WBP_Currency_C_On_Finalize_Purchase;
 
 // Function WBP_Currency.WBP_Currency_C.OnMouseMove
 // 0x03B8 (0x03B8 - 0x0000)
@@ -88,158 +213,51 @@ public:
 };
 DUMPER7_ASSERTS_WBP_Currency_C_OnMouseMove;
 
-// Function WBP_Currency.WBP_Currency_C.On Finalize Purchase
-// 0x00A8 (0x00A8 - 0x0000)
-struct WBP_Currency_C_On_Finalize_Purchase final
-{
-public:
-	struct FLootLockerResponse                    Var;                                               // 0x0000(0x0070)(BlueprintVisible, BlueprintReadOnly, Parm)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0070(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x0080(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x0090(0x0018)()
-};
-DUMPER7_ASSERTS_WBP_Currency_C_On_Finalize_Purchase;
-
-// Function WBP_Currency.WBP_Currency_C.FinalizePurchase
+// Function WBP_Currency.WBP_Currency_C.CoinSplurgeFinished
 // 0x0010 (0x0010 - 0x0000)
-struct WBP_Currency_C_FinalizePurchase final
+struct WBP_Currency_C_CoinSplurgeFinished final
 {
 public:
-	TDelegate<void(const struct FLootLockerResponse& Var)> K2Node_CreateDelegate_OutputDelegate;     // 0x0000(0x0010)(ZeroConstructor, NoDestructor)
+	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UUMGSequencePlayer*                     CallFunc_PlayAnimationForward_ReturnValue;         // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_WBP_Currency_C_FinalizePurchase;
+DUMPER7_ASSERTS_WBP_Currency_C_CoinSplurgeFinished;
 
-// Function WBP_Currency.WBP_Currency_C.OnQueryPurchaseResponse
-// 0x0080 (0x0080 - 0x0000)
-struct WBP_Currency_C_OnQueryPurchaseResponse final
-{
-public:
-	struct FLootLockerQuerySteamPurchaseRedemptionStatusResponse Response;                           // 0x0000(0x0078)(BlueprintVisible, BlueprintReadOnly, Parm)
-	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0078(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_WBP_Currency_C_OnQueryPurchaseResponse;
-
-// Function WBP_Currency.WBP_Currency_C.QueryPurchase
-// 0x0010 (0x0010 - 0x0000)
-struct WBP_Currency_C_QueryPurchase final
-{
-public:
-	TDelegate<void(const struct FLootLockerQuerySteamPurchaseRedemptionStatusResponse& Response)> K2Node_CreateDelegate_OutputDelegate; // 0x0000(0x0010)(ZeroConstructor, NoDestructor)
-};
-DUMPER7_ASSERTS_WBP_Currency_C_QueryPurchase;
-
-// Function WBP_Currency.WBP_Currency_C.OnBeginSteamPurchase
+// Function WBP_Currency.WBP_Currency_C.OnGetCurrencies
 // 0x0098 (0x0098 - 0x0000)
-struct WBP_Currency_C_OnBeginSteamPurchase final
+struct WBP_Currency_C_OnGetCurrencies final
 {
 public:
-	struct FLootLockerBeginSteamPurchaseRedemptionResponse Response;                                 // 0x0000(0x0088)(BlueprintVisible, BlueprintReadOnly, Parm)
-	class UUMGSequencePlayer*                     CallFunc_PlayAnimationReverse_ReturnValue;         // 0x0088(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0090(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<struct FLootLockerCurrencyDetails>     Response;                                          // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLootLockerCurrencyDetails             CallFunc_Array_Get_Item;                           // 0x0018(0x0050)()
+	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0068(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x006C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Greater_IntInt_ReturnValue;               // 0x0070(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0071(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_72[0x2];                                       // 0x0072(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0074(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UUMGSequencePlayer*                     CallFunc_PlayAnimationForward_ReturnValue;         // 0x0078(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UWidget*                                CallFunc_GetChildAt_ReturnValue;                   // 0x0080(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UWBP_CurrencyItem_C*                    K2Node_DynamicCast_AsWBP_Currency_Item;            // 0x0088(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0090(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-DUMPER7_ASSERTS_WBP_Currency_C_OnBeginSteamPurchase;
+DUMPER7_ASSERTS_WBP_Currency_C_OnGetCurrencies;
 
-// Function WBP_Currency.WBP_Currency_C.MakePurchase
-// 0x0088 (0x0088 - 0x0000)
-struct WBP_Currency_C_MakePurchase final
-{
-public:
-	struct FLootLockerCurrencyDetails             CurrencyDetails;                                   // 0x0000(0x0050)(BlueprintVisible, BlueprintReadOnly, Parm)
-	TDelegate<void(const struct FLootLockerBeginSteamPurchaseRedemptionResponse& Response)> K2Node_CreateDelegate_OutputDelegate; // 0x0050(0x0010)(ZeroConstructor, NoDestructor)
-	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMAGameInstance*                        K2Node_DynamicCast_AsMAGame_Instance;              // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0070(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_71[0x7];                                       // 0x0071(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_GetSteamId64_ReturnValue;                 // 0x0078(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_Currency_C_MakePurchase;
-
-// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_2_ButtonSelected__DelegateSignature
+// Function WBP_Currency.WBP_Currency_C.DeleteAndRespawnCrate
 // 0x0050 (0x0050 - 0x0000)
-struct WBP_Currency_C_BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_2_ButtonSelected__DelegateSignature final
+struct WBP_Currency_C_DeleteAndRespawnCrate final
 {
 public:
-	struct FLootLockerCurrencyDetails             CurrencyDetails;                                   // 0x0000(0x0050)(BlueprintVisible, BlueprintReadOnly, Parm)
-};
-DUMPER7_ASSERTS_WBP_Currency_C_BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_2_ButtonSelected__DelegateSignature;
-
-// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature
-// 0x0050 (0x0050 - 0x0000)
-struct WBP_Currency_C_BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature final
-{
-public:
-	struct FLootLockerCurrencyDetails             CurrencyDetails;                                   // 0x0000(0x0050)(BlueprintVisible, BlueprintReadOnly, Parm)
-};
-DUMPER7_ASSERTS_WBP_Currency_C_BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature;
-
-// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_0_ButtonSelected__DelegateSignature
-// 0x0050 (0x0050 - 0x0000)
-struct WBP_Currency_C_BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_0_ButtonSelected__DelegateSignature final
-{
-public:
-	struct FLootLockerCurrencyDetails             CurrencyDetails;                                   // 0x0000(0x0050)(BlueprintVisible, BlueprintReadOnly, Parm)
-};
-DUMPER7_ASSERTS_WBP_Currency_C_BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_0_ButtonSelected__DelegateSignature;
-
-// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature
-// 0x0050 (0x0050 - 0x0000)
-struct WBP_Currency_C_BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature final
-{
-public:
-	struct FLootLockerCurrencyDetails             CurrencyDetails;                                   // 0x0000(0x0050)(BlueprintVisible, BlueprintReadOnly, Parm)
-};
-DUMPER7_ASSERTS_WBP_Currency_C_BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature;
-
-// Function WBP_Currency.WBP_Currency_C.PreConstruct
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_Currency_C_PreConstruct final
-{
-public:
-	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_WBP_Currency_C_PreConstruct;
-
-// Function WBP_Currency.WBP_Currency_C.ExecuteUbergraph_WBP_Currency
-// 0x0228 (0x0228 - 0x0000)
-struct WBP_Currency_C_ExecuteUbergraph_WBP_Currency final
-{
-public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMAGameInstance*                        K2Node_DynamicCast_AsMAGame_Instance;              // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	class ALootCrate_GoldRT_C*                    CallFunc_GetActorOfClass_ReturnValue;              // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue; // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ALootCrate_GoldRT_C*                    CallFunc_FinishSpawningActor_ReturnValue;          // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FLootLockerCurrencyDetails>     CallFunc_GetLootlockerCurrencyDetails_ReturnValue; // 0x0020(0x0010)(ReferenceParm)
-	struct FLootLockerCurrencyDetails             K2Node_ComponentBoundEvent_CurrencyDetails_3;      // 0x0030(0x0050)()
-	struct FLootLockerCurrencyDetails             K2Node_ComponentBoundEvent_CurrencyDetails_2;      // 0x0080(0x0050)()
-	struct FLootLockerCurrencyDetails             K2Node_ComponentBoundEvent_CurrencyDetails_1;      // 0x00D0(0x0050)()
-	struct FLootLockerCurrencyDetails             K2Node_ComponentBoundEvent_CurrencyDetails;        // 0x0120(0x0050)()
-	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0170(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AMAPlayerControllerBase*                K2Node_DynamicCast_AsMAPlayer_Controller_Base;     // 0x0178(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0180(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_181[0x7];                                      // 0x0181(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMALocalPlayer*                         CallFunc_GetMALocalPlayer_ReturnValue;             // 0x0188(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ABP_CoinPreview_C*                      CallFunc_GetActorOfClass_ReturnValue;              // 0x0190(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsSteamOverlayAvailable_ReturnValue;      // 0x0198(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_199[0x7];                                      // 0x0199(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class ALootCrate_GoldRT_C*                    CallFunc_GetActorOfClass_ReturnValue_1;            // 0x01A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x01A8(0x0010)(ZeroConstructor, NoDestructor)
-	TArray<class ACameraActor*>                   CallFunc_GetAllActorsOfClassWithTag_OutActors;     // 0x01B8(0x0010)(ReferenceParm)
-	class ACameraActor*                           CallFunc_Array_Get_Item;                           // 0x01C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_1;            // 0x01D0(0x0010)(ZeroConstructor, NoDestructor)
-	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue_1;            // 0x01E0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMAGameInstance*                        K2Node_DynamicCast_AsMAGame_Instance_1;            // 0x01E8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_2;                     // 0x01F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1F1[0x7];                                      // 0x01F1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FLootLockerCurrencyDetails>     CallFunc_GetLootlockerCurrencyDetails_ReturnValue_1; // 0x01F8(0x0010)(ReferenceParm)
-	bool                                          CallFunc_GetIsEditor_ReturnValue;                  // 0x0208(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_209[0x7];                                      // 0x0209(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UUMGSequencePlayer*                     CallFunc_PlayAnimationReverse_ReturnValue;         // 0x0210(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue_1;        // 0x0218(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_Event_IsDesignTime;                         // 0x0220(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FTransform                             CallFunc_K2_GetComponentToWorld_ReturnValue;       // 0x0020(0x0030)(IsPlainOldData, NoDestructor)
 };
-DUMPER7_ASSERTS_WBP_Currency_C_ExecuteUbergraph_WBP_Currency;
+DUMPER7_ASSERTS_WBP_Currency_C_DeleteAndRespawnCrate;
 
 }
 

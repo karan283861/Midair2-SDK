@@ -13,9 +13,9 @@
 #include "SlateCore_structs.hpp"
 #include "UMG_structs.hpp"
 #include "UMG_classes.hpp"
-#include "GameplayTags_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "GameplayTags_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CommonUI_structs.hpp"
@@ -25,28 +25,25 @@
 namespace SDK
 {
 
-// Class CommonUI.CommonUIVisibilitySubsystem
-// 0x0058 (0x0088 - 0x0030)
-class UCommonUIVisibilitySubsystem final : public ULocalPlayerSubsystem
+// Class CommonUI.CommonTileView
+// 0x0000 (0x0388 - 0x0388)
+class UCommonTileView final : public UTileView
 {
-public:
-	uint8                                         Pad_30[0x58];                                      // 0x0030(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CommonUIVisibilitySubsystem")
+		STATIC_CLASS_IMPL("CommonTileView")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CommonUIVisibilitySubsystem")
+		STATIC_NAME_IMPL(L"CommonTileView")
 	}
-	static class UCommonUIVisibilitySubsystem* GetDefaultObj()
+	static class UCommonTileView* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCommonUIVisibilitySubsystem>();
+		return GetDefaultObjImpl<UCommonTileView>();
 	}
 };
-DUMPER7_ASSERTS_UCommonUIVisibilitySubsystem;
+DUMPER7_ASSERTS_UCommonTileView;
 
 // Class CommonUI.CommonActivatableWidgetContainerBase
 // 0x0118 (0x0220 - 0x0108)
@@ -106,6 +103,39 @@ public:
 };
 DUMPER7_ASSERTS_UCommonActivatableWidgetQueue;
 
+// Class CommonUI.CommonPoolableWidgetInterface
+// 0x0000 (0x0000 - 0x0000)
+class ICommonPoolableWidgetInterface final
+{
+public:
+	void OnAcquireFromPool();
+	void OnReleaseToPool();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CommonPoolableWidgetInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CommonPoolableWidgetInterface")
+	}
+	static class ICommonPoolableWidgetInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ICommonPoolableWidgetInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_ICommonPoolableWidgetInterface;
+
 // Class CommonUI.AnalogSlider
 // 0x0020 (0x0518 - 0x04F8)
 class UAnalogSlider final : public USlider
@@ -159,36 +189,31 @@ public:
 };
 DUMPER7_ASSERTS_ICommonActionHandlerInterface;
 
-// Class CommonUI.CommonRichTextBlock
-// 0x0038 (0x06B0 - 0x0678)
-class UCommonRichTextBlock final : public URichTextBlock
+// Class CommonUI.CommonUIEditorSettings
+// 0x0080 (0x00A8 - 0x0028)
+class UCommonUIEditorSettings final : public UObject
 {
 public:
-	ERichTextInlineIconDisplayMode                InlineIconDisplayMode;                             // 0x0678(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bTintInlineIcon;                                   // 0x0679(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_67A[0x6];                                      // 0x067A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UCommonTextStyle>           DefaultTextStyleOverrideClass;                     // 0x0680(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	float                                         MobileTextBlockScale;                              // 0x0688(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_68C[0x4];                                      // 0x068C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UCommonTextScrollStyle>     ScrollStyle;                                       // 0x0690(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          bDisplayAllCaps;                                   // 0x0698(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_699[0x17];                                     // 0x0699(0x0017)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TSoftClassPtr<class UClass>                   TemplateTextStyle;                                 // 0x0028(0x0028)(Edit, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TSoftClassPtr<class UClass>                   TemplateButtonStyle;                               // 0x0050(0x0028)(Edit, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TSoftClassPtr<class UClass>                   TemplateBorderStyle;                               // 0x0078(0x0028)(Edit, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_A0[0x8];                                       // 0x00A0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CommonRichTextBlock")
+		STATIC_CLASS_IMPL("CommonUIEditorSettings")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CommonRichTextBlock")
+		STATIC_NAME_IMPL(L"CommonUIEditorSettings")
 	}
-	static class UCommonRichTextBlock* GetDefaultObj()
+	static class UCommonUIEditorSettings* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCommonRichTextBlock>();
+		return GetDefaultObjImpl<UCommonUIEditorSettings>();
 	}
 };
-DUMPER7_ASSERTS_UCommonRichTextBlock;
+DUMPER7_ASSERTS_UCommonUIEditorSettings;
 
 // Class CommonUI.CommonActionWidget
 // 0x0218 (0x0320 - 0x0108)
@@ -256,6 +281,67 @@ public:
 };
 DUMPER7_ASSERTS_UCommonUserWidget;
 
+// Class CommonUI.CommonTabListWidgetBase
+// 0x00D0 (0x0358 - 0x0288)
+class UCommonTabListWidgetBase : public UCommonUserWidget
+{
+public:
+	TMulticastInlineDelegate<void(class FName TabId)> OnTabSelected;                                 // 0x0288(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class FName TabId, class UCommonButtonBase* TabButton)> OnTabButtonCreation; // 0x0298(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class FName TabId, class UCommonButtonBase* TabButton)> OnTabButtonRemoval; // 0x02A8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	struct FDataTableRowHandle                    NextTabInputActionData;                            // 0x02B8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	struct FDataTableRowHandle                    PreviousTabInputActionData;                        // 0x02C8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	bool                                          bAutoListenForInput;                               // 0x02D8(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, ExposeOnSpawn, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_2D9[0x3];                                      // 0x02D9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TWeakObjectPtr<class UCommonAnimatedSwitcher> LinkedSwitcher;                                    // 0x02DC(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_2E4[0x4];                                      // 0x02E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCommonButtonGroupBase*                 TabButtonGroup;                                    // 0x02E8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_2F0[0x8];                                      // 0x02F0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FName, struct FCommonRegisteredTabInfo> RegisteredTabsByID;                           // 0x02F8(0x0050)(Transient, ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_348[0x10];                                     // 0x0348(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void DisableTabWithReason(class FName TabNameID, const class FText& Reason);
+	class UCommonButtonBase* GetTabButtonBaseByID(class FName TabNameID);
+	void HandleNextTabInputAction(bool* bPassThrough);
+	void HandlePostLinkedSwitcherChanged_BP();
+	void HandlePreLinkedSwitcherChanged_BP();
+	void HandlePreviousTabInputAction(bool* bPassThrough);
+	void HandleTabButtonSelected(class UCommonButtonBase* SelectedTabButton, int32 ButtonIndex);
+	void HandleTabCreation(class FName TabNameID, class UCommonButtonBase* TabButton);
+	void HandleTabRemoval(class FName TabNameID, class UCommonButtonBase* TabButton);
+	bool RegisterTab(class FName TabNameID, TSubclassOf<class UCommonButtonBase> ButtonWidgetType, class UWidget* ContentWidget);
+	void RemoveAllTabs();
+	bool RemoveTab(class FName TabNameID);
+	bool SelectTabByID(class FName TabNameID, bool bSuppressClickFeedback);
+	void SetLinkedSwitcher(class UCommonAnimatedSwitcher* CommonSwitcher);
+	void SetListeningForInput(bool bShouldListen);
+	void SetTabEnabled(class FName TabNameID, bool bEnable);
+	void SetTabInteractionEnabled(class FName TabNameID, bool bEnable);
+	void SetTabVisibility(class FName TabNameID, ESlateVisibility NewVisibility);
+
+	class FName GetActiveTab() const;
+	class UCommonAnimatedSwitcher* GetLinkedSwitcher() const;
+	class FName GetSelectedTabId() const;
+	int32 GetTabCount() const;
+	class FName GetTabIdAtIndex(int32 Index_0) const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CommonTabListWidgetBase")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CommonTabListWidgetBase")
+	}
+	static class UCommonTabListWidgetBase* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCommonTabListWidgetBase>();
+	}
+};
+DUMPER7_ASSERTS_UCommonTabListWidgetBase;
+
 // Class CommonUI.CommonActivatableWidget
 // 0x0098 (0x0320 - 0x0288)
 class UCommonActivatableWidget : public UCommonUserWidget
@@ -303,60 +389,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCommonActivatableWidget;
-
-// Class CommonUI.CommonTextScrollStyle
-// 0x0018 (0x0040 - 0x0028)
-class UCommonTextScrollStyle : public UObject
-{
-public:
-	float                                         Speed;                                             // 0x0028(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StartDelay;                                        // 0x002C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         EndDelay;                                          // 0x0030(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FadeInDelay;                                       // 0x0034(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FadeOutDelay;                                      // 0x0038(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CommonTextScrollStyle")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CommonTextScrollStyle")
-	}
-	static class UCommonTextScrollStyle* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCommonTextScrollStyle>();
-	}
-};
-DUMPER7_ASSERTS_UCommonTextScrollStyle;
-
-// Class CommonUI.CommonUIActionRouterBase
-// 0x00D0 (0x0100 - 0x0030)
-class UCommonUIActionRouterBase final : public ULocalPlayerSubsystem
-{
-public:
-	uint8                                         Pad_30[0xD0];                                      // 0x0030(0x00D0)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SetActiveUIInputConfig(const struct FUIInputConfig& NewConfig);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CommonUIActionRouterBase")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CommonUIActionRouterBase")
-	}
-	static class UCommonUIActionRouterBase* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCommonUIActionRouterBase>();
-	}
-};
-DUMPER7_ASSERTS_UCommonUIActionRouterBase;
 
 // Class CommonUI.CommonActivatableWidgetStack
 // 0x0010 (0x0230 - 0x0220)
@@ -463,29 +495,28 @@ public:
 };
 DUMPER7_ASSERTS_UCommonBorderStyle;
 
-// Class CommonUI.CommonVisualAttachment
-// 0x0018 (0x0170 - 0x0158)
-class UCommonVisualAttachment final : public USizeBox
+// Class CommonUI.CommonUILibrary
+// 0x0000 (0x0028 - 0x0028)
+class UCommonUILibrary final : public UBlueprintFunctionLibrary
 {
 public:
-	struct FVector2D                              ContentAnchor;                                     // 0x0158(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_160[0x10];                                     // 0x0160(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	static class UWidget* FindParentWidgetOfType(class UWidget* StartingWidget, TSubclassOf<class UWidget> Type);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CommonVisualAttachment")
+		STATIC_CLASS_IMPL("CommonUILibrary")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CommonVisualAttachment")
+		STATIC_NAME_IMPL(L"CommonUILibrary")
 	}
-	static class UCommonVisualAttachment* GetDefaultObj()
+	static class UCommonUILibrary* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCommonVisualAttachment>();
+		return GetDefaultObjImpl<UCommonUILibrary>();
 	}
 };
-DUMPER7_ASSERTS_UCommonVisualAttachment;
+DUMPER7_ASSERTS_UCommonUILibrary;
 
 // Class CommonUI.CommonBorder
 // 0x0020 (0x0290 - 0x0270)
@@ -517,39 +548,38 @@ public:
 };
 DUMPER7_ASSERTS_UCommonBorder;
 
-// Class CommonUI.CommonUISettings
-// 0x0158 (0x0180 - 0x0028)
-class UCommonUISettings final : public UObject
+// Class CommonUI.CommonWidgetCarouselNavBar
+// 0x0048 (0x0150 - 0x0108)
+class UCommonWidgetCarouselNavBar final : public UWidget
 {
 public:
-	bool                                          bAutoLoadData;                                     // 0x0028(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TSoftObjectPtr<class UObject>                 DefaultImageResourceObject;                        // 0x0030(0x0028)(Edit, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	TSoftObjectPtr<class UMaterialInterface>      DefaultThrobberMaterial;                           // 0x0058(0x0028)(Edit, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	TSoftClassPtr<class UClass>                   DefaultRichTextDataClass;                          // 0x0080(0x0028)(Edit, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	TArray<struct FGameplayTag>                   PlatformTraits;                                    // 0x00A8(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPrivate)
-	ECommonButtonAcceptKeyHandling                CommonButtonAcceptKeyHandling;                     // 0x00B8(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_BC[0x24];                                      // 0x00BC(0x0024)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                DefaultImageResourceObjectInstance;                // 0x00E0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UMaterialInterface*                     DefaultThrobberMaterialInstance;                   // 0x00E8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	struct FSlateBrush                            DefaultThrobberBrush;                              // 0x00F0(0x0088)(Transient, NativeAccessSpecifierPrivate)
-	class UCommonUIRichTextData*                  RichTextDataInstance;                              // 0x0178(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TSubclassOf<class UCommonButtonBase>          ButtonWidgetType;                                  // 0x0108(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMargin                                ButtonPadding;                                     // 0x0110(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_120[0x10];                                     // 0x0120(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCommonWidgetCarousel*                  LinkedCarousel;                                    // 0x0130(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UCommonButtonGroupBase*                 ButtonGroup;                                       // 0x0138(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TArray<class UCommonButtonBase*>              Buttons;                                           // 0x0140(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+
+public:
+	void HandleButtonClicked(class UCommonButtonBase* AssociatedButton, int32 ButtonIndex);
+	void HandlePageChanged(class UCommonWidgetCarousel* CommonCarousel, int32 PageIndex);
+	void SetLinkedCarousel(class UCommonWidgetCarousel* CommonCarousel);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CommonUISettings")
+		STATIC_CLASS_IMPL("CommonWidgetCarouselNavBar")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CommonUISettings")
+		STATIC_NAME_IMPL(L"CommonWidgetCarouselNavBar")
 	}
-	static class UCommonUISettings* GetDefaultObj()
+	static class UCommonWidgetCarouselNavBar* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCommonUISettings>();
+		return GetDefaultObjImpl<UCommonWidgetCarouselNavBar>();
 	}
 };
-DUMPER7_ASSERTS_UCommonUISettings;
+DUMPER7_ASSERTS_UCommonWidgetCarouselNavBar;
 
 // Class CommonUI.CommonBoundActionBar
 // 0x0010 (0x01E8 - 0x01D8)
@@ -698,6 +728,29 @@ public:
 };
 DUMPER7_ASSERTS_UCommonButtonBase;
 
+// Class CommonUI.CommonUIVisibilitySubsystem
+// 0x0058 (0x0088 - 0x0030)
+class UCommonUIVisibilitySubsystem final : public ULocalPlayerSubsystem
+{
+public:
+	uint8                                         Pad_30[0x58];                                      // 0x0030(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CommonUIVisibilitySubsystem")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CommonUIVisibilitySubsystem")
+	}
+	static class UCommonUIVisibilitySubsystem* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCommonUIVisibilitySubsystem>();
+	}
+};
+DUMPER7_ASSERTS_UCommonUIVisibilitySubsystem;
+
 // Class CommonUI.CommonBoundActionButton
 // 0x0010 (0x0BB0 - 0x0BA0)
 class UCommonBoundActionButton : public UCommonButtonBase
@@ -789,43 +842,6 @@ public:
 };
 DUMPER7_ASSERTS_UCommonButtonStyle;
 
-// Class CommonUI.CommonWidgetCarousel
-// 0x0040 (0x0160 - 0x0120)
-class UCommonWidgetCarousel final : public UPanelWidget
-{
-public:
-	int32                                         ActiveWidgetIndex;                                 // 0x0120(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_124[0x4];                                      // 0x0124(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(class UCommonWidgetCarousel* CarouselWidget, int32 CurrentPageIndex)> OnCurrentPageIndexChanged; // 0x0128(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_138[0x28];                                     // 0x0138(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void BeginAutoScrolling(float ScrollInterval);
-	void EndAutoScrolling();
-	void NextPage();
-	void PreviousPage();
-	void SetActiveWidget(class UWidget* Widget);
-	void SetActiveWidgetIndex(int32 Index_0);
-
-	int32 GetActiveWidgetIndex() const;
-	class UWidget* GetWidgetAtIndex(int32 Index_0) const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CommonWidgetCarousel")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CommonWidgetCarousel")
-	}
-	static class UCommonWidgetCarousel* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCommonWidgetCarousel>();
-	}
-};
-DUMPER7_ASSERTS_UCommonWidgetCarousel;
-
 // Class CommonUI.CommonButtonInternalBase
 // 0x0060 (0x0488 - 0x0428)
 class UCommonButtonInternalBase final : public UButton
@@ -881,29 +897,6 @@ public:
 };
 DUMPER7_ASSERTS_UCommonWidgetGroupBase;
 
-// Class CommonUI.CommonListView
-// 0x0000 (0x0368 - 0x0368)
-class UCommonListView : public UListView
-{
-public:
-	void SetEntrySpacing(float InEntrySpacing);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CommonListView")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CommonListView")
-	}
-	static class UCommonListView* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCommonListView>();
-	}
-};
-DUMPER7_ASSERTS_UCommonListView;
-
 // Class CommonUI.CommonButtonGroupBase
 // 0x00E8 (0x0110 - 0x0028)
 class UCommonButtonGroupBase final : public UCommonWidgetGroupBase
@@ -957,38 +950,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCommonButtonGroupBase;
-
-// Class CommonUI.CommonVisibilityWidgetBase
-// 0x0058 (0x02E8 - 0x0290)
-class UCommonVisibilityWidgetBase final : public UCommonBorder
-{
-public:
-	TMap<class FName, bool>                       VisibilityControls;                                // 0x0290(0x0050)(Edit, EditFixedSize, NativeAccessSpecifierPublic)
-	bool                                          bShowForGamepad;                                   // 0x02E0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShowForMouseAndKeyboard;                          // 0x02E1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShowForTouch;                                     // 0x02E2(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESlateVisibility                              VisibleType;                                       // 0x02E3(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESlateVisibility                              HiddenType;                                        // 0x02E4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2E5[0x3];                                      // 0x02E5(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static const TArray<class FName> GetRegisteredPlatforms();
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CommonVisibilityWidgetBase")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CommonVisibilityWidgetBase")
-	}
-	static class UCommonVisibilityWidgetBase* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCommonVisibilityWidgetBase>();
-	}
-};
-DUMPER7_ASSERTS_UCommonVisibilityWidgetBase;
 
 // Class CommonUI.CommonCustomNavigation
 // 0x0010 (0x0280 - 0x0270)
@@ -1048,83 +1009,6 @@ public:
 };
 DUMPER7_ASSERTS_UCommonTextBlock;
 
-// Class CommonUI.CommonNumericTextBlock
-// 0x00A0 (0x0370 - 0x02D0)
-class UCommonNumericTextBlock final : public UCommonTextBlock
-{
-public:
-	TMulticastInlineDelegate<void(class UCommonNumericTextBlock* NumericTextBlock)> OnInterpolationStartedEvent; // 0x02D0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UCommonNumericTextBlock* NumericTextBlock, float LastValue, float NewValue)> OnInterpolationUpdatedEvent; // 0x02E0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UCommonNumericTextBlock* NumericTextBlock)> OnOutroEvent;    // 0x02F0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UCommonNumericTextBlock* NumericTextBlock, const bool HadCompleted)> OnInterpolationEndedEvent; // 0x0300(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	float                                         CurrentNumericValue;                               // 0x0310(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECommonNumericType                            NumericType;                                       // 0x0314(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_315[0x3];                                      // 0x0315(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCommonNumberFormattingOptions         FormattingSpecification;                           // 0x0318(0x0014)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
-	float                                         EaseOutInterpolationExponent;                      // 0x032C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         InterpolationUpdateInterval;                       // 0x0330(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PostInterpolationShrinkDuration;                   // 0x0334(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          PerformSizeInterpolation;                          // 0x0338(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsPercentage;                                      // 0x0339(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_33A[0x36];                                     // 0x033A(0x0036)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void InterpolateToValue(const float TargetValue, float MaximumInterpolationDuration, float MinimumChangeRate, float OutroOffset);
-	void SetCurrentValue(const float NewValue);
-	void SetNumericType(ECommonNumericType InNumericType);
-
-	float GetTargetValue() const;
-	bool IsInterpolatingNumericValue() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CommonNumericTextBlock")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CommonNumericTextBlock")
-	}
-	static class UCommonNumericTextBlock* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCommonNumericTextBlock>();
-	}
-};
-DUMPER7_ASSERTS_UCommonNumericTextBlock;
-
-// Class CommonUI.CommonWidgetCarouselNavBar
-// 0x0048 (0x0150 - 0x0108)
-class UCommonWidgetCarouselNavBar final : public UWidget
-{
-public:
-	TSubclassOf<class UCommonButtonBase>          ButtonWidgetType;                                  // 0x0108(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMargin                                ButtonPadding;                                     // 0x0110(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_120[0x10];                                     // 0x0120(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCommonWidgetCarousel*                  LinkedCarousel;                                    // 0x0130(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UCommonButtonGroupBase*                 ButtonGroup;                                       // 0x0138(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TArray<class UCommonButtonBase*>              Buttons;                                           // 0x0140(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-
-public:
-	void HandleButtonClicked(class UCommonButtonBase* AssociatedButton, int32 ButtonIndex);
-	void HandlePageChanged(class UCommonWidgetCarousel* CommonCarousel, int32 PageIndex);
-	void SetLinkedCarousel(class UCommonWidgetCarousel* CommonCarousel);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CommonWidgetCarouselNavBar")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CommonWidgetCarouselNavBar")
-	}
-	static class UCommonWidgetCarouselNavBar* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCommonWidgetCarouselNavBar>();
-	}
-};
-DUMPER7_ASSERTS_UCommonWidgetCarouselNavBar;
-
 // Class CommonUI.CommonDateTimeTextBlock
 // 0x0040 (0x0310 - 0x02D0)
 class UCommonDateTimeTextBlock final : public UCommonTextBlock
@@ -1178,39 +1062,6 @@ public:
 };
 DUMPER7_ASSERTS_UCommonGameViewportClient;
 
-// Class CommonUI.CommonPoolableWidgetInterface
-// 0x0000 (0x0000 - 0x0000)
-class ICommonPoolableWidgetInterface final
-{
-public:
-	void OnAcquireFromPool();
-	void OnReleaseToPool();
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CommonPoolableWidgetInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CommonPoolableWidgetInterface")
-	}
-	static class ICommonPoolableWidgetInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ICommonPoolableWidgetInterface>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_ICommonPoolableWidgetInterface;
-
 // Class CommonUI.CommonHierarchicalScrollBox
 // 0x0000 (0x0880 - 0x0880)
 class UCommonHierarchicalScrollBox final : public UScrollBox
@@ -1230,6 +1081,37 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCommonHierarchicalScrollBox;
+
+// Class CommonUI.CommonRichTextBlock
+// 0x0038 (0x06B0 - 0x0678)
+class UCommonRichTextBlock final : public URichTextBlock
+{
+public:
+	ERichTextInlineIconDisplayMode                InlineIconDisplayMode;                             // 0x0678(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bTintInlineIcon;                                   // 0x0679(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_67A[0x6];                                      // 0x067A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UCommonTextStyle>           DefaultTextStyleOverrideClass;                     // 0x0680(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         MobileTextBlockScale;                              // 0x0688(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_68C[0x4];                                      // 0x068C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UCommonTextScrollStyle>     ScrollStyle;                                       // 0x0690(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bDisplayAllCaps;                                   // 0x0698(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_699[0x17];                                     // 0x0699(0x0017)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CommonRichTextBlock")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CommonRichTextBlock")
+	}
+	static class UCommonRichTextBlock* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCommonRichTextBlock>();
+	}
+};
+DUMPER7_ASSERTS_UCommonRichTextBlock;
 
 // Class CommonUI.CommonLazyImage
 // 0x00C8 (0x02D8 - 0x0210)
@@ -1297,6 +1179,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCommonLazyWidget;
+
+// Class CommonUI.CommonListView
+// 0x0000 (0x0368 - 0x0368)
+class UCommonListView : public UListView
+{
+public:
+	void SetEntrySpacing(float InEntrySpacing);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CommonListView")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CommonListView")
+	}
+	static class UCommonListView* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCommonListView>();
+	}
+};
+DUMPER7_ASSERTS_UCommonListView;
 
 // Class CommonUI.LoadGuardSlot
 // 0x0028 (0x0060 - 0x0038)
@@ -1368,6 +1273,50 @@ public:
 };
 DUMPER7_ASSERTS_UCommonLoadGuard;
 
+// Class CommonUI.CommonNumericTextBlock
+// 0x00A0 (0x0370 - 0x02D0)
+class UCommonNumericTextBlock final : public UCommonTextBlock
+{
+public:
+	TMulticastInlineDelegate<void(class UCommonNumericTextBlock* NumericTextBlock)> OnInterpolationStartedEvent; // 0x02D0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UCommonNumericTextBlock* NumericTextBlock, float LastValue, float NewValue)> OnInterpolationUpdatedEvent; // 0x02E0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UCommonNumericTextBlock* NumericTextBlock)> OnOutroEvent;    // 0x02F0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UCommonNumericTextBlock* NumericTextBlock, const bool HadCompleted)> OnInterpolationEndedEvent; // 0x0300(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	float                                         CurrentNumericValue;                               // 0x0310(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECommonNumericType                            NumericType;                                       // 0x0314(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_315[0x3];                                      // 0x0315(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCommonNumberFormattingOptions         FormattingSpecification;                           // 0x0318(0x0014)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         EaseOutInterpolationExponent;                      // 0x032C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InterpolationUpdateInterval;                       // 0x0330(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PostInterpolationShrinkDuration;                   // 0x0334(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          PerformSizeInterpolation;                          // 0x0338(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsPercentage;                                      // 0x0339(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_33A[0x36];                                     // 0x033A(0x0036)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void InterpolateToValue(const float TargetValue, float MaximumInterpolationDuration, float MinimumChangeRate, float OutroOffset);
+	void SetCurrentValue(const float NewValue);
+	void SetNumericType(ECommonNumericType InNumericType);
+
+	float GetTargetValue() const;
+	bool IsInterpolatingNumericValue() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CommonNumericTextBlock")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CommonNumericTextBlock")
+	}
+	static class UCommonNumericTextBlock* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCommonNumericTextBlock>();
+	}
+};
+DUMPER7_ASSERTS_UCommonNumericTextBlock;
+
 // Class CommonUI.CommonRotator
 // 0x0058 (0x0BF8 - 0x0BA0)
 class UCommonRotator : public UCommonButtonBase
@@ -1405,67 +1354,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCommonRotator;
-
-// Class CommonUI.CommonTabListWidgetBase
-// 0x00D0 (0x0358 - 0x0288)
-class UCommonTabListWidgetBase : public UCommonUserWidget
-{
-public:
-	TMulticastInlineDelegate<void(class FName TabId)> OnTabSelected;                                 // 0x0288(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class FName TabId, class UCommonButtonBase* TabButton)> OnTabButtonCreation; // 0x0298(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class FName TabId, class UCommonButtonBase* TabButton)> OnTabButtonRemoval; // 0x02A8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	struct FDataTableRowHandle                    NextTabInputActionData;                            // 0x02B8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	struct FDataTableRowHandle                    PreviousTabInputActionData;                        // 0x02C8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	bool                                          bAutoListenForInput;                               // 0x02D8(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, ExposeOnSpawn, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_2D9[0x3];                                      // 0x02D9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TWeakObjectPtr<class UCommonAnimatedSwitcher> LinkedSwitcher;                                    // 0x02DC(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_2E4[0x4];                                      // 0x02E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCommonButtonGroupBase*                 TabButtonGroup;                                    // 0x02E8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_2F0[0x8];                                      // 0x02F0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FName, struct FCommonRegisteredTabInfo> RegisteredTabsByID;                           // 0x02F8(0x0050)(Transient, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_348[0x10];                                     // 0x0348(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void DisableTabWithReason(class FName TabNameID, const class FText& Reason);
-	class UCommonButtonBase* GetTabButtonBaseByID(class FName TabNameID);
-	void HandleNextTabInputAction(bool* bPassThrough);
-	void HandlePostLinkedSwitcherChanged_BP();
-	void HandlePreLinkedSwitcherChanged_BP();
-	void HandlePreviousTabInputAction(bool* bPassThrough);
-	void HandleTabButtonSelected(class UCommonButtonBase* SelectedTabButton, int32 ButtonIndex);
-	void HandleTabCreation(class FName TabNameID, class UCommonButtonBase* TabButton);
-	void HandleTabRemoval(class FName TabNameID, class UCommonButtonBase* TabButton);
-	bool RegisterTab(class FName TabNameID, TSubclassOf<class UCommonButtonBase> ButtonWidgetType, class UWidget* ContentWidget);
-	void RemoveAllTabs();
-	bool RemoveTab(class FName TabNameID);
-	bool SelectTabByID(class FName TabNameID, bool bSuppressClickFeedback);
-	void SetLinkedSwitcher(class UCommonAnimatedSwitcher* CommonSwitcher);
-	void SetListeningForInput(bool bShouldListen);
-	void SetTabEnabled(class FName TabNameID, bool bEnable);
-	void SetTabInteractionEnabled(class FName TabNameID, bool bEnable);
-	void SetTabVisibility(class FName TabNameID, ESlateVisibility NewVisibility);
-
-	class FName GetActiveTab() const;
-	class UCommonAnimatedSwitcher* GetLinkedSwitcher() const;
-	class FName GetSelectedTabId() const;
-	int32 GetTabCount() const;
-	class FName GetTabIdAtIndex(int32 Index_0) const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CommonTabListWidgetBase")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CommonTabListWidgetBase")
-	}
-	static class UCommonTabListWidgetBase* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCommonTabListWidgetBase>();
-	}
-};
-DUMPER7_ASSERTS_UCommonTabListWidgetBase;
 
 // Class CommonUI.CommonTextStyle
 // 0x0128 (0x0150 - 0x0028)
@@ -1509,25 +1397,33 @@ public:
 };
 DUMPER7_ASSERTS_UCommonTextStyle;
 
-// Class CommonUI.CommonTileView
-// 0x0000 (0x0388 - 0x0388)
-class UCommonTileView final : public UTileView
+// Class CommonUI.CommonTextScrollStyle
+// 0x0018 (0x0040 - 0x0028)
+class UCommonTextScrollStyle : public UObject
 {
+public:
+	float                                         Speed;                                             // 0x0028(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StartDelay;                                        // 0x002C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         EndDelay;                                          // 0x0030(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FadeInDelay;                                       // 0x0034(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FadeOutDelay;                                      // 0x0038(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CommonTileView")
+		STATIC_CLASS_IMPL("CommonTextScrollStyle")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CommonTileView")
+		STATIC_NAME_IMPL(L"CommonTextScrollStyle")
 	}
-	static class UCommonTileView* GetDefaultObj()
+	static class UCommonTextScrollStyle* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCommonTileView>();
+		return GetDefaultObjImpl<UCommonTextScrollStyle>();
 	}
 };
-DUMPER7_ASSERTS_UCommonTileView;
+DUMPER7_ASSERTS_UCommonTextScrollStyle;
 
 // Class CommonUI.CommonTreeView
 // 0x0000 (0x03C0 - 0x03C0)
@@ -1549,31 +1445,31 @@ public:
 };
 DUMPER7_ASSERTS_UCommonTreeView;
 
-// Class CommonUI.CommonUIEditorSettings
-// 0x0080 (0x00A8 - 0x0028)
-class UCommonUIEditorSettings final : public UObject
+// Class CommonUI.CommonUIActionRouterBase
+// 0x00D0 (0x0100 - 0x0030)
+class UCommonUIActionRouterBase final : public ULocalPlayerSubsystem
 {
 public:
-	TSoftClassPtr<class UClass>                   TemplateTextStyle;                                 // 0x0028(0x0028)(Edit, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	TSoftClassPtr<class UClass>                   TemplateButtonStyle;                               // 0x0050(0x0028)(Edit, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	TSoftClassPtr<class UClass>                   TemplateBorderStyle;                               // 0x0078(0x0028)(Edit, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_A0[0x8];                                       // 0x00A0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0xD0];                                      // 0x0030(0x00D0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetActiveUIInputConfig(const struct FUIInputConfig& NewConfig);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CommonUIEditorSettings")
+		STATIC_CLASS_IMPL("CommonUIActionRouterBase")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CommonUIEditorSettings")
+		STATIC_NAME_IMPL(L"CommonUIActionRouterBase")
 	}
-	static class UCommonUIEditorSettings* GetDefaultObj()
+	static class UCommonUIActionRouterBase* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCommonUIEditorSettings>();
+		return GetDefaultObjImpl<UCommonUIActionRouterBase>();
 	}
 };
-DUMPER7_ASSERTS_UCommonUIEditorSettings;
+DUMPER7_ASSERTS_UCommonUIActionRouterBase;
 
 // Class CommonUI.CommonUIInputSettings
 // 0x0050 (0x0078 - 0x0028)
@@ -1604,29 +1500,6 @@ public:
 };
 DUMPER7_ASSERTS_UCommonUIInputSettings;
 
-// Class CommonUI.CommonUILibrary
-// 0x0000 (0x0028 - 0x0028)
-class UCommonUILibrary final : public UBlueprintFunctionLibrary
-{
-public:
-	static class UWidget* FindParentWidgetOfType(class UWidget* StartingWidget, TSubclassOf<class UWidget> Type);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CommonUILibrary")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CommonUILibrary")
-	}
-	static class UCommonUILibrary* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCommonUILibrary>();
-	}
-};
-DUMPER7_ASSERTS_UCommonUILibrary;
-
 // Class CommonUI.CommonUIRichTextData
 // 0x0008 (0x0030 - 0x0028)
 class UCommonUIRichTextData final : public UObject
@@ -1649,6 +1522,40 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCommonUIRichTextData;
+
+// Class CommonUI.CommonUISettings
+// 0x0158 (0x0180 - 0x0028)
+class UCommonUISettings final : public UObject
+{
+public:
+	bool                                          bAutoLoadData;                                     // 0x0028(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftObjectPtr<class UObject>                 DefaultImageResourceObject;                        // 0x0030(0x0028)(Edit, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TSoftObjectPtr<class UMaterialInterface>      DefaultThrobberMaterial;                           // 0x0058(0x0028)(Edit, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TSoftClassPtr<class UClass>                   DefaultRichTextDataClass;                          // 0x0080(0x0028)(Edit, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TArray<struct FGameplayTag>                   PlatformTraits;                                    // 0x00A8(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPrivate)
+	ECommonButtonAcceptKeyHandling                CommonButtonAcceptKeyHandling;                     // 0x00B8(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_BC[0x24];                                      // 0x00BC(0x0024)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                DefaultImageResourceObjectInstance;                // 0x00E0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UMaterialInterface*                     DefaultThrobberMaterialInstance;                   // 0x00E8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	struct FSlateBrush                            DefaultThrobberBrush;                              // 0x00F0(0x0088)(Transient, NativeAccessSpecifierPrivate)
+	class UCommonUIRichTextData*                  RichTextDataInstance;                              // 0x0178(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CommonUISettings")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CommonUISettings")
+	}
+	static class UCommonUISettings* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCommonUISettings>();
+	}
+};
+DUMPER7_ASSERTS_UCommonUISettings;
 
 // Class CommonUI.CommonUISubsystemBase
 // 0x0010 (0x0040 - 0x0030)
@@ -1766,6 +1673,99 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCommonVisibilitySwitcherSlot;
+
+// Class CommonUI.CommonVisibilityWidgetBase
+// 0x0058 (0x02E8 - 0x0290)
+class UCommonVisibilityWidgetBase final : public UCommonBorder
+{
+public:
+	TMap<class FName, bool>                       VisibilityControls;                                // 0x0290(0x0050)(Edit, EditFixedSize, NativeAccessSpecifierPublic)
+	bool                                          bShowForGamepad;                                   // 0x02E0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShowForMouseAndKeyboard;                          // 0x02E1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShowForTouch;                                     // 0x02E2(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESlateVisibility                              VisibleType;                                       // 0x02E3(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESlateVisibility                              HiddenType;                                        // 0x02E4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2E5[0x3];                                      // 0x02E5(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static const TArray<class FName> GetRegisteredPlatforms();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CommonVisibilityWidgetBase")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CommonVisibilityWidgetBase")
+	}
+	static class UCommonVisibilityWidgetBase* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCommonVisibilityWidgetBase>();
+	}
+};
+DUMPER7_ASSERTS_UCommonVisibilityWidgetBase;
+
+// Class CommonUI.CommonVisualAttachment
+// 0x0018 (0x0170 - 0x0158)
+class UCommonVisualAttachment final : public USizeBox
+{
+public:
+	struct FVector2D                              ContentAnchor;                                     // 0x0158(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_160[0x10];                                     // 0x0160(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CommonVisualAttachment")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CommonVisualAttachment")
+	}
+	static class UCommonVisualAttachment* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCommonVisualAttachment>();
+	}
+};
+DUMPER7_ASSERTS_UCommonVisualAttachment;
+
+// Class CommonUI.CommonWidgetCarousel
+// 0x0040 (0x0160 - 0x0120)
+class UCommonWidgetCarousel final : public UPanelWidget
+{
+public:
+	int32                                         ActiveWidgetIndex;                                 // 0x0120(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_124[0x4];                                      // 0x0124(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(class UCommonWidgetCarousel* CarouselWidget, int32 CurrentPageIndex)> OnCurrentPageIndexChanged; // 0x0128(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_138[0x28];                                     // 0x0138(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void BeginAutoScrolling(float ScrollInterval);
+	void EndAutoScrolling();
+	void NextPage();
+	void PreviousPage();
+	void SetActiveWidget(class UWidget* Widget);
+	void SetActiveWidgetIndex(int32 Index_0);
+
+	int32 GetActiveWidgetIndex() const;
+	class UWidget* GetWidgetAtIndex(int32 Index_0) const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CommonWidgetCarousel")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CommonWidgetCarousel")
+	}
+	static class UCommonWidgetCarousel* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCommonWidgetCarousel>();
+	}
+};
+DUMPER7_ASSERTS_UCommonWidgetCarousel;
 
 }
 

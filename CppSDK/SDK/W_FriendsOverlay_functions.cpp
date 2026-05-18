@@ -37,6 +37,34 @@ void UW_FriendsOverlay_C::ExecuteUbergraph_W_FriendsOverlay(int32 EntryPoint)
 }
 
 
+// Function W_FriendsOverlay.W_FriendsOverlay_C.Destruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UW_FriendsOverlay_C::Destruct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_FriendsOverlay_C", "Destruct");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_FriendsOverlay.W_FriendsOverlay_C.RefreshFriends
+// (BlueprintCallable, BlueprintEvent)
+
+void UW_FriendsOverlay_C::RefreshFriends()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_FriendsOverlay_C", "RefreshFriends");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_FriendsOverlay.W_FriendsOverlay_C.BndEvt__W_FriendsOverlay_Button_0_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
 

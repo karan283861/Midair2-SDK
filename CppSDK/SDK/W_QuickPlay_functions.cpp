@@ -17,35 +17,55 @@
 namespace SDK
 {
 
-// Function W_QuickPlay.W_QuickPlay_C.ExecuteUbergraph_W_QuickPlay
-// (Final, UbergraphFunction)
+// Function W_QuickPlay.W_QuickPlay_C.OnFail_8450BD184E4A521B71A2CF843A7DE057
+// (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FMAQueueInfo&              QueueInfo                                              (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
 
-void UW_QuickPlay_C::ExecuteUbergraph_W_QuickPlay(int32 EntryPoint)
+void UW_QuickPlay_C::OnFail_8450BD184E4A521B71A2CF843A7DE057(const struct FMAQueueInfo& QueueInfo)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("W_QuickPlay_C", "ExecuteUbergraph_W_QuickPlay");
+		Func = Class->GetFunction("W_QuickPlay_C", "OnFail_8450BD184E4A521B71A2CF843A7DE057");
 
-	Params::W_QuickPlay_C_ExecuteUbergraph_W_QuickPlay Parms{};
+	Params::W_QuickPlay_C_OnFail_8450BD184E4A521B71A2CF843A7DE057 Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.QueueInfo = std::move(QueueInfo);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function W_QuickPlay.W_QuickPlay_C.BndEvt__W_QuickPlay_W_Experience_111_K2Node_ComponentBoundEvent_6_ButtonClicked__DelegateSignature
-// (BlueprintEvent)
+// Function W_QuickPlay.W_QuickPlay_C.OnSuccess_8450BD184E4A521B71A2CF843A7DE057
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FMAQueueInfo&              QueueInfo                                              (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
 
-void UW_QuickPlay_C::BndEvt__W_QuickPlay_W_Experience_111_K2Node_ComponentBoundEvent_6_ButtonClicked__DelegateSignature()
+void UW_QuickPlay_C::OnSuccess_8450BD184E4A521B71A2CF843A7DE057(const struct FMAQueueInfo& QueueInfo)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("W_QuickPlay_C", "BndEvt__W_QuickPlay_W_Experience_111_K2Node_ComponentBoundEvent_6_ButtonClicked__DelegateSignature");
+		Func = Class->GetFunction("W_QuickPlay_C", "OnSuccess_8450BD184E4A521B71A2CF843A7DE057");
+
+	Params::W_QuickPlay_C_OnSuccess_8450BD184E4A521B71A2CF843A7DE057 Parms{};
+
+	Parms.QueueInfo = std::move(QueueInfo);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_QuickPlay.W_QuickPlay_C.BndEvt__W_QuickPlay_CTF_K2Node_ComponentBoundEvent_3_ButtonClicked__DelegateSignature
+// (BlueprintEvent)
+
+void UW_QuickPlay_C::BndEvt__W_QuickPlay_CTF_K2Node_ComponentBoundEvent_3_ButtonClicked__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_QuickPlay_C", "BndEvt__W_QuickPlay_CTF_K2Node_ComponentBoundEvent_3_ButtonClicked__DelegateSignature");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -65,17 +85,71 @@ void UW_QuickPlay_C::BndEvt__W_QuickPlay_W_Experience_58_K2Node_ComponentBoundEv
 }
 
 
-// Function W_QuickPlay.W_QuickPlay_C.BndEvt__W_QuickPlay_CTF_K2Node_ComponentBoundEvent_3_ButtonClicked__DelegateSignature
+// Function W_QuickPlay.W_QuickPlay_C.BndEvt__W_QuickPlay_W_Experience_111_K2Node_ComponentBoundEvent_6_ButtonClicked__DelegateSignature
 // (BlueprintEvent)
 
-void UW_QuickPlay_C::BndEvt__W_QuickPlay_CTF_K2Node_ComponentBoundEvent_3_ButtonClicked__DelegateSignature()
+void UW_QuickPlay_C::BndEvt__W_QuickPlay_W_Experience_111_K2Node_ComponentBoundEvent_6_ButtonClicked__DelegateSignature()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("W_QuickPlay_C", "BndEvt__W_QuickPlay_CTF_K2Node_ComponentBoundEvent_3_ButtonClicked__DelegateSignature");
+		Func = Class->GetFunction("W_QuickPlay_C", "BndEvt__W_QuickPlay_W_Experience_111_K2Node_ComponentBoundEvent_6_ButtonClicked__DelegateSignature");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_QuickPlay.W_QuickPlay_C.PreConstruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UW_QuickPlay_C::PreConstruct(bool IsDesignTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_QuickPlay_C", "PreConstruct");
+
+	Params::W_QuickPlay_C_PreConstruct Parms{};
+
+	Parms.IsDesignTime = IsDesignTime;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_QuickPlay.W_QuickPlay_C.RefreshQueueInfo
+// (BlueprintCallable, BlueprintEvent)
+
+void UW_QuickPlay_C::RefreshQueueInfo()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_QuickPlay_C", "RefreshQueueInfo");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_QuickPlay.W_QuickPlay_C.ExecuteUbergraph_W_QuickPlay
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_QuickPlay_C::ExecuteUbergraph_W_QuickPlay(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_QuickPlay_C", "ExecuteUbergraph_W_QuickPlay");
+
+	Params::W_QuickPlay_C_ExecuteUbergraph_W_QuickPlay Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

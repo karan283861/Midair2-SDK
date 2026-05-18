@@ -20,7 +20,7 @@ namespace SDK
 
 // Class CableComponent.CableActor
 // 0x0008 (0x0230 - 0x0228)
-class ACableActor : public AActor
+class ACableActor final : public AActor
 {
 public:
 	class UCableComponent*                        CableComponent;                                    // 0x0228(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)

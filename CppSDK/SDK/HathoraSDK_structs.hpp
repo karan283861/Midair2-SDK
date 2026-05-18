@@ -72,45 +72,6 @@ enum class EHathoraRoomStatus : uint8
 	EHathoraRoomStatus_MAX                   = 5,
 };
 
-// ScriptStruct HathoraSDK.HathoraExposedPort
-// 0x0038 (0x0038 - 0x0000)
-struct FHathoraExposedPort final
-{
-public:
-	class FString                                 TransportType;                                     // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Port;                                              // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Host;                                              // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Name;                                              // 0x0028(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FHathoraExposedPort;
-
-// ScriptStruct HathoraSDK.HathoraConnectionInfo
-// 0x0068 (0x0068 - 0x0000)
-struct FHathoraConnectionInfo final
-{
-public:
-	class FString                                 Status;                                            // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 RoomId;                                            // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FHathoraExposedPort                    ExposedPort;                                       // 0x0020(0x0038)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	TArray<struct FHathoraExposedPort>            AdditionalExposedPorts;                            // 0x0058(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FHathoraConnectionInfo;
-
-// ScriptStruct HathoraSDK.HathoraServerEnvironment
-// 0x0038 (0x0038 - 0x0000)
-struct FHathoraServerEnvironment final
-{
-public:
-	class FString                                 AppId;                                             // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 AppSecret;                                         // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ProcessId;                                         // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EHathoraCloudRegion                           Region;                                            // 0x0030(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         RoomsPerProcess;                                   // 0x0034(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FHathoraServerEnvironment;
-
 // ScriptStruct HathoraSDK.HathoraLobbyInfo
 // 0x0060 (0x0060 - 0x0000)
 struct FHathoraLobbyInfo final
@@ -140,50 +101,30 @@ public:
 };
 DUMPER7_ASSERTS_FHathoraLobbyInfoResult;
 
-// ScriptStruct HathoraSDK.HathoraLoginResult
-// 0x0028 (0x0028 - 0x0000)
-struct FHathoraLoginResult final
+// ScriptStruct HathoraSDK.HathoraExposedPort
+// 0x0038 (0x0038 - 0x0000)
+struct FHathoraExposedPort final
 {
 public:
-	int32                                         StatusCode;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ErrorMessage;                                      // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Token;                                             // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 TransportType;                                     // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Port;                                              // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Host;                                              // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x0028(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FHathoraLoginResult;
+DUMPER7_ASSERTS_FHathoraExposedPort;
 
-// ScriptStruct HathoraSDK.HathoraLobbyInfosResult
-// 0x0028 (0x0028 - 0x0000)
-struct FHathoraLobbyInfosResult final
+// ScriptStruct HathoraSDK.HathoraConnectionInfo
+// 0x0068 (0x0068 - 0x0000)
+struct FHathoraConnectionInfo final
 {
 public:
-	int32                                         StatusCode;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ErrorMessage;                                      // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FHathoraLobbyInfo>              Data;                                              // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FString                                 Status;                                            // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 RoomId;                                            // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FHathoraExposedPort                    ExposedPort;                                       // 0x0020(0x0038)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	TArray<struct FHathoraExposedPort>            AdditionalExposedPorts;                            // 0x0058(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FHathoraLobbyInfosResult;
-
-// ScriptStruct HathoraSDK.HathoraDiscoveredPingEndpoint
-// 0x0028 (0x0028 - 0x0000)
-struct FHathoraDiscoveredPingEndpoint final
-{
-public:
-	class FString                                 Region;                                            // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Host;                                              // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Port;                                              // 0x0020(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FHathoraDiscoveredPingEndpoint;
-
-// ScriptStruct HathoraSDK.HathoraRegionPings
-// 0x0050 (0x0050 - 0x0000)
-struct FHathoraRegionPings final
-{
-public:
-	TMap<class FString, int32>                    Pings;                                             // 0x0000(0x0050)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FHathoraRegionPings;
+DUMPER7_ASSERTS_FHathoraConnectionInfo;
 
 // ScriptStruct HathoraSDK.HathoraProcessInfo
 // 0x00C0 (0x00C0 - 0x0000)
@@ -215,6 +156,51 @@ public:
 	class FString                                 AppId;                                             // 0x00B0(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FHathoraProcessInfo;
+
+// ScriptStruct HathoraSDK.HathoraLoginResult
+// 0x0028 (0x0028 - 0x0000)
+struct FHathoraLoginResult final
+{
+public:
+	int32                                         StatusCode;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ErrorMessage;                                      // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Token;                                             // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FHathoraLoginResult;
+
+// ScriptStruct HathoraSDK.HathoraDiscoveredPingEndpoint
+// 0x0028 (0x0028 - 0x0000)
+struct FHathoraDiscoveredPingEndpoint final
+{
+public:
+	class FString                                 Region;                                            // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Host;                                              // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Port;                                              // 0x0020(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FHathoraDiscoveredPingEndpoint;
+
+// ScriptStruct HathoraSDK.HathoraRegionPings
+// 0x0050 (0x0050 - 0x0000)
+struct FHathoraRegionPings final
+{
+public:
+	TMap<class FString, int32>                    Pings;                                             // 0x0000(0x0050)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FHathoraRegionPings;
+
+// ScriptStruct HathoraSDK.HathoraLobbyInfosResult
+// 0x0028 (0x0028 - 0x0000)
+struct FHathoraLobbyInfosResult final
+{
+public:
+	int32                                         StatusCode;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ErrorMessage;                                      // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FHathoraLobbyInfo>              Data;                                              // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FHathoraLobbyInfosResult;
 
 // ScriptStruct HathoraSDK.HathoraProcessInfoResult
 // 0x00D8 (0x00D8 - 0x0000)
@@ -329,6 +315,20 @@ public:
 	TArray<struct FHathoraProcessRoomInfo>        Data;                                              // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FHathoraGetRoomsForProcessResult;
+
+// ScriptStruct HathoraSDK.HathoraServerEnvironment
+// 0x0038 (0x0038 - 0x0000)
+struct FHathoraServerEnvironment final
+{
+public:
+	class FString                                 AppId;                                             // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 AppSecret;                                         // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ProcessId;                                         // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EHathoraCloudRegion                           Region;                                            // 0x0030(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         RoomsPerProcess;                                   // 0x0034(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FHathoraServerEnvironment;
 
 // ScriptStruct HathoraSDK.HathoraDestroyRoomResult
 // 0x0020 (0x0020 - 0x0000)

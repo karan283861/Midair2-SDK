@@ -12,13 +12,14 @@
 
 #include "Midair2_classes.hpp"
 #include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass LootCrate_DefaultSetupRTT.LootCrate_DefaultSetupRTT_C
-// 0x02C0 (0x0530 - 0x0270)
+// 0x0320 (0x0590 - 0x0270)
 class ALootCrate_DefaultSetupRTT_C : public ACrateConfiguration
 {
 public:
@@ -118,6 +119,8 @@ public:
 	class USoundBase*                             Open_Sound;                                        // 0x0510(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TMulticastInlineDelegate<void()>              OnFinishedSplurging;                               // 0x0518(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	class UStaticMeshComponent*                   CoinSM;                                            // 0x0528(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TMap<class USkeletalMeshComponent*, struct FTransform> CoinMeshes;                               // 0x0530(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	TArray<struct FTransform>                     CoinTransforms;                                    // 0x0580(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void ExecuteUbergraph_LootCrate_DefaultSetupRTT(int32 EntryPoint);

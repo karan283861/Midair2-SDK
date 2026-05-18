@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass DmgType_EMPGrenade.DmgType_EMPGrenade_C
-// 0x0000 (0x00A0 - 0x00A0)
+// 0x0000 (0x00B0 - 0x00B0)
 class UDmgType_EMPGrenade_C final : public UMADamageType
 {
 public:

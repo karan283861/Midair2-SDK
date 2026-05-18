@@ -37,41 +37,19 @@ void UW_Midair_Frontend_C::ExecuteUbergraph_W_Midair_Frontend(int32 EntryPoint)
 }
 
 
-// Function W_Midair_Frontend.W_Midair_Frontend_C.Tick
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-// Parameters:
-// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-// float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UW_Midair_Frontend_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_Midair_Frontend_C", "Tick");
-
-	Params::W_Midair_Frontend_C_Tick Parms{};
-
-	Parms.MyGeometry = std::move(MyGeometry);
-	Parms.InDeltaTime = InDeltaTime;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function W_Midair_Frontend.W_Midair_Frontend_C.BndEvt__W_Midair_Frontend_QuickPlayBtn_K2Node_ComponentBoundEvent_9_CommonButtonBaseClicked__DelegateSignature
+// Function W_Midair_Frontend.W_Midair_Frontend_C.BndEvt__W_Midair_Frontend_TutorialBTN_K2Node_ComponentBoundEvent_6_CommonButtonBaseClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
 // class UCommonButtonBase*                Button                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UW_Midair_Frontend_C::BndEvt__W_Midair_Frontend_QuickPlayBtn_K2Node_ComponentBoundEvent_9_CommonButtonBaseClicked__DelegateSignature(class UCommonButtonBase* Button)
+void UW_Midair_Frontend_C::BndEvt__W_Midair_Frontend_TutorialBTN_K2Node_ComponentBoundEvent_6_CommonButtonBaseClicked__DelegateSignature(class UCommonButtonBase* Button)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("W_Midair_Frontend_C", "BndEvt__W_Midair_Frontend_QuickPlayBtn_K2Node_ComponentBoundEvent_9_CommonButtonBaseClicked__DelegateSignature");
+		Func = Class->GetFunction("W_Midair_Frontend_C", "BndEvt__W_Midair_Frontend_TutorialBTN_K2Node_ComponentBoundEvent_6_CommonButtonBaseClicked__DelegateSignature");
 
-	Params::W_Midair_Frontend_C_BndEvt__W_Midair_Frontend_QuickPlayBtn_K2Node_ComponentBoundEvent_9_CommonButtonBaseClicked__DelegateSignature Parms{};
+	Params::W_Midair_Frontend_C_BndEvt__W_Midair_Frontend_TutorialBTN_K2Node_ComponentBoundEvent_6_CommonButtonBaseClicked__DelegateSignature Parms{};
 
 	Parms.Button = Button;
 
@@ -79,43 +57,45 @@ void UW_Midair_Frontend_C::BndEvt__W_Midair_Frontend_QuickPlayBtn_K2Node_Compone
 }
 
 
-// Function W_Midair_Frontend.W_Midair_Frontend_C.BndEvt__W_Midair_Frontend_QuickPlayBtn_K2Node_ComponentBoundEvent_6_CommonButtonBaseClicked__DelegateSignature
+// Function W_Midair_Frontend.W_Midair_Frontend_C.BndEvt__W_Midair_Frontend_Button_1_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
-// Parameters:
-// class UCommonButtonBase*                Button                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UW_Midair_Frontend_C::BndEvt__W_Midair_Frontend_QuickPlayBtn_K2Node_ComponentBoundEvent_6_CommonButtonBaseClicked__DelegateSignature(class UCommonButtonBase* Button)
+void UW_Midair_Frontend_C::BndEvt__W_Midair_Frontend_Button_1_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("W_Midair_Frontend_C", "BndEvt__W_Midair_Frontend_QuickPlayBtn_K2Node_ComponentBoundEvent_6_CommonButtonBaseClicked__DelegateSignature");
+		Func = Class->GetFunction("W_Midair_Frontend_C", "BndEvt__W_Midair_Frontend_Button_1_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature");
 
-	Params::W_Midair_Frontend_C_BndEvt__W_Midair_Frontend_QuickPlayBtn_K2Node_ComponentBoundEvent_6_CommonButtonBaseClicked__DelegateSignature Parms{};
-
-	Parms.Button = Button;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function W_Midair_Frontend.W_Midair_Frontend_C.BndEvt__W_Midair_Frontend_QuickPlayDuelBtn_K2Node_ComponentBoundEvent_2_CommonButtonBaseClicked__DelegateSignature
+// Function W_Midair_Frontend.W_Midair_Frontend_C.BndEvt__W_Midair_Frontend_WBP_NewsIcon_183_K2Node_ComponentBoundEvent_3_OnNewsClicked__DelegateSignature
 // (BlueprintEvent)
-// Parameters:
-// class UCommonButtonBase*                Button                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UW_Midair_Frontend_C::BndEvt__W_Midair_Frontend_QuickPlayDuelBtn_K2Node_ComponentBoundEvent_2_CommonButtonBaseClicked__DelegateSignature(class UCommonButtonBase* Button)
+void UW_Midair_Frontend_C::BndEvt__W_Midair_Frontend_WBP_NewsIcon_183_K2Node_ComponentBoundEvent_3_OnNewsClicked__DelegateSignature()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("W_Midair_Frontend_C", "BndEvt__W_Midair_Frontend_QuickPlayDuelBtn_K2Node_ComponentBoundEvent_2_CommonButtonBaseClicked__DelegateSignature");
+		Func = Class->GetFunction("W_Midair_Frontend_C", "BndEvt__W_Midair_Frontend_WBP_NewsIcon_183_K2Node_ComponentBoundEvent_3_OnNewsClicked__DelegateSignature");
 
-	Params::W_Midair_Frontend_C_BndEvt__W_Midair_Frontend_QuickPlayDuelBtn_K2Node_ComponentBoundEvent_2_CommonButtonBaseClicked__DelegateSignature Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.Button = Button;
 
-	UObject::ProcessEvent(Func, &Parms);
+// Function W_Midair_Frontend.W_Midair_Frontend_C.RefreshMatchmakingQueueInfo
+// (BlueprintCallable, BlueprintEvent)
+
+void UW_Midair_Frontend_C::RefreshMatchmakingQueueInfo()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Midair_Frontend_C", "RefreshMatchmakingQueueInfo");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -170,26 +150,6 @@ void UW_Midair_Frontend_C::BP_HandleQuit()
 		Func = Class->GetFunction("W_Midair_Frontend_C", "BP_HandleQuit");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function W_Midair_Frontend.W_Midair_Frontend_C.StackRef
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UBP_Menu_C*                       Widget                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UW_Midair_Frontend_C::StackRef(class UBP_Menu_C* Widget)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_Midair_Frontend_C", "StackRef");
-
-	Params::W_Midair_Frontend_C_StackRef Parms{};
-
-	Parms.Widget = Widget;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -313,20 +273,6 @@ void UW_Midair_Frontend_C::BndEvt__W_Midair_Frontend_W_Midair_MenuBtn_6_K2Node_C
 }
 
 
-// Function W_Midair_Frontend.W_Midair_Frontend_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UW_Midair_Frontend_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_Midair_Frontend_C", "Construct");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function W_Midair_Frontend.W_Midair_Frontend_C.BndEvt__W_Midair_Frontend_W_Midair_MenuBtn_4_K2Node_ComponentBoundEvent_15_CommonButtonBaseClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
@@ -344,34 +290,6 @@ void UW_Midair_Frontend_C::BndEvt__W_Midair_Frontend_W_Midair_MenuBtn_4_K2Node_C
 	Parms.Button = Button;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function W_Midair_Frontend.W_Midair_Frontend_C.BndEvt__W_Midair_Frontend_SettingsButton_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UW_Midair_Frontend_C::BndEvt__W_Midair_Frontend_SettingsButton_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_Midair_Frontend_C", "BndEvt__W_Midair_Frontend_SettingsButton_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function W_Midair_Frontend.W_Midair_Frontend_C.GoToSettings
-// (BlueprintCallable, BlueprintEvent)
-
-void UW_Midair_Frontend_C::GoToSettings()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_Midair_Frontend_C", "GoToSettings");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -435,6 +353,20 @@ void UW_Midair_Frontend_C::BndEvt__W_Midair_Frontend_ServerBrowserButton1_K2Node
 }
 
 
+// Function W_Midair_Frontend.W_Midair_Frontend_C.BndEvt__W_Midair_Frontend_QuitButton_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UW_Midair_Frontend_C::BndEvt__W_Midair_Frontend_QuitButton_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Midair_Frontend_C", "BndEvt__W_Midair_Frontend_QuitButton_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_Midair_Frontend.W_Midair_Frontend_C.Go To Quit
 // (BlueprintCallable, BlueprintEvent)
 
@@ -449,17 +381,205 @@ void UW_Midair_Frontend_C::Go_To_Quit()
 }
 
 
-// Function W_Midair_Frontend.W_Midair_Frontend_C.BndEvt__W_Midair_Frontend_QuitButton_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
+// Function W_Midair_Frontend.W_Midair_Frontend_C.GoToSettings
+// (BlueprintCallable, BlueprintEvent)
 
-void UW_Midair_Frontend_C::BndEvt__W_Midair_Frontend_QuitButton_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature()
+void UW_Midair_Frontend_C::GoToSettings()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("W_Midair_Frontend_C", "BndEvt__W_Midair_Frontend_QuitButton_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature");
+		Func = Class->GetFunction("W_Midair_Frontend_C", "GoToSettings");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_Midair_Frontend.W_Midair_Frontend_C.BndEvt__W_Midair_Frontend_SettingsButton_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UW_Midair_Frontend_C::BndEvt__W_Midair_Frontend_SettingsButton_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Midair_Frontend_C", "BndEvt__W_Midair_Frontend_SettingsButton_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_Midair_Frontend.W_Midair_Frontend_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UW_Midair_Frontend_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Midair_Frontend_C", "Construct");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_Midair_Frontend.W_Midair_Frontend_C.StackRef
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UBP_Menu_C*                       Widget                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_Midair_Frontend_C::StackRef(class UBP_Menu_C* Widget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Midair_Frontend_C", "StackRef");
+
+	Params::W_Midair_Frontend_C_StackRef Parms{};
+
+	Parms.Widget = Widget;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_Midair_Frontend.W_Midair_Frontend_C.OnResult_CAB67D6340E05BE1EA6629BEFE0091D5
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ECommonMessagingResult                  Result                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_Midair_Frontend_C::OnResult_CAB67D6340E05BE1EA6629BEFE0091D5(ECommonMessagingResult Result)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Midair_Frontend_C", "OnResult_CAB67D6340E05BE1EA6629BEFE0091D5");
+
+	Params::W_Midair_Frontend_C_OnResult_CAB67D6340E05BE1EA6629BEFE0091D5 Parms{};
+
+	Parms.Result = Result;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_Midair_Frontend.W_Midair_Frontend_C.BeforePush_24E70A3045643AACE8B16689CF54F953
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UCommonActivatableWidget*         UserWidget                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_Midair_Frontend_C::BeforePush_24E70A3045643AACE8B16689CF54F953(class UCommonActivatableWidget* UserWidget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Midair_Frontend_C", "BeforePush_24E70A3045643AACE8B16689CF54F953");
+
+	Params::W_Midair_Frontend_C_BeforePush_24E70A3045643AACE8B16689CF54F953 Parms{};
+
+	Parms.UserWidget = UserWidget;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_Midair_Frontend.W_Midair_Frontend_C.AfterPush_24E70A3045643AACE8B16689CF54F953
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UCommonActivatableWidget*         UserWidget                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_Midair_Frontend_C::AfterPush_24E70A3045643AACE8B16689CF54F953(class UCommonActivatableWidget* UserWidget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Midair_Frontend_C", "AfterPush_24E70A3045643AACE8B16689CF54F953");
+
+	Params::W_Midair_Frontend_C_AfterPush_24E70A3045643AACE8B16689CF54F953 Parms{};
+
+	Parms.UserWidget = UserWidget;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_Midair_Frontend.W_Midair_Frontend_C.BeforePush_9FA6C86B4A78DB9C9604B8B19C200AA4
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UCommonActivatableWidget*         UserWidget                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_Midair_Frontend_C::BeforePush_9FA6C86B4A78DB9C9604B8B19C200AA4(class UCommonActivatableWidget* UserWidget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Midair_Frontend_C", "BeforePush_9FA6C86B4A78DB9C9604B8B19C200AA4");
+
+	Params::W_Midair_Frontend_C_BeforePush_9FA6C86B4A78DB9C9604B8B19C200AA4 Parms{};
+
+	Parms.UserWidget = UserWidget;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_Midair_Frontend.W_Midair_Frontend_C.AfterPush_9FA6C86B4A78DB9C9604B8B19C200AA4
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UCommonActivatableWidget*         UserWidget                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_Midair_Frontend_C::AfterPush_9FA6C86B4A78DB9C9604B8B19C200AA4(class UCommonActivatableWidget* UserWidget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Midair_Frontend_C", "AfterPush_9FA6C86B4A78DB9C9604B8B19C200AA4");
+
+	Params::W_Midair_Frontend_C_AfterPush_9FA6C86B4A78DB9C9604B8B19C200AA4 Parms{};
+
+	Parms.UserWidget = UserWidget;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_Midair_Frontend.W_Midair_Frontend_C.OnSuccess_7702AF134C15C94CA0A6118FCB1BC948
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FMAQueueInfo&              QueueInfo                                              (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+
+void UW_Midair_Frontend_C::OnSuccess_7702AF134C15C94CA0A6118FCB1BC948(const struct FMAQueueInfo& QueueInfo)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Midair_Frontend_C", "OnSuccess_7702AF134C15C94CA0A6118FCB1BC948");
+
+	Params::W_Midair_Frontend_C_OnSuccess_7702AF134C15C94CA0A6118FCB1BC948 Parms{};
+
+	Parms.QueueInfo = std::move(QueueInfo);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_Midair_Frontend.W_Midair_Frontend_C.OnFail_7702AF134C15C94CA0A6118FCB1BC948
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FMAQueueInfo&              QueueInfo                                              (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+
+void UW_Midair_Frontend_C::OnFail_7702AF134C15C94CA0A6118FCB1BC948(const struct FMAQueueInfo& QueueInfo)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Midair_Frontend_C", "OnFail_7702AF134C15C94CA0A6118FCB1BC948");
+
+	Params::W_Midair_Frontend_C_OnFail_7702AF134C15C94CA0A6118FCB1BC948 Parms{};
+
+	Parms.QueueInfo = std::move(QueueInfo);
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -516,106 +636,6 @@ void UW_Midair_Frontend_C::OnResult_F3C721EC4F56A0AAD0641DB695698C55(ECommonMess
 		Func = Class->GetFunction("W_Midair_Frontend_C", "OnResult_F3C721EC4F56A0AAD0641DB695698C55");
 
 	Params::W_Midair_Frontend_C_OnResult_F3C721EC4F56A0AAD0641DB695698C55 Parms{};
-
-	Parms.Result = Result;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function W_Midair_Frontend.W_Midair_Frontend_C.BeforePush_9B9FCFC14EBB4133484E92977ADC2E4B
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UCommonActivatableWidget*         UserWidget                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UW_Midair_Frontend_C::BeforePush_9B9FCFC14EBB4133484E92977ADC2E4B(class UCommonActivatableWidget* UserWidget)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_Midair_Frontend_C", "BeforePush_9B9FCFC14EBB4133484E92977ADC2E4B");
-
-	Params::W_Midair_Frontend_C_BeforePush_9B9FCFC14EBB4133484E92977ADC2E4B Parms{};
-
-	Parms.UserWidget = UserWidget;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function W_Midair_Frontend.W_Midair_Frontend_C.AfterPush_9B9FCFC14EBB4133484E92977ADC2E4B
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UCommonActivatableWidget*         UserWidget                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UW_Midair_Frontend_C::AfterPush_9B9FCFC14EBB4133484E92977ADC2E4B(class UCommonActivatableWidget* UserWidget)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_Midair_Frontend_C", "AfterPush_9B9FCFC14EBB4133484E92977ADC2E4B");
-
-	Params::W_Midair_Frontend_C_AfterPush_9B9FCFC14EBB4133484E92977ADC2E4B Parms{};
-
-	Parms.UserWidget = UserWidget;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function W_Midair_Frontend.W_Midair_Frontend_C.BeforePush_B7CF16BB408CD8C89D2A4781BF61F741
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UCommonActivatableWidget*         UserWidget                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UW_Midair_Frontend_C::BeforePush_B7CF16BB408CD8C89D2A4781BF61F741(class UCommonActivatableWidget* UserWidget)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_Midair_Frontend_C", "BeforePush_B7CF16BB408CD8C89D2A4781BF61F741");
-
-	Params::W_Midair_Frontend_C_BeforePush_B7CF16BB408CD8C89D2A4781BF61F741 Parms{};
-
-	Parms.UserWidget = UserWidget;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function W_Midair_Frontend.W_Midair_Frontend_C.AfterPush_B7CF16BB408CD8C89D2A4781BF61F741
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UCommonActivatableWidget*         UserWidget                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UW_Midair_Frontend_C::AfterPush_B7CF16BB408CD8C89D2A4781BF61F741(class UCommonActivatableWidget* UserWidget)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_Midair_Frontend_C", "AfterPush_B7CF16BB408CD8C89D2A4781BF61F741");
-
-	Params::W_Midair_Frontend_C_AfterPush_B7CF16BB408CD8C89D2A4781BF61F741 Parms{};
-
-	Parms.UserWidget = UserWidget;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function W_Midair_Frontend.W_Midair_Frontend_C.OnResult_2012FB8D4D74C5C6CFBCE1A1C25CBBBA
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// ECommonMessagingResult                  Result                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UW_Midair_Frontend_C::OnResult_2012FB8D4D74C5C6CFBCE1A1C25CBBBA(ECommonMessagingResult Result)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_Midair_Frontend_C", "OnResult_2012FB8D4D74C5C6CFBCE1A1C25CBBBA");
-
-	Params::W_Midair_Frontend_C_OnResult_2012FB8D4D74C5C6CFBCE1A1C25CBBBA Parms{};
 
 	Parms.Result = Result;
 
@@ -743,46 +763,6 @@ void UW_Midair_Frontend_C::AfterPush_5BF5B38B4C807927AE537792AB994C3C(class UCom
 }
 
 
-// Function W_Midair_Frontend.W_Midair_Frontend_C.BeforePush_B3C73CC64038064FD2F402AEC2CE0B64
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UCommonActivatableWidget*         UserWidget                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UW_Midair_Frontend_C::BeforePush_B3C73CC64038064FD2F402AEC2CE0B64(class UCommonActivatableWidget* UserWidget)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_Midair_Frontend_C", "BeforePush_B3C73CC64038064FD2F402AEC2CE0B64");
-
-	Params::W_Midair_Frontend_C_BeforePush_B3C73CC64038064FD2F402AEC2CE0B64 Parms{};
-
-	Parms.UserWidget = UserWidget;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function W_Midair_Frontend.W_Midair_Frontend_C.AfterPush_B3C73CC64038064FD2F402AEC2CE0B64
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UCommonActivatableWidget*         UserWidget                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UW_Midair_Frontend_C::AfterPush_B3C73CC64038064FD2F402AEC2CE0B64(class UCommonActivatableWidget* UserWidget)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_Midair_Frontend_C", "AfterPush_B3C73CC64038064FD2F402AEC2CE0B64");
-
-	Params::W_Midair_Frontend_C_AfterPush_B3C73CC64038064FD2F402AEC2CE0B64 Parms{};
-
-	Parms.UserWidget = UserWidget;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function W_Midair_Frontend.W_Midair_Frontend_C.BeforePush_131659D140FD097E7AFE30A348D8FFD1
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -856,6 +836,146 @@ void UW_Midair_Frontend_C::AfterPush_0981B51345F5948CF92DD29783231F8D(class UCom
 		Func = Class->GetFunction("W_Midair_Frontend_C", "AfterPush_0981B51345F5948CF92DD29783231F8D");
 
 	Params::W_Midair_Frontend_C_AfterPush_0981B51345F5948CF92DD29783231F8D Parms{};
+
+	Parms.UserWidget = UserWidget;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_Midair_Frontend.W_Midair_Frontend_C.BeforePush_B3C73CC64038064FD2F402AEC2CE0B64
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UCommonActivatableWidget*         UserWidget                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_Midair_Frontend_C::BeforePush_B3C73CC64038064FD2F402AEC2CE0B64(class UCommonActivatableWidget* UserWidget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Midair_Frontend_C", "BeforePush_B3C73CC64038064FD2F402AEC2CE0B64");
+
+	Params::W_Midair_Frontend_C_BeforePush_B3C73CC64038064FD2F402AEC2CE0B64 Parms{};
+
+	Parms.UserWidget = UserWidget;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_Midair_Frontend.W_Midair_Frontend_C.AfterPush_B3C73CC64038064FD2F402AEC2CE0B64
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UCommonActivatableWidget*         UserWidget                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_Midair_Frontend_C::AfterPush_B3C73CC64038064FD2F402AEC2CE0B64(class UCommonActivatableWidget* UserWidget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Midair_Frontend_C", "AfterPush_B3C73CC64038064FD2F402AEC2CE0B64");
+
+	Params::W_Midair_Frontend_C_AfterPush_B3C73CC64038064FD2F402AEC2CE0B64 Parms{};
+
+	Parms.UserWidget = UserWidget;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_Midair_Frontend.W_Midair_Frontend_C.OnResult_2012FB8D4D74C5C6CFBCE1A1C25CBBBA
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ECommonMessagingResult                  Result                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_Midair_Frontend_C::OnResult_2012FB8D4D74C5C6CFBCE1A1C25CBBBA(ECommonMessagingResult Result)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Midair_Frontend_C", "OnResult_2012FB8D4D74C5C6CFBCE1A1C25CBBBA");
+
+	Params::W_Midair_Frontend_C_OnResult_2012FB8D4D74C5C6CFBCE1A1C25CBBBA Parms{};
+
+	Parms.Result = Result;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_Midair_Frontend.W_Midair_Frontend_C.BeforePush_B7CF16BB408CD8C89D2A4781BF61F741
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UCommonActivatableWidget*         UserWidget                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_Midair_Frontend_C::BeforePush_B7CF16BB408CD8C89D2A4781BF61F741(class UCommonActivatableWidget* UserWidget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Midair_Frontend_C", "BeforePush_B7CF16BB408CD8C89D2A4781BF61F741");
+
+	Params::W_Midair_Frontend_C_BeforePush_B7CF16BB408CD8C89D2A4781BF61F741 Parms{};
+
+	Parms.UserWidget = UserWidget;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_Midair_Frontend.W_Midair_Frontend_C.AfterPush_B7CF16BB408CD8C89D2A4781BF61F741
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UCommonActivatableWidget*         UserWidget                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_Midair_Frontend_C::AfterPush_B7CF16BB408CD8C89D2A4781BF61F741(class UCommonActivatableWidget* UserWidget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Midair_Frontend_C", "AfterPush_B7CF16BB408CD8C89D2A4781BF61F741");
+
+	Params::W_Midair_Frontend_C_AfterPush_B7CF16BB408CD8C89D2A4781BF61F741 Parms{};
+
+	Parms.UserWidget = UserWidget;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_Midair_Frontend.W_Midair_Frontend_C.BeforePush_9B9FCFC14EBB4133484E92977ADC2E4B
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UCommonActivatableWidget*         UserWidget                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_Midair_Frontend_C::BeforePush_9B9FCFC14EBB4133484E92977ADC2E4B(class UCommonActivatableWidget* UserWidget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Midair_Frontend_C", "BeforePush_9B9FCFC14EBB4133484E92977ADC2E4B");
+
+	Params::W_Midair_Frontend_C_BeforePush_9B9FCFC14EBB4133484E92977ADC2E4B Parms{};
+
+	Parms.UserWidget = UserWidget;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_Midair_Frontend.W_Midair_Frontend_C.AfterPush_9B9FCFC14EBB4133484E92977ADC2E4B
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UCommonActivatableWidget*         UserWidget                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_Midair_Frontend_C::AfterPush_9B9FCFC14EBB4133484E92977ADC2E4B(class UCommonActivatableWidget* UserWidget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Midair_Frontend_C", "AfterPush_9B9FCFC14EBB4133484E92977ADC2E4B");
+
+	Params::W_Midair_Frontend_C_AfterPush_9B9FCFC14EBB4133484E92977ADC2E4B Parms{};
 
 	Parms.UserWidget = UserWidget;
 
@@ -943,17 +1063,57 @@ void UW_Midair_Frontend_C::On_Balance_Updated(class UMALocalPlayer* LocalPlayer)
 }
 
 
-// Function W_Midair_Frontend.W_Midair_Frontend_C.SetMatchmakingButtonText
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function W_Midair_Frontend.W_Midair_Frontend_C.GetVisibility_0
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// ESlateVisibility                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UW_Midair_Frontend_C::SetMatchmakingButtonText()
+ESlateVisibility UW_Midair_Frontend_C::GetVisibility_0()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("W_Midair_Frontend_C", "SetMatchmakingButtonText");
+		Func = Class->GetFunction("W_Midair_Frontend_C", "GetVisibility_0");
+
+	Params::W_Midair_Frontend_C_GetVisibility_0 Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function W_Midair_Frontend.W_Midair_Frontend_C.TryShowWelcomeWidget
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UW_Midair_Frontend_C::TryShowWelcomeWidget()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Midair_Frontend_C", "TryShowWelcomeWidget");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_Midair_Frontend.W_Midair_Frontend_C.On Wallet Updated
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UMALocalPlayer*                   LocalPlayer                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_Midair_Frontend_C::On_Wallet_Updated(class UMALocalPlayer* LocalPlayer)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Midair_Frontend_C", "On Wallet Updated");
+
+	Params::W_Midair_Frontend_C_On_Wallet_Updated Parms{};
+
+	Parms.LocalPlayer = LocalPlayer;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

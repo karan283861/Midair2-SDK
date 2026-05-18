@@ -17,507 +17,6 @@
 namespace SDK
 {
 
-// Function WBP_Currency.WBP_Currency_C.OnGetCurrencies
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// TArray<struct FLootLockerCurrencyDetails>&Response                                               (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-
-void UWBP_Currency_C::OnGetCurrencies(TArray<struct FLootLockerCurrencyDetails>& Response)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "OnGetCurrencies");
-
-	Params::WBP_Currency_C_OnGetCurrencies Parms{};
-
-	Parms.Response = std::move(Response);
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Response = std::move(Parms.Response);
-}
-
-
-// Function WBP_Currency.WBP_Currency_C.CoinSplurgeFinished
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UWBP_Currency_C::CoinSplurgeFinished()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "CoinSplurgeFinished");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_Currency.WBP_Currency_C.OnMouseMove
-// (BlueprintCosmetic, Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-// const struct FPointerEvent&             MouseEvent                                             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FEventReply                      ReturnValue                                            (Parm, OutParm, ReturnParm)
-
-struct FEventReply UWBP_Currency_C::OnMouseMove(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "OnMouseMove");
-
-	Params::WBP_Currency_C_OnMouseMove Parms{};
-
-	Parms.MyGeometry = std::move(MyGeometry);
-	Parms.MouseEvent = std::move(MouseEvent);
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function WBP_Currency.WBP_Currency_C.On Finalize Purchase
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FLootLockerResponse&       Var                                                    (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UWBP_Currency_C::On_Finalize_Purchase(const struct FLootLockerResponse& Var)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "On Finalize Purchase");
-
-	Params::WBP_Currency_C_On_Finalize_Purchase Parms{};
-
-	Parms.Var = std::move(Var);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_Currency.WBP_Currency_C.FinalizePurchase
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UWBP_Currency_C::FinalizePurchase()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "FinalizePurchase");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_Currency.WBP_Currency_C.OnQueryPurchaseResponse
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FLootLockerQuerySteamPurchaseRedemptionStatusResponse&Response                                               (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UWBP_Currency_C::OnQueryPurchaseResponse(const struct FLootLockerQuerySteamPurchaseRedemptionStatusResponse& Response)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "OnQueryPurchaseResponse");
-
-	Params::WBP_Currency_C_OnQueryPurchaseResponse Parms{};
-
-	Parms.Response = std::move(Response);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_Currency.WBP_Currency_C.QueryPurchase
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UWBP_Currency_C::QueryPurchase()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "QueryPurchase");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_Currency.WBP_Currency_C.OnBeginSteamPurchase
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FLootLockerBeginSteamPurchaseRedemptionResponse&Response                                               (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UWBP_Currency_C::OnBeginSteamPurchase(const struct FLootLockerBeginSteamPurchaseRedemptionResponse& Response)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "OnBeginSteamPurchase");
-
-	Params::WBP_Currency_C_OnBeginSteamPurchase Parms{};
-
-	Parms.Response = std::move(Response);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_Currency.WBP_Currency_C.MakePurchase
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FLootLockerCurrencyDetails&CurrencyDetails                                        (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UWBP_Currency_C::MakePurchase(const struct FLootLockerCurrencyDetails& CurrencyDetails)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "MakePurchase");
-
-	Params::WBP_Currency_C_MakePurchase Parms{};
-
-	Parms.CurrencyDetails = std::move(CurrencyDetails);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_Currency.WBP_Currency_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UWBP_Currency_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "Construct");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_Currency.WBP_Currency_C.CheckSteamPurchase
-// (BlueprintCallable, BlueprintEvent)
-
-void UWBP_Currency_C::CheckSteamPurchase()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "CheckSteamPurchase");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_Button_128_K2Node_ComponentBoundEvent_1_OnButtonPressedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UWBP_Currency_C::BndEvt__WBP_Currency_Button_128_K2Node_ComponentBoundEvent_1_OnButtonPressedEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_Button_128_K2Node_ComponentBoundEvent_1_OnButtonPressedEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_2_ButtonSelected__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// const struct FLootLockerCurrencyDetails&CurrencyDetails                                        (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UWBP_Currency_C::BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_2_ButtonSelected__DelegateSignature(const struct FLootLockerCurrencyDetails& CurrencyDetails)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_2_ButtonSelected__DelegateSignature");
-
-	Params::WBP_Currency_C_BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_2_ButtonSelected__DelegateSignature Parms{};
-
-	Parms.CurrencyDetails = std::move(CurrencyDetails);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// const struct FLootLockerCurrencyDetails&CurrencyDetails                                        (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UWBP_Currency_C::BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature(const struct FLootLockerCurrencyDetails& CurrencyDetails)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature");
-
-	Params::WBP_Currency_C_BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature Parms{};
-
-	Parms.CurrencyDetails = std::move(CurrencyDetails);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_0_ButtonSelected__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// const struct FLootLockerCurrencyDetails&CurrencyDetails                                        (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UWBP_Currency_C::BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_0_ButtonSelected__DelegateSignature(const struct FLootLockerCurrencyDetails& CurrencyDetails)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_0_ButtonSelected__DelegateSignature");
-
-	Params::WBP_Currency_C_BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_0_ButtonSelected__DelegateSignature Parms{};
-
-	Parms.CurrencyDetails = std::move(CurrencyDetails);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// const struct FLootLockerCurrencyDetails&CurrencyDetails                                        (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UWBP_Currency_C::BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature(const struct FLootLockerCurrencyDetails& CurrencyDetails)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature");
-
-	Params::WBP_Currency_C_BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature Parms{};
-
-	Parms.CurrencyDetails = std::move(CurrencyDetails);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_5_ButtonHovered__DelegateSignature
-// (BlueprintEvent)
-
-void UWBP_Currency_C::BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_5_ButtonHovered__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_5_ButtonHovered__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_6_ButtonUnhovered__DelegateSignature
-// (BlueprintEvent)
-
-void UWBP_Currency_C::BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_6_ButtonUnhovered__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_6_ButtonUnhovered__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_Coin_58_K2Node_ComponentBoundEvent_7_CoinHovered__DelegateSignature
-// (BlueprintEvent)
-
-void UWBP_Currency_C::BndEvt__WBP_Currency_WBP_Coin_58_K2Node_ComponentBoundEvent_7_CoinHovered__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_WBP_Coin_58_K2Node_ComponentBoundEvent_7_CoinHovered__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_Coin_58_K2Node_ComponentBoundEvent_8_CoinUnhovered__DelegateSignature
-// (BlueprintEvent)
-
-void UWBP_Currency_C::BndEvt__WBP_Currency_WBP_Coin_58_K2Node_ComponentBoundEvent_8_CoinUnhovered__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_WBP_Coin_58_K2Node_ComponentBoundEvent_8_CoinUnhovered__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_9_ButtonHovered__DelegateSignature
-// (BlueprintEvent)
-
-void UWBP_Currency_C::BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_9_ButtonHovered__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_9_ButtonHovered__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_10_ButtonUnhovered__DelegateSignature
-// (BlueprintEvent)
-
-void UWBP_Currency_C::BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_10_ButtonUnhovered__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_10_ButtonUnhovered__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_11_ButtonHovered__DelegateSignature
-// (BlueprintEvent)
-
-void UWBP_Currency_C::BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_11_ButtonHovered__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_11_ButtonHovered__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_12_ButtonUnhovered__DelegateSignature
-// (BlueprintEvent)
-
-void UWBP_Currency_C::BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_12_ButtonUnhovered__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_12_ButtonUnhovered__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_13_ButtonHovered__DelegateSignature
-// (BlueprintEvent)
-
-void UWBP_Currency_C::BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_13_ButtonHovered__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_13_ButtonHovered__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_14_ButtonUnhovered__DelegateSignature
-// (BlueprintEvent)
-
-void UWBP_Currency_C::BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_14_ButtonUnhovered__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_14_ButtonUnhovered__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_TryAgainBtn_K2Node_ComponentBoundEvent_16_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UWBP_Currency_C::BndEvt__WBP_Currency_TryAgainBtn_K2Node_ComponentBoundEvent_16_OnButtonClickedEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_TryAgainBtn_K2Node_ComponentBoundEvent_16_OnButtonClickedEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_Button_1_K2Node_ComponentBoundEvent_18_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UWBP_Currency_C::BndEvt__WBP_Currency_Button_1_K2Node_ComponentBoundEvent_18_OnButtonClickedEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_Button_1_K2Node_ComponentBoundEvent_18_OnButtonClickedEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_Button_128_K2Node_ComponentBoundEvent_17_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UWBP_Currency_C::BndEvt__WBP_Currency_Button_128_K2Node_ComponentBoundEvent_17_OnButtonClickedEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_Button_128_K2Node_ComponentBoundEvent_17_OnButtonClickedEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_Currency.WBP_Currency_C.BP_OnActivated
-// (Event, Protected, BlueprintEvent)
-
-void UWBP_Currency_C::BP_OnActivated()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "BP_OnActivated");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_Currency.WBP_Currency_C.BP_OnDeactivated
-// (Event, Protected, BlueprintEvent)
-
-void UWBP_Currency_C::BP_OnDeactivated()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Currency_C", "BP_OnDeactivated");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function WBP_Currency.WBP_Currency_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
@@ -555,6 +54,521 @@ void UWBP_Currency_C::ExecuteUbergraph_WBP_Currency(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.BP_OnDeactivated
+// (Event, Protected, BlueprintEvent)
+
+void UWBP_Currency_C::BP_OnDeactivated()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "BP_OnDeactivated");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.BP_OnActivated
+// (Event, Protected, BlueprintEvent)
+
+void UWBP_Currency_C::BP_OnActivated()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "BP_OnActivated");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_Button_128_K2Node_ComponentBoundEvent_17_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UWBP_Currency_C::BndEvt__WBP_Currency_Button_128_K2Node_ComponentBoundEvent_17_OnButtonClickedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_Button_128_K2Node_ComponentBoundEvent_17_OnButtonClickedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_Button_1_K2Node_ComponentBoundEvent_18_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UWBP_Currency_C::BndEvt__WBP_Currency_Button_1_K2Node_ComponentBoundEvent_18_OnButtonClickedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_Button_1_K2Node_ComponentBoundEvent_18_OnButtonClickedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_TryAgainBtn_K2Node_ComponentBoundEvent_16_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UWBP_Currency_C::BndEvt__WBP_Currency_TryAgainBtn_K2Node_ComponentBoundEvent_16_OnButtonClickedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_TryAgainBtn_K2Node_ComponentBoundEvent_16_OnButtonClickedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_14_ButtonUnhovered__DelegateSignature
+// (BlueprintEvent)
+
+void UWBP_Currency_C::BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_14_ButtonUnhovered__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_14_ButtonUnhovered__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_13_ButtonHovered__DelegateSignature
+// (BlueprintEvent)
+
+void UWBP_Currency_C::BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_13_ButtonHovered__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_13_ButtonHovered__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_12_ButtonUnhovered__DelegateSignature
+// (BlueprintEvent)
+
+void UWBP_Currency_C::BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_12_ButtonUnhovered__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_12_ButtonUnhovered__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_11_ButtonHovered__DelegateSignature
+// (BlueprintEvent)
+
+void UWBP_Currency_C::BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_11_ButtonHovered__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_11_ButtonHovered__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_10_ButtonUnhovered__DelegateSignature
+// (BlueprintEvent)
+
+void UWBP_Currency_C::BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_10_ButtonUnhovered__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_10_ButtonUnhovered__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_9_ButtonHovered__DelegateSignature
+// (BlueprintEvent)
+
+void UWBP_Currency_C::BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_9_ButtonHovered__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_9_ButtonHovered__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_Coin_58_K2Node_ComponentBoundEvent_8_CoinUnhovered__DelegateSignature
+// (BlueprintEvent)
+
+void UWBP_Currency_C::BndEvt__WBP_Currency_WBP_Coin_58_K2Node_ComponentBoundEvent_8_CoinUnhovered__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_WBP_Coin_58_K2Node_ComponentBoundEvent_8_CoinUnhovered__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_Coin_58_K2Node_ComponentBoundEvent_7_CoinHovered__DelegateSignature
+// (BlueprintEvent)
+
+void UWBP_Currency_C::BndEvt__WBP_Currency_WBP_Coin_58_K2Node_ComponentBoundEvent_7_CoinHovered__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_WBP_Coin_58_K2Node_ComponentBoundEvent_7_CoinHovered__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_6_ButtonUnhovered__DelegateSignature
+// (BlueprintEvent)
+
+void UWBP_Currency_C::BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_6_ButtonUnhovered__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_6_ButtonUnhovered__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_5_ButtonHovered__DelegateSignature
+// (BlueprintEvent)
+
+void UWBP_Currency_C::BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_5_ButtonHovered__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_5_ButtonHovered__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// const struct FLootLockerCurrencyDetails&CurrencyDetails                                        (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UWBP_Currency_C::BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature(const struct FLootLockerCurrencyDetails& CurrencyDetails)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature");
+
+	Params::WBP_Currency_C_BndEvt__WBP_Currency_WBP_CurrencyItem_239_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature Parms{};
+
+	Parms.CurrencyDetails = std::move(CurrencyDetails);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_0_ButtonSelected__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// const struct FLootLockerCurrencyDetails&CurrencyDetails                                        (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UWBP_Currency_C::BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_0_ButtonSelected__DelegateSignature(const struct FLootLockerCurrencyDetails& CurrencyDetails)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_0_ButtonSelected__DelegateSignature");
+
+	Params::WBP_Currency_C_BndEvt__WBP_Currency_WBP_CurrencyItem_2_K2Node_ComponentBoundEvent_0_ButtonSelected__DelegateSignature Parms{};
+
+	Parms.CurrencyDetails = std::move(CurrencyDetails);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// const struct FLootLockerCurrencyDetails&CurrencyDetails                                        (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UWBP_Currency_C::BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature(const struct FLootLockerCurrencyDetails& CurrencyDetails)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature");
+
+	Params::WBP_Currency_C_BndEvt__WBP_Currency_WBP_CurrencyItem_1_K2Node_ComponentBoundEvent_3_ButtonSelected__DelegateSignature Parms{};
+
+	Parms.CurrencyDetails = std::move(CurrencyDetails);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_2_ButtonSelected__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// const struct FLootLockerCurrencyDetails&CurrencyDetails                                        (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UWBP_Currency_C::BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_2_ButtonSelected__DelegateSignature(const struct FLootLockerCurrencyDetails& CurrencyDetails)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_2_ButtonSelected__DelegateSignature");
+
+	Params::WBP_Currency_C_BndEvt__WBP_Currency_WBP_CurrencyItem_K2Node_ComponentBoundEvent_2_ButtonSelected__DelegateSignature Parms{};
+
+	Parms.CurrencyDetails = std::move(CurrencyDetails);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.BndEvt__WBP_Currency_Button_128_K2Node_ComponentBoundEvent_1_OnButtonPressedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UWBP_Currency_C::BndEvt__WBP_Currency_Button_128_K2Node_ComponentBoundEvent_1_OnButtonPressedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "BndEvt__WBP_Currency_Button_128_K2Node_ComponentBoundEvent_1_OnButtonPressedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.CheckSteamPurchase
+// (BlueprintCallable, BlueprintEvent)
+
+void UWBP_Currency_C::CheckSteamPurchase()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "CheckSteamPurchase");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UWBP_Currency_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "Construct");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.MakePurchase
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FLootLockerCurrencyDetails&CurrencyDetails                                        (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UWBP_Currency_C::MakePurchase(const struct FLootLockerCurrencyDetails& CurrencyDetails)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "MakePurchase");
+
+	Params::WBP_Currency_C_MakePurchase Parms{};
+
+	Parms.CurrencyDetails = std::move(CurrencyDetails);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.OnBeginSteamPurchase
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FLootLockerBeginSteamPurchaseRedemptionResponse&Response                                               (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UWBP_Currency_C::OnBeginSteamPurchase(const struct FLootLockerBeginSteamPurchaseRedemptionResponse& Response)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "OnBeginSteamPurchase");
+
+	Params::WBP_Currency_C_OnBeginSteamPurchase Parms{};
+
+	Parms.Response = std::move(Response);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.QueryPurchase
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UWBP_Currency_C::QueryPurchase()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "QueryPurchase");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.OnQueryPurchaseResponse
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FLootLockerQuerySteamPurchaseRedemptionStatusResponse&Response                                               (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UWBP_Currency_C::OnQueryPurchaseResponse(const struct FLootLockerQuerySteamPurchaseRedemptionStatusResponse& Response)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "OnQueryPurchaseResponse");
+
+	Params::WBP_Currency_C_OnQueryPurchaseResponse Parms{};
+
+	Parms.Response = std::move(Response);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.FinalizePurchase
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UWBP_Currency_C::FinalizePurchase()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "FinalizePurchase");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.On Finalize Purchase
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FLootLockerResponse&       Var                                                    (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UWBP_Currency_C::On_Finalize_Purchase(const struct FLootLockerResponse& Var)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "On Finalize Purchase");
+
+	Params::WBP_Currency_C_On_Finalize_Purchase Parms{};
+
+	Parms.Var = std::move(Var);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.OnMouseMove
+// (BlueprintCosmetic, Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// const struct FPointerEvent&             MouseEvent                                             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FEventReply                      ReturnValue                                            (Parm, OutParm, ReturnParm)
+
+struct FEventReply UWBP_Currency_C::OnMouseMove(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "OnMouseMove");
+
+	Params::WBP_Currency_C_OnMouseMove Parms{};
+
+	Parms.MyGeometry = std::move(MyGeometry);
+	Parms.MouseEvent = std::move(MouseEvent);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.CoinSplurgeFinished
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UWBP_Currency_C::CoinSplurgeFinished()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "CoinSplurgeFinished");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.OnGetCurrencies
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TArray<struct FLootLockerCurrencyDetails>&Response                                               (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void UWBP_Currency_C::OnGetCurrencies(TArray<struct FLootLockerCurrencyDetails>& Response)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "OnGetCurrencies");
+
+	Params::WBP_Currency_C_OnGetCurrencies Parms{};
+
+	Parms.Response = std::move(Response);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Response = std::move(Parms.Response);
+}
+
+
+// Function WBP_Currency.WBP_Currency_C.DeleteAndRespawnCrate
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UWBP_Currency_C::DeleteAndRespawnCrate()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Currency_C", "DeleteAndRespawnCrate");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

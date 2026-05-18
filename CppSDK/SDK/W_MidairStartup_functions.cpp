@@ -176,5 +176,25 @@ struct FEventReply UW_MidairStartup_C::OnPreviewMouseButtonDown(const struct FGe
 	return Parms.ReturnValue;
 }
 
+
+// Function W_MidairStartup.W_MidairStartup_C.BP_GetDesiredFocusTarget
+// (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// class UWidget*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+class UWidget* UW_MidairStartup_C::BP_GetDesiredFocusTarget() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_MidairStartup_C", "BP_GetDesiredFocusTarget");
+
+	Params::W_MidairStartup_C_BP_GetDesiredFocusTarget Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
 }
 

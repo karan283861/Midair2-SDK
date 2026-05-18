@@ -37,34 +37,6 @@ void UWBP_PointOfInterest_Map_C::ExecuteUbergraph_WBP_PointOfInterest_Map(int32 
 }
 
 
-// Function WBP_PointOfInterest_Map.WBP_PointOfInterest_Map_C.OnDied
-// (BlueprintCallable, BlueprintEvent)
-
-void UWBP_PointOfInterest_Map_C::OnDied()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_PointOfInterest_Map_C", "OnDied");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_PointOfInterest_Map.WBP_PointOfInterest_Map_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UWBP_PointOfInterest_Map_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_PointOfInterest_Map_C", "Construct");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function WBP_PointOfInterest_Map.WBP_PointOfInterest_Map_C.Tick
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
@@ -84,6 +56,34 @@ void UWBP_PointOfInterest_Map_C::Tick(const struct FGeometry& MyGeometry, float 
 	Parms.InDeltaTime = InDeltaTime;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_PointOfInterest_Map.WBP_PointOfInterest_Map_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UWBP_PointOfInterest_Map_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_PointOfInterest_Map_C", "Construct");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_PointOfInterest_Map.WBP_PointOfInterest_Map_C.OnDied
+// (BlueprintCallable, BlueprintEvent)
+
+void UWBP_PointOfInterest_Map_C::OnDied()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_PointOfInterest_Map_C", "OnDied");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

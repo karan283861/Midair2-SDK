@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass WBP_BotRow.WBP_BotRow_C
-// 0x01A0 (0x0400 - 0x0260)
+// 0x01A8 (0x0408 - 0x0260)
 class UWBP_BotRow_C final : public UUserWidget
 {
 public:
@@ -29,7 +29,7 @@ public:
 	class UTextBlock*                             NameText;                                          // 0x0278(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	TMulticastInlineDelegate<void()>              NewEventDispatcher_0;                              // 0x0280(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	class UWBP_PracticeModeMenu_C*                ParentWidget;                                      // 0x0290(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FMABotConfig                           Bot;                                               // 0x0298(0x0168)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FMABotConfig                           Bot;                                               // 0x0298(0x0170)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void ExecuteUbergraph_WBP_BotRow(int32 EntryPoint);

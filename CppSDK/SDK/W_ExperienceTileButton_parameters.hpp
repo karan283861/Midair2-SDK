@@ -14,18 +14,6 @@
 namespace SDK::Params
 {
 
-// Function W_ExperienceTileButton.W_ExperienceTileButton_C.UpdateTileText
-// 0x0050 (0x0050 - 0x0000)
-struct W_ExperienceTileButton_C_UpdateTileText final
-{
-public:
-	class FText                                   ExperienceTitle_0;                                 // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm)
-	class FText                                   ExperienceDescription_0;                           // 0x0018(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm)
-	class FText                                   MapTitle_0;                                        // 0x0030(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm)
-	class UTexture2D*                             Image_0;                                           // 0x0048(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_W_ExperienceTileButton_C_UpdateTileText;
-
 // Function W_ExperienceTileButton.W_ExperienceTileButton_C.ExecuteUbergraph_W_ExperienceTileButton
 // 0x0018 (0x0018 - 0x0000)
 struct W_ExperienceTileButton_C_ExecuteUbergraph_W_ExperienceTileButton final
@@ -37,6 +25,18 @@ public:
 	class UUMGSequencePlayer*                     CallFunc_PlayAnimationForward_ReturnValue;         // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_W_ExperienceTileButton_C_ExecuteUbergraph_W_ExperienceTileButton;
+
+// Function W_ExperienceTileButton.W_ExperienceTileButton_C.UpdateTileText
+// 0x0050 (0x0050 - 0x0000)
+struct W_ExperienceTileButton_C_UpdateTileText final
+{
+public:
+	class FText                                   ExperienceTitle_0;                                 // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm)
+	class FText                                   ExperienceDescription_0;                           // 0x0018(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm)
+	class FText                                   MapTitle_0;                                        // 0x0030(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm)
+	class UTexture2D*                             Image_0;                                           // 0x0048(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_W_ExperienceTileButton_C_UpdateTileText;
 
 }
 

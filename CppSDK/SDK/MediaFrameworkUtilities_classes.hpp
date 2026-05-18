@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "MediaAssets_classes.hpp"
+#include "Engine_classes.hpp"
 #include "OpenCVLensDistortion_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "Engine_classes.hpp"
 #include "MediaIOCore_classes.hpp"
 #include "TimeManagement_classes.hpp"
 

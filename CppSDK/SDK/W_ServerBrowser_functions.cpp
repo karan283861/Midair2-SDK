@@ -37,6 +37,26 @@ void UW_ServerBrowser_C::ExecuteUbergraph_W_ServerBrowser(int32 EntryPoint)
 }
 
 
+// Function W_ServerBrowser.W_ServerBrowser_C.BndEvt__W_ServerBrowser_ServerInfoBTN_K2Node_ComponentBoundEvent_3_CommonButtonBaseClicked__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UCommonButtonBase*                Button                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_ServerBrowser_C::BndEvt__W_ServerBrowser_ServerInfoBTN_K2Node_ComponentBoundEvent_3_CommonButtonBaseClicked__DelegateSignature(class UCommonButtonBase* Button)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_ServerBrowser_C", "BndEvt__W_ServerBrowser_ServerInfoBTN_K2Node_ComponentBoundEvent_3_CommonButtonBaseClicked__DelegateSignature");
+
+	Params::W_ServerBrowser_C_BndEvt__W_ServerBrowser_ServerInfoBTN_K2Node_ComponentBoundEvent_3_CommonButtonBaseClicked__DelegateSignature Parms{};
+
+	Parms.Button = Button;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function W_ServerBrowser.W_ServerBrowser_C.BndEvt__W_ServerBrowser_JoinServerTN_K2Node_ComponentBoundEvent_4_CommonButtonBaseClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
@@ -324,6 +344,46 @@ void UW_ServerBrowser_C::Construct()
 		Func = Class->GetFunction("W_ServerBrowser_C", "Construct");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_ServerBrowser.W_ServerBrowser_C.BeforePush_D93A66F24CDAA65875D3F2A0E672093F
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UCommonActivatableWidget*         UserWidget                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_ServerBrowser_C::BeforePush_D93A66F24CDAA65875D3F2A0E672093F(class UCommonActivatableWidget* UserWidget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_ServerBrowser_C", "BeforePush_D93A66F24CDAA65875D3F2A0E672093F");
+
+	Params::W_ServerBrowser_C_BeforePush_D93A66F24CDAA65875D3F2A0E672093F Parms{};
+
+	Parms.UserWidget = UserWidget;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_ServerBrowser.W_ServerBrowser_C.AfterPush_D93A66F24CDAA65875D3F2A0E672093F
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UCommonActivatableWidget*         UserWidget                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_ServerBrowser_C::AfterPush_D93A66F24CDAA65875D3F2A0E672093F(class UCommonActivatableWidget* UserWidget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_ServerBrowser_C", "AfterPush_D93A66F24CDAA65875D3F2A0E672093F");
+
+	Params::W_ServerBrowser_C_AfterPush_D93A66F24CDAA65875D3F2A0E672093F Parms{};
+
+	Parms.UserWidget = UserWidget;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

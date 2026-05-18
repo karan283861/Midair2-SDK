@@ -112,6 +112,208 @@ public:
 };
 DUMPER7_ASSERTS_CommonUserWidget_SetConsumePointerInput;
 
+// Function CommonUI.CommonTabListWidgetBase.DisableTabWithReason
+// 0x0020 (0x0020 - 0x0000)
+struct CommonTabListWidgetBase_DisableTabWithReason final
+{
+public:
+	class FName                                   TabNameID;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   Reason;                                            // 0x0008(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonTabListWidgetBase_DisableTabWithReason;
+
+// Function CommonUI.CommonTabListWidgetBase.GetTabButtonBaseByID
+// 0x0010 (0x0010 - 0x0000)
+struct CommonTabListWidgetBase_GetTabButtonBaseByID final
+{
+public:
+	class FName                                   TabNameID;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCommonButtonBase*                      ReturnValue;                                       // 0x0008(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonTabListWidgetBase_GetTabButtonBaseByID;
+
+// Function CommonUI.CommonTabListWidgetBase.HandleNextTabInputAction
+// 0x0001 (0x0001 - 0x0000)
+struct CommonTabListWidgetBase_HandleNextTabInputAction final
+{
+public:
+	bool                                          bPassThrough;                                      // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonTabListWidgetBase_HandleNextTabInputAction;
+
+// Function CommonUI.CommonTabListWidgetBase.HandlePreviousTabInputAction
+// 0x0001 (0x0001 - 0x0000)
+struct CommonTabListWidgetBase_HandlePreviousTabInputAction final
+{
+public:
+	bool                                          bPassThrough;                                      // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonTabListWidgetBase_HandlePreviousTabInputAction;
+
+// Function CommonUI.CommonTabListWidgetBase.HandleTabButtonSelected
+// 0x0010 (0x0010 - 0x0000)
+struct CommonTabListWidgetBase_HandleTabButtonSelected final
+{
+public:
+	class UCommonButtonBase*                      SelectedTabButton;                                 // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ButtonIndex;                                       // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CommonTabListWidgetBase_HandleTabButtonSelected;
+
+// Function CommonUI.CommonTabListWidgetBase.HandleTabCreation
+// 0x0010 (0x0010 - 0x0000)
+struct CommonTabListWidgetBase_HandleTabCreation final
+{
+public:
+	class FName                                   TabNameID;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCommonButtonBase*                      TabButton;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonTabListWidgetBase_HandleTabCreation;
+
+// Function CommonUI.CommonTabListWidgetBase.HandleTabRemoval
+// 0x0010 (0x0010 - 0x0000)
+struct CommonTabListWidgetBase_HandleTabRemoval final
+{
+public:
+	class FName                                   TabNameID;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCommonButtonBase*                      TabButton;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonTabListWidgetBase_HandleTabRemoval;
+
+// Function CommonUI.CommonTabListWidgetBase.RegisterTab
+// 0x0020 (0x0020 - 0x0000)
+struct CommonTabListWidgetBase_RegisterTab final
+{
+public:
+	class FName                                   TabNameID;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UCommonButtonBase>          ButtonWidgetType;                                  // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UWidget*                                ContentWidget;                                     // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CommonTabListWidgetBase_RegisterTab;
+
+// Function CommonUI.CommonTabListWidgetBase.RemoveTab
+// 0x000C (0x000C - 0x0000)
+struct CommonTabListWidgetBase_RemoveTab final
+{
+public:
+	class FName                                   TabNameID;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CommonTabListWidgetBase_RemoveTab;
+
+// Function CommonUI.CommonTabListWidgetBase.SelectTabByID
+// 0x000C (0x000C - 0x0000)
+struct CommonTabListWidgetBase_SelectTabByID final
+{
+public:
+	class FName                                   TabNameID;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSuppressClickFeedback;                            // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0009(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A[0x2];                                        // 0x000A(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CommonTabListWidgetBase_SelectTabByID;
+
+// Function CommonUI.CommonTabListWidgetBase.SetLinkedSwitcher
+// 0x0008 (0x0008 - 0x0000)
+struct CommonTabListWidgetBase_SetLinkedSwitcher final
+{
+public:
+	class UCommonAnimatedSwitcher*                CommonSwitcher;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonTabListWidgetBase_SetLinkedSwitcher;
+
+// Function CommonUI.CommonTabListWidgetBase.SetListeningForInput
+// 0x0001 (0x0001 - 0x0000)
+struct CommonTabListWidgetBase_SetListeningForInput final
+{
+public:
+	bool                                          bShouldListen;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonTabListWidgetBase_SetListeningForInput;
+
+// Function CommonUI.CommonTabListWidgetBase.SetTabEnabled
+// 0x000C (0x000C - 0x0000)
+struct CommonTabListWidgetBase_SetTabEnabled final
+{
+public:
+	class FName                                   TabNameID;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnable;                                           // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CommonTabListWidgetBase_SetTabEnabled;
+
+// Function CommonUI.CommonTabListWidgetBase.SetTabInteractionEnabled
+// 0x000C (0x000C - 0x0000)
+struct CommonTabListWidgetBase_SetTabInteractionEnabled final
+{
+public:
+	class FName                                   TabNameID;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnable;                                           // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CommonTabListWidgetBase_SetTabInteractionEnabled;
+
+// Function CommonUI.CommonTabListWidgetBase.SetTabVisibility
+// 0x000C (0x000C - 0x0000)
+struct CommonTabListWidgetBase_SetTabVisibility final
+{
+public:
+	class FName                                   TabNameID;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESlateVisibility                              NewVisibility;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CommonTabListWidgetBase_SetTabVisibility;
+
+// Function CommonUI.CommonTabListWidgetBase.GetActiveTab
+// 0x0008 (0x0008 - 0x0000)
+struct CommonTabListWidgetBase_GetActiveTab final
+{
+public:
+	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonTabListWidgetBase_GetActiveTab;
+
+// Function CommonUI.CommonTabListWidgetBase.GetLinkedSwitcher
+// 0x0008 (0x0008 - 0x0000)
+struct CommonTabListWidgetBase_GetLinkedSwitcher final
+{
+public:
+	class UCommonAnimatedSwitcher*                ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonTabListWidgetBase_GetLinkedSwitcher;
+
+// Function CommonUI.CommonTabListWidgetBase.GetSelectedTabId
+// 0x0008 (0x0008 - 0x0000)
+struct CommonTabListWidgetBase_GetSelectedTabId final
+{
+public:
+	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonTabListWidgetBase_GetSelectedTabId;
+
+// Function CommonUI.CommonTabListWidgetBase.GetTabCount
+// 0x0004 (0x0004 - 0x0000)
+struct CommonTabListWidgetBase_GetTabCount final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonTabListWidgetBase_GetTabCount;
+
+// Function CommonUI.CommonTabListWidgetBase.GetTabIdAtIndex
+// 0x000C (0x000C - 0x0000)
+struct CommonTabListWidgetBase_GetTabIdAtIndex final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ReturnValue;                                       // 0x0004(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonTabListWidgetBase_GetTabIdAtIndex;
+
 // Function CommonUI.CommonActivatableWidget.BP_OnHandleBackAction
 // 0x0001 (0x0001 - 0x0000)
 struct CommonActivatableWidget_BP_OnHandleBackAction final
@@ -147,15 +349,6 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CommonActivatableWidget_IsActivated;
-
-// Function CommonUI.CommonUIActionRouterBase.SetActiveUIInputConfig
-// 0x0006 (0x0006 - 0x0000)
-struct CommonUIActionRouterBase_SetActiveUIInputConfig final
-{
-public:
-	struct FUIInputConfig                         NewConfig;                                         // 0x0000(0x0006)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonUIActionRouterBase_SetActiveUIInputConfig;
 
 // Function CommonUI.CommonAnimatedSwitcher.ActivateNextWidget
 // 0x0001 (0x0001 - 0x0000)
@@ -202,6 +395,17 @@ public:
 };
 DUMPER7_ASSERTS_CommonBorderStyle_GetBackgroundBrush;
 
+// Function CommonUI.CommonUILibrary.FindParentWidgetOfType
+// 0x0018 (0x0018 - 0x0000)
+struct CommonUILibrary_FindParentWidgetOfType final
+{
+public:
+	class UWidget*                                StartingWidget;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UWidget>                    Type;                                              // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UWidget*                                ReturnValue;                                       // 0x0010(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonUILibrary_FindParentWidgetOfType;
+
 // Function CommonUI.CommonBorder.SetStyle
 // 0x0008 (0x0008 - 0x0000)
 struct CommonBorder_SetStyle final
@@ -210,6 +414,37 @@ public:
 	TSubclassOf<class UCommonBorderStyle>         InStyle;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CommonBorder_SetStyle;
+
+// Function CommonUI.CommonWidgetCarouselNavBar.HandleButtonClicked
+// 0x0010 (0x0010 - 0x0000)
+struct CommonWidgetCarouselNavBar_HandleButtonClicked final
+{
+public:
+	class UCommonButtonBase*                      AssociatedButton;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ButtonIndex;                                       // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CommonWidgetCarouselNavBar_HandleButtonClicked;
+
+// Function CommonUI.CommonWidgetCarouselNavBar.HandlePageChanged
+// 0x0010 (0x0010 - 0x0000)
+struct CommonWidgetCarouselNavBar_HandlePageChanged final
+{
+public:
+	class UCommonWidgetCarousel*                  CommonCarousel;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PageIndex;                                         // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CommonWidgetCarouselNavBar_HandlePageChanged;
+
+// Function CommonUI.CommonWidgetCarouselNavBar.SetLinkedCarousel
+// 0x0008 (0x0008 - 0x0000)
+struct CommonWidgetCarouselNavBar_SetLinkedCarousel final
+{
+public:
+	class UCommonWidgetCarousel*                  CommonCarousel;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonWidgetCarouselNavBar_SetLinkedCarousel;
 
 // Function CommonUI.CommonBoundActionBar.SetDisplayOwningPlayerActionsOnly
 // 0x0001 (0x0001 - 0x0000)
@@ -695,53 +930,6 @@ public:
 };
 DUMPER7_ASSERTS_CommonButtonStyle_GetSelectedTextStyle;
 
-// Function CommonUI.CommonWidgetCarousel.BeginAutoScrolling
-// 0x0004 (0x0004 - 0x0000)
-struct CommonWidgetCarousel_BeginAutoScrolling final
-{
-public:
-	float                                         ScrollInterval;                                    // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonWidgetCarousel_BeginAutoScrolling;
-
-// Function CommonUI.CommonWidgetCarousel.SetActiveWidget
-// 0x0008 (0x0008 - 0x0000)
-struct CommonWidgetCarousel_SetActiveWidget final
-{
-public:
-	class UWidget*                                Widget;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonWidgetCarousel_SetActiveWidget;
-
-// Function CommonUI.CommonWidgetCarousel.SetActiveWidgetIndex
-// 0x0004 (0x0004 - 0x0000)
-struct CommonWidgetCarousel_SetActiveWidgetIndex final
-{
-public:
-	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonWidgetCarousel_SetActiveWidgetIndex;
-
-// Function CommonUI.CommonWidgetCarousel.GetActiveWidgetIndex
-// 0x0004 (0x0004 - 0x0000)
-struct CommonWidgetCarousel_GetActiveWidgetIndex final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonWidgetCarousel_GetActiveWidgetIndex;
-
-// Function CommonUI.CommonWidgetCarousel.GetWidgetAtIndex
-// 0x0010 (0x0010 - 0x0000)
-struct CommonWidgetCarousel_GetWidgetAtIndex final
-{
-public:
-	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UWidget*                                ReturnValue;                                       // 0x0008(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonWidgetCarousel_GetWidgetAtIndex;
-
 // Function CommonUI.CommonWidgetGroupBase.AddWidget
 // 0x0008 (0x0008 - 0x0000)
 struct CommonWidgetGroupBase_AddWidget final
@@ -759,15 +947,6 @@ public:
 	class UWidget*                                InWidget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CommonWidgetGroupBase_RemoveWidget;
-
-// Function CommonUI.CommonListView.SetEntrySpacing
-// 0x0004 (0x0004 - 0x0000)
-struct CommonListView_SetEntrySpacing final
-{
-public:
-	float                                         InEntrySpacing;                                    // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonListView_SetEntrySpacing;
 
 // Function CommonUI.CommonButtonGroupBase.OnButtonBaseHovered
 // 0x0008 (0x0008 - 0x0000)
@@ -919,15 +1098,6 @@ public:
 };
 DUMPER7_ASSERTS_CommonButtonGroupBase_HasAnyButtons;
 
-// Function CommonUI.CommonVisibilityWidgetBase.GetRegisteredPlatforms
-// 0x0010 (0x0010 - 0x0000)
-struct CommonVisibilityWidgetBase_GetRegisteredPlatforms final
-{
-public:
-	TArray<class FName>                           ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonVisibilityWidgetBase_GetRegisteredPlatforms;
-
 // Function CommonUI.CommonTextBlock.SetStyle
 // 0x0008 (0x0008 - 0x0000)
 struct CommonTextBlock_SetStyle final
@@ -954,85 +1124,6 @@ public:
 	int32                                         InWrapTextAt;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CommonTextBlock_SetWrapTextWidth;
-
-// Function CommonUI.CommonNumericTextBlock.InterpolateToValue
-// 0x0010 (0x0010 - 0x0000)
-struct CommonNumericTextBlock_InterpolateToValue final
-{
-public:
-	float                                         TargetValue;                                       // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaximumInterpolationDuration;                      // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MinimumChangeRate;                                 // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         OutroOffset;                                       // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonNumericTextBlock_InterpolateToValue;
-
-// Function CommonUI.CommonNumericTextBlock.SetCurrentValue
-// 0x0004 (0x0004 - 0x0000)
-struct CommonNumericTextBlock_SetCurrentValue final
-{
-public:
-	float                                         NewValue;                                          // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonNumericTextBlock_SetCurrentValue;
-
-// Function CommonUI.CommonNumericTextBlock.SetNumericType
-// 0x0001 (0x0001 - 0x0000)
-struct CommonNumericTextBlock_SetNumericType final
-{
-public:
-	ECommonNumericType                            InNumericType;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonNumericTextBlock_SetNumericType;
-
-// Function CommonUI.CommonNumericTextBlock.GetTargetValue
-// 0x0004 (0x0004 - 0x0000)
-struct CommonNumericTextBlock_GetTargetValue final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonNumericTextBlock_GetTargetValue;
-
-// Function CommonUI.CommonNumericTextBlock.IsInterpolatingNumericValue
-// 0x0001 (0x0001 - 0x0000)
-struct CommonNumericTextBlock_IsInterpolatingNumericValue final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonNumericTextBlock_IsInterpolatingNumericValue;
-
-// Function CommonUI.CommonWidgetCarouselNavBar.HandleButtonClicked
-// 0x0010 (0x0010 - 0x0000)
-struct CommonWidgetCarouselNavBar_HandleButtonClicked final
-{
-public:
-	class UCommonButtonBase*                      AssociatedButton;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ButtonIndex;                                       // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_CommonWidgetCarouselNavBar_HandleButtonClicked;
-
-// Function CommonUI.CommonWidgetCarouselNavBar.HandlePageChanged
-// 0x0010 (0x0010 - 0x0000)
-struct CommonWidgetCarouselNavBar_HandlePageChanged final
-{
-public:
-	class UCommonWidgetCarousel*                  CommonCarousel;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         PageIndex;                                         // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_CommonWidgetCarouselNavBar_HandlePageChanged;
-
-// Function CommonUI.CommonWidgetCarouselNavBar.SetLinkedCarousel
-// 0x0008 (0x0008 - 0x0000)
-struct CommonWidgetCarouselNavBar_SetLinkedCarousel final
-{
-public:
-	class UCommonWidgetCarousel*                  CommonCarousel;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonWidgetCarouselNavBar_SetLinkedCarousel;
 
 // Function CommonUI.CommonDateTimeTextBlock.SetCountDownCompletionText
 // 0x0018 (0x0018 - 0x0000)
@@ -1149,6 +1240,15 @@ public:
 };
 DUMPER7_ASSERTS_CommonLazyWidget_IsLoading;
 
+// Function CommonUI.CommonListView.SetEntrySpacing
+// 0x0004 (0x0004 - 0x0000)
+struct CommonListView_SetEntrySpacing final
+{
+public:
+	float                                         InEntrySpacing;                                    // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonListView_SetEntrySpacing;
+
 // Function CommonUI.LoadGuardSlot.SetHorizontalAlignment
 // 0x0001 (0x0001 - 0x0000)
 struct LoadGuardSlot_SetHorizontalAlignment final
@@ -1213,6 +1313,54 @@ public:
 };
 DUMPER7_ASSERTS_CommonLoadGuard_IsLoading;
 
+// Function CommonUI.CommonNumericTextBlock.InterpolateToValue
+// 0x0010 (0x0010 - 0x0000)
+struct CommonNumericTextBlock_InterpolateToValue final
+{
+public:
+	float                                         TargetValue;                                       // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaximumInterpolationDuration;                      // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MinimumChangeRate;                                 // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         OutroOffset;                                       // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonNumericTextBlock_InterpolateToValue;
+
+// Function CommonUI.CommonNumericTextBlock.SetCurrentValue
+// 0x0004 (0x0004 - 0x0000)
+struct CommonNumericTextBlock_SetCurrentValue final
+{
+public:
+	float                                         NewValue;                                          // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonNumericTextBlock_SetCurrentValue;
+
+// Function CommonUI.CommonNumericTextBlock.SetNumericType
+// 0x0001 (0x0001 - 0x0000)
+struct CommonNumericTextBlock_SetNumericType final
+{
+public:
+	ECommonNumericType                            InNumericType;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonNumericTextBlock_SetNumericType;
+
+// Function CommonUI.CommonNumericTextBlock.GetTargetValue
+// 0x0004 (0x0004 - 0x0000)
+struct CommonNumericTextBlock_GetTargetValue final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonNumericTextBlock_GetTargetValue;
+
+// Function CommonUI.CommonNumericTextBlock.IsInterpolatingNumericValue
+// 0x0001 (0x0001 - 0x0000)
+struct CommonNumericTextBlock_IsInterpolatingNumericValue final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonNumericTextBlock_IsInterpolatingNumericValue;
+
 // Function CommonUI.CommonRotator.BP_OnOptionSelected
 // 0x0004 (0x0004 - 0x0000)
 struct CommonRotator_BP_OnOptionSelected final
@@ -1266,208 +1414,6 @@ public:
 	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CommonRotator_GetSelectedText;
-
-// Function CommonUI.CommonTabListWidgetBase.DisableTabWithReason
-// 0x0020 (0x0020 - 0x0000)
-struct CommonTabListWidgetBase_DisableTabWithReason final
-{
-public:
-	class FName                                   TabNameID;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FText                                   Reason;                                            // 0x0008(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonTabListWidgetBase_DisableTabWithReason;
-
-// Function CommonUI.CommonTabListWidgetBase.GetTabButtonBaseByID
-// 0x0010 (0x0010 - 0x0000)
-struct CommonTabListWidgetBase_GetTabButtonBaseByID final
-{
-public:
-	class FName                                   TabNameID;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCommonButtonBase*                      ReturnValue;                                       // 0x0008(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonTabListWidgetBase_GetTabButtonBaseByID;
-
-// Function CommonUI.CommonTabListWidgetBase.HandleNextTabInputAction
-// 0x0001 (0x0001 - 0x0000)
-struct CommonTabListWidgetBase_HandleNextTabInputAction final
-{
-public:
-	bool                                          bPassThrough;                                      // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonTabListWidgetBase_HandleNextTabInputAction;
-
-// Function CommonUI.CommonTabListWidgetBase.HandlePreviousTabInputAction
-// 0x0001 (0x0001 - 0x0000)
-struct CommonTabListWidgetBase_HandlePreviousTabInputAction final
-{
-public:
-	bool                                          bPassThrough;                                      // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonTabListWidgetBase_HandlePreviousTabInputAction;
-
-// Function CommonUI.CommonTabListWidgetBase.HandleTabButtonSelected
-// 0x0010 (0x0010 - 0x0000)
-struct CommonTabListWidgetBase_HandleTabButtonSelected final
-{
-public:
-	class UCommonButtonBase*                      SelectedTabButton;                                 // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ButtonIndex;                                       // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_CommonTabListWidgetBase_HandleTabButtonSelected;
-
-// Function CommonUI.CommonTabListWidgetBase.HandleTabCreation
-// 0x0010 (0x0010 - 0x0000)
-struct CommonTabListWidgetBase_HandleTabCreation final
-{
-public:
-	class FName                                   TabNameID;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCommonButtonBase*                      TabButton;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonTabListWidgetBase_HandleTabCreation;
-
-// Function CommonUI.CommonTabListWidgetBase.HandleTabRemoval
-// 0x0010 (0x0010 - 0x0000)
-struct CommonTabListWidgetBase_HandleTabRemoval final
-{
-public:
-	class FName                                   TabNameID;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCommonButtonBase*                      TabButton;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonTabListWidgetBase_HandleTabRemoval;
-
-// Function CommonUI.CommonTabListWidgetBase.RegisterTab
-// 0x0020 (0x0020 - 0x0000)
-struct CommonTabListWidgetBase_RegisterTab final
-{
-public:
-	class FName                                   TabNameID;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UCommonButtonBase>          ButtonWidgetType;                                  // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UWidget*                                ContentWidget;                                     // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_CommonTabListWidgetBase_RegisterTab;
-
-// Function CommonUI.CommonTabListWidgetBase.RemoveTab
-// 0x000C (0x000C - 0x0000)
-struct CommonTabListWidgetBase_RemoveTab final
-{
-public:
-	class FName                                   TabNameID;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_CommonTabListWidgetBase_RemoveTab;
-
-// Function CommonUI.CommonTabListWidgetBase.SelectTabByID
-// 0x000C (0x000C - 0x0000)
-struct CommonTabListWidgetBase_SelectTabByID final
-{
-public:
-	class FName                                   TabNameID;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSuppressClickFeedback;                            // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0009(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A[0x2];                                        // 0x000A(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_CommonTabListWidgetBase_SelectTabByID;
-
-// Function CommonUI.CommonTabListWidgetBase.SetLinkedSwitcher
-// 0x0008 (0x0008 - 0x0000)
-struct CommonTabListWidgetBase_SetLinkedSwitcher final
-{
-public:
-	class UCommonAnimatedSwitcher*                CommonSwitcher;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonTabListWidgetBase_SetLinkedSwitcher;
-
-// Function CommonUI.CommonTabListWidgetBase.SetListeningForInput
-// 0x0001 (0x0001 - 0x0000)
-struct CommonTabListWidgetBase_SetListeningForInput final
-{
-public:
-	bool                                          bShouldListen;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonTabListWidgetBase_SetListeningForInput;
-
-// Function CommonUI.CommonTabListWidgetBase.SetTabEnabled
-// 0x000C (0x000C - 0x0000)
-struct CommonTabListWidgetBase_SetTabEnabled final
-{
-public:
-	class FName                                   TabNameID;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnable;                                           // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_CommonTabListWidgetBase_SetTabEnabled;
-
-// Function CommonUI.CommonTabListWidgetBase.SetTabInteractionEnabled
-// 0x000C (0x000C - 0x0000)
-struct CommonTabListWidgetBase_SetTabInteractionEnabled final
-{
-public:
-	class FName                                   TabNameID;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnable;                                           // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_CommonTabListWidgetBase_SetTabInteractionEnabled;
-
-// Function CommonUI.CommonTabListWidgetBase.SetTabVisibility
-// 0x000C (0x000C - 0x0000)
-struct CommonTabListWidgetBase_SetTabVisibility final
-{
-public:
-	class FName                                   TabNameID;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESlateVisibility                              NewVisibility;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_CommonTabListWidgetBase_SetTabVisibility;
-
-// Function CommonUI.CommonTabListWidgetBase.GetActiveTab
-// 0x0008 (0x0008 - 0x0000)
-struct CommonTabListWidgetBase_GetActiveTab final
-{
-public:
-	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonTabListWidgetBase_GetActiveTab;
-
-// Function CommonUI.CommonTabListWidgetBase.GetLinkedSwitcher
-// 0x0008 (0x0008 - 0x0000)
-struct CommonTabListWidgetBase_GetLinkedSwitcher final
-{
-public:
-	class UCommonAnimatedSwitcher*                ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonTabListWidgetBase_GetLinkedSwitcher;
-
-// Function CommonUI.CommonTabListWidgetBase.GetSelectedTabId
-// 0x0008 (0x0008 - 0x0000)
-struct CommonTabListWidgetBase_GetSelectedTabId final
-{
-public:
-	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonTabListWidgetBase_GetSelectedTabId;
-
-// Function CommonUI.CommonTabListWidgetBase.GetTabCount
-// 0x0004 (0x0004 - 0x0000)
-struct CommonTabListWidgetBase_GetTabCount final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonTabListWidgetBase_GetTabCount;
-
-// Function CommonUI.CommonTabListWidgetBase.GetTabIdAtIndex
-// 0x000C (0x000C - 0x0000)
-struct CommonTabListWidgetBase_GetTabIdAtIndex final
-{
-public:
-	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   ReturnValue;                                       // 0x0004(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonTabListWidgetBase_GetTabIdAtIndex;
 
 // Function CommonUI.CommonTextStyle.GetColor
 // 0x0010 (0x0010 - 0x0000)
@@ -1532,16 +1478,14 @@ public:
 };
 DUMPER7_ASSERTS_CommonTextStyle_GetStrikeBrush;
 
-// Function CommonUI.CommonUILibrary.FindParentWidgetOfType
-// 0x0018 (0x0018 - 0x0000)
-struct CommonUILibrary_FindParentWidgetOfType final
+// Function CommonUI.CommonUIActionRouterBase.SetActiveUIInputConfig
+// 0x0006 (0x0006 - 0x0000)
+struct CommonUIActionRouterBase_SetActiveUIInputConfig final
 {
 public:
-	class UWidget*                                StartingWidget;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UWidget>                    Type;                                              // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UWidget*                                ReturnValue;                                       // 0x0010(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FUIInputConfig                         NewConfig;                                         // 0x0000(0x0006)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_CommonUILibrary_FindParentWidgetOfType;
+DUMPER7_ASSERTS_CommonUIActionRouterBase_SetActiveUIInputConfig;
 
 // Function CommonUI.CommonUISubsystemBase.GetInputActionButtonIcon
 // 0x00A8 (0x00A8 - 0x0000)
@@ -1610,6 +1554,62 @@ public:
 	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CommonVisibilitySwitcher_GetActiveWidgetIndex;
+
+// Function CommonUI.CommonVisibilityWidgetBase.GetRegisteredPlatforms
+// 0x0010 (0x0010 - 0x0000)
+struct CommonVisibilityWidgetBase_GetRegisteredPlatforms final
+{
+public:
+	TArray<class FName>                           ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonVisibilityWidgetBase_GetRegisteredPlatforms;
+
+// Function CommonUI.CommonWidgetCarousel.BeginAutoScrolling
+// 0x0004 (0x0004 - 0x0000)
+struct CommonWidgetCarousel_BeginAutoScrolling final
+{
+public:
+	float                                         ScrollInterval;                                    // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonWidgetCarousel_BeginAutoScrolling;
+
+// Function CommonUI.CommonWidgetCarousel.SetActiveWidget
+// 0x0008 (0x0008 - 0x0000)
+struct CommonWidgetCarousel_SetActiveWidget final
+{
+public:
+	class UWidget*                                Widget;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonWidgetCarousel_SetActiveWidget;
+
+// Function CommonUI.CommonWidgetCarousel.SetActiveWidgetIndex
+// 0x0004 (0x0004 - 0x0000)
+struct CommonWidgetCarousel_SetActiveWidgetIndex final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonWidgetCarousel_SetActiveWidgetIndex;
+
+// Function CommonUI.CommonWidgetCarousel.GetActiveWidgetIndex
+// 0x0004 (0x0004 - 0x0000)
+struct CommonWidgetCarousel_GetActiveWidgetIndex final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonWidgetCarousel_GetActiveWidgetIndex;
+
+// Function CommonUI.CommonWidgetCarousel.GetWidgetAtIndex
+// 0x0010 (0x0010 - 0x0000)
+struct CommonWidgetCarousel_GetWidgetAtIndex final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UWidget*                                ReturnValue;                                       // 0x0008(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonWidgetCarousel_GetWidgetAtIndex;
 
 }
 

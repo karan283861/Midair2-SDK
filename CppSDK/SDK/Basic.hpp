@@ -33,11 +33,11 @@ using namespace UC;
 */
 namespace Offsets
 {
-	constexpr int32 GObjects          = 0x0614E620;
-	constexpr int32 AppendString      = 0x01DEED30;
-	constexpr int32 GNames            = 0x06112040;
-	constexpr int32 GWorld            = 0x06294270;
-	constexpr int32 ProcessEvent      = 0x020009E0;
+	constexpr int32 GObjects          = 0x061D8D20;
+	constexpr int32 AppendString      = 0x01F03DA0;
+	constexpr int32 GNames            = 0x0619C740;
+	constexpr int32 GWorld            = 0x0631E970;
+	constexpr int32 ProcessEvent      = 0x02115870;
 	constexpr int32 ProcessEventIdx   = 0x00000044;
 }
 
@@ -157,7 +157,7 @@ ClassType* GetDefaultObjImpl()
 
 	if (StaticClass)
 	{
-		return reinterpret_cast<ClassType*>(StaticClass->DefaultObject);
+		return reinterpret_cast<ClassType*>(StaticClass->ClassDefaultObject);
 	}
 
 	return nullptr;
@@ -318,11 +318,11 @@ class FName final
 public:
 	static inline void*                           AppendString = nullptr;                            // 0x0000(0x0004)(NOT AUTO-GENERATED PROPERTY)
 
-	int32                                         ComparisonIndex;                                   // 0x0000(0x0004)(NOT AUTO-GENERATED PROPERTY)
-	uint32                                        Number;                                            // 0x0004(0x0004)(NOT AUTO-GENERATED PROPERTY)
+	int32                                         ComparisonIndex = 0x0;                             // 0x0000(0x0004)(NOT AUTO-GENERATED PROPERTY)
+	uint32                                        Number = 0x0;                                      // 0x0004(0x0004)(NOT AUTO-GENERATED PROPERTY)
 
 public:
-	constexpr FName(int32 ComparisonIndex = 0, uint32 Number = 0)
+	constexpr explicit FName(int32 ComparisonIndex, uint32 Number = 0)
 		: ComparisonIndex(ComparisonIndex), Number(Number)
 	{
 	}
@@ -332,10 +332,16 @@ public:
 		AppendString = reinterpret_cast<void*>(Location);
 	}
 
-	constexpr FName(const FName& other)
-		: ComparisonIndex(other.ComparisonIndex), Number(other.Number)
-	{
-	}
+	constexpr FName() = default;
+	
+	constexpr FName(const FName&) = default;
+	
+	constexpr FName(FName&&) = default;
+	
+	constexpr FName& operator=(const FName&) = default;
+	
+	constexpr  FName& operator=(FName&&) = default;
+	
 
 	static void InitInternal()
 	{
@@ -377,15 +383,6 @@ public:
 		return OutputString.substr(pos + 1);
 	}
 	
-
-	FName& operator=(const FName& Other)
-	{
-		ComparisonIndex = Other.ComparisonIndex;
-		Number = Other.Number;
-	
-		return *this;
-	}
-
 	bool operator==(const FName& Other) const
 	{
 		return ComparisonIndex == Other.ComparisonIndex && Number == Other.Number;

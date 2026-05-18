@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "AudioModulation_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "DeveloperSettings_classes.hpp"
-#include "Engine_classes.hpp"
 #include "AudioExtensions_classes.hpp"
+#include "Engine_classes.hpp"
+#include "AudioModulation_structs.hpp"
 
 
 namespace SDK

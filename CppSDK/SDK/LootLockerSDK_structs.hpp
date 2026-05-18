@@ -10,9 +10,161 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
+
 
 namespace SDK
 {
+
+// Enum LootLockerSDK.ELootLockerAccountProvider
+// NumValues: 0x000C
+enum class ELootLockerAccountProvider : uint8
+{
+	Guest                                    = 0,
+	Google                                   = 1,
+	Apple                                    = 2,
+	Steam                                    = 3,
+	Epic_games                               = 4,
+	Credentials                              = 5,
+	Nintendo                                 = 6,
+	Xbox                                     = 7,
+	Playstation                              = 8,
+	Twitch                                   = 9,
+	Discord                                  = 10,
+	ELootLockerAccountProvider_MAX           = 11,
+};
+
+// Enum LootLockerSDK.ELootLockerRemoteSessionLeaseIntent
+// NumValues: 0x0003
+enum class ELootLockerRemoteSessionLeaseIntent : uint8
+{
+	login                                    = 0,
+	link                                     = 1,
+	ELootLockerRemoteSessionLeaseIntent_MAX  = 2,
+};
+
+// Enum LootLockerSDK.ELootLockerRemoteSessionLeaseStatus
+// NumValues: 0x0008
+enum class ELootLockerRemoteSessionLeaseStatus : uint8
+{
+	Created                                  = 0,
+	Claimed                                  = 1,
+	Verified                                 = 2,
+	Authorized                               = 3,
+	Cancelled                                = 4,
+	Timed_out                                = 5,
+	Failed                                   = 6,
+	ELootLockerRemoteSessionLeaseStatus_MAX  = 7,
+};
+
+// Enum LootLockerSDK.ELootLockerMetadataTypes
+// NumValues: 0x0006
+enum class ELootLockerMetadataTypes : uint8
+{
+	String                                   = 0,
+	Number                                   = 1,
+	Bool                                     = 2,
+	Json                                     = 3,
+	Base64                                   = 4,
+	ELootLockerMetadataTypes_MAX             = 5,
+};
+
+// Enum LootLockerSDK.ELootLockerAssetFilePurpose
+// NumValues: 0x0004
+enum class ELootLockerAssetFilePurpose : uint8
+{
+	PRIMARY_THUMBNAIL                        = 0,
+	THUMBNAIL                                = 1,
+	FILE                                     = 2,
+	ELootLockerAssetFilePurpose_MAX          = 3,
+};
+
+// Enum LootLockerSDK.ELootLockerSteamPurchaseRedemptionStatus
+// NumValues: 0x000A
+enum class ELootLockerSteamPurchaseRedemptionStatus : uint8
+{
+	Init                                     = 0,
+	Approved                                 = 1,
+	Succeeded                                = 2,
+	Failed                                   = 3,
+	Refunded                                 = 4,
+	PartialRefund                            = 5,
+	ChargedBack                              = 6,
+	RefundedSuspectedFraud                   = 7,
+	RefundedFriendlyFraud                    = 8,
+	ELootLockerSteamPurchaseRedemptionStatus_MAX = 9,
+};
+
+// Enum LootLockerSDK.ELootLockerTriggerFailureReasons
+// NumValues: 0x0004
+enum class ELootLockerTriggerFailureReasons : uint8
+{
+	Trigger_limit_reached                    = 0,
+	Key_not_found                            = 1,
+	Reward_not_found                         = 2,
+	ELootLockerTriggerFailureReasons_MAX     = 3,
+};
+
+// Enum LootLockerSDK.ELootLockerNotificationContentBodyType
+// NumValues: 0x0010
+enum class ELootLockerNotificationContentBodyType : uint8
+{
+	none                                     = 0,
+	null                                     = 1,
+	reward                                   = 2,
+	json_string                              = 3,
+	json_integer                             = 4,
+	json_decimal                             = 5,
+	json_bool                                = 6,
+	json_object                              = 7,
+	json_array                               = 8,
+	json_array_string                        = 9,
+	json_array_integer                       = 10,
+	json_array_decimal                       = 11,
+	json_array_bool                          = 12,
+	json_array_object                        = 13,
+	unknown                                  = 14,
+	ELootLockerNotificationContentBodyType_MAX = 15,
+};
+
+// Enum LootLockerSDK.ELootLockerNotificationSource
+// NumValues: 0x000A
+enum class ELootLockerNotificationSource : uint8
+{
+	triggers                                 = 0,
+	purchasing_steam_store                   = 1,
+	purchasing_apple_app_store               = 2,
+	purchasing_google_play_store             = 3,
+	purchasing_lootlocker_store              = 4,
+	twitch_drop                              = 5,
+	lootlocker_console                       = 6,
+	lootlocker_server_api                    = 7,
+	lootlocker_admin_api                     = 8,
+	ELootLockerNotificationSource_MAX        = 9,
+};
+
+// Enum LootLockerSDK.ELootLockerNotificationPriority
+// NumValues: 0x0005
+enum class ELootLockerNotificationPriority : uint8
+{
+	low                                      = 0,
+	medium                                   = 1,
+	high                                     = 2,
+	emergency                                = 3,
+	ELootLockerNotificationPriority_MAX      = 4,
+};
+
+// Enum LootLockerSDK.ELootLockerLeaderboardRewardEntityKind
+// NumValues: 0x0006
+enum class ELootLockerLeaderboardRewardEntityKind : uint8
+{
+	Asset                                    = 0,
+	Currency                                 = 1,
+	Progression_Points                       = 2,
+	Progression_Reset                        = 3,
+	Group                                    = 4,
+	ELootLockerLeaderboardRewardEntityKind_MAX = 5,
+};
 
 // Enum LootLockerSDK.ELootLockerWalletHolderTypes
 // NumValues: 0x0003
@@ -33,16 +185,6 @@ enum class ELootLockerCatalogEntryEntityKind : uint8
 	Progression_Reset                        = 3,
 	Group                                    = 4,
 	ELootLockerCatalogEntryEntityKind_MAX    = 5,
-};
-
-// Enum LootLockerSDK.ELootLockerAccountProvider
-// NumValues: 0x0004
-enum class ELootLockerAccountProvider : uint8
-{
-	Guest                                    = 0,
-	Google                                   = 1,
-	Apple                                    = 2,
-	ELootLockerAccountProvider_MAX           = 3,
 };
 
 // Enum LootLockerSDK.ELootLockerEntitlementHistoryListingType
@@ -93,46 +235,53 @@ enum class ELootLockerFeedbackType : uint8
 	ELootLockerFeedbackType_MAX              = 3,
 };
 
-// Enum LootLockerSDK.ELootLockerLeaderboardRewardEntityKind
+// Enum LootLockerSDK.ELootLockerMetadataSources
+// NumValues: 0x0009
+enum class ELootLockerMetadataSources : uint8
+{
+	reward                                   = 0,
+	leaderboard                              = 1,
+	catalog_item                             = 2,
+	progression                              = 3,
+	currency                                 = 4,
+	player                                   = 5,
+	self                                     = 6,
+	asset                                    = 7,
+	ELootLockerMetadataSources_MAX           = 8,
+};
+
+// Enum LootLockerSDK.ELootLockerMetadataActions
 // NumValues: 0x0006
-enum class ELootLockerLeaderboardRewardEntityKind : uint8
+enum class ELootLockerMetadataActions : uint8
 {
-	Asset                                    = 0,
-	Currency                                 = 1,
-	Progression_Points                       = 2,
-	Progression_Reset                        = 3,
-	Group                                    = 4,
-	ELootLockerLeaderboardRewardEntityKind_MAX = 5,
+	Create                                   = 0,
+	Update                                   = 1,
+	Delete                                   = 2,
+	Create_or_Update                         = 3,
+	Upsert                                   = 4,
+	ELootLockerMetadataActions_MAX           = 5,
 };
 
-// Enum LootLockerSDK.ELootLockerSteamPurchaseRedemptionStatus
-// NumValues: 0x000A
-enum class ELootLockerSteamPurchaseRedemptionStatus : uint8
+// Enum LootLockerSDK.ELootLockerOrderAssetListDirection
+// NumValues: 0x0004
+enum class ELootLockerOrderAssetListDirection : uint8
 {
-	Init                                     = 0,
-	Approved                                 = 1,
-	Succeeded                                = 2,
-	Failed                                   = 3,
-	Refunded                                 = 4,
-	PartialRefund                            = 5,
-	ChargedBack                              = 6,
-	RefundedSuspectedFraud                   = 7,
-	RefundedFriendlyFraud                    = 8,
-	ELootLockerSteamPurchaseRedemptionStatus_MAX = 9,
+	None                                     = 0,
+	Asc                                      = 1,
+	Desc                                     = 2,
+	ELootLockerOrderAssetListDirection_MAX   = 3,
 };
 
-// Enum LootLockerSDK.ELootLockerRemoteSessionLeaseStatus
-// NumValues: 0x0008
-enum class ELootLockerRemoteSessionLeaseStatus : uint8
+// Enum LootLockerSDK.ELootLockerOrderAssetListBy
+// NumValues: 0x0006
+enum class ELootLockerOrderAssetListBy : uint8
 {
-	Created                                  = 0,
-	Claimed                                  = 1,
-	Verified                                 = 2,
-	Authorized                               = 3,
-	Cancelled                                = 4,
-	Timed_out                                = 5,
-	Failed                                   = 6,
-	ELootLockerRemoteSessionLeaseStatus_MAX  = 7,
+	None                                     = 0,
+	Id                                       = 1,
+	Name                                     = 2,
+	Created_at                               = 3,
+	Updated_at                               = 4,
+	ELootLockerOrderAssetListBy_MAX          = 5,
 };
 
 // Enum LootLockerSDK.ELootLockerAssetFilter
@@ -171,13 +320,23 @@ enum class EGoogleAccountProviderPlatform : uint8
 	EGoogleAccountProviderPlatform_MAX       = 5,
 };
 
+// Enum LootLockerSDK.ELootLockerApiType
+// NumValues: 0x0004
+enum class ELootLockerApiType : uint8
+{
+	LL_GAME                                  = 0,
+	LL_WHITELABEL                            = 1,
+	LL_WEBSOCKET                             = 2,
+	LL_MAX                                   = 3,
+};
+
 // Enum LootLockerSDK.ELootLockerHTTPMethod
 // NumValues: 0x000A
 enum class ELootLockerHTTPMethod : uint8
 {
 	GET                                      = 0,
 	POST                                     = 1,
-	DEL                                      = 2,
+	DELETE_0                                 = 2,
 	PUT                                      = 3,
 	HEAD                                     = 4,
 	CREATE                                   = 5,
@@ -187,8 +346,60 @@ enum class ELootLockerHTTPMethod : uint8
 	ELootLockerHTTPMethod_MAX                = 9,
 };
 
+// Enum LootLockerSDK.ELootLockerLogLevel
+// NumValues: 0x0009
+enum class ELootLockerLogLevel : uint8
+{
+	NoLogging                                = 0,
+	Fatal                                    = 1,
+	Error                                    = 2,
+	Warning                                  = 3,
+	Display                                  = 4,
+	Log                                      = 5,
+	Verbose                                  = 6,
+	VeryVerbose                              = 7,
+	ELootLockerLogLevel_MAX                  = 8,
+};
+
+// Enum LootLockerSDK.ELootLockerMetadataParserOutputTypes
+// NumValues: 0x0009
+enum class ELootLockerMetadataParserOutputTypes : uint8
+{
+	OnString                                 = 0,
+	OnInteger                                = 1,
+	OnFloat                                  = 2,
+	OnNumber                                 = 3,
+	OnBool                                   = 4,
+	OnJson                                   = 5,
+	OnBase64                                 = 6,
+	OnError                                  = 7,
+	ELootLockerMetadataParserOutputTypes_MAX = 8,
+};
+
+// Enum LootLockerSDK.ELootLockerCustomNotificationFiltering
+// NumValues: 0x0004
+enum class ELootLockerCustomNotificationFiltering : uint8
+{
+	All                                      = 0,
+	Custom_only                              = 1,
+	LootLocker_only                          = 2,
+	ELootLockerCustomNotificationFiltering_MAX = 3,
+};
+
+// Enum LootLockerSDK.ELootLockerNotificationContentRewardKind
+// NumValues: 0x0006
+enum class ELootLockerNotificationContentRewardKind : uint8
+{
+	group                                    = 0,
+	currency                                 = 1,
+	asset                                    = 2,
+	progression_reset                        = 3,
+	progression_points                       = 4,
+	ELootLockerNotificationContentRewardKind_MAX = 5,
+};
+
 // Enum LootLockerSDK.ELootLockerPlatform
-// NumValues: 0x0011
+// NumValues: 0x0014
 enum class ELootLockerPlatform : uint8
 {
 	None                                     = 0,
@@ -206,102 +417,45 @@ enum class ELootLockerPlatform : uint8
 	AppleGameCenter                          = 12,
 	Meta                                     = 13,
 	Remote                                   = 14,
-	LastValue                                = 15,
-	ELootLockerPlatform_MAX                  = 16,
+	Server                                   = 15,
+	GooglePlayGames                          = 16,
+	Discord                                  = 17,
+	LastValue                                = 18,
+	ELootLockerPlatform_MAX                  = 19,
 };
 
-// Enum LootLockerSDK.ELootLockerAssetFilePurpose
-// NumValues: 0x0004
-enum class ELootLockerAssetFilePurpose : uint8
+// Enum LootLockerSDK.ELootLockerPlayerDataLookupIdType
+// NumValues: 0x000B
+enum class ELootLockerPlayerDataLookupIdType : uint8
 {
-	PRIMARY_THUMBNAIL                        = 0,
-	THUMBNAIL                                = 1,
-	FILE                                     = 2,
-	ELootLockerAssetFilePurpose_MAX          = 3,
+	Player_id                                = 0,
+	Player_public_uid                        = 1,
+	Player_guest_login_id                    = 2,
+	Steam_id                                 = 3,
+	Psn_id                                   = 4,
+	Xbox_id                                  = 5,
+	Player_ulid                              = 6,
+	Player_name                              = 7,
+	Epic_games_id                            = 8,
+	Google_play_games_id                     = 9,
+	ELootLockerPlayerDataLookupIdType_MAX    = 10,
 };
 
-// ScriptStruct LootLockerSDK.LootLockerGetAllMemberRanksRequest
-// 0x0018 (0x0018 - 0x0000)
-struct FLootLockerGetAllMemberRanksRequest final
+// Enum LootLockerSDK.ELootLockerPresenceConnectionState
+// NumValues: 0x000A
+enum class ELootLockerPresenceConnectionState : uint8
 {
-public:
-	class FString                                 member_id;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Count;                                             // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         after;                                             // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	Disconnected                             = 0,
+	Initializing                             = 1,
+	Connecting                               = 2,
+	Connected                                = 3,
+	Authenticating                           = 4,
+	Active                                   = 5,
+	Reconnecting                             = 6,
+	Failed                                   = 7,
+	Destroyed                                = 8,
+	ELootLockerPresenceConnectionState_MAX   = 9,
 };
-DUMPER7_ASSERTS_FLootLockerGetAllMemberRanksRequest;
-
-// ScriptStruct LootLockerSDK.LootLockerCurrency
-// 0x0058 (0x0058 - 0x0000)
-struct FLootLockerCurrency final
-{
-public:
-	class FString                                 ID;                                                // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Name;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Code;                                              // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Game_api_writes_enabled;                           // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 created_at;                                        // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Published_at;                                      // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerCurrency;
-
-// ScriptStruct LootLockerSDK.LootLockerErrorData
-// 0x0058 (0x0058 - 0x0000)
-struct FLootLockerErrorData final
-{
-public:
-	class FString                                 Code;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Doc_url;                                           // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Request_id;                                        // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Trace_id;                                          // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Retry_after_seconds;                               // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Message;                                           // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerErrorData;
-
-// ScriptStruct LootLockerSDK.LootLockerResponse
-// 0x0070 (0x0070 - 0x0000)
-struct FLootLockerResponse
-{
-public:
-	bool                                          success;                                           // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         StatusCode;                                        // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 FullTextFromServer;                                // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLootLockerErrorData                   ErrorData;                                         // 0x0018(0x0058)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerListCurrenciesResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerListCurrenciesResponse final : public FLootLockerResponse
-{
-public:
-	TArray<struct FLootLockerCurrency>            Currencies;                                        // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerListCurrenciesResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerAssetInstanceStorageItem
-// 0x0020 (0x0020 - 0x0000)
-struct FLootLockerAssetInstanceStorageItem
-{
-public:
-	class FString                                 Key;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Value;                                             // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerAssetInstanceStorageItem;
-
-// ScriptStruct LootLockerSDK.LootLockerAssetInstanceStorageResponseItem
-// 0x0008 (0x0028 - 0x0020)
-struct FLootLockerAssetInstanceStorageResponseItem final : public FLootLockerAssetInstanceStorageItem
-{
-public:
-	int32                                         ID;                                                // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FLootLockerAssetInstanceStorageResponseItem;
 
 // ScriptStruct LootLockerSDK.LootLockerRarity
 // 0x0030 (0x0030 - 0x0000)
@@ -379,6 +533,20 @@ public:
 };
 DUMPER7_ASSERTS_FLootLockerFilter;
 
+// ScriptStruct LootLockerSDK.LootLockerVariation
+// 0x0088 (0x0088 - 0x0000)
+struct FLootLockerVariation final
+{
+public:
+	int32                                         ID;                                                // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Name;                                              // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 primary_color;                                     // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 secondary_color;                                   // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<class FString, class FString>            links;                                             // 0x0038(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerVariation;
+
 // ScriptStruct LootLockerSDK.LootLockerPersistentStorageItem
 // 0x0028 (0x0028 - 0x0000)
 struct FLootLockerPersistentStorageItem final
@@ -400,20 +568,6 @@ public:
 	TArray<struct FLootLockerPersistentStorageItem> storage;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLootLockerHasKeyValueStorage;
-
-// ScriptStruct LootLockerSDK.LootLockerVariation
-// 0x0088 (0x0088 - 0x0000)
-struct FLootLockerVariation final
-{
-public:
-	int32                                         ID;                                                // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Name;                                              // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 primary_color;                                     // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 secondary_color;                                   // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class FString, class FString>            links;                                             // 0x0038(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerVariation;
 
 // ScriptStruct LootLockerSDK.LootLockerFile
 // 0x0020 (0x0020 - 0x0000)
@@ -490,1220 +644,16 @@ public:
 };
 DUMPER7_ASSERTS_FLootLockerAsset;
 
-// ScriptStruct LootLockerSDK.LootLockerCollectableReward
-// 0x02B0 (0x02B0 - 0x0000)
-struct FLootLockerCollectableReward final
-{
-public:
-	struct FLootLockerAsset                       Asset;                                             // 0x0000(0x02A8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	int32                                         asset_variation_id;                                // 0x02A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         asset_rental_option_id;                            // 0x02AC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerCollectableReward;
-
-// ScriptStruct LootLockerSDK.LootLockerCollectableItem
+// ScriptStruct LootLockerSDK.LootLockerDebitRequest
 // 0x0030 (0x0030 - 0x0000)
-struct FLootLockerCollectableItem final
-{
-public:
-	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          collected;                                         // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FLootLockerCollectableReward>   rewards;                                           // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          grants_all_rewards;                                // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          just_collected;                                    // 0x0029(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A[0x6];                                       // 0x002A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FLootLockerCollectableItem;
-
-// ScriptStruct LootLockerSDK.LootLockerCollectableItemGroup
-// 0x0040 (0x0040 - 0x0000)
-struct FLootLockerCollectableItemGroup final
-{
-public:
-	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         completion_percentage;                             // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FLootLockerCollectableItem>     Items;                                             // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerCollectableReward>   rewards;                                           // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          grants_all_rewards;                                // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FLootLockerCollectableItemGroup;
-
-// ScriptStruct LootLockerSDK.LootLockerLoginRequest
-// 0x0020 (0x0020 - 0x0000)
-struct FLootLockerLoginRequest
-{
-public:
-	class FString                                 email;                                             // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Password;                                          // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerLoginRequest;
-
-// ScriptStruct LootLockerSDK.LootLockerCharacter
-// 0x0030 (0x0030 - 0x0000)
-struct FLootLockerCharacter final
-{
-public:
-	int32                                         ID;                                                // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Type;                                              // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Name;                                              // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ulid;                                              // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          is_default;                                        // 0x002C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FLootLockerCharacter;
-
-// ScriptStruct LootLockerSDK.LootLockerAssetInstanceStorageItemsResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerAssetInstanceStorageItemsResponse final : public FLootLockerResponse
-{
-public:
-	TArray<struct FLootLockerAssetInstanceStorageResponseItem> storage;                              // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerAssetInstanceStorageItemsResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerAssetInstanceStorageItemResponse
-// 0x0028 (0x0098 - 0x0070)
-struct FLootLockerAssetInstanceStorageItemResponse final : public FLootLockerResponse
-{
-public:
-	struct FLootLockerAssetInstanceStorageResponseItem storage;                                      // 0x0070(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerAssetInstanceStorageItemResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerAssetInstanceStorageItems
-// 0x0010 (0x0010 - 0x0000)
-struct FLootLockerAssetInstanceStorageItems final
-{
-public:
-	TArray<struct FLootLockerAssetInstanceStorageItem> storage;                                      // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerAssetInstanceStorageItems;
-
-// ScriptStruct LootLockerSDK.LootLockerDenomination
-// 0x0048 (0x0048 - 0x0000)
-struct FLootLockerDenomination final
-{
-public:
-	class FString                                 ID;                                                // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Currency;                                          // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Name;                                              // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Value;                                             // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 created_at;                                        // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerDenomination;
-
-// ScriptStruct LootLockerSDK.LootLockerLootBoxItem
-// 0x0010 (0x0010 - 0x0000)
-struct FLootLockerLootBoxItem final
-{
-public:
-	int32                                         asset_id;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         asset_variation_id;                                // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         asset_rental_option_id;                            // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         weight;                                            // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerLootBoxItem;
-
-// ScriptStruct LootLockerSDK.LootLockerLootBoxContentResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerLootBoxContentResponse final : public FLootLockerResponse
-{
-public:
-	TArray<struct FLootLockerLootBoxItem>         contents;                                          // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerLootBoxContentResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerBalance
-// 0x0088 (0x0088 - 0x0000)
-struct FLootLockerBalance final
+struct FLootLockerDebitRequest final
 {
 public:
 	class FString                                 Amount;                                            // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLootLockerCurrency                    Currency;                                          // 0x0010(0x0058)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FString                                 Wallet_id;                                         // 0x0068(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 created_at;                                        // 0x0078(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 currency_id;                                       // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 wallet_id;                                         // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerBalance;
-
-// ScriptStruct LootLockerSDK.LootLockerOpenLootBoxResponse
-// 0x0008 (0x0078 - 0x0070)
-struct FLootLockerOpenLootBoxResponse final : public FLootLockerResponse
-{
-public:
-	bool                                          check_grant_notifications;                         // 0x0070(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_71[0x7];                                       // 0x0071(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FLootLockerOpenLootBoxResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerGetWalletResponse
-// 0x0028 (0x0098 - 0x0070)
-struct FLootLockerGetWalletResponse final : public FLootLockerResponse
-{
-public:
-	class FString                                 Holder_id;                                         // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ID;                                                // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ELootLockerWalletHolderTypes                  Type;                                              // 0x0090(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_91[0x7];                                       // 0x0091(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FLootLockerGetWalletResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerEndPoints
-// 0x0018 (0x0018 - 0x0000)
-struct FLootLockerEndPoints final
-{
-public:
-	class FString                                 endpoint;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ELootLockerHTTPMethod                         requestMethod;                                     // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FLootLockerEndPoints;
-
-// ScriptStruct LootLockerSDK.LootLockerDeleteAssetInstanceResponse
-// 0x0000 (0x0070 - 0x0070)
-struct FLootLockerDeleteAssetInstanceResponse final : public FLootLockerResponse
-{
-};
-DUMPER7_ASSERTS_FLootLockerDeleteAssetInstanceResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerPersistentStorageItemsResponse
-// 0x0060 (0x00D0 - 0x0070)
-struct FLootLockerPersistentStorageItemsResponse final : public FLootLockerResponse
-{
-public:
-	TArray<struct FLootLockerPersistentStorageItem> Payload;                                         // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_80[0x50];                                      // 0x0080(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FLootLockerPersistentStorageItemsResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerCreditWalletResponse
-// 0x0088 (0x00F8 - 0x0070)
-struct FLootLockerCreditWalletResponse final : public FLootLockerResponse
-{
-public:
-	class FString                                 Amount;                                            // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLootLockerCurrency                    Currency;                                          // 0x0080(0x0058)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FString                                 Wallet_id;                                         // 0x00D8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 created_at;                                        // 0x00E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerCreditWalletResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerConnectGoogleProviderToAccountRequest
-// 0x0010 (0x0010 - 0x0000)
-struct FLootLockerConnectGoogleProviderToAccountRequest final
-{
-public:
-	class FString                                 id_token;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerConnectGoogleProviderToAccountRequest;
-
-// ScriptStruct LootLockerSDK.LootLockerDebitWalletResponse
-// 0x0088 (0x00F8 - 0x0070)
-struct FLootLockerDebitWalletResponse final : public FLootLockerResponse
-{
-public:
-	class FString                                 Amount;                                            // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLootLockerCurrency                    Currency;                                          // 0x0080(0x0058)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FString                                 Wallet_id;                                         // 0x00D8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 created_at;                                        // 0x00E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerDebitWalletResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerPersistentStorageItemResponse
-// 0x0028 (0x0098 - 0x0070)
-struct FLootLockerPersistentStorageItemResponse final : public FLootLockerResponse
-{
-public:
-	struct FLootLockerPersistentStorageItem       Payload;                                           // 0x0070(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerPersistentStorageItemResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerCreateWalletResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerCreateWalletResponse final : public FLootLockerResponse
-{
-public:
-	class FString                                 Wallet_id;                                         // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerCreateWalletResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerContext
-// 0x0040 (0x0040 - 0x0000)
-struct FLootLockerContext final
-{
-public:
-	int32                                         ID;                                                // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 UUID;                                              // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Name;                                              // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 friendly_name;                                     // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          detachable;                                        // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          user_facing;                                       // 0x0039(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3A[0x2];                                       // 0x003A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         dependent_asset_id;                                // 0x003C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerContext;
-
-// ScriptStruct LootLockerSDK.LootLockerGetContextResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerGetContextResponse final : public FLootLockerResponse
-{
-public:
-	TArray<struct FLootLockerContext>             contexts;                                          // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerGetContextResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerIndexBasedPagination
-// 0x000C (0x000C - 0x0000)
-struct FLootLockerIndexBasedPagination final
-{
-public:
-	int32                                         Total;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Next_Cursor;                                       // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Previous_Cursor;                                   // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerIndexBasedPagination;
-
-// ScriptStruct LootLockerSDK.LootLockerProgressionPointsReward
-// 0x0028 (0x0028 - 0x0000)
-struct FLootLockerProgressionPointsReward final
-{
-public:
-	class FString                                 Progression_Key;                                   // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Progression_Name;                                  // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Amount;                                            // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FLootLockerProgressionPointsReward;
-
-// ScriptStruct LootLockerSDK.LootLockerProgressionResetReward
-// 0x0030 (0x0030 - 0x0000)
-struct FLootLockerProgressionResetReward final
-{
-public:
-	class FString                                 progression_id;                                    // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Progression_Key;                                   // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Progression_Name;                                  // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerProgressionResetReward;
-
-// ScriptStruct LootLockerSDK.LootLockerAssetReward
-// 0x000C (0x000C - 0x0000)
-struct FLootLockerAssetReward final
-{
-public:
-	int32                                         asset_id;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         asset_variation_id;                                // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         asset_rental_option_id;                            // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerAssetReward;
-
-// ScriptStruct LootLockerSDK.LootLockerCurrencyReward
-// 0x0030 (0x0030 - 0x0000)
-struct FLootLockerCurrencyReward final
-{
-public:
-	class FString                                 Currency_name;                                     // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Currency_code;                                     // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Amount;                                            // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerCurrencyReward;
-
-// ScriptStruct LootLockerSDK.LootLockerRewards
-// 0x0040 (0x0040 - 0x0000)
-struct FLootLockerRewards final
-{
-public:
-	TArray<struct FLootLockerProgressionPointsReward> Progression_Points_Rewards;                    // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerProgressionResetReward> Progression_Reset_Rewards;                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerAssetReward>         Asset_Rewards;                                     // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerCurrencyReward>      Currency_Rewards;                                  // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerRewards;
-
-// ScriptStruct LootLockerSDK.LootLockerProgressionTier
-// 0x0048 (0x0048 - 0x0000)
-struct FLootLockerProgressionTier final
-{
-public:
-	int32                                         Step;                                              // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Points_Threshold;                                  // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLootLockerRewards                     rewards;                                           // 0x0008(0x0040)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerProgressionTier;
-
-// ScriptStruct LootLockerSDK.LootLockerPaginatedProgressionTiersResponse
-// 0x0020 (0x0090 - 0x0070)
-struct FLootLockerPaginatedProgressionTiersResponse final : public FLootLockerResponse
-{
-public:
-	struct FLootLockerIndexBasedPagination        Pagination;                                        // 0x0070(0x000C)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_7C[0x4];                                       // 0x007C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FLootLockerProgressionTier>     Items;                                             // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerPaginatedProgressionTiersResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerCatalog
-// 0x0050 (0x0050 - 0x0000)
-struct FLootLockerCatalog final
-{
-public:
-	class FString                                 created_at;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Name;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Key;                                               // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ID;                                                // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 deleted_at;                                        // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerCatalog;
-
-// ScriptStruct LootLockerSDK.LootLockerGetAssetsResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerGetAssetsResponse final : public FLootLockerResponse
-{
-public:
-	TArray<struct FLootLockerAsset>               assets;                                            // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerGetAssetsResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerCatalogAppleAppStoreListing
-// 0x0010 (0x0010 - 0x0000)
-struct FLootLockerCatalogAppleAppStoreListing final
-{
-public:
-	class FString                                 product_id;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerCatalogAppleAppStoreListing;
-
-// ScriptStruct LootLockerSDK.LootLockerCatalogGooglePlayStoreListing
-// 0x0010 (0x0010 - 0x0000)
-struct FLootLockerCatalogGooglePlayStoreListing final
-{
-public:
-	class FString                                 product_id;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerCatalogGooglePlayStoreListing;
-
-// ScriptStruct LootLockerSDK.LootLockerCatalogSteamStoreListingPrice
-// 0x0018 (0x0018 - 0x0000)
-struct FLootLockerCatalogSteamStoreListingPrice final
-{
-public:
-	class FString                                 Currency;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Amount;                                            // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FLootLockerCatalogSteamStoreListingPrice;
-
-// ScriptStruct LootLockerSDK.LootLockerCatalogSteamStoreListing
-// 0x0020 (0x0020 - 0x0000)
-struct FLootLockerCatalogSteamStoreListing final
-{
-public:
-	class FString                                 Description;                                       // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerCatalogSteamStoreListingPrice> Prices;                                  // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerCatalogSteamStoreListing;
-
-// ScriptStruct LootLockerSDK.LootLockerCatalogEntryListings
-// 0x0040 (0x0040 - 0x0000)
-struct FLootLockerCatalogEntryListings final
-{
-public:
-	struct FLootLockerCatalogAppleAppStoreListing apple_app_store;                                   // 0x0000(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FLootLockerCatalogGooglePlayStoreListing Google_play_store;                               // 0x0010(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FLootLockerCatalogSteamStoreListing    Steam_store;                                       // 0x0020(0x0020)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerCatalogEntryListings;
-
-// ScriptStruct LootLockerSDK.LootLockerCatalogEntryPrice
-// 0x0058 (0x0058 - 0x0000)
-struct FLootLockerCatalogEntryPrice final
-{
-public:
-	int32                                         Amount;                                            // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Display_amount;                                    // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Currency_code;                                     // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Currency_name;                                     // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Price_id;                                          // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Currency_id;                                       // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerCatalogEntryPrice;
-
-// ScriptStruct LootLockerSDK.LootLockerCatalogEntry
-// 0x00A0 (0x00A0 - 0x0000)
-struct FLootLockerCatalogEntry
-{
-public:
-	class FString                                 created_at;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ELootLockerCatalogEntryEntityKind             Entity_kind;                                       // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLootLockerCatalogEntryListings        Listings;                                          // 0x0018(0x0040)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FString                                 Entity_name;                                       // 0x0058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerCatalogEntryPrice>   Prices;                                            // 0x0068(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	class FString                                 Entity_id;                                         // 0x0078(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Catalog_listing_id;                                // 0x0088(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          purchasable;                                       // 0x0098(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_99[0x7];                                       // 0x0099(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FLootLockerCatalogEntry;
-
-// ScriptStruct LootLockerSDK.LootLockerCatalogGroupMetadata
-// 0x0020 (0x0020 - 0x0000)
-struct FLootLockerCatalogGroupMetadata final
-{
-public:
-	class FString                                 Key;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Value;                                             // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerCatalogGroupMetadata;
-
-// ScriptStruct LootLockerSDK.LootLockerCatalogGroupAssociation
-// 0x0028 (0x0028 - 0x0000)
-struct FLootLockerCatalogGroupAssociation final
-{
-public:
-	ELootLockerCatalogEntryEntityKind             Kind;                                              // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ID;                                                // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Catalog_listing_id;                                // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerCatalogGroupAssociation;
-
-// ScriptStruct LootLockerSDK.LootLockerGroupDetails
-// 0x0060 (0x0060 - 0x0000)
-struct FLootLockerGroupDetails
-{
-public:
-	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Description;                                       // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerCatalogGroupMetadata> MetaData;                                         // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	class FString                                 ID;                                                // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Catalog_listing_id;                                // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerCatalogGroupAssociation> Associations;                                  // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerGroupDetails;
-
-// ScriptStruct LootLockerSDK.LootLockerItemDetailsKey
-// 0x0020 (0x0020 - 0x0000)
-struct FLootLockerItemDetailsKey final
-{
-public:
-	class FString                                 Catalog_listing_id;                                // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Item_id;                                           // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerItemDetailsKey;
-
-// ScriptStruct LootLockerSDK.LootLockerAssetDetails
-// 0x0068 (0x0068 - 0x0000)
-struct FLootLockerAssetDetails final
-{
-public:
-	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 variation_id;                                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 rental_option_id;                                  // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Legacy_id;                                         // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ID;                                                // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Thumbnail;                                         // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Catalog_listing_id;                                // 0x0058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerAssetDetails;
-
-// ScriptStruct LootLockerSDK.LootLockerProgressionPointDetails
-// 0x0048 (0x0048 - 0x0000)
-struct FLootLockerProgressionPointDetails final
-{
-public:
-	class FString                                 Key;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Name;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Amount;                                            // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ID;                                                // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Catalog_listing_id;                                // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerProgressionPointDetails;
-
-// ScriptStruct LootLockerSDK.LootLockerProgressionResetDetails
-// 0x0040 (0x0040 - 0x0000)
-struct FLootLockerProgressionResetDetails final
-{
-public:
-	class FString                                 Key;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Name;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ID;                                                // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Catalog_listing_id;                                // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerProgressionResetDetails;
-
-// ScriptStruct LootLockerSDK.LootLockerCurrencyDetails
-// 0x0050 (0x0050 - 0x0000)
-struct FLootLockerCurrencyDetails final
-{
-public:
-	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Code;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Amount;                                            // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ID;                                                // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Catalog_listing_id;                                // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerCurrencyDetails;
-
-// ScriptStruct LootLockerSDK.LootLockerKeyBasedPagination
-// 0x0028 (0x0028 - 0x0000)
-struct FLootLockerKeyBasedPagination final
-{
-public:
-	int32                                         Total;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Next_Cursor;                                       // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Previous_Cursor;                                   // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerKeyBasedPagination;
-
-// ScriptStruct LootLockerSDK.LootLockerListCatalogPricesResponse
-// 0x0218 (0x0288 - 0x0070)
-struct FLootLockerListCatalogPricesResponse final : public FLootLockerResponse
-{
-public:
-	struct FLootLockerCatalog                     Catalog;                                           // 0x0070(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerCatalogEntry>        Entries;                                           // 0x00C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TMap<struct FLootLockerItemDetailsKey, struct FLootLockerAssetDetails> Asset_Details;            // 0x00D0(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TMap<struct FLootLockerItemDetailsKey, struct FLootLockerProgressionPointDetails> Progression_Point_Details; // 0x0120(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TMap<struct FLootLockerItemDetailsKey, struct FLootLockerProgressionResetDetails> Progression_Reset_Details; // 0x0170(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TMap<struct FLootLockerItemDetailsKey, struct FLootLockerCurrencyDetails> Currency_Details;      // 0x01C0(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TMap<struct FLootLockerItemDetailsKey, struct FLootLockerGroupDetails> Group_Details;            // 0x0210(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FLootLockerKeyBasedPagination          Pagination;                                        // 0x0260(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerListCatalogPricesResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerRedeemAppleAppStorePurchaseForPlayerRequest
-// 0x0018 (0x0018 - 0x0000)
-struct FLootLockerRedeemAppleAppStorePurchaseForPlayerRequest
-{
-public:
-	bool                                          Sandboxed;                                         // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Transaction_id;                                    // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerRedeemAppleAppStorePurchaseForPlayerRequest;
-
-// ScriptStruct LootLockerSDK.LootLockerAssetBoneParameters
-// 0x0060 (0x0060 - 0x0000)
-struct FLootLockerAssetBoneParameters final
-{
-public:
-	class FString                                 Rotation;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 position;                                          // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 BoneName;                                          // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 flags;                                             // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Mass;                                              // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 binding;                                           // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerAssetBoneParameters;
-
-// ScriptStruct LootLockerSDK.LootLockerAssetBone
-// 0x0030 (0x0030 - 0x0000)
-struct FLootLockerAssetBone final
-{
-public:
-	class FString                                 ID;                                                // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Name;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerAssetBoneParameters> Parameters;                                        // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerAssetBone;
-
-// ScriptStruct LootLockerSDK.LootLockerGetAssetBonesResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerGetAssetBonesResponse final : public FLootLockerResponse
-{
-public:
-	TArray<struct FLootLockerAssetBone>           AssetBones;                                        // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerGetAssetBonesResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerCharacterProgression
-// 0x0050 (0x0050 - 0x0000)
-struct FLootLockerCharacterProgression final
-{
-public:
-	class FString                                 ID;                                                // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Progression_Key;                                   // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Progression_Name;                                  // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Step;                                              // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Points;                                            // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Previous_Threshold;                                // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Next_Threshold;                                    // 0x003C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Last_Level_Up;                                     // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerCharacterProgression;
-
-// ScriptStruct LootLockerSDK.LootLockerGetFavouriteAssetIndicesResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerGetFavouriteAssetIndicesResponse final : public FLootLockerResponse
-{
-public:
-	TArray<int32>                                 favourites;                                        // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerGetFavouriteAssetIndicesResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerMultiplePlayerNameRequest
-// 0x0020 (0x0020 - 0x0000)
-struct FLootLockerMultiplePlayerNameRequest final
-{
-public:
-	class FString                                 Platform;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 player_id;                                         // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerMultiplePlayerNameRequest;
-
-// ScriptStruct LootLockerSDK.LootLockerUniversalAssets
-// 0x0348 (0x0348 - 0x0000)
-struct FLootLockerUniversalAssets final
-{
-public:
-	int32                                         universal_id;                                      // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         variation_id;                                      // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         rental_option_id;                                  // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 acquisition_source;                                // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLootLockerAsset                       Asset;                                             // 0x0020(0x02A8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FLootLockerRentalOption                rental;                                            // 0x02C8(0x0080)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerUniversalAssets;
-
-// ScriptStruct LootLockerSDK.LootLockerUniversalAssetsResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerUniversalAssetsResponse final : public FLootLockerResponse
-{
-public:
-	TArray<struct FLootLockerUniversalAssets>     global_assets;                                     // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerUniversalAssetsResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerGoogleSubsystemStoreOffer
-// 0x00A8 (0x00A8 - 0x0000)
-struct FLootLockerGoogleSubsystemStoreOffer final
-{
-public:
-	class FString                                 OfferId;                                           // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FText                                   Title;                                             // 0x0010(0x0018)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	class FText                                   Description;                                       // 0x0028(0x0018)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	class FText                                   LongDescription;                                   // 0x0040(0x0018)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	class FText                                   RegularPriceText;                                  // 0x0058(0x0018)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	int32                                         RegularPrice;                                      // 0x0070(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_74[0x4];                                       // 0x0074(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   PriceText;                                         // 0x0078(0x0018)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	int32                                         NumericPrice;                                      // 0x0090(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_94[0x4];                                       // 0x0094(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CurrencyCode;                                      // 0x0098(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerGoogleSubsystemStoreOffer;
-
-// ScriptStruct LootLockerSDK.LootLockerGrantAssetResponse
-// 0x0040 (0x00B0 - 0x0070)
-struct FLootLockerGrantAssetResponse final : public FLootLockerResponse
-{
-public:
-	int32                                         ID;                                                // 0x0070(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         asset_id;                                          // 0x0074(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         asset_variation_id;                                // 0x0078(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_7C[0x4];                                       // 0x007C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 asset_ulid;                                        // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 acquisition_source;                                // 0x0090(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 acquisition_date;                                  // 0x00A0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerGrantAssetResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerAuthResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerAuthResponse : public FLootLockerResponse
-{
-public:
-	class FString                                 session_token;                                     // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerAuthResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerLevelThresholds
-// 0x0010 (0x0010 - 0x0000)
-struct FLootLockerLevelThresholds final
-{
-public:
-	int32                                         Current;                                           // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          current_is_prestige;                               // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Next;                                              // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          next_is_prestige;                                  // 0x000C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FLootLockerLevelThresholds;
-
-// ScriptStruct LootLockerSDK.LootLockerAuthenticationResponse
-// 0x0058 (0x00D8 - 0x0080)
-struct FLootLockerAuthenticationResponse : public FLootLockerAuthResponse
-{
-public:
-	int32                                         player_id;                                         // 0x0080(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_84[0x4];                                       // 0x0084(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 public_uid;                                        // 0x0088(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 player_ulid;                                       // 0x0098(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          seen_before;                                       // 0x00A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          check_grant_notifications;                         // 0x00A9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          check_deactivation_notifications;                  // 0x00AA(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_AB[0x1];                                       // 0x00AB(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         XP;                                                // 0x00AC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Level;                                             // 0x00B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLootLockerLevelThresholds             level_thresholds;                                  // 0x00B4(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         account_balance;                                   // 0x00C4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 player_identifier;                                 // 0x00C8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerAuthenticationResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerAppleSessionResponse
-// 0x0010 (0x00E8 - 0x00D8)
-struct FLootLockerAppleSessionResponse final : public FLootLockerAuthenticationResponse
-{
-public:
-	class FString                                 refresh_token;                                     // 0x00D8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerAppleSessionResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerGoogleSessionResponse
-// 0x0010 (0x00E8 - 0x00D8)
-struct FLootLockerGoogleSessionResponse final : public FLootLockerAuthenticationResponse
-{
-public:
-	class FString                                 refresh_token;                                     // 0x00D8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerGoogleSessionResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerBaseAuthRequest
-// 0x0020 (0x0020 - 0x0000)
-struct FLootLockerBaseAuthRequest
-{
-public:
-	class FString                                 game_key;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 game_version;                                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerBaseAuthRequest;
-
-// ScriptStruct LootLockerSDK.LootLockerAppleGameCenterSessionRequest
-// 0x0060 (0x0080 - 0x0020)
-struct FLootLockerAppleGameCenterSessionRequest final : public FLootLockerBaseAuthRequest
-{
-public:
-	class FString                                 bundle_id;                                         // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 player_id;                                         // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 public_key_url;                                    // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 signature;                                         // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 salt;                                              // 0x0060(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Timestamp;                                         // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerAppleGameCenterSessionRequest;
-
-// ScriptStruct LootLockerSDK.LootLockerEpicSessionResponse
-// 0x0010 (0x00E8 - 0x00D8)
-struct FLootLockerEpicSessionResponse final : public FLootLockerAuthenticationResponse
-{
-public:
-	class FString                                 refresh_token;                                     // 0x00D8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerEpicSessionResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerLoginResponse
-// 0x0058 (0x00D8 - 0x0080)
-struct FLootLockerLoginResponse final : public FLootLockerAuthResponse
-{
-public:
-	int32                                         ID;                                                // 0x0080(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         game_id;                                           // 0x0084(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 email;                                             // 0x0088(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 created_at;                                        // 0x0098(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 updated_at;                                        // 0x00A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 deleted_at;                                        // 0x00B8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 validated_at;                                      // 0x00C8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerLoginResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerWhiteLabelVerifySessionResponse
-// 0x0018 (0x0088 - 0x0070)
-struct FLootLockerWhiteLabelVerifySessionResponse final : public FLootLockerResponse
-{
-public:
-	int32                                         game_id;                                           // 0x0070(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         user_id;                                           // 0x0074(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 email;                                             // 0x0078(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerWhiteLabelVerifySessionResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerInlinedGroupDetails
-// 0x0040 (0x00A0 - 0x0060)
-struct FLootLockerInlinedGroupDetails final : public FLootLockerGroupDetails
-{
-public:
-	TArray<struct FLootLockerAssetDetails>        AssetDetails;                                      // 0x0060(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerProgressionPointDetails> ProgressionPointDetails;                       // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerProgressionResetDetails> ProgressionResetDetails;                       // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerCurrencyDetails>     CurrencyDetails;                                   // 0x0090(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerInlinedGroupDetails;
-
-// ScriptStruct LootLockerSDK.LootLockerInlinedCatalogEntry
-// 0x01E0 (0x0280 - 0x00A0)
-struct FLootLockerInlinedCatalogEntry final : public FLootLockerCatalogEntry
-{
-public:
-	struct FLootLockerAssetDetails                AssetDetails;                                      // 0x00A0(0x0068)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FLootLockerProgressionPointDetails     ProgressionPointDetails;                           // 0x0108(0x0048)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FLootLockerProgressionResetDetails     ProgressionResetDetails;                           // 0x0150(0x0040)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FLootLockerCurrencyDetails             CurrencyDetails;                                   // 0x0190(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FLootLockerInlinedGroupDetails         GroupDetails;                                      // 0x01E0(0x00A0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerInlinedCatalogEntry;
-
-// ScriptStruct LootLockerSDK.LootLockerWhiteLabelLoginAndSessionResponse
-// 0x01B0 (0x0230 - 0x0080)
-struct FLootLockerWhiteLabelLoginAndSessionResponse final : public FLootLockerAuthResponse
-{
-public:
-	struct FLootLockerLoginResponse               LoginResponse;                                     // 0x0080(0x00D8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FLootLockerAuthenticationResponse      StartSessionResponse;                              // 0x0158(0x00D8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerWhiteLabelLoginAndSessionResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerAppleGameCenterSessionResponse
-// 0x0010 (0x00E8 - 0x00D8)
-struct FLootLockerAppleGameCenterSessionResponse final : public FLootLockerAuthenticationResponse
-{
-public:
-	class FString                                 refresh_token;                                     // 0x00D8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerAppleGameCenterSessionResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerMetaSessionResponse
-// 0x0010 (0x00E8 - 0x00D8)
-struct FLootLockerMetaSessionResponse final : public FLootLockerAuthenticationResponse
-{
-public:
-	class FString                                 refresh_token;                                     // 0x00D8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerMetaSessionResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerEmailRequest
-// 0x0010 (0x0010 - 0x0000)
-struct FLootLockerEmailRequest final
-{
-public:
-	class FString                                 email;                                             // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerEmailRequest;
-
-// ScriptStruct LootLockerSDK.LootLockerListDenominationsResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerListDenominationsResponse final : public FLootLockerResponse
-{
-public:
-	TArray<struct FLootLockerDenomination>        Denominations;                                     // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerListDenominationsResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerListBalancesForWalletResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerListBalancesForWalletResponse final : public FLootLockerResponse
-{
-public:
-	TArray<struct FLootLockerBalance>             Balances;                                          // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerListBalancesForWalletResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerListCatalogsResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerListCatalogsResponse final : public FLootLockerResponse
-{
-public:
-	TArray<struct FLootLockerCatalog>             Catalogs;                                          // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerListCatalogsResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerRefreshAppleGameCenterSessionRequest
-// 0x0010 (0x0030 - 0x0020)
-struct FLootLockerRefreshAppleGameCenterSessionRequest final : public FLootLockerBaseAuthRequest
-{
-public:
-	class FString                                 refresh_token;                                     // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerRefreshAppleGameCenterSessionRequest;
-
-// ScriptStruct LootLockerSDK.InternalLootLockerListCatalogPricesResponse
-// 0x00D8 (0x0148 - 0x0070)
-struct FInternalLootLockerListCatalogPricesResponse final : public FLootLockerResponse
-{
-public:
-	struct FLootLockerCatalog                     Catalog;                                           // 0x0070(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerCatalogEntry>        Entries;                                           // 0x00C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerAssetDetails>        Assets_Details;                                    // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerProgressionPointDetails> Progression_Points_Details;                    // 0x00E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerProgressionResetDetails> Progression_Resets_Details;                    // 0x00F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerCurrencyDetails>     Currency_Details;                                  // 0x0100(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerGroupDetails>        Group_Details;                                     // 0x0110(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FLootLockerKeyBasedPagination          Pagination;                                        // 0x0120(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FInternalLootLockerListCatalogPricesResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerCharacterAsset
-// 0x02A8 (0x02A8 - 0x0000)
-struct FLootLockerCharacterAsset final
-{
-public:
-	struct FLootLockerAsset                       Asset;                                             // 0x0000(0x02A8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerCharacterAsset;
-
-// ScriptStruct LootLockerSDK.LootLockerCharacterRental
-// 0x0038 (0x0038 - 0x0000)
-struct FLootLockerCharacterRental final
-{
-public:
-	bool                                          is_rental;                                         // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 time_left;                                         // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Duration;                                          // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 is_active;                                         // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerCharacterRental;
-
-// ScriptStruct LootLockerSDK.LootLockerCharacterLoadout
-// 0x02F8 (0x02F8 - 0x0000)
-struct FLootLockerCharacterLoadout final
-{
-public:
-	int32                                         variation_id;                                      // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         instance_id;                                       // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 mounted_at;                                        // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLootLockerCharacterAsset              Asset;                                             // 0x0018(0x02A8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FLootLockerCharacterRental             rental;                                            // 0x02C0(0x0038)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerCharacterLoadout;
-
-// ScriptStruct LootLockerSDK.LootLockerCharacterLoadoutArray
-// 0x0040 (0x0040 - 0x0000)
-struct FLootLockerCharacterLoadoutArray final
-{
-public:
-	struct FLootLockerCharacter                   Character;                                         // 0x0000(0x0030)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerCharacterLoadout>    loadout;                                           // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerCharacterLoadoutArray;
-
-// ScriptStruct LootLockerSDK.LootLockerCharacterLoadoutResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerCharacterLoadoutResponse final : public FLootLockerResponse
-{
-public:
-	TArray<struct FLootLockerCharacterLoadoutArray> loadouts;                                        // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerCharacterLoadoutResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerCharacterTypes
-// 0x0018 (0x0028 - 0x0010)
-struct FLootLockerCharacterTypes final : public FLootLockerHasKeyValueStorage
-{
-public:
-	int32                                         ID;                                                // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          is_default;                                        // 0x0014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Name;                                              // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerCharacterTypes;
-
-// ScriptStruct LootLockerSDK.LootLockerListCharacterTypesResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerListCharacterTypesResponse final : public FLootLockerResponse
-{
-public:
-	TArray<struct FLootLockerCharacterTypes>      character_types;                                   // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerListCharacterTypesResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerListCharacterResponseItem
-// 0x0028 (0x0028 - 0x0000)
-struct FLootLockerListCharacterResponseItem final
-{
-public:
-	bool                                          is_default;                                        // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Name;                                              // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ID;                                                // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerListCharacterResponseItem;
-
-// ScriptStruct LootLockerSDK.LootLockerListPlayerCharactersResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerListPlayerCharactersResponse final : public FLootLockerResponse
-{
-public:
-	TArray<struct FLootLockerListCharacterResponseItem> Items;                                       // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerListPlayerCharactersResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerCollectable
-// 0x0040 (0x0040 - 0x0000)
-struct FLootLockerCollectable final
-{
-public:
-	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerCollectableItemGroup> Groups;                                           // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	int32                                         completion_percentage;                             // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FLootLockerCollectableReward>   rewards;                                           // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          grants_all_rewards;                                // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FLootLockerCollectable;
-
-// ScriptStruct LootLockerSDK.LootLockerCollectablesResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerCollectablesResponse final : public FLootLockerResponse
-{
-public:
-	TArray<struct FLootLockerCollectable>         collectables;                                      // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerCollectablesResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerAccountConnectedResponse
-// 0x0018 (0x0088 - 0x0070)
-struct FLootLockerAccountConnectedResponse final : public FLootLockerResponse
-{
-public:
-	ELootLockerAccountProvider                    Provider;                                          // 0x0070(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_71[0x7];                                       // 0x0071(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Provider_name;                                     // 0x0078(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerAccountConnectedResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerPlayerNameRequest
-// 0x0010 (0x0010 - 0x0000)
-struct FLootLockerPlayerNameRequest final
-{
-public:
-	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerPlayerNameRequest;
-
-// ScriptStruct LootLockerSDK.LootLockerPlayerFile
-// 0x0078 (0x0078 - 0x0000)
-struct FLootLockerPlayerFile final
-{
-public:
-	int32                                         ID;                                                // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 revision_id;                                       // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Name;                                              // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Size;                                              // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 purpose;                                           // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 URL;                                               // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 url_expires_at;                                    // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 created_at;                                        // 0x0060(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsPublic;                                          // 0x0070(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_71[0x7];                                       // 0x0071(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FLootLockerPlayerFile;
-
-// ScriptStruct LootLockerSDK.LootLockerConnectedAccountProvider
-// 0x0018 (0x0018 - 0x0000)
-struct FLootLockerConnectedAccountProvider final
-{
-public:
-	ELootLockerAccountProvider                    Provider;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Provider_name;                                     // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerConnectedAccountProvider;
-
-// ScriptStruct LootLockerSDK.LootLockerListConnectedAccountsResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerListConnectedAccountsResponse final : public FLootLockerResponse
-{
-public:
-	TArray<struct FLootLockerConnectedAccountProvider> ConnectedAccounts;                            // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerListConnectedAccountsResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerMultiplePlayerNamesRequest
-// 0x0010 (0x0010 - 0x0000)
-struct FLootLockerMultiplePlayerNamesRequest final
-{
-public:
-	TArray<struct FLootLockerMultiplePlayerNameRequest> player_ids;                                  // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerMultiplePlayerNamesRequest;
-
-// ScriptStruct LootLockerSDK.LootLockerComputeAndLockItem
-// 0x0010 (0x0010 - 0x0000)
-struct FLootLockerComputeAndLockItem final
-{
-public:
-	int32                                         asset_id;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         asset_variation_id;                                // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         asset_rental_option_id;                            // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ID;                                                // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerComputeAndLockItem;
-
-// ScriptStruct LootLockerSDK.LootLockerComputeAndLockDropTableResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerComputeAndLockDropTableResponse final : public FLootLockerResponse
-{
-public:
-	TArray<struct FLootLockerComputeAndLockItem>  Items;                                             // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerComputeAndLockDropTableResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerQuerySteamPurchaseRedemptionStatusResponse
-// 0x0008 (0x0078 - 0x0070)
-struct FLootLockerQuerySteamPurchaseRedemptionStatusResponse final : public FLootLockerResponse
-{
-public:
-	ELootLockerSteamPurchaseRedemptionStatus      Status;                                            // 0x0070(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_71[0x7];                                       // 0x0071(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FLootLockerQuerySteamPurchaseRedemptionStatusResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerPickDropsFromDropTableItem
-// 0x02B8 (0x02B8 - 0x0000)
-struct FLootLockerPickDropsFromDropTableItem final
-{
-public:
-	int32                                         instance_id;                                       // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         variation_id;                                      // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         rental_option_id;                                  // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         quantity;                                          // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLootLockerAsset                       Asset;                                             // 0x0010(0x02A8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerPickDropsFromDropTableItem;
-
-// ScriptStruct LootLockerSDK.LootLockerPickDropsFromDropTableResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerPickDropsFromDropTableResponse final : public FLootLockerResponse
-{
-public:
-	TArray<struct FLootLockerPickDropsFromDropTableItem> Items;                                      // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerPickDropsFromDropTableResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerAppleSessionRequest
-// 0x0010 (0x0030 - 0x0020)
-struct FLootLockerAppleSessionRequest final : public FLootLockerBaseAuthRequest
-{
-public:
-	class FString                                 apple_authorization_code;                          // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerAppleSessionRequest;
+DUMPER7_ASSERTS_FLootLockerDebitRequest;
 
 // ScriptStruct LootLockerSDK.LootLockerEntitlementHistoryItem
 // 0x0058 (0x0058 - 0x0000)
@@ -1711,9 +661,9 @@ struct FLootLockerEntitlementHistoryItem final
 {
 public:
 	class FString                                 created_at;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Reward_kind;                                       // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 reward_kind;                                       // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 ID;                                                // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Reward_id;                                         // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 reward_id;                                         // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 Catalog_id;                                        // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_50[0x8];                                       // 0x0050(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
@@ -1748,7 +698,7 @@ public:
 	class FString                                 created_at;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 ID;                                                // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FLootLockerEntitlementHistoryItem> Items;                                          // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerEntitlementHistoryReward> rewards;                                      // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerEntitlementHistoryReward> Rewards;                                      // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<struct FLootLockerEntitlementHistoryMetadata> MetaData;                                   // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 	ELootLockerEntitlementHistoryListingStatus    Status;                                            // 0x0050(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ELootLockerEntitlementHistoryListingStore     Store;                                             // 0x0051(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1757,140 +707,980 @@ public:
 };
 DUMPER7_ASSERTS_FLootLockerEntitlementListing;
 
+// ScriptStruct LootLockerSDK.LootLockerKeyBasedPagination
+// 0x0028 (0x0028 - 0x0000)
+struct FLootLockerKeyBasedPagination final
+{
+public:
+	int32                                         Total;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Next_Cursor;                                       // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Previous_Cursor;                                   // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerKeyBasedPagination;
+
+// ScriptStruct LootLockerSDK.LootLockerErrorData
+// 0x0058 (0x0058 - 0x0000)
+struct FLootLockerErrorData final
+{
+public:
+	class FString                                 Code;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Doc_url;                                           // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Request_id;                                        // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Trace_id;                                          // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Retry_after_seconds;                               // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Message;                                           // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerErrorData;
+
+// ScriptStruct LootLockerSDK.LootLockerRequestContext
+// 0x0060 (0x0060 - 0x0000)
+struct FLootLockerRequestContext final
+{
+public:
+	class FString                                 PlayerUlid;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 RequestTime;                                       // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 RequestId;                                         // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 RequestURL;                                        // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 RequestMethod;                                     // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 RequestParametersJsonString;                       // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerRequestContext;
+
+// ScriptStruct LootLockerSDK.LootLockerResponse
+// 0x00D0 (0x00D0 - 0x0000)
+struct FLootLockerResponse
+{
+public:
+	bool                                          success;                                           // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         StatusCode;                                        // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 FullTextFromServer;                                // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerErrorData                   ErrorData;                                         // 0x0018(0x0058)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLootLockerRequestContext              Context;                                           // 0x0070(0x0060)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerResponse;
+
 // ScriptStruct LootLockerSDK.LootLockerEntitlementHistoryResponse
-// 0x0038 (0x00A8 - 0x0070)
+// 0x0038 (0x0108 - 0x00D0)
 struct FLootLockerEntitlementHistoryResponse final : public FLootLockerResponse
 {
 public:
-	TArray<struct FLootLockerEntitlementListing>  Listings;                                          // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FLootLockerKeyBasedPagination          Pagination;                                        // 0x0080(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerEntitlementListing>  Listings;                                          // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FLootLockerKeyBasedPagination          Pagination;                                        // 0x00E0(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLootLockerEntitlementHistoryResponse;
 
-// ScriptStruct LootLockerSDK.LootLockerGenericProgressionResponse
-// 0x0050 (0x00C0 - 0x0070)
-struct FLootLockerGenericProgressionResponse : public FLootLockerResponse
+// ScriptStruct LootLockerSDK.LootLockerCatalogSteamStoreListingPrice
+// 0x0018 (0x0018 - 0x0000)
+struct FLootLockerCatalogSteamStoreListingPrice final
 {
 public:
-	class FString                                 ID;                                                // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Progression_Key;                                   // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Progression_Name;                                  // 0x0090(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Step;                                              // 0x00A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Points;                                            // 0x00A4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Previous_Threshold;                                // 0x00A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Next_Threshold;                                    // 0x00AC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Last_Level_Up;                                     // 0x00B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 currency;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Amount;                                            // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FLootLockerGenericProgressionResponse;
+DUMPER7_ASSERTS_FLootLockerCatalogSteamStoreListingPrice;
 
-// ScriptStruct LootLockerSDK.LootLockerAwardedTier
+// ScriptStruct LootLockerSDK.LootLockerPagination
+// 0x0008 (0x0008 - 0x0000)
+struct FLootLockerPagination final
+{
+public:
+	int32                                         Total;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Next_Cursor;                                       // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerPagination;
+
+// ScriptStruct LootLockerSDK.LootLockerContext
 // 0x0048 (0x0048 - 0x0000)
-struct FLootLockerAwardedTier final
+struct FLootLockerContext final
 {
 public:
-	int32                                         Step;                                              // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Points_Threshold;                                  // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLootLockerRewards                     rewards;                                           // 0x0008(0x0040)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerAwardedTier;
-
-// ScriptStruct LootLockerSDK.LootLockerGenericProgressionWithRewardsResponse
-// 0x0010 (0x00D0 - 0x00C0)
-struct FLootLockerGenericProgressionWithRewardsResponse : public FLootLockerGenericProgressionResponse
-{
-public:
-	TArray<struct FLootLockerAwardedTier>         Awarded_Tiers;                                     // 0x00C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerGenericProgressionWithRewardsResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerPlayerProgressionWithRewardsResponse
-// 0x0000 (0x00D0 - 0x00D0)
-struct FLootLockerPlayerProgressionWithRewardsResponse final : public FLootLockerGenericProgressionWithRewardsResponse
-{
-};
-DUMPER7_ASSERTS_FLootLockerPlayerProgressionWithRewardsResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerBeginSteamPurchaseRedemptionRequest
-// 0x0040 (0x0040 - 0x0000)
-struct FLootLockerBeginSteamPurchaseRedemptionRequest
-{
-public:
-	class FString                                 steam_id;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Currency;                                          // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Language;                                          // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Catalog_item_id;                                   // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerBeginSteamPurchaseRedemptionRequest;
-
-// ScriptStruct LootLockerSDK.LootLockerGetByListMembersRequest
-// 0x0010 (0x0010 - 0x0000)
-struct FLootLockerGetByListMembersRequest final
-{
-public:
-	TArray<class FString>                         members;                                           // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerGetByListMembersRequest;
-
-// ScriptStruct LootLockerSDK.LootLockerSingleEntitlementResponse
-// 0x0038 (0x00A8 - 0x0070)
-struct FLootLockerSingleEntitlementResponse final : public FLootLockerResponse
-{
-public:
-	class FString                                 created_at;                                        // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ELootLockerEntitlementHistoryListingStatus    Status;                                            // 0x0080(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ELootLockerEntitlementHistoryListingStore     Store;                                             // 0x0081(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ELootLockerEntitlementHistoryListingType      Type;                                              // 0x0082(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_83[0x5];                                       // 0x0083(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FLootLockerEntitlementHistoryItem> Items;                                          // 0x0088(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerEntitlementHistoryMetadata> MetaData;                                   // 0x0098(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerSingleEntitlementResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerFeedbackCategory
-// 0x0038 (0x0038 - 0x0000)
-struct FLootLockerFeedbackCategory final
-{
-public:
-	class FString                                 ID;                                                // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ELootLockerFeedbackType                       entity;                                            // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ID;                                                // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 UUID;                                              // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 Name;                                              // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Description;                                       // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 friendly_name;                                     // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          detachable;                                        // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          user_facing;                                       // 0x0039(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3A[0x2];                                       // 0x003A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         dependent_asset_id;                                // 0x003C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         max_equip_count;                                   // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FLootLockerFeedbackCategory;
+DUMPER7_ASSERTS_FLootLockerContext;
 
-// ScriptStruct LootLockerSDK.LootLockerFeedbackCategoryResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerFeedbackCategoryResponse final : public FLootLockerResponse
+// ScriptStruct LootLockerSDK.LootLockerGetContextResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerGetContextResponse final : public FLootLockerResponse
 {
 public:
-	TArray<struct FLootLockerFeedbackCategory>    Categories;                                        // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerContext>             contexts;                                          // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerFeedbackCategoryResponse;
+DUMPER7_ASSERTS_FLootLockerGetContextResponse;
 
-// ScriptStruct LootLockerSDK.LootLockerPlayerInfoResponse
-// 0x0030 (0x00A0 - 0x0070)
-struct FLootLockerPlayerInfoResponse final : public FLootLockerResponse
+// ScriptStruct LootLockerSDK.LootLockerFinalizeSteamPurchaseRedemptionRequest
+// 0x0010 (0x0010 - 0x0000)
+struct FLootLockerFinalizeSteamPurchaseRedemptionRequest final
 {
 public:
-	int32                                         account_balance;                                   // 0x0070(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         XP;                                                // 0x0074(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Level;                                             // 0x0078(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_7C[0x4];                                       // 0x007C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ulid;                                              // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLootLockerLevelThresholds             level_thresholds;                                  // 0x0090(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 entitlement_id;                                    // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerPlayerInfoResponse;
+DUMPER7_ASSERTS_FLootLockerFinalizeSteamPurchaseRedemptionRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerSimpleAssetFilter
+// 0x0020 (0x0020 - 0x0000)
+struct FLootLockerSimpleAssetFilter final
+{
+public:
+	class FString                                 Key;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         Values;                                            // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerSimpleAssetFilter;
+
+// ScriptStruct LootLockerSDK.LootLockerSimpleAssetFilters
+// 0x0028 (0x0028 - 0x0000)
+struct FLootLockerSimpleAssetFilters final
+{
+public:
+	bool                                          ugc_only;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 asset_ids;                                         // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerSimpleAssetFilter>   asset_filters;                                     // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerSimpleAssetFilters;
+
+// ScriptStruct LootLockerSDK.LootLockerLevelThresholds
+// 0x0010 (0x0010 - 0x0000)
+struct FLootLockerLevelThresholds final
+{
+public:
+	int32                                         Current;                                           // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          current_is_prestige;                               // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Next;                                              // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          next_is_prestige;                                  // 0x000C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerLevelThresholds;
+
+// ScriptStruct LootLockerSDK.LootLockerRemoteSessionPlayerData
+// 0x0088 (0x0088 - 0x0000)
+struct FLootLockerRemoteSessionPlayerData final
+{
+public:
+	class FString                                 player_name;                                       // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         player_id;                                         // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 public_uid;                                        // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 player_ulid;                                       // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          seen_before;                                       // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          check_grant_notifications;                         // 0x0039(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          check_deactivation_notifications;                  // 0x003A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3B[0x1];                                       // 0x003B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         XP;                                                // 0x003C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Level;                                             // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerLevelThresholds             level_thresholds;                                  // 0x0044(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         account_balance;                                   // 0x0054(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 player_identifier;                                 // 0x0058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 player_created_at;                                 // 0x0068(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 wallet_id;                                         // 0x0078(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerRemoteSessionPlayerData;
+
+// ScriptStruct LootLockerSDK.LootLockerBaseAuthRequest
+// 0x0020 (0x0020 - 0x0000)
+struct FLootLockerBaseAuthRequest
+{
+public:
+	class FString                                 game_api_key;                                      // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 game_version;                                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerBaseAuthRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerSteamSessionRequest
+// 0x0010 (0x0030 - 0x0020)
+struct FLootLockerSteamSessionRequest : public FLootLockerBaseAuthRequest
+{
+public:
+	class FString                                 steam_ticket;                                      // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerSteamSessionRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerSteamSessionWithAppIdRequest
+// 0x0010 (0x0040 - 0x0030)
+struct FLootLockerSteamSessionWithAppIdRequest final : public FLootLockerSteamSessionRequest
+{
+public:
+	class FString                                 steam_app_id;                                      // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerSteamSessionWithAppIdRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerSimpleInventoryItem
+// 0x0028 (0x0028 - 0x0000)
+struct FLootLockerSimpleInventoryItem final
+{
+public:
+	int32                                         Asset_id;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         instance_id;                                       // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 acquisition_source;                                // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Acquisition_date;                                  // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerSimpleInventoryItem;
+
+// ScriptStruct LootLockerSDK.LootLockerIndexBasedPagination
+// 0x000C (0x000C - 0x0000)
+struct FLootLockerIndexBasedPagination final
+{
+public:
+	int32                                         Total;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Next_Cursor;                                       // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Previous_Cursor;                                   // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerIndexBasedPagination;
+
+// ScriptStruct LootLockerSDK.LootLockerSimpleInventoryResponse
+// 0x0020 (0x00F0 - 0x00D0)
+struct FLootLockerSimpleInventoryResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerSimpleInventoryItem> Items;                                             // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FLootLockerIndexBasedPagination        Pagination;                                        // 0x00E0(0x000C)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_EC[0x4];                                       // 0x00EC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerSimpleInventoryResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerMetadataEntry
+// 0x0088 (0x0088 - 0x0000)
+struct FLootLockerMetadataEntry final
+{
+public:
+	class FString                                 Key;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerMetadataTypes                      Type;                                              // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FString>                         Tags;                                              // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class FString>                         Access;                                            // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_38[0x50];                                      // 0x0038(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerMetadataEntry;
+
+// ScriptStruct LootLockerSDK.LootLockerMetadataSourceAndEntries
+// 0x0078 (0x0078 - 0x0000)
+struct FLootLockerMetadataSourceAndEntries final
+{
+public:
+	ELootLockerMetadataSources                    Source;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Source_id;                                         // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerMetadataEntry>       Entries;                                           // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_28[0x50];                                      // 0x0028(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerMetadataSourceAndEntries;
+
+// ScriptStruct LootLockerSDK.LootLockerGetMultisourceMetadataResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerGetMultisourceMetadataResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerMetadataSourceAndEntries> MetaData;                                     // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerGetMultisourceMetadataResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerRemoteSessionLeaseData
+// 0x0050 (0x0050 - 0x0000)
+struct FLootLockerRemoteSessionLeaseData final
+{
+public:
+	class FString                                 Code;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Nonce;                                             // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Redirect_url;                                      // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Redirect_url_qr_base64;                            // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Display_url;                                       // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerRemoteSessionLeaseData;
+
+// ScriptStruct LootLockerSDK.LootLockerLeaderboardArchivePlayer
+// 0x0038 (0x0038 - 0x0000)
+struct FLootLockerLeaderboardArchivePlayer final
+{
+public:
+	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 public_uid;                                        // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ID;                                                // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 player_ulid;                                       // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerLeaderboardArchivePlayer;
+
+// ScriptStruct LootLockerSDK.LootLockerLeaderboardArchiveDetails
+// 0x0060 (0x0060 - 0x0000)
+struct FLootLockerLeaderboardArchiveDetails final
+{
+public:
+	struct FLootLockerLeaderboardArchivePlayer    Player;                                            // 0x0000(0x0038)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FString                                 MetaData;                                          // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 member_id;                                         // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         rank;                                              // 0x0058(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         score;                                             // 0x005C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerLeaderboardArchiveDetails;
+
+// ScriptStruct LootLockerSDK.LootLockerLeaderboardArchiveDetailsResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerLeaderboardArchiveDetailsResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerLeaderboardArchiveDetails> Items;                                       // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerLeaderboardArchiveDetailsResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerAuthResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerAuthResponse : public FLootLockerResponse
+{
+public:
+	class FString                                 session_token;                                     // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerAuthResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerAuthenticationResponse
+// 0x0098 (0x0178 - 0x00E0)
+struct FLootLockerAuthenticationResponse : public FLootLockerAuthResponse
+{
+public:
+	class FString                                 player_name;                                       // 0x00E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         player_id;                                         // 0x00F0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_F4[0x4];                                       // 0x00F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 public_uid;                                        // 0x00F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 player_ulid;                                       // 0x0108(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 player_created_at;                                 // 0x0118(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          seen_before;                                       // 0x0128(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          check_grant_notifications;                         // 0x0129(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          check_deactivation_notifications;                  // 0x012A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_12B[0x1];                                      // 0x012B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         XP;                                                // 0x012C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Level;                                             // 0x0130(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerLevelThresholds             level_thresholds;                                  // 0x0134(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         account_balance;                                   // 0x0144(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 player_identifier;                                 // 0x0148(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 wallet_id;                                         // 0x0158(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         Errors;                                            // 0x0168(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerAuthenticationResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerObjects
+// 0x02D0 (0x02D0 - 0x0000)
+struct FLootLockerObjects final
+{
+public:
+	int32                                         instance_id;                                       // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         variation_id;                                      // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerAsset                       Asset;                                             // 0x0008(0x02A8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FString                                 acquisition_source;                                // 0x02B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Reason;                                            // 0x02C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerObjects;
+
+// ScriptStruct LootLockerSDK.LootLockerLeaseRemoteSessionRequest
+// 0x0030 (0x0030 - 0x0000)
+struct FLootLockerLeaseRemoteSessionRequest final
+{
+public:
+	class FString                                 Title_id;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Environment_id;                                    // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 game_version;                                      // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerLeaseRemoteSessionRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerEmailRequest
+// 0x0010 (0x0010 - 0x0000)
+struct FLootLockerEmailRequest final
+{
+public:
+	class FString                                 email;                                             // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerEmailRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerAppleSessionResponse
+// 0x0010 (0x0188 - 0x0178)
+struct FLootLockerAppleSessionResponse final : public FLootLockerAuthenticationResponse
+{
+public:
+	class FString                                 refresh_token;                                     // 0x0178(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerAppleSessionResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerPlayerDataLookupPair
+// 0x0018 (0x0018 - 0x0000)
+struct FLootLockerPlayerDataLookupPair final
+{
+public:
+	ELootLockerPlayerDataLookupIdType             IdType;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ID;                                                // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerPlayerDataLookupPair;
+
+// ScriptStruct LootLockerSDK.LootLockerBalanceResponse
+// 0x0008 (0x00D8 - 0x00D0)
+struct FLootLockerBalanceResponse final : public FLootLockerResponse
+{
+public:
+	float                                         balance;                                           // 0x00D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D4[0x4];                                       // 0x00D4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerBalanceResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerGoogleSessionResponse
+// 0x0010 (0x0188 - 0x0178)
+struct FLootLockerGoogleSessionResponse final : public FLootLockerAuthenticationResponse
+{
+public:
+	class FString                                 refresh_token;                                     // 0x0178(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerGoogleSessionResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerDlcResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerDlcResponse final : public FLootLockerResponse
+{
+public:
+	TArray<class FString>                         dlcs;                                              // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerDlcResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerWhiteLabelVerifySessionRequest
+// 0x0020 (0x0020 - 0x0000)
+struct FLootLockerWhiteLabelVerifySessionRequest final
+{
+public:
+	class FString                                 email;                                             // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Token;                                             // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerWhiteLabelVerifySessionRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerGooglePlayGamesSessionResponse
+// 0x0010 (0x0188 - 0x0178)
+struct FLootLockerGooglePlayGamesSessionResponse final : public FLootLockerAuthenticationResponse
+{
+public:
+	class FString                                 refresh_token;                                     // 0x0178(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerGooglePlayGamesSessionResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerNameResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerNameResponse final : public FLootLockerResponse
+{
+public:
+	class FString                                 Name;                                              // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerNameResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerEpicSessionResponse
+// 0x0010 (0x0188 - 0x0178)
+struct FLootLockerEpicSessionResponse final : public FLootLockerAuthenticationResponse
+{
+public:
+	class FString                                 refresh_token;                                     // 0x0178(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerEpicSessionResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerMultiplePlayersNames
+// 0x0060 (0x0060 - 0x0000)
+struct FLootLockerMultiplePlayersNames final
+{
+public:
+	class FString                                 player_id;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 player_public_uid;                                 // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ulid;                                              // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 last_active_platform;                              // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 platform_player_id;                                // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerMultiplePlayersNames;
+
+// ScriptStruct LootLockerSDK.LootLockerMultiplePlayersNamesResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerMultiplePlayersNamesResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerMultiplePlayersNames> players;                                          // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerMultiplePlayersNamesResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerLoginResponse
+// 0x0080 (0x0160 - 0x00E0)
+struct FLootLockerLoginResponse final : public FLootLockerAuthResponse
+{
+public:
+	int32                                         ID;                                                // 0x00E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E4[0x4];                                       // 0x00E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 player_name;                                       // 0x00E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         game_id;                                           // 0x00F8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_FC[0x4];                                       // 0x00FC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 email;                                             // 0x0100(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 created_at;                                        // 0x0110(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 last_seen;                                         // 0x0120(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 updated_at;                                        // 0x0130(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 deleted_at;                                        // 0x0140(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 validated_at;                                      // 0x0150(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerLoginResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerWhiteLabelVerifySessionResponse
+// 0x0018 (0x00E8 - 0x00D0)
+struct FLootLockerWhiteLabelVerifySessionResponse final : public FLootLockerResponse
+{
+public:
+	int32                                         game_id;                                           // 0x00D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         user_id;                                           // 0x00D4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 email;                                             // 0x00D8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerWhiteLabelVerifySessionResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerPlatformIds
+// 0x0020 (0x0020 - 0x0000)
+struct FLootLockerPlatformIds final
+{
+public:
+	int32                                         steam_id;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 xbox_id;                                           // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         psn_id;                                            // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerPlatformIds;
+
+// ScriptStruct LootLockerSDK.LootLockerMultiplePlayersPlatformIds
+// 0x0060 (0x0060 - 0x0000)
+struct FLootLockerMultiplePlayersPlatformIds final
+{
+public:
+	class FString                                 player_id;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 player_public_uid;                                 // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 last_active_platform;                              // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerPlatformIds                 platform_ids;                                      // 0x0040(0x0020)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerMultiplePlayersPlatformIds;
+
+// ScriptStruct LootLockerSDK.LootLockerWhiteLabelLoginAndSessionResponse
+// 0x02D8 (0x03B8 - 0x00E0)
+struct FLootLockerWhiteLabelLoginAndSessionResponse final : public FLootLockerAuthResponse
+{
+public:
+	struct FLootLockerLoginResponse               LoginResponse;                                     // 0x00E0(0x0160)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLootLockerAuthenticationResponse      StartSessionResponse;                              // 0x0240(0x0178)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerWhiteLabelLoginAndSessionResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerBaseAuthRequest_Old
+// 0x0020 (0x0020 - 0x0000)
+struct FLootLockerBaseAuthRequest_Old
+{
+public:
+	class FString                                 game_key;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 game_version;                                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerBaseAuthRequest_Old;
 
 // ScriptStruct LootLockerSDK.LootLockerAuthenticationRequest
 // 0x0020 (0x0040 - 0x0020)
-struct FLootLockerAuthenticationRequest final : public FLootLockerBaseAuthRequest
+struct FLootLockerAuthenticationRequest final : public FLootLockerBaseAuthRequest_Old
 {
 public:
 	class FString                                 Platform;                                          // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 player_identifier;                                 // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLootLockerAuthenticationRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerAppleGameCenterSessionResponse
+// 0x0010 (0x0188 - 0x0178)
+struct FLootLockerAppleGameCenterSessionResponse final : public FLootLockerAuthenticationResponse
+{
+public:
+	class FString                                 refresh_token;                                     // 0x0178(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerAppleGameCenterSessionResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerConnectEpicProviderToAccountRequest
+// 0x0010 (0x0010 - 0x0000)
+struct FLootLockerConnectEpicProviderToAccountRequest final
+{
+public:
+	class FString                                 Token;                                             // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerConnectEpicProviderToAccountRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerMetaSessionResponse
+// 0x0010 (0x0188 - 0x0178)
+struct FLootLockerMetaSessionResponse final : public FLootLockerAuthenticationResponse
+{
+public:
+	class FString                                 refresh_token;                                     // 0x0178(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerMetaSessionResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerMapCamera
+// 0x0008 (0x0008 - 0x0000)
+struct FLootLockerMapCamera final
+{
+public:
+	float                                         position;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Rotation;                                          // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerMapCamera;
+
+// ScriptStruct LootLockerSDK.LootLockerMapSpawnPoint
+// 0x0028 (0x0028 - 0x0000)
+struct FLootLockerMapSpawnPoint final
+{
+public:
+	int32                                         Asset_id;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         position;                                          // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Rotation;                                          // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FLootLockerMapCamera>           cameras;                                           // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          player_access;                                     // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerMapSpawnPoint;
+
+// ScriptStruct LootLockerSDK.LootLockerMap
+// 0x0020 (0x0020 - 0x0000)
+struct FLootLockerMap final
+{
+public:
+	int32                                         map_id;                                            // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Asset_id;                                          // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerMapSpawnPoint>       spawn_points;                                      // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          player_access;                                     // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerMap;
+
+// ScriptStruct LootLockerSDK.LootLockerGetMapsResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerGetMapsResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerMap>                 maps;                                              // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerGetMapsResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerPlayerFile
+// 0x0078 (0x0078 - 0x0000)
+struct FLootLockerPlayerFile final
+{
+public:
+	int32                                         ID;                                                // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 revision_id;                                       // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Size;                                              // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 purpose;                                           // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 URL;                                               // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 url_expires_at;                                    // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 created_at;                                        // 0x0060(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsPublic;                                          // 0x0070(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_71[0x7];                                       // 0x0071(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerPlayerFile;
+
+// ScriptStruct LootLockerSDK.LootLockerDiscordSessionResponse
+// 0x0010 (0x0188 - 0x0178)
+struct FLootLockerDiscordSessionResponse final : public FLootLockerAuthenticationResponse
+{
+public:
+	class FString                                 refresh_token;                                     // 0x0178(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerDiscordSessionResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerAccountConnectedStruct
+// 0x0018 (0x0018 - 0x0000)
+struct FLootLockerAccountConnectedStruct final
+{
+public:
+	ELootLockerAccountProvider                    Provider;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Provider_name;                                     // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerAccountConnectedStruct;
+
+// ScriptStruct LootLockerSDK.LootLockerAccountConnectedResponse
+// 0x0018 (0x00E8 - 0x00D0)
+struct FLootLockerAccountConnectedResponse final : public FLootLockerResponse
+{
+public:
+	struct FLootLockerAccountConnectedStruct      Connected_account;                                 // 0x00D0(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerAccountConnectedResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerGenericProgressionResponse
+// 0x0060 (0x0130 - 0x00D0)
+struct FLootLockerGenericProgressionResponse : public FLootLockerResponse
+{
+public:
+	class FString                                 ID;                                                // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Progression_Key;                                   // 0x00E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Progression_Name;                                  // 0x00F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Progression_Id;                                    // 0x0100(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Step;                                              // 0x0110(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Points;                                            // 0x0114(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Previous_Threshold;                                // 0x0118(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Next_Threshold;                                    // 0x011C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Last_Level_Up;                                     // 0x0120(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerGenericProgressionResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerConnectedAccountProvider
+// 0x0018 (0x0018 - 0x0000)
+struct FLootLockerConnectedAccountProvider final
+{
+public:
+	ELootLockerAccountProvider                    Provider;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Provider_name;                                     // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerConnectedAccountProvider;
+
+// ScriptStruct LootLockerSDK.LootLockerListConnectedAccountsResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerListConnectedAccountsResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerConnectedAccountProvider> ConnectedAccounts;                            // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerListConnectedAccountsResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerLeaseRemoteSessionResponse
+// 0x0058 (0x0128 - 0x00D0)
+struct FLootLockerLeaseRemoteSessionResponse final : public FLootLockerResponse
+{
+public:
+	class FString                                 Code;                                              // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Nonce;                                             // 0x00E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Redirect_url;                                      // 0x00F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Redirect_url_qr_base64;                            // 0x0100(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Display_url;                                       // 0x0110(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerRemoteSessionLeaseStatus           Status;                                            // 0x0120(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerRemoteSessionLeaseIntent           Intent;                                            // 0x0121(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_122[0x6];                                      // 0x0122(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerLeaseRemoteSessionResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerConnectPlaystationProviderToAccountRequest
+// 0x0020 (0x0020 - 0x0000)
+struct FLootLockerConnectPlaystationProviderToAccountRequest final
+{
+public:
+	class FString                                 Environment;                                       // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Code;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerConnectPlaystationProviderToAccountRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerRemoteSessionStatusPollingResponse
+// 0x0008 (0x00D8 - 0x00D0)
+struct FLootLockerRemoteSessionStatusPollingResponse final : public FLootLockerResponse
+{
+public:
+	ELootLockerRemoteSessionLeaseStatus           Lease_status;                                      // 0x00D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D1[0x7];                                       // 0x00D1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerRemoteSessionStatusPollingResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerIncrementScoreRequest
+// 0x0018 (0x0018 - 0x0000)
+struct FLootLockerIncrementScoreRequest final
+{
+public:
+	class FString                                 member_id;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Amount;                                            // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerIncrementScoreRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerFriend
+// 0x0040 (0x0040 - 0x0000)
+struct FLootLockerFriend
+{
+public:
+	class FString                                 player_id;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 player_name;                                       // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 public_uid;                                        // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 created_at;                                        // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerFriend;
+
+// ScriptStruct LootLockerSDK.LootLockerExtendedPaginationError
+// 0x0020 (0x0020 - 0x0000)
+struct FLootLockerExtendedPaginationError final
+{
+public:
+	class FString                                 Field;                                             // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Message;                                           // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerExtendedPaginationError;
+
+// ScriptStruct LootLockerSDK.LootLockerExtendedIndexBasedPagination
+// 0x0048 (0x0048 - 0x0000)
+struct FLootLockerExtendedIndexBasedPagination final
+{
+public:
+	int32                                         Total;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Offset;                                            // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Per_page;                                          // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Last_page;                                         // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Current_page;                                      // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Next_page;                                         // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Prev_page;                                         // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerExtendedPaginationError> Errors;                                        // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerExtendedIndexBasedPagination;
+
+// ScriptStruct LootLockerSDK.LootLockerListIncomingFriendRequestsResponse
+// 0x0058 (0x0128 - 0x00D0)
+struct FLootLockerListIncomingFriendRequestsResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerFriend>              Incoming;                                          // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FLootLockerExtendedIndexBasedPagination Pagination;                                       // 0x00E0(0x0048)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerListIncomingFriendRequestsResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerStartRemoteSessionResponse
+// 0x0020 (0x0198 - 0x0178)
+struct FLootLockerStartRemoteSessionResponse final : public FLootLockerAuthenticationResponse
+{
+public:
+	ELootLockerRemoteSessionLeaseStatus           Lease_status;                                      // 0x0178(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_179[0x7];                                      // 0x0179(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 refresh_token;                                     // 0x0180(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerRemoteSessionLeaseIntent           Intent;                                            // 0x0190(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_191[0x7];                                      // 0x0191(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerStartRemoteSessionResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerRefreshRemoteSessionResponse
+// 0x0010 (0x0188 - 0x0178)
+struct FLootLockerRefreshRemoteSessionResponse final : public FLootLockerAuthenticationResponse
+{
+public:
+	class FString                                 refresh_token;                                     // 0x0178(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerRefreshRemoteSessionResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerReadNotificationsRequest
+// 0x0010 (0x0010 - 0x0000)
+struct FLootLockerReadNotificationsRequest final
+{
+public:
+	TArray<class FString>                         Notifications;                                     // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerReadNotificationsRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerFriendActionResponse
+// 0x0000 (0x00D0 - 0x00D0)
+struct FLootLockerFriendActionResponse final : public FLootLockerResponse
+{
+};
+DUMPER7_ASSERTS_FLootLockerFriendActionResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerPlayerInfo
+// 0x0058 (0x0058 - 0x0000)
+struct FLootLockerPlayerInfo final
+{
+public:
+	class FString                                 created_at;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 last_seen;                                         // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 public_uid;                                        // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Legacy_id;                                         // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ID;                                                // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerPlayerInfo;
+
+// ScriptStruct LootLockerSDK.LootLockerGetCurrentPlayerInfoResponse
+// 0x0058 (0x0128 - 0x00D0)
+struct FLootLockerGetCurrentPlayerInfoResponse final : public FLootLockerResponse
+{
+public:
+	struct FLootLockerPlayerInfo                  Info;                                              // 0x00D0(0x0058)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerGetCurrentPlayerInfoResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerBroadcastGame
+// 0x0018 (0x0018 - 0x0000)
+struct FLootLockerBroadcastGame final
+{
+public:
+	int32                                         ID;                                                // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Name;                                              // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerBroadcastGame;
+
+// ScriptStruct LootLockerSDK.LootLockerBroadcastPublicationSetting
+// 0x0028 (0x0028 - 0x0000)
+struct FLootLockerBroadcastPublicationSetting final
+{
+public:
+	int32                                         ID;                                                // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FDateTime                              Start;                                             // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FDateTime                              End;                                               // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 tz;                                                // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerBroadcastPublicationSetting;
+
+// ScriptStruct LootLockerSDK.LootLockerInternalBroadcastLocalizationEntry
+// 0x0020 (0x0020 - 0x0000)
+struct FLootLockerInternalBroadcastLocalizationEntry final
+{
+public:
+	class FString                                 Key;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Value;                                             // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerInternalBroadcastLocalizationEntry;
+
+// ScriptStruct LootLockerSDK.LootLockerInternalBroadcastLanguage
+// 0x0020 (0x0020 - 0x0000)
+struct FLootLockerInternalBroadcastLanguage final
+{
+public:
+	class FString                                 language_code;                                     // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerInternalBroadcastLocalizationEntry> localizations;                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerInternalBroadcastLanguage;
+
+// ScriptStruct LootLockerSDK.LootLockerInternalBroadcast
+// 0x0060 (0x0060 - 0x0000)
+struct FLootLockerInternalBroadcast final
+{
+public:
+	class FString                                 ID;                                                // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 game_name;                                         // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerBroadcastGame>       games;                                             // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerBroadcastPublicationSetting> publication_settings;                      // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerInternalBroadcastLanguage> languages;                                   // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerInternalBroadcast;
+
+// ScriptStruct LootLockerSDK.LootLockerListPlayerInfoResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerListPlayerInfoResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerPlayerInfo>          Info;                                              // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerListPlayerInfoResponse;
 
 // ScriptStruct LootLockerSDK.LootLockerRental
 // 0x0038 (0x0038 - 0x0000)
@@ -1920,275 +1710,873 @@ public:
 DUMPER7_ASSERTS_FLootLockerInventory;
 
 // ScriptStruct LootLockerSDK.LootLockerInventoryResponse
-// 0x0010 (0x0080 - 0x0070)
+// 0x0010 (0x00E0 - 0x00D0)
 struct FLootLockerInventoryResponse final : public FLootLockerResponse
 {
 public:
-	TArray<struct FLootLockerInventory>           inventory;                                         // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerInventory>           inventory;                                         // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLootLockerInventoryResponse;
 
-// ScriptStruct LootLockerSDK.LootLockerPlayerProgression
+// ScriptStruct LootLockerSDK.LootLockerMultiplePlayerNameRequest
+// 0x0020 (0x0020 - 0x0000)
+struct FLootLockerMultiplePlayerNameRequest final
+{
+public:
+	class FString                                 Platform;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 player_id;                                         // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerMultiplePlayerNameRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerMultiplePlayerNamesRequest
+// 0x0010 (0x0010 - 0x0000)
+struct FLootLockerMultiplePlayerNamesRequest final
+{
+public:
+	TArray<struct FLootLockerMultiplePlayerNameRequest> player_ids;                                  // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerMultiplePlayerNamesRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerNotificationRewardAssetDetails
+// 0x0060 (0x0060 - 0x0000)
+struct FLootLockerNotificationRewardAssetDetails final
+{
+public:
+	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 thumbnail;                                         // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 variation_name;                                    // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 rental_option_name;                                // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         variation_id;                                      // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         rental_option_id;                                  // 0x0044(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Legacy_id;                                         // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ID;                                                // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerNotificationRewardAssetDetails;
+
+// ScriptStruct LootLockerSDK.LootLockerCollectableReward
+// 0x02B0 (0x02B0 - 0x0000)
+struct FLootLockerCollectableReward final
+{
+public:
+	struct FLootLockerAsset                       Asset;                                             // 0x0000(0x02A8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	int32                                         Asset_Variation_Id;                                // 0x02A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Asset_Rental_Option_Id;                            // 0x02AC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerCollectableReward;
+
+// ScriptStruct LootLockerSDK.LootLockerCollectableItem
+// 0x0030 (0x0030 - 0x0000)
+struct FLootLockerCollectableItem final
+{
+public:
+	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          collected;                                         // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FLootLockerCollectableReward>   Rewards;                                           // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          grants_all_rewards;                                // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          just_collected;                                    // 0x0029(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2A[0x6];                                       // 0x002A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerCollectableItem;
+
+// ScriptStruct LootLockerSDK.LootLockerCollectableItemGroup
+// 0x0040 (0x0040 - 0x0000)
+struct FLootLockerCollectableItemGroup final
+{
+public:
+	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         completion_percentage;                             // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FLootLockerCollectableItem>     Items;                                             // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerCollectableReward>   Rewards;                                           // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          grants_all_rewards;                                // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerCollectableItemGroup;
+
+// ScriptStruct LootLockerSDK.LootLockerCollectable
+// 0x0040 (0x0040 - 0x0000)
+struct FLootLockerCollectable final
+{
+public:
+	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerCollectableItemGroup> Groups;                                           // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         completion_percentage;                             // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FLootLockerCollectableReward>   Rewards;                                           // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          grants_all_rewards;                                // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerCollectable;
+
+// ScriptStruct LootLockerSDK.LootLockerCollectablesResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerCollectablesResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerCollectable>         collectables;                                      // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerCollectablesResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerCatalog
 // 0x0050 (0x0050 - 0x0000)
-struct FLootLockerPlayerProgression final
+struct FLootLockerCatalog final
 {
 public:
-	class FString                                 ID;                                                // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Progression_Key;                                   // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Progression_Name;                                  // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Step;                                              // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Points;                                            // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Previous_Threshold;                                // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Next_Threshold;                                    // 0x003C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Last_Level_Up;                                     // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 created_at;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Key;                                               // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ID;                                                // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 deleted_at;                                        // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerPlayerProgression;
+DUMPER7_ASSERTS_FLootLockerCatalog;
 
-// ScriptStruct LootLockerSDK.LootLockerXp
-// 0x0008 (0x0008 - 0x0000)
-struct FLootLockerXp final
+// ScriptStruct LootLockerSDK.LootLockerCurrencyDetails
+// 0x0050 (0x0050 - 0x0000)
+struct FLootLockerCurrencyDetails final
 {
 public:
-	int32                                         Previous;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Current;                                           // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Code;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Amount;                                            // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ID;                                                // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Catalog_listing_id;                                // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerXp;
+DUMPER7_ASSERTS_FLootLockerCurrencyDetails;
 
-// ScriptStruct LootLockerSDK.LootLockerPlayerLevel
-// 0x0008 (0x0008 - 0x0000)
-struct FLootLockerPlayerLevel final
+// ScriptStruct LootLockerSDK.LootLockerCatalogEntryPrice
+// 0x0058 (0x0058 - 0x0000)
+struct FLootLockerCatalogEntryPrice final
 {
 public:
-	int32                                         Level;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         xp_threshold;                                      // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Amount;                                            // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Display_amount;                                    // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Currency_Code;                                     // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Currency_Name;                                     // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Price_id;                                          // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 currency_id;                                       // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerPlayerLevel;
+DUMPER7_ASSERTS_FLootLockerCatalogEntryPrice;
 
-// ScriptStruct LootLockerSDK.LootLockerSubmitXpResponse
-// 0x0020 (0x0090 - 0x0070)
-struct FLootLockerSubmitXpResponse : public FLootLockerResponse
+// ScriptStruct LootLockerSDK.LootLockerCatalogAppleAppStoreListing
+// 0x0010 (0x0010 - 0x0000)
+struct FLootLockerCatalogAppleAppStoreListing final
 {
 public:
-	struct FLootLockerXp                          XP;                                                // 0x0070(0x0008)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerPlayerLevel>         Levels;                                            // 0x0078(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          check_grant_notifications;                         // 0x0088(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_89[0x7];                                       // 0x0089(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 product_id;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerSubmitXpResponse;
+DUMPER7_ASSERTS_FLootLockerCatalogAppleAppStoreListing;
 
-// ScriptStruct LootLockerSDK.LootLockerObjects
-// 0x02D0 (0x02D0 - 0x0000)
-struct FLootLockerObjects final
+// ScriptStruct LootLockerSDK.LootLockerCatalogGooglePlayStoreListing
+// 0x0010 (0x0010 - 0x0000)
+struct FLootLockerCatalogGooglePlayStoreListing final
 {
 public:
-	int32                                         instance_id;                                       // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         variation_id;                                      // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLootLockerAsset                       Asset;                                             // 0x0008(0x02A8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FString                                 acquisition_source;                                // 0x02B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Reason;                                            // 0x02C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 product_id;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerObjects;
+DUMPER7_ASSERTS_FLootLockerCatalogGooglePlayStoreListing;
 
-// ScriptStruct LootLockerSDK.LootLockerPlayerAssetNotificationResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerPlayerAssetNotificationResponse final : public FLootLockerResponse
+// ScriptStruct LootLockerSDK.LootLockerCatalogSteamStoreListing
+// 0x0020 (0x0020 - 0x0000)
+struct FLootLockerCatalogSteamStoreListing final
 {
 public:
-	TArray<struct FLootLockerObjects>             objects;                                           // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FString                                 Description;                                       // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerCatalogSteamStoreListingPrice> Prices;                                  // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerPlayerAssetNotificationResponse;
+DUMPER7_ASSERTS_FLootLockerCatalogSteamStoreListing;
 
-// ScriptStruct LootLockerSDK.LootLockerCatalogItemAndQuantityPair
+// ScriptStruct LootLockerSDK.LootLockerCatalogStripeStoreListing
 // 0x0018 (0x0018 - 0x0000)
-struct FLootLockerCatalogItemAndQuantityPair final
+struct FLootLockerCatalogStripeStoreListing final
+{
+public:
+	class FString                                 currency;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Amount;                                            // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerCatalogStripeStoreListing;
+
+// ScriptStruct LootLockerSDK.LootLockerCatalogEpicGamesStoreListing
+// 0x0010 (0x0010 - 0x0000)
+struct FLootLockerCatalogEpicGamesStoreListing final
+{
+public:
+	class FString                                 Audience_item_id;                                  // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerCatalogEpicGamesStoreListing;
+
+// ScriptStruct LootLockerSDK.LootLockerCatalogPlaystationStoreListing
+// 0x0010 (0x0010 - 0x0000)
+struct FLootLockerCatalogPlaystationStoreListing final
+{
+public:
+	class FString                                 Entitlement_label;                                 // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerCatalogPlaystationStoreListing;
+
+// ScriptStruct LootLockerSDK.LootLockerCatalogEntryListings
+// 0x0078 (0x0078 - 0x0000)
+struct FLootLockerCatalogEntryListings final
+{
+public:
+	struct FLootLockerCatalogAppleAppStoreListing apple_app_store;                                   // 0x0000(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLootLockerCatalogGooglePlayStoreListing Google_play_store;                               // 0x0010(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLootLockerCatalogSteamStoreListing    Steam_store;                                       // 0x0020(0x0020)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLootLockerCatalogStripeStoreListing   Stripe_store;                                      // 0x0040(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLootLockerCatalogEpicGamesStoreListing Epic_games_store;                                 // 0x0058(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLootLockerCatalogPlaystationStoreListing Playstation_store;                              // 0x0068(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerCatalogEntryListings;
+
+// ScriptStruct LootLockerSDK.LootLockerCatalogEntry
+// 0x00D8 (0x00D8 - 0x0000)
+struct FLootLockerCatalogEntry
+{
+public:
+	class FString                                 created_at;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerCatalogEntryEntityKind             Entity_kind;                                       // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLootLockerCatalogEntryListings        Listings;                                          // 0x0018(0x0078)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FString                                 Entity_name;                                       // 0x0090(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerCatalogEntryPrice>   Prices;                                            // 0x00A0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FString                                 Entity_id;                                         // 0x00B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Catalog_listing_id;                                // 0x00C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          purchasable;                                       // 0x00D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D1[0x7];                                       // 0x00D1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerCatalogEntry;
+
+// ScriptStruct LootLockerSDK.LootLockerItemDetailsKey
+// 0x0020 (0x0020 - 0x0000)
+struct FLootLockerItemDetailsKey final
 {
 public:
 	class FString                                 Catalog_listing_id;                                // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         quantity;                                          // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 Item_id;                                           // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerCatalogItemAndQuantityPair;
+DUMPER7_ASSERTS_FLootLockerItemDetailsKey;
 
-// ScriptStruct LootLockerSDK.LootLockerPurchaseCatalogItemRequest
+// ScriptStruct LootLockerSDK.LootLockerAssetItemDetailsKey
+// 0x0040 (0x0040 - 0x0000)
+struct FLootLockerAssetItemDetailsKey final
+{
+public:
+	class FString                                 Catalog_listing_id;                                // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Item_id;                                           // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Asset_Variation_Id;                                // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 rental_option_id;                                  // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerAssetItemDetailsKey;
+
+// ScriptStruct LootLockerSDK.LootLockerAssetDetails
+// 0x0068 (0x0068 - 0x0000)
+struct FLootLockerAssetDetails final
+{
+public:
+	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 variation_id;                                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 rental_option_id;                                  // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Legacy_id;                                         // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ID;                                                // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 thumbnail;                                         // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Catalog_listing_id;                                // 0x0058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerAssetDetails;
+
+// ScriptStruct LootLockerSDK.LootLockerProgressionPointDetails
+// 0x0048 (0x0048 - 0x0000)
+struct FLootLockerProgressionPointDetails final
+{
+public:
+	class FString                                 Key;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Amount;                                            // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ID;                                                // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Catalog_listing_id;                                // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerProgressionPointDetails;
+
+// ScriptStruct LootLockerSDK.LootLockerProgressionResetDetails
+// 0x0040 (0x0040 - 0x0000)
+struct FLootLockerProgressionResetDetails final
+{
+public:
+	class FString                                 Key;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ID;                                                // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Catalog_listing_id;                                // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerProgressionResetDetails;
+
+// ScriptStruct LootLockerSDK.LootLockerCatalogGroupMetadata
 // 0x0020 (0x0020 - 0x0000)
-struct FLootLockerPurchaseCatalogItemRequest final
+struct FLootLockerCatalogGroupMetadata final
 {
 public:
-	class FString                                 Wallet_id;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerCatalogItemAndQuantityPair> Items;                                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FString                                 Key;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Value;                                             // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerPurchaseCatalogItemRequest;
+DUMPER7_ASSERTS_FLootLockerCatalogGroupMetadata;
 
-// ScriptStruct LootLockerSDK.LootLockerBeginSteamPurchaseRedemptionResponse
-// 0x0018 (0x0088 - 0x0070)
-struct FLootLockerBeginSteamPurchaseRedemptionResponse final : public FLootLockerResponse
+// ScriptStruct LootLockerSDK.LootLockerCatalogGroupAssociation
+// 0x0028 (0x0028 - 0x0000)
+struct FLootLockerCatalogGroupAssociation final
 {
 public:
-	bool                                          isSuccess;                                         // 0x0070(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_71[0x7];                                       // 0x0071(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 entitlement_id;                                    // 0x0078(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerCatalogEntryEntityKind             kind;                                              // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ID;                                                // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Catalog_listing_id;                                // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerBeginSteamPurchaseRedemptionResponse;
+DUMPER7_ASSERTS_FLootLockerCatalogGroupAssociation;
 
-// ScriptStruct LootLockerSDK.LootLockerBalanceResponse
-// 0x0008 (0x0078 - 0x0070)
-struct FLootLockerBalanceResponse final : public FLootLockerResponse
+// ScriptStruct LootLockerSDK.LootLockerGroupDetails
+// 0x0060 (0x0060 - 0x0000)
+struct FLootLockerGroupDetails
 {
 public:
-	float                                         balance;                                           // 0x0070(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_74[0x4];                                       // 0x0074(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Description;                                       // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerCatalogGroupMetadata> MetaData;                                         // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FString                                 ID;                                                // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Catalog_listing_id;                                // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerCatalogGroupAssociation> associations;                                  // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerBalanceResponse;
+DUMPER7_ASSERTS_FLootLockerGroupDetails;
+
+// ScriptStruct LootLockerSDK.LootLockerListCatalogPricesV2Response
+// 0x0288 (0x0358 - 0x00D0)
+struct FLootLockerListCatalogPricesV2Response final : public FLootLockerResponse
+{
+public:
+	struct FLootLockerCatalog                     Catalog;                                           // 0x00D0(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerCatalogEntry>        Entries;                                           // 0x0120(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TMap<struct FLootLockerItemDetailsKey, struct FLootLockerAssetDetails> Asset_Details;            // 0x0130(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<struct FLootLockerAssetItemDetailsKey, struct FLootLockerAssetDetails> Optional_Asset_Detail_Variants; // 0x0180(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<struct FLootLockerItemDetailsKey, struct FLootLockerProgressionPointDetails> Progression_Point_Details; // 0x01D0(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<struct FLootLockerItemDetailsKey, struct FLootLockerProgressionResetDetails> Progression_Reset_Details; // 0x0220(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<struct FLootLockerItemDetailsKey, struct FLootLockerCurrencyDetails> Currency_Details;      // 0x0270(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<struct FLootLockerItemDetailsKey, struct FLootLockerGroupDetails> Group_Details;            // 0x02C0(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLootLockerExtendedIndexBasedPagination Pagination;                                       // 0x0310(0x0048)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerListCatalogPricesV2Response;
+
+// ScriptStruct LootLockerSDK.LootLockerNotificationRewardCurrencyDetails
+// 0x0040 (0x0040 - 0x0000)
+struct FLootLockerNotificationRewardCurrencyDetails final
+{
+public:
+	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Code;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Amount;                                            // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ID;                                                // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerNotificationRewardCurrencyDetails;
+
+// ScriptStruct LootLockerSDK.LootLockerNotificationRewardCurrency
+// 0x0090 (0x0090 - 0x0000)
+struct FLootLockerNotificationRewardCurrency final
+{
+public:
+	class FString                                 created_at;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 updated_at;                                        // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Amount;                                            // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerNotificationRewardCurrencyDetails details;                                     // 0x0030(0x0040)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FString                                 reward_id;                                         // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 currency_id;                                       // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerNotificationRewardCurrency;
+
+// ScriptStruct LootLockerSDK.LootLockerNotificationRewardAsset
+// 0x00B0 (0x00B0 - 0x0000)
+struct FLootLockerNotificationRewardAsset final
+{
+public:
+	class FString                                 created_at;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 updated_at;                                        // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerNotificationRewardAssetDetails details;                                        // 0x0020(0x0060)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	int32                                         Asset_Variation_Id;                                // 0x0080(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Asset_Rental_Option_Id;                            // 0x0084(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Asset_id;                                          // 0x0088(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8C[0x4];                                       // 0x008C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 reward_id;                                         // 0x0090(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 asset_ulid;                                        // 0x00A0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerNotificationRewardAsset;
+
+// ScriptStruct LootLockerSDK.LootLockerNotificationRewardProgressionResetDetails
+// 0x0030 (0x0030 - 0x0000)
+struct FLootLockerNotificationRewardProgressionResetDetails final
+{
+public:
+	class FString                                 Key;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ID;                                                // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerNotificationRewardProgressionResetDetails;
+
+// ScriptStruct LootLockerSDK.LootLockerNotificationRewardProgressionReset
+// 0x0070 (0x0070 - 0x0000)
+struct FLootLockerNotificationRewardProgressionReset final
+{
+public:
+	class FString                                 created_at;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 updated_at;                                        // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerNotificationRewardProgressionResetDetails details;                             // 0x0020(0x0030)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FString                                 Progression_Id;                                    // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 reward_id;                                         // 0x0060(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerNotificationRewardProgressionReset;
+
+// ScriptStruct LootLockerSDK.LootLockerNotificationRewardProgressionDetails
+// 0x0038 (0x0038 - 0x0000)
+struct FLootLockerNotificationRewardProgressionDetails final
+{
+public:
+	class FString                                 Key;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Amount;                                            // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ID;                                                // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerNotificationRewardProgressionDetails;
+
+// ScriptStruct LootLockerSDK.LootLockerNotificationRewardProgression
+// 0x0080 (0x0080 - 0x0000)
+struct FLootLockerNotificationRewardProgression final
+{
+public:
+	class FString                                 created_at;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 updated_at;                                        // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerNotificationRewardProgressionDetails details;                                  // 0x0020(0x0038)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	int32                                         Amount;                                            // 0x0058(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Progression_Id;                                    // 0x0060(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 reward_id;                                         // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerNotificationRewardProgression;
+
+// ScriptStruct LootLockerSDK.LootLockerNotificationGroupRewardAssociations
+// 0x0238 (0x0238 - 0x0000)
+struct FLootLockerNotificationGroupRewardAssociations final
+{
+public:
+	ELootLockerNotificationContentRewardKind      kind;                                              // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLootLockerNotificationRewardCurrency  currency;                                          // 0x0008(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLootLockerNotificationRewardAsset     Asset;                                             // 0x0098(0x00B0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLootLockerNotificationRewardProgressionReset progression_reset;                          // 0x0148(0x0070)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLootLockerNotificationRewardProgression progression_points;                              // 0x01B8(0x0080)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerNotificationGroupRewardAssociations;
+
+// ScriptStruct LootLockerSDK.InternalLootLockerListCatalogPricesV2Response
+// 0x00F8 (0x01C8 - 0x00D0)
+struct FInternalLootLockerListCatalogPricesV2Response final : public FLootLockerResponse
+{
+public:
+	struct FLootLockerCatalog                     Catalog;                                           // 0x00D0(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerCatalogEntry>        Entries;                                           // 0x0120(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerAssetDetails>        Assets_Details;                                    // 0x0130(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerProgressionPointDetails> Progression_Points_Details;                    // 0x0140(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerProgressionResetDetails> Progression_Resets_Details;                    // 0x0150(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerCurrencyDetails>     Currency_Details;                                  // 0x0160(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerGroupDetails>        Group_Details;                                     // 0x0170(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FLootLockerExtendedIndexBasedPagination Pagination;                                       // 0x0180(0x0048)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FInternalLootLockerListCatalogPricesV2Response;
 
 // ScriptStruct LootLockerSDK.LootLockerGoogleSessionRequest
 // 0x0010 (0x0030 - 0x0020)
-struct FLootLockerGoogleSessionRequest : public FLootLockerBaseAuthRequest
+struct FLootLockerGoogleSessionRequest : public FLootLockerBaseAuthRequest_Old
 {
 public:
 	class FString                                 id_token;                                          // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLootLockerGoogleSessionRequest;
 
-// ScriptStruct LootLockerSDK.LootLockerDlcResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerDlcResponse final : public FLootLockerResponse
+// ScriptStruct LootLockerSDK.LootLockerPlayerAssetNotificationResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerPlayerAssetNotificationResponse final : public FLootLockerResponse
 {
 public:
-	TArray<class FString>                         dlcs;                                              // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerObjects>             objects;                                           // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerDlcResponse;
+DUMPER7_ASSERTS_FLootLockerPlayerAssetNotificationResponse;
 
-// ScriptStruct LootLockerSDK.LootLockerNameResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerNameResponse final : public FLootLockerResponse
+// ScriptStruct LootLockerSDK.LootLockerEmptyRequest
+// 0x0001 (0x0001 - 0x0000)
+struct FLootLockerEmptyRequest final
 {
 public:
-	class FString                                 Name;                                              // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FLootLockerNameResponse;
+DUMPER7_ASSERTS_FLootLockerEmptyRequest;
 
-// ScriptStruct LootLockerSDK.LootLockerCharacterProgressionWithRewardsResponse
-// 0x0000 (0x00D0 - 0x00D0)
-struct FLootLockerCharacterProgressionWithRewardsResponse final : public FLootLockerGenericProgressionWithRewardsResponse
-{
-};
-DUMPER7_ASSERTS_FLootLockerCharacterProgressionWithRewardsResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerPlayerXpInfo
-// 0x0018 (0x0018 - 0x0000)
-struct FLootLockerPlayerXpInfo final
+// ScriptStruct LootLockerSDK.LootLockerBlockedPlayer
+// 0x0010 (0x0050 - 0x0040)
+struct FLootLockerBlockedPlayer final : public FLootLockerFriend
 {
 public:
-	class FString                                 ID;                                                // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         XP;                                                // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Level;                                             // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Blocked_at;                                        // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerPlayerXpInfo;
+DUMPER7_ASSERTS_FLootLockerBlockedPlayer;
 
-// ScriptStruct LootLockerSDK.LootLockerMultiplePlayerXpResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerMultiplePlayerXpResponse final : public FLootLockerResponse
+// ScriptStruct LootLockerSDK.LootLockerListBlockedPlayersResponse
+// 0x0058 (0x0128 - 0x00D0)
+struct FLootLockerListBlockedPlayersResponse final : public FLootLockerResponse
 {
 public:
-	TArray<struct FLootLockerPlayerXpInfo>        players;                                           // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerBlockedPlayer>       Blocked;                                           // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FLootLockerExtendedIndexBasedPagination Pagination;                                       // 0x00E0(0x0048)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerMultiplePlayerXpResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerMultiplePlayersNames
-// 0x0060 (0x0060 - 0x0000)
-struct FLootLockerMultiplePlayersNames final
-{
-public:
-	class FString                                 player_id;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 player_public_uid;                                 // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 player_ulid;                                       // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Name;                                              // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 last_active_platform;                              // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 platform_player_id;                                // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerMultiplePlayersNames;
-
-// ScriptStruct LootLockerSDK.LootLockerMultiplePlayersNamesResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerMultiplePlayersNamesResponse final : public FLootLockerResponse
-{
-public:
-	TArray<struct FLootLockerMultiplePlayersNames> players;                                          // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerMultiplePlayersNamesResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerProduct
-// 0x02C8 (0x02C8 - 0x0000)
-struct FLootLockerProduct final
-{
-public:
-	int32                                         instance_id;                                       // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         variation_id;                                      // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         rental_option_id;                                  // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 acquistion_source;                                 // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_20[0x2A8];                                     // 0x0020(0x02A8)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FLootLockerProduct;
-
-// ScriptStruct LootLockerSDK.LootLockerPlatformIds
-// 0x0020 (0x0020 - 0x0000)
-struct FLootLockerPlatformIds final
-{
-public:
-	int32                                         steam_id;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 xbox_id;                                           // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         psn_id;                                            // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FLootLockerPlatformIds;
-
-// ScriptStruct LootLockerSDK.LootLockerMultiplePlayersPlatformIds
-// 0x0060 (0x0060 - 0x0000)
-struct FLootLockerMultiplePlayersPlatformIds final
-{
-public:
-	class FString                                 player_id;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 player_public_uid;                                 // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Name;                                              // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 last_active_platform;                              // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLootLockerPlatformIds                 platform_ids;                                      // 0x0040(0x0020)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerMultiplePlayersPlatformIds;
+DUMPER7_ASSERTS_FLootLockerListBlockedPlayersResponse;
 
 // ScriptStruct LootLockerSDK.LootLockerMultiplePlayersPlatformIdsResponse
-// 0x0010 (0x0080 - 0x0070)
+// 0x0010 (0x00E0 - 0x00D0)
 struct FLootLockerMultiplePlayersPlatformIdsResponse final : public FLootLockerResponse
 {
 public:
-	TArray<struct FLootLockerMultiplePlayersPlatformIds> players;                                    // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerMultiplePlayersPlatformIds> players;                                    // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLootLockerMultiplePlayersPlatformIdsResponse;
 
-// ScriptStruct LootLockerSDK.LootLockerCreateHeroWithVariationRequest
-// 0x0020 (0x0020 - 0x0000)
-struct FLootLockerCreateHeroWithVariationRequest final
+// ScriptStruct LootLockerSDK.LootLockerGooglePlayGamesSessionRequest
+// 0x0010 (0x0030 - 0x0020)
+struct FLootLockerGooglePlayGamesSessionRequest final : public FLootLockerBaseAuthRequest
 {
 public:
-	int32                                         hero_id;                                           // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Name;                                              // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         asset_variation_id;                                // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          is_default;                                        // 0x001C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 Auth_code;                                         // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerCreateHeroWithVariationRequest;
+DUMPER7_ASSERTS_FLootLockerGooglePlayGamesSessionRequest;
 
-// ScriptStruct LootLockerSDK.LootLockerOtherPlayersXpAndLevelResponse
-// 0x0008 (0x0078 - 0x0070)
-struct FLootLockerOtherPlayersXpAndLevelResponse final : public FLootLockerResponse
+// ScriptStruct LootLockerSDK.LootLockerPlayerFileResponse
+// 0x0088 (0x0158 - 0x00D0)
+struct FLootLockerPlayerFileResponse final : public FLootLockerResponse
 {
 public:
-	int32                                         XP;                                                // 0x0070(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Level;                                             // 0x0074(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Message;                                           // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ID;                                                // 0x00E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E4[0x4];                                       // 0x00E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 revision_id;                                       // 0x00E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x00F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Size;                                              // 0x0108(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_10C[0x4];                                      // 0x010C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 purpose;                                           // 0x0110(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 URL;                                               // 0x0120(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 url_expires_at;                                    // 0x0130(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 created_at;                                        // 0x0140(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsPublic;                                          // 0x0150(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_151[0x7];                                      // 0x0151(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FLootLockerOtherPlayersXpAndLevelResponse;
+DUMPER7_ASSERTS_FLootLockerPlayerFileResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerFileListResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerFileListResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerPlayerFile>          Items;                                             // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerFileListResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerAssetRewardDetails
+// 0x0078 (0x0078 - 0x0000)
+struct FLootLockerAssetRewardDetails final
+{
+public:
+	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 thumbnail;                                         // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 variation_name;                                    // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 rental_option_name;                                // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 variation_id;                                      // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 rental_option_id;                                  // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Legacy_id;                                         // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ID;                                                // 0x0068(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerAssetRewardDetails;
+
+// ScriptStruct LootLockerSDK.LootLockerLeaderboardAssetReward
+// 0x00E0 (0x00E0 - 0x0000)
+struct FLootLockerLeaderboardAssetReward final
+{
+public:
+	class FString                                 created_at;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 updated_at;                                        // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerAssetRewardDetails          details;                                           // 0x0020(0x0078)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FString                                 Asset_Variation_Id;                                // 0x0098(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Asset_Rental_Option_Id;                            // 0x00A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Asset_id;                                          // 0x00B8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_BC[0x4];                                       // 0x00BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 reward_id;                                         // 0x00C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 asset_ulid;                                        // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerLeaderboardAssetReward;
+
+// ScriptStruct LootLockerSDK.LootLockerPlayerProgressionResponse
+// 0x0000 (0x0130 - 0x0130)
+struct FLootLockerPlayerProgressionResponse final : public FLootLockerGenericProgressionResponse
+{
+};
+DUMPER7_ASSERTS_FLootLockerPlayerProgressionResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerNotificationContextEntry
+// 0x0020 (0x0020 - 0x0000)
+struct FLootLockerNotificationContextEntry final
+{
+public:
+	class FString                                 Key;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Value;                                             // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerNotificationContextEntry;
+
+// ScriptStruct LootLockerSDK.LootLockerNotificationContent
+// 0x0098 (0x0098 - 0x0000)
+struct FLootLockerNotificationContent final
+{
+public:
+	TArray<struct FLootLockerNotificationContextEntry> Context;                                      // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TMap<class FString, class FString>            ContextAsDictionary;                               // 0x0010(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FString                                 IdentifyingContextKey;                             // 0x0060(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerNotificationContentBodyType        BodyType;                                          // 0x0070(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_71[0x7];                                       // 0x0071(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 BodyAsJsonString;                                  // 0x0078(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_88[0x10];                                      // 0x0088(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerNotificationContent;
+
+// ScriptStruct LootLockerSDK.LootLockerNotification
+// 0x0120 (0x0120 - 0x0000)
+struct FLootLockerNotification final
+{
+public:
+	class FString                                 created_at;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Expiration_date;                                   // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Read_at;                                           // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Notification_type;                                 // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerNotificationPriority               Priority;                                          // 0x0040(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Source;                                            // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerNotificationSource                 SourceEnum;                                        // 0x0058(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLootLockerNotificationContent         Content;                                           // 0x0060(0x0098)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FString                                 ID;                                                // 0x00F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 player_id;                                         // 0x0108(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Read;                                              // 0x0118(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Custom;                                            // 0x0119(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11A[0x6];                                      // 0x011A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerNotification;
+
+// ScriptStruct LootLockerSDK.LootLockerPlayerProgression
+// 0x0060 (0x0060 - 0x0000)
+struct FLootLockerPlayerProgression final
+{
+public:
+	class FString                                 ID;                                                // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Progression_Key;                                   // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Progression_Name;                                  // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Progression_Id;                                    // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Step;                                              // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Points;                                            // 0x0044(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Previous_Threshold;                                // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Next_Threshold;                                    // 0x004C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Last_Level_Up;                                     // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerPlayerProgression;
+
+// ScriptStruct LootLockerSDK.LootLockerPaginatedGenericProgressionResponse
+// 0x0038 (0x0108 - 0x00D0)
+struct FLootLockerPaginatedGenericProgressionResponse : public FLootLockerResponse
+{
+public:
+	struct FLootLockerKeyBasedPagination          Pagination;                                        // 0x00D0(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerPlayerProgression>   Items;                                             // 0x00F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerPaginatedGenericProgressionResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerRedeemAppleAppStorePurchaseForPlayerRequest
+// 0x0018 (0x0018 - 0x0000)
+struct FLootLockerRedeemAppleAppStorePurchaseForPlayerRequest
+{
+public:
+	bool                                          Sandboxed;                                         // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Transaction_id;                                    // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerRedeemAppleAppStorePurchaseForPlayerRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerVerificationWithSteamAppIdRequest
+// 0x0038 (0x0038 - 0x0000)
+struct FLootLockerVerificationWithSteamAppIdRequest final
+{
+public:
+	class FString                                 Key;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Platform;                                          // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Token;                                             // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Active_steam_app_id;                               // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerVerificationWithSteamAppIdRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerPaginatedPlayerProgressionResponse
+// 0x0000 (0x0108 - 0x0108)
+struct FLootLockerPaginatedPlayerProgressionResponse final : public FLootLockerPaginatedGenericProgressionResponse
+{
+};
+DUMPER7_ASSERTS_FLootLockerPaginatedPlayerProgressionResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerBoneOverrides
+// 0x0001 (0x0001 - 0x0000)
+struct FLootLockerBoneOverrides final
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerBoneOverrides;
+
+// ScriptStruct LootLockerSDK.LootLockerProgressionPointsReward
+// 0x0038 (0x0038 - 0x0000)
+struct FLootLockerProgressionPointsReward final
+{
+public:
+	class FString                                 Progression_Key;                                   // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Progression_Name;                                  // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Progression_Id;                                    // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Amount;                                            // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerProgressionPointsReward;
+
+// ScriptStruct LootLockerSDK.LootLockerProgressionResetReward
+// 0x0030 (0x0030 - 0x0000)
+struct FLootLockerProgressionResetReward final
+{
+public:
+	class FString                                 Progression_Id;                                    // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Progression_Key;                                   // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Progression_Name;                                  // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerProgressionResetReward;
+
+// ScriptStruct LootLockerSDK.LootLockerAssetReward
+// 0x000C (0x000C - 0x0000)
+struct FLootLockerAssetReward final
+{
+public:
+	int32                                         Asset_id;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Asset_Variation_Id;                                // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Asset_Rental_Option_Id;                            // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerAssetReward;
+
+// ScriptStruct LootLockerSDK.LootLockerCurrencyReward
+// 0x0030 (0x0030 - 0x0000)
+struct FLootLockerCurrencyReward final
+{
+public:
+	class FString                                 Currency_Name;                                     // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Currency_Code;                                     // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Amount;                                            // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerCurrencyReward;
+
+// ScriptStruct LootLockerSDK.LootLockerRewards
+// 0x0040 (0x0040 - 0x0000)
+struct FLootLockerRewards final
+{
+public:
+	TArray<struct FLootLockerProgressionPointsReward> Progression_Points_Rewards;                    // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerProgressionResetReward> Progression_Reset_Rewards;                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerAssetReward>         Asset_Rewards;                                     // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerCurrencyReward>      Currency_Rewards;                                  // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerRewards;
+
+// ScriptStruct LootLockerSDK.LootLockerAwardedTier
+// 0x0048 (0x0048 - 0x0000)
+struct FLootLockerAwardedTier final
+{
+public:
+	int32                                         Step;                                              // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Points_Threshold;                                  // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerRewards                     Rewards;                                           // 0x0008(0x0040)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerAwardedTier;
+
+// ScriptStruct LootLockerSDK.LootLockerGenericProgressionWithRewardsResponse
+// 0x0010 (0x0140 - 0x0130)
+struct FLootLockerGenericProgressionWithRewardsResponse : public FLootLockerGenericProgressionResponse
+{
+public:
+	TArray<struct FLootLockerAwardedTier>         Awarded_Tiers;                                     // 0x0130(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerGenericProgressionWithRewardsResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerRefreshGooglePlayGamesSessionRequest
+// 0x0010 (0x0030 - 0x0020)
+struct FLootLockerRefreshGooglePlayGamesSessionRequest final : public FLootLockerBaseAuthRequest_Old
+{
+public:
+	class FString                                 refresh_token;                                     // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerRefreshGooglePlayGamesSessionRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerStartMissionResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerStartMissionResponse final : public FLootLockerResponse
+{
+public:
+	class FString                                 signature;                                         // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerStartMissionResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerPresenceManagerConfig
+// 0x0004 (0x0004 - 0x0000)
+struct FLootLockerPresenceManagerConfig final
+{
+public:
+	bool                                          bIsEnabled;                                        // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAutoConnectEnabled;                               // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAutoDisconnectOnFocusChange;                      // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnabledInEditor;                                  // 0x0003(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerPresenceManagerConfig;
+
+// ScriptStruct LootLockerSDK.LootLockerComputeAndLockItem
+// 0x0010 (0x0010 - 0x0000)
+struct FLootLockerComputeAndLockItem final
+{
+public:
+	int32                                         Asset_id;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Asset_Variation_Id;                                // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Asset_Rental_Option_Id;                            // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ID;                                                // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerComputeAndLockItem;
+
+// ScriptStruct LootLockerSDK.LootLockerStateMetaData
+// 0x0020 (0x0020 - 0x0000)
+struct FLootLockerStateMetaData final
+{
+public:
+	TArray<class FString>                         SavedPlayerStateUlids;                             // 0x0000(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
+	class FString                                 DefaultPlayer;                                     // 0x0010(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerStateMetaData;
+
+// ScriptStruct LootLockerSDK.LootLockerPlayerProgressionWithRewardsResponse
+// 0x0000 (0x0140 - 0x0140)
+struct FLootLockerPlayerProgressionWithRewardsResponse final : public FLootLockerGenericProgressionWithRewardsResponse
+{
+};
+DUMPER7_ASSERTS_FLootLockerPlayerProgressionWithRewardsResponse;
 
 // ScriptStruct LootLockerSDK.LootLockerHero
 // 0x02D8 (0x02D8 - 0x0000)
@@ -2206,34 +2594,62 @@ public:
 DUMPER7_ASSERTS_FLootLockerHero;
 
 // ScriptStruct LootLockerSDK.LootLockerHeroResponse
-// 0x02D8 (0x0348 - 0x0070)
+// 0x02D8 (0x03A8 - 0x00D0)
 struct FLootLockerHeroResponse final : public FLootLockerResponse
 {
 public:
-	struct FLootLockerHero                        hero;                                              // 0x0070(0x02D8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLootLockerHero                        hero;                                              // 0x00D0(0x02D8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLootLockerHeroResponse;
 
+// ScriptStruct LootLockerSDK.LootLockerGetCurrencyDetailsResponse
+// 0x0048 (0x0118 - 0x00D0)
+struct FLootLockerGetCurrencyDetailsResponse final : public FLootLockerResponse
+{
+public:
+	class FString                                 ID;                                                // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x00E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Code;                                              // 0x00F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Game_api_writes_enabled;                           // 0x0100(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_101[0x7];                                      // 0x0101(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 created_at;                                        // 0x0108(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerGetCurrencyDetailsResponse;
+
 // ScriptStruct LootLockerSDK.LootLockerGameHeroListResponse
-// 0x0010 (0x0080 - 0x0070)
+// 0x0010 (0x00E0 - 0x00D0)
 struct FLootLockerGameHeroListResponse final : public FLootLockerResponse
 {
 public:
-	TArray<struct FLootLockerHero>                game_heroes;                                       // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerHero>                game_heroes;                                       // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLootLockerGameHeroListResponse;
 
-// ScriptStruct LootLockerSDK.LootLockerFeedbackRequest
-// 0x0040 (0x0040 - 0x0000)
-struct FLootLockerFeedbackRequest final
+// ScriptStruct LootLockerSDK.LootLockerInlinedGroupDetails
+// 0x0040 (0x00A0 - 0x0060)
+struct FLootLockerInlinedGroupDetails final : public FLootLockerGroupDetails
 {
 public:
-	class FString                                 Entity_id;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Description;                                       // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 category_id;                                       // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 entity;                                            // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerAssetDetails>        AssetDetails;                                      // 0x0060(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerProgressionPointDetails> ProgressionPointDetails;                       // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerProgressionResetDetails> ProgressionResetDetails;                       // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerCurrencyDetails>     CurrencyDetails;                                   // 0x0090(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerFeedbackRequest;
+DUMPER7_ASSERTS_FLootLockerInlinedGroupDetails;
+
+// ScriptStruct LootLockerSDK.LootLockerInlinedCatalogEntry
+// 0x01F0 (0x02C8 - 0x00D8)
+struct FLootLockerInlinedCatalogEntry final : public FLootLockerCatalogEntry
+{
+public:
+	struct FLootLockerAssetDetails                AssetDetails;                                      // 0x00D8(0x0068)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerAssetDetails>        OptionalAssetDetailVariants;                       // 0x0140(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FLootLockerProgressionPointDetails     ProgressionPointDetails;                           // 0x0150(0x0048)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLootLockerProgressionResetDetails     ProgressionResetDetails;                           // 0x0198(0x0040)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLootLockerCurrencyDetails             CurrencyDetails;                                   // 0x01D8(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLootLockerInlinedGroupDetails         GroupDetails;                                      // 0x0228(0x00A0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerInlinedCatalogEntry;
 
 // ScriptStruct LootLockerSDK.LootLockerPlayerHero
 // 0x02E0 (0x02E0 - 0x0000)
@@ -2253,369 +2669,214 @@ public:
 DUMPER7_ASSERTS_FLootLockerPlayerHero;
 
 // ScriptStruct LootLockerSDK.LootLockerHeroListResponse
-// 0x0010 (0x0080 - 0x0070)
+// 0x0010 (0x00E0 - 0x00D0)
 struct FLootLockerHeroListResponse final : public FLootLockerResponse
 {
 public:
-	TArray<struct FLootLockerPlayerHero>          heroes;                                            // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerPlayerHero>          heroes;                                            // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLootLockerHeroListResponse;
 
-// ScriptStruct LootLockerSDK.LootLockerContentKeyValuePair
+// ScriptStruct LootLockerSDK.LootLockerPlayerHeroResponse
+// 0x02E0 (0x03B0 - 0x00D0)
+struct FLootLockerPlayerHeroResponse final : public FLootLockerResponse
+{
+public:
+	struct FLootLockerPlayerHero                  hero;                                              // 0x00D0(0x02E0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerPlayerHeroResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerHeroLoadout
+// 0x02F8 (0x02F8 - 0x0000)
+struct FLootLockerHeroLoadout final
+{
+public:
+	int32                                         variation_id;                                      // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         instance_id;                                       // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 mounted_at;                                        // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerAsset                       Asset;                                             // 0x0018(0x02A8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLootLockerRental                      rental;                                            // 0x02C0(0x0038)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerHeroLoadout;
+
+// ScriptStruct LootLockerSDK.LootLockerHeroLoadoutResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerHeroLoadoutResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerHeroLoadout>         Loadout;                                           // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerHeroLoadoutResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerWhiteLabelAuthRequest
+// 0x0020 (0x0040 - 0x0020)
+struct FLootLockerWhiteLabelAuthRequest final : public FLootLockerBaseAuthRequest_Old
+{
+public:
+	class FString                                 email;                                             // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Token;                                             // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerWhiteLabelAuthRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerGoogleSubsystemStoreOffer
+// 0x00A8 (0x00A8 - 0x0000)
+struct FLootLockerGoogleSubsystemStoreOffer final
+{
+public:
+	class FString                                 OfferId;                                           // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   Title;                                             // 0x0010(0x0018)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	class FText                                   Description;                                       // 0x0028(0x0018)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	class FText                                   LongDescription;                                   // 0x0040(0x0018)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	class FText                                   RegularPriceText;                                  // 0x0058(0x0018)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	int32                                         RegularPrice;                                      // 0x0070(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_74[0x4];                                       // 0x0074(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   PriceText;                                         // 0x0078(0x0018)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	int32                                         NumericPrice;                                      // 0x0090(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_94[0x4];                                       // 0x0094(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CurrencyCode;                                      // 0x0098(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerGoogleSubsystemStoreOffer;
+
+// ScriptStruct LootLockerSDK.LootLockerCharacter
+// 0x0030 (0x0030 - 0x0000)
+struct FLootLockerCharacter final
+{
+public:
+	int32                                         ID;                                                // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Type;                                              // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ulid;                                              // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          is_default;                                        // 0x002C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerCharacter;
+
+// ScriptStruct LootLockerSDK.LootLockerCharacterRental
+// 0x0038 (0x0038 - 0x0000)
+struct FLootLockerCharacterRental final
+{
+public:
+	bool                                          is_rental;                                         // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 time_left;                                         // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Duration;                                          // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 is_active;                                         // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerCharacterRental;
+
+// ScriptStruct LootLockerSDK.LootLockerCharacterLoadout
+// 0x02F8 (0x02F8 - 0x0000)
+struct FLootLockerCharacterLoadout final
+{
+public:
+	int32                                         variation_id;                                      // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         instance_id;                                       // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 mounted_at;                                        // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerAsset                       Asset;                                             // 0x0018(0x02A8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLootLockerCharacterRental             rental;                                            // 0x02C0(0x0038)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerCharacterLoadout;
+
+// ScriptStruct LootLockerSDK.LootLockerCharacterLoadoutArray
+// 0x0040 (0x0040 - 0x0000)
+struct FLootLockerCharacterLoadoutArray final
+{
+public:
+	struct FLootLockerCharacter                   Character;                                         // 0x0000(0x0030)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerCharacterLoadout>    Loadout;                                           // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerCharacterLoadoutArray;
+
+// ScriptStruct LootLockerSDK.LootLockerCharacterLoadoutResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerCharacterLoadoutResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerCharacterLoadoutArray> loadouts;                                        // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerCharacterLoadoutResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerFileUploadRequest
+// 0x0028 (0x0028 - 0x0000)
+struct FLootLockerFileUploadRequest final
+{
+public:
+	class FString                                 file;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 purpose;                                           // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsPublic;                                          // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerFileUploadRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerRefreshMetaSessionRequest
+// 0x0010 (0x0030 - 0x0020)
+struct FLootLockerRefreshMetaSessionRequest final : public FLootLockerBaseAuthRequest_Old
+{
+public:
+	class FString                                 refresh_token;                                     // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerRefreshMetaSessionRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerLeaderboardGroupRewardMetadata
 // 0x0020 (0x0020 - 0x0000)
-struct FLootLockerContentKeyValuePair final
+struct FLootLockerLeaderboardGroupRewardMetadata final
 {
 public:
 	class FString                                 Key;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 Value;                                             // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerContentKeyValuePair;
+DUMPER7_ASSERTS_FLootLockerLeaderboardGroupRewardMetadata;
 
-// ScriptStruct LootLockerSDK.LootLockerAssetDataEntity
-// 0x0020 (0x0020 - 0x0000)
-struct FLootLockerAssetDataEntity final
-{
-public:
-	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Data;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerAssetDataEntity;
-
-// ScriptStruct LootLockerSDK.LootLockerAssetCandidateData
-// 0x0048 (0x0048 - 0x0000)
-struct FLootLockerAssetCandidateData final
-{
-public:
-	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         context_id;                                        // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FLootLockerContentKeyValuePair> kv_storage;                                        // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerContentKeyValuePair> filters;                                           // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerAssetDataEntity>     data_entities;                                     // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerAssetCandidateData;
-
-// ScriptStruct LootLockerSDK.LootLockerResponseAssetCandidate
-// 0x00A0 (0x00A0 - 0x0000)
-struct FLootLockerResponseAssetCandidate final
-{
-public:
-	int32                                         ID;                                                // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         asset_id;                                          // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Status;                                            // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 review_feedback;                                   // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLootLockerAssetCandidateData          Data;                                              // 0x0028(0x0048)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TArray<class FString>                         files;                                             // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	class FString                                 created_at;                                        // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 updated_at;                                        // 0x0090(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerResponseAssetCandidate;
-
-// ScriptStruct LootLockerSDK.LootLockerAssetCandidateResponse
-// 0x00A0 (0x0110 - 0x0070)
-struct FLootLockerAssetCandidateResponse final : public FLootLockerResponse
-{
-public:
-	struct FLootLockerResponseAssetCandidate      asset_candidate;                                   // 0x0070(0x00A0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerAssetCandidateResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerTriggerEventResponse
-// 0x02A8 (0x0338 - 0x0090)
-struct FLootLockerTriggerEventResponse final : public FLootLockerSubmitXpResponse
-{
-public:
-	uint8                                         Pad_90[0x2A8];                                     // 0x0090(0x02A8)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FLootLockerTriggerEventResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerPlayerHeroResponse
-// 0x02E0 (0x0350 - 0x0070)
-struct FLootLockerPlayerHeroResponse final : public FLootLockerResponse
-{
-public:
-	struct FLootLockerPlayerHero                  hero;                                              // 0x0070(0x02E0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerPlayerHeroResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerHeroLoadoutResponse
-// 0x0060 (0x00D0 - 0x0070)
-struct FLootLockerHeroLoadoutResponse final : public FLootLockerResponse
-{
-public:
-	int32                                         variation_id;                                      // 0x0070(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         instance_id;                                       // 0x0074(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 mounted_at;                                        // 0x0078(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerAsset>               Asset;                                             // 0x0088(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FLootLockerRental                      rental;                                            // 0x0098(0x0038)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerHeroLoadoutResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerLeaderboardArchive
-// 0x0038 (0x0038 - 0x0000)
-struct FLootLockerLeaderboardArchive final
-{
-public:
-	class FString                                 last_modified;                                     // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 content_type;                                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Key;                                               // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         content_length;                                    // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FLootLockerLeaderboardArchive;
-
-// ScriptStruct LootLockerSDK.LootLockerLeaderboardArchiveResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerLeaderboardArchiveResponse final : public FLootLockerResponse
-{
-public:
-	TArray<struct FLootLockerLeaderboardArchive>  archives;                                          // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerLeaderboardArchiveResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerEquipAssetToCharacterWithInstanceRequest
-// 0x0004 (0x0004 - 0x0000)
-struct FLootLockerEquipAssetToCharacterWithInstanceRequest final
-{
-public:
-	int32                                         instance_id;                                       // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerEquipAssetToCharacterWithInstanceRequest;
-
-// ScriptStruct LootLockerSDK.LootLockerLeaderboardArchivePlayer
-// 0x0038 (0x0038 - 0x0000)
-struct FLootLockerLeaderboardArchivePlayer final
-{
-public:
-	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 public_uid;                                        // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ID;                                                // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 player_ulid;                                       // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerLeaderboardArchivePlayer;
-
-// ScriptStruct LootLockerSDK.LootLockerLeaderboardArchiveDetails
-// 0x0060 (0x0060 - 0x0000)
-struct FLootLockerLeaderboardArchiveDetails final
-{
-public:
-	struct FLootLockerLeaderboardArchivePlayer    Player;                                            // 0x0000(0x0038)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FString                                 MetaData;                                          // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 member_id;                                         // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         rank;                                              // 0x0058(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         score;                                             // 0x005C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerLeaderboardArchiveDetails;
-
-// ScriptStruct LootLockerSDK.LootLockerLeaderboardArchiveDetailsResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerLeaderboardArchiveDetailsResponse final : public FLootLockerResponse
-{
-public:
-	TArray<struct FLootLockerLeaderboardArchiveDetails> Items;                                       // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerLeaderboardArchiveDetailsResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerRedeemAppleAppStorePurchaseForClassRequest
-// 0x0008 (0x0020 - 0x0018)
-struct FLootLockerRedeemAppleAppStorePurchaseForClassRequest final : public FLootLockerRedeemAppleAppStorePurchaseForPlayerRequest
-{
-public:
-	int32                                         Class_id;                                          // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FLootLockerRedeemAppleAppStorePurchaseForClassRequest;
-
-// ScriptStruct LootLockerSDK.LootLockerStartRemoteSessionResponse
-// 0x0018 (0x00F0 - 0x00D8)
-struct FLootLockerStartRemoteSessionResponse final : public FLootLockerAuthenticationResponse
-{
-public:
-	ELootLockerRemoteSessionLeaseStatus           Lease_status;                                      // 0x00D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D9[0x7];                                       // 0x00D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 refresh_token;                                     // 0x00E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerStartRemoteSessionResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerPlayer
-// 0x0028 (0x0028 - 0x0000)
-struct FLootLockerPlayer final
-{
-public:
-	int32                                         ID;                                                // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 public_uid;                                        // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Name;                                              // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerPlayer;
-
-// ScriptStruct LootLockerSDK.LootLockerGetMemberRankResponse
-// 0x0050 (0x00C0 - 0x0070)
-struct FLootLockerGetMemberRankResponse final : public FLootLockerResponse
-{
-public:
-	class FString                                 member_id;                                         // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         rank;                                              // 0x0080(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         score;                                             // 0x0084(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLootLockerPlayer                      Player;                                            // 0x0088(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FString                                 MetaData;                                          // 0x00B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerGetMemberRankResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerMember
-// 0x0050 (0x0050 - 0x0000)
-struct FLootLockerMember final
-{
-public:
-	class FString                                 member_id;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         rank;                                              // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         score;                                             // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLootLockerPlayer                      Player;                                            // 0x0018(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FString                                 MetaData;                                          // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerMember;
-
-// ScriptStruct LootLockerSDK.LootLockerGetByListOfMembersResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerGetByListOfMembersResponse final : public FLootLockerResponse
-{
-public:
-	TArray<struct FLootLockerMember>              members;                                           // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerGetByListOfMembersResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerCollectItemPayload
-// 0x0010 (0x0010 - 0x0000)
-struct FLootLockerCollectItemPayload final
-{
-public:
-	class FString                                 slug;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerCollectItemPayload;
-
-// ScriptStruct LootLockerSDK.LootLockerPagination
-// 0x0008 (0x0008 - 0x0000)
-struct FLootLockerPagination final
-{
-public:
-	int32                                         Total;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Next_Cursor;                                       // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerPagination;
-
-// ScriptStruct LootLockerSDK.LootLockerGetScoreListResponse
-// 0x0018 (0x0088 - 0x0070)
-struct FLootLockerGetScoreListResponse final : public FLootLockerResponse
-{
-public:
-	struct FLootLockerPagination                  Pagination;                                        // 0x0070(0x0008)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerMember>              Items;                                             // 0x0078(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerGetScoreListResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerSubmitScoreResponse
-// 0x0028 (0x0098 - 0x0070)
-struct FLootLockerSubmitScoreResponse final : public FLootLockerResponse
-{
-public:
-	class FString                                 member_id;                                         // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         rank;                                              // 0x0080(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         score;                                             // 0x0084(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 MetaData;                                          // 0x0088(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerSubmitScoreResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerLeaderboard
-// 0x00D8 (0x00D8 - 0x0000)
-struct FLootLockerLeaderboard final
-{
-public:
-	int32                                         leaderboard_id;                                    // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 leaderboard_key;                                   // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLootLockerGetMemberRankResponse       rank;                                              // 0x0018(0x00C0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerLeaderboard;
-
-// ScriptStruct LootLockerSDK.LootLockerGetAllMemberRanksResponse
-// 0x0018 (0x0088 - 0x0070)
-struct FLootLockerGetAllMemberRanksResponse final : public FLootLockerResponse
-{
-public:
-	struct FLootLockerPagination                  Pagination;                                        // 0x0070(0x0008)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerLeaderboard>         leaderboards;                                      // 0x0078(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerGetAllMemberRanksResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerLeaderboardSchedule
+// ScriptStruct LootLockerSDK.LootLockerCurrencyRewardDetails
 // 0x0040 (0x0040 - 0x0000)
-struct FLootLockerLeaderboardSchedule final
-{
-public:
-	class FString                                 cron_expression;                                   // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 next_run;                                          // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 last_run;                                          // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class FString>                         schedule;                                          // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerLeaderboardSchedule;
-
-// ScriptStruct LootLockerSDK.LootLockerAssetRewardDetails
-// 0x0078 (0x0078 - 0x0000)
-struct FLootLockerAssetRewardDetails final
+struct FLootLockerCurrencyRewardDetails final
 {
 public:
 	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Thumbnail;                                         // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 variation_name;                                    // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 rental_option_name;                                // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 variation_id;                                      // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 rental_option_id;                                  // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Legacy_id;                                         // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ID;                                                // 0x0068(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Code;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Amount;                                            // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ID;                                                // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerAssetRewardDetails;
+DUMPER7_ASSERTS_FLootLockerCurrencyRewardDetails;
 
-// ScriptStruct LootLockerSDK.LootLockerLeaderboardAssetReward
-// 0x00E0 (0x00E0 - 0x0000)
-struct FLootLockerLeaderboardAssetReward final
+// ScriptStruct LootLockerSDK.LootLockerLeaderboardCurrencyReward
+// 0x0090 (0x0090 - 0x0000)
+struct FLootLockerLeaderboardCurrencyReward final
 {
 public:
 	class FString                                 created_at;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 updated_at;                                        // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLootLockerAssetRewardDetails          details;                                           // 0x0020(0x0078)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FString                                 asset_variation_id;                                // 0x0098(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 asset_rental_option_id;                            // 0x00A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         asset_id;                                          // 0x00B8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_BC[0x4];                                       // 0x00BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Reward_id;                                         // 0x00C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 asset_ulid;                                        // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Amount;                                            // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerCurrencyRewardDetails       details;                                           // 0x0030(0x0040)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FString                                 reward_id;                                         // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 currency_id;                                       // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerLeaderboardAssetReward;
+DUMPER7_ASSERTS_FLootLockerLeaderboardCurrencyReward;
 
-// ScriptStruct LootLockerSDK.LootLockerLeaderboardRewardArgs
-// 0x0028 (0x0028 - 0x0000)
-struct FLootLockerLeaderboardRewardArgs final
+// ScriptStruct LootLockerSDK.LootLockerProgressionResetRewardDetails
+// 0x0030 (0x0030 - 0x0000)
+struct FLootLockerProgressionResetRewardDetails final
 {
 public:
-	int32                                         Max;                                               // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Min;                                               // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 method;                                            // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Direction;                                         // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Key;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ID;                                                // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerLeaderboardRewardArgs;
+DUMPER7_ASSERTS_FLootLockerProgressionResetRewardDetails;
 
-// ScriptStruct LootLockerSDK.LootLockerLeaderboardDetailPredicates
-// 0x0048 (0x0048 - 0x0000)
-struct FLootLockerLeaderboardDetailPredicates final
+// ScriptStruct LootLockerSDK.LootLockerLeaderboardProgressionResetReward
+// 0x0070 (0x0070 - 0x0000)
+struct FLootLockerLeaderboardProgressionResetReward final
 {
 public:
-	class FString                                 ID;                                                // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Type;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLootLockerLeaderboardRewardArgs       args;                                              // 0x0020(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FString                                 created_at;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 updated_at;                                        // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Progression_Id;                                    // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerProgressionResetRewardDetails details;                                         // 0x0030(0x0030)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FString                                 reward_id;                                         // 0x0060(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerLeaderboardDetailPredicates;
+DUMPER7_ASSERTS_FLootLockerLeaderboardProgressionResetReward;
 
 // ScriptStruct LootLockerSDK.LootLockerProgressionPointRewardDetails
 // 0x0038 (0x0038 - 0x0000)
@@ -2640,79 +2901,19 @@ public:
 	struct FLootLockerProgressionPointRewardDetails details;                                         // 0x0020(0x0038)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	int32                                         Amount;                                            // 0x0058(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 progression_id;                                    // 0x0060(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Reward_id;                                         // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Progression_Id;                                    // 0x0060(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 reward_id;                                         // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLootLockerLeaderboardProgressionPointsReward;
-
-// ScriptStruct LootLockerSDK.LootLockerCurrencyRewardDetails
-// 0x0040 (0x0040 - 0x0000)
-struct FLootLockerCurrencyRewardDetails final
-{
-public:
-	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Code;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Amount;                                            // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ID;                                                // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerCurrencyRewardDetails;
-
-// ScriptStruct LootLockerSDK.LootLockerLeaderboardCurrencyReward
-// 0x0090 (0x0090 - 0x0000)
-struct FLootLockerLeaderboardCurrencyReward final
-{
-public:
-	class FString                                 created_at;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 updated_at;                                        // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Amount;                                            // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLootLockerCurrencyRewardDetails       details;                                           // 0x0030(0x0040)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FString                                 Reward_id;                                         // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Currency_id;                                       // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerLeaderboardCurrencyReward;
-
-// ScriptStruct LootLockerSDK.LootLockerLeaderboardGroupRewardMetadata
-// 0x0020 (0x0020 - 0x0000)
-struct FLootLockerLeaderboardGroupRewardMetadata final
-{
-public:
-	class FString                                 Key;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Value;                                             // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerLeaderboardGroupRewardMetadata;
-
-// ScriptStruct LootLockerSDK.LootLockerProgressionResetRewardDetails
-// 0x0030 (0x0030 - 0x0000)
-struct FLootLockerProgressionResetRewardDetails final
-{
-public:
-	class FString                                 Key;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Name;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ID;                                                // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerProgressionResetRewardDetails;
-
-// ScriptStruct LootLockerSDK.LootLockerLeaderboardProgressionResetReward
-// 0x0070 (0x0070 - 0x0000)
-struct FLootLockerLeaderboardProgressionResetReward final
-{
-public:
-	class FString                                 created_at;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 updated_at;                                        // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 progression_id;                                    // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLootLockerProgressionResetRewardDetails details;                                         // 0x0030(0x0030)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FString                                 Reward_id;                                         // 0x0060(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerLeaderboardProgressionResetReward;
 
 // ScriptStruct LootLockerSDK.LootLockerLeaderboardGroupRewardAssociation
 // 0x0268 (0x0268 - 0x0000)
 struct FLootLockerLeaderboardGroupRewardAssociation final
 {
 public:
-	ELootLockerLeaderboardRewardEntityKind        Kind;                                              // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerLeaderboardRewardEntityKind        kind;                                              // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLootLockerLeaderboardCurrencyReward   Currency;                                          // 0x0008(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLootLockerLeaderboardCurrencyReward   currency;                                          // 0x0008(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FLootLockerLeaderboardProgressionResetReward progression_reset;                           // 0x0098(0x0070)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FLootLockerLeaderboardProgressionPointsReward progression_points;                         // 0x0108(0x0080)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FLootLockerLeaderboardAssetReward      Asset;                                             // 0x0188(0x00E0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
@@ -2728,251 +2929,83 @@ public:
 	class FString                                 Name;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 Description;                                       // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FLootLockerLeaderboardGroupRewardMetadata> MetaData;                               // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerLeaderboardGroupRewardAssociation> Associations;                        // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	class FString                                 Reward_id;                                         // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerLeaderboardGroupRewardAssociation> associations;                        // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FString                                 reward_id;                                         // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLootLockerLeaderboardGroupReward;
 
-// ScriptStruct LootLockerSDK.LootLockerLeaderboardReward
-// 0x02E8 (0x02E8 - 0x0000)
-struct FLootLockerLeaderboardReward final
+// ScriptStruct LootLockerSDK.LootLockerCharacterTypeDefaultLoadout
+// 0x02B0 (0x02B0 - 0x0000)
+struct FLootLockerCharacterTypeDefaultLoadout final
 {
 public:
-	ELootLockerLeaderboardRewardEntityKind        Reward_kind;                                       // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FLootLockerLeaderboardDetailPredicates> predicates;                                // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FLootLockerLeaderboardCurrencyReward   Currency;                                          // 0x0018(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FLootLockerLeaderboardProgressionResetReward progression_reset;                           // 0x00A8(0x0070)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FLootLockerLeaderboardProgressionPointsReward progression_points;                         // 0x0118(0x0080)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FLootLockerLeaderboardAssetReward      Asset;                                             // 0x0198(0x00E0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FLootLockerLeaderboardGroupReward      group;                                             // 0x0278(0x0060)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FString                                 Reward_id;                                         // 0x02D8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Asset_id;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Asset_Variation_Id;                                // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerAsset                       Asset;                                             // 0x0008(0x02A8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerLeaderboardReward;
+DUMPER7_ASSERTS_FLootLockerCharacterTypeDefaultLoadout;
 
-// ScriptStruct LootLockerSDK.LootLockerLeaderboardDetailsResponse
-// 0x00C0 (0x0130 - 0x0070)
-struct FLootLockerLeaderboardDetailsResponse final : public FLootLockerResponse
+// ScriptStruct LootLockerSDK.LootLockerCharacterTypes
+// 0x0028 (0x0038 - 0x0010)
+struct FLootLockerCharacterTypes final : public FLootLockerHasKeyValueStorage
 {
 public:
-	class FString                                 created_at;                                        // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 updated_at;                                        // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Key;                                               // 0x0090(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 direction_method;                                  // 0x00A0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Name;                                              // 0x00B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Type;                                              // 0x00C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ID;                                                // 0x00D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         game_id;                                           // 0x00D4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          enable_game_api_writes;                            // 0x00D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          overwrite_score_on_submit;                         // 0x00D9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          has_metadata;                                      // 0x00DA(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_DB[0x5];                                       // 0x00DB(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLootLockerLeaderboardSchedule         schedule;                                          // 0x00E0(0x0040)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerLeaderboardReward>   rewards;                                           // 0x0120(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         ID;                                                // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          is_default;                                        // 0x0014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Name;                                              // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerCharacterTypeDefaultLoadout> default_loadout;                           // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerLeaderboardDetailsResponse;
+DUMPER7_ASSERTS_FLootLockerCharacterTypes;
 
-// ScriptStruct LootLockerSDK.LootLockerUpdateAssetCandidateData
-// 0x0050 (0x0050 - 0x0000)
-struct FLootLockerUpdateAssetCandidateData final
+// ScriptStruct LootLockerSDK.LootLockerListCharacterTypesResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerListCharacterTypesResponse final : public FLootLockerResponse
 {
 public:
-	bool                                          Completed;                                         // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLootLockerAssetCandidateData          Data;                                              // 0x0008(0x0048)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerCharacterTypes>      character_types;                                   // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerUpdateAssetCandidateData;
+DUMPER7_ASSERTS_FLootLockerListCharacterTypesResponse;
 
-// ScriptStruct LootLockerSDK.LootLockerConnectGoogleProviderToAccountWithPlatformRequest
-// 0x0020 (0x0020 - 0x0000)
-struct FLootLockerConnectGoogleProviderToAccountWithPlatformRequest final
-{
-public:
-	class FString                                 id_token;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Platform;                                          // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerConnectGoogleProviderToAccountWithPlatformRequest;
-
-// ScriptStruct LootLockerSDK.LootLockerAssetCandidatesResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerAssetCandidatesResponse final : public FLootLockerResponse
-{
-public:
-	TArray<struct FLootLockerResponseAssetCandidate> asset_candidates;                               // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerAssetCandidatesResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerCheckpointTime
+// ScriptStruct LootLockerSDK.LootLockerEquipUniversalAssetToCharacterRequest
 // 0x0008 (0x0008 - 0x0000)
-struct FLootLockerCheckpointTime final
+struct FLootLockerEquipUniversalAssetToCharacterRequest final
 {
 public:
-	int32                                         Index;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Time;                                              // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Asset_id;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Asset_Variation_Id;                                // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerCheckpointTime;
+DUMPER7_ASSERTS_FLootLockerEquipUniversalAssetToCharacterRequest;
 
-// ScriptStruct LootLockerSDK.LootLockerFinishMissionPayload
-// 0x0030 (0x0030 - 0x0000)
-struct FLootLockerFinishMissionPayload final
+// ScriptStruct LootLockerSDK.LootLockerBroadcastLanguage
+// 0x00B0 (0x00B0 - 0x0000)
+struct FLootLockerBroadcastLanguage final
 {
 public:
-	class FString                                 finish_time;                                       // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 finish_score;                                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerCheckpointTime>      checkpoint_times;                                  // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerFinishMissionPayload;
-
-// ScriptStruct LootLockerSDK.LootLockerAssetPurchaseData
-// 0x000C (0x000C - 0x0000)
-struct FLootLockerAssetPurchaseData
-{
-public:
-	int32                                         asset_id;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         variation_id;                                      // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         rental_option_id;                                  // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerAssetPurchaseData;
-
-// ScriptStruct LootLockerSDK.LootLockerRedeemGooglePlayStorePurchaseForPlayerRequest
-// 0x0020 (0x0020 - 0x0000)
-struct FLootLockerRedeemGooglePlayStorePurchaseForPlayerRequest
-{
-public:
-	class FString                                 product_id;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Purchase_token;                                    // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerRedeemGooglePlayStorePurchaseForPlayerRequest;
-
-// ScriptStruct LootLockerSDK.LootLockerFileUpdateRequest
-// 0x0010 (0x0010 - 0x0000)
-struct FLootLockerFileUpdateRequest final
-{
-public:
-	class FString                                 file;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerFileUpdateRequest;
-
-// ScriptStruct LootLockerSDK.LootLockerMapCamera
-// 0x0008 (0x0008 - 0x0000)
-struct FLootLockerMapCamera final
-{
-public:
-	float                                         position;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Rotation;                                          // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerMapCamera;
-
-// ScriptStruct LootLockerSDK.LootLockerMapSpawnPoint
-// 0x0028 (0x0028 - 0x0000)
-struct FLootLockerMapSpawnPoint final
-{
-public:
-	int32                                         asset_id;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         position;                                          // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Rotation;                                          // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FLootLockerMapCamera>           cameras;                                           // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          player_access;                                     // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FLootLockerMapSpawnPoint;
-
-// ScriptStruct LootLockerSDK.LootLockerMap
-// 0x0020 (0x0020 - 0x0000)
-struct FLootLockerMap final
-{
-public:
-	int32                                         map_id;                                            // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         asset_id;                                          // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerMapSpawnPoint>       spawn_points;                                      // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          player_access;                                     // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FLootLockerMap;
-
-// ScriptStruct LootLockerSDK.LootLockerGetMapsResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerGetMapsResponse final : public FLootLockerResponse
-{
-public:
-	TArray<struct FLootLockerMap>                 maps;                                              // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerGetMapsResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerRemoteSessionStatusPollingResponse
-// 0x0008 (0x0078 - 0x0070)
-struct FLootLockerRemoteSessionStatusPollingResponse final : public FLootLockerResponse
-{
-public:
-	ELootLockerRemoteSessionLeaseStatus           Lease_status;                                      // 0x0070(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_71[0x7];                                       // 0x0071(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FLootLockerRemoteSessionStatusPollingResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerMessage
-// 0x0078 (0x0078 - 0x0000)
-struct FLootLockerMessage final
-{
-public:
-	class FString                                 Title;                                             // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Published_at;                                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 language_code;                                     // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 headline;                                          // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 Body;                                              // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 summary;                                           // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Category;                                          // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          alert;                                             // 0x0050(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          New;                                               // 0x0051(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_52[0x6];                                       // 0x0052(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 action;                                            // 0x0058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Image;                                             // 0x0068(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 image_url;                                         // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 action;                                            // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         localization_keys;                                 // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TMap<class FString, class FString>            localizations;                                     // 0x0060(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerMessage;
+DUMPER7_ASSERTS_FLootLockerBroadcastLanguage;
 
-// ScriptStruct LootLockerSDK.LootLockerMessagesResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerMessagesResponse final : public FLootLockerResponse
+// ScriptStruct LootLockerSDK.LootLockerBroadcast
+// 0x00B0 (0x00B0 - 0x0000)
+struct FLootLockerBroadcast final
 {
 public:
-	TArray<struct FLootLockerMessage>             messages;                                          // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FString                                 ID;                                                // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 game_name;                                         // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerBroadcastGame>       games;                                             // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerBroadcastPublicationSetting> publication_settings;                      // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class FString>                         language_codes;                                    // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TMap<class FString, struct FLootLockerBroadcastLanguage> languages;                              // 0x0060(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerMessagesResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerRefreshRemoteSessionResponse
-// 0x0010 (0x00E8 - 0x00D8)
-struct FLootLockerRefreshRemoteSessionResponse final : public FLootLockerAuthenticationResponse
-{
-public:
-	class FString                                 refresh_token;                                     // 0x00D8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerRefreshRemoteSessionResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerMultiplePlayerNamesAndPlatformsRequest
-// 0x0020 (0x0020 - 0x0000)
-struct FLootLockerMultiplePlayerNamesAndPlatformsRequest final
-{
-public:
-	TArray<class FString>                         player_ids;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class FString>                         player_public_uids;                                // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerMultiplePlayerNamesAndPlatformsRequest;
-
-// ScriptStruct LootLockerSDK.LootLockerTimeResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerTimeResponse final : public FLootLockerResponse
-{
-public:
-	class FString                                 date;                                              // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerTimeResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerTriggersResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerTriggersResponse final : public FLootLockerResponse
-{
-public:
-	TArray<class FString>                         triggers;                                          // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerTriggersResponse;
+DUMPER7_ASSERTS_FLootLockerBroadcast;
 
 // ScriptStruct LootLockerSDK.LootLockerMissionGoalAsset
 // 0x02B0 (0x02B0 - 0x0000)
@@ -3013,7 +3046,7 @@ struct FLootLockerMission final
 {
 public:
 	int32                                         mission_id;                                        // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         asset_id;                                          // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Asset_id;                                          // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         map_id;                                            // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Type;                                              // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         rounds;                                            // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -3033,107 +3066,652 @@ public:
 };
 DUMPER7_ASSERTS_FLootLockerMission;
 
-// ScriptStruct LootLockerSDK.LootLockerMissionsResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerMissionsResponse final : public FLootLockerResponse
-{
-public:
-	TArray<struct FLootLockerMission>             missions;                                          // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerMissionsResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerGoogleSessionRequestWithPlatform
-// 0x0008 (0x0038 - 0x0030)
-struct FLootLockerGoogleSessionRequestWithPlatform final : public FLootLockerGoogleSessionRequest
-{
-public:
-	ELootLockerGoogleClientPlatform               Platform;                                          // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FLootLockerGoogleSessionRequestWithPlatform;
-
 // ScriptStruct LootLockerSDK.LootLockerMissionResponse
-// 0x00D0 (0x0140 - 0x0070)
+// 0x00D0 (0x01A0 - 0x00D0)
 struct FLootLockerMissionResponse final : public FLootLockerResponse
 {
 public:
-	struct FLootLockerMission                     mission;                                           // 0x0070(0x00D0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLootLockerMission                     mission;                                           // 0x00D0(0x00D0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLootLockerMissionResponse;
 
-// ScriptStruct LootLockerSDK.LootLockerStartMissionResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerStartMissionResponse final : public FLootLockerResponse
+// ScriptStruct LootLockerSDK.LootLockerListCharacterResponseItem
+// 0x0028 (0x0028 - 0x0000)
+struct FLootLockerListCharacterResponseItem final
 {
 public:
-	class FString                                 signature;                                         // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          is_default;                                        // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Name;                                              // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ID;                                                // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerStartMissionResponse;
+DUMPER7_ASSERTS_FLootLockerListCharacterResponseItem;
 
-// ScriptStruct LootLockerSDK.LootLockerCreateHeroRequest
-// 0x0020 (0x0020 - 0x0000)
-struct FLootLockerCreateHeroRequest final
+// ScriptStruct LootLockerSDK.LootLockerListPlayerCharactersResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerListPlayerCharactersResponse final : public FLootLockerResponse
 {
 public:
-	int32                                         hero_id;                                           // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerListCharacterResponseItem> Items;                                       // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerListPlayerCharactersResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerCharacterProgressionResponse
+// 0x0000 (0x0130 - 0x0130)
+struct FLootLockerCharacterProgressionResponse final : public FLootLockerGenericProgressionResponse
+{
+};
+DUMPER7_ASSERTS_FLootLockerCharacterProgressionResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerPaginatedCharacterProgressionResponse
+// 0x0000 (0x0108 - 0x0108)
+struct FLootLockerPaginatedCharacterProgressionResponse final : public FLootLockerPaginatedGenericProgressionResponse
+{
+};
+DUMPER7_ASSERTS_FLootLockerPaginatedCharacterProgressionResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerCharacterProgressionWithRewardsResponse
+// 0x0000 (0x0140 - 0x0140)
+struct FLootLockerCharacterProgressionWithRewardsResponse final : public FLootLockerGenericProgressionWithRewardsResponse
+{
+};
+DUMPER7_ASSERTS_FLootLockerCharacterProgressionWithRewardsResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerListPlayerInfoRequest
+// 0x0030 (0x0030 - 0x0000)
+struct FLootLockerListPlayerInfoRequest final
+{
+public:
+	TArray<class FString>                         player_id;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 Player_legacy_id;                                  // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class FString>                         player_public_uid;                                 // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerListPlayerInfoRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerPersistentStorageItemsResponse
+// 0x0060 (0x0130 - 0x00D0)
+struct FLootLockerPersistentStorageItemsResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerPersistentStorageItem> Payload;                                         // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E0[0x50];                                      // 0x00E0(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerPersistentStorageItemsResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerPersistentStorageItemResponse
+// 0x0028 (0x00F8 - 0x00D0)
+struct FLootLockerPersistentStorageItemResponse final : public FLootLockerResponse
+{
+public:
+	struct FLootLockerPersistentStorageItem       Payload;                                           // 0x00D0(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerPersistentStorageItemResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerGetAssetsResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerGetAssetsResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerAsset>               assets;                                            // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerGetAssetsResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerAssetBoneParameters
+// 0x0060 (0x0060 - 0x0000)
+struct FLootLockerAssetBoneParameters final
+{
+public:
+	class FString                                 Rotation;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 position;                                          // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 BoneName;                                          // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 flags;                                             // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Mass;                                              // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 binding;                                           // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerAssetBoneParameters;
+
+// ScriptStruct LootLockerSDK.LootLockerAssetBone
+// 0x0030 (0x0030 - 0x0000)
+struct FLootLockerAssetBone final
+{
+public:
+	class FString                                 ID;                                                // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerAssetBoneParameters> Parameters;                                        // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerAssetBone;
+
+// ScriptStruct LootLockerSDK.LootLockerGetAssetBonesResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerGetAssetBonesResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerAssetBone>           AssetBones;                                        // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerGetAssetBonesResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerVerificationRequest
+// 0x0030 (0x0030 - 0x0000)
+struct FLootLockerVerificationRequest final
+{
+public:
+	class FString                                 Key;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Platform;                                          // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Token;                                             // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerVerificationRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerGetFavouriteAssetIndicesResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerGetFavouriteAssetIndicesResponse final : public FLootLockerResponse
+{
+public:
+	TArray<int32>                                 favourites;                                        // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerGetFavouriteAssetIndicesResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerUniversalAssets
+// 0x0348 (0x0348 - 0x0000)
+struct FLootLockerUniversalAssets final
+{
+public:
+	int32                                         universal_id;                                      // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         variation_id;                                      // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         rental_option_id;                                  // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 acquisition_source;                                // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerAsset                       Asset;                                             // 0x0020(0x02A8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLootLockerRentalOption                rental;                                            // 0x02C8(0x0080)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerUniversalAssets;
+
+// ScriptStruct LootLockerSDK.LootLockerUniversalAssetsResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerUniversalAssetsResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerUniversalAssets>     global_assets;                                     // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerUniversalAssetsResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerListCatalogsResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerListCatalogsResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerCatalog>             Catalogs;                                          // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerListCatalogsResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerLeaderboardArchive
+// 0x0038 (0x0038 - 0x0000)
+struct FLootLockerLeaderboardArchive final
+{
+public:
+	class FString                                 last_modified;                                     // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 content_type;                                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Key;                                               // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         content_length;                                    // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerLeaderboardArchive;
+
+// ScriptStruct LootLockerSDK.LootLockerLeaderboardArchiveResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerLeaderboardArchiveResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerLeaderboardArchive>  archives;                                          // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerLeaderboardArchiveResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerGrantAssetResponse
+// 0x0040 (0x0110 - 0x00D0)
+struct FLootLockerGrantAssetResponse final : public FLootLockerResponse
+{
+public:
+	int32                                         ID;                                                // 0x00D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Asset_id;                                          // 0x00D4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Asset_Variation_Id;                                // 0x00D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_DC[0x4];                                       // 0x00DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 asset_ulid;                                        // 0x00E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 acquisition_source;                                // 0x00F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Acquisition_date;                                  // 0x0100(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerGrantAssetResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerPlayer
+// 0x0028 (0x0028 - 0x0000)
+struct FLootLockerPlayer final
+{
+public:
+	int32                                         ID;                                                // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 public_uid;                                        // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerPlayer;
+
+// ScriptStruct LootLockerSDK.LootLockerMember
+// 0x0050 (0x0050 - 0x0000)
+struct FLootLockerMember final
+{
+public:
+	class FString                                 member_id;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         rank;                                              // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         score;                                             // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerPlayer                      Player;                                            // 0x0018(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FString                                 MetaData;                                          // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerMember;
+
+// ScriptStruct LootLockerSDK.LootLockerGetScoreListResponse
+// 0x0018 (0x00E8 - 0x00D0)
+struct FLootLockerGetScoreListResponse final : public FLootLockerResponse
+{
+public:
+	struct FLootLockerPagination                  Pagination;                                        // 0x00D0(0x0008)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerMember>              Items;                                             // 0x00D8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerGetScoreListResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerSimpleAssetAuthor
+// 0x0038 (0x0038 - 0x0000)
+struct FLootLockerSimpleAssetAuthor final
+{
+public:
+	int32                                         player_id;                                         // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 player_ulid;                                       // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 public_uid;                                        // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 active_name;                                       // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerSimpleAssetAuthor;
+
+// ScriptStruct LootLockerSDK.LootLockerSimpleAssetFile
+// 0x0038 (0x0038 - 0x0000)
+struct FLootLockerSimpleAssetFile final
+{
+public:
+	int32                                         Size;                                              // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Name;                                              // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          is_default;                                        // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 URL;                                               // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         Tags;                                              // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerCreateHeroRequest;
+DUMPER7_ASSERTS_FLootLockerSimpleAssetFile;
 
-// ScriptStruct LootLockerSDK.LootLockerFinishMissionResponse
-// 0x0008 (0x0078 - 0x0070)
-struct FLootLockerFinishMissionResponse final : public FLootLockerResponse
+// ScriptStruct LootLockerSDK.LootLockerSimpleAssetDataEntity
+// 0x0020 (0x0020 - 0x0000)
+struct FLootLockerSimpleAssetDataEntity final
 {
 public:
-	int32                                         score;                                             // 0x0070(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          check_grant_notifications;                         // 0x0074(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_75[0x3];                                       // 0x0075(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Data;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerFinishMissionResponse;
+DUMPER7_ASSERTS_FLootLockerSimpleAssetDataEntity;
 
-// ScriptStruct LootLockerSDK.LootLockerPlayerFileResponse
-// 0x0088 (0x00F8 - 0x0070)
-struct FLootLockerPlayerFileResponse final : public FLootLockerResponse
+// ScriptStruct LootLockerSDK.LootLockerSimpleAsset
+// 0x00C8 (0x00C8 - 0x0000)
+struct FLootLockerSimpleAsset final
 {
 public:
-	class FString                                 Message;                                           // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ID;                                                // 0x0080(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_84[0x4];                                       // 0x0084(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 revision_id;                                       // 0x0088(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Name;                                              // 0x0098(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Size;                                              // 0x00A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_AC[0x4];                                       // 0x00AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 purpose;                                           // 0x00B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 URL;                                               // 0x00C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 url_expires_at;                                    // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 created_at;                                        // 0x00E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsPublic;                                          // 0x00F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_F1[0x7];                                       // 0x00F1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         Asset_id;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 asset_uuid;                                        // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 asset_ulid;                                        // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 asset_name;                                        // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         context_id;                                        // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 context_name;                                      // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerSimpleAssetAuthor           author;                                            // 0x0050(0x0038)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerPersistentStorageItem> storage;                                         // 0x0088(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerSimpleAssetFile>     files;                                             // 0x0098(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerSimpleAssetDataEntity> data_entities;                                   // 0x00A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerMetadataEntry>       MetaData;                                          // 0x00B8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerPlayerFileResponse;
+DUMPER7_ASSERTS_FLootLockerSimpleAsset;
 
-// ScriptStruct LootLockerSDK.LootLockerFileListResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerFileListResponse final : public FLootLockerResponse
+// ScriptStruct LootLockerSDK.LootLockerListSimpleAssetsResponse
+// 0x0058 (0x0128 - 0x00D0)
+struct FLootLockerListSimpleAssetsResponse final : public FLootLockerResponse
 {
 public:
-	TArray<struct FLootLockerPlayerFile>          Items;                                             // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerSimpleAsset>         assets;                                            // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FLootLockerExtendedIndexBasedPagination Pagination;                                       // 0x00E0(0x0048)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerFileListResponse;
+DUMPER7_ASSERTS_FLootLockerListSimpleAssetsResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerMultiplePlayerNamesAndPlatformsRequest
+// 0x0020 (0x0020 - 0x0000)
+struct FLootLockerMultiplePlayerNamesAndPlatformsRequest final
+{
+public:
+	TArray<class FString>                         player_ids;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class FString>                         player_public_uids;                                // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerMultiplePlayerNamesAndPlatformsRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerLeaderboardSchedule
+// 0x0040 (0x0040 - 0x0000)
+struct FLootLockerLeaderboardSchedule final
+{
+public:
+	class FString                                 cron_expression;                                   // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 next_run;                                          // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 last_run;                                          // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         schedule;                                          // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerLeaderboardSchedule;
+
+// ScriptStruct LootLockerSDK.LootLockerLeaderboardRewardArgs
+// 0x0028 (0x0028 - 0x0000)
+struct FLootLockerLeaderboardRewardArgs final
+{
+public:
+	int32                                         Max;                                               // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Min;                                               // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 method;                                            // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Direction;                                         // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerLeaderboardRewardArgs;
+
+// ScriptStruct LootLockerSDK.LootLockerLeaderboardDetailPredicates
+// 0x0048 (0x0048 - 0x0000)
+struct FLootLockerLeaderboardDetailPredicates final
+{
+public:
+	class FString                                 ID;                                                // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Type;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerLeaderboardRewardArgs       args;                                              // 0x0020(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerLeaderboardDetailPredicates;
+
+// ScriptStruct LootLockerSDK.LootLockerLeaderboardReward
+// 0x02E8 (0x02E8 - 0x0000)
+struct FLootLockerLeaderboardReward final
+{
+public:
+	ELootLockerLeaderboardRewardEntityKind        reward_kind;                                       // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FLootLockerLeaderboardDetailPredicates> predicates;                                // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FLootLockerLeaderboardCurrencyReward   currency;                                          // 0x0018(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLootLockerLeaderboardProgressionResetReward progression_reset;                           // 0x00A8(0x0070)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLootLockerLeaderboardProgressionPointsReward progression_points;                         // 0x0118(0x0080)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLootLockerLeaderboardAssetReward      Asset;                                             // 0x0198(0x00E0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLootLockerLeaderboardGroupReward      group;                                             // 0x0278(0x0060)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FString                                 reward_id;                                         // 0x02D8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerLeaderboardReward;
+
+// ScriptStruct LootLockerSDK.LootLockerLeaderboardDetailsResponse
+// 0x00B8 (0x0188 - 0x00D0)
+struct FLootLockerLeaderboardDetailsResponse final : public FLootLockerResponse
+{
+public:
+	class FString                                 created_at;                                        // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 updated_at;                                        // 0x00E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Key;                                               // 0x00F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Direction_method;                                  // 0x0100(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x0110(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Type;                                              // 0x0120(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ID;                                                // 0x0130(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Overwrite_score_on_submit;                         // 0x0134(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Has_metadata;                                      // 0x0135(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_136[0x2];                                      // 0x0136(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLootLockerLeaderboardSchedule         schedule;                                          // 0x0138(0x0040)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerLeaderboardReward>   Rewards;                                           // 0x0178(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerLeaderboardDetailsResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerFeedbackCategory
+// 0x0038 (0x0038 - 0x0000)
+struct FLootLockerFeedbackCategory final
+{
+public:
+	class FString                                 ID;                                                // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerFeedbackType                       entity;                                            // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Name;                                              // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Description;                                       // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerFeedbackCategory;
+
+// ScriptStruct LootLockerSDK.LootLockerFeedbackCategoryResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerFeedbackCategoryResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerFeedbackCategory>    Categories;                                        // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerFeedbackCategoryResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerAssetInstanceStorageItem
+// 0x0020 (0x0020 - 0x0000)
+struct FLootLockerAssetInstanceStorageItem
+{
+public:
+	class FString                                 Key;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Value;                                             // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerAssetInstanceStorageItem;
+
+// ScriptStruct LootLockerSDK.LootLockerAssetInstanceStorageResponseItem
+// 0x0008 (0x0028 - 0x0020)
+struct FLootLockerAssetInstanceStorageResponseItem final : public FLootLockerAssetInstanceStorageItem
+{
+public:
+	int32                                         ID;                                                // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerAssetInstanceStorageResponseItem;
+
+// ScriptStruct LootLockerSDK.LootLockerAssetInstanceStorageItemsResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerAssetInstanceStorageItemsResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerAssetInstanceStorageResponseItem> storage;                              // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerAssetInstanceStorageItemsResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerAssetInstanceStorageItemResponse
+// 0x0028 (0x00F8 - 0x00D0)
+struct FLootLockerAssetInstanceStorageItemResponse final : public FLootLockerResponse
+{
+public:
+	struct FLootLockerAssetInstanceStorageResponseItem storage;                                      // 0x00D0(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerAssetInstanceStorageItemResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerCollectItemPayload
+// 0x0010 (0x0010 - 0x0000)
+struct FLootLockerCollectItemPayload final
+{
+public:
+	class FString                                 slug;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerCollectItemPayload;
+
+// ScriptStruct LootLockerSDK.LootLockerLootBoxItem
+// 0x0010 (0x0010 - 0x0000)
+struct FLootLockerLootBoxItem final
+{
+public:
+	int32                                         Asset_id;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Asset_Variation_Id;                                // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Asset_Rental_Option_Id;                            // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         weight;                                            // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerLootBoxItem;
+
+// ScriptStruct LootLockerSDK.LootLockerLootBoxContentResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerLootBoxContentResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerLootBoxItem>         contents;                                          // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerLootBoxContentResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerOpenLootBoxResponse
+// 0x0008 (0x00D8 - 0x00D0)
+struct FLootLockerOpenLootBoxResponse final : public FLootLockerResponse
+{
+public:
+	bool                                          check_grant_notifications;                         // 0x00D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D1[0x7];                                       // 0x00D1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerOpenLootBoxResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerListSimplifiedInventoryRequest
+// 0x0020 (0x0020 - 0x0000)
+struct FLootLockerListSimplifiedInventoryRequest final
+{
+public:
+	TArray<int32>                                 asset_ids;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 Context_ids;                                       // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerListSimplifiedInventoryRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerDeleteAssetInstanceResponse
+// 0x0000 (0x00D0 - 0x00D0)
+struct FLootLockerDeleteAssetInstanceResponse final : public FLootLockerResponse
+{
+};
+DUMPER7_ASSERTS_FLootLockerDeleteAssetInstanceResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerContentKeyValuePair
+// 0x0020 (0x0020 - 0x0000)
+struct FLootLockerContentKeyValuePair final
+{
+public:
+	class FString                                 Key;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Value;                                             // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerContentKeyValuePair;
+
+// ScriptStruct LootLockerSDK.LootLockerAssetDataEntity
+// 0x0020 (0x0020 - 0x0000)
+struct FLootLockerAssetDataEntity final
+{
+public:
+	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Data;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerAssetDataEntity;
+
+// ScriptStruct LootLockerSDK.LootLockerAssetCandidateData
+// 0x0048 (0x0048 - 0x0000)
+struct FLootLockerAssetCandidateData final
+{
+public:
+	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         context_id;                                        // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FLootLockerContentKeyValuePair> kv_storage;                                        // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerContentKeyValuePair> filters;                                           // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerAssetDataEntity>     data_entities;                                     // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerAssetCandidateData;
+
+// ScriptStruct LootLockerSDK.LootLockerAssetFile
+// 0x0058 (0x0058 - 0x0000)
+struct FLootLockerAssetFile final
+{
+public:
+	int32                                         ID;                                                // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 URL;                                               // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 purpose;                                           // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerAssetFilePurpose                   purpose_enum;                                      // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Filename;                                          // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 content_type;                                      // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Size;                                              // 0x0050(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerAssetFile;
+
+// ScriptStruct LootLockerSDK.LootLockerResponseAssetCandidate
+// 0x00A0 (0x00A0 - 0x0000)
+struct FLootLockerResponseAssetCandidate final
+{
+public:
+	int32                                         ID;                                                // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Asset_id;                                          // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Status;                                            // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Review_feedback;                                   // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerAssetCandidateData          Data;                                              // 0x0028(0x0048)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerAssetFile>           files;                                             // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FString                                 created_at;                                        // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 updated_at;                                        // 0x0090(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerResponseAssetCandidate;
+
+// ScriptStruct LootLockerSDK.LootLockerCreateAssetCandidateResponse
+// 0x00A0 (0x0170 - 0x00D0)
+struct FLootLockerCreateAssetCandidateResponse final : public FLootLockerResponse
+{
+public:
+	struct FLootLockerResponseAssetCandidate      asset_candidate;                                   // 0x00D0(0x00A0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerCreateAssetCandidateResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerCurrency
+// 0x0058 (0x0058 - 0x0000)
+struct FLootLockerCurrency final
+{
+public:
+	class FString                                 ID;                                                // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Code;                                              // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Game_api_writes_enabled;                           // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 created_at;                                        // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 published_at;                                      // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerCurrency;
+
+// ScriptStruct LootLockerSDK.LootLockerAssetCandidateResponse
+// 0x00A0 (0x0170 - 0x00D0)
+struct FLootLockerAssetCandidateResponse final : public FLootLockerResponse
+{
+public:
+	struct FLootLockerResponseAssetCandidate      asset_candidate;                                   // 0x00D0(0x00A0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerAssetCandidateResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerAssetCandidatesResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerAssetCandidatesResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerResponseAssetCandidate> asset_candidates;                               // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerAssetCandidatesResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerPlayerXpInfo
+// 0x0018 (0x0018 - 0x0000)
+struct FLootLockerPlayerXpInfo final
+{
+public:
+	class FString                                 ID;                                                // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         XP;                                                // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Level;                                             // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerPlayerXpInfo;
 
 // ScriptStruct LootLockerSDK.LootLockerProgressionResponse
-// 0x0038 (0x00A8 - 0x0070)
+// 0x0038 (0x0108 - 0x00D0)
 struct FLootLockerProgressionResponse final : public FLootLockerResponse
 {
 public:
-	class FString                                 ID;                                                // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Key;                                               // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Name;                                              // 0x0090(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Active;                                            // 0x00A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A1[0x7];                                       // 0x00A1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 ID;                                                // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Key;                                               // 0x00E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x00F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Active;                                            // 0x0100(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_101[0x7];                                      // 0x0101(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FLootLockerProgressionResponse;
 
@@ -3151,47 +3729,658 @@ public:
 DUMPER7_ASSERTS_FLootLockerProgression;
 
 // ScriptStruct LootLockerSDK.LootLockerPaginatedProgressionsResponse
-// 0x0038 (0x00A8 - 0x0070)
+// 0x0038 (0x0108 - 0x00D0)
 struct FLootLockerPaginatedProgressionsResponse final : public FLootLockerResponse
 {
 public:
-	struct FLootLockerKeyBasedPagination          Pagination;                                        // 0x0070(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerProgression>         Items;                                             // 0x0098(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FLootLockerKeyBasedPagination          Pagination;                                        // 0x00D0(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerProgression>         Items;                                             // 0x00F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLootLockerPaginatedProgressionsResponse;
 
+// ScriptStruct LootLockerSDK.LootLockerDebitWalletResponse
+// 0x0088 (0x0158 - 0x00D0)
+struct FLootLockerDebitWalletResponse final : public FLootLockerResponse
+{
+public:
+	class FString                                 Amount;                                            // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerCurrency                    currency;                                          // 0x00E0(0x0058)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FString                                 wallet_id;                                         // 0x0138(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 created_at;                                        // 0x0148(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerDebitWalletResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerProgressionTier
+// 0x0048 (0x0048 - 0x0000)
+struct FLootLockerProgressionTier final
+{
+public:
+	int32                                         Step;                                              // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Points_Threshold;                                  // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerRewards                     Rewards;                                           // 0x0008(0x0040)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerProgressionTier;
+
+// ScriptStruct LootLockerSDK.LootLockerPaginatedProgressionTiersResponse
+// 0x0020 (0x00F0 - 0x00D0)
+struct FLootLockerPaginatedProgressionTiersResponse final : public FLootLockerResponse
+{
+public:
+	struct FLootLockerIndexBasedPagination        Pagination;                                        // 0x00D0(0x000C)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_DC[0x4];                                       // 0x00DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FLootLockerProgressionTier>     Items;                                             // 0x00E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerPaginatedProgressionTiersResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerInstanceProgressionResponse
+// 0x0000 (0x0130 - 0x0130)
+struct FLootLockerInstanceProgressionResponse final : public FLootLockerGenericProgressionResponse
+{
+};
+DUMPER7_ASSERTS_FLootLockerInstanceProgressionResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerPaginatedInstanceProgressionResponse
+// 0x0000 (0x0108 - 0x0108)
+struct FLootLockerPaginatedInstanceProgressionResponse final : public FLootLockerPaginatedGenericProgressionResponse
+{
+};
+DUMPER7_ASSERTS_FLootLockerPaginatedInstanceProgressionResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerInstanceProgressionWithRewardsResponse
+// 0x0000 (0x0140 - 0x0140)
+struct FLootLockerInstanceProgressionWithRewardsResponse final : public FLootLockerGenericProgressionWithRewardsResponse
+{
+};
+DUMPER7_ASSERTS_FLootLockerInstanceProgressionWithRewardsResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerMissionsResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerMissionsResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerMission>             missions;                                          // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerMissionsResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerFinishMissionResponse
+// 0x0008 (0x00D8 - 0x00D0)
+struct FLootLockerFinishMissionResponse final : public FLootLockerResponse
+{
+public:
+	int32                                         score;                                             // 0x00D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          check_grant_notifications;                         // 0x00D4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D5[0x3];                                       // 0x00D5(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerFinishMissionResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerActivateRentalAssetResponse
+// 0x0008 (0x00D8 - 0x00D0)
+struct FLootLockerActivateRentalAssetResponse final : public FLootLockerResponse
+{
+public:
+	int32                                         time_left;                                         // 0x00D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D4[0x4];                                       // 0x00D4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerActivateRentalAssetResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerBeginSteamPurchaseRedemptionResponse
+// 0x0018 (0x00E8 - 0x00D0)
+struct FLootLockerBeginSteamPurchaseRedemptionResponse final : public FLootLockerResponse
+{
+public:
+	bool                                          isSuccess;                                         // 0x00D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D1[0x7];                                       // 0x00D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 entitlement_id;                                    // 0x00D8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerBeginSteamPurchaseRedemptionResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerQuerySteamPurchaseRedemptionStatusResponse
+// 0x0008 (0x00D8 - 0x00D0)
+struct FLootLockerQuerySteamPurchaseRedemptionStatusResponse final : public FLootLockerResponse
+{
+public:
+	ELootLockerSteamPurchaseRedemptionStatus      Status;                                            // 0x00D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D1[0x7];                                       // 0x00D1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerQuerySteamPurchaseRedemptionStatusResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerFailedKey
+// 0x0018 (0x0018 - 0x0000)
+struct FLootLockerFailedKey final
+{
+public:
+	class FString                                 Key;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerTriggerFailureReasons              Reason;                                            // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerFailedKey;
+
+// ScriptStruct LootLockerSDK.LootLockerSuccessfulKey
+// 0x0010 (0x0010 - 0x0000)
+struct FLootLockerSuccessfulKey final
+{
+public:
+	class FString                                 Key;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerSuccessfulKey;
+
+// ScriptStruct LootLockerSDK.LootLockerInvokeTriggersByKeyResponse
+// 0x0020 (0x00F0 - 0x00D0)
+struct FLootLockerInvokeTriggersByKeyResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerFailedKey>           Failed_keys;                                       // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerSuccessfulKey>       Successful_keys;                                   // 0x00E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerInvokeTriggersByKeyResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerCreateHeroRequest
+// 0x0020 (0x0020 - 0x0000)
+struct FLootLockerCreateHeroRequest final
+{
+public:
+	int32                                         hero_id;                                           // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Name;                                              // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          is_default;                                        // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerCreateHeroRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerRefreshEpicSessionRequest
+// 0x0010 (0x0030 - 0x0020)
+struct FLootLockerRefreshEpicSessionRequest final : public FLootLockerBaseAuthRequest_Old
+{
+public:
+	class FString                                 refresh_token;                                     // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerRefreshEpicSessionRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerHeroAssetInstance
+// 0x0004 (0x0004 - 0x0000)
+struct FLootLockerHeroAssetInstance final
+{
+public:
+	int32                                         instance_id;                                       // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerHeroAssetInstance;
+
+// ScriptStruct LootLockerSDK.LootLockerListNotificationsResponse
+// 0x00A8 (0x0178 - 0x00D0)
+struct FLootLockerListNotificationsResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerNotification>        Notifications;                                     // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FLootLockerExtendedIndexBasedPagination Pagination;                                       // 0x00E0(0x0048)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	uint8                                         Pad_128[0x50];                                     // 0x0128(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerListNotificationsResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerLoginRequest
+// 0x0020 (0x0020 - 0x0000)
+struct FLootLockerLoginRequest
+{
+public:
+	class FString                                 email;                                             // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Password;                                          // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerLoginRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerReadNotificationsResponse
+// 0x0000 (0x00D0 - 0x00D0)
+struct FLootLockerReadNotificationsResponse final : public FLootLockerResponse
+{
+};
+DUMPER7_ASSERTS_FLootLockerReadNotificationsResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerListBroadcastsResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerListBroadcastsResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerBroadcast>           broadcasts;                                        // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerListBroadcastsResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerPresenceConnectionStats
+// 0x0058 (0x0058 - 0x0000)
+struct FLootLockerPresenceConnectionStats final
+{
+public:
+	class FString                                 PlayerUlid;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerPresenceConnectionState            ConnectionState;                                   // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 LastSentStatus;                                    // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CurrentLatencyMs;                                  // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AverageLatencyMs;                                  // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MinLatencyMs;                                      // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxLatencyMs;                                      // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TotalPingsSent;                                    // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TotalPongsReceived;                                // 0x003C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FDateTime                              ConnectionStartTime;                               // 0x0040(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FDateTime                              ConnectionEndTime;                                 // 0x0048(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTimespan                              ConnectionDuration;                                // 0x0050(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerPresenceConnectionStats;
+
+// ScriptStruct LootLockerSDK.LootLockerCreateWalletRequest
+// 0x0030 (0x0030 - 0x0000)
+struct FLootLockerCreateWalletRequest final
+{
+public:
+	class FString                                 Holder_id;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Holder_type;                                       // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ID;                                                // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerCreateWalletRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerInternalListBroadcastsResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerInternalListBroadcastsResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerInternalBroadcast>   broadcasts;                                        // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerInternalListBroadcastsResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerPresencePingRequest
+// 0x0010 (0x0010 - 0x0000)
+struct FLootLockerPresencePingRequest final
+{
+public:
+	class FString                                 Type;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerPresencePingRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerMessage
+// 0x0078 (0x0078 - 0x0000)
+struct FLootLockerMessage final
+{
+public:
+	class FString                                 Title;                                             // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 published_at;                                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Body;                                              // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 summary;                                           // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Category;                                          // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          alert;                                             // 0x0050(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          New;                                               // 0x0051(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_52[0x6];                                       // 0x0052(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 action;                                            // 0x0058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Image;                                             // 0x0068(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerMessage;
+
+// ScriptStruct LootLockerSDK.LootLockerMessagesResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerMessagesResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerMessage>             messages;                                          // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerMessagesResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerLeaderboardDetails
+// 0x00D0 (0x00D0 - 0x0000)
+struct FLootLockerLeaderboardDetails final
+{
+public:
+	class FString                                 created_at;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 updated_at;                                        // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Key;                                               // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Direction_method;                                  // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Type;                                              // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ID;                                                // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ulid;                                              // 0x0068(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Overwrite_score_on_submit;                         // 0x0078(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Has_metadata;                                      // 0x0079(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_7A[0x6];                                       // 0x007A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLootLockerLeaderboardSchedule         schedule;                                          // 0x0080(0x0040)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerLeaderboardReward>   Rewards;                                           // 0x00C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerLeaderboardDetails;
+
+// ScriptStruct LootLockerSDK.LootLockerListLeaderboardsResponse
+// 0x0020 (0x00F0 - 0x00D0)
+struct FLootLockerListLeaderboardsResponse final : public FLootLockerResponse
+{
+public:
+	struct FLootLockerIndexBasedPagination        Pagination;                                        // 0x00D0(0x000C)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_DC[0x4];                                       // 0x00DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FLootLockerLeaderboardDetails>  Items;                                             // 0x00E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerListLeaderboardsResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerMetadataBase64Value
+// 0x0020 (0x0020 - 0x0000)
+struct FLootLockerMetadataBase64Value final
+{
+public:
+	class FString                                 content_type;                                      // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Content;                                           // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerMetadataBase64Value;
+
+// ScriptStruct LootLockerSDK.LootLockerGetMemberRankResponse
+// 0x0050 (0x0120 - 0x00D0)
+struct FLootLockerGetMemberRankResponse final : public FLootLockerResponse
+{
+public:
+	class FString                                 member_id;                                         // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         rank;                                              // 0x00E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         score;                                             // 0x00E4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerPlayer                      Player;                                            // 0x00E8(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FString                                 MetaData;                                          // 0x0110(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerGetMemberRankResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerFeedbackRequest
+// 0x0040 (0x0040 - 0x0000)
+struct FLootLockerFeedbackRequest final
+{
+public:
+	class FString                                 entity;                                            // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Entity_id;                                         // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 category_id;                                       // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Description;                                       // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerFeedbackRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerGetByListOfMembersResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerGetByListOfMembersResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerMember>              members;                                           // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerGetByListOfMembersResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerSubmitScoreResponse
+// 0x0028 (0x00F8 - 0x00D0)
+struct FLootLockerSubmitScoreResponse final : public FLootLockerResponse
+{
+public:
+	class FString                                 member_id;                                         // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         rank;                                              // 0x00E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         score;                                             // 0x00E4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 MetaData;                                          // 0x00E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerSubmitScoreResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerLeaderboard
+// 0x0148 (0x0148 - 0x0000)
+struct FLootLockerLeaderboard final
+{
+public:
+	int32                                         leaderboard_id;                                    // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 leaderboard_key;                                   // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerGetMemberRankResponse       rank;                                              // 0x0018(0x0120)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FString                                 ulid;                                              // 0x0138(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerLeaderboard;
+
+// ScriptStruct LootLockerSDK.LootLockerGetAllMemberRanksResponse
+// 0x0018 (0x00E8 - 0x00D0)
+struct FLootLockerGetAllMemberRanksResponse final : public FLootLockerResponse
+{
+public:
+	struct FLootLockerPagination                  Pagination;                                        // 0x00D0(0x0008)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerLeaderboard>         leaderboards;                                      // 0x00D8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerGetAllMemberRanksResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerCatalogItemAndQuantityPair
+// 0x0018 (0x0018 - 0x0000)
+struct FLootLockerCatalogItemAndQuantityPair final
+{
+public:
+	class FString                                 Catalog_listing_id;                                // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         quantity;                                          // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerCatalogItemAndQuantityPair;
+
+// ScriptStruct LootLockerSDK.LootLockerPurchaseCatalogItemRequest
+// 0x0020 (0x0020 - 0x0000)
+struct FLootLockerPurchaseCatalogItemRequest final
+{
+public:
+	class FString                                 wallet_id;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerCatalogItemAndQuantityPair> Items;                                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerPurchaseCatalogItemRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerComputeAndLockDropTableResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerComputeAndLockDropTableResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerComputeAndLockItem>  Items;                                             // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerComputeAndLockDropTableResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerPickDropsFromDropTableItem
+// 0x02B8 (0x02B8 - 0x0000)
+struct FLootLockerPickDropsFromDropTableItem final
+{
+public:
+	int32                                         instance_id;                                       // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         variation_id;                                      // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         rental_option_id;                                  // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         quantity;                                          // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerAsset                       Asset;                                             // 0x0010(0x02A8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerPickDropsFromDropTableItem;
+
+// ScriptStruct LootLockerSDK.LootLockerPickDropsFromDropTableResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerPickDropsFromDropTableResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerPickDropsFromDropTableItem> Items;                                      // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerPickDropsFromDropTableResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerRefreshAppleGameCenterSessionRequest
+// 0x0010 (0x0030 - 0x0020)
+struct FLootLockerRefreshAppleGameCenterSessionRequest final : public FLootLockerBaseAuthRequest_Old
+{
+public:
+	class FString                                 refresh_token;                                     // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerRefreshAppleGameCenterSessionRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerListCurrenciesResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerListCurrenciesResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerCurrency>            Currencies;                                        // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerListCurrenciesResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerDenomination
+// 0x0048 (0x0048 - 0x0000)
+struct FLootLockerDenomination final
+{
+public:
+	class FString                                 ID;                                                // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 currency;                                          // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Value;                                             // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 created_at;                                        // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerDenomination;
+
+// ScriptStruct LootLockerSDK.LootLockerListDenominationsResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerListDenominationsResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerDenomination>        Denominations;                                     // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerListDenominationsResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerBalance
+// 0x0088 (0x0088 - 0x0000)
+struct FLootLockerBalance final
+{
+public:
+	class FString                                 Amount;                                            // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerCurrency                    currency;                                          // 0x0010(0x0058)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FString                                 wallet_id;                                         // 0x0068(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 created_at;                                        // 0x0078(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerBalance;
+
+// ScriptStruct LootLockerSDK.LootLockerListBalancesForWalletResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerListBalancesForWalletResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerBalance>             Balances;                                          // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerListBalancesForWalletResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerBalanceModifiers
+// 0x0060 (0x0060 - 0x0000)
+struct FLootLockerBalanceModifiers final
+{
+public:
+	class FString                                 currency_id;                                       // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Currency_Name;                                     // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Currency_Code;                                     // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Factor;                                            // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 created_at;                                        // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Expires_at;                                        // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerBalanceModifiers;
+
+// ScriptStruct LootLockerSDK.LootLockerGetWalletResponse
+// 0x0088 (0x0158 - 0x00D0)
+struct FLootLockerGetWalletResponse final : public FLootLockerResponse
+{
+public:
+	class FString                                 Holder_id;                                         // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ID;                                                // 0x00E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerWalletHolderTypes                  Type;                                              // 0x00F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_F1[0x7];                                       // 0x00F1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLootLockerBalanceModifiers            Modifiers;                                         // 0x00F8(0x0060)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerGetWalletResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerCreditWalletResponse
+// 0x0088 (0x0158 - 0x00D0)
+struct FLootLockerCreditWalletResponse final : public FLootLockerResponse
+{
+public:
+	class FString                                 Amount;                                            // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerCurrency                    currency;                                          // 0x00E0(0x0058)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FString                                 wallet_id;                                         // 0x0138(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 created_at;                                        // 0x0148(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerCreditWalletResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerCreateWalletResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerCreateWalletResponse final : public FLootLockerResponse
+{
+public:
+	class FString                                 wallet_id;                                         // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerCreateWalletResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerPlatformRepresentation
+// 0x0028 (0x0028 - 0x0000)
+struct FLootLockerPlatformRepresentation final
+{
+public:
+	ELootLockerPlatform                           Platform;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 PlatformString;                                    // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 AuthenticationProviderString;                      // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerPlatformRepresentation;
+
+// ScriptStruct LootLockerSDK.LootLockerSessionOptionals
+// 0x0020 (0x0020 - 0x0000)
+struct FLootLockerSessionOptionals final
+{
+public:
+	class FString                                 Timezone;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 player_name;                                       // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerSessionOptionals;
+
+// ScriptStruct LootLockerSDK.LootLockerPlayerData
+// 0x00E8 (0x00E8 - 0x0000)
+struct FLootLockerPlayerData final
+{
+public:
+	class FString                                 Token;                                             // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 RefreshToken;                                      // 0x0010(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerIdentifier;                                  // 0x0020(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerUlid;                                        // 0x0030(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerPublicUid;                                   // 0x0040(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerName;                                        // 0x0050(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 WhiteLabelEmail;                                   // 0x0060(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 WhiteLabelToken;                                   // 0x0070(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerPlatformRepresentation      CurrentPlatform;                                   // 0x0080(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NativeAccessSpecifierPublic)
+	class FString                                 LastSignIn;                                        // 0x00A8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerCreatedAt;                                   // 0x00B8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerSessionOptionals            SessionOptionals;                                  // 0x00C8(0x0020)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerPlayerData;
+
+// ScriptStruct LootLockerSDK.LootLockerListCatalogPricesResponse
+// 0x0268 (0x0338 - 0x00D0)
+struct FLootLockerListCatalogPricesResponse final : public FLootLockerResponse
+{
+public:
+	struct FLootLockerCatalog                     Catalog;                                           // 0x00D0(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerCatalogEntry>        Entries;                                           // 0x0120(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TMap<struct FLootLockerItemDetailsKey, struct FLootLockerAssetDetails> Asset_Details;            // 0x0130(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<struct FLootLockerAssetItemDetailsKey, struct FLootLockerAssetDetails> Optional_Asset_Detail_Variants; // 0x0180(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<struct FLootLockerItemDetailsKey, struct FLootLockerProgressionPointDetails> Progression_Point_Details; // 0x01D0(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<struct FLootLockerItemDetailsKey, struct FLootLockerProgressionResetDetails> Progression_Reset_Details; // 0x0220(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<struct FLootLockerItemDetailsKey, struct FLootLockerCurrencyDetails> Currency_Details;      // 0x0270(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<struct FLootLockerItemDetailsKey, struct FLootLockerGroupDetails> Group_Details;            // 0x02C0(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLootLockerKeyBasedPagination          Pagination;                                        // 0x0310(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerListCatalogPricesResponse;
+
 // ScriptStruct LootLockerSDK.LootLockerNintendoSwitchSessionRequest
 // 0x0010 (0x0030 - 0x0020)
-struct FLootLockerNintendoSwitchSessionRequest final : public FLootLockerBaseAuthRequest
+struct FLootLockerNintendoSwitchSessionRequest final : public FLootLockerBaseAuthRequest_Old
 {
 public:
 	class FString                                 nsa_id_token;                                      // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLootLockerNintendoSwitchSessionRequest;
 
-// ScriptStruct LootLockerSDK.LootLockerPlayerProgressionResponse
-// 0x0000 (0x00C0 - 0x00C0)
-struct FLootLockerPlayerProgressionResponse final : public FLootLockerGenericProgressionResponse
-{
-};
-DUMPER7_ASSERTS_FLootLockerPlayerProgressionResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerPaginatedGenericProgressionResponse
-// 0x0038 (0x00A8 - 0x0070)
-struct FLootLockerPaginatedGenericProgressionResponse : public FLootLockerResponse
+// ScriptStruct LootLockerSDK.LootLockerDiscordSessionRequest
+// 0x0010 (0x0030 - 0x0020)
+struct FLootLockerDiscordSessionRequest final : public FLootLockerBaseAuthRequest_Old
 {
 public:
-	struct FLootLockerKeyBasedPagination          Pagination;                                        // 0x0070(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerPlayerProgression>   Items;                                             // 0x0098(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FString                                 access_token;                                      // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerPaginatedGenericProgressionResponse;
+DUMPER7_ASSERTS_FLootLockerDiscordSessionRequest;
 
-// ScriptStruct LootLockerSDK.LootLockerPaginatedPlayerProgressionResponse
-// 0x0000 (0x00A8 - 0x00A8)
-struct FLootLockerPaginatedPlayerProgressionResponse final : public FLootLockerPaginatedGenericProgressionResponse
+// ScriptStruct LootLockerSDK.LootLockerBeginSteamPurchaseRedemptionRequest
+// 0x0040 (0x0040 - 0x0000)
+struct FLootLockerBeginSteamPurchaseRedemptionRequest
 {
+public:
+	class FString                                 steam_id;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 currency;                                          // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Language;                                          // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Catalog_item_id;                                   // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerPaginatedPlayerProgressionResponse;
+DUMPER7_ASSERTS_FLootLockerBeginSteamPurchaseRedemptionRequest;
 
 // ScriptStruct LootLockerSDK.LootLockerBeginSteamPurchaseRedemptionForClassRequest
 // 0x0008 (0x0048 - 0x0040)
@@ -3203,144 +4392,367 @@ public:
 };
 DUMPER7_ASSERTS_FLootLockerBeginSteamPurchaseRedemptionForClassRequest;
 
-// ScriptStruct LootLockerSDK.LootLockerDebitRequest
+// ScriptStruct LootLockerSDK.LootLockerQuerySteamPurchaseRedemptionStatusRequest
+// 0x0010 (0x0010 - 0x0000)
+struct FLootLockerQuerySteamPurchaseRedemptionStatusRequest final
+{
+public:
+	class FString                                 entitlement_id;                                    // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerQuerySteamPurchaseRedemptionStatusRequest;
+
+// ScriptStruct LootLockerSDK.InternalLootLockerListCatalogPricesResponse
+// 0x00D8 (0x01A8 - 0x00D0)
+struct FInternalLootLockerListCatalogPricesResponse final : public FLootLockerResponse
+{
+public:
+	struct FLootLockerCatalog                     Catalog;                                           // 0x00D0(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerCatalogEntry>        Entries;                                           // 0x0120(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerAssetDetails>        Assets_Details;                                    // 0x0130(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerProgressionPointDetails> Progression_Points_Details;                    // 0x0140(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerProgressionResetDetails> Progression_Resets_Details;                    // 0x0150(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerCurrencyDetails>     Currency_Details;                                  // 0x0160(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerGroupDetails>        Group_Details;                                     // 0x0170(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FLootLockerKeyBasedPagination          Pagination;                                        // 0x0180(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FInternalLootLockerListCatalogPricesResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerPresenceStatusRequest
+// 0x0060 (0x0060 - 0x0000)
+struct FLootLockerPresenceStatusRequest final
+{
+public:
+	class FString                                 Status;                                            // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<class FString, class FString>            MetaData;                                          // 0x0010(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerPresenceStatusRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerSingleEntitlementResponse
+// 0x0038 (0x0108 - 0x00D0)
+struct FLootLockerSingleEntitlementResponse final : public FLootLockerResponse
+{
+public:
+	class FString                                 created_at;                                        // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerEntitlementHistoryListingStatus    Status;                                            // 0x00E0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerEntitlementHistoryListingStore     Store;                                             // 0x00E1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerEntitlementHistoryListingType      Type;                                              // 0x00E2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E3[0x5];                                       // 0x00E3(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FLootLockerEntitlementHistoryItem> Items;                                          // 0x00E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerEntitlementHistoryMetadata> MetaData;                                   // 0x00F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerSingleEntitlementResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerListMetadataResponse
+// 0x00A8 (0x0178 - 0x00D0)
+struct FLootLockerListMetadataResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerMetadataEntry>       Entries;                                           // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FLootLockerExtendedIndexBasedPagination Pagination;                                       // 0x00E0(0x0048)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	uint8                                         Pad_128[0x50];                                     // 0x0128(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerListMetadataResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerGetMetadataResponse
+// 0x0088 (0x0158 - 0x00D0)
+struct FLootLockerGetMetadataResponse final : public FLootLockerResponse
+{
+public:
+	struct FLootLockerMetadataEntry               Entry;                                             // 0x00D0(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerGetMetadataResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerSetMetadataErrorEntry
+// 0x0018 (0x0018 - 0x0000)
+struct FLootLockerSetMetadataErrorEntry final
+{
+public:
+	class FString                                 Key;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerMetadataTypes                      Type;                                              // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerSetMetadataErrorEntry;
+
+// ScriptStruct LootLockerSDK.LootLockerSetMetadataError
 // 0x0030 (0x0030 - 0x0000)
-struct FLootLockerDebitRequest final
+struct FLootLockerSetMetadataError final
 {
 public:
-	class FString                                 Amount;                                            // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Currency_id;                                       // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Wallet_id;                                         // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerMetadataActions                    action;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLootLockerSetMetadataErrorEntry       Entry;                                             // 0x0008(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FString                                 Error;                                             // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerDebitRequest;
+DUMPER7_ASSERTS_FLootLockerSetMetadataError;
 
-// ScriptStruct LootLockerSDK.LootLockerCharacterProgressionResponse
-// 0x0000 (0x00C0 - 0x00C0)
-struct FLootLockerCharacterProgressionResponse final : public FLootLockerGenericProgressionResponse
+// ScriptStruct LootLockerSDK.LootLockerSetMetadataResponse
+// 0x0028 (0x00F8 - 0x00D0)
+struct FLootLockerSetMetadataResponse final : public FLootLockerResponse
 {
+public:
+	TArray<struct FLootLockerSetMetadataError>    Errors;                                            // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	ELootLockerMetadataSources                    Source;                                            // 0x00E0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E1[0x7];                                       // 0x00E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Source_id;                                         // 0x00E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerCharacterProgressionResponse;
+DUMPER7_ASSERTS_FLootLockerSetMetadataResponse;
 
-// ScriptStruct LootLockerSDK.LootLockerEpicSessionRequest
+// ScriptStruct LootLockerSDK.LootLockerFollower
+// 0x0040 (0x0040 - 0x0000)
+struct FLootLockerFollower final
+{
+public:
+	class FString                                 player_id;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 player_name;                                       // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Publicuid;                                         // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 CreatedAt;                                         // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerFollower;
+
+// ScriptStruct LootLockerSDK.LootLockerListFollowersResponse
+// 0x0038 (0x0108 - 0x00D0)
+struct FLootLockerListFollowersResponse final : public FLootLockerResponse
+{
+public:
+	TArray<struct FLootLockerFollower>            Followers;                                         // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FLootLockerKeyBasedPagination          Pagination;                                        // 0x00E0(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerListFollowersResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerRefreshAppleSessionRequest
 // 0x0010 (0x0030 - 0x0020)
-struct FLootLockerEpicSessionRequest final : public FLootLockerBaseAuthRequest
+struct FLootLockerRefreshAppleSessionRequest final : public FLootLockerBaseAuthRequest_Old
 {
 public:
-	class FString                                 id_token;                                          // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 refresh_token;                                     // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerEpicSessionRequest;
+DUMPER7_ASSERTS_FLootLockerRefreshAppleSessionRequest;
 
-// ScriptStruct LootLockerSDK.LootLockerPaginatedCharacterProgressionResponse
-// 0x0000 (0x00A8 - 0x00A8)
-struct FLootLockerPaginatedCharacterProgressionResponse final : public FLootLockerPaginatedGenericProgressionResponse
+// ScriptStruct LootLockerSDK.LootLockerStartRemoteSessionRequest
+// 0x0040 (0x0040 - 0x0000)
+struct FLootLockerStartRemoteSessionRequest final
 {
+public:
+	class FString                                 game_key;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 game_version;                                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Lease_code;                                        // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Nonce;                                             // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerPaginatedCharacterProgressionResponse;
+DUMPER7_ASSERTS_FLootLockerStartRemoteSessionRequest;
 
-// ScriptStruct LootLockerSDK.LootLockerInstanceProgressionResponse
-// 0x0000 (0x00C0 - 0x00C0)
-struct FLootLockerInstanceProgressionResponse final : public FLootLockerGenericProgressionResponse
-{
-};
-DUMPER7_ASSERTS_FLootLockerInstanceProgressionResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerPaginatedInstanceProgressionResponse
-// 0x0000 (0x00A8 - 0x00A8)
-struct FLootLockerPaginatedInstanceProgressionResponse final : public FLootLockerPaginatedGenericProgressionResponse
-{
-};
-DUMPER7_ASSERTS_FLootLockerPaginatedInstanceProgressionResponse;
-
-// ScriptStruct LootLockerSDK.LootLockerInstanceProgressionWithRewardsResponse
+// ScriptStruct LootLockerSDK.LootLockerFollowActionResponse
 // 0x0000 (0x00D0 - 0x00D0)
-struct FLootLockerInstanceProgressionWithRewardsResponse final : public FLootLockerGenericProgressionWithRewardsResponse
+struct FLootLockerFollowActionResponse final : public FLootLockerResponse
 {
 };
-DUMPER7_ASSERTS_FLootLockerInstanceProgressionWithRewardsResponse;
+DUMPER7_ASSERTS_FLootLockerFollowActionResponse;
 
-// ScriptStruct LootLockerSDK.LootLockerPurchaseResponse
-// 0x0008 (0x0078 - 0x0070)
-struct FLootLockerPurchaseResponse final : public FLootLockerResponse
+// ScriptStruct LootLockerSDK.LootLockerAcceptedFriend
+// 0x0010 (0x0050 - 0x0040)
+struct FLootLockerAcceptedFriend final : public FLootLockerFriend
 {
 public:
-	bool                                          Overlay;                                           // 0x0070(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_71[0x3];                                       // 0x0071(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         order_id;                                          // 0x0074(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Accepted_at;                                       // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerPurchaseResponse;
+DUMPER7_ASSERTS_FLootLockerAcceptedFriend;
 
-// ScriptStruct LootLockerSDK.LootLockerPurchaseStatusResponse
-// 0x0010 (0x0080 - 0x0070)
-struct FLootLockerPurchaseStatusResponse final : public FLootLockerResponse
+// ScriptStruct LootLockerSDK.LootLockerListFriendsResponse
+// 0x0058 (0x0128 - 0x00D0)
+struct FLootLockerListFriendsResponse final : public FLootLockerResponse
 {
 public:
-	class FString                                 Status;                                            // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerAcceptedFriend>      Friends;                                           // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FLootLockerExtendedIndexBasedPagination Pagination;                                       // 0x00E0(0x0048)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerPurchaseStatusResponse;
+DUMPER7_ASSERTS_FLootLockerListFriendsResponse;
 
-// ScriptStruct LootLockerSDK.LootLockerActivateRentalAssetResponse
-// 0x0008 (0x0078 - 0x0070)
-struct FLootLockerActivateRentalAssetResponse final : public FLootLockerResponse
+// ScriptStruct LootLockerSDK.LootLockerHttpLogEntry
+// 0x0120 (0x0120 - 0x0000)
+struct FLootLockerHttpLogEntry final
 {
 public:
-	int32                                         time_left;                                         // 0x0070(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_74[0x4];                                       // 0x0074(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 method;                                            // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Path;                                              // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         StatusCode;                                        // 0x0020(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Duration;                                          // 0x0024(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 RequestData;                                       // 0x0028(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ResponseData;                                      // 0x0038(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 RequestHeaders;                                    // 0x0048(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSuccess;                                          // 0x0058(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FDateTime                              Timestamp;                                         // 0x0060(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLootLockerErrorData                   ErrorData;                                         // 0x0068(0x0058)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	struct FLootLockerRequestContext              RequestContext;                                    // 0x00C0(0x0060)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerActivateRentalAssetResponse;
+DUMPER7_ASSERTS_FLootLockerHttpLogEntry;
 
-// ScriptStruct LootLockerSDK.LootLockerOrderDetailsResponse
-// 0x0020 (0x0090 - 0x0070)
-struct FLootLockerOrderDetailsResponse final : public FLootLockerResponse
+// ScriptStruct LootLockerSDK.LootLockerListOutgoingFriendRequestsResponse
+// 0x0058 (0x0128 - 0x00D0)
+struct FLootLockerListOutgoingFriendRequestsResponse final : public FLootLockerResponse
 {
 public:
-	class FString                                 order_status;                                      // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerProduct>             products;                                          // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerFriend>              Outgoing;                                          // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FLootLockerExtendedIndexBasedPagination Pagination;                                       // 0x00E0(0x0048)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerOrderDetailsResponse;
+DUMPER7_ASSERTS_FLootLockerListOutgoingFriendRequestsResponse;
 
-// ScriptStruct LootLockerSDK.LootLockerLeaseRemoteSessionResponse
-// 0x0058 (0x00C8 - 0x0070)
-struct FLootLockerLeaseRemoteSessionResponse final : public FLootLockerResponse
+// ScriptStruct LootLockerSDK.LootLockerGetFriendResponse
+// 0x0050 (0x0120 - 0x00D0)
+struct FLootLockerGetFriendResponse final : public FLootLockerResponse
 {
 public:
-	class FString                                 Code;                                              // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Nonce;                                             // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Redirect_url;                                      // 0x0090(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Redirect_url_qr_base64;                            // 0x00A0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Display_url;                                       // 0x00B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ELootLockerRemoteSessionLeaseStatus           Status;                                            // 0x00C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C1[0x7];                                       // 0x00C1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 player_id;                                         // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 player_name;                                       // 0x00E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 public_uid;                                        // 0x00F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 created_at;                                        // 0x0100(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Accepted_at;                                       // 0x0110(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerLeaseRemoteSessionResponse;
+DUMPER7_ASSERTS_FLootLockerGetFriendResponse;
 
-// ScriptStruct LootLockerSDK.LootLockerCreateAssetCandidateResponse
-// 0x00A0 (0x0110 - 0x0070)
-struct FLootLockerCreateAssetCandidateResponse final : public FLootLockerResponse
+// ScriptStruct LootLockerSDK.LootLockerTimeResponse
+// 0x0010 (0x00E0 - 0x00D0)
+struct FLootLockerTimeResponse final : public FLootLockerResponse
 {
 public:
-	struct FLootLockerResponseAssetCandidate      asset_candidate;                                   // 0x0070(0x00A0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FString                                 date;                                              // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerCreateAssetCandidateResponse;
+DUMPER7_ASSERTS_FLootLockerTimeResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerPickDropsFromDropTableRequest
+// 0x0010 (0x0010 - 0x0000)
+struct FLootLockerPickDropsFromDropTableRequest final
+{
+public:
+	TArray<int32>                                 picks;                                             // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerPickDropsFromDropTableRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerGameInfo
+// 0x0038 (0x0038 - 0x0000)
+struct FLootLockerGameInfo final
+{
+public:
+	class FString                                 Title_id;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Environment_id;                                    // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         game_id;                                           // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Name;                                              // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerGameInfo;
+
+// ScriptStruct LootLockerSDK.LootLockerGameInfoResponse
+// 0x0038 (0x0108 - 0x00D0)
+struct FLootLockerGameInfoResponse final : public FLootLockerResponse
+{
+public:
+	struct FLootLockerGameInfo                    Info;                                              // 0x00D0(0x0038)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerGameInfoResponse;
+
+// ScriptStruct LootLockerSDK.LootLockerCheckpointTime
+// 0x0008 (0x0008 - 0x0000)
+struct FLootLockerCheckpointTime final
+{
+public:
+	int32                                         Index;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Time;                                              // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerCheckpointTime;
+
+// ScriptStruct LootLockerSDK.LootLockerFinishMissionPayload
+// 0x0030 (0x0030 - 0x0000)
+struct FLootLockerFinishMissionPayload final
+{
+public:
+	class FString                                 finish_time;                                       // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 finish_score;                                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerCheckpointTime>      checkpoint_times;                                  // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerFinishMissionPayload;
+
+// ScriptStruct LootLockerSDK.LootLockerRedeemGooglePlayStorePurchaseForPlayerRequest
+// 0x0020 (0x0020 - 0x0000)
+struct FLootLockerRedeemGooglePlayStorePurchaseForPlayerRequest
+{
+public:
+	class FString                                 product_id;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Purchase_token;                                    // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerRedeemGooglePlayStorePurchaseForPlayerRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerAssetInstanceStorageItems
+// 0x0010 (0x0010 - 0x0000)
+struct FLootLockerAssetInstanceStorageItems final
+{
+public:
+	TArray<struct FLootLockerAssetInstanceStorageItem> storage;                                      // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerAssetInstanceStorageItems;
+
+// ScriptStruct LootLockerSDK.LootLockerSimpleAssetIncludes
+// 0x0004 (0x0004 - 0x0000)
+struct FLootLockerSimpleAssetIncludes final
+{
+public:
+	bool                                          storage;                                           // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          files;                                             // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          data_entities;                                     // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          MetaData;                                          // 0x0003(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerSimpleAssetIncludes;
+
+// ScriptStruct LootLockerSDK.LootLockerSimpleAssetExcludes
+// 0x0001 (0x0001 - 0x0000)
+struct FLootLockerSimpleAssetExcludes final
+{
+public:
+	bool                                          authors;                                           // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerSimpleAssetExcludes;
+
+// ScriptStruct LootLockerSDK.LootLockerListSimpleAssetsRequest
+// 0x0030 (0x0030 - 0x0000)
+struct FLootLockerListSimpleAssetsRequest final
+{
+public:
+	struct FLootLockerSimpleAssetIncludes         includes;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FLootLockerSimpleAssetExcludes         excludes;                                          // 0x0004(0x0001)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLootLockerSimpleAssetFilters          filters;                                           // 0x0008(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerListSimpleAssetsRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerPresenceAuthenticationRequest
+// 0x0010 (0x0010 - 0x0000)
+struct FLootLockerPresenceAuthenticationRequest final
+{
+public:
+	class FString                                 Token;                                             // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerPresenceAuthenticationRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerRedeemEpicStorePurchaseForPlayerRequest
+// 0x0040 (0x0040 - 0x0000)
+struct FLootLockerRedeemEpicStorePurchaseForPlayerRequest
+{
+public:
+	class FString                                 Account_id;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Bearer_token;                                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         Entitlement_ids;                                   // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FString                                 Sandbox_id;                                        // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerRedeemEpicStorePurchaseForPlayerRequest;
 
 // ScriptStruct LootLockerSDK.LootLockerGrantAssetRequest
 // 0x000C (0x000C - 0x0000)
 struct FLootLockerGrantAssetRequest final
 {
 public:
-	int32                                         asset_id;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         asset_variation_id;                                // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         asset_rental_option_id;                            // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Asset_id;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Asset_Variation_Id;                                // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Asset_Rental_Option_Id;                            // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLootLockerGrantAssetRequest;
-
-// ScriptStruct LootLockerSDK.LootLockerBoneOverrides
-// 0x0001 (0x0001 - 0x0000)
-struct FLootLockerBoneOverrides final
-{
-public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FLootLockerBoneOverrides;
 
 // ScriptStruct LootLockerSDK.LootLockerUserIdRequest
 // 0x0004 (0x0004 - 0x0000)
@@ -3351,78 +4763,133 @@ public:
 };
 DUMPER7_ASSERTS_FLootLockerUserIdRequest;
 
-// ScriptStruct LootLockerSDK.LootLockerVerificationWithSteamAppIdRequest
-// 0x0038 (0x0038 - 0x0000)
-struct FLootLockerVerificationWithSteamAppIdRequest final
+// ScriptStruct LootLockerSDK.LootLockerGetAllMemberRanksRequest
+// 0x0018 (0x0018 - 0x0000)
+struct FLootLockerGetAllMemberRanksRequest final
 {
 public:
-	class FString                                 Key;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Platform;                                          // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Token;                                             // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Active_steam_app_id;                               // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 member_id;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Count;                                             // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         after;                                             // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerVerificationWithSteamAppIdRequest;
+DUMPER7_ASSERTS_FLootLockerGetAllMemberRanksRequest;
 
-// ScriptStruct LootLockerSDK.LootLockerVerificationRequest
-// 0x0030 (0x0030 - 0x0000)
-struct FLootLockerVerificationRequest final
-{
-public:
-	class FString                                 Key;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Platform;                                          // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Token;                                             // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerVerificationRequest;
-
-// ScriptStruct LootLockerSDK.LootLockerRefreshEpicSessionRequest
+// ScriptStruct LootLockerSDK.LootLockerRefreshDiscordSessionRequest
 // 0x0010 (0x0030 - 0x0020)
-struct FLootLockerRefreshEpicSessionRequest final : public FLootLockerBaseAuthRequest
+struct FLootLockerRefreshDiscordSessionRequest final : public FLootLockerBaseAuthRequest_Old
 {
 public:
 	class FString                                 refresh_token;                                     // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerRefreshEpicSessionRequest;
+DUMPER7_ASSERTS_FLootLockerRefreshDiscordSessionRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerPlaystationNetworkV3SessionRequest
+// 0x0038 (0x0038 - 0x0000)
+struct FLootLockerPlaystationNetworkV3SessionRequest final
+{
+public:
+	class FString                                 game_api_key;                                      // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 game_version;                                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Auth_code;                                         // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Env_iss_id;                                        // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerPlaystationNetworkV3SessionRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerQueryScoreRequest
+// 0x0004 (0x0004 - 0x0000)
+struct FLootLockerQueryScoreRequest final
+{
+public:
+	int32                                         score;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerQueryScoreRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerPlaystationNetworkVerificationRequest
+// 0x0038 (0x0038 - 0x0000)
+struct FLootLockerPlaystationNetworkVerificationRequest final
+{
+public:
+	class FString                                 Key;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Platform;                                          // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Token;                                             // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Psn_issuer_id;                                     // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerPlaystationNetworkVerificationRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerEpicSessionRequest
+// 0x0010 (0x0030 - 0x0020)
+struct FLootLockerEpicSessionRequest final : public FLootLockerBaseAuthRequest_Old
+{
+public:
+	class FString                                 id_token;                                          // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerEpicSessionRequest;
 
 // ScriptStruct LootLockerSDK.LootLockerRefreshGoogleSessionRequest
 // 0x0010 (0x0030 - 0x0020)
-struct FLootLockerRefreshGoogleSessionRequest final : public FLootLockerBaseAuthRequest
+struct FLootLockerRefreshGoogleSessionRequest final : public FLootLockerBaseAuthRequest_Old
 {
 public:
 	class FString                                 refresh_token;                                     // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLootLockerRefreshGoogleSessionRequest;
 
-// ScriptStruct LootLockerSDK.LootLockerRefreshAppleSessionRequest
-// 0x0010 (0x0030 - 0x0020)
-struct FLootLockerRefreshAppleSessionRequest final : public FLootLockerBaseAuthRequest
+// ScriptStruct LootLockerSDK.LootLockerGoogleSessionRequestWithPlatform
+// 0x0008 (0x0038 - 0x0030)
+struct FLootLockerGoogleSessionRequestWithPlatform final : public FLootLockerGoogleSessionRequest
 {
 public:
-	class FString                                 refresh_token;                                     // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerGoogleClientPlatform               Platform;                                          // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FLootLockerRefreshAppleSessionRequest;
+DUMPER7_ASSERTS_FLootLockerGoogleSessionRequestWithPlatform;
+
+// ScriptStruct LootLockerSDK.LootLockerCreateAssetCandidateData
+// 0x0048 (0x0048 - 0x0000)
+struct FLootLockerCreateAssetCandidateData final
+{
+public:
+	struct FLootLockerAssetCandidateData          Data;                                              // 0x0000(0x0048)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerCreateAssetCandidateData;
+
+// ScriptStruct LootLockerSDK.LootLockerAppleSessionRequest
+// 0x0010 (0x0030 - 0x0020)
+struct FLootLockerAppleSessionRequest final : public FLootLockerBaseAuthRequest_Old
+{
+public:
+	class FString                                 apple_authorization_code;                          // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerAppleSessionRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerAppleGameCenterSessionRequest
+// 0x0060 (0x0080 - 0x0020)
+struct FLootLockerAppleGameCenterSessionRequest final : public FLootLockerBaseAuthRequest_Old
+{
+public:
+	class FString                                 bundle_id;                                         // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 player_id;                                         // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 public_key_url;                                    // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 signature;                                         // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 salt;                                              // 0x0060(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Timestamp;                                         // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerAppleGameCenterSessionRequest;
 
 // ScriptStruct LootLockerSDK.LootLockerXboxSessionRequest
 // 0x0010 (0x0030 - 0x0020)
-struct FLootLockerXboxSessionRequest final : public FLootLockerBaseAuthRequest
+struct FLootLockerXboxSessionRequest final : public FLootLockerBaseAuthRequest_Old
 {
 public:
 	class FString                                 xbox_user_token;                                   // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLootLockerXboxSessionRequest;
 
-// ScriptStruct LootLockerSDK.LootLockerRefreshMetaSessionRequest
-// 0x0010 (0x0030 - 0x0020)
-struct FLootLockerRefreshMetaSessionRequest final : public FLootLockerBaseAuthRequest
-{
-public:
-	class FString                                 refresh_token;                                     // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerRefreshMetaSessionRequest;
-
 // ScriptStruct LootLockerSDK.LootLockerStartMetaSessionRequest
 // 0x0020 (0x0040 - 0x0020)
-struct FLootLockerStartMetaSessionRequest final : public FLootLockerBaseAuthRequest
+struct FLootLockerStartMetaSessionRequest final : public FLootLockerBaseAuthRequest_Old
 {
 public:
 	class FString                                 user_id;                                           // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -3438,26 +4905,6 @@ public:
 	class FString                                 email;                                             // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLootLockerWhiteLabelResetPasswordRequest;
-
-// ScriptStruct LootLockerSDK.LootLockerWhiteLabelVerifySessionRequest
-// 0x0020 (0x0020 - 0x0000)
-struct FLootLockerWhiteLabelVerifySessionRequest final
-{
-public:
-	class FString                                 email;                                             // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Token;                                             // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerWhiteLabelVerifySessionRequest;
-
-// ScriptStruct LootLockerSDK.LootLockerWhiteLabelAuthRequest
-// 0x0020 (0x0040 - 0x0020)
-struct FLootLockerWhiteLabelAuthRequest final : public FLootLockerBaseAuthRequest
-{
-public:
-	class FString                                 email;                                             // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Token;                                             // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerWhiteLabelAuthRequest;
 
 // ScriptStruct LootLockerSDK.LootLockerWhiteLabelLoginRequest
 // 0x0008 (0x0028 - 0x0020)
@@ -3475,41 +4922,30 @@ struct FLootLockerCreditRequest final
 {
 public:
 	class FString                                 Amount;                                            // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Currency_id;                                       // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Wallet_id;                                         // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 currency_id;                                       // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 wallet_id;                                         // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLootLockerCreditRequest;
 
-// ScriptStruct LootLockerSDK.LootLockerCreateWalletRequest
-// 0x0030 (0x0030 - 0x0000)
-struct FLootLockerCreateWalletRequest final
+// ScriptStruct LootLockerSDK.LootLockerEquipAssetToCharacterWithInstanceRequest
+// 0x0004 (0x0004 - 0x0000)
+struct FLootLockerEquipAssetToCharacterWithInstanceRequest final
 {
 public:
-	class FString                                 Holder_id;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Holder_type;                                       // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ID;                                                // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         instance_id;                                       // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerCreateWalletRequest;
-
-// ScriptStruct LootLockerSDK.LootLockerEquipUniversalAssetToCharacterRequest
-// 0x0008 (0x0008 - 0x0000)
-struct FLootLockerEquipUniversalAssetToCharacterRequest final
-{
-public:
-	int32                                         asset_id;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         asset_variation_id;                                // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerEquipUniversalAssetToCharacterRequest;
+DUMPER7_ASSERTS_FLootLockerEquipAssetToCharacterWithInstanceRequest;
 
 // ScriptStruct LootLockerSDK.LootLockerCreateCharacterRequest
-// 0x0028 (0x0028 - 0x0000)
+// 0x0020 (0x0020 - 0x0000)
 struct FLootLockerCreateCharacterRequest final
 {
 public:
 	bool                                          is_default;                                        // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Name;                                              // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 character_type_id;                                 // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         character_type_id;                                 // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FLootLockerCreateCharacterRequest;
 
@@ -3524,14 +4960,44 @@ public:
 };
 DUMPER7_ASSERTS_FLootLockerUpdateCharacterRequest;
 
-// ScriptStruct LootLockerSDK.LootLockerEmptyRequest
-// 0x0001 (0x0001 - 0x0000)
-struct FLootLockerEmptyRequest final
+// ScriptStruct LootLockerSDK.LootLockerTransferProvidersBetweenAccountsRequest
+// 0x0030 (0x0030 - 0x0000)
+struct FLootLockerTransferProvidersBetweenAccountsRequest final
 {
 public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 Source_token;                                      // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Target_token;                                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         Identity_providers;                                // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerEmptyRequest;
+DUMPER7_ASSERTS_FLootLockerTransferProvidersBetweenAccountsRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerConnectRemoteSessionToAccountRequest
+// 0x0020 (0x0020 - 0x0000)
+struct FLootLockerConnectRemoteSessionToAccountRequest final
+{
+public:
+	class FString                                 Code;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Nonce;                                             // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerConnectRemoteSessionToAccountRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerConnectTwitchProviderToAccountRequest
+// 0x0010 (0x0010 - 0x0000)
+struct FLootLockerConnectTwitchProviderToAccountRequest final
+{
+public:
+	class FString                                 Authorization_code;                                // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerConnectTwitchProviderToAccountRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerConnectDiscordProviderToAccountRequest
+// 0x0010 (0x0010 - 0x0000)
+struct FLootLockerConnectDiscordProviderToAccountRequest final
+{
+public:
+	class FString                                 Token;                                             // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerConnectDiscordProviderToAccountRequest;
 
 // ScriptStruct LootLockerSDK.LootLockerConnectAppleRestProviderToAccountRequest
 // 0x0010 (0x0010 - 0x0000)
@@ -3542,21 +5008,42 @@ public:
 };
 DUMPER7_ASSERTS_FLootLockerConnectAppleRestProviderToAccountRequest;
 
-// ScriptStruct LootLockerSDK.LootLockerPickDropsFromDropTableRequest
-// 0x0010 (0x0010 - 0x0000)
-struct FLootLockerPickDropsFromDropTableRequest final
+// ScriptStruct LootLockerSDK.LootLockerConnectGoogleProviderToAccountWithPlatformRequest
+// 0x0020 (0x0020 - 0x0000)
+struct FLootLockerConnectGoogleProviderToAccountWithPlatformRequest final
 {
 public:
-	TArray<int32>                                 picks;                                             // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FString                                 id_token;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Platform;                                          // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerPickDropsFromDropTableRequest;
+DUMPER7_ASSERTS_FLootLockerConnectGoogleProviderToAccountWithPlatformRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerConnectGoogleProviderToAccountRequest
+// 0x0010 (0x0010 - 0x0000)
+struct FLootLockerConnectGoogleProviderToAccountRequest final
+{
+public:
+	class FString                                 id_token;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerConnectGoogleProviderToAccountRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerEndPoints
+// 0x0018 (0x0018 - 0x0000)
+struct FLootLockerEndPoints final
+{
+public:
+	class FString                                 endpoint;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELootLockerHTTPMethod                         RequestMethod;                                     // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerEndPoints;
 
 // ScriptStruct LootLockerSDK.LootLockerHeroGlobalAsset
 // 0x0004 (0x0004 - 0x0000)
 struct FLootLockerHeroGlobalAsset
 {
 public:
-	int32                                         asset_id;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Asset_id;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLootLockerHeroGlobalAsset;
 
@@ -3565,31 +5052,9 @@ DUMPER7_ASSERTS_FLootLockerHeroGlobalAsset;
 struct FLootLockerHeroGlobalAssetVariation final : public FLootLockerHeroGlobalAsset
 {
 public:
-	int32                                         asset_variation_id;                                // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Asset_Variation_Id;                                // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLootLockerHeroGlobalAssetVariation;
-
-// ScriptStruct LootLockerSDK.LootLockerHeroAssetInstance
-// 0x0004 (0x0004 - 0x0000)
-struct FLootLockerHeroAssetInstance final
-{
-public:
-	int32                                         instance_id;                                       // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerHeroAssetInstance;
-
-// ScriptStruct LootLockerSDK.LootLockerHeroLoadout
-// 0x0060 (0x0060 - 0x0000)
-struct FLootLockerHeroLoadout final
-{
-public:
-	int32                                         variation_id;                                      // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         instance_id;                                       // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 mounted_at;                                        // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FLootLockerAsset>               Asset;                                             // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FLootLockerRental                      rental;                                            // 0x0028(0x0038)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerHeroLoadout;
 
 // ScriptStruct LootLockerSDK.LootLockerUpdateHeroRequest
 // 0x0018 (0x0018 - 0x0000)
@@ -3601,6 +5066,29 @@ public:
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FLootLockerUpdateHeroRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerCreateHeroWithVariationRequest
+// 0x0020 (0x0020 - 0x0000)
+struct FLootLockerCreateHeroWithVariationRequest final
+{
+public:
+	int32                                         hero_id;                                           // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Name;                                              // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Asset_Variation_Id;                                // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          is_default;                                        // 0x001C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerCreateHeroWithVariationRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerGetByListMembersRequest
+// 0x0010 (0x0010 - 0x0000)
+struct FLootLockerGetByListMembersRequest final
+{
+public:
+	TArray<class FString>                         members;                                           // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerGetByListMembersRequest;
 
 // ScriptStruct LootLockerSDK.LootLockerGetScoreListRequest
 // 0x0018 (0x0018 - 0x0000)
@@ -3635,6 +5123,47 @@ public:
 };
 DUMPER7_ASSERTS_FLootLockerSubmitScoreRequest;
 
+// ScriptStruct LootLockerSDK.LootLockerSetMetadataAction
+// 0x0090 (0x0090 - 0x0000)
+struct FLootLockerSetMetadataAction final
+{
+public:
+	ELootLockerMetadataActions                    action;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLootLockerMetadataEntry               Entry;                                             // 0x0008(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerSetMetadataAction;
+
+// ScriptStruct LootLockerSDK.LootLockerMetadataSourceAndKeys
+// 0x0028 (0x0028 - 0x0000)
+struct FLootLockerMetadataSourceAndKeys final
+{
+public:
+	ELootLockerMetadataSources                    Source;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ID;                                                // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         Keys;                                              // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerMetadataSourceAndKeys;
+
+// ScriptStruct LootLockerSDK.LootLockerGetMultisourceMetadataRequest
+// 0x0010 (0x0010 - 0x0000)
+struct FLootLockerGetMultisourceMetadataRequest final
+{
+public:
+	TArray<struct FLootLockerMetadataSourceAndKeys> Sources;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerGetMultisourceMetadataRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerGameInfoRequest
+// 0x0010 (0x0010 - 0x0000)
+struct FLootLockerGameInfoRequest final
+{
+public:
+	class FString                                 api_key;                                           // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerGameInfoRequest;
+
 // ScriptStruct LootLockerSDK.LootLockerFinishMissionData
 // 0x0040 (0x0040 - 0x0000)
 struct FLootLockerFinishMissionData final
@@ -3645,6 +5174,34 @@ public:
 };
 DUMPER7_ASSERTS_FLootLockerFinishMissionData;
 
+// ScriptStruct LootLockerSDK.LootLockerNotificationRewardGroup
+// 0x0050 (0x0050 - 0x0000)
+struct FLootLockerNotificationRewardGroup final
+{
+public:
+	class FString                                 created_at;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Description;                                       // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerNotificationGroupRewardAssociations> associations;                      // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FString                                 reward_id;                                         // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerNotificationRewardGroup;
+
+// ScriptStruct LootLockerSDK.LootLockerNotificationContentRewardBody
+// 0x0288 (0x0288 - 0x0000)
+struct FLootLockerNotificationContentRewardBody final
+{
+public:
+	ELootLockerNotificationContentRewardKind      kind;                                              // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLootLockerNotificationRewardGroup     group;                                             // 0x0008(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLootLockerNotificationRewardCurrency  currency;                                          // 0x0058(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLootLockerNotificationRewardAsset     Asset;                                             // 0x00E8(0x00B0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLootLockerNotificationRewardProgressionReset progression_reset;                          // 0x0198(0x0070)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLootLockerNotificationRewardProgression progression_points;                              // 0x0208(0x0080)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerNotificationContentRewardBody;
+
 // ScriptStruct LootLockerSDK.LootLockerPersistentStorageItems
 // 0x0010 (0x0010 - 0x0000)
 struct FLootLockerPersistentStorageItems final
@@ -3654,48 +5211,61 @@ public:
 };
 DUMPER7_ASSERTS_FLootLockerPersistentStorageItems;
 
-// ScriptStruct LootLockerSDK.LootLockerPlatformRepresentation
-// 0x0028 (0x0028 - 0x0000)
-struct FLootLockerPlatformRepresentation final
-{
-public:
-	ELootLockerPlatform                           Platform;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 PlatformString;                                    // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 AuthenticationProviderString;                      // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerPlatformRepresentation;
-
-// ScriptStruct LootLockerSDK.LootLockerFileUploadRequest
-// 0x0028 (0x0028 - 0x0000)
-struct FLootLockerFileUploadRequest final
+// ScriptStruct LootLockerSDK.LootLockerFileUpdateRequest
+// 0x0010 (0x0010 - 0x0000)
+struct FLootLockerFileUpdateRequest final
 {
 public:
 	class FString                                 file;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 purpose;                                           // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsPublic;                                          // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FLootLockerFileUploadRequest;
+DUMPER7_ASSERTS_FLootLockerFileUpdateRequest;
 
-// ScriptStruct LootLockerSDK.LootLockerMultiplePlayersXpRequest
-// 0x0020 (0x0020 - 0x0000)
-struct FLootLockerMultiplePlayersXpRequest final
+// ScriptStruct LootLockerSDK.LootLockerLookupMultiplePlayersDataRequest
+// 0x0010 (0x0010 - 0x0000)
+struct FLootLockerLookupMultiplePlayersDataRequest final
 {
 public:
-	class FString                                 Platform;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class FString>                         player_ids;                                        // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLootLockerPlayerDataLookupPair> player_ids;                                       // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerMultiplePlayersXpRequest;
+DUMPER7_ASSERTS_FLootLockerLookupMultiplePlayersDataRequest;
 
-// ScriptStruct LootLockerSDK.LootLockerSubmitXpRequest
-// 0x0004 (0x0004 - 0x0000)
-struct FLootLockerSubmitXpRequest final
+// ScriptStruct LootLockerSDK.LootLockerPlayerNameRequest
+// 0x0010 (0x0010 - 0x0000)
+struct FLootLockerPlayerNameRequest final
 {
 public:
-	int32                                         Points;                                            // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerSubmitXpRequest;
+DUMPER7_ASSERTS_FLootLockerPlayerNameRequest;
+
+// ScriptStruct LootLockerSDK.LootLockerXp
+// 0x0008 (0x0008 - 0x0000)
+struct FLootLockerXp final
+{
+public:
+	int32                                         Previous;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Current;                                           // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerXp;
+
+// ScriptStruct LootLockerSDK.LootLockerPlayerLevel
+// 0x0008 (0x0008 - 0x0000)
+struct FLootLockerPlayerLevel final
+{
+public:
+	int32                                         Level;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         xp_threshold;                                      // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLootLockerPlayerLevel;
+
+// ScriptStruct LootLockerSDK.LootLockerCachedPresenceStatusUpdate
+// 0x0060 (0x0060 - 0x0000)
+struct alignas(0x08) FLootLockerCachedPresenceStatusUpdate final
+{
+public:
+	uint8                                         Pad_0[0x60];                                       // 0x0000(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLootLockerCachedPresenceStatusUpdate;
 
 // ScriptStruct LootLockerSDK.LootLockerModifyScoreRequest
 // 0x0004 (0x0004 - 0x0000)
@@ -3706,23 +5276,31 @@ public:
 };
 DUMPER7_ASSERTS_FLootLockerModifyScoreRequest;
 
-// ScriptStruct LootLockerSDK.LootLockerFinalizeSteamPurchaseRedemptionRequest
-// 0x0010 (0x0010 - 0x0000)
-struct FLootLockerFinalizeSteamPurchaseRedemptionRequest final
+// ScriptStruct LootLockerSDK.LootLockerCharacterProgression
+// 0x0060 (0x0060 - 0x0000)
+struct FLootLockerCharacterProgression final
 {
 public:
-	class FString                                 entitlement_id;                                    // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ID;                                                // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Progression_Key;                                   // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Progression_Name;                                  // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Progression_Id;                                    // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Step;                                              // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Points;                                            // 0x0044(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Previous_Threshold;                                // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Next_Threshold;                                    // 0x004C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Last_Level_Up;                                     // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerFinalizeSteamPurchaseRedemptionRequest;
+DUMPER7_ASSERTS_FLootLockerCharacterProgression;
 
-// ScriptStruct LootLockerSDK.LootLockerQuerySteamPurchaseRedemptionStatusRequest
-// 0x0010 (0x0010 - 0x0000)
-struct FLootLockerQuerySteamPurchaseRedemptionStatusRequest final
+// ScriptStruct LootLockerSDK.LootLockerRedeemEpicStorePurchaseForCharacterRequest
+// 0x0010 (0x0050 - 0x0040)
+struct FLootLockerRedeemEpicStorePurchaseForCharacterRequest final : public FLootLockerRedeemEpicStorePurchaseForPlayerRequest
 {
 public:
-	class FString                                 entitlement_id;                                    // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Character_id;                                      // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerQuerySteamPurchaseRedemptionStatusRequest;
+DUMPER7_ASSERTS_FLootLockerRedeemEpicStorePurchaseForCharacterRequest;
 
 // ScriptStruct LootLockerSDK.LootLockerRedeemGooglePlayStorePurchaseForClassRequest
 // 0x0008 (0x0028 - 0x0020)
@@ -3734,73 +5312,44 @@ public:
 };
 DUMPER7_ASSERTS_FLootLockerRedeemGooglePlayStorePurchaseForClassRequest;
 
-// ScriptStruct LootLockerSDK.LootLockerVerifyPurchaseIosData
-// 0x0010 (0x0010 - 0x0000)
-struct FLootLockerVerifyPurchaseIosData final
+// ScriptStruct LootLockerSDK.LootLockerRedeemAppleAppStorePurchaseForClassRequest
+// 0x0008 (0x0020 - 0x0018)
+struct FLootLockerRedeemAppleAppStorePurchaseForClassRequest final : public FLootLockerRedeemAppleAppStorePurchaseForPlayerRequest
 {
 public:
-	class FString                                 receipt_data;                                      // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Class_id;                                          // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FLootLockerVerifyPurchaseIosData;
-
-// ScriptStruct LootLockerSDK.LootLockerAndroidAssetPurchaseData
-// 0x0014 (0x0020 - 0x000C)
-struct FLootLockerAndroidAssetPurchaseData final : public FLootLockerAssetPurchaseData
-{
-public:
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Purchase_token;                                    // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerAndroidAssetPurchaseData;
+DUMPER7_ASSERTS_FLootLockerRedeemAppleAppStorePurchaseForClassRequest;
 
 // ScriptStruct LootLockerSDK.LootLockerRefreshRemoteSessionRequest
 // 0x0010 (0x0030 - 0x0020)
-struct FLootLockerRefreshRemoteSessionRequest final : public FLootLockerBaseAuthRequest
+struct FLootLockerRefreshRemoteSessionRequest final : public FLootLockerBaseAuthRequest_Old
 {
 public:
 	class FString                                 refresh_token;                                     // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLootLockerRefreshRemoteSessionRequest;
 
-// ScriptStruct LootLockerSDK.LootLockerStartRemoteSessionRequest
-// 0x0040 (0x0040 - 0x0000)
-struct FLootLockerStartRemoteSessionRequest final
-{
-public:
-	class FString                                 game_key;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 game_version;                                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Lease_code;                                        // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Nonce;                                             // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerStartRemoteSessionRequest;
-
-// ScriptStruct LootLockerSDK.LootLockerLeaseRemoteSessionRequest
-// 0x0020 (0x0020 - 0x0000)
-struct FLootLockerLeaseRemoteSessionRequest final
-{
-public:
-	class FString                                 game_key;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 game_version;                                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLootLockerLeaseRemoteSessionRequest;
-
-// ScriptStruct LootLockerSDK.LootLockerTriggerEvent
+// ScriptStruct LootLockerSDK.LootLockerInvokeTriggersByKeyRequest
 // 0x0010 (0x0010 - 0x0000)
-struct FLootLockerTriggerEvent final
+struct FLootLockerInvokeTriggersByKeyRequest final
 {
 public:
-	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         Keys;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerTriggerEvent;
+DUMPER7_ASSERTS_FLootLockerInvokeTriggersByKeyRequest;
 
-// ScriptStruct LootLockerSDK.LootLockerCreateAssetCandidateData
-// 0x0048 (0x0048 - 0x0000)
-struct FLootLockerCreateAssetCandidateData final
+// ScriptStruct LootLockerSDK.LootLockerUpdateAssetCandidateData
+// 0x0050 (0x0050 - 0x0000)
+struct FLootLockerUpdateAssetCandidateData final
 {
 public:
-	struct FLootLockerAssetCandidateData          Data;                                              // 0x0000(0x0048)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	bool                                          Completed;                                         // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLootLockerAssetCandidateData          Data;                                              // 0x0008(0x0048)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FLootLockerCreateAssetCandidateData;
+DUMPER7_ASSERTS_FLootLockerUpdateAssetCandidateData;
 
 }
 

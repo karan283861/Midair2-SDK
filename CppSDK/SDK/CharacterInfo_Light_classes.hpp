@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass CharacterInfo_Light.CharacterInfo_Light_C
-// 0x0000 (0x01C0 - 0x01C0)
+// 0x0000 (0x01D0 - 0x01D0)
 class UCharacterInfo_Light_C final : public UCharacterInfo
 {
 public:

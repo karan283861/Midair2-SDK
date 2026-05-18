@@ -10,9 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "UMG_structs.hpp"
+#include "Midair2_structs.hpp"
 #include "Midair2_classes.hpp"
 #include "Engine_structs.hpp"
-#include "UMG_structs.hpp"
 #include "CommonGame_structs.hpp"
 
 
@@ -20,7 +21,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass WBP_InGameMenu.WBP_InGameMenu_C
-// 0x0200 (0x0528 - 0x0328)
+// 0x0210 (0x0538 - 0x0328)
 class UWBP_InGameMenu_C final : public UMAInGameMenuScreen
 {
 public:
@@ -86,17 +87,20 @@ public:
 	class UWBP_LoadoutsPanel_New_C*               LoadoutMenu;                                       // 0x0510(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UWBP_ConsoleSettingsMenu_C*             Console_Settings_Menu;                             // 0x0518(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UWBP_Settings_Menu_C*                   UpdatingSettings;                                  // 0x0520(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          WidgetCustomizationLoaded;                         // 0x0528(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_529[0x7];                                      // 0x0529(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AMAPlayerController*                    CachedPlayerController;                            // 0x0530(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_WBP_InGameMenu(int32 EntryPoint);
+	void BP_OnActivated();
 	void CustomEvent(int32 Selection, const class FString& DisplayString);
-	void BndEvt__WBP_InGameMenu_ExitToMainMenuButton_1_K2Node_ComponentBoundEvent_4_ButtonClicked__DelegateSignature();
 	void BndEvt__DisableTournamentModeButton_K2Node_ComponentBoundEvent_0_ButtonClicked__DelegateSignature(class UWBP_SelectableButton_C* Clicked_Button);
+	void BndEvt__WBP_InGameMenu_ExitToMainMenuButton_1_K2Node_ComponentBoundEvent_4_ButtonClicked__DelegateSignature();
 	void ExitGame();
-	void MidmatchVoteSelectionMade(int32 Selection, const class FString& DisplayString);
 	void Construct();
+	void MidmatchVoteSelectionMade(int32 Selection, const class FString& DisplayString);
 	void CustomEvent_1(ESlateVisibility InVisibility);
-	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
 	void BndEvt__WBP_InGameMenu_CopyCustomCode_K2Node_ComponentBoundEvent_18_ButtonClicked__DelegateSignature();
 	void BndEvt__WBP_InGameMenu_EditHudLayoutButton_K2Node_ComponentBoundEvent_11_ButtonClicked__DelegateSignature(class UWBP_ESC_Options_BTN_C* OptionsBTN, int32 OptionIndex);
 	void BndEvt__QuitButton_K2Node_ComponentBoundEvent_2_ButtonClicked__DelegateSignature();
@@ -110,9 +114,9 @@ public:
 	void BndEvt__VoteChangeMapButton_K2Node_ComponentBoundEvent_9_ButtonClicked__DelegateSignature();
 	void BndEvt__PlayerListButton_K2Node_ComponentBoundEvent_10_ButtonClicked__DelegateSignature();
 	void BndEvt__ChangeTeamButton_K2Node_ComponentBoundEvent_12_ButtonClicked__DelegateSignature();
+	void ModeToVoteSelected(class UWBP_ESC_Options_BTN_C* ClickedBTN, int32 OptionIndex);
 	void BndEvt__SpectateButton_K2Node_ComponentBoundEvent_14_ButtonClicked__DelegateSignature();
 	void BndEvt__PracticeButton_K2Node_ComponentBoundEvent_1_ButtonClicked__DelegateSignature();
-	void ModeToVoteSelected(class UWBP_ESC_Options_BTN_C* ClickedBTN, int32 OptionIndex);
 	void CloseOpenMenus();
 	void MapToVoteSelected(class UWBP_ESC_Options_BTN_C* ClickedBTN, int32 OptionIndex);
 	void MapOptionSelected(class UWBP_ESC_Options_BTN_C* Clicked_BTN, int32 Option_Index);
@@ -156,6 +160,7 @@ public:
 	struct FEventReply OnKeyDown(const struct FGeometry& MyGeometry, const struct FKeyEvent& InKeyEvent);
 	void GetPlayerNames(TArray<class FString>* PlayerNames_0);
 	void Populate_Options_Admin();
+	ESlateVisibility GetIsMatchmadeGame();
 
 	class UWidget* BP_GetDesiredFocusTarget() const;
 

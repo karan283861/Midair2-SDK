@@ -18,7 +18,7 @@ namespace SDK::Params
 {
 
 // Function WBP_ESC_Loadout_BTN.WBP_ESC_Loadout_BTN_C.ExecuteUbergraph_WBP_ESC_Loadout_BTN
-// 0x01B8 (0x01B8 - 0x0000)
+// 0x01C8 (0x01C8 - 0x0000)
 struct WBP_ESC_Loadout_BTN_C_ExecuteUbergraph_WBP_ESC_Loadout_BTN final
 {
 public:
@@ -34,11 +34,11 @@ public:
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0021(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_22[0x6];                                       // 0x0022(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class UPlayerLoadoutsSave*                    CallFunc_GetGlobalLoadoutsSave_ReturnValue;        // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FMALoadout                             CallFunc_GetLastSelectedLoadout_outLoadout;        // 0x0030(0x00B8)()
-	struct FMALoadout                             K2Node_SetFieldsInStruct_StructOut;                // 0x00E8(0x00B8)()
-	class APlayerController*                      CallFunc_GetOwningPlayer_ReturnValue;              // 0x01A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AMAPlayerController*                    K2Node_DynamicCast_AsMAPlayer_Controller;          // 0x01A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x01B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FMALoadout                             CallFunc_GetLastSelectedLoadout_outLoadout;        // 0x0030(0x00C0)()
+	struct FMALoadout                             K2Node_SetFieldsInStruct_StructOut;                // 0x00F0(0x00C0)()
+	class APlayerController*                      CallFunc_GetOwningPlayer_ReturnValue;              // 0x01B0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AMAPlayerController*                    K2Node_DynamicCast_AsMAPlayer_Controller;          // 0x01B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x01C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_WBP_ESC_Loadout_BTN_C_ExecuteUbergraph_WBP_ESC_Loadout_BTN;
 

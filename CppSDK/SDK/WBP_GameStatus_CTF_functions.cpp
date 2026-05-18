@@ -37,17 +37,25 @@ void UWBP_GameStatus_CTF_C::ExecuteUbergraph_WBP_GameStatus_CTF(int32 EntryPoint
 }
 
 
-// Function WBP_GameStatus_CTF.WBP_GameStatus_CTF_C.UpdateScores
-// (BlueprintCallable, BlueprintEvent)
+// Function WBP_GameStatus_CTF.WBP_GameStatus_CTF_C.Tick
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Parameters:
+// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_GameStatus_CTF_C::UpdateScores()
+void UWBP_GameStatus_CTF_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_GameStatus_CTF_C", "UpdateScores");
+		Func = Class->GetFunction("WBP_GameStatus_CTF_C", "Tick");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::WBP_GameStatus_CTF_C_Tick Parms{};
+
+	Parms.MyGeometry = std::move(MyGeometry);
+	Parms.InDeltaTime = InDeltaTime;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
